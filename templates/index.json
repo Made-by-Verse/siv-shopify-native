@@ -122,13 +122,6 @@
         "button_link": "shopify://collections/all",
         "button_text": "View Product"
       }
-    },
-    "section_featured_posts": {
-      "type": "section-featured-posts",
-      "settings": {
-        "title": "Featured Posts",
-        "text": "Featured Posts Text"
-      }
     }
   },
   "order": [
@@ -139,7 +132,6 @@
     "rich_text",
     "card_reveal",
     "testimonies",
-    "section_cta",
-    "section_featured_posts"
+    "section_cta"
   ]
 }
