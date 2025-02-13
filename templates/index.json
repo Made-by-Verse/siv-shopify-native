@@ -99,8 +99,9 @@
         "card_1": {
           "type": "card",
           "settings": {
-            "heading": "Card 1",
-            "text": "Card 1 Text"
+            "image": "shopify://shop_images/Frame_427320811.jpg",
+            "heading": "67%",
+            "text": "Say it has a negative effect on their self-esteem"
           }
         }
       },
@@ -118,8 +119,10 @@
         "testimony_1": {
           "type": "testimony",
           "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.33_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.40_PM.png",
             "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
-            "treatment_duration": 10
+            "treatment_duration": 30
           }
         }
       },
