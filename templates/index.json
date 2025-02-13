@@ -136,6 +136,7 @@
     "section_cta": {
       "type": "section-cta",
       "settings": {
+        "image": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.png",
         "title": "Healthier skin is a drop away",
         "button_link": "shopify://collections/all",
         "button_text": "View Product"
