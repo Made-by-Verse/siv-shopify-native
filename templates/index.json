@@ -225,6 +225,15 @@
             "treatment_duration": 30
           }
         },
+        "testimony_itpp7p": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.04.21_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.04.30_PM.png",
+            "quote": "Reduction in number of lesions.Reduced redness.",
+            "treatment_duration": 30
+          }
+        },
         "testimony_9": {
           "type": "testimony",
           "settings": {
@@ -243,6 +252,7 @@
         "testimony_5",
         "testimony_6",
         "testimony_8",
+        "testimony_itpp7p",
         "testimony_9"
       ],
       "settings": {
