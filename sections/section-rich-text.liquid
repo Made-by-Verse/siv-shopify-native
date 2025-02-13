@@ -1,0 +1,21 @@
+<div class="wrapper max-w-lg text-center">
+  {{ section.settings.content }}
+</div>
+
+{% schema %}
+  {
+    "name": "Rich Text",
+    "tag": "section",
+    "class": "section-rich-text py-10 md:py-20", 
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      }
+    ]
+  }
+{% endschema %}

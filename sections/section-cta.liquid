@@ -1,0 +1,35 @@
+{% render 'responsive-image', image: section.settings.image, wrapper_class: 'absolute w-full h-full inset-0 object-cover z-0', image_class: 'absolute object-cover inset-0 w-full h-full' %}
+<div class="wrapper relative max-w-xl text-center text-white z-10 flex flex-col items-center justify-center gap-4">
+  <h2 class='h1'>{{ section.settings.title }}</h2>
+  <a href="{{ section.settings.button_link }}" class="btn btn--white">{{ section.settings.button_text }}</a>
+</div>
+
+{% schema %}
+  {
+    "name": "Call to Action",
+    "tag": "section",
+    "class": "section-cta py-48 overflow-hidden relative",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      }
+    ],
+  }
+{% endschema %}

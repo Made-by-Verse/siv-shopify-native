@@ -1,0 +1,161 @@
+{% style %}
+  .color-{{ section.settings.color_scheme }} {
+    --color-primary: {{ section.settings.color_scheme.settings.primary }};
+    --color-contrast: {{ section.settings.color_scheme.settings.contrast }};
+    --color-lines: {{ section.settings.color_scheme.settings.lines }};
+  }
+{% endstyle %}
+
+{% liquid
+  assign padding_top = section.settings.padding_top | default: 'md'
+  assign padding_bottom = section.settings.padding_bottom | default: 'md'
+
+  if padding_top == 'none'
+    assign padding_top = 'pt-0'
+  elsif padding_top == 'sm'
+    assign padding_top = 'pt-6'
+  elsif padding_top == 'md'
+    assign padding_top = 'pt-6 lg:pt-12'
+  elsif padding_top == 'lg'
+    assign padding_top = 'pt-12 lg:pt-24'
+  elsif padding_top == 'xl'
+    assign padding_top = 'pt-24 lg:pt-48'
+  endif
+
+  if padding_bottom == 'none'
+    assign padding_bottom = 'pb-0'
+  elsif padding_bottom == 'sm'
+    assign padding_bottom = 'pb-6'
+  elsif padding_bottom == 'md'
+    assign padding_bottom = 'pb-6 lg:pb-12'
+  elsif padding_bottom == 'lg'
+    assign padding_bottom = 'pb-12 lg:pb-24'
+  elsif padding_bottom == 'xl'
+    assign padding_bottom = 'pb-24 lg:pb-48'
+  endif
+%}
+
+<div class='color-{{ section.settings.color_scheme }} bg-primary text-contrast overflow-hidden'>
+  <div class="wrapper {{ padding_top }} {{ padding_bottom }}">
+    <div class="flex gap-4 justify-between items-center py-4 border-t border-contrast">
+      <a href="{{ routes.collections_url }}" class="text-contrast font-sans uppercase text-sm">{{ section.settings.all_collections_link_text }}</a>
+      {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+        <a href="{{ section.settings.button_link }}" class="btn btn--outline-primary">{{ section.settings.button_text }}</a>
+      {% endif %}
+    </div>
+
+    <div class="collection-grid-swiper swiper !overflow-visible">
+      <div class="swiper-wrapper overflow-visible">
+      {% for block in section.blocks %}
+        <div class="swiper-slide">
+        {% assign collection = collections[block.settings.collection] %}
+        {% assign hover_image = block.settings.hover_image %}
+        {% if collection != blank %}
+          {% render 'collection-tile', collection: collection, hover_image: hover_image %}
+        {% endif %}
+      </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collections Grid",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "all_collections_link_text",
+      "label": "All Collections Link Text",
+      "default": "View All"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "View All"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_block",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "hover_image",
+          "label": "Hover Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collections Grid",
+      "settings": {
+        "all_collections_link_text": "Explore All",
+        "button_text": "Button Text",
+        "padding_top": "md",
+        "padding_bottom": "md"
+      },
+      "blocks": [
+        {
+          "type": "collection_block"
+        },
+        {
+          "type": "collection_block"
+        },
+        {
+          "type": "collection_block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,25 @@
+@media (min-width: 992px) {
+  .h-product_details {
+    height: calc(100vh - 80px);
+  }
+}
+
+.grid-tile {
+  .tile-text-container {
+    @apply py-4;
+  }
+}
+
+.feature-tile {
+  .tile-text-container {
+    @apply py-2.5;
+  }
+}
+
+.large-grid {
+  .grid-tile {
+    .tile-text-container {
+      @apply lg:px-16;
+    }
+  }
+}

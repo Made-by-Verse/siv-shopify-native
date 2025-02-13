@@ -1,0 +1,274 @@
+{% comment %}
+  Renders facets (filtering and sorting)
+
+  Accepts:
+  - results: {Object} Collection or Search object
+  - paginate: {Object}
+
+  Usage:
+  {% render 'facets', results: collection, enable_filtering: true, enable_sorting: true, filter_type: 'vertical', paginate: paginate %}
+{% endcomment %}
+
+{%- liquid
+  assign sort_by = results.sort_by | default: results.default_sort_by
+  assign total_active_values = 0
+  assign default_presentation = 'text'
+  if results.url
+    assign results_url = results.url
+  else
+    assign terms = results.terms | escape
+    assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+  endif
+-%}
+
+<div class='h-full flex flex-col'>
+  <div class="flex-1 overflow-hidden flex flex-col">
+    <form id="FacetFiltersForm" class="overflow-y-auto flex-1">
+      <div
+        id="FacetsWrapper"
+        class="divide-y font-sans divide-lines facets"
+      >
+        {%- for filter in results.filters -%}
+          {% liquid
+            assign presentation = filter.presentation | default: default_presentation
+            if presentation == 'image'
+              assign visual_layout_class = '' | append: presentation
+            else
+              assign visual_layout_class = '' | append: presentation
+            endif
+          %}
+          {% case filter.type %}
+            {% when 'boolean', 'list' %}
+              <div
+                id="Facet-{{ forloop.index }}-{{ section.id }}"
+                class=""
+                x-data="{ open: false }"
+              >
+                <button
+                  class="py-2 flex w-full justify-between items-center uppercase"
+                  @click="open = !open"
+                  :aria-expanded="open"
+                  type="button"
+                >
+                  <span>{{ filter.label | escape }}</span>
+                  <span
+                    class="w-3 block transform transition-all duration-500" 
+                    :class="{ 'rotate-180 opacity-100': open, 'opacity-50': !open }"
+                  >
+                    {{ 'icon-down-arrow.svg' | inline_asset_content }}
+                  </span>
+                </button>
+                <ul 
+                  class="{% if filter.label == 'Colour' or filter.label == 'Material' %}grid grid-cols-3 md:grid-cols-4 gap-1{% else %}space-y-2{% endif %} transition-all duration-500"
+                  role="list"
+                  x-show="open"
+                  x-transition
+                >
+                  {%- liquid
+                    assign sorted_values = filter.values
+                    # Keep the selected values grouped together when operator is AND
+                    if filter.operator == 'AND'
+                      assign active_filter_values = filter.values | where: 'active', true
+                      assign inactive_filter_values = filter.values | where: 'active', false
+                      assign sorted_values = active_filter_values | concat: inactive_filter_values
+                    endif
+                  -%}
+                  {%- for value in sorted_values -%}
+                    {% liquid
+                      assign input_id = 'Filter-' | append: filter.param_name | escape | append: '-' | append: forloop.index
+                      assign is_disabled = false
+                      if value.count == 0 and value.active == false
+                        assign is_disabled = true
+                      endif
+
+                      # Add color handling similar to variant picker
+                      assign color_value = value.label | downcase | escape
+                      assign custom_colors = settings.color_swatches | newline_to_br | split: '<br />'
+                      assign key_array = ''
+                      assign val_array = ''
+
+                      for color in custom_colors
+                        assign key = color | split: ':' | first | rstrip
+                        assign value_color = color | split: ':' | last | lstrip
+                        assign key_array = key_array | append: ',' | append: key
+                        assign val_array = val_array | append: ',' | append: value_color
+                      endfor
+
+                      assign key_array = key_array | remove_first: ',' | strip_newlines | downcase | split: ','
+                      assign val_array = val_array | remove_first: ',' | split: ','
+
+                      for custom_color in key_array
+                        if custom_color == color_value
+                          assign color_value = val_array[forloop.index0]
+                        endif
+                      endfor
+
+                      if color_value contains '.'
+                        assign bg_value = color_value | file_url
+                        assign style = 'background-image: url(' | append: bg_value | append: ')'
+                      else
+                        assign style = 'background-color: ' | append: color_value
+                      endif
+                    %}
+
+                    <li class="p-1 {% if is_disabled %}hidden{% endif %}">
+                      {% if filter.label == 'Colour' %}
+                        <label 
+                          x-data="{ checked: {% if value.active %}true{% else %}false{% endif %} }"
+                          class="text-xs block cursor-pointer transition-colors duration-500 p-1 h-full space-y-2"
+                          :class="{ 'bg-contrast/10': checked }"
+                        >
+                          <div class="relative bg-gray-100 rounded">
+                            <input
+                              class="absolute inset-0 opacity-0 w-full h-full cursor-pointer"
+                              type="checkbox"
+                              name="{{ value.param_name }}"
+                              value="{{ value.value }}"
+                              id="{{ input_id }}"
+                              x-model="checked"
+                              {% if is_disabled %}disabled{% endif %}
+                            >
+                            <span class="w-full aspect-square block" style="{{ style }}"></span>
+                          </div>
+                          <span class="block">{{ value.label | escape }}</span>
+                        </label>
+                      {% else %}
+                        <label for="{{ input_id }}" class="{{ label_class }} flex items-center">
+                          <input
+                            class="mr-2 appearance-none border border-contrast checked:bg-contrast checked:text-white w-4 h-4"
+                            type="checkbox"
+                            name="{{ value.param_name }}"
+                            value="{{ value.value }}"
+                            id="{{ input_id }}"
+                            {% if value.active %}
+                              checked
+                            {% endif %}
+                            {% if is_disabled %}
+                              disabled
+                            {% endif %}
+                          >
+                          {{ value.label | escape }} 
+                        </label>
+                      {% endif %}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            {% when 'price_range' %}
+              <div
+                id="Facet-{{ forloop.index }}-{{ section.id }}"
+                class=""
+                x-data="{ 
+                  open: false,
+                  min: {{ filter.min_value.value | default: filter.range_min | divided_by: 100.0 | round }},
+                  max: {{ filter.max_value.value | default: filter.range_max | divided_by: 100.0 | round }},
+                  rangeMin: {{ filter.range_min | divided_by: 100.0 | round }},
+                  rangeMax: {{ filter.range_max | divided_by: 100.0 | round }}
+                }"
+                x-init="
+                  $watch('min', value => {
+                    if (value > max) min = max;
+                    if (value < rangeMin) min = rangeMin;
+                  });
+                  $watch('max', value => {
+                    if (value < min) max = min;
+                    if (value > rangeMax) max = rangeMax;
+                  })
+                "
+              >
+                <button
+                  class="py-2 flex w-full justify-between items-center uppercase"
+                  @click="open = !open"
+                  :aria-expanded="open"
+                  type="button"
+                >
+                  <span>{{ filter.label | escape }}</span>
+                  <span
+                    class="w-3 block transform transition-all duration-500" 
+                    :class="{ 'rotate-180 opacity-100': open, 'opacity-50': !open }"
+                  >
+                    {{ 'icon-down-arrow.svg' | inline_asset_content }}
+                  </span>
+                </button>
+                <div
+                  class="space-y-3 transition-all duration-500 px-4"
+                  x-show="open"
+                  x-transition
+                >
+                  <div class="flex items-center gap-2 mb-6">
+                    <label class="flex-1">
+                      <span class="sr-only">{{ filter.min_value.param_name }}</span>
+                      <input
+                        class="w-full border px-2 py-1 appearance-none bg-transparent text-center"
+                        name="{{ filter.min_value.param_name }}"
+                        id="Filter-{{ filter.min_value.param_name }}"
+                        type="number"
+                        x-model="min"
+                        @input="if (min > max) max = min"
+                      >
+                    </label>
+                    <span>to</span>
+                    <label class="flex-1">
+                      <span class="sr-only">{{ filter.max_value.param_name }}</span>
+                      <input
+                        class="w-full border px-2 py-1 appearance-none bg-transparent text-center"
+                        name="{{ filter.max_value.param_name }}"
+                        id="Filter-{{ filter.max_value.param_name }}"
+                        type="number"
+                        x-model="max"
+                        @input="if (max < min) min = max"
+                      >
+                    </label>
+                  </div>
+                  
+                  <div class="relative">
+                    <div class="h-1 bg-gray-200 rounded">
+                      <div 
+                        class="absolute h-1 bg-contrast rounded"
+                        :style="`left: ${(min - rangeMin) / (rangeMax - rangeMin) * 100}%; right: ${100 - (max - rangeMin) / (rangeMax - rangeMin) * 100}%`"
+                      >
+                        <div class="absolute w-3 h-3 bg-contrast rounded-full -left-1.5 -top-1"></div>
+                        <div class="absolute w-3 h-3 bg-contrast rounded-full -right-1.5 -top-1"></div>
+                      </div>
+                    </div>
+                    <input 
+                      type="range" 
+                      :min="rangeMin" 
+                      :max="rangeMax"
+                      x-model.number="min"
+                      @input="if ($event.target.value >= max) $event.target.value = max - 1"
+                      class="absolute w-full h-1 opacity-0 cursor-pointer"
+                    >
+                    <input 
+                      type="range" 
+                      :min="rangeMin" 
+                      :max="rangeMax"
+                      x-model.number="max"
+                      @input="if ($event.target.value <= min) $event.target.value = min + 1"
+                      class="absolute w-full h-1 opacity-0 cursor-pointer"
+                    >
+                  </div>
+                </div>
+              </div>
+          {% endcase %}
+        {%- endfor -%}
+      </div>
+    </form>
+  </div>
+
+  <div class="mt-4 flex flex-col items-center">
+    {% if results.filters.size > 0 %}
+      <a href="{{ results_url }}" class="text-sm disabled:opacity-30 filter-clear-all mb-4 flex">
+        <span>Reset</span>
+      </a>
+      <button 
+        type="submit" 
+        class="text-sm uppercase btn btn--primary disabled:opacity-30 w-full" 
+        {% if results.products_count == 0 %}disabled{% endif %}
+        form="FacetFiltersForm"
+      >
+        Apply filters
+      </button>
+    {% endif %}
+  </div>
+</div>

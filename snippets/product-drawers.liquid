@@ -1,0 +1,53 @@
+<div
+  class='drawer fixed z-[9999]'
+  x-data="{ activeDrawer: null }"
+  @toggle-drawer.window="
+    activeDrawer = $event.detail.type === activeDrawer ? null : $event.detail.type
+  "
+  @keydown.escape.window="activeDrawer = null"
+>
+  <!-- Backdrop -->
+  <div 
+    x-cloak
+    x-show="activeDrawer !== null"
+    class="drawer-backdrop"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    @click="activeDrawer = null"
+  ></div>
+
+  <!-- Dynamic Drawer -->
+  <div
+    x-cloak
+    x-show="activeDrawer !== null"
+    x-transition:enter="transform transition ease-in-out duration-500"
+    x-transition:enter-start="translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transform transition ease-in-out duration-500"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="translate-x-full"
+    class="fixed right-0 top-0 h-full max-w-[460px] bg-primary text-contrast shadow-lg z-[99999]"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="p-4 h-full flex flex-col w-full">
+      <div class="flex justify-between items-center">
+        <h2 class="link" x-text="activeDrawer?.replace(/-/g, ' ')"></h2>
+        <button @click="activeDrawer = null" class="text-2xl">&times;</button>
+      </div>
+      <div id="drawer-content" class="mt-8 flex-1 richtext overflow-y-auto">
+        <div x-show="activeDrawer === 'specifications'">
+          {% render 'drawer-specifications', product: product %}
+        </div>
+        <div x-show="activeDrawer === 'product-care'">
+          {% render 'drawer-product-care', blocks: blocks %}
+        </div>
+        <div x-show="activeDrawer === 'shipping'">
+          {% render 'drawer-shipping', product: product %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

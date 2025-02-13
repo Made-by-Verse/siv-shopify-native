@@ -1,0 +1,76 @@
+<div
+    x-data="{ open: false }"
+    @open-cart-drawer.window="
+      open = true;
+    "
+    @keydown.escape.window="
+      open = false;
+    "
+    class='z-[9999] fixed'
+  >
+    <!-- Backdrop -->
+    <div 
+      x-show="open"
+      class="drawer-backdrop"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      @click="
+        open = false;
+      "
+      x-cloak
+    ></div>
+
+    <!-- Drawer -->
+    <div
+      x-show="open"
+      x-cloak
+      x-transition:enter="transform transition ease-in-out duration-500"
+      x-transition:enter-start="translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transform transition ease-in-out duration-500"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="translate-x-full"
+      class="fixed right-0 top-0 h-full max-w-[390px] lg:max-w-[446px] w-full bg-primary text-contrast shadow-lg"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="p-4 h-full flex flex-col">
+        <div class="flex justify-between items-center">
+          <h2 class="link">Cart</h2>
+          <button @click="open = false" class="">&times;</button>
+        </div>
+        <div class="mt-24 flex flex-col justify-between w-full flex-1 overflow-hidden">
+          <div class='h-full flex flex-col'>
+  <div 
+    class="flex-1 overflow-hidden flex flex-col"
+  >
+    <div 
+      id="cart-items" 
+      class="border-y border-contrast divide-y divide-contrast divide-opacity-50 overflow-y-scroll flex-1" 
+      data-lenis-prevent
+    >
+      <template x-for="item in $store.cart.items" :key="item.key">
+        {% render 'cart-item', item: item %}
+      </template>
+      <p x-show="!$store.cart.items || !$store.cart.items.length" class="text-center text-sm opacity-50 py-12 uppercase">Your cart is empty</p>
+    </div>
+    <div class="py-4 font-serif total-text">
+      <div class="flex justify-between items-center">
+        <p>Subtotal</p>
+        <p class="total" x-text="$store.cart.sub_total"></p>
+      </div>
+      <p class="text-sm opacity-50 mt-2">Shipping calculated at checkout.</p>
+    </div>
+  </div>
+  <div class="cart-footer mt-4">
+    <a href="{{ routes.cart_url }}" class="btn btn--primary block">Checkout</a>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

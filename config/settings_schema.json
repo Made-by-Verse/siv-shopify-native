@@ -1,0 +1,166 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "SIV Care",
+    "theme_version": "1.0.0",
+    "theme_author": "Made by Verse",
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://support.shopify.com/"
+  },
+  {
+    "name": "t:settings_schema.colors.name",
+    "settings": [
+      {
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
+          {
+            "type": "color",
+            "id": "primary",
+            "label": "Primary",
+            "default": "#F6F5ED"
+          },
+          {
+            "type": "color",
+            "id": "contrast",
+            "label": "Contrast",
+            "default": "#241917"
+          },
+          {
+            "type": "color",
+            "id": "lines",
+            "label": "Lines",
+            "default": "#685F2C"
+          }
+        ],
+        "role": {
+          "text": "contrast",
+          "background": {
+            "solid": "primary"
+          },
+          "links": "lines",
+          "icons": "contrast",
+          "primary_button": "lines",
+          "on_primary_button": "contrast",
+          "primary_button_border": "lines",
+          "secondary_button": "primary",
+          "on_secondary_button": "lines",
+          "secondary_button_border": "lines"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social media"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook",
+        "placeholder": "https://www.facebook.com/your-page"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram",
+        "placeholder": "https://www.instagram.com/your-page"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "YouTube",
+        "placeholder": "https://www.youtube.com/your-page"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "TikTok",
+        "placeholder": "https://www.tiktok.com/your-page"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter",
+        "placeholder": "https://www.twitter.com/your-page"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "Snapchat",
+        "placeholder": "https://www.snapchat.com/your-page"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest",
+        "placeholder": "https://www.pinterest.com/your-page"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "Tumblr",
+        "placeholder": "https://www.tumblr.com/your-page"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "Vimeo",
+        "placeholder": "https://www.vimeo.com/your-page"
+      }
+    ]
+  },
+  {
+    "name": "Color swatches",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Add swatch image files to your store's [files area](/admin/settings/files). Make sure the file names match the names of your color variants, replacing spaces and special characters with hyphens. For example, a variant called Burly Wood would need a file named 'burly-wood.png'."
+      },
+      {
+        "type": "paragraph",
+        "content": "[Learn more about color swatches.](https://documentation.fuelthemes.net/kb/how-do-i-set-up-product-variant-swatches/)"
+      },
+      {
+        "type": "textarea",
+        "id": "color_swatches",
+        "label": "Custom colors",
+        "placeholder": "Black: #000000\nWhite: #F3F3F3\nBlue: blue.png",
+        "info": "Follow the format: <Color>: <HEX Color>. Example: Purple: #7000AA. Each custom color must be on a new line."
+      }
+    ]
+  },
+  {
+    "name": "Menu Settings",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu_trade",
+        "label": "Trade Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "menu_public",
+        "label": "Public Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "menu_logged_out",
+        "label": "Logged Out Menu"
+      }
+    ]
+  },
+  {
+    "name": "Featured Product",
+    "settings": [
+      {
+        "type": "product",
+        "id": "featured_product",
+        "label": "Featured Product"
+      }
+    ]
+  }
+]

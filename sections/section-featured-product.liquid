@@ -1,0 +1,148 @@
+{% style %}
+  .color-{{ section.settings.color_scheme }} {
+    --color-primary: {{ section.settings.color_scheme.settings.primary }};
+    --color-contrast: {{ section.settings.color_scheme.settings.contrast }};
+    --color-lines: {{ section.settings.color_scheme.settings.lines }};
+  }
+{% endstyle %}
+
+{% assign product = all_products[section.settings.product] %}
+
+<div class='color-{{ section.settings.color_scheme }} bg-primary text-contrast'>
+  <div class="wrapper flex flex-col items-center">
+    {% if section.settings.heading != blank %}
+      <h2 class="h2 text-center max-w-xl transition-opacity duration-2500 ease-in-out" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100' : 'opacity-0'">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.product != blank %}
+      <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-4">
+        <ul class='space-y-4 order-last md:order-first'>
+          {% for block in section.blocks %}
+            <li class=''>
+              <h3 class='mb-2 font-semibold uppercase text-base font-body tracking-wide'>{{ block.settings.heading }}</h3>
+              <p>{{ block.settings.text }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+        {% if product.media.size > 0 %}
+          {% if product.media[0] %}
+            {% render 'responsive-image', image: product.media[0], width: 1000, height: 1000, image_class: 'object-cover absolute inset-0 h-full w-full', wrapper_class: 'aspect-portrait relative' %}
+          {% endif %}
+        {% endif %}
+        <div class='space-y-4'>
+          <div>
+            <h2 class="h3 uppercase transition-opacity duration-2500 ease-in-out" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100' : 'opacity-0'">{{ product.title }}</h2>
+            <p>From {{ product.price_min | money }}</p> 
+          </div>
+          <p>{{ product.description }}</p>
+          <div>
+            <button @click="dispatch('open-product-drawer', { productId: {{ product.id }} })" class='btn btn--black'>{{ section.settings.button_text }}</button>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <div class="text-center">
+        <p>Please select a product</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Product",
+  "tag": "section",
+  "class": "section-featured-product py-10 md:py-20",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "View Product"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_point",
+      "name": "Feature Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Product",
+      "settings": {
+        "padding_top": "md",
+        "padding_bottom": "md",
+        "heading": "Featured Product"
+      },
+      "blocks": [
+        {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Feature Point 1",
+            "text": "Feature Point 1 Text"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

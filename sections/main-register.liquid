@@ -1,0 +1,139 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .color-{{ section.settings.color_scheme }} {
+    --color-primary: {{ section.settings.color_scheme.settings.primary }};
+    --color-contrast: {{ section.settings.color_scheme.settings.contrast }};
+    --color-lines: {{ section.settings.color_scheme.settings.lines }};
+  }
+{% endstyle %}
+
+<div class="color-{{ section.settings.color_scheme }} bg-primary text-contrast min-h-screen">
+  <div class="wrapper pt-48 pb-12 py-8">
+    <div class="grid lg:grid-cols-2 gap-8 login-form">
+      <div>
+        <h2 class="h3 mb-4">{{ 'customer.register.title' | t }}</h2>
+      </div>
+
+      <div>
+        {%- form 'create_customer', novalidate: 'novalidate', class: 'space-y-2' -%}
+          {%- if form.errors -%}
+            <div class="p-4 rounded-sm mb-6 flex items-center gap-2 bg-lines/10 border border-contrast">
+              <span class="svg-wrapper">
+                {{- 'icon-error.svg' | inline_asset_content -}}
+              </span>
+              {{ 'templates.contact.form.error_heading' | t }}
+            </div>
+            {{ form.errors | default_errors }}
+          {%- endif -%}
+          <div class="field">
+           <label for="RegisterForm-FirstName">
+              {{ 'customer.register.first_name' | t }}
+            </label>
+            <input
+              type="text"
+              name="customer[first_name]"
+              id="RegisterForm-FirstName"
+              {% if form.first_name %}
+                value="{{ form.first_name }}"
+              {% endif %}
+              autocomplete="given-name"
+              placeholder="{{ 'customer.register.first_name' | t }}"
+            >
+          </div>
+          <div class="field">
+            <label for="RegisterForm-LastName">
+              {{ 'customer.register.last_name' | t }}
+            </label>
+            <input
+              type="text"
+              name="customer[last_name]"
+              id="RegisterForm-LastName"
+              {% if form.last_name %}
+                value="{{ form.last_name }}"
+              {% endif %}
+              autocomplete="family-name"
+              placeholder="{{ 'customer.register.last_name' | t }}"
+            >
+          </div>
+          <div class="field">
+            <label for="RegisterForm-email">
+              {{ 'customer.register.email' | t }}
+            </label>
+            <input
+              type="email"
+              name="customer[email]"
+              id="RegisterForm-email"
+              {% if form.email %}
+                value="{{ form.email }}"
+              {% endif %}
+              spellcheck="false"
+              autocapitalize="off"
+              autocomplete="email"
+              aria-required="true"
+              {% if form.errors contains 'email' %}
+                aria-invalid="true"
+                aria-describedby="RegisterForm-email-error"
+              {% endif %}
+              placeholder="{{ 'customer.register.email' | t }}"
+            >
+          </div>
+          {%- if form.errors contains 'email' -%}
+            <span id="RegisterForm-email-error" class="form__message">
+              <span class="svg-wrapper">
+                {{- 'icon-error.svg' | inline_asset_content -}}
+              </span>
+              {{ form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email }}.
+            </span>
+          {%- endif -%}
+          <div class="field">
+            <label for="RegisterForm-password">
+              {{ 'customer.register.password' | t }}
+            </label>
+            <input
+              type="password"
+              name="customer[password]"
+              id="RegisterForm-password"
+              aria-required="true"
+              {% if form.errors contains 'password' %}
+                aria-invalid="true"
+                aria-describedby="RegisterForm-password-error"
+              {% endif %}
+              placeholder="{{ 'customer.register.password' | t }}"
+            >
+          </div>
+          {%- if form.errors contains 'password' -%}
+            <span id="RegisterForm-password-error" class="form__message">
+              <span class="svg-wrapper">
+                {{- 'icon-error.svg' | inline_asset_content -}}
+              </span>
+              {{ form.errors.translated_fields.password | capitalize }}
+              {{ form.errors.messages.password }}.
+            </span>
+          {%- endif -%}
+          <button class="btn btn--primary w-full">
+            {{ 'customer.register.submit' | t }}
+          </button>
+          <a href="{{ routes.account_login_url }}" class="btn btn--outline-primary block w-full">
+            {{ 'customer.login_page.sign_in' | t }}
+          </a>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-register.name",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,135 @@
+{% style %}
+  .color-{{ section.settings.color_scheme }} {
+    --color-primary: {{ section.settings.color_scheme.settings.primary }};
+    --color-contrast: {{ section.settings.color_scheme.settings.contrast }};
+    --color-lines: {{ section.settings.color_scheme.settings.lines }};
+  }
+
+  .image-banner-aspect-ratio {
+    aspect-ratio: {{ section.settings.aspect_ratio }};
+  }
+{% endstyle %}
+
+{% liquid
+  assign padding_top = section.settings.padding_top | default: 'md'
+  assign padding_bottom = section.settings.padding_bottom | default: 'md'
+
+  if padding_top == 'none'
+    assign padding_top = 'pt-0'
+  elsif padding_top == 'sm'
+    assign padding_top = 'pt-6'
+  elsif padding_top == 'md'
+    assign padding_top = 'pt-6 lg:pt-12'
+  elsif padding_top == 'lg'
+    assign padding_top = 'pt-12 lg:pt-24'
+  elsif padding_top == 'xl'
+    assign padding_top = 'pt-24 lg:pt-[230px]'
+  endif
+
+  if padding_bottom == 'none'
+    assign padding_bottom = 'pb-0'
+  elsif padding_bottom == 'sm'
+    assign padding_bottom = 'pb-6'
+  elsif padding_bottom == 'md'
+    assign padding_bottom = 'pb-6 lg:pb-12'
+  elsif padding_bottom == 'lg'
+    assign padding_bottom = 'pb-12 lg:pb-24'
+  elsif padding_bottom == 'xl'
+    assign padding_bottom = 'pb-24 lg:pb-[230px]'
+  endif
+%}
+
+<div class='color-{{ section.settings.color_scheme }} bg-primary text-contrast {{ padding_top }} {{ padding_bottom }}'>
+  <div class='wrapper grid lg:grid-cols-8 gap-4 items-start h-full'>
+    <div class='lg:col-span-6 lg:col-start-2'>
+      {% render 'responsive-image', 
+        image: section.settings.image, 
+        wrapper_class: 'w-full image-banner-aspect-ratio relative',
+        image_class: 'object-cover inset-0 w-full h-full'
+      %}
+      <h2 class='font-sans text-sm uppercase text-lines mt-2 leading-none transition-opacity duration-2500 ease-in-out' x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100' : 'opacity-0'">{{ section.settings.title }}</h2>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Image Banner",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Image Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "Color Scheme",
+        "default": "scheme-1"
+      },
+      {
+        "type": "select",
+        "id": "aspect_ratio",
+        "label": "Aspect Ratio",
+        "options": [
+          { "value": "9/16", "label": "Portrait" },
+          { "value": "1/1", "label": "Square" },
+          { "value": "4/3", "label": "Landscape" },
+          { "value": "16/9", "label": "Video" }
+        ],
+        "default": "16/9"
+      },
+      {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Banner",
+        "settings": {
+          "title": "Image Banner",
+          "aspect_ratio": "16/9",
+          "padding_top": "md",
+          "padding_bottom": "md"
+        }
+      }
+    ]
+  }
+{% endschema %}
+

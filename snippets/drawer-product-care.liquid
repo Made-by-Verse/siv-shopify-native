@@ -1,0 +1,8 @@
+<div class="drawer-content">
+ {% for block in blocks %}
+  {% if block.type == 'care-info' %}
+    <h5 class="font-bold">{{ pages[block.settings.care-info-page].title }}</h5>
+    {{ pages[block.settings.care-info-page].content }}
+  {% endif %}
+ {% endfor %}
+</div>

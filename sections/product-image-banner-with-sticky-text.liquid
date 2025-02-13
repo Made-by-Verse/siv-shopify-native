@@ -1,0 +1,45 @@
+{% if product.metafields.custom.banner_featured_image != blank %}
+
+
+
+{% liquid 
+  assign title = section.settings.title | default: product.title
+%}
+
+
+<div class='w-full h-[150vh] relative text-white'>
+  {% render 'responsive-image', image: product.metafields.custom.banner_featured_image, wrapper_class: 'absolute w-full h-full inset-0', image_class: ' h-full w-full inset-0 object-cover' %}
+  <div class='wrapper flex items-start h-full py-4'>
+    <div class='sticky top-16 w-full'>
+      {% assign words = title | split: ' ' %}
+      <div class='h1 flex flex-wrap w-full justify-between transition-opacity duration-2500 ease-in-out' x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100' : 'opacity-0'">
+      {% for word in words %}
+        <span>{{ word }}</span>
+      {% endfor %}
+      </div>
+      <div class='max-w-p mb-4'>
+        {{ section.settings.richtext }}
+      </div>
+      {% if section.settings.button_text != blank %}
+        <a href='{{ section.settings.button_link }}' class='btn btn--outline-contrast inline-flex'>{{ section.settings.button_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Product Sticky Text Image",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      
+    ]
+  }
+{% endschema %}
+

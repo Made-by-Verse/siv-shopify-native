@@ -1,0 +1,113 @@
+{% style %}
+  .color-{{ section.settings.color_scheme }} {
+    --color-primary: {{ section.settings.color_scheme.settings.primary }};
+    --color-contrast: {{ section.settings.color_scheme.settings.contrast }};
+    --color-lines: {{ section.settings.color_scheme.settings.lines }};
+  }
+{% endstyle %}
+
+{% liquid
+  assign padding_top = section.settings.padding_top | default: 'md'
+  assign padding_bottom = section.settings.padding_bottom | default: 'md'
+
+  if padding_top == 'none'
+    assign padding_top = 'pt-0'
+  elsif padding_top == 'sm'
+    assign padding_top = 'pt-6'
+  elsif padding_top == 'md'
+    assign padding_top = 'pt-6 lg:pt-12'
+  elsif padding_top == 'lg'
+    assign padding_top = 'pt-12 lg:pt-24'
+  elsif padding_top == 'xl'
+    assign padding_top = 'pt-24 lg:pt-[160px]'
+  endif
+
+  if padding_bottom == 'none'
+    assign padding_bottom = 'pb-0'
+  elsif padding_bottom == 'sm'
+    assign padding_bottom = 'pb-6'
+  elsif padding_bottom == 'md'
+    assign padding_bottom = 'pb-6 lg:pb-12'
+  elsif padding_bottom == 'lg'
+    assign padding_bottom = 'pb-12 lg:pb-24'
+  elsif padding_bottom == 'xl'
+    assign padding_bottom = 'pb-24 lg:pb-48'
+  endif
+%}
+
+<div class="color-{{ section.settings.color_scheme }} {{ padding_top }} {{ padding_bottom }} wrapper grid lg:grid-cols-8 gap-4">
+  {% if section.settings.text != blank %}
+    <div 
+      x-data="{ shown: false }" 
+      x-intersect:enter="shown = true" 
+      x-intersect:leave="shown = false"
+      :class="shown ? 'opacity-100' : 'opacity-0'" 
+      class="max-w-p-xl lg:col-start-2 lg:col-span-6 lead transition-opacity duration-2500 ease-in-out"
+    >
+      {{ section.settings.text }}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Paragraph",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text content",
+      "default": "<p>Share information about your brand with your customers.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Paragraph",
+      "category": "Text",
+      "settings": {
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
+    }
+  ]
+}
+{% endschema %}

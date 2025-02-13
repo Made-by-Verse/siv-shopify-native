@@ -1,0 +1,197 @@
+{% style %}
+  .color-{{ section.settings.color_scheme }} {
+    --color-primary: {{ section.settings.color_scheme.settings.primary }};
+    --color-contrast: {{ section.settings.color_scheme.settings.contrast }};
+    --color-lines: {{ section.settings.color_scheme.settings.lines }};
+  }
+{% endstyle %}
+
+<div class="color-{{ section.settings.color_scheme }} bg-primary text-contrast min-h-screen">
+  <div class="wrapper pt-48 pb-12 py-8 login-form" x-data="{ activeForm: window.location.hash === '#recover' ? 'recover' : 'login' }">
+    <!-- Recovery Password Section -->
+    <div 
+      id="recover" 
+      class="grid lg:grid-cols-2 gap-8" 
+      x-show="activeForm === 'recover'"
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      tabindex="-1"
+    >
+      <div>
+        <h2 class="h3 mb-4">{{ 'customer.recover_password.title' | t }}</h2>
+        <p class="mb-6">{{ 'customer.recover_password.subtext' | t }}</p>
+      </div>
+
+      <div>
+        {%- form 'recover_customer_password', class: 'space-y-4' -%}
+          {% assign recover_success = form.posted_successfully? %}
+          <div class="field">
+            <label for="RecoverEmail">
+              {{ 'customer.login_page.email' | t }}
+            </label>
+            <input
+              type="email"
+              value=""
+              name="email"
+              id="RecoverEmail"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              {% if form.errors %}
+                aria-invalid="true"
+                aria-describedby="RecoverEmail-email-error"
+                autofocus
+              {% endif %}
+              placeholder="{{ 'customer.login_page.email' | t }}"
+            >
+          </div>
+          {%- if form.errors -%}
+            <small id="RecoverEmail-email-error" class="form__message">
+              <span class="svg-wrapper">
+                {{- 'icon-error.svg' | inline_asset_content -}}
+              </span>
+              {{ form.errors.messages.form }}
+            </small>
+          {%- endif -%}
+
+          <button class="btn btn--primary w-full">
+            {{ 'customer.login_page.submit' | t }}
+          </button>
+
+          <a href="#login" @click="activeForm = 'login'" class="btn btn--outline-primary block w-full">
+            {{ 'customer.login_page.cancel' | t }}
+          </a>
+        {%- endform -%}
+      </div>
+    </div>
+
+    <!-- Login Section -->
+    <div 
+      id="login" 
+      class="grid lg:grid-cols-2 gap-8" 
+      x-show="activeForm === 'login'"
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      tabindex="-1"
+    >
+      <div>
+        <h2 class="h3 mb-4">{{ 'customer.login_page.title' | t }}</h2>
+        
+        {%- if recover_success == true -%}
+          <div class="bg-lines/10 p-4 rounded-sm mb-6 flex items-center gap-2">
+            <span class="svg-wrapper">
+              {{- 'icon-success.svg' | inline_asset_content -}}
+            </span>
+            {{ 'customer.recover_password.success' | t }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div>
+        {%- form 'customer_login', novalidate: 'novalidate', class: 'space-y-4' -%}
+          {%- if form.errors -%}
+            <div class="p-4 rounded-sm mb-6 flex items-center gap-2 bg-lines/10 border border-contrast">
+              <span class="svg-wrapper">
+                {{- 'icon-error.svg' | inline_asset_content -}}
+              </span>
+              {{ 'templates.contact.form.error_heading' | t }}
+            </div>
+            {{ form.errors | default_errors }}
+          {%- endif -%}
+
+          {%- if shop.features.login_with_shop_classic_customer_accounts? -%}
+            <section name="sign-in-with-shop-provider">
+              {{ shop | login_button: hide_button: hide_shop_login_button }}
+
+              {%- unless hide_shop_login_button -%}
+                <p>
+                  {{ 'customer.login_page.alternate_provider_separator' | t }}
+                </p>
+              {%- endunless -%}
+            </section>
+          {%- endif -%}
+
+          <div class="field">
+          <label for="CustomerEmail">
+              {{ 'customer.login_page.email' | t }}
+            </label>
+            <input
+              type="email"
+              name="customer[email]"
+              id="CustomerEmail"
+              autocomplete="email"
+              autocorrect="off"
+              autocapitalize="off"
+              {% if form.errors contains 'form' %}
+                aria-invalid="true"
+              {% endif %}
+              placeholder="{{ 'customer.login_page.email' | t }}"
+            >
+          </div>
+
+          {%- if form.password_needed -%}
+            <div class="field">
+              <label for="CustomerPassword">
+                {{ 'customer.login_page.password' | t }}
+              </label>
+              <input
+                type="password"
+                value=""
+                name="customer[password]"
+                id="CustomerPassword"
+                autocomplete="current-password"
+                {% if form.errors contains 'form' %}
+                  aria-invalid="true"
+                {% endif %}
+                placeholder="{{ 'customer.login_page.password' | t }}"
+              >
+            </div>
+
+            <a href="#recover" @click="activeForm = 'recover'" class="text-sm font-sans">
+              {{ 'customer.login_page.forgot_password' | t }}
+            </a>
+          {%- endif -%}
+
+          <button class="btn btn--primary w-full">
+            {{ 'customer.login_page.sign_in' | t }}
+          </button>
+
+          <a href="{{ routes.account_register_url }}" class="btn btn--outline-primary block w-full">
+            {{ 'customer.login_page.create_account' | t }}
+          </a>
+
+          {%- if shop.checkout.guest_login -%}
+            <div class="mt-8 pt-8 border-t border-contrast">
+              <h2 class="h4 mb-4">{{ 'customer.login_page.guest_title' | t }}</h2>
+
+              {%- form 'guest_login' -%}
+                <button class="btn btn--secondary w-full">
+                  {{ 'customer.login_page.guest_continue' | t }}
+                </button>
+              {%- endform -%}
+            </div>
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Login",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ]
+}
+{% endschema %}

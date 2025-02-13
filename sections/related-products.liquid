@@ -1,0 +1,49 @@
+<div class="color-{{ section.settings.color_scheme }} py-12 md:py-24 lg:py-32 overflow-hidden">
+  <div
+    class="product-recommendations wrapper overflow-visible"
+    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4&intent=related"
+  >
+    <div class='border-t border-contrast'>
+      {% if recommendations.performed and recommendations.products_count > 0 %}
+        <h2 class="font-sans text-base py-4">
+          {{ section.settings.heading }}
+        </h2>
+        <div class="swiper !overflow-visible">
+          <div class="swiper-wrapper overflow-visible">
+            {% for recommendation in recommendations.products %}
+              <div class="swiper-slide">
+                 {% render 'product-card',
+                    product: recommendation,
+                    class_names: 'grid-tile'
+                  %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.related-products.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "You may also like",
+      "label": "Heading"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "scheme-1"
+    }
+  ]
+}
+{% endschema %}

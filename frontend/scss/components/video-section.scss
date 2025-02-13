@@ -1,0 +1,13 @@
+#video-play-button {
+  @apply transition-opacity duration-500;
+
+  &.is-hidden {
+    @apply opacity-0 pointer-events-none;
+  }
+}
+
+[data-video-frame] {
+  video {
+    @apply w-full h-full;
+  }
+}

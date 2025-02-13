@@ -1,0 +1,22 @@
+.btn {
+  @apply rounded-full text-center px-6 py-3 text-sm uppercase font-semibold duration-500;
+  &--black {
+    @apply bg-black text-white;
+  }
+
+  &--tag {
+    @apply border rounded-full border-black p-2 uppercase text-xs;
+  }
+
+  &--lr {
+    @apply rounded-full py-2 px-4 border border-white;
+  }
+
+  &--outline {
+    @apply border border-black text-black;
+  }
+
+  &--white {
+    @apply bg-white text-black;
+  }
+}

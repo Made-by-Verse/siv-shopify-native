@@ -1,0 +1,6 @@
+.related-posts {
+  @apply overflow-hidden;
+  .swiper {
+    @apply overflow-visible;
+  }
+}

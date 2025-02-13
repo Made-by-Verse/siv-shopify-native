@@ -1,0 +1,4 @@
+{% if product.metafields.custom.dimensions_image %}
+  {% render 'responsive-image', image: product.metafields.custom.dimensions_image, wrapper_class: 'w-full aspect-square mb-4 bg-lines flex items-center justify-center', image_class: 'object-contain' %}
+{% endif %}
+{{ product.metafields.custom.specification }} 

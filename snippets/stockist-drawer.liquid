@@ -1,0 +1,82 @@
+{%- form 'contact', id: '265148', class: 'contact-form flex flex-col gap-4 justify-between flex-1' -%}
+<div class="text-sm">
+  <h3 class="h3 mb-4 font-serif normal-case">{{ heading }}</h3>
+  {%- if form.posted_successfully? -%}
+    <div class="bg-green-50 text-green-800 p-4 rounded">
+      {{ 'templates.contact.form_success' | t }}
+    </div>
+  {%- endif -%}
+
+  {%- if form.errors -%}
+    <div class="bg-red-50 text-red-800 p-4 rounded">
+      <h2>{{ 'templates.contact.error_heading' | t }}</h2>
+      {{ form.errors | default_errors }}
+    </div>
+  {%- endif -%}
+  <div>
+    <label for="name" class="sr-only">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="contact[name]"
+      value="{% if form.name %}{{ form.name }}{% endif %}"
+      placeholder="Name*"
+      class="placeholder:uppercase"
+      required
+    >
+  </div>
+
+  <div>
+    <label for="email" class="sr-only">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="contact[email]"
+      value="{% if form.email %}{{ form.email }}{% endif %}"
+      placeholder="Email*"
+      class="placeholder:uppercase"
+      required
+    >
+  </div>
+
+  <div>
+    <label for="interested-in" class="sr-only">Interested in</label>
+    <input
+      type="text"
+      id="interested-in"
+      name="contact[interested-in]"
+      value="{% if form.interested-in %}{{ form.interested-in }}{% endif %}"
+      placeholder="Products that you are interested in"
+      class="placeholder:uppercase"
+    >
+  </div>
+
+  <div>
+    <label for="postcode" class="sr-only">Postcode</label>
+    <input
+      type="text"
+      id="postcode"
+      name="contact[postcode]"
+      value="{% if form.postcode %}{{ form.postcode }}{% endif %}"
+      placeholder="Postcode"
+      class="placeholder:uppercase"
+    >
+  </div>
+
+  <div>
+    <label for="suburb" class="sr-only">Suburb</label>
+    <input
+      type="text"
+      id="suburb"
+      name="contact[suburb]"
+      value="{% if form.suburb %}{{ form.suburb }}{% endif %}"
+      placeholder="Suburb"
+      class="placeholder:uppercase"
+    >
+  </div>
+</div> 
+
+  <button type="submit" class="btn btn--primary w-full">
+    Send Enquiry
+  </button>
+{%- endform -%}

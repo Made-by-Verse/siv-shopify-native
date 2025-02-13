@@ -1,0 +1,18 @@
+<div class="collection-header">
+    <h1 class="h3">
+      {{ collection.title }}
+    </h1>
+    
+    {% if collection.description != blank %}
+      <div class="lg:col-span-2 max-w-p">
+        {{ collection.description }}
+      </div>
+    {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Collection header",
+  "tag": "section",
+}
+{% endschema %}

@@ -1,0 +1,48 @@
+{% comment %}
+  Renders a list of product's price (regular, sale)
+
+  Accepts:
+  - product: {Object} Product Liquid object (optional)
+  - placeholder: {Boolean} Renders a placeholder price (optional)
+  - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
+  - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
+  - price_class: {String} Adds a price class to the price element (optional)
+  - show_compare_at_price: {Boolean} Renders the compare at price if the product matches the condition (optional)
+
+  Usage:
+  {% render 'price', product: product %}
+{% endcomment %}
+{%- liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  elsif placeholder
+    assign target = null
+  else
+    assign target = product
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price
+  assign price_min = product.price_min | default: price
+  assign price_max = product.price_max | default: price
+  assign available = target.available | default: false
+  assign money_price = price | money
+  assign money_price_min = price_min | money
+  assign money_price_max = price_max | money
+-%}
+
+{%- unless target == null and placeholder == null -%}
+  <div class="flex gap-2 items-center">
+    {%- if compare_at_price -%}
+      <span class="text-gray-500 line-through">{{ compare_at_price }}</span>
+    {%- endif -%}
+    <span class="wsgProdPrice uppercase">
+      {%- if product.price_varies -%}
+        <span class="text-xs">from</span> {{ money_price_min }}
+      {%- else -%}
+        {{ money_price }}
+      {%- endif -%}
+    </span>
+  </div>
+{% endunless %}
+

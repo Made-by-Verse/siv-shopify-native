@@ -1,0 +1,86 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "dealer-account",
+      "settings": {
+        "cta_text_1": "Account Info",
+        "cta_link_1": "https://shopify.com/72961130776/account/profile",
+        "cta_link_1_newtab": false,
+        "cta_text_2": "Past Orders",
+        "cta_link_2": "https://shopify.com/72961130776/account/orders",
+        "cta_link_2_newtab": false,
+        "cta_text_3": "",
+        "cta_link_3": "",
+        "cta_link_3_newtab": false,
+        "image": "shopify://shop_images/JAMES_STEWART_CATALOGUE_COVER_SQR.jpg",
+        "title": "Our Style Catalogue",
+        "text": "",
+        "button_text": "Download now",
+        "button_url": "https://cdn.shopify.com/s/files/1/0729/6113/0776/files/JAMES_STEWART_COLLECTION_2025.pdf?v=1738028566"
+      }
+    },
+    "collections_grid": {
+      "type": "section-collections-grid",
+      "blocks": {
+        "collection_block_1": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "accent-seating"
+          }
+        },
+        "collection_block_2": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "sofas"
+          }
+        },
+        "collection_block_3": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "alboo-outdoor"
+          }
+        },
+        "collection_block_4": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "living-room"
+          }
+        },
+        "collection_block_5": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "executive-seating"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_1",
+        "collection_block_2",
+        "collection_block_3",
+        "collection_block_4",
+        "collection_block_5"
+      ],
+      "settings": {
+        "all_collections_link_text": "Order Now",
+        "button_text": "View All",
+        "button_link": "",
+        "color_scheme": "",
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "collections_grid"
+  ]
+}

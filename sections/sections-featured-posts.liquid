@@ -1,0 +1,44 @@
+{% assign posts = blog.articles | sort: 'created_at' | reverse | slice: 0, 3 %}
+
+<div class='wrapper overflow-visible'>
+  <div className="flex flex-col md:flex-row gap-4 h-full justify-between md:items-end pb-6">
+    <div className="flex flex-col md:flex-row md:items-end gap-4">
+      <h2 class='h2'>{{ section.settings.title }}</h2>
+      <p class='max-w-xs'>{{ section.settings.text }}</p>
+    </div>
+    <div>
+      <a href="{{ window.shopUrl }}/blogs/{{ blog.handle }}" class="btn btn--white">{{ section.settings.button_text }}</a>
+    </div>
+  </div>
+  <div class='swiper'>
+    <div class='swiper-wrapper'>
+      {% for post in posts %}
+        <div class='swiper-slide'>
+          <div class='related-post'>
+            <h3 class='h3'>{{ post.title }}</h3>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Featured Posts",
+    "tag": "section",
+    "class": "section-featured-posts",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      }
+    ]
+  }
+{% endschema %}

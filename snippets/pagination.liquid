@@ -1,0 +1,42 @@
+{% comment %}
+  Renders a set of links for paginated results. Must be used within paginate tags.
+
+  Usage:
+  {% paginate results by 2 %}
+    {% render 'pagination', paginate: paginate, anchor: '#yourID' %}
+  {% endpaginate %}
+
+  Accepts:
+  - paginate: {Object}
+  - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
+{% endcomment %}
+
+{%- if paginate.parts.size > 0 -%}
+  <div class="wrapper">
+    <nav role="navigation" class='flex justify-between items-center' aria-label="{{ 'general.pagination.label' | t }}">
+      <a
+        href="{{ paginate.previous.url }}{{ anchor }}"
+        class="btn btn--outline-primary flex {% unless paginate.previous.is_link %}invisible{% endunless %}"
+        {% unless paginate.previous.is_link %}disabled{% endunless %}
+        aria-label="{{ 'general.pagination.previous' | t }}"
+      >
+        previous
+      </a>
+
+      <div class="flex items-center">
+        <span class="pagination__item btn">
+          Page {{ paginate.current_page }} of {{ paginate.pages }}
+        </span>
+      </div>
+
+      <a
+        href="{{ paginate.next.url }}{{ anchor }}"
+        class="btn btn--outline-primary flex {% unless paginate.next.is_link %}invisible{% endunless %}"
+        {% unless paginate.next.is_link %}disabled{% endunless %}
+        aria-label="{{ 'general.pagination.next' | t }}"
+      >
+        next
+      </a>
+    </nav>
+  </div>
+{%- endif -%}

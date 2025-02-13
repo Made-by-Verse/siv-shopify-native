@@ -1,0 +1,226 @@
+{% style %}
+  .color-{{ section.settings.color_scheme }} {
+    --color-primary: {{ section.settings.color_scheme.settings.primary }};
+    --color-contrast: {{ section.settings.color_scheme.settings.contrast }};
+    --color-lines: {{ section.settings.color_scheme.settings.lines }};
+  }
+{% endstyle %}
+
+{% liquid
+  assign padding_top = section.settings.padding_top | default: 'md'
+  assign padding_bottom = section.settings.padding_bottom | default: 'md'
+
+  if padding_top == 'none'
+    assign padding_top = 'pt-0'
+  elsif padding_top == 'sm'
+    assign padding_top = 'pt-6'
+  elsif padding_top == 'md'
+    assign padding_top = 'pt-6 lg:pt-12'
+  elsif padding_top == 'lg'
+    assign padding_top = 'pt-12 lg:pt-24'
+  elsif padding_top == 'xl'
+    assign padding_top = 'pt-24 lg:pt-48'
+  endif
+
+  if padding_bottom == 'none'
+    assign padding_bottom = 'pb-0'
+  elsif padding_bottom == 'sm'
+    assign padding_bottom = 'pb-6'
+  elsif padding_bottom == 'md'
+    assign padding_bottom = 'pb-6 lg:pb-12'
+  elsif padding_bottom == 'lg'
+    assign padding_bottom = 'pb-12 lg:pb-24'
+  elsif padding_bottom == 'xl'
+    assign padding_bottom = 'pb-24 lg:pb-48'
+  endif
+%}
+
+<div class='color-{{section.settings.color_scheme}} bg-primary text-contrast {{ padding_top }} {{ padding_bottom }}'>
+  <div 
+    class="wrapper grid md:grid-cols-2 gap-8 items-start process-wrapper"
+    x-data="process"
+    x-ref="processWrapper"
+  >
+    <div class="sticky top-20 space-y-4 {% if section.settings.left-image %}flex flex-col items-end max-w-lg{% endif %} w-full ">
+      {% if section.settings.left-image %}
+        {% render 'responsive-image' with
+          image: section.settings.left-image,
+          wrapper_class: "aspect-landscape w-full relative",
+          image_class: "absolute inset-0 object-cover w-full h-full",
+          size: '1000x1000',
+          width: 1000,
+          height: 1000
+        %}
+      {% endif %}
+      <div 
+        x-ref="contentContainer"
+        class="relative w-full {% if section.settings.left-image %}max-w-p{% endif %}"
+      >
+        {% for block in section.blocks %}
+          {% case block.type %}
+          {% when 'process-step' %}
+            {% if block.settings.step-text %}
+              <div 
+                class="process-text md:absolute inset-0 transition-opacity duration-1000 {% unless section.settings.left-image %}grid lg:grid-cols-4 gap-4 w-full{% endunless %} {% if section.settings.left-image %}space-y-4 lg:space-y-0{% endif %}"
+                :class="showImage({{ forloop.index0 }}) ? 'opacity-100' : 'md:opacity-0'"
+              >
+                {% render 'responsive-image' with
+                  image: block.settings.step-image,
+                  wrapper_class: "aspect-portrait w-full relative md:hidden",
+                  image_class: "absolute inset-0 object-cover w-full h-full",
+                  size: '1000x1000',
+                  width: 1000,
+                  height: 1000
+                %}
+                {% unless section.settings.left-image %}
+                  <h2 class="link !text-base">{{ block.settings.heading }}</h2>
+                {% endunless %}
+                <div class="{% unless section.settings.left-image %}lg:col-span-3 max-w-p{% endunless %} lg:pb-6">
+                  {{ block.settings.step-text }}
+                </div>
+                  <div class="flex gap-4 items-start">
+                    {% if block.settings.button_1_url %}
+                      <a href="{{ block.settings.button_1_url }}" class="btn btn--outline-primary">{{ block.settings.button_1_text }}</a>
+                    {% endif %}
+                    {% if block.settings.button_2_url %}
+                      <a href="{{ block.settings.button_2_url }}" class="btn btn--outline-primary">{{ block.settings.button_2_text }}</a>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="hidden space-y-4 md:block w-full relative overflow-hidden">
+      {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'process-step' %}
+          <div
+            x-cloak
+            class="scroll-mt-20"
+          >
+            {% render 'responsive-image' with
+              image: block.settings.step-image,
+              wrapper_class: "aspect-portrait w-full relative",
+              image_class: "absolute inset-0 object-cover w-full h-full",
+              size: '1000x1000',
+              width: 1000,
+              height: 1000
+            %}
+          </div>
+        {% endcase %}
+      {% endfor %}
+      {% else %}
+        <div class="placeholder-image aspect-portrait relative">
+          {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Process",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "left-image",
+      "label": "Left Image"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "process-step",
+      "name": "Process Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "step-image",
+          "label": "Step Image"
+        },
+        {
+          "type": "richtext",
+          "id": "step-text",
+          "label": "Step Text"
+        },
+        {
+          "type": "url",
+          "id": "button_1_url",
+          "label": "Button 1 URL"
+        },
+        {
+          "type": "text",
+          "id": "button_1_text",
+          "label": "Button 1 Text"
+        },
+        {
+          "type": "url",
+          "id": "button_2_url",
+          "label": "Button 2 URL"
+        },
+        {
+          "type": "text",
+          "id": "button_2_text",
+          "label": "Button 2 Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Process",
+      "settings": {
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
+    }
+  ]
+}
+{% endschema %}

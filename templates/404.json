@@ -1,0 +1,55 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "blocks": {
+        "link-1": {
+          "type": "link",
+          "settings": {
+            "label": "View All",
+            "url": "shopify://collections/all",
+            "image": "shopify://shop_images/Rectangle_619.png"
+          }
+        },
+        "link-2": {
+          "type": "link",
+          "settings": {
+            "label": "Our Story",
+            "url": "shopify://pages/craft-innovation",
+            "image": "shopify://shop_images/STYLE_7198-03_ARLIE235_CMW1304CORK_TOBYSCOTT_01.jpg"
+          }
+        },
+        "link-3": {
+          "type": "link",
+          "settings": {
+            "label": "Contact",
+            "url": "/contact",
+            "image": "shopify://shop_images/B_W_FACTORYSHOTS_WORKGROUP_02.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "link-1",
+        "link-2",
+        "link-3"
+      ],
+      "settings": {
+        "title": "Error",
+        "richtext": "<p>Oops! Page Not Found. </p><p>Take me back to the <a href=\"https://jamesstewart.com.au/\" title=\"https://jamesstewart.com.au/\">homepage.</a></p>",
+        "color_scheme": "scheme-fb547323-c0cb-4a49-a864-c809f1149213"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

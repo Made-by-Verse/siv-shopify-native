@@ -1,0 +1,35 @@
+.contact-form {
+  @apply font-sans text-contrast;
+
+  input:not([type="radio"]),
+  textarea {
+    @apply bg-transparent border-b border-gray-200 py-4 w-full placeholder:text-contrast focus:ring-0 appearance-none;
+  }
+
+  input[type="radio"] {
+    @apply appearance-none w-4 h-4 rounded border border-gray-200;
+  }
+}
+
+.login-form {
+  input {
+    @apply bg-transparent rounded border border-contrast  p-4 w-full placeholder:text-gray-500 focus:ring-0 appearance-none;
+  }
+}
+
+input {
+  @apply focus:outline-none;
+}
+
+/* For Chrome/Safari/Edge */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  background: #fff;
+  /* Add custom styling here */
+}
+
+/* For Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

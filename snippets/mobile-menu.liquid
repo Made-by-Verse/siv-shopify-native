@@ -1,0 +1,97 @@
+{% liquid 
+  assign menu_trade = linklists[settings.menu_trade].links
+  assign menu_public = linklists[settings.menu_public].links
+  assign menu_logged_out = linklists[settings.menu_logged_out].links
+
+  if customer
+    assign menu = menu_trade
+  else
+    assign menu = menu_public
+  endif
+%}
+
+<div class="top-0 fixed z-[9999]" x-data="{ menuOpen: false }" @toggle-menu-drawer.window="menuOpen = !menuOpen; $dispatch('toggle-lenis', { enabled: !menuOpen })" @keydown.escape.window="menuOpen = false; $dispatch('toggle-lenis', { enabled: true })">
+    <div
+      x-cloak
+      x-show="menuOpen"
+      class="drawer-backdrop"
+      @click="menuOpen = false; $dispatch('toggle-lenis', { enabled: true });" 
+      x-transition:enter-start="opacity-0" 
+      x-transition:enter-end="opacity-100"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+    ></div>
+
+    <div
+      x-cloak
+      x-show="menuOpen"
+      x-transition:enter="transform transition ease-in-out duration-500"
+      x-transition:enter-start="-translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transform transition ease-in-out duration-500"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="-translate-x-full"
+      class="fixed left-0 top-0 h-full w-full max-w-[446px] bg-primary text-contrast"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="p-4 h-full">
+        <div class="flex justify-between items-center">
+          <h2 class="link">Menu</h2>
+          <button @click="$dispatch('toggle-menu-drawer')" class="">&times;</button>
+        </div>
+        <div class="h-full flex flex-col justify-between w-full">
+          <nav class="py-8" x-data="{ activeItem: null }">
+            {%- for link in menu -%}
+              <div class="border-b">
+                {% assign linkId = link.title | handleize %}
+                
+                <div class="flex items-center justify-between w-full py-2">
+                  {%- if link.links.size > 0 -%}
+                    <button 
+                      class="w-full text-left flex justify-between items-center link"
+                      x-on:click="activeItem = activeItem === '{{ linkId }}' ? null : '{{ linkId }}'"
+                    >
+                      {{ link.title }}
+                      <span class='text-contrast w-3 block transform transition-transform duration-500' :class="activeItem === '{{ linkId }}' ? 'rotate-180' : 'rotate-0'">{{ 'icon-down-arrow.svg' | inline_asset_content }}</span>
+                    </button>
+                  {%- else -%}
+                    <a href="{{ link.url }}" class="w-full link">{{ link.title }}</a>
+                  {%- endif -%}
+                </div>
+
+                {%- if link.links.size > 0 -%}
+                  <div 
+                    x-show="activeItem === '{{ linkId }}'" 
+                    x-cloak
+                    x-transition:enter="transition-[opacity,transform] duration-300 ease-out"
+                    x-transition:enter-start="opacity-0 -translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition-[opacity,transform] duration-200 ease-in"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 -translate-y-2"
+                    class="pl-4"
+                  >
+                    {%- for childlink in link.links -%}
+                      <div class="py-2">
+                        {%- if childlink.links.size > 0 -%}
+                          <div class="font-medium link">{{ childlink.title }}</div>
+                          <div class="pl-4">
+                            {%- for grandchild in childlink.links -%}
+                              <a href="{{ grandchild.url }}" class="block py-2 link">{{ grandchild.title }}</a>
+                            {%- endfor -%}
+                          </div>
+                        {%- else -%}
+                          <a href="{{ childlink.url }}" class="block link">{{ childlink.title }}</a>
+                        {%- endif -%}
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>

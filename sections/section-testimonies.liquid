@@ -1,0 +1,141 @@
+<div class="wrapper grid md:grid-cols-2 md:grid-rows-2 gap-8">
+  <div class="flex flex-col justify-between gap-4">
+    <div class="flex flex-col max-w-md items-start gap-4">
+      <h2 class="max-w-xl transition-opacity duration-2500 ease-in-out" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100' : 'opacity-0'">{{ section.settings.heading }}</h2>
+    </div>
+  </div>
+  <div class="md:row-span-2 flex">
+    <div class="relative w-full md:max-w-md ml-auto">
+      <div class="relative">
+        <div
+          class="testimonies-swiper-image-after overflow-hidden aspect-[3/4] bg-black rounded-lg"
+        >
+          <div class="swiper-wrapper">
+            {% for testimony in section.blocks %}
+              <div class="swiper-slide">
+                {% render 'responsive-image', image: testimony.settings.after_image, wrapper_class: 'aspect-[3/4] relative overflow-hidden', image_class: 'absolute object-cover inset-0 w-full h-full' %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="absolute top-4 left-4 z-30">
+          <div x-data="{ enlargeImage: false }" class="relative mb-1">
+            <div
+              class="testimonies-swiper-image-before aspect-[3/4] rounded overflow-hidden transition-all duration-500"
+              :class="enlargeImage ? 'w-40 md:w-56' : 'w-24'"
+            >
+              <div class="swiper-wrapper">
+                {% for testimony in section.blocks %}
+                  <div class="swiper-slide">
+                    {% render 'responsive-image', image: testimony.settings.before_image, wrapper_class: 'aspect-[3/4] relative overflow-hidden', image_class: 'absolute object-cover inset-0 w-full h-full' %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+            <button
+              @click="enlargeImage = !enlargeImage"
+              class="absolute bottom-2 right-2 z-10 rounded-full bg-white/20 p-2"
+            >
+              <span class="block w-4 h-4 transform transition-transform duration-500 text-white" :class="enlargeImage ? 'rotate-45' : 'rotate-0'">
+                {{- 'icon-close.svg' | inline_asset_content -}}
+              </span>
+            </button>
+          </div>
+          <span class="relative text-white uppercase text-sm font-medium tracking-wide mb-0">
+            Before
+          </span>
+        </div>
+        <div class="flex inset-x-0 bottom-0 p-4 z-20 absolute justify-between items-end">
+          <span class="text-white uppercase text-sm font-medium tracking-wide">
+            After
+          </span>
+          <div class="flex gap-2 z-10">
+            <button class="swiper-button-prev cursor-pointer">
+              {% comment %} <Image
+                src={'/swiper-arrow.svg'}
+                alt="swiper-arrow"
+                width={56}
+                height={56}
+                class="opacity-50 hover:opacity-100 duration-500"
+              ></Image> {% endcomment %}
+            </button>
+            <button class="swiper-button-next cursor-pointer">
+              {% comment %} <Image
+                src={'/swiper-arrow.svg'}
+                alt="swiper-arrow"
+                width={56}
+                height={56}
+                class="transform rotate-180 opacity-50 hover:opacity-100 duration-500"
+              ></Image> {% endcomment %}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex items-end">
+    <div class="testimonies-swiper-text mx-0 w-full">
+      <div class="swiper-wrapper">
+        {% for testimony in section.blocks %}
+          <div class="swiper-slide">
+            <div class="w-full bg-bg flex items-end h-auto">
+              <div class="max-w-lg flex flex-col items-start justify-end gap-4 h-full">
+                <div class="mb-2"></div>
+                <p class="lead">{{testimony.settings.quote}}</p>
+                <span class="font-medium tracking-wide uppercase">
+                  After {{testimony.settings.treatment_duration}} days
+                </span>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>  
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Testimonies",
+    "tag": "section",
+    "class": "section-testimonies",
+    "disabled_on": {
+      "groups": ["header"]
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "testimony",
+        "name": "Testimony",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "before_image",
+            "label": "Before Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "after_image",
+            "label": "After Image"
+          },
+          {
+            "type": "text",
+            "id": "quote",
+            "label": "Quote"
+          },
+          {
+            "type": "number",
+            "id": "treatment_duration",
+            "label": "Treatment Duration (days)"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

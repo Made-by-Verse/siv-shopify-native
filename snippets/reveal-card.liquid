@@ -1,0 +1,7 @@
+<div @mouseEnter="hover = true" @mouseLeave="hover = false" class="group reveal-card aspect-card w-56 md:w-72 lg:w-96 overflow-hidden absolute flex flex-col justify-end rounded-xl" x-data="{ hover: false }" :style="isInView ? getStyle({{index}}, true) : getStyle({{index}})" :class="hover ? 'z-10' : 'z-0'">
+  {% render 'responsive-image', image: card.settings.image, wrapper_class: 'absolute inset-0 w-full h-full', image_class: 'w-full h-full object-cover' %}
+  <div class="relative p-4 md:p-6 bg-gradient-to-t from-black/50 duration-500 transition-opacity" :class="hover ? 'opacity-100' : 'opacity-0'">
+    <h3 class="h3">{{card.settings.heading}}</h3>
+    <p class="lead">{{card.settings.text}}</p>
+  </div>
+</div>

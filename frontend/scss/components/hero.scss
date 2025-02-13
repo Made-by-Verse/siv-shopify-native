@@ -1,0 +1,15 @@
+.home-hero {
+  height: calc(100vh - var(--header-height));
+
+  position: relative;
+
+  @apply py-8;
+
+  .wrapper {
+    @apply relative text-white flex flex-col justify-between h-full z-10;
+  }
+
+  .featured-product {
+    @apply lg:flex hidden rounded-xl overflow-hidden w-full max-w-xl text-contrast;
+  }
+}

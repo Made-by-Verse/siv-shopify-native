@@ -1,0 +1,15 @@
+.placeholder-image {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  svg {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.hero-placeholder {
+  position: absolute;
+}

@@ -1,0 +1,46 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_two_column_content_ALEkY3": {
+      "type": "section-two-column-content",
+      "blocks": {
+        "text_beside_AXtnXL": {
+          "type": "text_beside",
+          "settings": {
+            "heading": "TRADE SUPPORT",
+            "text": "<p>For designers, retailers and developers, our trade portal provides full access to our catalogue and pricing, offering a simple way to place and track orders.</p><p>We offer an exceptional trade service, collaborating with designers and boutique retail studios to deliver quality, Australian-designed furniture for discerning clients. </p><p>Our team supports your projects with design and specification support, and project customisation, while overseeing every step of your order to ensure timely and accurate deliveries.</p>",
+            "button_text": "Apply for a trade account",
+            "button_link": "shopify://pages/wholesale-registration-form"
+          }
+        },
+        "image_block_adKqgP": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Styled_-_Miss_P_-_Angelina_Syrup_d757c26a-9ae6-432b-97b5-4cf82e37aa10.png",
+            "aspect_ratio": "portrait"
+          }
+        }
+      },
+      "block_order": [
+        "text_beside_AXtnXL",
+        "image_block_adKqgP"
+      ],
+      "settings": {
+        "color_scheme": "scheme-fb547323-c0cb-4a49-a864-c809f1149213",
+        "padding_top": "lg",
+        "padding_bottom": "md"
+      }
+    }
+  },
+  "order": [
+    "section_two_column_content_ALEkY3"
+  ]
+}

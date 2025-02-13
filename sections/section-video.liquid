@@ -1,0 +1,159 @@
+{% liquid
+  assign padding_top = section.settings.padding_top | default: 'md'
+  assign padding_bottom = section.settings.padding_bottom | default: 'md'
+
+  if padding_top == 'none'
+    assign padding_top = 'pt-0'
+  elsif padding_top == 'sm'
+    assign padding_top = 'pt-6'
+  elsif padding_top == 'md'
+    assign padding_top = 'pt-6 lg:pt-12'
+  elsif padding_top == 'lg'
+    assign padding_top = 'pt-12 lg:pt-24'
+  elsif padding_top == 'xl'
+    assign padding_top = 'pt-24 lg:pt-48'
+  endif
+
+  if padding_bottom == 'none'
+    assign padding_bottom = 'pb-0'
+  elsif padding_bottom == 'sm'
+    assign padding_bottom = 'pb-6'
+  elsif padding_bottom == 'md'
+    assign padding_bottom = 'pb-6 lg:pb-12'
+  elsif padding_bottom == 'lg'
+    assign padding_bottom = 'pb-12 lg:pb-24'
+  elsif padding_bottom == 'xl'
+    assign padding_bottom = 'pb-24 lg:pb-48'
+  endif
+%}
+
+<div class="relative {{ padding_top }} {{ padding_bottom }}">
+  <div 
+    class="wrapper grid lg:grid-cols-8 gap-4" 
+  >
+    {%- unless section.settings.heading == blank -%}
+      <h2 class='font-sans transition-opacity duration-2500 ease-in-out' x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100' : 'opacity-0'">{{ section.settings.heading }}</h2>
+    {%- endunless -%}
+    {% if section.settings.text != blank %}
+      <div class='max-w-p mb-12 lg:col-span-4'>{{ section.settings.text }}</div>
+    {% endif %}
+  </div>
+  <div class='relative' data-video-container>
+      <button
+        id="video-play-button"
+        aria-label="{{ alt }}"
+        class="w-full aspect-video absolute inset-0 flex items-center justify-center transform transition-transform duration-500 z-10"
+        data-video-button
+      >
+      {%- if section.settings.cover_image != blank -%}
+        {% render 'responsive-image', image: section.settings.cover_image, width: 1100, height: 600, wrapper_class: 'w-full aspect-video relative', image_class: 'object-cover absolute inset-0 w-full h-full' %}
+      {%- else -%}
+        {{ 'hero-apparel-3' | placeholder_svg_tag: '' }}
+      {%- endif -%}
+      <span class='sr-only'>Play Video</span>
+      <svg class='absolute' width="94" height="94" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="47.0016" cy="46.9977" r="46.4" fill="#FAF8EC"/>
+        <path d="M59.002 45.3973L42.202 55.0967L42.202 35.6978L59.002 45.3973Z" fill="#A39B91"/>
+      </svg>
+    </button>
+    {%- if section.settings.video == null and section.settings.video_url != null -%}
+      {%- if section.settings.video_url.type == 'youtube' -%}
+        <iframe
+          data-video-frame
+          src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          title="{{ section.settings.description | escape }}"
+          class="w-full aspect-video transform transition-transform duration-500"
+        ></iframe>
+      {%- else -%}
+        <iframe
+          src="https://player.vimeo.com/video/{{ video_id }}"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          title="{{ section.settings.description | escape }}"
+          class="w-full aspect-video"
+        ></iframe>
+      {%- endif -%}
+    {%- else -%}
+      <div data-video-frame>
+        {{
+          section.settings.video
+          | video_tag:
+            image_size: '1100x',
+            autoplay: false,
+            loop: section.settings.enable_video_looping,
+            controls: true,
+            muted: false
+        }}
+      </div>
+    {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.video.name",
+  "tag": "section",
+  "class": "section section-video",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "t:sections.video.settings.video.label"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "accept": ["youtube", "vimeo"],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "label": "t:sections.video.settings.video_url.label",
+      "info": "t:sections.video.settings.video_url.info"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_image",
+      "label": "t:sections.video.settings.cover_image.label"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video",
+      "settings": {
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
+    }
+  ]
+}
+{% endschema %}

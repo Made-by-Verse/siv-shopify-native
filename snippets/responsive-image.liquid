@@ -1,0 +1,17 @@
+{% liquid 
+
+    assign imgWidth = nil 
+    if width != '' 
+        assign imgWidth = width 
+    endif 
+    assign imgHeight = nil 
+    if height != '' 
+        assign imgHeight = height 
+    endif
+%}
+
+<div class="overflow-hidden {{ wrapper_class }}" {{ wrapper_attributes }}>
+    
+    {{ image | image_url: width: imgWidth, height: imgHeight | image_tag: class: image_class, alt: alt, loading: 'lazy' }}
+
+</div>

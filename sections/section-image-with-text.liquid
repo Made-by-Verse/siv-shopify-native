@@ -1,0 +1,182 @@
+{%- style -%}
+  .color-{{ section.settings.section_color_scheme }} {
+    --color-primary: {{ section.settings.section_color_scheme.settings.primary }};
+    --color-contrast: {{ section.settings.section_color_scheme.settings.contrast }};
+    --color-lines: {{ section.settings.section_color_scheme.settings.lines }};
+  }
+
+  .image-with-text__image {
+    aspect-ratio: {{ section.settings.aspect_ratio }};
+    max-width: {{ section.settings.image_width }};
+  }
+{%- endstyle -%}
+
+{% liquid
+  assign padding_top = section.settings.padding_top | default: 'md'
+  assign padding_bottom = section.settings.padding_bottom | default: 'md'
+
+  if padding_top == 'none'
+    assign padding_top = 'pt-0'
+  elsif padding_top == 'sm'
+    assign padding_top = 'pt-6'
+  elsif padding_top == 'md'
+    assign padding_top = 'pt-6 lg:pt-12'
+  elsif padding_top == 'lg'
+    assign padding_top = 'pt-12 lg:pt-[80px]'
+  elsif padding_top == 'xl'
+    assign padding_top = 'pt-24 lg:pt-[160px]'
+  endif
+
+  if padding_bottom == 'none'
+    assign padding_bottom = 'pb-0'
+  elsif padding_bottom == 'sm'
+    assign padding_bottom = 'pb-6'
+  elsif padding_bottom == 'md'
+    assign padding_bottom = 'pb-6 lg:pb-12'
+  elsif padding_bottom == 'lg'
+    assign padding_bottom = 'pb-12 lg:pb-[80px]'
+  elsif padding_bottom == 'xl'
+    assign padding_bottom = 'pb-24 lg:pb-[160px]'
+  endif
+%}
+
+<div class="color-{{ section.settings.section_color_scheme }} bg-primary text-contrast {{ padding_top }} {{ padding_bottom }}">
+  <div class="wrapper flex flex-col items-center gap-8 lg:gap-12 text-center">
+    {% if section.settings.title %}
+      <h2 class="h2 transition-opacity duration-2500 ease-in-out" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100' : 'opacity-0'">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.image %}
+      {% render 'responsive-image' with
+        image: section.settings.image,
+        wrapper_class: "relative w-full image-with-text__image",
+        image_class: "object-cover absolute inset-0 w-full h-full",
+        size: '1000x1000',
+        width: 1000,
+        height: 1000
+      %}
+    {% endif %}
+    {% if section.settings.text %}
+      <div class="richtext max-w-p-lg">{{ section.settings.text }}</div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.image-with-text.name",
+  "class": "section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Image with Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "options": [
+        {
+          "value": "3/4",
+          "label": "Portrait"
+        },
+        {
+          "value": "1/1",
+          "label": "Square"
+        },
+        {
+          "value": "4/3",
+          "label": "Landscape"
+        },
+        {
+          "value": "16/9",
+          "label": "Video"
+        }
+      ],
+      "default": "4/3",
+      "label": "Aspect ratio"
+    },
+    {
+      "type": "select",
+      "id": "image_width",
+      "options": [
+        {
+          "value": "320px",
+          "label": "Small"
+        },
+        {
+          "value": "448px",
+          "label": "Medium"
+        },
+        {
+          "value": "576px",
+          "label": "Large"
+        }
+      ],
+      "default": "448px",
+      "label": "Image width",
+      "info": "The maximum width of the image"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Pair text with an image to tell a story, explain a product feature, or describe your brand's mission. Use compelling visuals and clear, concise text to engage your audience.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" },
+        { "value": "xl", "label": "XLarge" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "title": "Image with text",
+        "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
+    }
+  ]
+}
+{% endschema %}

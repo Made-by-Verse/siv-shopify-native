@@ -1,0 +1,68 @@
+<div x-data="cardReveal" class="wrapper flex flex-col items-center">
+  <div class="w-full max-w-lg text-center">
+    <h2 class="h2">{{ section.settings.heading }}</h2>
+  </div>
+
+  <div
+    x-intersect.half:enter="isInView = true"
+    x-intersect.half:leave="isInView = false"
+    class="relative aspect-card mt-20 mb-24 md:mb-32 card-wrapper w-56 md:w-72 lg:w-96"
+  >
+    {% for card in section.blocks %}
+      {% render 'reveal-card', card: card, index: forloop.index0 %}
+    {% endfor %}
+  </div>
+  <div class="max-w-sm text-center">
+   {{section.settings.text}}
+    <div class="mt-4">
+      {% comment %} <Button {...button} /> {% endcomment %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Card Reveal",
+    "tag": "section",
+    "class": "section-card-reveal my-10 md:my-20",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 5
+  }
+{% endschema %}

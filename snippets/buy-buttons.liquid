@@ -1,0 +1,40 @@
+{% comment %}
+  Renders product buy-buttons.
+  Accepts:
+  - product: {Object} product object.
+  - selectedVariant: {String} id of the selected variant.
+
+  Usage:
+  {% render 'buy-buttons', product: product, selectedVariant: selectedVariant %}
+{% endcomment %}
+<div class="w-full">
+  {%- if product != blank -%}
+    <div>
+      <p class='text-red-500 text-center mb-2 font-sans' x-data="{message: ''}" x-show="message != ''" x-text='message' @cart:error.window="message = event.detail.message" @cart:adding.window="message = ''"
+        @cart:added.window="message = ''"></p>
+      <button
+        type="button"
+        class="btn btn--primary w-full relative buy-button"
+        x-data="{ loading: false }"
+        @cart:adding.window="loading = true"
+        @cart:added.window="loading = false"
+        @cart:error.window="loading = false"
+        @click="$store.cart.addToCart(selectedVariant)"
+        :disabled="!selectedVariant || loading"
+      >
+        <span 
+          x-text="selectedVariant ? '{{ 'products.product.add_to_cart' | t }}' : '{{ 'products.product.select_option' | t }}'"
+          :class="{ 'opacity-0': loading }"
+        >
+          {{ 'products.product.select_option' | t }}
+        </span>
+        <div 
+          class="absolute inset-0 flex items-center justify-center"
+          x-show="loading"
+        >
+          {%- render 'loading-spinner' -%}
+        </div>
+      </button>
+    </div>
+  {%- endif -%}
+</div>

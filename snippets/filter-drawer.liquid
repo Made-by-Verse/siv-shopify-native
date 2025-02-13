@@ -1,0 +1,43 @@
+<div
+  x-data="{ filtersOpen: false }"
+  class='z-[9999] relative'
+  @toggle-filter-drawer.window="filtersOpen = !filtersOpen"
+  @keydown.escape.window="filtersOpen = false"
+>
+  <!-- Backdrop -->
+  <div 
+    x-show="filtersOpen"
+    class="drawer-backdrop"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    @click="filtersOpen = false; $dispatch('toggle-lenis', { enabled: true })"
+    x-cloak
+  ></div>
+
+  <!-- Drawer -->
+  <div
+    x-cloak
+    x-show="filtersOpen"
+    x-transition:enter="transform transition ease-in-out duration-500"
+    x-transition:enter-start="-translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transform transition ease-in-out duration-500"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="-translate-x-full"
+    class="fixed left-0 top-0 h-full max-w-lg w-full bg-primary text-contrast"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="p-4 h-full flex flex-col w-full">
+      <div class="flex justify-between items-center">
+        <h2 class="font-sans">Filters</h2>
+        <button @click="filtersOpen = false; $dispatch('toggle-lenis', { enabled: true })" class="">&times;</button>
+      </div>
+      <div class="mt-24 flex flex-col justify-between w-full flex-1 overflow-hidden">
+        {% render 'facets', results: collection, pre paginate: paginate %}
+      </div>
+    </div>
+  </div>
+</div>

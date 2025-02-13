@@ -1,0 +1,42 @@
+body {
+  @apply font-body antialiased;
+}
+
+h1,
+.h1 {
+  @apply font-heading leading-none uppercase;
+  font-size: clamp(3.2rem, 8vw, 6rem);
+}
+
+.jumbo {
+  @apply font-heading leading-none uppercase;
+  font-size: clamp(4rem, 8vw, 8rem);
+}
+
+h2,
+.h2 {
+  @apply font-heading leading-none uppercase;
+  font-size: clamp(2.4rem, 5.6vw, 4rem);
+}
+
+h3,
+.h3 {
+  @apply text-4xl font-heading uppercase;
+}
+
+p {
+  @apply text-base lg:text-lg opacity-70;
+  &.lead {
+    @apply text-xl lg:text-2xl opacity-100;
+  }
+  &.small {
+    @apply text-sm lg:text-base;
+  }
+  &:last-of-type {
+    @apply mb-0;
+  }
+
+  a {
+    @apply break-all underline;
+  }
+}

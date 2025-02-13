@@ -1,0 +1,34 @@
+@use "./components";
+@use "variables.scss";
+
+.wrapper {
+  @apply px-4 md:px-6 w-full mx-auto max-w-[100rem];
+
+  &--small {
+    @apply max-w-[1024px];
+  }
+}
+
+.aspect-landscape {
+  aspect-ratio: 3 / 2;
+}
+
+.aspect-portrait {
+  aspect-ratio: 9 / 12;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-collection {
+  aspect-ratio: 6 / 7;
+}
+
+.aspect-card {
+  aspect-ratio: 5 / 7;
+}
+
+[x-cloak] {
+  display: none !important;
+}

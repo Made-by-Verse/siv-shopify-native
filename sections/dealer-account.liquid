@@ -1,0 +1,194 @@
+
+
+
+
+<div class="pt-56 pb-32">
+  {% if customer %}
+    <div class="grid md:grid-cols-12 wrapper">
+      <div class="md:col-span-2"><h1 class="text-3xl">Your Account</h1></div>
+      <div class="md:col-start-4 md:col-span-3">
+        <h2 class="normal-case tracking-normal">{{ customer.first_name  }} {{ customer.last_name  }}</h2>
+      
+      <div>
+        <ul class="space-y-2 py-4">
+        {% if section.settings.cta_text_1 and section.settings.cta_link_1 %}
+          <li>
+          <a 
+            href="{{ section.settings.cta_link_1 | default: '#' }}" 
+            {% if section.settings.cta_link_3_newtab %}
+              target="_blank"
+            {% endif %}
+            class="block btn btn--outline-primary"
+          >
+            {{ section.settings.cta_text_1 }}
+          </a>
+        </li>
+        {% endif %}
+        {% if section.settings.cta_text_2 and section.settings.cta_link_2 %}
+          <li>
+          <a 
+            href="{{ section.settings.cta_link_2 | default: '#' }}"
+            {% if section.settings.cta_link_2_newtab %}
+              target="_blank"
+            {% endif %}
+            class="block btn btn--outline-primary"
+          >
+            {{ section.settings.cta_text_2 }}
+          </a>
+        </li>
+        {% endif %}
+        {% if section.settings.cta_text_3 and section.settings.cta_link_3 %}
+          <li>
+          <a 
+            href="{{ section.settings.cta_link_3 | default: '#' }}"
+            {% if section.settings.cta_link_3_newtab %}
+              target="_blank"
+            {% endif %}
+            class="block btn btn--outline-primary"
+          >
+            {{ section.settings.cta_text_3 }}
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+      <a href="{{ routes.account_logout_url }}"  class="underline">
+        Log out
+      </a>
+      </div>
+
+      
+      </div>
+      
+    
+    <div class="md:col-span-4 md:col-start-9">
+        <div class="myaccount-image--inner">
+          
+            {% if section.settings.image != blank %}
+              <div class="relative aspect-square">
+              {%- render 'responsive-image', image: section.settings.image | image_url, wrapper_class: 'absolute inset-0 w-full h-full object-cover',
+                image_class: 'absolute inset-0 w-full h-full object-cover',
+                size: '800x800',
+                width: 800,
+                height: 800 -%}
+                 </div>
+            {% endif %}
+         
+          <div class="myaccount-image__content">
+            <div class="space-y-4 py-4">
+              {% if section.settings.title != blank %}
+                <h4 class="normal-case tracking-normal">{{ section.settings.title }}</h4>
+              {% endif %}
+              {% if section.settings.text != blank %}
+                <p>{{ section.settings.text }}</p>
+              {% endif %}
+              {% if section.settings.button_text != blank and section.settings.button_url != blank %}
+                <a href="{{ section.settings.button_url }}" target="_blank" class="inline-block btn btn--outline-primary">{{ section.settings.button_text }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  {% else %}
+    <div class="dealer-account">
+      <h4 class="text-center">Please <a href="/pages/ws-account-login" class="underline">login</a> to view your dealer account</h4>
+    </div>
+  {% endif %}
+</div>
+
+
+{% schema %}
+{
+  "name": "Dealer Account",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Links"
+    },
+    {
+      "type": "text",
+      "id": "cta_text_1",
+      "default": "Account Info",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_link_1",
+      "label": "Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_link_1_newtab",
+      "label": "Open in new tab",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "cta_text_2",
+      "default": "Past Orders",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_link_2",
+      "label": "Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_link_2_newtab",
+      "label": "Open in new tab",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "cta_text_3",
+      "default": "Catalogues",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_link_3",
+      "label": "Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_link_3_newtab",
+      "label": "Open in new tab",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Catalogue image"
+    },
+   
+    {
+      "type": "header",
+      "content": "Catalogue"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Our Style Catalogue",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Please your info here"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "default": "Download now",
+      "label": "Heading"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button url"
+    }
+  ]
+}
+{% endschema %}

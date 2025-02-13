@@ -1,0 +1,96 @@
+{% style %}
+  .color-{{ section.settings.color_scheme }} {
+    --color-primary: {{ section.settings.color_scheme.settings.primary }};
+    --color-contrast: {{ section.settings.color_scheme.settings.contrast }};
+    --color-lines: {{ section.settings.color_scheme.settings.lines }};
+  }
+{% endstyle %}
+
+<div class="color-{{ section.settings.color_scheme }} bg-primary text-contrast min-h-screen pt-24 md:pt-32 lg:pt-48 pb-12">
+  <div class="wrapper">
+    <div class='grid sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-8 gap-4 mb-8 md:mb-12 lg:mb-24'>
+      <h2 class='h3'>
+        {{ section.settings.title }}
+      </h2>
+      <div class='md:col-span-2'>
+        {{ section.settings.richtext }}
+      </div>
+    </div>
+    <div class='grid lg:grid-cols-3 gap-8'>
+      {% for block in section.blocks %}
+        <a href="{{ block.settings.url }}" class='group'>
+          {% if block.settings.image != blank %}
+            {% render 'responsive-image' with
+              image: block.settings.image,
+              wrapper_class: 'aspect-landscape w-full relative mb-4',
+              image_class: 'group-hover:scale-105 transition-transform duration-500 object-cover absolute inset-0 w-full h-full'
+            %}
+          {% endif %}
+          <h3 class='h4 text-center'>{{ block.settings.label }}</h3>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "404",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Page Not Found"
+      },
+      {
+        "type": "richtext",
+        "id": "richtext",
+        "label": "Rich Text",
+        "default": "<p>The page you are looking for does not exist. It may have been moved or removed altogether. Please try searching for some other page, or return to the website's homepage to find what you're looking for.</p>"
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "Color Scheme",
+        "default": "scheme-1"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "link",
+        "name": "Link",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "text",
+            "id": "label",
+            "label": "Label",
+            "default": "Continue Shopping"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "404",
+        "blocks": [
+          {
+            "type": "link"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

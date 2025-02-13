@@ -1,0 +1,26 @@
+<div class="bg-lines p-4 lg:p-8 relative flex items-end justify-start aspect-portrait">
+  {% if block.settings.image %}
+    {% render 'responsive-image' with
+      image: block.settings.image,
+      wrapper_class: "absolute inset-0 h-full w-full",
+      image_class: "object-cover h-full w-full",
+      size: '1000x1000',
+      width: 1000,
+      height: 1000, %}
+  {% endif %}
+  <h3 class="h3 w-full left-0 absolute top-8 lg:top-16 text-center transition-opacity duration-2500 ease-in-out" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100' : 'opacity-0'">{{ block.settings.heading }}</h3>
+  <div class="z-10 relative space-y-4">
+    <div class="max-w-p text-contrast">{{ block.settings.text }}</div>
+    {% if block.settings.button_text or block.settings.button_2_text %}
+      <div class="flex gap-4">
+        {% if block.settings.button_1_text %}
+          <a href="{{ block.settings.button_1_link }}" class="btn btn--outline-primary">{{ block.settings.button_1_text }}</a>
+        {% endif %}
+        {% if block.settings.button_2_text %}
+          <a href="{{ block.settings.button_2_link }}" class="btn btn--secondary">{{ block.settings.button_2_text }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+

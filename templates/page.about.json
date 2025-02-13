@@ -1,0 +1,253 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_home_hero_dbE6Hc": {
+      "type": "section-home-hero",
+      "blocks": {
+        "image_block_cDNiMY": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_612.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_block_cDNiMY"
+      ],
+      "settings": {
+        "hero_content": "",
+        "hero_button_url": "",
+        "hero_button_text": "",
+        "color_scheme": "",
+        "show_logo": false,
+        "hero_heading": "About"
+      }
+    },
+    "section_paragraph_8mVbgR": {
+      "type": "section-paragraph",
+      "settings": {
+        "text": "<p>With a love for enduring design and objects built to last, we value heritage pieces as much as we do fresh and innovative thinking. </p>",
+        "color_scheme": "",
+        "padding_top": "lg",
+        "padding_bottom": "lg"
+      }
+    },
+    "section_process_4ashkjl": {
+      "type": "section-process",
+      "blocks": {
+        "process_step_ridXEb": {
+          "type": "process-step",
+          "settings": {
+            "heading": "",
+            "step-image": "shopify://shop_images/B_W_DESIGNPROCESS_WORKGROUP_03.jpg",
+            "step-text": "<p>Our furniture designers explore new materials, reimagine favourite silhouettes, and bring a high level of detail and craftsmanship to our collection. We’re deeply inspired by the original James Stewart, a Scots-Australian haberdasher, importer and furniture maker, and our great, great uncle.</p>",
+            "button_1_url": "",
+            "button_1_text": "",
+            "button_2_url": "",
+            "button_2_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "process_step_ridXEb"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "left-image": "shopify://shop_images/Royce_ClassicHavana_2.jpg",
+        "padding_top": "md",
+        "padding_bottom": "xl"
+      }
+    },
+    "image-banner_123asd": {
+      "type": "section-image-banner",
+      "settings": {
+        "title": "",
+        "image": "shopify://shop_images/COLOUR_FACTORYSHOTS_WORKGROUP_01.jpg",
+        "color_scheme": "",
+        "aspect_ratio": "landscape",
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
+    },
+    "section_process_as424gha": {
+      "type": "section-process",
+      "blocks": {
+        "process_step_ridXEb": {
+          "type": "process-step",
+          "settings": {
+            "heading": "Integrated",
+            "step-image": "shopify://shop_images/TIM_FACTORYSHOT_EXTENDED.jpg",
+            "step-text": "<h3>From source to site  – we manage it all</h3><p>We’re unique in managing every step of the product journey, from design development and sourcing materials to our small-run manufacturing partner – right through to logistics and deliveries closely overseen by our team.</p><p>This vertical integration has built close relationships with our leather tanners, fabric designers and upholsterers – an innovative new generation of makers based in the textile region between Ningbo and Hangzhou.</p><p>Our leathers are all European hides, hand-finished by artisans we speak with regularly. We believe these relationships create better design outcomes for James Stewart collections. </p>",
+            "button_1_url": "",
+            "button_1_text": "",
+            "button_2_url": "",
+            "button_2_text": ""
+          }
+        },
+        "process_step_UpETM3": {
+          "type": "process-step",
+          "settings": {
+            "heading": "Local",
+            "step-image": "shopify://shop_images/James_Stewart_Corky_Sofa_TobyScott.jpg",
+            "step-text": "<h3>Made for the Australian climate  </h3><p>Long-term collaboration with our Australian design partners has resulted in a collection full of character. And we’ve even defined some new classics. With an absolute love for hand-finished leather, we’ve created a style grounded in authenticity and tactility. </p><p>Aniline leather is a product better suited to the Australian climate and way of life due to its breathable, natural wax and oil finish. Aniline is warmer in winter, cooler in summer, and more breathable than synthetic coatings. </p><p>Fit for purpose and fit for place, the James Stewart collection brings originality, comfort and ease to architectural interiors.</p>",
+            "button_1_url": "",
+            "button_1_text": "",
+            "button_2_url": "",
+            "button_2_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "process_step_ridXEb",
+        "process_step_UpETM3"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "padding_top": "lg",
+        "padding_bottom": "lg"
+      }
+    },
+    "section_image_with_text_123asd": {
+      "type": "section-image-with-text",
+      "settings": {
+        "title": "The test of time",
+        "image": "shopify://shop_images/James_Stewart_Quinn.jpg",
+        "aspect_ratio": "3/4",
+        "image_width": "320px",
+        "text": "<p>We believe in natural products – they are better to work with, live with, and upcycle, and they are naturally compostable. We also believe in timeless design – furniture that is treasured and cared for holds its value for future generations.</p><p>To extend their lifespan, all our furniture pieces come with material tags so leathers and fabrics can be colour-matched for repairs or recovered in a similar fabric. The material tags allow us to match repairs (your puppy may chew a pillow, for example) as closely as possible to the original if not the original batch. We are constantly researching sustainable upholstery and frame materials to find ways to make things. </p>",
+        "section_color_scheme": "scheme-b7d1bd86-9b68-491c-8473-772dd461a807",
+        "padding_top": "lg",
+        "padding_bottom": "lg"
+      }
+    },
+    "section_process_as424ghg": {
+      "type": "section-process",
+      "blocks": {
+        "process_step_ridXEb": {
+          "type": "process-step",
+          "settings": {
+            "heading": "Evolution",
+            "step-image": "shopify://shop_images/TIMBER_FACTORYSHOTS_05V3.jpg",
+            "step-text": "<h3>Innovation through remastering</h3><p>Building on the haberdashery and furniture-making lineage of James Stewart in the 1800s, our designers equally obsessed over the details – from buttons and seams to the corners and edging of our sofas, seating and chairs. </p><p>How a piece is made is just as important as how it looks. Reworking our archive of patterns and designing entirely new profiles, we’re always building on function and evolving style. By partnering with niche, innovative makers, we can customise materials to meet project-specific design requirements.</p>",
+            "button_1_url": "",
+            "button_1_text": "",
+            "button_2_url": "",
+            "button_2_text": ""
+          }
+        },
+        "process_step_UpETM3": {
+          "type": "process-step",
+          "settings": {
+            "heading": "Our History",
+            "step-image": "shopify://shop_images/Stewarts_Storefront_86083b57-351d-4578-9e56-0289caa1f1c0.png",
+            "step-text": "<h3>The James Stewart brand was first established in Queensland in 1862 when our great, great uncle opened his first store in Rockhampton.</h3><p>A Scottish haberdasher, he imported the finest materials from around the world – from hand-spun silks from Japan, to bentwood furniture from Austria and glassware from Sweden. With his catalogue and range expanding, he soon started manufacturing locally – including his own furniture range.</p><p>With no children to carry on business, his nephew Robert Macfarlane emigrated from Callander in Scotland to expand the business, which the Macfarlane family managed until the 1980s. </p><p>In 2017, Ian Macfarlane and his partner, Susie Wall, launched a new furniture company inspired by their entrepreneurial ancestor. Today, the reborn James Stewart brand is known for its enduring, collectible furniture, driven by the belief that good design should be made to last.</p>",
+            "button_1_url": "",
+            "button_1_text": "",
+            "button_2_url": "",
+            "button_2_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "process_step_ridXEb",
+        "process_step_UpETM3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
+    },
+    "video_Q4b4zj": {
+      "type": "video",
+      "settings": {
+        "heading": "OUR PROCESS",
+        "text": "<p>With a love for enduring design and objects built to last, we value heritage pieces as much as we do fresh and innovative thinking. </p>",
+        "video": "shopify://files/videos/LEATHER_5SECONDS_WORKGROUP_01.mp4",
+        "video_url": "",
+        "cover_image": "shopify://shop_images/Styled_-_Miss_P_-_Angelina_Syrup_4.png",
+        "color_scheme": "",
+        "padding_top": "md",
+        "padding_bottom": "none"
+      }
+    },
+    "section_vertical_carousel_84yyR4": {
+      "type": "section-vertical-carousel",
+      "blocks": {
+        "slide_EhX7Cm": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/James_Stewart_Arlie_Sofa_Gathering_Light_Photography_1.jpg"
+          }
+        },
+        "slide_pPnGBp": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AUCKLAND_TEAMSHOOT_WORKGROUP_03.jpg"
+          }
+        },
+        "slide_EyEkW6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/STYLE_7185-01_GOLDIE_VELVET_TOBYSCOTT_01_3.jpg"
+          }
+        },
+        "slide_AxjfrU": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/COLOUR_FACTORYSHOTS_WORKGROUP_03.jpg"
+          }
+        },
+        "slide_RHLhrW": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/STYLED_T-03287-000_AGNES_01.jpg"
+          }
+        },
+        "slide_tUXMDP": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Styled_-_Miss_P_-_Angelina_Syrup_4.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_EhX7Cm",
+        "slide_pPnGBp",
+        "slide_EyEkW6",
+        "slide_AxjfrU",
+        "slide_RHLhrW",
+        "slide_tUXMDP"
+      ],
+      "settings": {
+        "heading": "FIND OUT MORE",
+        "text": "<p>To learn more about our products and project support, get in touch with our friendly team.</p>",
+        "button_label": "GET IN TOUCH",
+        "button_link": "shopify://pages/contact",
+        "color_scheme": "scheme-2",
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
+    }
+  },
+  "order": [
+    "section_home_hero_dbE6Hc",
+    "section_paragraph_8mVbgR",
+    "section_process_4ashkjl",
+    "image-banner_123asd",
+    "section_process_as424gha",
+    "section_image_with_text_123asd",
+    "section_process_as424ghg",
+    "video_Q4b4zj",
+    "section_vertical_carousel_84yyR4"
+  ]
+}

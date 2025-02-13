@@ -1,0 +1,29 @@
+<div class="flex gap-4 py-4 border-b">
+  <img :src="item.image" class="w-[160px] aspect-landscape object-cover flex-none" />
+  <div class="flex flex-col justify-between w-full flex-grow">
+    <div class="flex w-full justify-between">
+      <h3 class="font-serif max-w-[150px] text-sm leading-none" x-text="item.title"></h3>
+      <p x-text="$store.cart.formatMoney(item.final_price)"></p>
+    </div>
+    <div class='flex w-full justify-between'>
+      <div class="flex items-center gap-2">
+        <button 
+          class="quantity-btn minus" 
+          @click="$store.cart.updateQuantity(item.key, item.quantity - 1)"
+        >-</button>
+        <span 
+          class="quantity-display leading-none text-center" 
+          x-text="item.quantity"
+        ></span>
+        <button 
+          class="quantity-btn plus" 
+          @click="$store.cart.updateQuantity(item.key, item.quantity + 1)"
+        >+</button>
+      </div>
+      <button 
+        class="uppercase text-sm opacity-70 hover:opacity-100 transition-opacity duration-500 font-sans" 
+        @click="$store.cart.removeFromCart(item.key)"
+      >Remove</button>
+    </div>
+  </div>
+</div> 

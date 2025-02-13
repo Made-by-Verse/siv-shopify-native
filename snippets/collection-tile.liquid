@@ -1,0 +1,38 @@
+<div class="collection-card relative group" {{ block.shopify_attributes }}>
+  <a href="{{ collection.url }}" class="block space-y-4">
+    <div class="aspect-collection overflow-hidden relative">
+      {% if collection.image %}
+        {% render 'responsive-image' with
+          image: collection.image,
+          wrapper_class: 'w-full h-full object-cover',
+          image_class: 'absolute inset-0 w-full h-full object-cover',
+          size: '800x800',
+          width: 800,
+          height: 800
+        %}
+      {% else %}
+        {{ 'collection-1' | placeholder_svg_tag: 'w-full h-full object-cover bg-white' }}
+      {% endif %}
+      {% if collection.metafields.custom.hover_image %}
+        {% render 'responsive-image' with
+          image: collection.metafields.custom.hover_image,
+          wrapper_class: 'absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 group-hover:opacity-100',
+          image_class: 'absolute inset-0 w-full h-full object-cover',
+          size: '800x800',
+          width: 800,
+          height: 800
+        %}
+      {% endif %}
+    </div>
+
+    <div class="text-center">
+      <h3 class="h4 uppercase text-center px-4 text-[17px]">{{ collection.title }}</h3>
+    </div>
+  </a>
+
+  {% if block.settings.show_description and collection.description != blank %}
+    <div class="mt-4 text-sm">
+      {{ collection.description | strip_html | truncatewords: 15 }}
+    </div>
+  {% endif %}
+</div>
