@@ -35,7 +35,7 @@
   endif
 %}
 
-<div class='color-{{ section.settings.color_scheme }} bg-primary text-contrast {{ padding_top }} {{ padding_bottom }} '>
+<div class='color-{{ section.settings.color_scheme }} bg-primary text-contrast'>
   <div class="">
     {%- if section.settings.collection != blank -%}
       <div class="wrapper grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -95,7 +95,7 @@
 {
   "name": "Featured Collection",
   "tag": "section",
-  "class": "section",
+  "class": "section-featured-collection my-10 md:my-20",
   "disabled_on": {
     "groups": ["header", "footer"]
   },

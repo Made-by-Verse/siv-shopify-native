@@ -1,4 +1,8 @@
 <div class="wrapper max-w-lg text-center">
+  <h2 class="h2">{{ section.settings.heading }}</h2>
+  {% if section.settings.image %}
+    {% render 'responsive-image', image: section.settings.image, wrapper_class: 'w-full h-full object-cover', image_class: 'w-full h-full object-cover' %}
+  {% endif %}
   {{ section.settings.content }}
 </div>
 
@@ -6,11 +10,21 @@
   {
     "name": "Rich Text",
     "tag": "section",
-    "class": "section-rich-text py-10 md:py-20", 
+    "class": "section-rich-text my-10 md:my-20", 
     "disabled_on": {
       "groups": ["header", "footer"]
     },
     "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
       {
         "type": "richtext",
         "id": "content",

@@ -23,6 +23,17 @@ export class CarouselManager extends Base {
     this.initTestimoniesSwiper();
   }
 
+  initFeaturedPostsSwiper() {
+    const swiper = document.querySelector(".featured-post-swiper");
+
+    if (!swiper) return;
+
+    this.swipers.set(
+      "featured-posts-swiper",
+      new Swiper(swiper, SWIPER_CONFIG.featuredPosts)
+    );
+  }
+
   initTestimoniesSwiper() {
     const testimoniesSwiper = document.querySelector(
       ".testimonies-swiper-text"

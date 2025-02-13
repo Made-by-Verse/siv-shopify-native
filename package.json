@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "run-p -sr \"shopify:dev -- {@}\" \"vite:dev\" --",
     "build": "vite build",
-    "shopify:dev": "shopify theme dev --store https://verse-template.myshopify.com",
+    "shopify:dev": "shopify theme dev --store https://sivcare.myshopify.com",
     "vite:dev": "vite"
   },
   "dependencies": {

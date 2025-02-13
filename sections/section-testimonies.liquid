@@ -50,23 +50,15 @@
             After
           </span>
           <div class="flex gap-2 z-10">
-            <button class="swiper-button-prev cursor-pointer">
-              {% comment %} <Image
-                src={'/swiper-arrow.svg'}
-                alt="swiper-arrow"
-                width={56}
-                height={56}
-                class="opacity-50 hover:opacity-100 duration-500"
-              ></Image> {% endcomment %}
+            <button class="testimonies-swiper-button-prev cursor-pointer bg-white/20 rounded-full w-10 h-10 flex items-center justify-center">
+              <span class="block w-4 h-[10px] transform transition-transform duration-500 text-white rotate-90">
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </span>
             </button>
-            <button class="swiper-button-next cursor-pointer">
-              {% comment %} <Image
-                src={'/swiper-arrow.svg'}
-                alt="swiper-arrow"
-                width={56}
-                height={56}
-                class="transform rotate-180 opacity-50 hover:opacity-100 duration-500"
-              ></Image> {% endcomment %}
+            <button class="testimonies-swiper-button-next cursor-pointer bg-white/20 rounded-full w-10 h-10 flex items-center justify-center">
+              <span class="block w-4 h-[10px] transform transition-transform duration-500 text-white -rotate-90">
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </span>
             </button>
           </div>
         </div>
@@ -98,7 +90,7 @@
   {
     "name": "Testimonies",
     "tag": "section",
-    "class": "section-testimonies",
+    "class": "section-testimonies my-10 md:my-20",
     "disabled_on": {
       "groups": ["header"]
     },

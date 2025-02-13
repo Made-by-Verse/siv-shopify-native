@@ -53,11 +53,7 @@
           }
         }
       },
-      "block_order": [
-        "feature_point_1",
-        "feature_point_2",
-        "feature_point_3"
-      ],
+      "block_order": ["feature_point_1", "feature_point_2", "feature_point_3"],
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
         "product": "siv-biome-balancing-serum",
@@ -77,11 +73,25 @@
             "heading": "Topical spore treatment",
             "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
           }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/topical-spore-treatment.png",
+            "heading": "Topical spore treatment",
+            "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/topical-spore-treatment.png",
+            "heading": "Topical spore treatment",
+            "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
+          }
         }
       },
-      "block_order": [
-        "point_1"
-      ],
+      "block_order": ["point_1", "point_2", "point_3"],
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
@@ -96,7 +106,31 @@
     "card_reveal": {
       "type": "section-card-reveal",
       "blocks": {
+        "card_0": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Frame_427320811.jpg",
+            "heading": "67%",
+            "text": "Say it has a negative effect on their self-esteem"
+          }
+        },
         "card_1": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Frame_427320811.jpg",
+            "heading": "67%",
+            "text": "Say it has a negative effect on their self-esteem"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Frame_427320811.jpg",
+            "heading": "67%",
+            "text": "Say it has a negative effect on their self-esteem"
+          }
+        },
+        "card_3": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Frame_427320811.jpg",
@@ -105,9 +139,7 @@
           }
         }
       },
-      "block_order": [
-        "card_1"
-      ],
+      "block_order": ["card_0", "card_1", "card_2", "card_3"],
       "settings": {
         "heading": "Card Reveal",
         "text": "Card Reveal Text"
@@ -124,10 +156,80 @@
             "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
             "treatment_duration": 30
           }
+        },
+        "testimony_2": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.33_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.40_PM.png",
+            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 30
+          }
+        },
+        "testimony_3": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.33_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.40_PM.png",
+            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 30
+          }
+        },
+        "testimony_4": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.33_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.40_PM.png",
+            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 30
+          }
+        },
+        "testimony_5": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.33_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.40_PM.png",
+            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 30
+          }
+        },
+        "testimony_6": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.33_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.40_PM.png",
+            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 30
+          }
+        },
+        "testimony_8": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.33_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.40_PM.png",
+            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 30
+          }
+        },
+        "testimony_9": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.33_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.40_PM.png",
+            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 30
+          }
         }
       },
       "block_order": [
-        "testimony_1"
+        "testimony_1",
+        "testimony_2",
+        "testimony_3",
+        "testimony_4",
+        "testimony_5",
+        "testimony_6",
+        "testimony_8",
+        "testimony_9"
       ],
       "settings": {
         "heading": "Real consumer tested results"
@@ -141,6 +243,13 @@
         "button_link": "shopify://collections/all",
         "button_text": "View Product"
       }
+    },
+    "section_featured_posts": {
+      "type": "section-featured-posts",
+      "settings": {
+        "title": "Stay Informed with SIV",
+        "button_text": "View Product"
+      }
     }
   },
   "order": [
@@ -151,6 +260,7 @@
     "rich_text",
     "card_reveal",
     "testimonies",
-    "section_cta"
+    "section_cta",
+    "section_featured_posts"
   ]
 }
