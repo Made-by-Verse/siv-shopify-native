@@ -237,10 +237,10 @@
         "testimony_9": {
           "type": "testimony",
           "settings": {
-            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.33_PM.png",
-            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.40_PM.png",
-            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
-            "treatment_duration": 30
+            "before_image": "shopify://shop_images/Screenshot_2024-02-26_at_10.13.57_AM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-02-26_at_10.14.01_AM.png",
+            "quote": "Reduced redness. Reduced lesions. Regulated oil level. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 60
           }
         }
       },
