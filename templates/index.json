@@ -53,7 +53,11 @@
           }
         }
       },
-      "block_order": ["feature_point_1", "feature_point_2", "feature_point_3"],
+      "block_order": [
+        "feature_point_1",
+        "feature_point_2",
+        "feature_point_3"
+      ],
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
         "product": "siv-biome-balancing-serum",
@@ -77,21 +81,25 @@
         "point_2": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/topical-spore-treatment.png",
-            "heading": "Topical spore treatment",
-            "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
+            "image": "shopify://shop_images/skin-identical.png",
+            "heading": "Skin Identical",
+            "text": "Lightweight & stabilizing formula containing physiologically identical ingredients that your skin recognizes."
           }
         },
         "point_3": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/topical-spore-treatment.png",
-            "heading": "Topical spore treatment",
-            "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
+            "image": "shopify://shop_images/face-base.png",
+            "heading": "Your Face Is Your Base",
+            "text": "Set your unique canvas by applying 2-5 drops of our Biome-Balancing Serum after toner and before moisturizer."
           }
         }
       },
-      "block_order": ["point_1", "point_2", "point_3"],
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3"
+      ],
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
@@ -100,6 +108,7 @@
     "rich_text": {
       "type": "section-rich-text",
       "settings": {
+        "heading": "Whatever the condition of your skin, this is true:",
         "content": "<p>UntitledSIV's Biome-Balancing Serum is a spore-based topical formula to offer a truly personal approach to skincare by harnessing your unique skin biome & adapting to your unique skin canvas and environment.</p><p>SIV Biome-Balancing serum: your healthy skin essential.</p>"
       }
     },
@@ -117,32 +126,37 @@
         "card_1": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Frame_427320811.jpg",
-            "heading": "67%",
-            "text": "Say it has a negative effect on their self-esteem"
+            "image": "shopify://shop_images/Frame_427320809.jpg",
+            "heading": "30-60%",
+            "text": "It is estimated that 30-60% of patients with skin disorder have psychiatric comorbidities."
           }
         },
         "card_2": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Frame_427320811.jpg",
-            "heading": "67%",
-            "text": "Say it has a negative effect on their self-esteem"
+            "image": "shopify://shop_images/Frame_427320808.jpg",
+            "heading": "30%",
+            "text": "Depression was found in 30% of patients with acne vs 12% of control group"
           }
         },
         "card_3": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Frame_427320811.jpg",
-            "heading": "67%",
-            "text": "Say it has a negative effect on their self-esteem"
+            "image": "shopify://shop_images/Frame_427320807.jpg",
+            "heading": "58%",
+            "text": "Of teens who’ve had acne have offered to take a photo to get out of being in the picture"
           }
         }
       },
-      "block_order": ["card_0", "card_1", "card_2", "card_3"],
+      "block_order": [
+        "card_0",
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
       "settings": {
-        "heading": "Card Reveal",
-        "text": "Card Reveal Text"
+        "heading": "Put yourself back in the picture",
+        "text": "Research shows that how you see yourself on the outside reflects how you feel on the inside."
       }
     },
     "testimonies": {
