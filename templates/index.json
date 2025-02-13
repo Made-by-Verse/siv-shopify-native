@@ -23,7 +23,8 @@
     "video_section": {
       "type": "section-video",
       "settings": {
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_url": "https://vimeo.com/930708303",
+        "cover_image": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.png",
         "padding_top": "none",
         "padding_bottom": "none"
       }
