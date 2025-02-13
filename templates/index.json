@@ -12,7 +12,7 @@
     "home_hero": {
       "type": "section-home-hero",
       "settings": {
-        "backgroundImage": "shopify://shop_images/theme_cover_image.jpg",
+        "backgroundImage": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.png",
         "hero_content": "<p>Discover the next generation of professional skincare with our Biome-Balancing Serum – an advanced, spore-based formula designed to harmonize with your unique skin microbiome, tailored to restore your skin’s vitality and resilience.</p>",
         "hero_button_url": "shopify://collections/all",
         "hero_button_text": "Explore Catalogue",
@@ -22,102 +22,117 @@
     },
     "video_section": {
       "type": "section-video",
-      "settings": {}
+      "settings": {
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "padding_top": "none",
+        "padding_bottom": "none"
+      }
     },
     "section_featured_product_zGxKPB": {
       "type": "section-featured-product",
-      "settings": {
-        "product": "the-complete-snowboard",
-        "button_text": "View Product",
-        "heading": "The Essential Serum for Healthy Skin"
-      },
       "blocks": {
         "feature_point_1": {
           "type": "feature_point",
           "settings": {
-            "heading": "Feature Point 1",
-            "text": "Feature Point 1 Text"
+            "heading": "Supports Balance",
+            "text": "Promotes a harmonious skin environment for improved texture and tone."
           }
         },
         "feature_point_2": {
           "type": "feature_point",
           "settings": {
-            "heading": "Feature Point 1",
-            "text": "Feature Point 1 Text"
+            "heading": "Delivers Vibrance",
+            "text": "Enhances your skin’s natural radiance by supporting a healthy microbiome."
           }
         },
         "feature_point_3": {
           "type": "feature_point",
           "settings": {
-            "heading": "Feature Point 1",
-            "text": "Feature Point 1 Text"
+            "heading": "Builds Resilience",
+            "text": "Strengthens your skin’s defenses against environmental stressors and aging."
           }
         }
       },
-      "block_order": ["feature_point_1", "feature_point_2", "feature_point_3"]
+      "block_order": [
+        "feature_point_1",
+        "feature_point_2",
+        "feature_point_3"
+      ],
+      "settings": {
+        "heading": "The Essential Serum for Healthy Skin",
+        "product": "siv-biome-balancing-serum",
+        "button_text": "View Product",
+        "color_scheme": "",
+        "padding_top": "none",
+        "padding_bottom": "none"
+      }
     },
     "key_points": {
       "type": "section-key-points",
-      "settings": {
-        "heading": "Key Points",
-        "description": "<p>Key Points Description</p>"
-      },
       "blocks": {
         "point_1": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/theme_cover_image.jpg"
+            "image": "shopify://shop_images/topical-spore-treatment.png",
+            "heading": "Topical spore treatment",
+            "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
           }
         }
       },
-      "block_order": ["point_1"]
-    },
-    "testimonies": {
-      "type": "section-testimonies",
+      "block_order": [
+        "point_1"
+      ],
       "settings": {
-        "heading": "Real consumer tested results"
-      },
-      "blocks": {
-        "testimony_1": {
-          "type": "testimony",
-          "settings": {
-            "before_image": "shopify://shop_images/theme_cover_image.jpg",
-            "after_image": "shopify://shop_images/theme_cover_image.jpg",
-            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
-            "treatment_duration": 10
-          }
-        }
-      },
-      "block_order": ["testimony_1"]
+        "heading": "Balance in a bottle",
+        "description": ""
+      }
     },
     "rich_text": {
       "type": "section-rich-text",
       "settings": {
-        "content": "<p>Rich Text Content</p>"
+        "content": "<p>UntitledSIV's Biome-Balancing Serum is a spore-based topical formula to offer a truly personal approach to skincare by harnessing your unique skin biome & adapting to your unique skin canvas and environment.</p><p>SIV Biome-Balancing serum: your healthy skin essential.</p>"
       }
     },
     "card_reveal": {
       "type": "section-card-reveal",
-      "settings": {
-        "heading": "Card Reveal",
-        "text": "Card Reveal Text"
-      },
       "blocks": {
         "card_1": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/theme_cover_image.jpg",
             "heading": "Card 1",
             "text": "Card 1 Text"
           }
         }
       },
-      "block_order": ["card_1"]
+      "block_order": [
+        "card_1"
+      ],
+      "settings": {
+        "heading": "Card Reveal",
+        "text": "Card Reveal Text"
+      }
+    },
+    "testimonies": {
+      "type": "section-testimonies",
+      "blocks": {
+        "testimony_1": {
+          "type": "testimony",
+          "settings": {
+            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 10
+          }
+        }
+      },
+      "block_order": [
+        "testimony_1"
+      ],
+      "settings": {
+        "heading": "Real consumer tested results"
+      }
     },
     "section_cta": {
       "type": "section-cta",
       "settings": {
-        "image": "shopify://shop_images/theme_cover_image.jpg",
         "title": "Healthier skin is a drop away",
         "button_link": "shopify://collections/all",
         "button_text": "View Product"
