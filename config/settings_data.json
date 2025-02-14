@@ -19,27 +19,18 @@
     "social_tumblr_link": "",
     "social_vimeo_link": "",
     "color_swatches": "Angelina Syrup: Angelina_Syrup.jpg\nCamargue Dune: Camargue_Dune.jpg\nCasanova Camel:Resize_Casanova_Camel.jpg\nCommonwealth Cork:Commonwealth_Cork_Legacy.jpg\nCommonwealth Pewter: Commonwealth_Pewter.jpg\nCommonwealth Stone: Resize_Commonwealth_Stone.jpg\nCone Denim: Cone_Denim.jpg\nCopenhagen Hamlet: Copenhagen_Hamlet.jpg\nCheckmate Pawn:Resize_Checkmate_Pawn.jpg\nMemento Medal:Resize_Memento_Medal.jpg\nTen Gallon Hat Hoss: Ten_Gallon_Hat_Hoss.png\nDolomiti Bluff: Dolomiti_Bluff.png\nEl Arish - Natural: El_Arish.jpg\nHuntington Camden: Huntington_Camden.jpg\nIsadora Ocean: Isadora_Ocean.jpg\nOld Saddle Nut: Old_Saddle_Nut.jpg\nOld Saddle Black: Old_Saddle_Black.jpg\nQuiet Time Oak: Quiet_Time_Oak.jpg\nVenerando Bisque: Venerando_Bisque.png\nVenerando Honey: Venerando_Honey.jpg\nVenerando Umber: Venerando_Umber.png\nVenerando Juniper:Resize_Venerando_Juniper.jpg\nJuniper:Resize_Venerando_Juniper.jpg\nVida Evergreen: Vida_Evergreen.jpg\nVida Penny: Vida_Penny.jpg\nSeafoam:Agora_Seafoam.jpg\nClassic Havana: Classic_Havana_Legacy.jpg\nClassic Barley: Classic_Barley_Legacy.jpg\nNature Chamois: Nature_Chamois_Heritage.jpg\nNature Umber: Nature_Umber_Heritage.jpg\nNature Camel: Nature_Camel_Heritage.jpg\nNature Chocolate: Nature_Chocolate_heritage.jpg\nKelso Tanami: Kelso_Tanami_Fabric.jpg\nArgyll Rye: Argyll_Rye_Fabric.jpg\nField Tirari: Field_Tirari_Fabric.jpg \nHelm Darling: Helm_Darling_Fabric.jpg\nDunbar Spinifex: Dunbar_Spinifex_Fabric.jpg",
+    "menu": "main-menu",
+    "featured_product": "the-complete-snowboard",
     "menu_trade": "trade-menu",
     "menu_public": "public-menu",
     "menu_logged_out": "logged-out-menu",
-    "featured_product": "the-complete-snowboard",
-    "content_for_index": [],
-    "blocks": {
-      "13768625480086291342": {
-        "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
-        "disabled": false,
+    "sections": {
+      "header": {
+        "type": "header",
         "settings": {}
-      },
-      "wholesale_gorilla": {
-        "type": "shopify://apps/wholesale-gorilla/blocks/wsg-header/c48d0487-dff9-41a4-94c8-ec6173fe8b8d",
-        "disabled": false,
-        "settings": {
-          "embed_bg_color": "#000000",
-          "embed_text_color": "#000000",
-          "embed_SPOF_label": ""
-        }
       }
     },
+    "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
         "settings": {
