@@ -21,6 +21,7 @@ export class CarouselManager extends Base {
   init() {
     super.init();
     this.initTestimoniesSwiper();
+    this.initFeaturedPostsSwiper();
   }
 
   initFeaturedPostsSwiper() {

@@ -1,15 +1,4 @@
-{% liquid 
-  assign menu_trade = linklists[settings.menu_trade].links
-  assign menu_public = linklists[settings.menu_public].links
-  assign menu_logged_out = linklists[settings.menu_logged_out].links
-
-  if customer
-    assign menu = menu_trade
-  else
-    assign menu = menu_public
-  endif
-%}
-
+{% assign menu = linklists[settings.menu].links %}
 
 {% comment %} <header 
   id="js-header" 
@@ -19,7 +8,14 @@
 > {% endcomment %}
   <div class="wrapper h-full">
     <div class='grid grid-cols-3 gap-4 h-full border-b wrapper-inner'>
-      <div class="flex items-center">
+      <button x-data @click="$dispatch('toggle-menu-drawer')" class="lg:hidden">
+        <span class="sr-only">Menu</span>
+        <span class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+        </span>
+      </button>
+      <div class="flex items-center justify-center lg:justify-start">
         <a href="{{ routes.root_url }}">
           {% render 'header-logo' %}
         </a>
@@ -55,13 +51,6 @@
           {%- endfor -%}
         </ul>
       </nav>
-      <button x-data @click="$dispatch('toggle-menu-drawer')" class="lg:hidden">
-        <span class="sr-only">Menu</span>
-        <span class="hamburger">
-          <span class="line"></span>
-          <span class="line"></span>
-        </span>
-      </button>
       <div class="h-full flex items-center justify-end gap-4 lg:gap-6">
         <ul class="flex gap-4 lg:gap-6">
           {% if customer %}

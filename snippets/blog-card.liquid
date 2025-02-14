@@ -1,0 +1,26 @@
+<a href="{{ post.url }}" class="h-full relative flex flex-col justify-between gap-4 group {{ class }}">
+  <div class="space-y-3">
+    {% if post.image %}
+      {% render 'responsive-image', image: post.image, wrapper_class: 'relative aspect-portrait bg-white rounded-lg overflow-hidden', image_class: 'object-cover h-full w-full scale-105 group-hover:scale-100 duration-500' %}
+    {% else %}
+      <div class="relative aspect-[4/5] bg-white rounded-lg overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <p class="text-sm text-center">Please add an image to the post</p>
+        </div>
+      </div>
+    {% endif %}
+    <div>
+      {% if post.published_at %}
+        <span class="uppercase text-xs md:text-sm font-medium tracking-wider">
+          {{ post.published_at | date: '%B %d, %Y' }}
+        </span>
+      {% endif %}
+      <h3 class="text-xl md:text-2xl mb-4 font-body normal-case transition-colors duration-500">
+        {{ post.title }}
+      </h3>
+      {% if post.excerpt %}
+        <p class="line-clamp-3">{{ post.excerpt }}</p>
+      {% endif %}
+    </div>
+  </div>
+</a>

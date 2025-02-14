@@ -20,15 +20,6 @@
         "hero_heading": "Harness Your Biology for Resilient Skin"
       }
     },
-    "video_section": {
-      "type": "section-video",
-      "settings": {
-        "video_url": "https://vimeo.com/930708303",
-        "cover_image": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.png",
-        "padding_top": "none",
-        "padding_bottom": "none"
-      }
-    },
     "section_featured_product_zGxKPB": {
       "type": "section-featured-product",
       "blocks": {
@@ -54,11 +45,7 @@
           }
         }
       },
-      "block_order": [
-        "feature_point_1",
-        "feature_point_2",
-        "feature_point_3"
-      ],
+      "block_order": ["feature_point_1", "feature_point_2", "feature_point_3"],
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
         "product": "siv-biome-balancing-serum",
@@ -96,11 +83,7 @@
           }
         }
       },
-      "block_order": [
-        "point_1",
-        "point_2",
-        "point_3"
-      ],
+      "block_order": ["point_1", "point_2", "point_3"],
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
@@ -149,12 +132,7 @@
           }
         }
       },
-      "block_order": [
-        "card_0",
-        "card_1",
-        "card_2",
-        "card_3"
-      ],
+      "block_order": ["card_0", "card_1", "card_2", "card_3"],
       "settings": {
         "heading": "Put yourself back in the picture",
         "text": "Research shows that how you see yourself on the outside reflects how you feel on the inside."
@@ -279,7 +257,6 @@
   },
   "order": [
     "home_hero",
-    "video_section",
     "section_featured_product_zGxKPB",
     "key_points",
     "rich_text",
