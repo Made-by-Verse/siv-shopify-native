@@ -8,15 +8,14 @@ export default function Cart() {
     },
 
     async getCart(openCart = false) {
-      console.log("Getting cart");
       try {
         const response = await fetch(`${window.routes.cart_url}.js`);
         const cart = await response.json();
 
-        console.log(cart);
-
         // Update store
         this.items = cart.items;
+        console.log(cart.items);
+
         this.sub_total = this.formatMoney(cart.total_price);
 
         // Update local state
@@ -133,6 +132,16 @@ export default function Cart() {
         minimumFractionDigits: 0,
         maximumFractionDigits: 2,
       });
+    },
+
+    openCartDrawer() {
+      console.log("Opening Cart");
+
+      window.dispatchEvent(new CustomEvent("open-cart-drawer"));
+    },
+
+    get cartQuantity() {
+      return this.items.reduce((acc, item) => acc + item.quantity, 0);
     },
   });
 }

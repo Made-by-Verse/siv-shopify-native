@@ -19,10 +19,10 @@
   <div class="wrapper text-primary">
     <h2 
       x-data="{ shown: false }" 
-      x-intersect:enter="shown = true"
-      x-intersect:leave="shown = false"
-      :class="shown ? 'opacity-100' : 'opacity-0'"
-      class="h1 max-w-3xl transition-opacity duration-2500 ease-in-out"
+      x-intersect.half:enter="shown = true"
+      x-intersect.half:leave="shown = false"
+      :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
+      class="h1 max-w-3xl"
     >
       {{ section.settings.hero_heading }}
     </h2>

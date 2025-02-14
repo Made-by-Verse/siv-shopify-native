@@ -3,25 +3,31 @@ body {
 }
 
 h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
+  @apply font-heading uppercase leading-none transition-all duration-1500 ease-in-out;
+}
+
+h1,
 .h1 {
-  @apply font-heading leading-none uppercase;
   font-size: clamp(3.2rem, 8vw, 6rem);
 }
 
 .jumbo {
-  @apply font-heading leading-none uppercase;
   font-size: clamp(4rem, 8vw, 8rem);
 }
 
 h2,
 .h2 {
-  @apply font-heading leading-none uppercase;
   font-size: clamp(2.4rem, 5.6vw, 4rem);
 }
 
 h3,
 .h3 {
-  @apply text-4xl font-heading uppercase;
+  @apply text-4xl;
 }
 
 p {

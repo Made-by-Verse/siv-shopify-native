@@ -1,5 +1,5 @@
 <div class="wrapper max-w-lg text-center">
-  <h2 class="h2">{{ section.settings.heading }}</h2>
+  <h2 class="h3 text-balance" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">{{ section.settings.heading }}</h2>
   {% if section.settings.image %}
     {% render 'responsive-image', image: section.settings.image, wrapper_class: 'w-full h-full object-cover', image_class: 'w-full h-full object-cover' %}
   {% endif %}

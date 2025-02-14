@@ -20,8 +20,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ["Body", "sans-serif"],
-        heading: ["Matter", "sans-serif"],
+        body: ["Matter", "sans-serif"],
+        heading: ["Gothic", "sans-serif"],
       },
       colors: {
         primary: withOpacityValue("--color-primary"),

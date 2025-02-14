@@ -38,7 +38,7 @@
 <div class='color-{{ section.settings.color_scheme }} bg-primary text-contrast overflow-hidden'>
   <div class="wrapper {{ padding_top }} {{ padding_bottom }}">
     <div class="flex gap-4 justify-between items-center py-4 border-t border-contrast">
-      <a href="{{ routes.collections_url }}" class="text-contrast font-sans uppercase text-sm">{{ section.settings.all_collections_link_text }}</a>
+      <a href="{{ routes.collections_url }}" class="text-contrast   uppercase text-sm">{{ section.settings.all_collections_link_text }}</a>
       {% if section.settings.button_text != blank and section.settings.button_link != blank %}
         <a href="{{ section.settings.button_link }}" class="btn btn--outline-primary">{{ section.settings.button_text }}</a>
       {% endif %}

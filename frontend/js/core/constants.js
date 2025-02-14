@@ -7,11 +7,20 @@ export const SWIPER_CONFIG = {
       slidesPerView: 1,
       speed: 500,
       allowTouchMove: false,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      speed: 1000,
     },
     image: {
-      speed: 500,
+      speed: 1000,
       loop: true,
       allowTouchMove: false,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
     },
   },
   featuredPosts: {

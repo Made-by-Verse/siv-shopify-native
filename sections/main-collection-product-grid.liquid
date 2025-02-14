@@ -23,7 +23,7 @@
             <div id="filter-bar" class="wrapper h-12 sticky bg-primary z-10 flex w-full items-center justify-between mb-8" x-data="{ open: false }">
               <div class="flex items-center gap-2">
                 <button 
-                  class="font-sans uppercase"
+                  class="  uppercase"
                   x-data
                   @click="$dispatch('toggle-filter-drawer'); $dispatch('toggle-lenis', { enabled: false })"
                 >
@@ -32,8 +32,8 @@
               </div>
 
               <div class="hidden lg:flex items-center gap-6">
-                <button class="font-sans uppercase transition-opacity duration-500" @click="large = false" :class='large && "opacity-50"'>Small</button>
-                <button class="font-sans uppercase transition-opacity duration-500" @click="large = true" :class='!large && "opacity-50"'>Large</button>
+                <button class="  uppercase transition-opacity duration-500" @click="large = false" :class='large && "opacity-50"'>Small</button>
+                <button class="  uppercase transition-opacity duration-500" @click="large = true" :class='!large && "opacity-50"'>Large</button>
               </div> 
             </div>
             <ul

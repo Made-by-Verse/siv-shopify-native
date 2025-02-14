@@ -1,5 +1,5 @@
 .contact-form {
-  @apply font-sans text-contrast;
+  @apply text-contrast;
 
   input:not([type="radio"]),
   textarea {
@@ -30,6 +30,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* For Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }

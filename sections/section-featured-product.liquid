@@ -11,7 +11,7 @@
 <div class='color-{{ section.settings.color_scheme }} bg-primary text-contrast'>
   <div class="wrapper flex flex-col items-center">
     {% if section.settings.heading != blank %}
-      <h2 class="h2 text-center max-w-xl transition-opacity duration-2500 ease-in-out" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100' : 'opacity-0'">{{ section.settings.heading }}</h2>
+      <h2 class="h2 text-center max-w-xl" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">{{ section.settings.heading }}</h2>
     {% endif %}
     {% if section.settings.product != blank %}
       <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-4">
@@ -30,7 +30,7 @@
         {% endif %}
         <div class='space-y-4'>
           <div>
-            <h2 class="h3 uppercase transition-opacity duration-2500 ease-in-out" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100' : 'opacity-0'">{{ product.title }}</h2>
+            <h2 class="h3" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">{{ product.title }}</h2>
             <p>From {{ product.price_min | money }}</p> 
           </div>
           <p>{{ product.description }}</p>

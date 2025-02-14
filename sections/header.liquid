@@ -4,97 +4,81 @@
   id="js-header" 
   x-data="{ anyMegaMenuOpen: false }"
   :class="anyMegaMenuOpen && 'mega-menu-open'"
-  class="sticky top-0 w-full max-w-[100vw] z-50 h-16 font-sans"
+  class="sticky top-0 w-full max-w-[100vw] z-50 h-16  "
 > {% endcomment %}
-  <div class="wrapper h-full">
-    <div class='grid grid-cols-3 gap-4 h-full border-b wrapper-inner'>
-      <button x-data @click="$dispatch('toggle-menu-drawer')" class="lg:hidden">
-        <span class="sr-only">Menu</span>
-        <span class="hamburger">
-          <span class="line"></span>
-          <span class="line"></span>
-        </span>
-      </button>
-      <div class="flex items-center justify-center lg:justify-start">
-        <a href="{{ routes.root_url }}">
-          {% render 'header-logo' %}
-        </a>
-      </div>
-      <nav class="hidden lg:block h-full">
-        <ul class="flex gap-6 h-full items-center">
-          {%- for link in menu -%}
-            <li class="h-full flex items-center"
+<div class="wrapper h-full">
+  <div class='grid grid-cols-3 gap-4 h-full border-b wrapper-inner'>
+    <button x-data @click="$dispatch('toggle-menu-drawer')" class="lg:hidden">
+      <span class="sr-only">Menu</span>
+      <span class="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+      </span>
+    </button>
+    <div class="flex items-center justify-center lg:justify-start">
+      <a href="{{ routes.root_url }}">
+        {% render 'header-logo' %}
+      </a>
+    </div>
+    <nav class="hidden lg:flex justify-center h-full">
+      <ul class="flex gap-6 h-full items-center">
+        {%- for link in menu -%}
+          <li class="h-full flex items-center"
+            {% if link.links.size > 0 %}
               x-data="{ megaMenuOpen: false }"
               @mouseenter="megaMenuOpen = {% if link.links.size > 0 %}true; anyMegaMenuOpen = true{% else %}false{% endif %}"
               @mouseleave="megaMenuOpen = false; anyMegaMenuOpen = false"
-            >
-              <a href="{{ link.url }}" class="link">
-                {{ link.title }}
-              </a>
-              
-              {% if link.links.size > 0 %}
-                <div
-                  class="absolute left-0 right-0 top-16 bg-primary drop-shadow-lg z-[999]"
-                  x-cloak
-                  x-show="megaMenuOpen"
-                  x-transition:enter="transition ease-in-out duration-700"
-                  x-transition:enter-start="opacity-0"
-                  x-transition:enter-end="opacity-100"
-                  x-transition:leave="transition ease-in-out duration-700"
-                  x-transition:leave-start="opacity-100"
-                  x-transition:leave-end="opacity-0"
-                >
-                  {% render 'mega_menu', link: link, blocks: section.blocks %}
-                </div>
-              {% endif %}
-            </li>
-          {%- endfor -%}
-        </ul>
-      </nav>
-      <div class="h-full flex items-center justify-end gap-4 lg:gap-6">
-        <ul class="flex gap-4 lg:gap-6">
-          {% if customer %}
-            <li>
-              <a 
-                  href="/pages/dealer-account" 
-                class="link hidden lg:block"
+            {% endif %}
+          >
+            <a href="{{ link.url }}" class="link">
+              {{ link.title }}
+            </a>
+            
+            {% if link.links.size > 0 %}
+              <div
+                class="absolute left-0 right-0 top-16 bg-primary drop-shadow-lg z-[999]"
+                x-cloak
+                x-show="megaMenuOpen"
+                x-transition:enter="transition ease-in-out duration-700"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition ease-in-out duration-700"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
               >
-                Account
-              </a>
+                {% render 'mega_menu', link: link, blocks: section.blocks %}
+              </div>
+            {% endif %}
           </li>
-          <li>
-            <button 
-              x-data
-              @click="$dispatch('open-cart-drawer')"
-              class="link"
-              type="button"
-            >
-              <span class="hidden lg:block">Cart</span>
-              <span class="w-8 h-8 block lg:hidden">
-                {{ 'icon-cart.svg' | inline_asset_content }}
-              </span>
-            </button>
-          </li>
-        {% else %}
-          {%- for link in menu_logged_out -%}
-            <li>
-              <a href="{{ link.url }}" class="link hidden lg:block">
-                {{ link.title }}
-              </a>
-            </li>
-          {%- endfor -%}
-        {% endif %}
-        </ul>
-      </div>
+        {%- endfor -%}
+      </ul>
+    </nav>
+    <div class="h-full flex items-center justify-end gap-4 lg:gap-6">
+      {% if customer %}
+        <a 
+            href="{{ routes.account_url }}" 
+          class="link hidden lg:block"
+        >
+          Account
+        </a>
+      {% else %}
+        <a href="{{ routes.account_login_url }}" class="link hidden lg:block">
+          Login
+        </a>
+      {% endif %}
+      <button x-data @click="$dispatch('open-cart-drawer')" class="hidden lg:block btn btn--black">
+        Buy Now
+      </button>
+        {% render 'cart-button' %}
     </div>
   </div>
-{% comment %} </header> {% endcomment %}
+</div>
 
 
 {% schema %}
 {
   "name": "t:sections.header.name",
-  "class": "section-header",
+  "class": "section-header font-matter",
   "settings": [],
   "tag": "header",
   "blocks": [

@@ -1,5 +1,5 @@
 .btn {
-  @apply rounded-full text-center px-6 py-3 text-sm uppercase font-semibold duration-500;
+  @apply rounded-full text-center px-6 py-3 text-sm uppercase font-semibold leading-none tracking-wider duration-500;
   &--black {
     @apply bg-black text-white;
   }
@@ -19,4 +19,12 @@
   &--white {
     @apply bg-white text-black;
   }
+}
+
+.link {
+  @apply leading-none tracking-wider uppercase hover:text-black/50 transition-colors duration-500 font-medium text-sm;
+}
+
+nav .link {
+  @apply text-nowrap;
 }
