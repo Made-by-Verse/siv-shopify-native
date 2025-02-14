@@ -138,18 +138,8 @@
     "settings": [
       {
         "type": "link_list",
-        "id": "menu_trade",
-        "label": "Trade Menu"
-      },
-      {
-        "type": "link_list",
-        "id": "menu_public",
-        "label": "Public Menu"
-      },
-      {
-        "type": "link_list",
-        "id": "menu_logged_out",
-        "label": "Logged Out Menu"
+        "id": "menu",
+        "label": "Menu"
       }
     ]
   },

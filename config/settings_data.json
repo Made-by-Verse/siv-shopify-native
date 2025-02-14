@@ -98,9 +98,7 @@
       "social_snapchat_link": "",
       "social_youtube_link": "",
       "social_vimeo_link": "",
-      "menu_trade": "trade-menu",
-      "menu_public": "public-menu",
-      "menu_logged_out": "logged-out-menu"
+      "menu": "main-menu"
     }
   }
 }
