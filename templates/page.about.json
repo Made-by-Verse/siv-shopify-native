@@ -11,7 +11,14 @@
   "sections": {
     "hero": {
       "type": "section-home-hero",
-      "settings": {}
+      "settings": {
+        "backgroundImage": "shopify://shop_images/Frame_427320581.jpg",
+        "hero_content": "<p>Achieve resilient skin by harnessing each person’s own microbiology and establishing a balanced skin biome.</p>",
+        "hero_button_url": "",
+        "hero_button_text": "Shop Now",
+        "color_scheme": "",
+        "hero_heading": "Our Story: A New Era in Skincare"
+      }
     }
   },
   "order": [
