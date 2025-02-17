@@ -30,9 +30,19 @@
     },
     "text_and_image": {
       "type": "section-text-and-image",
+      "blocks": {
+        "image_dWcN8C": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_dWcN8C"
+      ],
       "settings": {
         "title": "Our Story",
-        "text": "<p>In the dynamic landscape of skincare, SIV emerged as a groundbreaking force in 2021 under the leadership of its founder and CEO, Isabel Vitale.</p>"
+        "text": "<p>In the dynamic landscape of skincare, SIV emerged as a groundbreaking force in 2021 under the leadership of its founder and CEO, Isabel Vitale.</p>",
+        "reverse_order": false
       }
     },
     "section_featured_product_zGxKPB": {
@@ -60,7 +70,11 @@
           }
         }
       },
-      "block_order": ["feature_point_1", "feature_point_2", "feature_point_3"],
+      "block_order": [
+        "feature_point_1",
+        "feature_point_2",
+        "feature_point_3"
+      ],
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
         "product": "siv-biome-balancing-serum",
@@ -71,5 +85,10 @@
       }
     }
   },
-  "order": ["hero", "bio", "text_and_image", "section_featured_product_zGxKPB"]
+  "order": [
+    "hero",
+    "bio",
+    "text_and_image",
+    "section_featured_product_zGxKPB"
+  ]
 }
