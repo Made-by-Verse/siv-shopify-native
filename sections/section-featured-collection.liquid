@@ -41,7 +41,7 @@
       <div class="wrapper grid grid-cols-1 lg:grid-cols-5 gap-8">
         <div class="lg:col-span-3 flex items-start">
           <div class="sticky top-20 lg:max-w-[840px] w-full space-y-6">
-            <h2 class="h3 transition-opacity duration-2500 ease-in-out lg:h-16" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100' : 'opacity-0'">{{ section.settings.collection.title }}</h2>
+            {% render 'animated-heading', title: section.settings.collection.title, class: 'h3' %}
             {%- if section.settings.collection.image -%}
               {% render 'responsive-image', image: section.settings.collection.image, width: 1000, height: 1000, image_class: 'object-cover absolute inset-0 w-full h-full', wrapper_class: 'relative aspect-landscape' %}
             {%- endif -%}

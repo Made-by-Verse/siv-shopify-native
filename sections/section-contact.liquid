@@ -40,7 +40,7 @@
     <div class='grid lg:grid-cols-7  gap-8 lg:gap-24'>
       <div class='lg:col-span-5 '>
         <div class='grid grid-cols-3 gap-4 mb-12 lg:mb-32'>
-          <h2 class='h3 transition-opacity duration-2500 ease-in-out' x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100' : 'opacity-0'">{{ section.settings.heading }}</h2>
+          {% render 'animated-heading', title: section.settings.heading, class: 'h3' %}
           {% if section.settings.text != blank %}
           <div class='max-w-p col-span-2 max-w-p'>{{ section.settings.text }}</div>
         {% endif %}

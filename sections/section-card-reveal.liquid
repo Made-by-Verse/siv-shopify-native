@@ -1,6 +1,6 @@
 <div x-data="cardReveal" class="wrapper flex flex-col items-center">
   <div class="w-full max-w-lg text-center">
-    <h2 class="h2" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">{{ section.settings.heading }}</h2>
+    {% render 'animated-heading', title: section.settings.heading, class: 'h2' %}
   </div>
 
   <div

@@ -1,0 +1,37 @@
+<div class="wrapper">
+  {% render 'animated-heading', title: block.title, class: 'max-w-2xl h2' %}
+  <div class="grid lg:grid-cols-4 md:grid-cols-3 gap-6 py-8">
+    <div>
+      {% render 'responsive-image', image: block.image, wrapper_class: 'rounded-lg overflow-hidden w-full sticky top-24 relative aspect-portrait', image_class: 'absolute inset-0 w-full h-full object-cover' %}
+    </div>
+    <div class="hidden lg:block"></div>
+    <div class="md:col-span-2 py-4 md:py-0 px-0 md:px-4 lg:px-0">
+      {{ block.richText }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Bio",
+    "tag": "section",
+    "class": "section section-bio",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "richtext",
+        "id": "richText",
+        "label": "Rich Text"
+      }
+    ]
+  }
+{% endschema %}

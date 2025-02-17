@@ -17,15 +17,7 @@
     </div>
   {% endif %}
   <div class="wrapper text-primary">
-    <h2 
-      x-data="{ shown: false }" 
-      x-intersect.half:enter="shown = true"
-      x-intersect.half:leave="shown = false"
-      :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
-      class="h1 max-w-3xl"
-    >
-      {{ section.settings.hero_heading }}
-    </h2>
+    {% render 'animated-heading', title: section.settings.hero_heading, class: 'h1 max-w-3xl' %}
     <div class="flex justify-between w-full items-end">
       {% if section.settings.hero_content != blank %}
         <div class="max-w-xl">{{ section.settings.hero_content }}</div>

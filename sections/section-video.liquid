@@ -32,7 +32,7 @@
     class="wrapper grid lg:grid-cols-8 gap-4" 
   >
     {%- unless section.settings.heading == blank -%}
-      <h2 class='  transition-opacity duration-2500 ease-in-out' x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100' : 'opacity-0'">{{ section.settings.heading }}</h2>
+      {% render 'animated-heading', title: section.settings.heading, class: 'h2' %}
     {%- endunless -%}
     {% if section.settings.text != blank %}
       <div class='max-w-p mb-12 lg:col-span-4'>{{ section.settings.text }}</div>

@@ -1,7 +1,7 @@
 <div class="wrapper grid md:grid-cols-2 md:grid-rows-2 gap-8">
   <div class="flex flex-col justify-between gap-4">
     <div class="flex flex-col max-w-md items-start gap-4">
-      <h2 class="h2 max-w-xl" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">{{ section.settings.heading }}</h2>
+      {% render 'animated-heading', title: section.settings.heading, class: 'h2 max-w-xl' %}
     </div>
   </div>
   <div class="md:row-span-2 flex">
