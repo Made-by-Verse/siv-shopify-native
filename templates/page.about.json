@@ -28,33 +28,41 @@
         "richText": "<p>In the dynamic landscape of skincare, SIV emerged as a groundbreaking force in 2021 under the leadership of its founder and CEO, Isabel Vitale. Recognizing the untapped potential of microbiome focused skincare, SIV pioneered a revolutionary approach by becoming the first-ever skincare brand to harness the power of bacillus spores.</p><p>Isabel Vitale, driven by a passion for innovation and a deep understanding of the skin microbiome, laid the foundation for SIV with the ambitious goal of redefining the beauty industry. In 2023, SIV officially introduced its quorum-sensing skincare, setting a new standard for beauty products that leverage the inherent communication system of bacteria.The heart of SIV's breakthrough lies in the use of bacillus spores, a key element that distinguishes their products from the conventional skincare offerings.</p><p>Early on in the company, Isabel brought Morgan Giusto on board as a founding partner and COO. Morgan's extensive background in microbiome research and product development complemented Isabel's vision, creating a formidable team dedicated to pushing the boundaries of conventional beauty standards.</p><p>As SIV continues to push the boundaries of innovation, its founders, Isabel Vitale and Morgan Giusto, remain steadfast in their dedication to transforming the skincare industry. With a commitment to research, development, and innovation, SIV is poised to leave an indelible mark on the world of beauty for years to come.</p><p>With Care,</p><p>Isabel <br/>Co-founder, CEO of SIV</p><p>Morgan<br/>Co-founder, COO of SIV</p>"
       }
     },
-    "section_featured_product_fA4CMU": {
+    "section_featured_product_zGxKPB": {
       "type": "section-featured-product",
       "blocks": {
-        "feature_point_xxJtXn": {
+        "feature_point_1": {
           "type": "feature_point",
           "settings": {
-            "heading": "Feature Point 1",
-            "text": "Feature Point 1 Text"
+            "heading": "Supports Balance",
+            "text": "Promotes a harmonious skin environment for improved texture and tone."
+          }
+        },
+        "feature_point_2": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Delivers Vibrance",
+            "text": "Enhances your skin’s natural radiance by supporting a healthy microbiome."
+          }
+        },
+        "feature_point_3": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Builds Resilience",
+            "text": "Strengthens your skin’s defenses against environmental stressors and aging."
           }
         }
       },
-      "block_order": [
-        "feature_point_xxJtXn"
-      ],
+      "block_order": ["feature_point_1", "feature_point_2", "feature_point_3"],
       "settings": {
-        "heading": "Featured Product",
+        "heading": "The Essential Serum for Healthy Skin",
         "product": "siv-biome-balancing-serum",
         "button_text": "View Product",
         "color_scheme": "",
-        "padding_top": "md",
-        "padding_bottom": "md"
+        "padding_top": "none",
+        "padding_bottom": "none"
       }
     }
   },
-  "order": [
-    "hero",
-    "bio",
-    "section_featured_product_fA4CMU"
-  ]
+  "order": ["hero", "bio", "section_featured_product_zGxKPB"]
 }

@@ -46,3 +46,9 @@ p {
     @apply break-all underline;
   }
 }
+
+.prose {
+  > *:not(:last-child) {
+    @apply mb-4;
+  }
+}
