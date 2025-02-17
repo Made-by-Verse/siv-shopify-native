@@ -1,5 +1,20 @@
+{% liquid 
+  assign wide_image = section.settings.wide_image
+  assign reverse_order = section.settings.reverse_order
+
+  assign image_wrapper_base_class = 'w-full relative rounded-lg overflow-hidden'
+
+  if wide_image
+    assign grid_class = 'md:grid-cols-3'
+    assign image_wrapper_class = 'md:col-span-2 aspect-landscape' | append: image_wrapper_base_class
+  else
+    assign grid_class = 'md:grid-cols-2'
+    assign image_wrapper_class = 'md:max-w-lg aspect-text-and-image justify-self-end' | append: image_wrapper_base_class
+  endif
+%}
+
 <div class="section section-text-and-image">
-  <div class="wrapper grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div class="wrapper grid grid-cols-1 gap-8 {{ grid_class }} {% if reverse_order %}md:flex-row-reverse{% endif %}">
     <div class="flex flex-col gap-4 justify-between max-w-md">
       <div class="flex-1">
         {% render 'animated-heading', title: section.settings.title, class: 'h2 sticky top-20' %}
@@ -12,14 +27,14 @@
       {% if section.blocks.size == 1 %}
         {% for block in section.blocks %}
           {% if block.type == 'image' and block.settings.image %}
-            {% render 'responsive-image', image: block.settings.image, wrapper_class: 'w-full aspect-text-and-image relative rounded-lg overflow-hidden md:max-w-lg justify-self-end', image_class: 'object-cover absolute inset-0 w-full h-full' %}
+            {% render 'responsive-image', image: block.settings.image, wrapper_class: image_wrapper_class, image_class: 'object-cover absolute inset-0 w-full h-full' %}
           {% endif %}
         {% endfor %}
       {% else %}
         <div class="text-and-image-swiper">
           <div class="swiper-wrapper">
             {% for block in section.blocks %}
-              {% render 'responsive-image', image: block.settings.image, wrapper_class: 'bg-primary w-full aspect-text-and-image relative rounded-lg overflow-hidden md:max-w-lg swiper-slide', image_class: 'object-cover absolute inset-0 w-full h-full' %}
+              {% render 'responsive-image', image: block.settings.image, wrapper_class: 'bg-primary swiper-slide' | append: image_wrapper_base_class, image_class: 'object-cover absolute inset-0 w-full h-full' %}
             {% endfor %}
           </div>
         </div>
@@ -51,6 +66,12 @@
         "type": "checkbox",
         "id": "reverse_order",
         "label": "Reverse Order",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "wide_image",
+        "label": "Wide Image",
         "default": false
       }
     ],

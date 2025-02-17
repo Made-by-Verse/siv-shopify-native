@@ -1,0 +1,84 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "section-home-hero",
+      "settings": {
+        "hero_heading": "Science-Powered. Results Driven",
+        "hero_content": "<p>A breakthrough scientific formula that activates your biology to foundationally change your skin ecosystem</p>",
+        "show_featured_product": false
+      }
+    },
+    "text_and_image": {
+      "type": "section-text-and-image",
+      "settings": {
+        "title": "The Beauty of the Biome",
+        "richtext": "<p>Your skin is home to a wide variety of bacteria, fungi, and other microbes that control how your skin looks, feels, and functions. Differences in skin temperature, texture, thickness, humidity, chemistry, and other environmental factors help determine which microbes live where. To maintain a healthier looking skin complexion, a balance of the microbiota must be established.</p>"
+      }
+    },
+    "text_and_image_2": {
+      "type": "section-text-and-image",
+      "settings": {
+        "title": "The Science behind the Serum",
+        "wide_image": true
+      }
+    },
+    "section_featured_product_zGxKPB": {
+      "type": "section-featured-product",
+      "blocks": {
+        "feature_point_1": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Supports Balance",
+            "text": "Promotes a harmonious skin environment for improved texture and tone."
+          }
+        },
+        "feature_point_2": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Delivers Vibrance",
+            "text": "Enhances your skin’s natural radiance by supporting a healthy microbiome."
+          }
+        },
+        "feature_point_3": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Builds Resilience",
+            "text": "Strengthens your skin’s defenses against environmental stressors and aging."
+          }
+        }
+      },
+      "block_order": ["feature_point_1", "feature_point_2", "feature_point_3"],
+      "settings": {
+        "heading": "The Essential Serum for Healthy Skin",
+        "product": "siv-biome-balancing-serum",
+        "button_text": "View Product",
+        "color_scheme": "",
+        "padding_top": "none",
+        "padding_bottom": "none"
+      }
+    },
+    "section_featured_posts": {
+      "type": "section-featured-posts",
+      "settings": {
+        "title": "Stay Informed with SIV",
+        "button_text": "View Product"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "text_and_image",
+    "text_and_image_2",
+    "section_featured_product_zGxKPB",
+    "section_featured_posts"
+  ]
+}

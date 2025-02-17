@@ -10,4 +10,8 @@
   .featured-product {
     @apply lg:flex hidden rounded-xl overflow-hidden w-full max-w-xl text-contrast;
   }
+
+  p {
+    @apply text-xl lg:text-2xl opacity-100;
+  }
 }

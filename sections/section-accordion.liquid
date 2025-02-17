@@ -1,5 +1,5 @@
 <div class="wrapper accordion-wrapper">
-  {% render 'animated-heading', heading: section.settings.heading, class: 'h3' %}
+  {% render 'animated-heading', title: section.settings.heading, class: 'h3' %}
   <div class="accordion-content" x-data="accordion">
     {% for block in section.blocks %}
       {% case block.type %}

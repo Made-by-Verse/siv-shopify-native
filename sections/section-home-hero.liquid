@@ -1,11 +1,3 @@
-{% style %}
-  .color-{{ section.settings.color_scheme }} {
-    --color-primary: {{ section.settings.color_scheme.settings.primary }};
-    --color-contrast: {{ section.settings.color_scheme.settings.contrast }};
-    --color-lines: {{ section.settings.color_scheme.settings.lines }};
-  }
-{% endstyle %}
-
 {% assign featured_product = all_products[settings.featured_product] %}
 
   {% if section.settings.backgroundImage != blank %}
@@ -62,25 +54,14 @@
       "label": "Background Image"
     },
     {
-      "type": "richtext",
-      "id": "hero_content",
-      "label": "Hero Content",
-    },
-    {
-      "type": "url",
-      "id": "hero_button_url",
-      "label": "Hero Button URL"
-    },
-    {
-      "type": "text",
-      "id": "hero_button_text",
-      "label": "Hero Button Text",
-      "default": "Shop Now"
-    },
-    {
       "type": "text",
       "id": "hero_heading",
       "label": "Hero Heading",
+    },
+    {
+      "type": "richtext",
+      "id": "hero_content",
+      "label": "Hero Content",
     },
     {
       "type": "checkbox",
@@ -94,8 +75,6 @@
       "name": "t:sections.home-hero.name",
       "settings": {
         "hero_content": "<p>Welcome to our store. Discover our unique collection of products.</p>",
-        "hero_button_text": "Shop Now",
-        "hero_button_url": "/collections/all"
       }
     }
   ]
