@@ -22,6 +22,7 @@ export class CarouselManager extends Base {
     super.init();
     this.initTestimoniesSwiper();
     this.initFeaturedPostsSwiper();
+    this.initTextAndImageSwiper();
   }
 
   initFeaturedPostsSwiper() {
@@ -32,6 +33,17 @@ export class CarouselManager extends Base {
     this.swipers.set(
       "featured-posts-swiper",
       new Swiper(swiper, SWIPER_CONFIG.featuredPosts)
+    );
+  }
+
+  initTextAndImageSwiper() {
+    const swiper = document.querySelector(".text-and-image-swiper");
+
+    if (!swiper) return;
+
+    this.swipers.set(
+      "text-and-image-swiper",
+      new Swiper(swiper, SWIPER_CONFIG.textAndImage)
     );
   }
 

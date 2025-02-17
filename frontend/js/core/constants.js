@@ -37,6 +37,16 @@ export const SWIPER_CONFIG = {
       },
     },
   },
+  textAndImage: {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    effect: "fade",
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    speed: 1000,
+  },
 };
 
 export const SCROLL_PREVENT = [
