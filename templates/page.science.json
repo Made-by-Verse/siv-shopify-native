@@ -19,15 +19,48 @@
     },
     "text_and_image": {
       "type": "section-text-and-image",
+      "blocks": {
+        "image_8qCbfW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design-9.png"
+          }
+        },
+        "image_nYGAdP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design-8.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_8qCbfW",
+        "image_nYGAdP"
+      ],
       "settings": {
         "title": "The Beauty of the Biome",
-        "richtext": "<p>Your skin is home to a wide variety of bacteria, fungi, and other microbes that control how your skin looks, feels, and functions. Differences in skin temperature, texture, thickness, humidity, chemistry, and other environmental factors help determine which microbes live where. To maintain a healthier looking skin complexion, a balance of the microbiota must be established.</p>"
+        "text": "",
+        "reverse_order": false,
+        "wide_image": false
       }
     },
     "text_and_image_2": {
       "type": "section-text-and-image",
+      "blocks": {
+        "image_JdfgCc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/spores.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_JdfgCc"
+      ],
       "settings": {
         "title": "The Science behind the Serum",
+        "text": "",
+        "reverse_order": false,
         "wide_image": true
       }
     },
@@ -56,7 +89,11 @@
           }
         }
       },
-      "block_order": ["feature_point_1", "feature_point_2", "feature_point_3"],
+      "block_order": [
+        "feature_point_1",
+        "feature_point_2",
+        "feature_point_3"
+      ],
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
         "product": "siv-biome-balancing-serum",
