@@ -12,7 +12,7 @@
     "faqs": {
       "type": "section-accordion",
       "settings": {
-        "title": "Frequently Asked Questions"
+        "heading": "Frequently Asked Questions"
       },
       "blocks": {
         "faq_1": {
