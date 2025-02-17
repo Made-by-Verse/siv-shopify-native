@@ -6,7 +6,7 @@ import { HeaderManager } from "../components/HeaderManager";
 import { CarouselManager } from "../components/CarouselManager";
 import { RecommendationsManager } from "../components/RecommendationsManager";
 import { SCROLL_PREVENT } from "./constants";
-import { Cart, Process, MegaMenu, CardReveal } from "../AlpineData";
+import { Cart, Process, MegaMenu, CardReveal, Accordion } from "../AlpineData";
 
 export default class App {
   constructor() {
@@ -24,6 +24,7 @@ export default class App {
     Cart();
     MegaMenu();
     CardReveal();
+    Accordion();
 
     Alpine.start();
   }

@@ -12,14 +12,14 @@
       {% if section.blocks.size == 1 %}
         {% for block in section.blocks %}
           {% if block.type == 'image' and block.settings.image %}
-            {% render 'responsive-image', image: block.settings.image, wrapper_class: 'w-full aspect-text-and-image relative rounded-lg overflow-hidden md:max-w-lg justify-self-center', image_class: 'object-cover absolute inset-0 w-full h-full' %}
+            {% render 'responsive-image', image: block.settings.image, wrapper_class: 'w-full aspect-text-and-image relative rounded-lg overflow-hidden md:max-w-lg justify-self-end', image_class: 'object-cover absolute inset-0 w-full h-full' %}
           {% endif %}
         {% endfor %}
       {% else %}
         <div class="text-and-image-swiper">
           <div class="swiper-wrapper">
             {% for block in section.blocks %}
-              {% render 'responsive-image', image: block.settings.image, wrapper_class: 'w-full aspect-text-and-image relative rounded-lg overflow-hidden md:max-w-lg swiper-slide', image_class: 'object-cover absolute inset-0 w-full h-full' %}
+              {% render 'responsive-image', image: block.settings.image, wrapper_class: 'bg-primary w-full aspect-text-and-image relative rounded-lg overflow-hidden md:max-w-lg swiper-slide', image_class: 'object-cover absolute inset-0 w-full h-full' %}
             {% endfor %}
           </div>
         </div>

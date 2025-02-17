@@ -8,7 +8,6 @@
 
 {% assign featured_product = all_products[settings.featured_product] %}
 
-<div class="w-full relative flex items-end justify-center home-hero">
   {% if section.settings.backgroundImage != blank %}
     {% render 'responsive-image', image: section.settings.backgroundImage, wrapper_class: "absolute inset-0 ", image_class: "object-cover absolute inset-0 h-full w-full" %}
   {% else %}
@@ -47,12 +46,12 @@
       {% endif %}
     </div>
   </div>
-</div>
 
 {% schema %}
 {
   "name": "t:sections.home-hero.name",
   "tag": "section",
+  "class": "w-full relative flex items-end justify-center home-hero h-screen-no-nav",
   "disabled_on": {
     "groups": ["header", "footer"]
   },

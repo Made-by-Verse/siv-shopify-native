@@ -1,0 +1,92 @@
+{% if section.settings.image %}
+  {% render 'responsive-image', image: section.settings.image, wrapper_class: 'absolute object-cover inset-0 h-full w-full z-0', image_class: '' %}
+{% else %}
+  {{ 'hero-apparel-2' | placeholder_svg_tag: 'absolute object-cover inset-0 h-full w-full z-0 bg-primary' }}
+{% endif %}
+<div class="wrapper max-w-7xl z-10 relative space-y-12">
+  <div class="text-white text-center">
+    {% render 'animated-heading', title: section.settings.heading, class: 'h1' %}
+  </div>
+  <div class="grid md:grid-cols-2 gap-4">
+    {% for block in section.blocks %}
+      <div
+        class="bg-black/20 rounded-lg text-white p-4 md:p-6 flex flex-col justify-between items-start gap-4 backdrop-blur"
+      >
+        <div>
+          <h2 class="h3 mb-2">{{ block.settings.heading }}</h2>
+          <div class="prose">{{ block.settings.text }}</div>
+        </div>
+        <a href="{{ block.settings.button_link }}" class="btn btn--white">{{ block.settings.button_text }}</a>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="flex justify-center items-center">
+    <div class="prose max-w-md text-white text-center">{{ section.settings.bottom_text }}</div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Affiliates",
+    "tag": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "class": "section-affiliates h-screen-no-nav relative flex justify-center items-center overflow-hidden",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "bottom_text",
+        "label": "Bottom Text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "affiliate",
+        "name": "Affiliate",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Text Content"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Button"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+

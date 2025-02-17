@@ -21,3 +21,7 @@
     @apply bg-primary text-contrast duration-500;
   }
 }
+
+.h-screen-no-nav {
+  height: calc(100vh - var(--header-height));
+}

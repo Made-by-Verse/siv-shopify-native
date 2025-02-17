@@ -1,0 +1,44 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "faqs": {
+      "type": "section-accordion",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      },
+      "blocks": {
+        "faq_1": {
+          "type": "accordion",
+          "settings": {
+            "heading": "What is Siv Skincare?",
+            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "accordion",
+          "settings": {
+            "heading": "What is Siv Skincare?",
+            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "accordion",
+          "settings": {
+            "heading": "What is Siv Skincare?",
+            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3"]
+    }
+  },
+  "order": ["faqs"]
+}

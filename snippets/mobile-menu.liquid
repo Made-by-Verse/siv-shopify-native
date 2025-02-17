@@ -50,7 +50,7 @@
                   {%- if link.links.size > 0 -%}
                     <button 
                       class="w-full text-left flex justify-between items-center link"
-                      x-on:click="activeItem = activeItem === '{{ linkId }}' ? null : '{{ linkId }}'"
+                      @click="activeItem = activeItem === '{{ linkId }}' ? null : '{{ linkId }}'"
                     >
                       {{ link.title }}
                       <span class='text-contrast w-3 block transform transition-transform duration-500' :class="activeItem === '{{ linkId }}' ? 'rotate-180' : 'rotate-0'">{{ 'icon-down-arrow.svg' | inline_asset_content }}</span>
