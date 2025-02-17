@@ -34,20 +34,23 @@
         "image_dWcN8C": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_427320581.jpg"
+            "image": "shopify://shop_images/DTS_Shadow_Tech_Fanette_Guilloud_9360.jpg"
           }
         },
         "image_dWcN8": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_10.png"
+            "image": "shopify://shop_images/blog-image-3.jpg"
           }
         }
       },
-      "block_order": ["image_dWcN8C", "image_dWcN8"],
+      "block_order": [
+        "image_dWcN8C",
+        "image_dWcN8"
+      ],
       "settings": {
-        "title": "Our Story",
-        "text": "<p>In the dynamic landscape of skincare, SIV emerged as a groundbreaking force in 2021 under the leadership of its founder and CEO, Isabel Vitale.</p>",
+        "title": "Developed with microbiologists",
+        "text": "<p>SIV products are developed by our team of skincare industry and science <br/>experts who share Isabel’s passion to create groundbreaking formulas <br/>that work with any individual’s unique biology. Our team continues to <br/>push the bounds of what's possible for skincare — while creating a <br/>foundation for healthier skin.</p>",
         "reverse_order": false
       }
     },
@@ -76,7 +79,11 @@
           }
         }
       },
-      "block_order": ["feature_point_1", "feature_point_2", "feature_point_3"],
+      "block_order": [
+        "feature_point_1",
+        "feature_point_2",
+        "feature_point_3"
+      ],
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
         "product": "siv-biome-balancing-serum",
@@ -87,5 +94,10 @@
       }
     }
   },
-  "order": ["hero", "bio", "text_and_image", "section_featured_product_zGxKPB"]
+  "order": [
+    "hero",
+    "bio",
+    "text_and_image",
+    "section_featured_product_zGxKPB"
+  ]
 }
