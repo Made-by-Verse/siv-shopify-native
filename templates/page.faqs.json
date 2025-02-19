@@ -18,26 +18,110 @@
         "faq_1": {
           "type": "accordion",
           "settings": {
-            "heading": "What is Siv Skincare?",
+            "heading": "What is SIV’s Biome Balancing Serum??",
             "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
           }
         },
         "faq_2": {
           "type": "accordion",
           "settings": {
-            "heading": "What is Siv Skincare?",
+            "heading": "What is Leaky Skin?",
             "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
           }
         },
         "faq_3": {
           "type": "accordion",
           "settings": {
-            "heading": "What is Siv Skincare?",
+            "heading": "What does Quorum sensing mean/what is QS?",
+            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "accordion",
+          "settings": {
+            "heading": "What does SIV help with?",
+            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "accordion",
+          "settings": {
+            "heading": "How long does one bottle last?",
+            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Order/layering of product:",
+            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Skin identical ingredients",
+            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Can I use my SIV with other products?",
+            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Is it supposed to smell like this?",
+            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Why do I need to “SHAKE VIGOROUSLY!” before use?",
+            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+          }
+        },
+        "faq_11": {
+          "type": "accordion",
+          "settings": {
+            "heading": "How do I dispense the serum?",
+            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+          }
+        },
+        "faq_12": {
+          "type": "accordion",
+          "settings": {
+            "heading": "How do I place a wholesale order?",
+            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+          }
+        },
+        "faq_13": {
+          "type": "accordion",
+          "settings": {
+            "heading": "How do I become a wholesaler?",
             "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3"]
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10",
+        "faq_11",
+        "faq_12",
+        "faq_13"
+      ]
     }
   },
   "order": ["faqs"]

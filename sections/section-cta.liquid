@@ -8,7 +8,7 @@
   {% if section.settings.action_type == 'link' %}
     <a href="{{ section.settings.button_link }}" class="btn btn--white">{{ section.settings.button_text }}</a>
   {% elsif section.settings.action_type == 'button' %}
-    <button @click="$dispatch('{{ section.settings.custom_event_trigger }}')" class="btn btn--white">{{ section.settings.button_text }}</button>
+    <button x-data @click="$dispatch('{{ section.settings.custom_event_trigger }}')" class="btn btn--white">{{ section.settings.button_text }}</button>
   {% endif %}
 </div>
 

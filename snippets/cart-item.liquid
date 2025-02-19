@@ -1,14 +1,14 @@
-<div class="flex gap-4 py-4 border-b">
-  <img :src="item.image" class="w-[160px] aspect-landscape object-cover flex-none" />
+<div class="flex gap-4 py-4">
+    <img :src="item.image" class="aspect-square object-center w-24 h-24 border rounded md:w-28 md:h-28" />
   <div class="flex flex-col justify-between w-full flex-grow">
     <div class="flex w-full justify-between">
-      <h3 class="font-serif max-w-[150px] text-sm leading-none" x-text="item.title"></h3>
-      <p x-text="$store.cart.formatMoney(item.final_price)"></p>
+      <h3 class="text-2xl leading-none" x-text="item.title"></h3>
+      <p class='leading-none' x-text="$store.cart.formatMoney(item.final_price)"></p>
     </div>
-    <div class='flex w-full justify-between'>
-      <div class="flex items-center gap-2">
+    <div class='flex gap-2'>
+      <div class="flex items-center gap-2 border rounded">
         <button 
-          class="quantity-btn minus" 
+          class="quantity-btn minus h-10 w-10 flex items-center justify-center" 
           @click="$store.cart.updateQuantity(item.key, item.quantity - 1)"
         >-</button>
         <span 
@@ -16,14 +16,16 @@
           x-text="item.quantity"
         ></span>
         <button 
-          class="quantity-btn plus" 
+          class="quantity-btn plus h-10 w-10 flex items-center justify-center" 
           @click="$store.cart.updateQuantity(item.key, item.quantity + 1)"
         >+</button>
       </div>
       <button 
-        class="uppercase text-sm opacity-70 hover:opacity-100 transition-opacity duration-500  " 
+        class="uppercase text-sm border rounded opacity-70 hover:opacity-100 transition-opacity duration-500  w-10 h-10 flex items-center justify-center" 
         @click="$store.cart.removeFromCart(item.key)"
-      >Remove</button>
+      >
+        <span class='w-6 h-6 block'>{% render 'icon-trash' %}</span>
+      </button>
     </div>
   </div>
 </div> 

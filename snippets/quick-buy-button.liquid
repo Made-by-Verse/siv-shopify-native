@@ -1,0 +1,29 @@
+{%- if product != blank -%}
+  <div>
+    <p class='text-red-500 text-center mb-2  ' x-data="{message: ''}" x-show="message != ''" x-text='message' @cart:error.window="message = event.detail.message" @cart:adding.window="message = ''"
+      @cart:added.window="message = ''"></p>
+    <button
+      type="button"
+      class="btn btn--black w-full relative buy-button"
+      x-data="{ loading: false }"
+      @cart:adding.window="loading = true"
+      @cart:added.window="loading = false"
+      @cart:error.window="loading = false"
+      @click="$store.cart.addToCart({{ product.selected_or_first_available_variant.id }}, null)"
+      :disabled="loading"
+      disabled="{{ product.is_sold_out }}"
+    >
+      <span 
+        :class="{ 'opacity-0': loading }"
+      >
+        Add to cart {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
+      </span>
+      <div 
+        class="absolute inset-0 flex items-center justify-center"
+        x-show="loading"
+      >
+        {%- render 'loading-spinner' -%}
+      </div>
+    </button>
+  </div>
+{%- endif -%}
