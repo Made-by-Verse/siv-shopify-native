@@ -11,33 +11,28 @@
   "sections": {
     "affiliates": {
       "type": "section-affiliates",
-      "settings": {
-        "heading": "For Professionals",
-        "bottom_text": "For more information, please contact us at [contact@sivskincare.com](mailto:contact@sivskincare.com)."
-      },
       "blocks": {
         "image_dWcN8C": {
           "type": "affiliate",
           "settings": {
-            "image": "shopify://shop_images/DTS_Shadow_Tech_Fanette_Guilloud_9360.jpg",
-            "heading": "For Professionals",
-            "text": "For more information, please contact us at [contact@sivskincare.com](mailto:contact@sivskincare.com).",
-            "button_text": "Contact Us",
-            "button_link": "mailto:contact@sivskincare.com"
-          }
-        },
-        "image_dWcN8": {
-          "type": "affiliate",
-          "settings": {
-            "heading": "For Professionals",
-            "text": "For more information, please contact us at [contact@sivskincare.com](mailto:contact@sivskincare.com).",
-            "button_text": "Contact Us",
-            "button_link": "mailto:contact@sivskincare.com"
+            "heading": "Clinicians",
+            "text": "Please fill out the following form if you currently own or are part of a professional practice and are interested in wholesaling SIV products.",
+            "button_text": "Apply",
+            "button_link": "shopify://pages/ws-account-create"
           }
         }
       },
-      "block_order": ["image_dWcN8C", "image_dWcN8"]
+      "block_order": [
+        "image_dWcN8C"
+      ],
+      "settings": {
+        "heading": "For Professionals",
+        "image": "shopify://shop_images/siv-hero.jpg",
+        "bottom_text": "Disclaimer: Each submission is subject to review and does not guarantee a position with SIV, as we want to ensure each of our professional partners are well suited the company"
+      }
     }
   },
-  "order": ["affiliates"]
+  "order": [
+    "affiliates"
+  ]
 }
