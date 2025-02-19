@@ -23,29 +23,33 @@
         "point_1": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/topical-spore-treatment.png",
-            "heading": "Topical spore treatment",
-            "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
+            "image": "shopify://shop_images/step-1.gif",
+            "heading": "Step 1",
+            "text": "Before use, shake the dropper vigorously, until the bottom of the dropper is clear, to disperse Bacillus spores throughout the serum."
           }
         },
         "point_2": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/skin-identical.png",
-            "heading": "Skin Identical",
-            "text": "Lightweight & stabilizing formula containing physiologically identical ingredients that your skin recognizes."
+            "image": "shopify://shop_images/step-2.jpg",
+            "heading": "Step 2",
+            "text": "Apply 2-5 drops to hands first or directly to area, once daily, and gently massage and then pat into skin. Can be used on damp or dry skin."
           }
         },
         "point_3": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/face-base.png",
-            "heading": "Your Face Is Your Base",
-            "text": "Set your unique canvas by applying 2-5 drops of our Biome-Balancing Serum after toner and before moisturizer."
+            "image": "shopify://shop_images/step-3.jpg",
+            "heading": "Step 3",
+            "text": "For optimal results: apply after toner and before moisturizer."
           }
         }
       },
-      "block_order": ["point_1", "point_2", "point_3"],
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3"
+      ],
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
@@ -152,5 +156,9 @@
       }
     }
   },
-  "order": ["main", "key_points", "testimonies"]
+  "order": [
+    "main",
+    "key_points",
+    "testimonies"
+  ]
 }
