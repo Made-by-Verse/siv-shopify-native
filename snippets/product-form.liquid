@@ -1,0 +1,37 @@
+<form class='space-y-4' x-data="{ purchaseType: 'onetime', selectedVariant: '', sellingPlanId: '{{ product.selling_plan_groups[0].selling_plans[0].id }}' }" x-effect="console.log(selectedVariant, purchaseType)">
+  {% if product.selling_plan_groups.size > 0 %}
+    <div class="purchase-options">
+      {% unless product.requires_selling_plan %}
+        <label class="flex items-center gap-2">
+          <input type="radio" name="purchase_type" value="onetime" x-model="purchaseType" class="text-contrast">
+          <span class="text-sm uppercase tracking-wider">One-time purchase</span>
+        </label>
+      {% endunless %}
+
+      <label class="flex items-center gap-2">
+        <input type="radio" name="purchase_type" value="subscription" x-model="purchaseType" class="text-contrast">
+        <span class="text-sm uppercase tracking-wider">Subscribe & Save</span>
+      </label>
+
+      <select name="selling_plan" x-show="purchaseType === 'subscription'" x-transition x-model="sellingPlanId">
+        {% for selling_plan in product.selling_plan_groups[0].selling_plans %}
+          <option value="{{ selling_plan.id }}">{{ selling_plan.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
+
+  {% unless product.has_only_default_variant %}
+    <select name="variant" x-model="selectedVariant">
+      {% for variant in product.variants %}
+        <option value="{{ variant.id }}">{{ variant.title }}</option>
+      {% endfor %}
+    </select>
+  {% endunless %}
+
+  {% if product.is_sold_out %}
+    <button class="btn btn--white">Sold out</button>
+  {% else %}
+    {% render 'buy-buttons', product: product, selectedVariant: selectedVariant %}
+  {% endif %}
+</form>

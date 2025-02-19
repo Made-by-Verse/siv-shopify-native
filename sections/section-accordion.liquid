@@ -12,8 +12,7 @@
                 <span class='line'></span>
               </span>
             </button>
-            <div x-data @click="console.log($el.scrollHeight)" :style="{ height: activeIndex === {{ forloop.index0 }} ? $el.scrollHeight + 'px' : '0px' }" class="accordion-item-content prose"
-            >
+            <div :style="{ height: activeIndex === {{ forloop.index0 }} ? $el.scrollHeight + 'px' : '0px' }" class="accordion-item-content prose">
               {{ block.settings.content }}
             </div>
           </div>

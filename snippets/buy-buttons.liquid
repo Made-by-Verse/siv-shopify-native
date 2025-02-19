@@ -2,7 +2,6 @@
   Renders product buy-buttons.
   Accepts:
   - product: {Object} product object.
-  - selectedVariant: {String} id of the selected variant.
 
   Usage:
   {% render 'buy-buttons', product: product, selectedVariant: selectedVariant %}
@@ -14,19 +13,19 @@
         @cart:added.window="message = ''"></p>
       <button
         type="button"
-        class="btn btn--primary w-full relative buy-button"
+        class="btn btn--black w-full relative buy-button"
         x-data="{ loading: false }"
         @cart:adding.window="loading = true"
         @cart:added.window="loading = false"
         @cart:error.window="loading = false"
-        @click="$store.cart.addToCart(selectedVariant)"
-        :disabled="!selectedVariant || loading"
+        @click="$store.cart.addToCart(selectedVariant || {{ product.selected_or_first_available_variant.id }}, purchaseType === 'subscription' ? sellingPlanId : null)"
+        :disabled="loading"
+        disabled="{{ product.is_sold_out }}"
       >
         <span 
-          x-text="selectedVariant ? '{{ 'products.product.add_to_cart' | t }}' : '{{ 'products.product.select_option' | t }}'"
           :class="{ 'opacity-0': loading }"
         >
-          {{ 'products.product.select_option' | t }}
+          Add to cart {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
         </span>
         <div 
           class="absolute inset-0 flex items-center justify-center"

@@ -1,235 +1,54 @@
-<div
-  class='wrapper pt-20 pb-[160px] grid lg:grid-cols-6 gap-4'
->
-  {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
-    <div class='lg:col-span-4 space-y-4'>
-      {% for media in product.media %}
-        {% assign modulo = forloop.index | modulo: 3 %}
-        
-        {% if modulo == 1 %}
-          {% render 'responsive-image',
-            image: media,
-            width: 1000,
-            wrapper_class: 'w-full hidden lg:block',
-            image_class: 'w-full h-full object-cover'
-          %}
-        {% elsif modulo == 2 %}
-          <div class="grid lg:grid-cols-3 gap-4">
-            {% render 'responsive-image',
-              image: media,
-              width: 500,
-              wrapper_class: 'w-full',
-              image_class: 'w-full object-contain'
-            %}
-            {% if forloop.last != true %}
-              {% render 'responsive-image',
-                image: product.media[forloop.index],
-                width: 500,
-                wrapper_class: 'w-full lg:col-span-2',
-                image_class: 'w-full h-full object-contain'
-              %}
-            {% endif %}
-          </div>
-        {% endif %}
-      {% endfor %}
+<div class="wrapper grid items-start md:gap-6 md:grid-cols-2">
+  {% if product.media.size > 1 %}
+    {% render 'product-gallery', product: product %}
+  {% elsif product.media.size == 1 %}
+    {% render 'responsive-image', image: product.media[0], wrapper_class: 'aspect-square bg-white', image_class: 'w-full h-full object-cover' %}
+  {% endif %}
+  <div class="product-details" x-data="{descriptionOpen: false}">
+    <div>
+      {% render 'animated-heading', class: 'mb-2 h2', title: product.title %}
+      {% render 'price', product: product, show_compare_at_price: true %}
     </div>
-    <div class='lg:col-span-2 h-product_details lg:sticky top-20 flex items-center justify-center w-full order-first lg:order-last'>
-      <section
-        id="ProductInfo-{{ section.id }}"
-        class='flex w-full lg:h-full flex-col items-center'
-        x-data="{ 
-          selectedVariant: {{ product.selected_or_first_available_variant.id | default: product.selected_variant.id | json }},
-        }"
-        @variant-change.window="
-          const { id } = $event.detail;
-          selectedVariant = id;
-        "
+    <div>
+      <div
+        class="product-description relative"
+        :style="{ height: descriptionOpen ? $el.scrollHeight + 'px' : '90px' }"
+        :class="descriptionOpen && 'product-description-open'"
       >
-        {% render 'responsive-image',
-          image: product.featured_image,
-          width: 1000,
-          wrapper_class: 'lg:hidden w-full h-full relative aspect-landscape mb-4',
-          image_class: 'w-full h-full object-cover absolute inset-0'
-        %}
-        <div class="w-full flex-1 flex flex-col items-center justify-center">
-          {%- assign product_form_id = 'product-form-' | append: section.id -%}
-          <h1 class="h3 mb-8 text-center">
-            {{ product.title | escape }}
-          </h1>
-          {% if product.metafields.custom.sofa_size != blank %}
-            <p
-              class="text-xs uppercase"
-              {{ block.shopify_attributes }}
-            >
-              {{- product.metafields.custom.sofa_size -}}
-            </p>
-          {% endif %}
-          <div id="price-{{ section.id }}" role="status">
-            {%- render 'price',
-              product: product,
-              use_variant: true,
-              show_badges: true,
-              price_class: 'price--large'
-            -%}
-          </div>
-        </div>
-        <div class="w-full h-[336px] flex flex-col justify-end">
-          <div class="flex-1 grid grid-cols-3 gap-4">
-            <ul class='  space-y-[7px] leading-none text-sm mt-0.5' x-data="{ activeDrawer: null }">
-              <li>
-                <button
-                  class="text-left uppercase"
-                  @click="$dispatch('toggle-drawer', { type: 'specifications' })"
-                  :aria-expanded="activeDrawer === 'specifications'"
-                >
-                  Specifications
-                </button>
-              </li>
-              {% if section.blocks.size > 0 %}
-                <li>
-                  <button
-                    class="text-left uppercase"
-                    @click="$dispatch('toggle-drawer', { type: 'product-care' })"
-                    :aria-expanded="activeDrawer === 'product-care'"
-                  >
-                    Product Care
-                  </button>
-                </li>
-              {% endif %}
-              {% if customer %}
-                <li>
-                  <button
-                    class="text-left uppercase"
-                    @click="$dispatch('toggle-drawer', { type: 'shipping' })"
-                    :aria-expanded="activeDrawer === 'shipping'"
-                  >
-                    Shipping
-                  </button>
-                </li>
-              {% endif %}
-            </ul>
-            <div class='col-span-2 space-y-2 text-[13px]'>
-              {% if product.description != blank %}
-                {{ product.description }}
-              {% endif %}
-            </div>
-          </div>
-          {% if customer %}
-            <div>
-              <span class="product-stock-info" data-variant-stock></span>
-            </div>
-          {% endif %}
-          <div>
-            <div class="w-full">
-              {% if product.has_only_default_variant == false %}
-                {% render 'product-variant-picker', product: product, product_form_id: product_form_id %}
-              {% endif %}
-              {%- render 'buy-buttons',
-                product: product,
-                product_form_id: product_form_id,
-                section_id: section.id,
-              -%}
-            </div>
-          </div>
-        </div>
-      </section>
+        {{ product.description }}
+      </div>
+      <button class="underline font-semibold" @click="descriptionOpen = !descriptionOpen" x-text="descriptionOpen ? 'Less' : 'More'"></button>
     </div>
 
-    {% render 'product-drawers', blocks: section.blocks %}
-
-    {%- liquid
-      if product.selected_or_first_available_variant.featured_media
-        assign seo_media = product.selected_or_first_available_variant.featured_media
-      else
-        assign seo_media = product.featured_media
-      endif
-    -%}
-
-    <script type="application/ld+json">
-      {{ product | structured_data }}
-    </script>
-
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    const shopifyCurrentVariantID = '{{ product.selected_or_first_available_variant.id }}';
-    const stockInfoContainer = document.querySelector('[data-variant-stock]');
-    const productId = '{{ product.id }}';
-    let productVariants = [];
-    const buyButton = document.querySelector('.buy-button'); // Assuming the buy button has a class of 'buy-button'
+    {% render 'product-form', product: product %}
     
-    if (stockInfoContainer) {
-      axios
-          .get(`https://jsf-po-eta.gadget.app/product?id=${productId}`,{
-            mode: 'cors'
-          })
-          .then(({ data }) => {
-            
-            productVariants = data.data;
-            
-            const selectedVariantValues = findVariantByID(shopifyCurrentVariantID);
-            renderStockInformation(selectedVariantValues);
-          })
-          .catch((error) => console.error('Error:', error));
+    {% if product.metafields.product.accordion %}
+      {% render 'product-accordion', product: product %}
+    {% endif %}
+  </div>
+</div>
 
-      function formatDate(date) {
-        return new Date(date).toLocaleDateString('en-US', {
-          month: 'long',
-          day: '2-digit',
-          year: 'numeric',
-        });
-      }
+{%- liquid
+  if product.selected_or_first_available_variant.featured_media
+    assign seo_media = product.selected_or_first_available_variant.featured_media
+  else
+    assign seo_media = product.featured_media
+  endif
+-%}
 
-      function renderStockInformation(data) {
-        if (!data) {
-          console.error('No data provided');
-          return;
-        }
-
-        let content = '';
-        const stockText = data.inStock === true ? 'IN STOCK' : '';
-
-        // Disable the buy button if out of stock
-        if (buyButton) {
-          buyButton.disabled = !data.inStock; // Disable if not in stock
-        }
-
-        if (data.eta && data.eta.length > 0 && data.inStock === false) {
-          const etaDate = new Date(data.eta[data.eta.length - 1]); // get the latest order
-          const currentDate = new Date();
-
-          if (isNaN(etaDate.getTime())) {
-            console.error('Invalid ETA date');
-          } else if (currentDate < etaDate) {
-            const formattedDate = formatDate(etaDate);
-            content = `<strong>ETA: ${formattedDate}</strong>`;
-          } // Implicitly handles if currentDate is not before etaDate by not setting etaText
-        }
-
-        if (!content && stockText) {
-          content = `<strong>${stockText}</strong>`;
-        }
-
-        stockInfoContainer.innerHTML = content;
-      }
-
-      document.addEventListener('product:variant-change', (evt) => {
-        const selectedVariantValues = findVariantByID(evt.detail.variant.id);
-        renderStockInformation(selectedVariantValues);
-      });
-    }
-
-    function findVariantByID(variantID) {
-      return productVariants.find((variant) => variant.id.includes(variantID));
-    }
-  });
-</script> 
-
+<script type="application/ld+json">
+  {{ product | structured_data }}
+</script>
 
 {% schema %}
 {
   "name": "t:sections.main-product.name",
   "tag": "section",
   "class": "section",
+  "disabled_on": {
+    "templates": ["page", "collection", "list-collections", "index"],
+    "groups": ["header", "footer"]
+  },
   "settings": [
     {
       "type": "checkbox",

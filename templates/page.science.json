@@ -33,10 +33,7 @@
           }
         }
       },
-      "block_order": [
-        "image_8qCbfW",
-        "image_nYGAdP"
-      ],
+      "block_order": ["image_8qCbfW", "image_nYGAdP"],
       "settings": {
         "title": "The Beauty of the Biome",
         "text": "",
@@ -54,14 +51,14 @@
           }
         }
       },
-      "block_order": [
-        "image_JdfgCc"
-      ],
+      "block_order": ["image_JdfgCc"],
       "settings": {
         "title": "The Science behind the Serum",
-        "text": "",
+        "text": "<p>Bacillus spores SIV Biome-Balancing Serum is the first topical solution to use Bacillus spores that adapt to your particular skin care needs, creating homeostasis on the skin without the use of harsh chemicals. These spores do not overwhelm the skin — they act as a conductor to the orchestra of microbes present, offering a level of customization that can't be found anywhere else.</p>",
         "reverse_order": false,
-        "wide_image": true
+        "wide_image": true,
+        "link": "https://www.google.com",
+        "link_text": "View Ingredients"
       }
     },
     "section_featured_product_zGxKPB": {
@@ -89,11 +86,7 @@
           }
         }
       },
-      "block_order": [
-        "feature_point_1",
-        "feature_point_2",
-        "feature_point_3"
-      ],
+      "block_order": ["feature_point_1", "feature_point_2", "feature_point_3"],
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
         "product": "siv-biome-balancing-serum",

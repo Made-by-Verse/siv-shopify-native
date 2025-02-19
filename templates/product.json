@@ -17,21 +17,40 @@
         "hide_variants": false
       }
     },
-    "section-image-banner-with-sticky-text": {
-      "type": "product-image-banner-with-sticky-text",
-      "settings": {}
-    },
-    "related-products": {
-      "type": "related-products",
+    "key_points": {
+      "type": "section-key-points",
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/topical-spore-treatment.png",
+            "heading": "Topical spore treatment",
+            "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/skin-identical.png",
+            "heading": "Skin Identical",
+            "text": "Lightweight & stabilizing formula containing physiologically identical ingredients that your skin recognizes."
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/face-base.png",
+            "heading": "Your Face Is Your Base",
+            "text": "Set your unique canvas by applying 2-5 drops of our Biome-Balancing Serum after toner and before moisturizer."
+          }
+        }
+      },
+      "block_order": ["point_1", "point_2", "point_3"],
       "settings": {
-        "heading": "Related items",
-        "color_scheme": "scheme-1"
+        "heading": "Balance in a bottle",
+        "description": ""
       }
     }
   },
-  "order": [
-    "main",
-    "section-image-banner-with-sticky-text",
-    "related-products"
-  ]
+  "order": ["main", "key_points"]
 }

@@ -3,26 +3,35 @@
   assign reverse_order = section.settings.reverse_order
 
   assign image_wrapper_base_class = 'w-full relative rounded-lg overflow-hidden'
+  assign swiper_slide_base_class = ' swiper-slide'
 
   if wide_image
     assign grid_class = 'md:grid-cols-3'
-    assign image_wrapper_class = 'md:col-span-2 aspect-landscape' | append: image_wrapper_base_class
+    assign image_wrapper_class = 'md:col-span-2 aspect-landscape ' | append: image_wrapper_base_class
+    assign swiper_slide_class = image_wrapper_class | append: swiper_slide_base_class
   else
     assign grid_class = 'md:grid-cols-2'
-    assign image_wrapper_class = 'md:max-w-lg aspect-text-and-image justify-self-end' | append: image_wrapper_base_class
+    assign image_wrapper_class = 'md:max-w-lg aspect-text-and-image justify-self-end ' | append: image_wrapper_base_class
+    assign swiper_slide_class = image_wrapper_class | append: swiper_slide_base_class
   endif
 %}
 
 <div class="section section-text-and-image">
-  <div class="wrapper grid grid-cols-1 gap-8 {{ grid_class }} {% if reverse_order %}md:flex-row-reverse{% endif %}">
-    <div class="flex flex-col gap-4 justify-between max-w-md">
-      <div class="flex-1">
-        {% render 'animated-heading', title: section.settings.title, class: 'h2 sticky top-20' %}
+  <div class="wrapper grid grid-cols-1 gap-8 {{ grid_class }}">
+    {% unless wide_image %}
+      <div class="flex flex-col gap-4 justify-between max-w-md">
+        <div class="flex-1">
+          {% render 'animated-heading', title: section.settings.title, class: 'h2 sticky top-20' %}
+        </div>
+        <div class="prose">
+          {{ section.settings.text }}
+        </div>
       </div>
-      <div class="prose">
-        {{ section.settings.text }}
+    {% else %}
+      <div class="md:col-span-2">
+        {% render 'animated-heading', title: section.settings.title, class: 'h2 max-w-md' %}
       </div>
-    </div>
+    {% endunless %}
     {% if section.blocks.size > 0 %}
       {% if section.blocks.size == 1 %}
         {% for block in section.blocks %}
@@ -34,11 +43,23 @@
         <div class="text-and-image-swiper">
           <div class="swiper-wrapper">
             {% for block in section.blocks %}
-              {% render 'responsive-image', image: block.settings.image, wrapper_class: 'bg-primary swiper-slide' | append: image_wrapper_base_class, image_class: 'object-cover absolute inset-0 w-full h-full' %}
+              {% render 'responsive-image', image: block.settings.image, wrapper_class: swiper_slide_class, image_class: 'object-cover absolute inset-0 w-full h-full' %}
             {% endfor %}
           </div>
         </div>
       {% endif %}
+    {% endif %}
+    {% if wide_image %}
+      <div class="flex flex-col gap-4 justify-between max-w-md">
+        <div class="flex-1">
+          <div class="prose sticky top-20">
+            {{ section.settings.text }}
+          </div>
+        </div>
+        {% if section.settings.link and section.settings.link_text %}
+          <a href="{{ section.settings.link }}" class="btn btn--black">{{ section.settings.link_text }}</a>
+        {% endif %}
+      </div>
     {% endif %}
   </div>
 </div>
@@ -73,6 +94,16 @@
         "id": "wide_image",
         "label": "Wide Image",
         "default": false
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link Text"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
       }
     ],
     "blocks": [

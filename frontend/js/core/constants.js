@@ -41,11 +41,33 @@ export const SWIPER_CONFIG = {
     slidesPerView: 1,
     spaceBetween: 0,
     effect: "fade",
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
+    fadeEffect: {
+      crossFade: true,
     },
     speed: 1000,
+  },
+  productGallery: {
+    main: {
+      effect: "fade",
+      speed: 500,
+      loop: true,
+    },
+    thumbs: {
+      watchSlidesProgress: true,
+      freeMode: true,
+      spaceBetween: 10,
+      slidesPerView: "auto",
+      direction: "horizontal",
+      breakpoints: {
+        1024: {
+          direction: "vertical",
+        },
+      },
+    },
   },
 };
 

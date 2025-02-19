@@ -6,16 +6,25 @@ import {
   EffectFade,
   FreeMode,
   Navigation,
+  Thumbs,
 } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
+
 import { SWIPER_CONFIG } from "../core/constants";
 
 export class CarouselManager extends Base {
   constructor() {
     super();
     this.swipers = new Map();
-    Swiper.use([Autoplay, EffectFade, FreeMode, Navigation, Controller]);
+    Swiper.use([
+      Autoplay,
+      EffectFade,
+      FreeMode,
+      Navigation,
+      Controller,
+      Thumbs,
+    ]);
   }
 
   init() {
@@ -23,6 +32,7 @@ export class CarouselManager extends Base {
     this.initTestimoniesSwiper();
     this.initFeaturedPostsSwiper();
     this.initTextAndImageSwiper();
+    this.initProductGallerySwiper();
   }
 
   initFeaturedPostsSwiper() {
@@ -96,6 +106,41 @@ export class CarouselManager extends Base {
           prevEl: testimoniesButtonPrev,
           nextEl: testimoniesButtonNext,
         },
+      })
+    );
+  }
+
+  initProductGallerySwiper() {
+    const swiper = document.querySelector(".product-gallery-swiper");
+    const thumbsSwiper = document.querySelector(".product-gallery-thumbs");
+
+    const swiperButtonPrev = document.querySelector(
+      ".product-gallery-swiper-button-prev"
+    );
+    const swiperButtonNext = document.querySelector(
+      ".product-gallery-swiper-button-next"
+    );
+
+    if (!swiper || !thumbsSwiper) return;
+
+    this.swipers.set(
+      "product-gallery",
+      new Swiper(swiper, {
+        ...SWIPER_CONFIG.productGallery.main,
+        thumbs: {
+          swiper: thumbsSwiper,
+        },
+        navigation: {
+          prevEl: swiperButtonPrev,
+          nextEl: swiperButtonNext,
+        },
+      })
+    );
+
+    this.swipers.set(
+      "product-gallery-thumbs",
+      new Swiper(thumbsSwiper, {
+        ...SWIPER_CONFIG.productGallery.thumbs,
       })
     );
   }

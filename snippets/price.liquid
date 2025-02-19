@@ -26,13 +26,13 @@
   assign price_min = product.price_min | default: price
   assign price_max = product.price_max | default: price
   assign available = target.available | default: false
-  assign money_price = price | money
-  assign money_price_min = price_min | money
-  assign money_price_max = price_max | money
+  assign money_price = price | money_without_trailing_zeros
+  assign money_price_min = price_min | money_without_trailing_zeros
+  assign money_price_max = price_max | money_without_trailing_zeros
 -%}
 
 {%- unless target == null and placeholder == null -%}
-  <div class="flex gap-2 items-center">
+  <div class="flex gap-2 items-center text-2xl">
     {%- if compare_at_price -%}
       <span class="text-gray-500 line-through">{{ compare_at_price }}</span>
     {%- endif -%}

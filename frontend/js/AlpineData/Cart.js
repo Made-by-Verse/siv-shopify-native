@@ -30,10 +30,12 @@ export default function Cart() {
       }
     },
 
-    async addToCart(variantId, quantity = 1) {
+    async addToCart(variantId, sellingPlanId = null, quantity = 1) {
       try {
         // Dispatch event to show loading state
         window.dispatchEvent(new CustomEvent("cart:adding"));
+
+        console.log(variantId, quantity, sellingPlanId);
 
         const response = await fetch(`${window.routes.cart_add_url}.js`, {
           method: "POST",
@@ -41,7 +43,7 @@ export default function Cart() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            items: [{ id: variantId, quantity }],
+            items: [{ id: variantId, quantity, selling_plan: sellingPlanId }],
           }),
         });
 
