@@ -11,43 +11,40 @@
   "sections": {
     "faqs": {
       "type": "section-accordion",
-      "settings": {
-        "heading": "Frequently Asked Questions"
-      },
       "blocks": {
         "faq_1": {
           "type": "accordion",
           "settings": {
             "heading": "What is SIV’s Biome Balancing Serum??",
-            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+            "content": "<p><strong>Simple:</strong> A quorum-sensing serum that uses bacillus spores to adapt and balance each person’s skin microbiome.</p><p><strong>Elaborated:</strong> SIV is a quorum-sensing serum that uses bacillus spores to balance the skin microbiome. Many of the inflammatory issues we deal with on the skin can be tied to a dysbiotic skin microbiome. The spores are a resilient form of bacteria that lie dormant in the formula- once applied to the skin, the natural heat, water, and oil provide the proper nutrients to revive them and assess what the skin needs. They target overgrown strains on the skin and bring them down to a healthy level while also facilitating the growth of other beneficial strains- effectively balancing the skin microbiome.</p>"
           }
         },
         "faq_2": {
           "type": "accordion",
           "settings": {
             "heading": "What is Leaky Skin?",
-            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+            "content": "<p><strong>Simple:</strong> Skin barrier degradation caused by an imbalance of skin bacteria</p><p><strong>Elaborated:</strong> Leaky skin is skin barrier degradation that is caused by the imbalance of skin bacteria. The composition of the skin microbiome can directly affect the structure of the physical skin barrier. When this barrier becomes compromised, toxins can leak into the skin and cause inflammation throughout the body. Leaky skin is an independent risk factor for various other issues unrelated to skin health (Baltimore Longitudinal Study of Aging).</p>"
           }
         },
         "faq_3": {
           "type": "accordion",
           "settings": {
             "heading": "What does Quorum sensing mean/what is QS?",
-            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+            "content": "<p><strong>Simple:</strong> It’s the process of communication between two bacterial cells.</p><p><strong>Elaborated:</strong> Quorum sensing is the process of communication between two bacterial cells. It mainly happens through biofilms and max load capacity, which is based on weight/volume. This is the technology SIV’s serum uses in order to read, adapt to, and adjust each person’s unique skin biome.</p>"
           }
         },
         "faq_4": {
           "type": "accordion",
           "settings": {
             "heading": "What does SIV help with?",
-            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+            "content": "<p><strong>Simple:</strong> Occasional inflammatory issues on the skin</p><p><strong>Elaborated:</strong> SIV can help with various types of occasional inflammatory skin issues. The serum works on the skin’s immune system, which is one of the main things the skin microbiome controls. When we have occasional inflammatory issues, it’s an overworking of the immune system. This means the skin is reacting to things that it should not be reacting to, which is triggered by a dysbiotic skin microbiome.</p>"
           }
         },
         "faq_5": {
           "type": "accordion",
           "settings": {
             "heading": "How long does one bottle last?",
-            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+            "content": "<p><strong>Simple: </strong>after cleanser (and toner if they use) but before moisturizer</p><p><strong>Elaborated: </strong>This can depend on each person’s skin.If the skin is more tolerant, they can use their water-based actives (exfoliating serums, retinol, acids, etc) before SIV and then finish with their moisturizer.If the skin is more reactive, they can use SIV before to help the tolerance level. Make sure to wait 30 seconds to a minute before applying water-based products on top of SIV to ensure they can be absorbed. Finish with moisturizer.*Leave- on benzoyl peroxide should ALWAYS be applied last.</p>"
           }
         },
         "faq_6": {
@@ -61,49 +58,49 @@
           "type": "accordion",
           "settings": {
             "heading": "Skin identical ingredients",
-            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+            "content": "<p>Bacillus is naturally found in nature in the soil and in the ocean. Your skin knows and recognizes this bacteria.The rest of the ingredients are skin- identical fatty acids.</p><p><strong>Squalane:</strong> Biomimetic oil, molecule derived from non-GMO sugarcane that mimics squalene, beneficial in promoting skin hydration</p><p><strong>Caprylic/Capric Triglyceride: </strong>a mixture of caprylic and capric fatty acids derived from coconut oil; helps replenish the skin’s surface and help it to resist moisture loss</p><p><strong>Glyceryl Caprylate:</strong> a natural, plant-based emollient derived from glycerin and plant fatty acids; restores the skin’s oils, regulates the skin moisture and acts as a humidifier to the skin.</p><p><strong>Bacillus:</strong> A proprietary blend of Bacillus spores activates a healthy skin foundation and visibly improves skin. Positively influencing your unique skin biome and establishing balance. Bacillus spores lay dormant in the formula and are designed to activate from the natural heat, oils, and water from the skin. This allows the spores to change and improve the skin microbiome by targeting overgrown bacteria while facilitating the growth of other essential species- effectively balancing the skin microbiome.</p>"
           }
         },
         "faq_8": {
           "type": "accordion",
           "settings": {
             "heading": "Can I use my SIV with other products?",
-            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+            "content": "<p>A resounding YES! Like our microbes, we believe products should work better together. Don’t give up your favorites, SIV plays well with everyone.</p><p>SIV sets a well balanced foundation on the skin on which other products can work more effectively.</p><p>SIV works to return your skin to homeostasis. It regulates oil levels, pH levels, and resident microbes on the skin.</p>"
           }
         },
         "faq_9": {
           "type": "accordion",
           "settings": {
             "heading": "Is it supposed to smell like this?",
-            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+            "content": "<p>We love this question - yes!!! The Biome Balancing Serum has an earthy, biological smell to it. This is a good thing! As your microbiome balances out, the smell will improve/diminish.</p><p>We are committed to using biocompatible ingredients. Therefore, our serum does not contain any added fragrance. The compounds used in added fragrances can compromise the skin microbiome.</p><p>The expected and unique scent of SIV’s Biome Balancing Serum results from the biocompatible ingredients used (Bacillus).</p><p>This scent dissipates quickly, especially if other products are used over the serum.</p>"
           }
         },
         "faq_10": {
           "type": "accordion",
           "settings": {
             "heading": "Why do I need to “SHAKE VIGOROUSLY!” before use?",
-            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+            "content": "<p>When we say shake, we mean SHAKE!</p><p>The bacillus spores settle to the bottom of the dropper (we did not want to add a suspension and compromise the formula); therefore, to ensure the product works right, we need to ensure that the bacteria is fully incorporated into the formula.</p><p>Once the rubber bottom of the dropper is clear, the bacillus spores are fully incorporated into the product and it’s ready to use.</p>"
           }
         },
         "faq_11": {
           "type": "accordion",
           "settings": {
             "heading": "How do I dispense the serum?",
-            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+            "content": "<p>GENTLY press the bottom of the dropper bottle (the clear rubber part) to dispense a drop of the serum.</p><p>Press VERY gently, as to not apply too much</p>"
           }
         },
         "faq_12": {
           "type": "accordion",
           "settings": {
             "heading": "How do I place a wholesale order?",
-            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+            "content": "<p>Be sure to have a wholesale account. If you do not, fill out this form to be considered: https://sivcare.com/wholesale-enquiry</p><p>If you have an account, go to sivcare.com and log in using the same email that you signed up with. An email containing your access code will be sent to you (check spam if you don't see it). </p>"
           }
         },
         "faq_13": {
           "type": "accordion",
           "settings": {
             "heading": "How do I become a wholesaler?",
-            "content": "<p>Siv Skincare is a skincare brand that offers a range of products for all skin types.</p>"
+            "content": "<p>To apply to be a wholesaler, fill out this application form: https://sivcare.com/wholesale-enquiry</p><p>Once the form is filled out, it will be sent to our team for review and approval</p><p>If you are approved, you will receive an email to schedule a phone call with one of our founders, Isabel. Here you will receive a personal consultation where we set up your account, discuss best practices, and place your first order! </p>"
           }
         }
       },
@@ -121,8 +118,13 @@
         "faq_11",
         "faq_12",
         "faq_13"
-      ]
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions"
+      }
     }
   },
-  "order": ["faqs"]
+  "order": [
+    "faqs"
+  ]
 }
