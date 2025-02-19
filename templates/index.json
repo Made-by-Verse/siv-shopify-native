@@ -13,11 +13,9 @@
       "type": "section-home-hero",
       "settings": {
         "backgroundImage": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.png",
+        "hero_heading": "Harness Your Biology for Resilient Skin",
         "hero_content": "<p>Discover the next generation of professional skincare with our Biome-Balancing Serum – an advanced, spore-based formula designed to harmonize with your unique skin microbiome, tailored to restore your skin’s vitality and resilience.</p>",
-        "hero_button_url": "shopify://collections/all",
-        "hero_button_text": "Explore Catalogue",
-        "color_scheme": "",
-        "hero_heading": "Harness Your Biology for Resilient Skin"
+        "show_featured_product": true
       }
     },
     "section_featured_product_zGxKPB": {
@@ -45,14 +43,14 @@
           }
         }
       },
-      "block_order": ["feature_point_1", "feature_point_2", "feature_point_3"],
+      "block_order": [
+        "feature_point_1",
+        "feature_point_2",
+        "feature_point_3"
+      ],
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
-        "product": "siv-biome-balancing-serum",
-        "button_text": "View Product",
-        "color_scheme": "",
-        "padding_top": "none",
-        "padding_bottom": "none"
+        "button_text": "View Product"
       }
     },
     "key_points": {
@@ -83,7 +81,11 @@
           }
         }
       },
-      "block_order": ["point_1", "point_2", "point_3"],
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3"
+      ],
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
@@ -132,7 +134,12 @@
           }
         }
       },
-      "block_order": ["card_0", "card_1", "card_2", "card_3"],
+      "block_order": [
+        "card_0",
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
       "settings": {
         "heading": "Put yourself back in the picture",
         "text": "Research shows that how you see yourself on the outside reflects how you feel on the inside."
@@ -243,7 +250,9 @@
       "settings": {
         "image": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.png",
         "title": "Healthier skin is a drop away",
+        "action_type": "link",
         "button_link": "shopify://collections/all",
+        "custom_event_trigger": "open-quick-buy-drawer",
         "button_text": "View Product"
       }
     },
