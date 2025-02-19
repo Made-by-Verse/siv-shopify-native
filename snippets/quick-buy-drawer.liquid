@@ -1,0 +1,73 @@
+{% assign product = settings.featured_product %}
+
+<div
+    x-data="{ open: false }"
+    @open-quick-buy-drawer.window="
+      open = true;
+    "
+    @keydown.escape.window="
+      open = false;
+    "
+    class='z-[9999] fixed'
+  >
+  <!-- Backdrop -->
+  <div 
+    x-show="open"
+    class="drawer-backdrop"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    @click="
+      open = false;
+    "
+    x-cloak
+  ></div>
+
+  <div
+    x-show="open"
+    x-cloak
+    x-transition:enter="transform transition ease-in-out duration-500"
+    x-transition:enter-start="translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transform transition ease-in-out duration-500"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="translate-x-full"
+    class="fixed right-0 top-0 h-full max-w-[390px] lg:max-w-[446px] w-full bg-white text-contrast shadow-lg flex flex-col"
+    role="dialog"
+    aria-modal="true"
+  >
+    
+    <div class="relative flex flex-col flex-1 p-6 overflow-y-auto gap-4">
+      <div class='flex justify-end'>
+        <button @click="open = false" class='transform hover:rotate-90 transition-transform duration-500 w-10 h-10 flex justify-center items-center bg-contrast text-white rounded-full'>
+          <span class="sr-only">Close</span>
+          <span class='w-6 h-6 block'>{{- 'icon-close.svg' | inline_asset_content -}}</span>
+        </button>
+      </div>
+      {% render 'responsive-image', image: product.media[0], wrapper_class: 'relative bg-primary aspect-portrait rounded-lg overflow-hidden', image_class: 'object-cover absolute inset-0 h-full w-full bg-light' %}
+      <div class="text-center">
+        <h3 class="mb-2">{{ product.title }}</h3>
+        {{ product.metafields.product.short-description }}
+      </div>
+    </div>
+    <div class="bg-white px-6 pb-4 space-y-2">
+      {% render 'buy-buttons', product: product %}
+      <a href="{{ product.url }}" class="btn btn--outline w-full flex justify-center">View Product</a>
+      {% comment %} <Link
+        onClick={() => useAppStore.setState({ openProductDrawer: false })}
+        href={`/products/` + item.store.slug.current}
+        class={`group px-6 py-3 font-medium w-full text-center text-sm tracking-wider rounded-full inline-flex items-center justify-center gap-3 btn btn--outline`}
+      >
+        <span class="relative overflow-hidden flex flex-col h-5">
+          <span class="translate-y-0 group-hover:translate-y-full duration-500">
+            View Product
+          </span>
+          <span class="absolute -translate-y-full group-hover:-translate-y-0 duration-500">
+            View Product
+          </span>
+        </span>
+      </Link> {% endcomment %}
+    </div>
+  </div>
+</div>

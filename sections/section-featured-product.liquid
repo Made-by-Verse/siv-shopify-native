@@ -1,19 +1,11 @@
-{% style %}
-  .color-{{ section.settings.color_scheme }} {
-    --color-primary: {{ section.settings.color_scheme.settings.primary }};
-    --color-contrast: {{ section.settings.color_scheme.settings.contrast }};
-    --color-lines: {{ section.settings.color_scheme.settings.lines }};
-  }
-{% endstyle %}
-
-{% assign product = all_products[section.settings.product] %}
+{% assign product = all_products[settings.featured_product] %}
 
 <div class='color-{{ section.settings.color_scheme }} bg-primary text-contrast'>
   <div class="wrapper flex flex-col items-center">
     {% if section.settings.heading != blank %}
       {% render 'animated-heading', title: section.settings.heading, class: 'h2 text-center max-w-xl' %}
     {% endif %}
-    {% if section.settings.product != blank %}
+    {% if product %}
       <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-4">
         <ul class='space-y-4 order-last md:order-first'>
           {% for block in section.blocks %}
@@ -33,9 +25,9 @@
             <h2 class="h3" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">{{ product.title }}</h2>
             <p>From {{ product.price_min | money }}</p> 
           </div>
-          <p>{{ product.description }}</p>
+          <p>{{ product.metafields.product.short-description }}</p>
           <div>
-            <button @click="dispatch('open-product-drawer', { productId: {{ product.id }} })" class='btn btn--black'>{{ section.settings.button_text }}</button>
+            <button @click="$dispatch('open-quick-buy-drawer')" class='btn btn--black'>{{ section.settings.button_text }}</button>
           </div>
         </div>
       </div>
@@ -62,49 +54,10 @@
       "label": "Heading"
     },
     {
-      "type": "product",
-      "id": "product",
-      "label": "Product"
-    },
-    {
       "type": "text",
       "id": "button_text",
       "label": "Button text",
       "default": "View Product"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
-    },
-    {
-      "type": "header",
-      "content": "Padding"
-    },
-    {
-      "type": "select",
-      "id": "padding_top",
-      "label": "Padding Top",
-      "options": [
-        { "value": "none", "label": "None" },
-        { "value": "sm", "label": "Small" },
-        { "value": "md", "label": "Medium" },
-        { "value": "lg", "label": "Large" },
-        { "value": "xl", "label": "XLarge" }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "padding_bottom",
-      "label": "Padding Bottom",
-      "options": [
-        { "value": "none", "label": "None" },
-        { "value": "sm", "label": "Small" },
-        { "value": "md", "label": "Medium" },
-        { "value": "lg", "label": "Large" },
-        { "value": "xl", "label": "XLarge" }
-      ]
     }
   ],
   "blocks": [
@@ -129,8 +82,6 @@
     {
       "name": "Featured Product",
       "settings": {
-        "padding_top": "md",
-        "padding_bottom": "md",
         "heading": "Featured Product"
       },
       "blocks": [

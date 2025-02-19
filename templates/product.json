@@ -50,7 +50,107 @@
         "heading": "Balance in a bottle",
         "description": ""
       }
+    },
+    "testimonies": {
+      "type": "section-testimonies",
+      "blocks": {
+        "testimony_1": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.33_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.40_PM.png",
+            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 30
+          }
+        },
+        "testimony_2": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-19_at_12.36.32_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-19_at_12.36.43_PM.png",
+            "quote": "Reduced lesion count, Reduced redness, Improved skin texture & tone",
+            "treatment_duration": 10
+          }
+        },
+        "testimony_3": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.11.51_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.11.56_PM.png",
+            "quote": "Reduced lesion count, Reduced redness, Improved skin clarity & tone",
+            "treatment_duration": 120
+          }
+        },
+        "testimony_4": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.10.35_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.10.42_PM.png",
+            "quote": "Reduced redness. Improved hydration levels. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 14
+          }
+        },
+        "testimony_5": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.07.21_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.07.26_PM.png",
+            "quote": "Reduced redness. Reduced flakiness. Improved hydration levels. Improved skin tone and texture",
+            "treatment_duration": 14
+          }
+        },
+        "testimony_6": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.06.17_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.06.27_PM.png",
+            "quote": "Reduction in number of lesions. Reduced redness. Regulated oil levels. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 60
+          }
+        },
+        "testimony_8": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.02.58_PM_1.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.03.23_PM_1.png",
+            "quote": "Reduction in number of lesions. Reduced redness. Regulated oil levels. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 30
+          }
+        },
+        "testimony_itpp7p": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.04.21_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.04.30_PM.png",
+            "quote": "Reduction in number of lesions.Reduced redness.",
+            "treatment_duration": 30
+          }
+        },
+        "testimony_9": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2024-02-26_at_10.13.57_AM.png",
+            "after_image": "shopify://shop_images/Screenshot_2024-02-26_at_10.14.01_AM.png",
+            "quote": "Reduced redness. Reduced lesions. Regulated oil level. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 60
+          }
+        }
+      },
+      "block_order": [
+        "testimony_1",
+        "testimony_2",
+        "testimony_3",
+        "testimony_4",
+        "testimony_5",
+        "testimony_6",
+        "testimony_8",
+        "testimony_itpp7p",
+        "testimony_9"
+      ],
+      "settings": {
+        "heading": "Real consumer tested results"
+      }
     }
   },
-  "order": ["main", "key_points"]
+  "order": ["main", "key_points", "testimonies"]
 }

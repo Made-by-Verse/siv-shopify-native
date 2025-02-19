@@ -95,6 +95,9 @@ export class CarouselManager extends Base {
           prevEl: testimoniesButtonPrev,
           nextEl: testimoniesButtonNext,
         },
+        thumbs: {
+          swiper: testimoniesImageBefore,
+        },
       })
     );
 
@@ -102,6 +105,7 @@ export class CarouselManager extends Base {
       "testimonies-image-before",
       new Swiper(".testimonies-swiper-image-before", {
         ...SWIPER_CONFIG.testimonies.image,
+        watchSlidesProgress: true,
         navigation: {
           prevEl: testimoniesButtonPrev,
           nextEl: testimoniesButtonNext,

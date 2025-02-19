@@ -1,0 +1,23 @@
+{% assign featured_product = settings.featured_product %}
+
+<div class="featured-product">
+  <div class="w-1/3 flex justify-center items-center bg-primary">
+    {% render 'responsive-image', image: featured_product.featured_image, wrapper_class: "relative aspect-portrait w-full h-full overflow-hidden", image_class: "absolute inset-0 object-cover w-full h-full" %}
+  </div>
+  <div class="w-2/3 p-8 flex flex-col bg-white">
+    <h3 class="max-w-xs font-heading text-3xl">
+      {{ featured_product.title }}
+    </h3>
+    <h5 class="mb-10">
+      {{ featured_product.price | money }}
+    </h5>
+    <div class="mt-auto">
+      <button x-data class="btn btn--black group px-6 py-3 font-medium text-sm tracking-wider rounded-full inline-flex items-center gap-3" @click="console.log('open-quick-buy-drawer'); $dispatch('open-quick-buy-drawer');">
+        <span class="relative overflow-hidden flex flex-col h-5">
+          <span class="translate-y-0 group-hover:translate-y-full duration-500">Shop Now</span>
+          <span class="absolute -translate-y-full group-hover:-translate-y-0 duration-500">Shop Now</span>
+      </span>
+      </button>
+    </div>
+  </div>
+</div>
