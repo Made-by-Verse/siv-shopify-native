@@ -250,7 +250,7 @@
       "settings": {
         "image": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.png",
         "title": "Healthier skin is a drop away",
-        "action_type": "link",
+        "action_type": "button",
         "button_link": "shopify://collections/all",
         "custom_event_trigger": "open-quick-buy-drawer",
         "button_text": "View Product"
