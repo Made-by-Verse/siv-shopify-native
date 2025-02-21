@@ -37,7 +37,11 @@
                 </div>
                 <div class="flex mt-4">
                   {% if block.settings.button_text %}
-                    <a href="{{ block.settings.button_link }}" class="btn btn--outline-primary flex">{{ block.settings.button_text }}</a>
+                    {% render 'button', 
+                      button_text: block.settings.button_text,
+                      link: block.settings.button_link,
+                      button_class: 'btn--outline-primary flex'
+                    %}
                   {% endif %}
                 </div>
               </div>

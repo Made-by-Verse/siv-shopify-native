@@ -2,20 +2,21 @@
   @apply fixed inset-0 bg-white bg-opacity-30 backdrop-blur transition-opacity duration-700;
 }
 
-#cart-items, #FacetFiltersForm {
+#cart-items,
+#FacetFiltersForm {
   /* Firefox */
   scrollbar-width: thin;
-  scrollbar-color: var(--color-contrast) transparent;
-  
+  scrollbar-color: white transparent;
+
   /* Webkit (Chrome/Safari) */
   &::-webkit-scrollbar {
     width: 4px;
   }
-  
+
   &::-webkit-scrollbar-track {
     @apply bg-transparent;
   }
-  
+
   &::-webkit-scrollbar-thumb {
     @apply bg-contrast rounded-full;
   }

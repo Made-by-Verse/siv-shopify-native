@@ -6,9 +6,17 @@
 <div class="wrapper relative max-w-xl text-center text-white z-10 flex flex-col items-center justify-center gap-4">
   {% render 'animated-heading', title: section.settings.title, class: 'h1 text-balance' %}
   {% if section.settings.action_type == 'link' %}
-    <a href="{{ section.settings.button_link }}" class="btn btn--white">{{ section.settings.button_text }}</a>
+    {% render 'button', 
+      button_text: section.settings.button_text,
+      link: section.settings.button_link,
+      button_class: 'btn--white'
+    %}
   {% elsif section.settings.action_type == 'button' %}
-    <button x-data @click="$dispatch('{{ section.settings.custom_event_trigger }}')" class="btn btn--white">{{ section.settings.button_text }}</button>
+    {% render 'button', 
+      button_text: section.settings.button_text,
+      event_trigger: section.settings.custom_event_trigger,
+      button_class: 'btn--white'
+    %}
   {% endif %}
 </div>
 

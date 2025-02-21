@@ -12,12 +12,11 @@
       {{ featured_product.price | money }}
     </h5>
     <div class="mt-auto">
-      <button x-data class="btn btn--black group px-6 py-3 font-medium text-sm tracking-wider rounded-full inline-flex items-center gap-3" @click="console.log('open-quick-buy-drawer'); $dispatch('open-quick-buy-drawer');">
-        <span class="relative overflow-hidden flex flex-col h-5">
-          <span class="translate-y-0 group-hover:translate-y-full duration-500">Shop Now</span>
-          <span class="absolute -translate-y-full group-hover:-translate-y-0 duration-500">Shop Now</span>
-      </span>
-      </button>
+       {% render 'button', 
+        button_text: 'Shop Now',
+        event_trigger: 'open-quick-buy-drawer',
+        button_class: 'btn--black'
+      %}
     </div>
   </div>
 </div>

@@ -21,7 +21,11 @@
         {{ section.settings.richtext }}
       </div>
       {% if section.settings.button_text != blank %}
-        <a href='{{ section.settings.button_link }}' class='btn btn--outline-contrast inline-flex'>{{ section.settings.button_text }}</a>
+        {% render 'button', 
+          button_text: section.settings.button_text,
+          link: section.settings.button_link,
+          button_class: 'btn--outline-contrast inline-flex'
+        %}
       {% endif %}
     </div>
   </div>

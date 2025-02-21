@@ -3,7 +3,11 @@
 <div class='wrapper overflow-visible'>
   <div class="flex flex-col md:flex-row gap-4 h-full justify-between md:items-end pb-6">
       {% render 'animated-heading', title: section.settings.title, class: 'h2' %}
-      <a href="{{ window.shopUrl }}/blogs/{{ blog.handle }}" class="btn btn--outline">{{ section.settings.button_text }}</a>
+      {% render 'button', 
+        button_text: section.settings.button_text,
+        link: window.shopUrl | append: '/blogs/' | append: blog.handle,
+        button_class: 'btn--outline'
+      %}
   </div>
   <div class='featured-post-swiper'>
     <div class='swiper-wrapper'>

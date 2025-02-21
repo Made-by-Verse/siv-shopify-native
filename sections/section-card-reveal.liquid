@@ -15,7 +15,11 @@
   <div class="max-w-sm text-center">
    {{section.settings.text}}
     <div class="mt-4">
-      {% comment %} <Button {...button} /> {% endcomment %}
+      {% render 'button', 
+        button_text: section.settings.button_text,
+        link: section.settings.button_link,
+        button_class: 'btn--black'
+      %}
     </div>
   </div>
 </div>

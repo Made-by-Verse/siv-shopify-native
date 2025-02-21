@@ -14,7 +14,6 @@ export default function Cart() {
 
         // Update store
         this.items = cart.items;
-        console.log(cart.items);
 
         this.sub_total = this.formatMoney(cart.total_price);
 
@@ -35,8 +34,6 @@ export default function Cart() {
         // Dispatch event to show loading state
         window.dispatchEvent(new CustomEvent("cart:adding"));
 
-        console.log(variantId, quantity, sellingPlanId);
-
         const response = await fetch(`${window.routes.cart_add_url}.js`, {
           method: "POST",
           headers: {
@@ -48,8 +45,6 @@ export default function Cart() {
         });
 
         const responseBody = await response.json();
-
-        console.log(responseBody);
 
         if (!response.ok) throw new Error(responseBody.message);
 
@@ -134,12 +129,6 @@ export default function Cart() {
         minimumFractionDigits: 0,
         maximumFractionDigits: 2,
       });
-    },
-
-    openCartDrawer() {
-      console.log("Opening Cart");
-
-      window.dispatchEvent(new CustomEvent("open-cart-drawer"));
     },
 
     get cartQuantity() {

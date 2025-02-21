@@ -27,7 +27,11 @@
           </div>
           <p>{{ product.metafields.product.short-description }}</p>
           <div>
-            <button @click="$dispatch('open-quick-buy-drawer')" class='btn btn--black'>{{ section.settings.button_text }}</button>
+            {% render 'button', 
+              button_text: section.settings.button_text,
+              event_trigger: 'open-quick-buy-drawer',
+              button_class: 'btn--black'
+            %}
           </div>
         </div>
       </div>

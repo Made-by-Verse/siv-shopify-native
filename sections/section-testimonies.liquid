@@ -65,24 +65,21 @@
       </div>
     </div>
   </div>
-  <div class="flex items-end">
-    <div class="testimonies-swiper-text mx-0 w-full">
-      <div class="swiper-wrapper">
-        {% for testimony in section.blocks %}
-          <div class="swiper-slide h-full bg-primary">
-            <div class="w-full flex items-end">
-              <div class="max-w-lg flex flex-col items-start justify-end gap-4 h-full">
-                <div class="mb-2"></div>
-                <p class="lead">{{testimony.settings.quote}}</p>
-                <span class="font-medium tracking-wide uppercase">
-                  After {{testimony.settings.treatment_duration}} days
-                </span>
-              </div>
+  <div class="testimonies-swiper-text mx-0 w-full">
+    <div class="swiper-wrapper">
+      {% for testimony in section.blocks %}
+        <div class="swiper-slide bg-primary">
+          <div class="flex items-end h-full">
+            <div class="space-y-4 max-w-lg">
+              <p class="lead">{{testimony.settings.quote}}</p>
+              <span class="block font-medium tracking-wide uppercase">
+                After {{testimony.settings.treatment_duration}} days
+              </span>
             </div>
           </div>
-        {% endfor %}
-      </div>  
-    </div>
+        </div>
+      {% endfor %}
+    </div>  
   </div>
 </div>
 

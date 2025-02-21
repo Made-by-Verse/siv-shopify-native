@@ -16,7 +16,11 @@
           <h2 class="h3 mb-2">{{ block.settings.heading }}</h2>
           <div class="prose">{{ block.settings.text }}</div>
         </div>
-        <a href="{{ block.settings.button_link }}" class="btn btn--white">{{ block.settings.button_text }}</a>
+        {% render 'button', 
+          button_text: block.settings.button_text,
+          link: block.settings.button_link,
+          button_class: 'btn--white'
+        %}
       </div>
     {% endfor %}
   </div>

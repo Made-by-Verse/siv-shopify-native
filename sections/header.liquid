@@ -66,10 +66,12 @@
           Login
         </a>
       {% endif %}
-      <button x-data @click="$dispatch('open-quick-buy-drawer')" class="hidden lg:block btn btn--black">
-        Buy Now
-      </button>
-        {% render 'cart-button' %}
+      {% render 'button', 
+        button_text: 'Buy Now',
+        event_trigger: 'open-quick-buy-drawer',
+        button_class: 'hidden lg:block btn--black'
+      %}
+      {% render 'cart-button' %}
     </div>
   </div>
 </div>

@@ -17,10 +17,10 @@ export const SWIPER_CONFIG = {
       speed: 1000,
       loop: true,
       allowTouchMove: false,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 5000,
+      //   disableOnInteraction: false,
+      // },
     },
   },
   featuredPosts: {

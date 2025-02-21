@@ -1,0 +1,45 @@
+{%- comment -%}
+  Button Component
+  ---------------
+  A reusable button component with hover animation effect
+
+  Parameters:
+  - button_text: String (Required)
+    The text to display on the button
+  
+  - event_trigger: String
+    The Alpine.js event to dispatch on click
+
+  - button_class: String
+    The class to apply to the button
+    
+  - link: String
+    The link to navigate to when the button is clicked
+
+  Classes:
+  - btn: Base button styles (rounded-full, padding, text styles)
+  - btn--black: Black background variant
+  - group: Required for hover animation
+  
+  Example Usage:
+  {% render 'button', 
+    button_text: 'Shop Now',
+    event_trigger: 'open-quick-buy-drawer'
+  %}
+{%- endcomment -%}
+
+{% if link %}
+  <a href="{{ link }}" class="btn {{ button_class }} group">
+    <span class="relative overflow-hidden">
+      <span class="transform translate-y-0 group-hover:translate-y-full duration-500">{{ button_text }}</span>
+      <span class="absolute inset-0 -translate-y-full group-hover:-translate-y-0 duration-500">{{ button_text }}</span>
+    </span>
+  </a>
+{% else %}
+<button x-data class="btn {{ button_class }} group" @click="$dispatch('{{event_trigger}}');">
+  <span class="block relative overflow-hidden">
+    <span class="block transform translate-y-0 group-hover:translate-y-full duration-500">{{ button_text }}</span>
+    <span class="block absolute inset-0 -translate-y-full group-hover:-translate-y-0 duration-500">{{ button_text }}</span>
+  </span>
+</button>
+{% endif %}
