@@ -43,7 +43,11 @@
           }
         }
       },
-      "block_order": ["feature_point_1", "feature_point_2", "feature_point_3"],
+      "block_order": [
+        "feature_point_1",
+        "feature_point_2",
+        "feature_point_3"
+      ],
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
         "button_text": "View Product"
@@ -77,7 +81,11 @@
           }
         }
       },
-      "block_order": ["point_1", "point_2", "point_3"],
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3"
+      ],
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
@@ -126,7 +134,12 @@
           }
         }
       },
-      "block_order": ["card_0", "card_1", "card_2", "card_3"],
+      "block_order": [
+        "card_0",
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
       "settings": {
         "heading": "Put yourself back in the picture",
         "text": "Research shows that how you see yourself on the outside reflects how you feel on the inside."
@@ -235,7 +248,7 @@
     "section_cta": {
       "type": "section-cta",
       "settings": {
-        "image": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.png",
+        "image": "shopify://shop_images/siv-hero.jpg",
         "title": "Healthier skin is a drop away",
         "action_type": "button",
         "button_link": "shopify://collections/all",
