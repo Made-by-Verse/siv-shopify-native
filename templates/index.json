@@ -249,12 +249,49 @@
         "title": "Stay Informed with SIV",
         "button_text": "All articles"
       }
+    },
+    "section_conditions": {
+      "type": "section-conditions",
+      "disabled": true,
+      "blocks": {
+        "condition_1": {
+          "type": "condition",
+          "settings": {
+            "heading": "Normal Skin"
+          }
+        },
+        "condition_2": {
+          "type": "condition",
+          "settings": {
+            "heading": "Dry Skin"
+          }
+        },
+        "condition_3": {
+          "type": "condition",
+          "settings": {
+            "heading": "Sensitive Skin"
+          }
+        },
+        "condition_4": {
+          "type": "condition",
+          "settings": {
+            "heading": "Oily Skin"
+          }
+        }
+      },
+      "block_order": [
+        "condition_1",
+        "condition_2",
+        "condition_3",
+        "condition_4"
+      ]
     }
   },
   "order": [
     "home_hero",
     "section_featured_product_zGxKPB",
     "key_points",
+    "section_conditions",
     "rich_text",
     "card_reveal",
     "testimonies",

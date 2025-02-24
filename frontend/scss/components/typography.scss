@@ -38,9 +38,6 @@ p {
   &.small {
     @apply text-sm lg:text-base;
   }
-  &:last-of-type {
-    @apply mb-0;
-  }
 
   a {
     @apply break-all underline;

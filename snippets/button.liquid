@@ -30,9 +30,9 @@
 
 {% if link %}
   <a href="{{ link }}" class="btn {{ button_class }} group">
-    <span class="relative overflow-hidden">
-      <span class="transform translate-y-0 group-hover:translate-y-full duration-500">{{ button_text }}</span>
-      <span class="absolute inset-0 -translate-y-full group-hover:-translate-y-0 duration-500">{{ button_text }}</span>
+    <span class="block relative overflow-hidden">
+      <span class="block transform translate-y-0 group-hover:translate-y-full duration-500">{{ button_text }}</span>
+      <span class="block absolute inset-0 -translate-y-full group-hover:-translate-y-0 duration-500">{{ button_text }}</span>
     </span>
   </a>
 {% else %}

@@ -1,0 +1,14 @@
+.cursor {
+  @apply overflow-hidden bg-black rounded-lg fixed top-0 left-0;
+
+  pointer-events: none;
+}
+
+.condition-heading {
+  mix-blend-mode: exclusion;
+
+  &::before,
+  &::after {
+    background-color: white;
+  }
+}

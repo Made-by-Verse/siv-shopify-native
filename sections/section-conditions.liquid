@@ -1,0 +1,68 @@
+<div
+  class="wrapper flex flex-col items-center py-20"
+  x-ref="sectionRef"
+  x-data="conditions"
+>
+  <div
+    class="cursor origin-center hidden md:block bottom-0 left-0 transition-all duration-300"
+    :style="`top: ${mouseY}px; left: ${mouseX}px; width: ${hoveringIndex === null ? '0' : '250'}px; height: ${hoveringIndex === null ? '0' : '250'}px;`"
+  >
+    {% for block in section.blocks %}
+      {% if block.settings.image %}
+        <img src="{{block.settings.image | image_url: width: 500}}" alt="{{block.settings.heading}}" class="absolute w-full h-full object-cover rounded-lg transition-opacity duration-500" :class="hoveringIndex == {{forloop.index}} ? 'opacity-100' : 'opacity-0'">
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% for block in section.blocks %}
+    <div
+      x-data="conditionHeading"
+			class="flex justify-center items-center w-full"
+			@mouseenter="handleMouseEnter({{forloop.index}})"
+			@mouseleave="handleMouseLeave"
+			style="zIndex: {{forloop.index}}; height: 33vh"
+			id="condition-heading-{{forloop.index}}"
+      x-cloak
+		>
+			{% comment %} <div
+				:style="`opacity: ${imageOpacity}; transform: scale(${scale})`"
+			>
+        {% render 'responsive-image', image: block.settings.image, image_class: 'aspect-square rounded-lg w-56 block md:hidden' %}
+			</div> {% endcomment %}
+			<div class="z-40 text-center condition-heading cursor-default w-full fixed top-1/2 -translate-y-1/2 pointer-events-none">
+				<span
+					class="block h1 jumbo"
+          :style="`opacity: ${opacity}; transform: scale(${scale})`"
+				>
+					{{block.settings.heading}}
+				</span>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Conditions",
+    "tag": "section",
+    "class": "section section-conditions",
+    "blocks": [
+      {
+        "type": "condition",
+        "name": "Condition",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "settings": []
+  }
+{% endschema %}

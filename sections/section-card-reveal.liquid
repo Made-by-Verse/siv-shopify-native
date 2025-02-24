@@ -13,14 +13,16 @@
     {% endfor %}
   </div>
   <div class="max-w-sm text-center">
-   {{section.settings.text}}
-    <div class="mt-4">
-      {% render 'button', 
-        button_text: section.settings.button_text,
-        link: section.settings.button_link,
-        button_class: 'btn--black'
-      %}
-    </div>
+    {{ section.settings.text }}
+    {% if section.settings.button_text %}
+      <div class="mt-4">
+        {% render 'button',
+          button_text: section.settings.button_text,
+          link: section.settings.button_link,
+          button_class: 'btn--black'
+        %}
+      </div>
+    {% endif %}
   </div>
 </div>
 

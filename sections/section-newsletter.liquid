@@ -1,0 +1,55 @@
+<div class="wrapper max-w-2xl text-center py-16 md:py-32">
+  <h2 class="text-base font-body font-semibold uppercase tracking-wide mb-4">
+    {{section.settings.heading}}
+  </h2>
+  <p
+    x-data="{ shown: false }"
+    x-intersect.half:enter="shown = true"
+    x-intersect.half:leave="shown = false"
+    :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
+    class="h2 mb-10"
+    x-cloak
+  >{{section.settings.text}}</p>
+  <form class="w-full max-w-xl mx-auto">
+    <div class="relative">
+      <input
+        type="email"
+        autoComplete="email"
+        placeholder="Your email"
+        class="w-full h-16 pr-32 pl-8 bg-transparent focus:outline-none placeholder-opacity-50 bg-white text-black rounded-full"
+        required
+      />
+      <button
+        class="absolute  top-2 bottom-2 right-2 text-sm bg-black text-white uppercase font-bold tracking-wider px-6 rounded-full hover:opacity-80 duration-500"
+        type="submit"
+      >
+        {{section.settings.submit}}
+      </button>
+    </div>
+  </form>
+</div>
+
+{% schema %}
+  {
+    "name": "Newsletter",
+    "tag": "section",
+    "class": "section-newsletter bg-black text-white",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "submit",
+        "label": "Submit"
+      }
+    ]
+  }
+{% endschema %}

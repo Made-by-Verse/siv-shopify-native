@@ -11,6 +11,14 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "newsletter": {
+      "type": "section-newsletter",
+      "settings": {
+        "heading": "Sign up for our newsletter",
+        "text": "Sign up for the SIV-tuation to get 10% off your first order",
+        "submit": "Subscribe"
+      }
+    },
     "footer": {
       "type": "footer",
       "settings": {
@@ -18,7 +26,5 @@
       }
     }
   },
-  "order": [
-    "footer"
-  ]
+  "order": ["newsletter", "footer"]
 }
