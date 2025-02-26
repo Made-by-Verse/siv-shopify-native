@@ -28,6 +28,16 @@
         "show_featured_product": true
       }
     },
+    "section_video_z76AhA": {
+      "type": "section-video",
+      "settings": {
+        "video": "shopify://files/videos/SIV Product Demonstration.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify://shop_images/siv-hero.jpg",
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
+    },
     "section_featured_product_zGxKPB": {
       "type": "section-featured-product",
       "blocks": {
@@ -314,6 +324,7 @@
   },
   "order": [
     "home_hero",
+    "section_video_z76AhA",
     "section_featured_product_zGxKPB",
     "key_points",
     "section_conditions",
