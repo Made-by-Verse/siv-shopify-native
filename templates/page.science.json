@@ -15,7 +15,8 @@
         "video_g8H6wX": {
           "type": "video",
           "settings": {
-            "video_url": ""
+            "video_url": "",
+            "video": "shopify://files/videos/-32bd-4c6b-9045-8fa3329530b4.mp4"
           }
         }
       },
