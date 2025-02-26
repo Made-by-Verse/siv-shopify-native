@@ -11,6 +11,17 @@
   "sections": {
     "hero": {
       "type": "section-home-hero",
+      "blocks": {
+        "video_g8H6wX": {
+          "type": "video",
+          "settings": {
+            "video_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_g8H6wX"
+      ],
       "settings": {
         "hero_heading": "Science-Powered. Results Driven",
         "hero_content": "<p>A breakthrough scientific formula that activates your biology to foundationally change your skin ecosystem</p>",
@@ -41,7 +52,9 @@
         "title": "The Beauty of the Biome",
         "text": "<p>Your skin is home to a wide variety of bacteria, fungi, and other microbes that control how your skin looks, feels, and functions. Differences in skin temperature, texture, thickness, humidity, chemistry, and other environmental factors help determine which microbes live where. To maintain a healthier looking skin complexion, a balance of the microbiota must be established.</p>",
         "reverse_order": false,
-        "wide_image": false
+        "wide_image": false,
+        "link_text": "",
+        "link": ""
       }
     },
     "text_and_image_2": {
