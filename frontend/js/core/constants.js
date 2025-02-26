@@ -37,10 +37,11 @@ export const SWIPER_CONFIG = {
   },
   textAndImage: {
     effect: "fade",
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
+    loop: true,
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
     speed: 500,
   },
   productGallery: {

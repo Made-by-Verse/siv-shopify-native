@@ -1,7 +1,7 @@
 <div class="wrapper max-w-lg text-center">
   {% render 'animated-heading', title: section.settings.heading, class: 'h3 text-balance' %}
   {% if section.settings.image %}
-    {% render 'responsive-image', image: section.settings.image, wrapper_class: 'w-full h-full object-cover', image_class: 'w-full h-full object-cover' %}
+    {% render 'responsive-image', image: section.settings.image, wrapper_class: 'w-full', image_class: 'w-full h-full object-center' %}
   {% endif %}
   {{ section.settings.content }}
 </div>

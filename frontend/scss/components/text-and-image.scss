@@ -1,5 +1,14 @@
 .text-and-image-swiper {
-  // .swiper-slide:not(.swiper-slide-active) {
-  //   opacity: 0 !important;
-  // }
+}
+
+.swiper-button {
+  @apply absolute top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full border border-contrast border-opacity-50;
+
+  &-next {
+    right: 0;
+  }
+
+  &-prev {
+    left: 0;
+  }
 }

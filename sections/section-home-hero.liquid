@@ -1,7 +1,14 @@
 {% assign featured_product = all_products[settings.featured_product] %}
 
-  {% if section.settings.backgroundImage != blank %}
-    {% render 'responsive-image', image: section.settings.backgroundImage, wrapper_class: "absolute inset-0 ", image_class: "object-cover absolute inset-0 h-full w-full" %}
+  {% if section.block.size > 0 %}
+    {% for section in section.blocks %}
+      {% case section.type %}
+        {% when 'image' %}
+          {% render 'responsive-image', image: section.settings.backgroundImage, wrapper_class: "absolute inset-0 ", image_class: "object-cover absolute inset-0 h-full w-full" %}
+        {% when 'video' %}
+          {% comment %} {% render 'responsive-video', video_url: section.settings.video_url, video_cover_image: section.settings.video_cover_image, wrapper_class: "absolute inset-0 ", image_class: "object-cover absolute inset-0 h-full w-full" %} {% endcomment %}
+      {% endcase %}
+    {% endfor %}
   {% else %}
     <div class="hero-placeholder placeholder-image">
       {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg'  }}
@@ -29,19 +36,14 @@
   },
   "settings": [
     {
-      "type": "image_picker",
-      "id": "backgroundImage",
-      "label": "Background Image"
-    },
-    {
       "type": "text",
       "id": "hero_heading",
-      "label": "Hero Heading",
+      "label": "Hero Heading"
     },
     {
       "type": "richtext",
       "id": "hero_content",
-      "label": "Hero Content",
+      "label": "Hero Content"
     },
     {
       "type": "checkbox",
@@ -50,11 +52,44 @@
       "default": true
     }
   ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Background Image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background Image"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Background Video",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "label": "Video URL",
+          "accept": ["youtube", "vimeo"]
+        },
+        {
+          "type": "image_picker",
+          "id": "video_cover_image",
+          "label": "Cover Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 1,
   "presets": [
     {
       "name": "t:sections.home-hero.name",
       "settings": {
-        "hero_content": "<p>Welcome to our store. Discover our unique collection of products.</p>",
+        "hero_content": "<p>Welcome to our store. Discover our unique collection of products.</p>"
       }
     }
   ]

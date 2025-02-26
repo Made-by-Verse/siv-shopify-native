@@ -1,6 +1,6 @@
 <button
     x-data
-    @click="console.log('Button clicked!'); $dispatch('open-cart-drawer');"
+    @click="$dispatch('open-cart-drawer');"
     class="relative w-6 h-6 flex gap-1 uppercase items-center justify-center focus:ring-primary/5 text-contrast"
   >
     <svg
