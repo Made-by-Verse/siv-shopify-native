@@ -1,12 +1,20 @@
 {% assign featured_product = all_products[settings.featured_product] %}
 
-  {% if section.block.size > 0 %}
-    {% for section in section.blocks %}
-      {% case section.type %}
+  {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+      {% case block.type %}
         {% when 'image' %}
-          {% render 'responsive-image', image: section.settings.backgroundImage, wrapper_class: "absolute inset-0 ", image_class: "object-cover absolute inset-0 h-full w-full" %}
+          {% render 'responsive-image', image: block.settings.background_image, wrapper_class: "absolute inset-0 ", image_class: "object-cover absolute inset-0 h-full w-full" %}
         {% when 'video' %}
-          {% comment %} {% render 'responsive-video', video_url: section.settings.video_url, video_cover_image: section.settings.video_cover_image, wrapper_class: "absolute inset-0 ", image_class: "object-cover absolute inset-0 h-full w-full" %} {% endcomment %}
+          <div class="absolute inset-0 w-full h-full">
+            {{
+              block.settings.video | video_tag:
+                image_size: '1100x',
+                muted: true,
+                autoplay: true,
+                loop: true
+            }}
+          </div>
       {% endcase %}
     {% endfor %}
   {% else %}
@@ -70,12 +78,6 @@
       "name": "Background Video",
       "limit": 1,
       "settings": [
-        {
-          "type": "video_url",
-          "id": "video_url",
-          "label": "Video URL",
-          "accept": ["youtube", "vimeo"]
-        },
         {
           "type": "video",
           "id": "video",
