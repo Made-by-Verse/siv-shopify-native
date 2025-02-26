@@ -10,14 +10,16 @@
 {
   "sections": {
     "main": {
-      "type": "main-article"
+      "type": "main-article",
+      "settings": {}
     },
     "related": {
       "type": "related-posts",
-      "settings": {
-        "title": "Related Posts"
-      }
+      "settings": {}
     }
   },
-  "order": ["main", "related"]
+  "order": [
+    "main",
+    "related"
+  ]
 }

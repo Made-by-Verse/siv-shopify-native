@@ -91,10 +91,48 @@
         "description": ""
       }
     },
+    "section_conditions": {
+      "type": "section-conditions",
+      "blocks": {
+        "condition_1": {
+          "type": "condition",
+          "settings": {
+            "heading": "Normal Skin"
+          }
+        },
+        "condition_2": {
+          "type": "condition",
+          "settings": {
+            "heading": "Dry Skin"
+          }
+        },
+        "condition_3": {
+          "type": "condition",
+          "settings": {
+            "heading": "Sensitive Skin"
+          }
+        },
+        "condition_4": {
+          "type": "condition",
+          "settings": {
+            "heading": "Oily Skin"
+          }
+        }
+      },
+      "block_order": [
+        "condition_1",
+        "condition_2",
+        "condition_3",
+        "condition_4"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
     "rich_text": {
       "type": "section-rich-text",
       "settings": {
         "heading": "Whatever the condition of your skin, this is true:",
+        "image": "shopify://shop_images/5cf87d2e58206eaa6ee8ec031b36830b8c976d41-398x156.png",
         "content": "<p>UntitledSIV's Biome-Balancing Serum is a spore-based topical formula to offer a truly personal approach to skincare by harnessing your unique skin biome & adapting to your unique skin canvas and environment.</p><p>SIV Biome-Balancing serum: your healthy skin essential.</p>"
       }
     },
@@ -262,42 +300,6 @@
         "title": "Stay Informed with SIV",
         "button_text": "All articles"
       }
-    },
-    "section_conditions": {
-      "type": "section-conditions",
-      "disabled": true,
-      "blocks": {
-        "condition_1": {
-          "type": "condition",
-          "settings": {
-            "heading": "Normal Skin"
-          }
-        },
-        "condition_2": {
-          "type": "condition",
-          "settings": {
-            "heading": "Dry Skin"
-          }
-        },
-        "condition_3": {
-          "type": "condition",
-          "settings": {
-            "heading": "Sensitive Skin"
-          }
-        },
-        "condition_4": {
-          "type": "condition",
-          "settings": {
-            "heading": "Oily Skin"
-          }
-        }
-      },
-      "block_order": [
-        "condition_1",
-        "condition_2",
-        "condition_3",
-        "condition_4"
-      ]
     }
   },
   "order": [
