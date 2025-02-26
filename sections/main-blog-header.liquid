@@ -1,0 +1,29 @@
+<div class="wrapper py-8">
+  {% render 'animated-heading', title: section.settings.title, class: 'h1 mb-4' %}
+  <div class='w-full justify-between flex items-end'>
+    <p class='max-w-sm'>
+      {{ section.settings.description }}
+    </p>
+    {% render 'blog-filter' %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Main Blog Header",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Blog"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Description",
+        "default": "Stay informed with the latest news and updates from SIV."
+      }
+    ]
+  }
+{% endschema %}

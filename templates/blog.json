@@ -9,6 +9,13 @@
  */
 {
   "sections": {
+    "main-blog-heading": {
+      "type": "main-blog-header",
+      "settings": {
+        "title": "Stay Informed with SIV",
+        "description": "Keep your knowledge at the cutting edge with our latest articles on skincare science and trends. From the benefits of Corneotherapy to the latest research on the skin microbiome, our blog is a resource for both professionals and those passionate about their skincare."
+      }
+    },
     "main": {
       "type": "main-blog",
       "settings": {
@@ -22,7 +29,5 @@
       }
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["main-blog-heading", "main"]
 }

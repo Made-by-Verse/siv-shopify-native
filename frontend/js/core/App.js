@@ -6,14 +6,7 @@ import { HeaderManager } from "../components/HeaderManager";
 import { CarouselManager } from "../components/CarouselManager";
 import { RecommendationsManager } from "../components/RecommendationsManager";
 import { SCROLL_PREVENT } from "./constants";
-import {
-  Cart,
-  Process,
-  MegaMenu,
-  CardReveal,
-  Accordion,
-  Conditions,
-} from "../AlpineData";
+import AlpineData from "../AlpineData";
 
 export default class App {
   constructor() {
@@ -27,12 +20,7 @@ export default class App {
     Alpine.plugin(intersect);
     window.Alpine = Alpine;
 
-    Process();
-    Cart();
-    MegaMenu();
-    CardReveal();
-    Accordion();
-    Conditions();
+    AlpineData();
 
     Alpine.start();
   }

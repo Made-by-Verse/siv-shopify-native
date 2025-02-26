@@ -1,0 +1,19 @@
+<div class='relative' x-data="blogFilter" @click.outside="open = false">
+  <button @click="open = !open" class="btn--outline flex btn gap-4 items-center">
+    Filter
+    <span :class="open ? 'rotate-180' : ''" class='w-3 h-3 flex items-center justify-center transition-transform duration-300'>
+    {{- 'icon-caret.svg' | inline_asset_content -}}
+  </span>
+</button>
+  <div class='origin-top z-40 top-full right-0 bg-white rounded-2xl absolute w-[200%] p-4' x-show="open" x-cloak x-transition>
+    <ul class="space-y-2">
+      {% for tag in blog.all_tags %}
+        <li class="flex items-center justify-between gap-2">
+          <label for="blog-filter--{{ tag | handleize }}" class='flex-1 uppercase'>{{ tag }}</label>
+          <input @change="handleTagChange" type="checkbox" id="blog-filter--{{ tag | handleize }}" name="{{ tag | handleize }}" class="" {% if current_tags contains tag %}checked{% endif %}>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+

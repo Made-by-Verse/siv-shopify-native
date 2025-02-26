@@ -1,4 +1,4 @@
-{% assign posts = blogs['posts'].articles | sort: 'published_at' | reverse | limit: 5 %}
+{% assign posts = blogs['posts'].articles | sort: 'published_at' | reverse %}
 
 <div class='wrapper overflow-visible'>
   <div class="flex flex-col md:flex-row gap-4 h-full justify-between md:items-end pb-6">
@@ -11,7 +11,7 @@
   </div>
   <div class='featured-post-swiper'>
     <div class='swiper-wrapper'>
-      {% for post in posts %}
+      {% for post in posts limit: 5 %}
         {% render 'blog-card', post: post, class: 'swiper-slide' %}
       {% endfor %}
     </div>
@@ -22,7 +22,7 @@
   {
     "name": "Featured Posts",
     "tag": "section",
-    "class": "section-featured-posts  section",
+    "class": "section-featured-posts section overflow-hidden",
     "settings": [
       {
         "type": "text",

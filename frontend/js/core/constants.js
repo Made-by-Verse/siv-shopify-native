@@ -7,20 +7,18 @@ export const SWIPER_CONFIG = {
       slidesPerView: 1,
       speed: 500,
       allowTouchMove: false,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
       speed: 1000,
     },
     image: {
       speed: 1000,
       loop: true,
       allowTouchMove: false,
-      // autoplay: {
-      //   delay: 5000,
-      //   disableOnInteraction: false,
-      // },
+    },
+    after: {
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
     },
   },
   featuredPosts: {
@@ -38,17 +36,12 @@ export const SWIPER_CONFIG = {
     },
   },
   textAndImage: {
-    slidesPerView: 1,
-    spaceBetween: 0,
     effect: "fade",
-    // autoplay: {
-    //   delay: 5000,
-    //   disableOnInteraction: false,
-    // },
-    fadeEffect: {
-      crossFade: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
     },
-    speed: 1000,
+    speed: 500,
   },
   productGallery: {
     main: {

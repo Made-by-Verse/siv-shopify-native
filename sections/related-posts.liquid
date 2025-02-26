@@ -1,0 +1,36 @@
+<div class='wrapper overflow-visible'>
+    {% render 'animated-heading', title: section.settings.heading, class: 'h2 mb-6' %}
+  <div class='featured-post-swiper'>
+    <div class='swiper-wrapper'>
+      {% for post in blogs['posts'].articles %}
+        {% if post.id != article.id %}
+          {% for tag in article.tags %}
+            {% if post.tags contains tag %}
+              {% render 'blog-card', post: post, class: 'swiper-slide' %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Related Posts",
+    "tag": "section",
+    "class": "section section--related-posts",
+    "disabled_on": {
+      "templates": ["index", "product", "collection"]
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Related Posts"
+      }
+    ]
+  }
+{% endschema %}

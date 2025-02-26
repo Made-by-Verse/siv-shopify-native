@@ -12,16 +12,16 @@
 {% endcomment %}
 
 {%- if paginate.parts.size > 0 -%}
-  <div class="wrapper">
-    <nav role="navigation" class='flex justify-between items-center' aria-label="{{ 'general.pagination.label' | t }}">
-      <a
-        href="{{ paginate.previous.url }}{{ anchor }}"
-        class="btn btn--outline-primary flex {% unless paginate.previous.is_link %}invisible{% endunless %}"
+    <nav x-data="pagination" role="navigation" class='wrapper w-full flex justify-between items-center pt-12 hover:opacity-70' aria-label="{{ 'general.pagination.label' | t }}">
+      <button
+        @click="handleClick(event, '{{ gridId }}')"
+        data-url="{{ paginate.previous.url }}{{ anchor }}"
+        class="btn btn--black flex pagination-btn {% unless paginate.previous.is_link %}invisible{% endunless %}"
         {% unless paginate.previous.is_link %}disabled{% endunless %}
-        aria-label="{{ 'general.pagination.previous' | t }}"
+        aria-label="Previous"
       >
         previous
-      </a>
+      </button>
 
       <div class="flex items-center">
         <span class="pagination__item btn">
@@ -29,14 +29,14 @@
         </span>
       </div>
 
-      <a
-        href="{{ paginate.next.url }}{{ anchor }}"
-        class="btn btn--outline-primary flex {% unless paginate.next.is_link %}invisible{% endunless %}"
+      <button
+        @click="handleClick(event, '{{ gridId }}')"
+        data-url="{{ paginate.next.url }}{{ anchor }}"
+        class="btn btn--black flex pagination-btn hover:opacity-70 {% unless paginate.next.is_link %}invisible{% endunless %}"
         {% unless paginate.next.is_link %}disabled{% endunless %}
-        aria-label="{{ 'general.pagination.next' | t }}"
+        aria-label="Next"
       >
         next
-      </a>
+      </button>
     </nav>
-  </div>
 {%- endif -%}
