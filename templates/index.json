@@ -11,8 +11,18 @@
   "sections": {
     "home_hero": {
       "type": "section-home-hero",
+      "blocks": {
+        "image_NbAFjz": {
+          "type": "image",
+          "settings": {
+            "background_image": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_NbAFjz"
+      ],
       "settings": {
-        "backgroundImage": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.png",
         "hero_heading": "Harness Your Biology for Resilient Skin",
         "hero_content": "<p>Discover the next generation of professional skincare with our Biome-Balancing Serum – an advanced, spore-based formula designed to harmonize with your unique skin microbiome, tailored to restore your skin’s vitality and resilience.</p>",
         "show_featured_product": true
