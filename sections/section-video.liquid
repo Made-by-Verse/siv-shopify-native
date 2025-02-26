@@ -1,50 +1,12 @@
-{% liquid
-  assign padding_top = section.settings.padding_top | default: 'md'
-  assign padding_bottom = section.settings.padding_bottom | default: 'md'
 
-  if padding_top == 'none'
-    assign padding_top = 'pt-0'
-  elsif padding_top == 'sm'
-    assign padding_top = 'pt-6'
-  elsif padding_top == 'md'
-    assign padding_top = 'pt-6 lg:pt-12'
-  elsif padding_top == 'lg'
-    assign padding_top = 'pt-12 lg:pt-24'
-  elsif padding_top == 'xl'
-    assign padding_top = 'pt-24 lg:pt-48'
-  endif
-
-  if padding_bottom == 'none'
-    assign padding_bottom = 'pb-0'
-  elsif padding_bottom == 'sm'
-    assign padding_bottom = 'pb-6'
-  elsif padding_bottom == 'md'
-    assign padding_bottom = 'pb-6 lg:pb-12'
-  elsif padding_bottom == 'lg'
-    assign padding_bottom = 'pb-12 lg:pb-24'
-  elsif padding_bottom == 'xl'
-    assign padding_bottom = 'pb-24 lg:pb-48'
-  endif
-%}
-
-<div class="relative {{ padding_top }} {{ padding_bottom }}">
-  <div 
-    class="wrapper grid lg:grid-cols-8 gap-4" 
-  >
-    {%- unless section.settings.heading == blank -%}
-      {% render 'animated-heading', title: section.settings.heading, class: 'h2' %}
-    {%- endunless -%}
-    {% if section.settings.text != blank %}
-      <div class='max-w-p mb-12 lg:col-span-4'>{{ section.settings.text }}</div>
-    {% endif %}
-  </div>
-  <div class='relative' data-video-container>
-      <button
-        id="video-play-button"
-        aria-label="{{ alt }}"
-        class="w-full aspect-video absolute inset-0 flex items-center justify-center transform transition-transform duration-500 z-10"
-        data-video-button
-      >
+<div class='wrapper' data-video-container>
+  <div class='relative'>
+    <button
+      id="video-play-button"
+      aria-label="{{ alt }}"
+      class="w-full aspect-video absolute inset-0 flex items-center justify-center transform transition-transform duration-500 z-10"
+      data-video-button
+    >
       {%- if section.settings.cover_image != blank -%}
         {% render 'responsive-image', image: section.settings.cover_image, width: 1100, height: 600, wrapper_class: 'w-full aspect-video relative', image_class: 'object-cover absolute inset-0 w-full h-full' %}
       {%- else -%}
@@ -88,6 +50,7 @@
         }}
       </div>
     {%- endif -%}
+  </div>
 </div>
 
 {% schema %}
