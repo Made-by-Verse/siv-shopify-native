@@ -13,32 +13,30 @@
   "sections": {
     "newsletter": {
       "type": "section-newsletter",
-      "settings": {
-        "heading": "Sign up for our newsletter",
-        "text": "Sign up for the SIV-tuation to get 10% off your first order",
-        "submit": "Subscribe"
-      },
       "blocks": {
-        "heading": {
+        "heading_F8FQ4w": {
           "type": "heading",
           "settings": {
-            "heading": "Sign up for our newsletter"
+            "heading": "Sign up to our newsletter"
           }
         },
-        "paragraph": {
+        "paragraph_rgfkXY": {
           "type": "paragraph",
           "settings": {
             "text": "Sign up for the SIV-tuation to get 10% off your first order"
           }
         },
-        "email_form": {
+        "email_form_Q6Nra4": {
           "type": "email_form",
-          "settings": {
-            "submit": "Subscribe"
-          }
+          "settings": {}
         }
       },
-      "block_order": ["heading", "paragraph", "email_form"]
+      "block_order": [
+        "heading_F8FQ4w",
+        "paragraph_rgfkXY",
+        "email_form_Q6Nra4"
+      ],
+      "settings": {}
     },
     "footer": {
       "type": "footer",
@@ -47,5 +45,8 @@
       }
     }
   },
-  "order": ["newsletter", "footer"]
+  "order": [
+    "newsletter",
+    "footer"
+  ]
 }
