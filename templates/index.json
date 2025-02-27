@@ -128,24 +128,26 @@
             "image": "shopify://shop_images/iStock-1352687407_1.jpg"
           }
         },
-        "condition_3": {
-          "type": "condition",
-          "settings": {
-            "heading": "Sensitive Skin"
-          }
-        },
         "condition_4": {
           "type": "condition",
           "settings": {
-            "heading": "Oily Skin"
+            "heading": "Aging Skin",
+            "image": "shopify://shop_images/aging-skin.jpg"
+          }
+        },
+        "condition_3": {
+          "type": "condition",
+          "settings": {
+            "heading": "Sensitive Skin",
+            "image": "shopify://shop_images/pexels-angela-roma-7479956_3.jpg"
           }
         }
       },
       "block_order": [
         "condition_1",
         "condition_2",
-        "condition_3",
-        "condition_4"
+        "condition_4",
+        "condition_3"
       ],
       "settings": {}
     },
