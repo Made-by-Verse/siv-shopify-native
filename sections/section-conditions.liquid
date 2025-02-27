@@ -20,13 +20,24 @@
 
   {% for block in section.blocks %}
     <div
+      x-data="conditionHeading"
       class="flex justify-center items-center w-full"
       @mouseenter="handleMouseEnter({{forloop.index}})"
       @mouseleave="handleMouseLeave"
       style="z-index: {{forloop.index}}; height: 33vh"
       id="condition-heading-{{forloop.index}}"
     >
-      <h2 class="text-4xl">{{block.settings.heading}}</h2>
+      <div :style="`opacity: ${imageOpacity};`">
+				{{ block.settings.image | image_url: width: 500 | image_tag: class: 'object-cover aspect-square rounded-lg w-56 block md:hidden', alt: block.settings.heading, loading: 'lazy' }}
+			</div>
+			<div class="z-40 text-center condition-heading cursor-default w-full fixed top-1/2 -translate-y-1/2 pointer-events-none">
+				<span
+					class="inline-block font-heading uppercase jumbo"
+          :style="`opacity: ${opacity}; scale: ${scale};`"
+				>
+					{{ block.settings.heading }}
+				</span>
+			</div>
     </div>
   {% endfor %}
 </div>
