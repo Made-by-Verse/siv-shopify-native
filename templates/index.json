@@ -19,7 +19,9 @@
           }
         }
       },
-      "block_order": ["image_NbAFjz"],
+      "block_order": [
+        "image_NbAFjz"
+      ],
       "settings": {
         "hero_heading": "Harness Your Biology for Resilient Skin",
         "hero_content": "<p>Discover the next generation of professional skincare with our Biome-Balancing Serum – an advanced, spore-based formula designed to harmonize with your unique skin microbiome, tailored to restore your skin’s vitality and resilience.</p>",
@@ -61,7 +63,11 @@
           }
         }
       },
-      "block_order": ["feature_point_1", "feature_point_2", "feature_point_3"],
+      "block_order": [
+        "feature_point_1",
+        "feature_point_2",
+        "feature_point_3"
+      ],
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
         "button_text": "View Product"
@@ -95,7 +101,11 @@
           }
         }
       },
-      "block_order": ["point_1", "point_2", "point_3"],
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3"
+      ],
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
@@ -107,33 +117,37 @@
         "condition_1": {
           "type": "condition",
           "settings": {
-            "heading": "Normal Skin"
+            "heading": "Irritated Skin",
+            "image": "shopify://shop_images/pexels-angela-roma-7479956_4.jpg"
           }
         },
         "condition_2": {
           "type": "condition",
           "settings": {
-            "heading": "Dry Skin"
-          }
-        },
-        "condition_3": {
-          "type": "condition",
-          "settings": {
-            "heading": "Sensitive Skin"
+            "heading": "Dehydrated Skin",
+            "image": "shopify://shop_images/iStock-1352687407_1.jpg"
           }
         },
         "condition_4": {
           "type": "condition",
           "settings": {
-            "heading": "Oily Skin"
+            "heading": "Aging Skin",
+            "image": "shopify://shop_images/aging-skin.jpg"
+          }
+        },
+        "condition_3": {
+          "type": "condition",
+          "settings": {
+            "heading": "Sensitive Skin",
+            "image": "shopify://shop_images/pexels-angela-roma-7479956_3.jpg"
           }
         }
       },
       "block_order": [
         "condition_1",
         "condition_2",
-        "condition_3",
-        "condition_4"
+        "condition_4",
+        "condition_3"
       ],
       "settings": {}
     },
@@ -181,7 +195,12 @@
           }
         }
       },
-      "block_order": ["card_0", "card_1", "card_2", "card_3"],
+      "block_order": [
+        "card_0",
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
       "settings": {
         "heading": "Put yourself back in the picture",
         "text": "Research shows that how you see yourself on the outside reflects how you feel on the inside."
