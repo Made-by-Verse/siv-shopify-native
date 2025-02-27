@@ -17,7 +17,28 @@
         "heading": "Sign up for our newsletter",
         "text": "Sign up for the SIV-tuation to get 10% off your first order",
         "submit": "Subscribe"
-      }
+      },
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sign up for our newsletter"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "Sign up for the SIV-tuation to get 10% off your first order"
+          }
+        },
+        "email_form": {
+          "type": "email_form",
+          "settings": {
+            "submit": "Subscribe"
+          }
+        }
+      },
+      "block_order": ["heading", "paragraph", "email_form"]
     },
     "footer": {
       "type": "footer",

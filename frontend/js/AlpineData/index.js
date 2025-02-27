@@ -8,12 +8,16 @@ import BlogFilter from "./BlogFilter";
 import Pagination from "./Pagination";
 
 export default function AlpineData() {
-  MegaMenu();
-  Cart();
-  Process();
-  CardReveal();
-  Accordion();
-  Conditions();
-  BlogFilter();
-  Pagination();
+  Promise.all([
+    MegaMenu(),
+    Cart(),
+    Process(),
+    CardReveal(),
+    Accordion(),
+    Conditions(),
+    BlogFilter(),
+    Pagination(),
+  ]).catch((error) => {
+    console.error("Error initializing Alpine components:", error);
+  });
 }

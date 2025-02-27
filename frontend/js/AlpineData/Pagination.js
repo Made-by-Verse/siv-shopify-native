@@ -1,4 +1,4 @@
-export default function Pagination() {
+export default async function Pagination() {
   Alpine.data("pagination", () => ({
     handleClick(e, gridId) {
       e.preventDefault();

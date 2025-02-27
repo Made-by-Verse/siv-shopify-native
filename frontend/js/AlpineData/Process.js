@@ -1,4 +1,4 @@
-export default function Process() {
+export default async function Process() {
   Alpine.data("process", () => ({
     totalSteps: 0,
     currentScrollProgress: 0,

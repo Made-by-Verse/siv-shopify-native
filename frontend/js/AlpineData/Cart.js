@@ -1,4 +1,4 @@
-export default function Cart() {
+export default async function Cart() {
   Alpine.store("cart", {
     items: [],
     sub_total: 0,

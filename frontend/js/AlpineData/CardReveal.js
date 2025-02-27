@@ -1,4 +1,4 @@
-export default function CardReveal() {
+export default async function CardReveal() {
   Alpine.data("cardReveal", () => ({
     isInView: false,
     from: [

@@ -1,4 +1,4 @@
-export default function Accordion() {
+export default async function Accordion() {
   Alpine.data("accordion", () => ({
     activeIndex: null,
     toggleAccordionItem(index) {

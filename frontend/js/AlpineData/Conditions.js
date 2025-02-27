@@ -1,6 +1,6 @@
 import { transform, cubicBezier } from "motion";
 
-export default function Conditions() {
+export default async function Conditions() {
   Alpine.data("conditions", () => ({
     mouseX: 0,
     mouseY: 0,

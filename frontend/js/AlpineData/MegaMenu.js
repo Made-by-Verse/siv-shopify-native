@@ -1,4 +1,4 @@
-export default function MegaMenu() {
+export default async function MegaMenu() {
   Alpine.data("megaMenu", () => ({
     open: false,
   }));

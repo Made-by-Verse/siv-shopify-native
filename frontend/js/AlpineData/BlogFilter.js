@@ -1,4 +1,4 @@
-export default function BlogFilter() {
+export default async function BlogFilter() {
   Alpine.data("blogFilter", () => ({
     open: false,
 
