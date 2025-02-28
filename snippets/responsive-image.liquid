@@ -8,10 +8,25 @@
     if height != '' 
         assign imgHeight = height 
     endif
+
+    # Generate a tiny placeholder image URL (e.g. 10px wide)
+    assign placeholder_image_url = image | image_url: width: 10
 %}
 
-<div class="overflow-hidden {{ wrapper_class }}" {{ wrapper_attributes }}>
-    
-    {{ image | image_url: width: imgWidth, height: imgHeight | image_tag: class: image_class, alt: alt, loading: 'lazy' }}
-
+<div class="overflow-hidden {{ wrapper_class }}">
+    <img
+        src="{{ placeholder_image_url }}"
+        class="absolute inset-0 w-full h-full blur-xl scale-110 blurred-loading-image"
+        alt=""
+        aria-hidden="true"
+    />
+    <img
+        src="{{ image | image_url: width: imgWidth, height: imgHeight }}"
+        class="transition-opacity duration-500 {{ image_class }} z-[1]"
+        style="opacity: 0"
+        alt="{{ alt }}"
+        loading="lazy"
+        onload="this.style.opacity = 1; const timeoutId = setTimeout(() => this.previousElementSibling.remove(), 500); this.dataset.timeoutId = timeoutId"
+        onunload="clearTimeout(Number(this.dataset.timeoutId))"
+    />
 </div>
