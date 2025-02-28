@@ -1,4 +1,4 @@
-<form class='space-y-4' x-data="{ purchaseType: 'onetime', selectedVariant: '', sellingPlanId: '{{ product.selling_plan_groups[0].selling_plans[0].id }}' }" x-effect="console.log(selectedVariant, purchaseType)">
+<form class='space-y-4' x-data="{ purchaseType: 'onetime', selectedVariant: '', sellingPlanId: '{{ product.selling_plan_groups[0].selling_plans[0].id }}' }">
   {% if product.selling_plan_groups.size > 0 %}
     <div class="purchase-options">
       {% unless product.requires_selling_plan %}

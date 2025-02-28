@@ -1,15 +1,3 @@
-{% liquid 
-  assign menu_trade = linklists[settings.menu_trade].links
-  assign menu_public = linklists[settings.menu_public].links
-  assign menu_logged_out = linklists[settings.menu_logged_out].links
-
-  if customer
-    assign menu = menu_trade
-  else
-    assign menu = menu_public
-  endif
-%}
-
 <div class="top-0 fixed z-[9999]" x-data="{ menuOpen: false }" @toggle-menu-drawer.window="menuOpen = !menuOpen; $dispatch('toggle-lenis', { enabled: !menuOpen })" @keydown.escape.window="menuOpen = false; $dispatch('toggle-lenis', { enabled: true })">
     <div
       x-cloak

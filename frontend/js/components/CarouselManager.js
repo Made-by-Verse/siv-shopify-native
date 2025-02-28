@@ -49,14 +49,14 @@ export class CarouselManager extends Base {
   initTextAndImageSwiper() {
     const swiper = document.querySelector(".text-and-image-swiper");
 
+    if (!swiper) return;
+
     const swiperButtonPrev = swiper.querySelector(
       ".text-and-image-swiper-button-prev"
     );
     const swiperButtonNext = swiper.querySelector(
       ".text-and-image-swiper-button-next"
     );
-
-    if (!swiper) return;
 
     this.swipers.set(
       "text-and-image-swiper",

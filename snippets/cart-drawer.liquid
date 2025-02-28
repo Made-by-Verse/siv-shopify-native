@@ -44,11 +44,9 @@
             <span class='w-6 h-6 block'>{{- 'icon-close.svg' | inline_asset_content -}}</span>
           </button>
         </div>
-        <div class="px-6 pb-6 flex flex-col justify-between w-full flex-1 overflow-hidden">
+        <form action="{{ routes.cart_url }}" method="POST" class="px-6 pb-6 flex flex-col justify-between w-full flex-1 overflow-hidden">
           <div class='h-full flex flex-col'>
-            <div 
-              class="flex-1 overflow-hidden flex flex-col"
-            >
+            <div class="flex-1 overflow-hidden flex flex-col">
               <div 
                 id="cart-items" 
                 class="overflow-y-scroll flex-1" 
@@ -68,10 +66,10 @@
               </div>
             </div>
             <div class="cart-footer mt-4">
-              <a href="{{ routes.cart_url }}" class="btn btn--primary block">Checkout</a>
+              <button type="submit" name="checkout" class="btn btn--black block w-full">Checkout</button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>

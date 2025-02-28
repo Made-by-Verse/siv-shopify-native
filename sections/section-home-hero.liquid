@@ -6,15 +6,14 @@
         {% when 'image' %}
           {% render 'responsive-image', image: block.settings.background_image, wrapper_class: "absolute inset-0 ", image_class: "object-cover absolute inset-0 h-full w-full" %}
         {% when 'video' %}
-          <div class="absolute inset-0 w-full h-full">
-            {{
-              block.settings.video | video_tag:
-                image_size: '1100x',
-                muted: true,
-                autoplay: true,
-                loop: true
-            }}
-          </div>
+          {{
+            block.settings.video | video_tag:
+              image_size: '1100x',
+              muted: true,
+              autoplay: true,
+              loop: true,
+              class: 'object-cover absolute inset-0 h-full w-full'
+          }}
       {% endcase %}
     {% endfor %}
   {% else %}
@@ -38,7 +37,7 @@
 {
   "name": "t:sections.home-hero.name",
   "tag": "section",
-  "class": "w-full relative flex items-end justify-center home-hero h-screen-no-nav",
+  "class": "w-full relative flex items-end justify-center home-hero h-screen-no-nav overflow-hidden",
   "disabled_on": {
     "groups": ["header", "footer"]
   },

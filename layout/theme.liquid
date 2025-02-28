@@ -43,7 +43,7 @@
 
     {% section 'header' %}
 
-      <main id="MainContent" class="bg-primary min-h-screen" role="main" tabindex="-1">
+      <main id="MainContent" class="bg-primary min-h-screen-no-nav" role="main" tabindex="-1">
         {% if request.path contains '/policies/' %}
           {% section 'policy-page' %}
         {% else %}
@@ -61,7 +61,7 @@
     {% endif %}
 
     {% render 'cart-drawer' %}
-    {% render 'mobile-menu' %}
+    {% render 'mobile-menu' with menu: linklists[settings.menu].links %}
     {% render 'quick-buy-drawer' %}
 
     <ul hidden>
