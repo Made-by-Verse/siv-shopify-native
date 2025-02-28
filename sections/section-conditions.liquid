@@ -5,6 +5,7 @@
 >
   <div
     x-ref="cursor"
+    x-cloak
     class="cursor fixed pointer-events-none overflow-hidden bg-black rounded-lg transition-[width,height] origin-center duration-300 w-10 h-10"
     :style="`transform: translate3d(${mouseX}px, ${mouseY}px, 0); width: ${hoveringIndex === null ? '0' : '250'}px; height: ${hoveringIndex === null ? '0' : '250'}px;`"
   >
@@ -34,6 +35,7 @@
 				<span
 					class="inline-block font-heading uppercase jumbo"
           :style="`opacity: ${opacity}; scale: ${scale};`"
+          x-cloak
 				>
 					{{ block.settings.heading }}
 				</span>
