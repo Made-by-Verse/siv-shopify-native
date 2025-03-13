@@ -1,0 +1,31 @@
+.loading-spinner {
+  animation: spin 1s linear infinite;
+  height: 1rem;
+  width: 1rem;
+  color: var(--color-primary);
+}
+.loading-spinner circle {
+  animation: dash 1.5s ease-in-out infinite;
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 180;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 130, 180;
+    stroke-dashoffset: -35;
+  }
+  to {
+    stroke-dasharray: 130, 180;
+    stroke-dashoffset: -124;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

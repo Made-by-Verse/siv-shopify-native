@@ -6,6 +6,30 @@
   Usage:
   {% render 'buy-buttons', product: product, selectedVariant: selectedVariant %}
 {% endcomment %}
+
+{% liquid 
+  if product.selected_selling_plan
+    assign variant_price = product.selected_or_first_available_variant.price
+    assign adjustment_value = product.selected_selling_plan.price_adjustments[0].value
+    assign adjustment_type = product.selected_selling_plan.price_adjustments[0].value_type
+    
+    if adjustment_type == 'percentage'
+      assign current_price = variant_price | times: adjustment_value | divided_by: 100 | minus: variant_price | times: -1
+    else
+      assign current_price = variant_price | plus: adjustment_value
+    endif
+
+  else
+    assign variant = product.selected_or_first_available_variant
+    assign current_price = variant.price
+    for quantity_rule in variant.quantity_price_breaks
+      if quantity >= quantity_rule.minimum_quantity
+        assign current_price = quantity_rule.price
+      endif
+    endfor
+  endif
+%}
+
 <div class="w-full">
   {%- if product != blank -%}
     <div>
@@ -18,14 +42,14 @@
         @cart:adding.window="loading = true"
         @cart:added.window="loading = false"
         @cart:error.window="loading = false"
-        @click="$store.cart.addToCart(selectedVariant || {{ product.selected_or_first_available_variant.id }}, purchaseType === 'subscription' ? sellingPlanId : null)"
+        @click="$store.cart.addToCart({{ product.selected_or_first_available_variant.id }}, {% if product.selected_selling_plan %}{{product.selected_selling_plan.id}}{% else %}null{% endif %}, quantity)"
         :disabled="loading"
         disabled="{{ product.is_sold_out }}"
       >
         <span 
           :class="{ 'opacity-0': loading }"
         >
-          Add to cart {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
+          Add to cart $<span x-text="({{ current_price }} * quantity / 100).toFixed(0)"></span>
         </span>
         <div 
           class="absolute inset-0 flex items-center justify-center"

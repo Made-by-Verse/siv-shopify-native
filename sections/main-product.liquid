@@ -4,10 +4,15 @@
   {% elsif product.media.size == 1 %}
     {% render 'responsive-image', image: product.media[0], wrapper_class: 'aspect-square bg-white', image_class: 'w-full h-full object-cover' %}
   {% endif %}
-  <div class="product-details" x-data="{descriptionOpen: false}">
+  <div class="product-details" x-data="product">
     <div>
       {% render 'animated-heading', class: 'mb-2 h2', title: product.title %}
       {% render 'price', product: product, show_compare_at_price: true %}
+      {%- if product.quantity_price_breaks_configured? -%}
+        <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
+          <span>{{ 'products.product.volume_pricing.note' | t }}</span>
+        </div>
+      {%- endif -%}
     </div>
     <div>
       <div

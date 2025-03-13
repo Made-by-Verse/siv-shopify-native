@@ -28,3 +28,7 @@
 nav .link {
   @apply text-nowrap;
 }
+
+.quantity-btn-main-product {
+  @apply h-10 w-10 rounded-full flex items-center justify-center bg-black text-white;
+}

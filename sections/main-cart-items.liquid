@@ -12,9 +12,9 @@
     {% else %}
       <form action="{{ routes.cart_url }}" method="post" id="cart">
         <div class="border-y border-contrast divide-y divide-contrast">
-          {% for item in cart.items %}
+          <template x-for="item in $store.cart.items" :key="item.key">
             {% render 'cart-item', item: item %}
-          {% endfor %}
+          </template>
         </div>
         <div x-data="{ open: false }" class="mt-4">
           <button 

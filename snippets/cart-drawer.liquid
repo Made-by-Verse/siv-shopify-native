@@ -44,7 +44,7 @@
             <span class='w-6 h-6 block'>{{- 'icon-close.svg' | inline_asset_content -}}</span>
           </button>
         </div>
-        <form action="{{ routes.cart_url }}" method="POST" class="px-6 pb-6 flex flex-col justify-between w-full flex-1 overflow-hidden">
+        <form id="cart-drawer-form" action="{{ routes.cart_url }}" method="POST" class="px-6 pb-6 flex flex-col justify-between w-full flex-1 overflow-hidden">
           <div class='h-full flex flex-col'>
             <div class="flex-1 overflow-hidden flex flex-col">
               <div 
@@ -52,15 +52,20 @@
                 class="overflow-y-scroll flex-1" 
                 data-lenis-prevent
               >
-                <template x-for="item in $store.cart.items" :key="item.key">
+                {% comment %} <template x-for="item in $store.cart.items" :key="item.key">
                   {% render 'cart-item', item: item %}
-                </template>
-                <p x-show="!$store.cart.items || !$store.cart.items.length" class="text-center text-sm opacity-50 py-12 uppercase">Your cart is empty</p>
+                </template> {% endcomment %}
+                {% for item in cart.items %}
+                  {% render 'cart-item', item: item %}
+                {% endfor %}
+                {% if cart.items.size == 0 %}
+                  <p class="text-center text-sm opacity-50 py-12 uppercase">Your cart is empty</p>
+                {% endif %}
               </div>
               <div class="py-4 total-text">
                 <div class="flex justify-between items-center">
                   <p>Subtotal</p>
-                  <p class="total" x-text="$store.cart.sub_total"></p>
+                  <p class="total">{{ cart.total_price | money }}</p>
                 </div>
                 <p class="text-sm opacity-50 mt-2">Shipping calculated at checkout.</p>
               </div>

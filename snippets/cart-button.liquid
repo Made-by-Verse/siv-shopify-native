@@ -1,25 +1,25 @@
 <button
-    x-data
-    @click="$dispatch('open-cart-drawer');"
-    class="relative w-6 h-6 flex gap-1 uppercase items-center justify-center focus:ring-primary/5 text-contrast pointer-events-auto"
+  x-data
+  @click="$dispatch('open-cart-drawer');"
+  class="relative w-6 h-6 flex gap-1 uppercase items-center justify-center focus:ring-primary/5 text-contrast pointer-events-auto"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    class="w-6 h-6 absolute inset-0"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      class="w-6 h-6 absolute inset-0"
-    >
-      <title>Bag</title>
+    <title>Bag</title>
 
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M20.9802 8H3.01995L2.13106 22L21.869 22L20.9802 8ZM3.01995 6C1.96459 6 1.09084 6.82003 1.02397 7.87327L0.135083 21.8733C0.0619332 23.0254 0.976639 24 2.13106 24H21.869C23.0235 24 23.9382 23.0254 23.865 21.8733L22.9761 7.87327C22.9093 6.82003 22.0355 6 20.9802 6H3.01995Z"
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M6.00006 6C6.00006 2.68629 8.68635 0 12.0001 0C15.3138 0 18.0001 2.68629 18.0001 6V10C18.0001 10.5523 17.5523 11 17.0001 11C16.4478 11 16.0001 10.5523 16.0001 10V6C16.0001 3.79086 14.2092 2 12.0001 2C9.79092 2 8.00006 3.79086 8.00006 6V10C8.00006 10.5523 7.55235 11 7.00006 11C6.44778 11 6.00006 10.5523 6.00006 10V6Z"
-      />
-    </svg>
-    <span x-data x-text="$store.cart.cartQuantity" class="block text-xs font-bold text-white relative z-[1] mt-1.5"></span>
-  </button>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M20.9802 8H3.01995L2.13106 22L21.869 22L20.9802 8ZM3.01995 6C1.96459 6 1.09084 6.82003 1.02397 7.87327L0.135083 21.8733C0.0619332 23.0254 0.976639 24 2.13106 24H21.869C23.0235 24 23.9382 23.0254 23.865 21.8733L22.9761 7.87327C22.9093 6.82003 22.0355 6 20.9802 6H3.01995Z"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6.00006 6C6.00006 2.68629 8.68635 0 12.0001 0C15.3138 0 18.0001 2.68629 18.0001 6V10C18.0001 10.5523 17.5523 11 17.0001 11C16.4478 11 16.0001 10.5523 16.0001 10V6C16.0001 3.79086 14.2092 2 12.0001 2C9.79092 2 8.00006 3.79086 8.00006 6V10C8.00006 10.5523 7.55235 11 7.00006 11C6.44778 11 6.00006 10.5523 6.00006 10V6Z"
+    />
+  </svg>
+  <span id="cart-item-count" class="block text-xs font-bold text-white relative z-[1] mt-1.5">{{ cart.item_count }}</span>
+</button>

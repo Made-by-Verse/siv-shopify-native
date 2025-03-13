@@ -1,29 +1,41 @@
 export default async function Cart() {
   Alpine.store("cart", {
-    items: [],
-    sub_total: 0,
-
-    init() {
-      this.getCart();
-    },
-
-    async getCart(openCart = false) {
+    async getCart() {
       try {
-        const response = await fetch(`${window.routes.cart_url}.js`);
-        const cart = await response.json();
+        fetch(window.location.href)
+          .then((res) => res.text())
+          .then((html) => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
 
-        // Update store
-        this.items = cart.items;
+            //update cart items
+            const currentCartItems =
+              document.querySelector("#cart-drawer-form");
+            const newCartItems = doc.querySelector("#cart-drawer-form");
 
-        this.sub_total = this.formatMoney(cart.total_price);
+            if (currentCartItems && newCartItems) {
+              currentCartItems.innerHTML = newCartItems.innerHTML;
+            }
 
-        // Update local state
-        this.items = cart.items;
-        this.sub_total = this.formatMoney(cart.total_price);
+            //update cart badge
+            const cartBadge = document.querySelector("#cart-item-count");
+            const newCartBadge = doc.querySelector("#cart-item-count");
 
-        if (openCart) {
-          window.dispatchEvent(new Event("open-cart-drawer"));
-        }
+            if (cartBadge && newCartBadge) {
+              cartBadge.innerHTML = newCartBadge.innerHTML;
+            }
+          });
+
+        // // Update store
+        // this.items = cart.items;
+
+        // this.sub_total = this.formatMoney(cart.total_price);
+
+        // // Update local state
+        // this.items = cart.items;
+        // this.sub_total = this.formatMoney(cart.total_price);
+
+        // console.log("cart", this.items);
       } catch (error) {
         console.error("Error fetching cart:", error);
       }
@@ -31,6 +43,7 @@ export default async function Cart() {
 
     async addToCart(variantId, sellingPlanId = null, quantity = 1) {
       try {
+        console.log("addToCart", variantId, sellingPlanId, quantity);
         // Dispatch event to show loading state
         window.dispatchEvent(new CustomEvent("cart:adding"));
 
@@ -49,7 +62,9 @@ export default async function Cart() {
         if (!response.ok) throw new Error(responseBody.message);
 
         // Immediately update the cart after successful add
-        await this.getCart(true);
+        await this.getCart();
+
+        window.dispatchEvent(new Event("open-cart-drawer"));
 
         // Dispatch success event
         window.dispatchEvent(new CustomEvent("cart:added"));
@@ -79,21 +94,14 @@ export default async function Cart() {
 
         if (!response.ok) throw new Error("Remove from cart failed");
 
-        const cart = await response.json();
-
-        // Update store
-        this.items = cart.items;
-        this.sub_total = this.formatMoney(cart.total_price);
-
-        // Update local state
-        this.items = cart.items;
-        this.sub_total = this.formatMoney(cart.total_price);
+        await this.getCart();
       } catch (error) {
         console.error("Error removing from cart:", error);
       }
     },
 
     async updateQuantity(variantId, quantity) {
+      console.log("updateQuantity", variantId, quantity);
       try {
         const response = await fetch(`${window.routes.cart_change_url}.js`, {
           method: "POST",
@@ -110,13 +118,7 @@ export default async function Cart() {
 
         const cart = await response.json();
 
-        // Update store
-        this.items = cart.items;
-        this.sub_total = this.formatMoney(cart.total_price);
-
-        // Update local state
-        this.items = cart.items;
-        this.sub_total = this.formatMoney(cart.total_price);
+        await this.getCart();
       } catch (error) {
         console.error("Error updating quantity:", error);
       }

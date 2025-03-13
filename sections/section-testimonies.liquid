@@ -7,12 +7,10 @@
   <div class="md:row-span-2 flex">
     <div class="relative w-full md:max-w-md ml-auto">
       <div class="relative">
-        <div
-          class="testimonies-swiper-image-after overflow-hidden aspect-[3/4] bg-black rounded-lg"
-        >
+        <div class="testimonies-swiper-image-after overflow-hidden aspect-[3/4] bg-black rounded-lg">
           <div class="swiper-wrapper">
             {% for testimony in section.blocks %}
-              <div class="swiper-slide">
+              <div class="swiper-slide" style="height: auto;">
                 {% render 'responsive-image', image: testimony.settings.after_image, wrapper_class: 'aspect-[3/4] relative overflow-hidden', image_class: 'absolute object-cover inset-0 w-full h-full' %}
               </div>
             {% endfor %}

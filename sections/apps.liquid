@@ -1,4 +1,4 @@
-<div class="{% if section.settings.include_margins %}page-width{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+<div class="wrapper{% if section.settings.wrapper_size == 'small' %} wrapper--small{% endif %}">
   {%- for block in section.blocks -%}
     {% render block %}
   {%- endfor -%}
@@ -11,10 +11,20 @@
   "class": "section",
   "settings": [
     {
-      "type": "checkbox",
-      "id": "include_margins",
-      "default": true,
-      "label": "t:sections.apps.settings.include_margins.label"
+      "type": "select",
+      "id": "wrapper_size",
+      "label": "Wrapper size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "small"
     }
   ],
   "blocks": [

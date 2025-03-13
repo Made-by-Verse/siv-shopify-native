@@ -1,30 +1,64 @@
 <div class="flex gap-4 py-4">
-    <img :src="item.image" class="aspect-square object-center w-24 h-24 border rounded md:w-28 md:h-28" />
+  <img src="{{ item.image | image_url: width: 100 }}" class="aspect-square object-center w-24 h-24 border rounded md:w-28 md:h-28" />
   <div class="flex flex-col justify-between w-full flex-grow">
     <div class="flex w-full justify-between">
-      <h3 class="text-2xl leading-none" x-text="item.title"></h3>
-      <p class='leading-none' x-text="$store.cart.formatMoney(item.final_price)"></p>
+      <div>
+        <h3 class="text-2xl leading-none">{{ item.product.title }}</h3>
+        <p class="text-xs text-gray-500">{{ item.selling_plan_allocation ? item.selling_plan_allocation.selling_plan.name : '' }}</p>
+      </div>
+      <p class='leading-none'>{{ item.final_price | money }}</p>
     </div>
     <div class='flex gap-2'>
-      <div class="flex items-center gap-2 border rounded">
-        <button 
+      <div x-data="{ loading: false }" class="flex items-center gap-2 border rounded">
+        <button
+          :disabled="loading"
           class="quantity-btn minus h-10 w-10 flex items-center justify-center" 
-          @click="$store.cart.updateQuantity(item.key, item.quantity - 1)"
-        >-</button>
-        <span 
-          class="quantity-display leading-none text-center" 
-          x-text="item.quantity"
-        ></span>
+          @click.prevent="
+            loading = true;
+            $store.cart.updateQuantity('{{ item.variant_id }}', {{ item.quantity | minus: 1 }})
+              .then(() => loading = false)
+              .catch(() => loading = false)
+          "
+        >
+          -
+        </button>
+        <span
+          x-show="!loading"
+          class="quantity-display leading-none text-center w-10" 
+        >
+          {{ item.quantity }}
+        </span>
+        <span x-show="loading" class="w-4 h-4 block">
+          {% render 'loading-spinner' %}
+        </span>
         <button 
+          :disabled="loading"
           class="quantity-btn plus h-10 w-10 flex items-center justify-center" 
-          @click="$store.cart.updateQuantity(item.key, item.quantity + 1)"
-        >+</button>
+          @click.prevent="
+            loading = true;
+            $store.cart.updateQuantity('{{ item.variant_id }}', {{ item.quantity | plus: 1 }})
+              .then(() => loading = false)
+              .catch(() => loading = false)
+          "
+        >
+          +
+        </button>
       </div>
       <button 
+        x-data="{ loading: false }"
+        :disabled="loading"
         class="uppercase text-sm border rounded opacity-70 hover:opacity-100 transition-opacity duration-500  w-10 h-10 flex items-center justify-center" 
-        @click="$store.cart.removeFromCart(item.key)"
+        @click.prevent="
+          loading = true;
+          $store.cart.removeFromCart('{{ item.variant_id }}')
+            .then(() => loading = false)
+            .catch(() => loading = false)
+        "
       >
-        <span class='w-6 h-6 block'>{% render 'icon-trash' %}</span>
+        <span x-show="!loading" class='w-6 h-6 block'>{% render 'icon-trash' %}</span>
+        <span x-show="loading" class="w-6 h-6 block">
+          {% render 'loading-spinner' %}
+        </span>
       </button>
     </div>
   </div>

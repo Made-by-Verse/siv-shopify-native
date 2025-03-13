@@ -6,7 +6,7 @@ import Accordion from "./Accordion";
 import Conditions from "./Conditions";
 import BlogFilter from "./BlogFilter";
 import Pagination from "./Pagination";
-
+import Product from "./Product";
 export default function AlpineData() {
   Promise.all([
     MegaMenu(),
@@ -17,6 +17,7 @@ export default function AlpineData() {
     Conditions(),
     BlogFilter(),
     Pagination(),
+    Product(),
   ]).catch((error) => {
     console.error("Error initializing Alpine components:", error);
   });
