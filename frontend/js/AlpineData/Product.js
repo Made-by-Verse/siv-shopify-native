@@ -2,6 +2,8 @@ export default async function Product() {
   Alpine.data("product", () => ({
     descriptionOpen: false,
     quantity: 1,
+    test: 0,
+
     handleVariantChange(event) {
       const variantId = event.target.value;
       // Update URL with variant ID and reload form
