@@ -7,6 +7,8 @@
   <form class="product-details" x-data="product">
     {% for block in section.blocks %}
       {% case block.type %}
+        {% when '@app' %}
+          {% render block %}
         {% when 'product-title' %}
           {% render 'animated-heading', class: 'mb-2 h2', title: product.title %}
         {% when 'product-price' %}
