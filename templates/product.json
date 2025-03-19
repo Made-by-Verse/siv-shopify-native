@@ -26,7 +26,6 @@
         },
         "subscriptions_app_block_zUrgWM": {
           "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
-          "disabled": true,
           "settings": {
             "color_text_title": "#6d7175",
             "color_text_body": "#6d7175",
@@ -41,6 +40,7 @@
         },
         "recharge_subscriptions_subscription_widget_v2_VAPzAy": {
           "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "disabled": true,
           "settings": {}
         },
         "variant_picker_cF46kp": {
