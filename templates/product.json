@@ -24,20 +24,6 @@
           "type": "product-description",
           "settings": {}
         },
-        "subscriptions_app_block_zUrgWM": {
-          "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
-          "settings": {
-            "color_text_title": "#6d7175",
-            "color_text_body": "#6d7175",
-            "dividers_color": "#8f8d8d",
-            "bacgkround_color": "rgba(0,0,0,0)",
-            "border_thickness": 1,
-            "border_radius": 3,
-            "supporting_text_title": "",
-            "subscription_policy_url": "",
-            "product": "{{product}}"
-          }
-        },
         "recharge_subscriptions_subscription_widget_v2_VAPzAy": {
           "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
           "disabled": true,
@@ -64,7 +50,6 @@
         "product_title_Fqeap7",
         "product_price_JDACKF",
         "product_description_xK3MCg",
-        "subscriptions_app_block_zUrgWM",
         "recharge_subscriptions_subscription_widget_v2_VAPzAy",
         "variant_picker_cF46kp",
         "quantity_selector_8EEfnM",
