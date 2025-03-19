@@ -46,9 +46,7 @@
         :disabled="loading"
         disabled="{{ product.is_sold_out }}"
       >
-        <span 
-          :class="{ 'opacity-0': loading }"
-        >
+        <span :class="{ 'opacity-0': loading }">
           Add to cart $<span x-text="({{ current_price }} * quantity / 100).toFixed(0)"></span>
         </span>
         <div 

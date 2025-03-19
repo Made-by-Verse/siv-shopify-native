@@ -12,6 +12,7 @@ export const SWIPER_CONFIG = {
     image: {
       speed: 1000,
       loop: true,
+      spaceBetween: 0,
       allowTouchMove: false,
     },
     after: {

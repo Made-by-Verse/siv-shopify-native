@@ -8,28 +8,20 @@
         {% for image in product.media %}
           {% render 'responsive-image', image: image, wrapper_class: 'swiper-slide w-full h-full relative aspect-square bg-primary', image_class: 'w-full object-cover absolute' %}
         {% endfor %}
-        <div class="bg-black absolute bottom-4 right-4 mix-blend-difference flex gap-2 justify-center">
+        <div class="z-10 bg-black absolute bottom-4 right-4 mix-blend-difference flex gap-2 justify-center">
           <button
-            class="product-gallery-swiper-button-prev w-12 h-12 hover:opacity-100 duration-500 border border-black rounded-full"
+            class="product-gallery-swiper-button-prev w-12 h-12 hover:opacity-100 duration-500 border border-white rounded-full flex items-center justify-center"
           >
-            {% comment %} <Image
-              src={'/swiper-arrow.svg'}
-              alt="swiper-arrow"
-              width={56}
-              height={56}
-              class="h-12 w-12 opacity-50 hover:opacity-100 duration-500"
-            ></Image> {% endcomment %}
+            <span class="block w-4 h-[10px] transform transition-transform duration-500 text-white rotate-90">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
           </button>
           <button
-            class="product-gallery-swiper-button-next w-12 h-12 hover:opacity-100 duration-500 border border-black rounded-full"
+            class="product-gallery-swiper-button-next w-12 h-12 hover:opacity-100 duration-500 border border-white rounded-full flex items-center justify-center"
           >
-            {% comment %} <Image
-              src={'/swiper-arrow.svg'}
-              alt="swiper-arrow"
-              width={56}
-              height={56}
-              class="h-12 w-12 transform rotate-180 opacity-50 hover:opacity-100 duration-500"
-            ></Image> {% endcomment %}
+            <span class="block w-4 h-[10px] transform transition-transform duration-500 text-white -rotate-90">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
           </button>
         </div>
       </div>
@@ -40,7 +32,7 @@
     >
       <div class="swiper-wrapper">
         {% for image in product.media %}
-          {% render 'responsive-image', image: image, wrapper_class: 'swiper-slide w-16 h-16 relative aspect-square rounded-xl overflow-hidden', image_class: 'w-16 h-16 object-cover absolute' %}
+          {% render 'responsive-image', image: image, wrapper_class: 'swiper-slide !w-16 !h-16 relative aspect-square rounded-xl overflow-hidden', image_class: 'w-16 h-16 object-cover absolute' %}
         {% endfor %}
       </div>
     </div>

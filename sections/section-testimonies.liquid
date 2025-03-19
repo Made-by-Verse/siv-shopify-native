@@ -1,34 +1,85 @@
-<div class="wrapper grid md:grid-cols-2 md:grid-rows-2 gap-8">
-  <div class="flex flex-col justify-between gap-4">
-    <div class="flex flex-col max-w-md items-start gap-4">
-      {% render 'animated-heading', title: section.settings.heading, class: 'h2 max-w-xl' %}
-    </div>
+<div class="wrapper grid md:grid-cols-[1fr_400px] md:grid-rows-[auto_1fr] gap-8"
+  x-data="{ 
+    currentIndex: 0,
+    totalSlides: {{ section.blocks.size }},
+    next() {
+      this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
+    },
+    prev() {
+      this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+    }
+  }">
+  <div class="flex flex-col w-full justify-between gap-4">
+    {% render 'animated-heading', title: section.settings.heading, class: 'h2 max-w-xl' %}
   </div>
-  <div class="md:row-span-2 flex">
-    <div class="relative w-full md:max-w-md ml-auto">
-      <div class="relative">
-        <div class="testimonies-swiper-image-after overflow-hidden aspect-[3/4] bg-black rounded-lg">
-          <div class="swiper-wrapper">
-            {% for testimony in section.blocks %}
-              <div class="swiper-slide" style="height: auto;">
-                {% render 'responsive-image', image: testimony.settings.after_image, wrapper_class: 'aspect-[3/4] relative overflow-hidden', image_class: 'absolute object-cover inset-0 w-full h-full' %}
-              </div>
-            {% endfor %}
+  
+  <div class="relative overflow-hidden w-full grid items-end order-last lg:order-none"
+    x-data="{ maxHeight: 0 }"
+    x-init="$nextTick(() => {
+      maxHeight = Math.max(...Array.from($el.children).map(el => el.offsetHeight));
+      $el.style.minHeight = maxHeight + 'px';
+    })">
+    {% for testimony in section.blocks %}
+      <div class="absolute w-full"
+        x-show="currentIndex === {{ forloop.index0 }}"
+        x-transition:enter="transition ease-out duration-500"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-500"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0">
+        <div class="flex items-end h-full">
+          <div class="space-y-4 max-w-lg">
+            <p class="lead">{{testimony.settings.quote}}</p>
+            <span class="block font-medium tracking-wide uppercase">
+              After {{testimony.settings.treatment_duration}} days
+            </span>
           </div>
         </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="md:row-span-2 md:col-start-2 md:row-start-1">
+    <div class="relative w-full">
+      <div class="relative overflow-hidden aspect-[3/4] bg-black rounded-lg w-full">
+        {% for testimony in section.blocks %}
+          <div class="absolute inset-0 w-full h-full"
+            x-show="currentIndex === {{ forloop.index0 }}"
+            x-transition:enter="transition ease-out duration-500"
+            x-transition:enter-start="transform translate-x-full opacity-0"
+            x-transition:enter-end="transform translate-x-0 opacity-100"
+            x-transition:leave="transition ease-in duration-500"
+            x-transition:leave-start="transform translate-x-0 opacity-100"
+            x-transition:leave-end="transform translate-x-0 opacity-0">
+            {% render 'responsive-image', 
+              image: testimony.settings.after_image, 
+              wrapper_class: 'aspect-[3/4] relative overflow-hidden', 
+              image_class: 'absolute object-cover inset-0 w-full h-full' 
+            %}
+          </div>
+        {% endfor %}
+
         <div class="absolute top-4 left-4 z-30">
           <div x-data="{ enlargeImage: false }" class="relative mb-1">
-            <div
-              class="testimonies-swiper-image-before aspect-[3/4] rounded overflow-hidden transition-all duration-500"
-              :class="enlargeImage ? 'w-40 md:w-56' : 'w-24'"
-            >
-              <div class="swiper-wrapper">
-                {% for testimony in section.blocks %}
-                  <div class="swiper-slide">
-                    {% render 'responsive-image', image: testimony.settings.before_image, wrapper_class: 'aspect-[3/4] relative overflow-hidden', image_class: 'absolute object-cover inset-0 w-full h-full' %}
-                  </div>
-                {% endfor %}
-              </div>
+            <div class="overflow-hidden relative aspect-[3/4] transition-all duration-500 rounded"
+              :class="enlargeImage ? 'w-40 md:w-56' : 'w-24'">
+              {% for testimony in section.blocks %}
+                <div class="absolute inset-0 w-full h-full aspect-[3/4]"
+                  x-show="currentIndex === {{ forloop.index0 }}"
+                  x-transition:enter="transition ease-out duration-500"
+                  x-transition:enter-start="transform translate-x-full opacity-0"
+                  x-transition:enter-end="transform translate-x-0 opacity-100"
+                  x-transition:leave="transition ease-in duration-500"
+                  x-transition:leave-start="transform translate-x-0 opacity-100"
+                  x-transition:leave-end="transform translate-x-0 opacity-0">
+                  {% render 'responsive-image', 
+                    image: testimony.settings.before_image, 
+                    wrapper_class: 'aspect-[3/4] relative overflow-hidden', 
+                    image_class: 'absolute object-cover inset-0 w-full h-full' 
+                  %}
+                </div>
+              {% endfor %}
             </div>
             <button
               @click="enlargeImage = !enlargeImage"
@@ -43,17 +94,18 @@
             Before
           </span>
         </div>
+
         <div class="flex inset-x-0 bottom-0 p-4 z-20 absolute justify-between items-end">
           <span class="text-white uppercase text-sm font-medium tracking-wide">
             After
           </span>
           <div class="flex gap-2 z-10">
-            <button class="testimonies-swiper-button-prev cursor-pointer bg-white/20 rounded-full w-10 h-10 flex items-center justify-center">
+            <button @click="prev()" class="cursor-pointer bg-white/20 rounded-full w-10 h-10 flex items-center justify-center">
               <span class="block w-4 h-[10px] transform transition-transform duration-500 text-white rotate-90">
                 {{- 'icon-caret.svg' | inline_asset_content -}}
               </span>
             </button>
-            <button class="testimonies-swiper-button-next cursor-pointer bg-white/20 rounded-full w-10 h-10 flex items-center justify-center">
+            <button @click="next()" class="cursor-pointer bg-white/20 rounded-full w-10 h-10 flex items-center justify-center">
               <span class="block w-4 h-[10px] transform transition-transform duration-500 text-white -rotate-90">
                 {{- 'icon-caret.svg' | inline_asset_content -}}
               </span>
@@ -62,22 +114,6 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="testimonies-swiper-text mx-0 w-full">
-    <div class="swiper-wrapper">
-      {% for testimony in section.blocks %}
-        <div class="swiper-slide bg-primary">
-          <div class="flex items-end h-full">
-            <div class="space-y-4 max-w-lg">
-              <p class="lead">{{testimony.settings.quote}}</p>
-              <span class="block font-medium tracking-wide uppercase">
-                After {{testimony.settings.treatment_duration}} days
-              </span>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>  
   </div>
 </div>
 

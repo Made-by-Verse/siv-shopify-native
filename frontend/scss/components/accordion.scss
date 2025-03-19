@@ -14,7 +14,7 @@
       @apply w-full flex gap-4 justify-between items-center;
 
       .accordion-item-heading {
-        @apply text-sm uppercase font-body tracking-wider font-medium;
+        @apply text-sm uppercase font-body tracking-wider font-medium text-left;
       }
 
       .accordion-item-icon {
@@ -40,6 +40,10 @@
 
     .accordion-item-content {
       @apply overflow-hidden transition-all duration-300 ease-in-out;
+
+      :first-child {
+        margin-top: 8px;
+      }
     }
   }
 }
