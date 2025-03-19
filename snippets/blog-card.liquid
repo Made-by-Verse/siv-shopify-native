@@ -1,7 +1,7 @@
 <a href="{{ post.url }}" class="h-full relative flex flex-col justify-between gap-4 group {{ class }}">
   <div class="space-y-3">
     {% if post.image %}
-      {% render 'responsive-image', image: post.image, wrapper_class: 'relative aspect-portrait bg-white rounded-lg overflow-hidden', image_class: 'object-cover h-full w-full scale-105 group-hover:scale-100 duration-500' %}
+      {% render 'responsive-image', image: post.image, wrapper_class: 'relative aspect-portrait bg-white rounded-lg overflow-hidden', image_class: 'object-cover h-full w-full scale-105 group-hover:scale-100 duration-500 transition-transform' %}
     {% else %}
       <div class="relative aspect-[4/5] bg-white rounded-lg overflow-hidden">
         <div class="absolute inset-0 flex items-center justify-center">

@@ -3,9 +3,7 @@ export const SWIPER_CONFIG = {
     text: {
       loop: true,
       effect: "fade",
-      allowTouchMove: false,
       slidesPerView: 1,
-      speed: 500,
       allowTouchMove: false,
       speed: 1000,
     },
@@ -23,16 +21,16 @@ export const SWIPER_CONFIG = {
     },
   },
   featuredPosts: {
-    slidesPerView: 1.25,
+    slidesPerView: 1.2,
     spaceBetween: 16,
     breakpoints: {
       768: {
         slidesPerView: 2.5,
-        spaceBetween: 32,
+        spaceBetween: 16,
       },
       1023: {
         slidesPerView: 3,
-        spaceBetween: 32,
+        spaceBetween: 16,
       },
     },
   },
