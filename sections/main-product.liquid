@@ -4,7 +4,25 @@
   {% elsif product.media.size == 1 %}
     {% render 'responsive-image', image: product.media[0], wrapper_class: 'aspect-square bg-white', image_class: 'w-full h-full object-cover' %}
   {% endif %}
-  <form class="product-details" x-data="product">
+  <form 
+    class="product-details" 
+    x-data="product"
+    method="post" 
+    action="/cart/add"
+    id="product-form-{{ product.id }}"
+    accept-charset="UTF-8"
+    enctype="multipart/form-data"
+  >
+    <input type="hidden" name="form_type" value="product">
+    <input type="hidden" name="utf8" value="✓">
+    
+    <input 
+      type="hidden" 
+      name="id" 
+      value="{{ product.selected_or_first_available_variant.id }}"
+      data-variant-id
+    >
+    
     {% for block in section.blocks %}
       {% case block.type %}
         {% when '@app' %}
@@ -41,9 +59,18 @@
           {% endif %}
         {% when 'variant-picker' %}
           {% unless product.has_only_default_variant %}
-            <select name="variant" @change="handleVariantChange($event)">
+            <select 
+              @change="handleVariantChange($event)"
+              data-product-select
+              id="ProductSelect-{{ section.id }}"
+            >
               {% for variant in product.variants %}
-                <option value="{{ variant.id }}">{{ variant.title }}</option>
+                <option 
+                  value="{{ variant.id }}"
+                  {% if variant.id == product.selected_or_first_available_variant.id %}selected="selected"{% endif %}
+                >
+                  {{ variant.title }}
+                </option>
               {% endfor %}
             </select>
           {% endunless %}
