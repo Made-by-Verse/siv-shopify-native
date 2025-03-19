@@ -54,9 +54,19 @@
         {{ product.metafields.product.short-description }}
       </div>
     </div>
-    <div class="bg-white px-6 pb-4 space-y-2">
-      {% render 'quick-buy-button', product: product %}
+    <form class="bg-white px-6 pb-4 space-y-2" x-data="{quantity: 1}">
+      <div class="flex items-center gap-2 bg-white border rounded-full">
+        <button class="quantity-btn-main-product" :disabled="quantity == 1" @click.prevent="quantity = quantity > 1 ? quantity - 1 : 1">-</button>
+        <input 
+          type="number" 
+          name="quantity" 
+          x-model="quantity"
+          class="appearance-none flex-1 text-center h-10"
+        >
+        <button class="quantity-btn-main-product" @click.prevent="quantity++">+</button>
+      </div>
+      {% render 'buy-buttons', product: product, selectedVariant: product.selected_or_first_available_variant %}
       <a href="{{ product.url }}" class="btn btn--outline w-full flex justify-center">View Product</a>
-    </div>
+    </form>
   </div>
 </div>

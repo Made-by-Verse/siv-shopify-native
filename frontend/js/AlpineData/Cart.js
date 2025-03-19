@@ -2,40 +2,26 @@ export default async function Cart() {
   Alpine.store("cart", {
     async getCart() {
       try {
-        fetch(window.location.href)
-          .then((res) => res.text())
-          .then((html) => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, "text/html");
+        const response = await fetch(window.location.href);
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
 
-            //update cart items
-            const currentCartItems =
-              document.querySelector("#cart-drawer-form");
-            const newCartItems = doc.querySelector("#cart-drawer-form");
+        //update cart items
+        const currentCartItems = document.querySelector("#cart-drawer-form");
+        const newCartItems = doc.querySelector("#cart-drawer-form");
 
-            if (currentCartItems && newCartItems) {
-              currentCartItems.innerHTML = newCartItems.innerHTML;
-            }
+        if (currentCartItems && newCartItems) {
+          currentCartItems.innerHTML = newCartItems.innerHTML;
+        }
 
-            //update cart badge
-            const cartBadge = document.querySelector("#cart-item-count");
-            const newCartBadge = doc.querySelector("#cart-item-count");
+        //update cart badge
+        const cartBadge = document.querySelector("#cart-item-count");
+        const newCartBadge = doc.querySelector("#cart-item-count");
 
-            if (cartBadge && newCartBadge) {
-              cartBadge.innerHTML = newCartBadge.innerHTML;
-            }
-          });
-
-        // // Update store
-        // this.items = cart.items;
-
-        // this.sub_total = this.formatMoney(cart.total_price);
-
-        // // Update local state
-        // this.items = cart.items;
-        // this.sub_total = this.formatMoney(cart.total_price);
-
-        // console.log("cart", this.items);
+        if (cartBadge && newCartBadge) {
+          cartBadge.innerHTML = newCartBadge.innerHTML;
+        }
       } catch (error) {
         console.error("Error fetching cart:", error);
       }
@@ -43,7 +29,6 @@ export default async function Cart() {
 
     async addToCart(variantId, sellingPlanId = null, quantity = 1) {
       try {
-        console.log("addToCart", variantId, sellingPlanId, quantity);
         // Dispatch event to show loading state
         window.dispatchEvent(new CustomEvent("cart:adding"));
 
@@ -79,15 +64,17 @@ export default async function Cart() {
       }
     },
 
-    async removeFromCart(variantId) {
+    async removeFromCart(key) {
       try {
+        window.dispatchEvent(new CustomEvent(`cart:removing-${key}`));
+
         const response = await fetch(`${window.routes.cart_change_url}.js`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            id: variantId.toString(),
+            id: key.toString(),
             quantity: 0,
           }),
         });
@@ -95,13 +82,16 @@ export default async function Cart() {
         if (!response.ok) throw new Error("Remove from cart failed");
 
         await this.getCart();
+
+        window.dispatchEvent(new CustomEvent(`cart:removed-${key}`));
       } catch (error) {
         console.error("Error removing from cart:", error);
       }
     },
 
-    async updateQuantity(variantId, quantity) {
-      console.log("updateQuantity", variantId, quantity);
+    async updateQuantity(key, quantity) {
+      window.dispatchEvent(new CustomEvent(`cart:updating-quantity-${key}`));
+
       try {
         const response = await fetch(`${window.routes.cart_change_url}.js`, {
           method: "POST",
@@ -109,7 +99,7 @@ export default async function Cart() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            id: variantId.toString(),
+            id: key.toString(),
             quantity: quantity,
           }),
         });
@@ -119,6 +109,8 @@ export default async function Cart() {
         const cart = await response.json();
 
         await this.getCart();
+
+        window.dispatchEvent(new CustomEvent(`cart:quantity-updated-${key}`));
       } catch (error) {
         console.error("Error updating quantity:", error);
       }

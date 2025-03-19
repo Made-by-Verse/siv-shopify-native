@@ -4,33 +4,61 @@
   {% elsif product.media.size == 1 %}
     {% render 'responsive-image', image: product.media[0], wrapper_class: 'aspect-square bg-white', image_class: 'w-full h-full object-cover' %}
   {% endif %}
-  <div class="product-details" x-data="product">
-    <div>
-      {% render 'animated-heading', class: 'mb-2 h2', title: product.title %}
-      {% render 'price', product: product, show_compare_at_price: true %}
-      {%- if product.quantity_price_breaks_configured? -%}
-        <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
-          <span>{{ 'products.product.volume_pricing.note' | t }}</span>
-        </div>
-      {%- endif -%}
-    </div>
-    <div>
-      <div
-        class="product-description relative"
-        :style="{ height: descriptionOpen ? $el.scrollHeight + 'px' : '90px' }"
-        :class="descriptionOpen && 'product-description-open'"
-      >
-        {{ product.description }}
-      </div>
-      <button class="underline font-semibold" @click="descriptionOpen = !descriptionOpen" x-text="descriptionOpen ? 'Less' : 'More'"></button>
-    </div>
-
-    {% render 'product-form', product: product %}
-    
-    {% if product.metafields.product.accordion %}
-      {% render 'product-accordion', product: product %}
-    {% endif %}
-  </div>
+  <form class="product-details" x-data="product">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'product-title' %}
+          {% render 'animated-heading', class: 'mb-2 h2', title: product.title %}
+        {% when 'product-price' %}
+          {% render 'price', product: product, show_compare_at_price: true %}
+          {%- if product.quantity_price_breaks_configured? -%}
+            <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
+              <span>{{ 'products.product.volume_pricing.note' | t }}</span>
+            </div>
+          {%- endif -%}
+        {% when 'product-description' %}
+          <div>
+            <div
+              class="product-description relative"
+              :style="{ height: descriptionOpen ? $el.scrollHeight + 'px' : '90px' }"
+              :class="descriptionOpen && 'product-description-open'"
+            >
+              {{ product.description }}
+            </div>
+            <button class="underline font-semibold" @click.prevent="descriptionOpen = !descriptionOpen" x-text="descriptionOpen ? 'Less' : 'More'"></button>
+          </div>
+        {% when 'accordion' %}
+          {% if product.metafields.product.accordion %}
+            {% render 'product-accordion', product: product %}
+          {% endif %}
+        {% when 'buy-buttons' %}
+          {% if product.is_sold_out %}
+            <button class="btn btn--white">Sold out</button>
+          {% else %}
+            {% render 'buy-buttons', product: product, selectedVariant: product.selected_or_first_available_variant %}
+          {% endif %}
+        {% when 'variant-picker' %}
+          {% unless product.has_only_default_variant %}
+            <select name="variant" @change="handleVariantChange($event)">
+              {% for variant in product.variants %}
+                <option value="{{ variant.id }}">{{ variant.title }}</option>
+              {% endfor %}
+            </select>
+          {% endunless %}
+        {% when 'quantity-selector' %}
+          <div class="flex items-center gap-2 bg-white border rounded-full">
+            <button class="quantity-btn-main-product" :disabled="quantity == 1" @click.prevent="quantity = quantity > 1 ? quantity - 1 : 1">-</button>
+            <input 
+              type="number" 
+              name="quantity" 
+              x-model="quantity"
+              class="appearance-none flex-1 text-center h-10"
+            >
+            <button class="quantity-btn-main-product" @click.prevent="quantity++">+</button>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </form>
 </div>
 
 {%- liquid
@@ -55,51 +83,46 @@
     "groups": ["header", "footer"]
   },
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "enable_sticky_info",
-      "default": true,
-      "label": "t:sections.main-product.settings.enable_sticky_info.label"
-    },
-    {
-      "type": "select",
-      "id": "media_size",
-      "options": [
-        {
-          "value": "small",
-          "label": "t:sections.main-product.settings.media_size.options__1.label"
-        },
-        {
-          "value": "medium",
-          "label": "t:sections.main-product.settings.media_size.options__2.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.main-product.settings.media_size.options__3.label"
-        }
-      ],
-      "default": "large",
-      "label": "t:sections.main-product.settings.media_size.label",
-      "info": "t:sections.main-product.settings.media_size.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "hide_variants",
-      "default": false,
-      "label": "t:sections.main-product.settings.hide_variants.label"
-    }
+    
   ],
   "blocks": [
     {
-      "type": "care-info",
-      "name": "Care Info",
-      "settings": [
-        {
-          "type": "page",
-          "id": "care-info-page",
-          "label": "Care Info Page"
-        }
-      ]
+      "type": "product-title",
+      "name": "Product Title",
+      "limit": 1
+    },
+    {
+      "type": "product-price",
+      "name": "Product Price",
+      "limit": 1
+    },
+    {
+      "type": "product-description",
+      "name": "Product Description",
+      "limit": 1
+    },
+    {
+      "type": "accordion",
+      "name": "Accordion",
+      "limit": 1
+    },
+    {
+      "type": "buy-buttons",
+      "name": "Buy Buttons",
+      "limit": 1
+    },
+    {
+      "type": "variant-picker",
+      "name": "Variant Picker",
+      "limit": 1
+    },
+    {
+      "type": "quantity-selector",
+      "name": "Quantity Selector",
+      "limit": 1
+    },
+    {
+      "type": "@app"
     }
   ]
 }

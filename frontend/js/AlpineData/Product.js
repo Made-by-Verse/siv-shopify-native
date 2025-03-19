@@ -2,7 +2,8 @@ export default async function Product() {
   Alpine.data("product", () => ({
     descriptionOpen: false,
     quantity: 1,
-    handleVariantChange(variantId) {
+    handleVariantChange(event) {
+      const variantId = event.target.value;
       // Update URL with variant ID and reload form
       this.updateProductForm({ variant: variantId });
     },
@@ -23,9 +24,9 @@ export default async function Product() {
       this.updateProductForm(params);
     },
 
-    handleQuantityChange(event) {
-      const quantity = event.target.value;
-      this.updateProductForm({ quantity: quantity });
+    async handleQuantityChange() {
+      // Update product form with new quantity
+      await this.updateProductForm({ quantity: this.quantity });
     },
 
     async updateProductForm(params) {
@@ -49,15 +50,22 @@ export default async function Product() {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, "text/html");
 
-      // Replace product form with new HTML
-
+      // Replace product form and price containers with new HTML
       const newForm = doc.querySelector("#product-form");
-      document.querySelector("#product-form").replaceWith(newForm);
-
       const priceContainer = doc.querySelector("#product-price-container");
-      document
-        .querySelector("#product-price-container")
-        .replaceWith(priceContainer);
+      //const buyButton = doc.querySelector(".buy-button");
+
+      if (newForm) {
+        document.querySelector("#product-form").replaceWith(newForm);
+      }
+      if (priceContainer) {
+        document
+          .querySelector("#product-price-container")
+          .replaceWith(priceContainer);
+      }
+      // if (buyButton) {
+      //   document.querySelector(".buy-button").replaceWith(buyButton);
+      // }
     },
   }));
 }
