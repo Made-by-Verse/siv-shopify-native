@@ -1,27 +1,28 @@
 @font-face {
   font-family: "Matter";
-  src: url("/assets/Matter-Regular-CjKzGe-c.woff2") format("woff2");
+  src: url("@/assets/fonts/Matter-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Matter";
-  src: url("/assets/Matter-Medium-0kVFSH3u.woff2") format("woff2");
+  src: url("@/assets/fonts/Matter-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Matter";
-  src: url("/assets/Matter-SemiBold-0U2m7Cfo.woff2") format("woff2");
+  src: url("@/assets/fonts/Matter-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gothic";
-  src: url("/assets/TitlingGothicFB-CompressedStandard.woff2") format("woff2");
+  src: url("@/assets/fonts/TitlingGothicFB-CompressedStandard.woff2")
+    format("woff2");
   font-weight: 400;
   font-style: normal;
 }
