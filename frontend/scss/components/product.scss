@@ -1,5 +1,5 @@
 .product-details {
-  @apply sticky top-20 space-y-4 lg:space-y-8;
+  @apply sticky top-20;
 
   .product-description {
     @apply prose overflow-hidden transition-all duration-300;

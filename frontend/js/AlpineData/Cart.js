@@ -27,7 +27,15 @@ export default async function Cart() {
       }
     },
 
-    async addToCart(variantId, sellingPlanId = null, quantity = 1) {
+    async addToCart(event) {
+      const formData = new FormData(event.target);
+      const formDataObject = {};
+
+      // Convert FormData to object
+      formData.forEach((value, key) => {
+        formDataObject[key] = value;
+      });
+
       try {
         // Dispatch event to show loading state
         window.dispatchEvent(new CustomEvent("cart:adding"));
@@ -38,7 +46,7 @@ export default async function Cart() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            items: [{ id: variantId, quantity, selling_plan: sellingPlanId }],
+            items: [formDataObject],
           }),
         });
 

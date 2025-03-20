@@ -9,6 +9,7 @@
     x-data="product"
     method="post" 
     action="/cart/add"
+    @submit.prevent="$store.cart.addToCart($event, quantity)"
     id="product-form-{{ product.id }}"
     accept-charset="UTF-8"
     enctype="multipart/form-data"
@@ -37,7 +38,7 @@
             </div>
           {%- endif -%}
         {% when 'product-description' %}
-          <div>
+          <div class="my-8">
             <div
               class="product-description relative"
               :style="{ height: descriptionOpen ? $el.scrollHeight + 'px' : '90px' }"
@@ -60,6 +61,7 @@
         {% when 'variant-picker' %}
           {% unless product.has_only_default_variant %}
             <select 
+              class="my-2"
               @change="handleVariantChange($event)"
               data-product-select
               id="ProductSelect-{{ section.id }}"
@@ -74,17 +76,6 @@
               {% endfor %}
             </select>
           {% endunless %}
-        {% when 'quantity-selector' %}
-          <div class="flex items-center gap-2 bg-white border rounded-full">
-            <button class="quantity-btn-main-product" :disabled="quantity == 1" @click.prevent="quantity = quantity > 1 ? quantity - 1 : 1">-</button>
-            <input 
-              type="number" 
-              name="quantity" 
-              x-model="quantity"
-              class="appearance-none flex-1 text-center h-10"
-            >
-            <button class="quantity-btn-main-product" @click.prevent="quantity++">+</button>
-          </div>
       {% endcase %}
     {% endfor %}
   </form>

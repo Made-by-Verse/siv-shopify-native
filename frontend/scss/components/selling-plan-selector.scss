@@ -1,0 +1,36 @@
+.rc-widget {
+  padding: 0 !important;
+  margin: 32px 0 !important;
+
+  .rc-button-group__options {
+    .rc-radio {
+      padding: 16px !important;
+      transition: color 1s ease-in-out, border 0.3s ease-in-out !important;
+      border: 2px solid #00000020 !important;
+
+      &--active {
+        border: 2px solid black !important;
+        background-color: white !important;
+      }
+    }
+  }
+
+  .recharge-badge {
+    display: none !important;
+  }
+  .learn-more {
+    display: none !important;
+  }
+
+  .rc-subscription-details__button {
+    color: black !important;
+  }
+
+  .rc-tooltip {
+    background-color: black !important;
+
+    &__content {
+      background-color: black !important;
+    }
+  }
+}

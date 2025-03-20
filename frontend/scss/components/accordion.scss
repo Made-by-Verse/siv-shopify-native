@@ -3,7 +3,7 @@
 }
 
 .accordion-content {
-  @apply border-y divide-y divide-contrast border-contrast;
+  @apply border-y divide-y divide-contrast border-contrast my-8 last:mb-0;
 
   .accordion-item {
     transition: height 0.3s ease-in-out;

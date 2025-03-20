@@ -35,27 +35,38 @@
     <div>
       <p class='text-red-500 text-center mb-2  ' x-data="{message: ''}" x-show="message != ''" x-text='message' @cart:error.window="message = event.detail.message" @cart:adding.window="message = ''"
         @cart:added.window="message = ''"></p>
-      <button
-        type="button"
-        class="btn btn--black w-full relative buy-button"
-        x-data="{ loading: false }"
-        @cart:adding.window="loading = true"
-        @cart:added.window="loading = false"
-        @cart:error.window="loading = false"
-        @click="$store.cart.addToCart({{ product.selected_or_first_available_variant.id }}, {% if product.selected_selling_plan %}{{product.selected_selling_plan.id}}{% else %}null{% endif %}, quantity)"
-        :disabled="loading"
-        disabled="{{ product.is_sold_out }}"
-      >
-        <span :class="{ 'opacity-0': loading }">
-          Add to cart $<span x-text="({{ current_price }} * quantity / 100).toFixed(0)"></span>
-        </span>
-        <div 
-          class="absolute inset-0 flex items-center justify-center"
-          x-show="loading"
-        >
-          {%- render 'loading-spinner' -%}
+        <div class="flex items-stretch gap-2">
+          <div class="flex items-center bg-white border rounded-full">
+            <button class="quantity-btn-main-product" :disabled="quantity == 1" @click.prevent="quantity = quantity > 1 ? quantity - 1 : 1">-</button>
+            <input 
+              type="number" 
+              name="quantity" 
+              x-model="quantity"
+              class="appearance-none text-center w-20"
+            >
+            <button class="quantity-btn-main-product" @click.prevent="quantity++">+</button>
+          </div>
+          <button
+            type="submit"
+            class="btn btn--black relative buy-button flex-1"
+            x-data="{ loading: false }"
+            @cart:adding.window="loading = true"
+            @cart:added.window="loading = false"
+            @cart:error.window="loading = false"
+            :disabled="loading"
+            disabled="{{ product.is_sold_out }}"
+          >
+            <span :class="{ 'opacity-0': loading }">
+              Add to cart
+            </span>
+            <div 
+              class="absolute inset-0 flex items-center justify-center"
+              x-show="loading"
+            >
+              {%- render 'loading-spinner' -%}
+            </div>
+          </button>
         </div>
-      </button>
     </div>
   {%- endif -%}
 </div>
