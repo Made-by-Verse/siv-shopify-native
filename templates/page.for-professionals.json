@@ -22,17 +22,14 @@
           }
         }
       },
-      "block_order": [
-        "image_dWcN8C"
-      ],
+      "block_order": ["image_dWcN8C"],
       "settings": {
         "heading": "For Professionals",
         "image": "shopify://shop_images/siv-hero.jpg",
+        "top_text": "<p>Disclaimer: Each submission is subject to review and does not guarantee a position with SIV, as we want to ensure each of our professional partners are well suited the company</p>",
         "bottom_text": "Disclaimer: Each submission is subject to review and does not guarantee a position with SIV, as we want to ensure each of our professional partners are well suited the company"
       }
     }
   },
-  "order": [
-    "affiliates"
-  ]
+  "order": ["affiliates"]
 }
