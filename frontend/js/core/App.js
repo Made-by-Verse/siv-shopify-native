@@ -7,7 +7,8 @@ import { CarouselManager } from "../components/CarouselManager";
 import { RecommendationsManager } from "../components/RecommendationsManager";
 import { SCROLL_PREVENT } from "./constants";
 import AlpineData from "../AlpineData";
-import { ConditionsSection } from "../components/ConditionsSection";
+import Test from "./test";
+
 export default class App {
   constructor() {
     this.initializeAlpine();
@@ -45,7 +46,7 @@ export default class App {
     this.components.set("carousels", new CarouselManager());
     this.components.set("recommendations", new RecommendationsManager());
     //this.components.set("conditions", new ConditionsSection());
-
+    this.components.set("test", new Test());
     // Initialize all components
     for (const component of this.components.values()) {
       await component.init();
