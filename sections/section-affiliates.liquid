@@ -8,21 +8,34 @@
     {% render 'animated-heading', title: section.settings.heading, class: 'h1' %}
     <div class="prose max-w-md text-white text-center">{{ section.settings.top_text }}</div>
   </div>
-  <div class="grid md:grid-cols-2 gap-4">
+  <div class="grid lg:grid-cols-2 gap-4">
     {% for block in section.blocks %}
-      <div
-        class="bg-black/20 rounded-lg text-white p-4 md:p-6 flex flex-col justify-between items-start gap-4 backdrop-blur"
+      {% if forloop.index == forloop.length %}
+        {% assign mod_output = forloop.index0 | modulo: 2 %}
+        {% if mod_output == 0 %}
+          <div class="lg:col-span-2">
+        {% endif %}
+      {% endif %}
+        <div
+          class="bg-black/20 rounded-lg text-white p-4 md:p-6 flex flex-col justify-between items-start gap-4 backdrop-blur {% if mod_output == 0 %}mx-auto max-w-2xl{% endif %}"
       >
         <div>
           <h2 class="h3 mb-2">{{ block.settings.heading }}</h2>
           <div class="prose">{{ block.settings.text }}</div>
         </div>
-        {% render 'button', 
-          button_text: block.settings.button_text,
-          link: block.settings.button_link,
-          button_class: 'btn--white'
-        %}
+        {% if block.settings.button_text and block.settings.button_link %}
+          {% render 'button', 
+            button_text: block.settings.button_text,
+            link: block.settings.button_link,
+            button_class: 'btn--white'
+          %}
+        {% endif %}
       </div>
+      {% if forloop.index == forloop.length %}
+        {% if mod_output == 0 %}
+          </div>
+        {% endif %}
+      {% endif %}
     {% endfor %}
   </div>
   <div class="flex justify-center items-center">
@@ -76,7 +89,7 @@
             "label": "Heading"
           },
           {
-            "type": "text",
+            "type": "richtext",
             "id": "text",
             "label": "Text"
           },
