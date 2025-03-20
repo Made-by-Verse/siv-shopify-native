@@ -15,21 +15,25 @@
         "image_dWcN8C": {
           "type": "affiliate",
           "settings": {
-            "heading": "Clinicians",
-            "text": "Please fill out the following form if you currently own or are part of a professional practice and are interested in wholesaling SIV products.",
+            "heading": "Exclusive Wholesale Program for Clinicians",
+            "text": "Join our expansive network of top healthcare professionals who trust SIV for high-quality, clinically backed results. Our wholesale program is designed to support clinicians, medical professionals, and wellness practitioners by providing exclusive access to premium formulations at wholesale pricing.",
             "button_text": "Apply",
             "button_link": "shopify://pages/wholesale-enquiry"
           }
         }
       },
-      "block_order": ["image_dWcN8C"],
+      "block_order": [
+        "image_dWcN8C"
+      ],
       "settings": {
-        "heading": "For Professionals",
+        "heading": "Enhance Your Practice with SIV",
+        "top_text": "",
         "image": "shopify://shop_images/siv-hero.jpg",
-        "top_text": "<p>Disclaimer: Each submission is subject to review and does not guarantee a position with SIV, as we want to ensure each of our professional partners are well suited the company</p>",
         "bottom_text": "Disclaimer: Each submission is subject to review and does not guarantee a position with SIV, as we want to ensure each of our professional partners are well suited the company"
       }
     }
   },
-  "order": ["affiliates"]
+  "order": [
+    "affiliates"
+  ]
 }
