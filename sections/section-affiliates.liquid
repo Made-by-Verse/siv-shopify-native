@@ -6,6 +6,7 @@
 <div class="wrapper max-w-7xl z-10 relative space-y-12">
   <div class="text-white text-center">
     {% render 'animated-heading', title: section.settings.heading, class: 'h1' %}
+    <div class="prose max-w-md text-white text-center">{{ section.settings.top_text }}</div>
   </div>
   <div class="grid md:grid-cols-2 gap-4">
     {% for block in section.blocks %}
@@ -44,6 +45,11 @@
         "id": "heading",
         "label": "Heading"
       },
+      {
+        "type": "richtext",
+        "id": "top_text",
+        "label": "Top Text"
+      }
       {
         "type": "image_picker",
         "id": "image",
