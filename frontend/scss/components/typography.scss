@@ -44,6 +44,10 @@ p {
   }
 }
 
+li {
+  @apply opacity-70;
+}
+
 .prose {
   > *:not(:last-child) {
     @apply mb-4;

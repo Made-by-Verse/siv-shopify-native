@@ -40,20 +40,16 @@
           }
         }
       },
-      "block_order": [
-        "image_dWcN8C",
-        "affiliate_JATnYb",
-        "affiliate_9Bq8zX"
-      ],
+      "block_order": ["image_dWcN8C", "affiliate_JATnYb", "affiliate_9Bq8zX"],
       "settings": {
         "heading": "Enhance Your Practice with SIV",
         "top_text": "",
         "image": "shopify://shop_images/siv-hero.jpg",
-        "bottom_text": "Apply for Wholesale AccessFill out the form below to verify your credentials and gain access to exclusive pricing and benefits. Our team will review your application and respond shortly."
+        "bottom_text": "Apply for Wholesale AccessFill out the form below to verify your credentials and gain access to exclusive pricing and benefits. Our team will review your application and respond shortly.",
+        "button_text": "Apply",
+        "button_link": "shopify://pages/wholesale-enquiry"
       }
     }
   },
-  "order": [
-    "affiliates"
-  ]
+  "order": ["affiliates"]
 }

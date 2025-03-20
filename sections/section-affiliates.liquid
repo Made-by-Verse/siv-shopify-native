@@ -3,19 +3,29 @@
 {% else %}
   {{ 'hero-apparel-2' | placeholder_svg_tag: 'absolute object-cover inset-0 h-full w-full z-0 bg-primary' }}
 {% endif %}
-<div class="wrapper max-w-7xl z-10 relative space-y-12">
+<div class="wrapper max-w-7xl z-10 relative py-8 space-y-6 lg:space-y-12">
   <div class="text-white text-center">
     {% render 'animated-heading', title: section.settings.heading, class: 'h1' %}
     <div class="prose max-w-md text-white text-center">{{ section.settings.top_text }}</div>
   </div>
-  <div class="grid lg:grid-cols-2 gap-4">
+    {% case section.blocks.size %}
+      {% when 1 %}
+        {% assign grid_cols = "lg:grid-cols-1" %}
+      {% when 2 %}
+        {% assign grid_cols = "lg:grid-cols-2" %}
+      {% when 3 %}
+        {% assign grid_cols = "lg:grid-cols-3" %}
+      {% else %}
+        {% assign grid_cols = "lg:grid-cols-1" %}
+    {% endcase %}
+  <div class="grid {{ grid_cols }} gap-4">
     {% for block in section.blocks %}
-      {% if forloop.index == forloop.length %}
+      {% comment %} {% if forloop.index == forloop.length %}
         {% assign mod_output = forloop.index0 | modulo: 2 %}
         {% if mod_output == 0 %}
           <div class="lg:col-span-2">
         {% endif %}
-      {% endif %}
+      {% endif %} {% endcomment %}
         <div
           class="bg-black/20 rounded-lg text-white p-4 md:p-6 flex flex-col justify-between items-start gap-4 backdrop-blur {% if mod_output == 0 %}mx-auto lg:max-w-2xl{% endif %}"
       >
@@ -31,15 +41,20 @@
           %}
         {% endif %}
       </div>
-      {% if forloop.index == forloop.length %}
+      {% comment %} {% if forloop.index == forloop.length %}
         {% if mod_output == 0 %}
           </div>
         {% endif %}
-      {% endif %}
+      {% endif %} {% endcomment %}
     {% endfor %}
   </div>
-  <div class="flex justify-center items-center">
-    <div class="prose max-w-md text-white text-center">{{ section.settings.bottom_text }}</div>
+  <div class="flex justify-center items-center flex-col gap-4">
+    <div class="prose max-w-md text-white text-center text-balance">{{ section.settings.bottom_text }}</div>
+    {% render 'button', 
+      button_text: section.settings.button_text,
+      link: section.settings.button_link,
+      button_class: 'btn--white'
+    %}
   </div>
 </div>
 
@@ -51,7 +66,7 @@
     "disabled_on": {
       "groups": ["header", "footer"]
     },
-    "class": "section-affiliates h-screen-no-nav relative flex justify-center items-center overflow-hidden",
+    "class": "section-affiliates min-h-screen-no-nav relative flex justify-center items-center overflow-hidden",
     "settings": [
       {
         "type": "text",
@@ -72,6 +87,16 @@
         "type": "text",
         "id": "bottom_text",
         "label": "Bottom Text"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
       }
     ],
     "blocks": [
@@ -107,7 +132,8 @@
             "id": "button_link",
             "label": "Button Link"
           }
-        ]
+        ],
+        "limit": 3
       }
     ]
   }
