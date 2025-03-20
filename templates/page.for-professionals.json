@@ -20,10 +20,30 @@
             "button_text": "Apply",
             "button_link": "shopify://pages/wholesale-enquiry"
           }
+        },
+        "affiliate_JATnYb": {
+          "type": "affiliate",
+          "settings": {
+            "heading": "Why Partner with SIV?",
+            "text": "Clinician-Exclusive Pricing – Get wholesale discounts tailored for licensed professionals.Premium, Science-Backed Ingredients – Elevate patient care with trusted formulations.Seamless Ordering & Dedicated Support – Enjoy a hassle-free process with priority assistance.Early Access to New Releases – Stay ahead with exclusive product launches.Low Minimum Orders & Scalable Solutions – Perfect for both small practices and larger clinics.",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "affiliate_9Bq8zX": {
+          "type": "affiliate",
+          "settings": {
+            "heading": "Who Can Apply?",
+            "text": "Our wholesale program is open to:Doctors, Physicians, and Medical SpecialistsLicensed Aestheticians & Skincare ProfessionalsChiropractors, Physical Therapists & Wellness PractitionersMed-Spas, Clinics, and Private Practices",
+            "button_text": "",
+            "button_link": ""
+          }
         }
       },
       "block_order": [
-        "image_dWcN8C"
+        "image_dWcN8C",
+        "affiliate_JATnYb",
+        "affiliate_9Bq8zX"
       ],
       "settings": {
         "heading": "Enhance Your Practice with SIV",
