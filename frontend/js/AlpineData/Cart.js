@@ -31,6 +31,8 @@ export default async function Cart() {
       const formData = new FormData(event.target);
       const formDataObject = {};
 
+      console.log("add to cart");
+
       // Convert FormData to object
       formData.forEach((value, key) => {
         formDataObject[key] = value;
