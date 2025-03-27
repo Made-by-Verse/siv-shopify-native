@@ -11,7 +11,12 @@
   "sections": {
     "hero": {
       "type": "section-home-hero",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "hero_heading": "",
+        "hero_content": "",
+        "show_featured_product": true
+      }
     }
   },
   "order": [
