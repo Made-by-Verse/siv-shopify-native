@@ -22,7 +22,9 @@
     </div>
   {% endif %}
   <div class="wrapper text-primary">
-    {% render 'animated-heading', title: section.settings.hero_heading, class: 'h1 max-w-3xl' %}
+    <div>
+      {% render 'animated-heading', title: section.settings.hero_heading, class: 'h1 max-w-3xl' %}
+    </div>
     <div class="flex justify-between w-full items-end">
       {% if section.settings.hero_content != blank %}
         <div class="max-w-xl">{{ section.settings.hero_content }}</div>

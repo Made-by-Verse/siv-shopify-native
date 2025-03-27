@@ -44,10 +44,6 @@ p {
   }
 }
 
-li {
-  @apply opacity-70;
-}
-
 .prose {
   > *:not(:last-child) {
     @apply mb-4;
@@ -55,5 +51,9 @@ li {
 
   ul {
     @apply list-disc pl-4;
+
+    li {
+      @apply opacity-70;
+    }
   }
 }

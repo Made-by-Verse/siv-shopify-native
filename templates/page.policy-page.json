@@ -9,17 +9,11 @@
  */
 {
   "sections": {
-    "hero": {
-      "type": "section-home-hero",
-      "disabled": true,
-      "settings": {
-        "hero_heading": "",
-        "hero_content": "",
-        "show_featured_product": true
-      }
+    "policy-page": {
+      "type": "policy-page",
+      "disabled": false,
+      "settings": {}
     }
   },
-  "order": [
-    "hero"
-  ]
+  "order": ["policy-page"]
 }

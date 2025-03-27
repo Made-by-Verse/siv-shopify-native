@@ -3,7 +3,7 @@
 <div class='color-{{ section.settings.color_scheme }} bg-primary text-contrast'>
   <div class="wrapper flex flex-col items-center">
     {% if section.settings.heading != blank %}
-      {% render 'animated-heading', title: section.settings.heading, class: 'h2 text-center max-w-xl' %}
+      {% render 'animated-heading', title: section.settings.heading, class: 'h2 text-center max-w-xl mb-4' %}
     {% endif %}
     {% if product %}
       <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-4">

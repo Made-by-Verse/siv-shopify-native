@@ -14,31 +14,21 @@
 {% when '/policies/terms-of-service' %}
   {% assign title = shop.terms_of_service.title %}
   {% assign content = shop.terms_of_service.body %}
+{% when '/pages/wholesale-terms-and-conditions' %}
+  {% assign title = pages['wholesale-terms-and-conditions'].title %}
+  {% assign content = pages['wholesale-terms-and-conditions'].content %}
 {% endcase %}
 
-<div class="collection-header">
+{% comment %} <div class="collection-header">
     <h1 class="h3 lg:col-span-2">{{ title }}</h1>
-</div>
+</div> {% endcomment %}
 
-<div class="wrapper flex flex-col lg:flex-row items-center justify-center bg-beige relative divide-y lg:divide-y-0 divide-lines pb-[160px]">
-    <div class="col-span-2 pb-8 lg:pb-0">
-        <div class="space-y-4 rich-text max-w-p-xl">{{ content }}</div>
+<div class="wrapper grid prose lg:grid-cols-2">
+    <div class='grid items-start'>
+        <div class='sticky top-20'>
+            {% render 'animated-heading', title: title, class: 'h1 mb-4' %}
+            <a href="/policies" class='text-sm tracking-wide font-medium uppercase text-black hover:opacity-70 opacity-100 duration-500'>Back to Policies</a>
+        </div>
     </div>
-   <div class="lg:absolute lg:top-0 lg:left-4 w-full lg:w-auto">
-        <nav class='py-8 lg:py-0'>
-            <ul class="space-y-[7px] uppercase  ">
-                {% unless current_url == '/policies/privacy-policy' %}
-                    <li class="flex opacity-50 hover:opacity-100 duration-500"><a href="{{ shop.privacy_policy.url }}" class="text-[13px] leading-none">Privacy Policy</a></li>
-                {% endunless %}
-                
-                {% unless current_url == '/policies/shipping-policy' %}
-                    <li class="flex opacity-50 hover:opacity-100 duration-500"><a href="{{ shop.shipping_policy.url }}" class="text-[13px] leading-none">Shipping Policy</a></li>
-                {% endunless %}
-                
-                {% unless current_url == '/policies/terms-of-service' %}
-                    <li class="flex opacity-50 hover:opacity-100 duration-500"><a href="{{ shop.terms_of_service.url }}" class="text-[13px] leading-none">Terms of Service</a></li>
-                {% endunless %}
-            </ul>
-        </nav>
-    </div>
+    <div class="py-4">{{ content }}</div>
 </div>
