@@ -27,7 +27,9 @@
     {% for block in section.blocks %}
       {% case block.type %}
         {% when '@app' %}
-          {% render block %}
+          {% unless customer and customer.tags contains 'wholesale' %}
+            {% render block %}
+          {% endunless %}
         {% when 'product-title' %}
           {% render 'animated-heading', class: 'mb-2 h2', title: product.title %}
         {% when 'product-price' %}
