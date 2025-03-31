@@ -85,7 +85,7 @@
               @click="enlargeImage = !enlargeImage"
               class="absolute bottom-2 right-2 z-10 rounded-full bg-white/20 p-2"
             >
-              <span class="block w-4 h-4 transform transition-transform duration-500 text-white" :class="enlargeImage ? 'rotate-45' : 'rotate-0'">
+              <span class="block w-4 h-4 transform transition-transform duration-500 text-white" :class="enlargeImage ? 'rotate-0' : 'rotate-45'">
                 {{- 'icon-close.svg' | inline_asset_content -}}
               </span>
             </button>
