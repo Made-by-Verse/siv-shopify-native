@@ -27,9 +27,7 @@
     {% for block in section.blocks %}
       {% case block.type %}
         {% when '@app' %}
-          {% unless customer and customer.tags contains 'wholesale' %}
-            {% render block %}
-          {% endunless %}
+          {% render block %}
         {% when 'product-title' %}
           {% render 'animated-heading', class: 'mb-2 h2', title: product.title %}
         {% when 'product-price' %}
@@ -78,6 +76,13 @@
               {% endfor %}
             </select>
           {% endunless %}
+        {% when 'wholesale-volume-pricing' %}
+          {% if customer and customer.b2b %}
+            <div class="wholesale-volume-pricing">
+              <h3>{{ block.settings.title }}</h3>
+              <p>{{ block.settings.description }}</p>
+            </div>
+          {% endif %}
       {% endcase %}
     {% endfor %}
   </form>
@@ -112,6 +117,23 @@
       "type": "product-title",
       "name": "Product Title",
       "limit": 1
+    },
+    {
+      "type": "wholesale-volume-pricing",
+      "name": "Wholesale Volume Pricing",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
     },
     {
       "type": "product-price",
