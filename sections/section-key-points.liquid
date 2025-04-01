@@ -8,7 +8,7 @@
   <div class="grid md:grid-cols-3 gap-4">
     {% for block in section.blocks %}
       <div class="space-y-4">
-        {% render 'responsive-image', image: block.settings.image, wrapper_class: "relative", image_class: "w-full" %}
+        {% render 'responsive-image', image: block.settings.image, wrapper_class: "relative rounded-lg", image_class: "w-full" %}
         <div class="z-10">
           <h3 class="text-base uppercase font-body tracking-wide font-semibold mb-2">
             {{ block.settings.heading }}
