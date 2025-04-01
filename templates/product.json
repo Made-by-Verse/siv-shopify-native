@@ -24,7 +24,7 @@
           "type": "wholesale-volume-pricing",
           "settings": {
             "title": "Wholesale Volume Pricing",
-            "description": "<ul><li>12-23 units: 10% off</li><li>24-47 units: 20% off</li><li>48+ units: 30% off</li></ul>"
+            "description": "<ul><li>2-5: $44 USD</li><li>6-11: $39 USD</li><li>12+: $34 USD</li></ul><p>Subscribe and save not available for wholesale pricing</p>"
           }
         },
         "product_description_xK3MCg": {
@@ -95,7 +95,11 @@
           }
         }
       },
-      "block_order": ["point_1", "point_2", "point_3"],
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3"
+      ],
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
@@ -202,5 +206,9 @@
       }
     }
   },
-  "order": ["main", "key_points", "testimonies"]
+  "order": [
+    "main",
+    "key_points",
+    "testimonies"
+  ]
 }
