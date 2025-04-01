@@ -77,7 +77,7 @@
             </select>
           {% endunless %}
         {% when 'wholesale-volume-pricing' %}
-          {% if customer and customer.b2b %}
+          {% if product.quantity_price_breaks_configured %}
             <div class="wholesale-volume-pricing">
               <h3>{{ block.settings.title }}</h3>
               <p>{{ block.settings.description }}</p>
