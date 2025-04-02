@@ -30,11 +30,11 @@ export default async function Product() {
       const doc = parser.parseFromString(html, "text/html");
 
       // Replace product form and price containers with new HTML
-      const priceContainer = doc.querySelector("#product-price-container");
+      const priceContainer = doc.querySelector(".js-price-container");
 
       if (priceContainer) {
         document
-          .querySelector("#product-price-container")
+          .querySelector(".js-price-container")
           .replaceWith(priceContainer);
       }
     },
