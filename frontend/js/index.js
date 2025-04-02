@@ -36,8 +36,20 @@ document.addEventListener("DOMContentLoaded", () => {
       sheet.insertRule(`
         div[class*='_formFieldContainer'] {
           position: relative !important;
-          margin-bottom: 1rem !important;
+          margin-bottom: 0.5rem !important;
           width: 100% !important;
+          border-radius: 8px !important;
+          border: 1px solid black !important;
+          overflow: hidden !important;
+        }
+      `);
+
+      sheet.insertRule(`
+        button[class*='_formFileInputField'] {
+          margin-top: 0.5rem !important;
+          border-radius: 8px !important;
+          border: 1px solid black !important;
+          overflow: hidden !important;
         }
       `);
 
@@ -48,9 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
           appearance: none;
           width: 100%;
           background-color: transparent;
-          padding: 1rem 0;
-          border: none !important;
-          border-bottom: 1px solid rgba(36, 25, 23, 0.1) !important;
+          padding: 1rem;
+          border: none;
           transition: all 0.5s ease-in-out !important;
         }
       `);
@@ -77,8 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
       sheet.insertRule(`
         label:not([class*='_radioField']) {
           position: absolute !important;
-          left: 0;
-          top: 1rem ;
+          left: 1rem;
+          top: 1rem;
           transition: all 0.2s ease-out !important;
           pointer-events: none !important;
           color: rgba(36, 25, 23, 0.6) !important;
@@ -88,8 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // Label float on input focus or when input has value
       sheet.insertRule(`
         label[class*='_inputFilled'] {
-           top: 0rem !important;
-          font-size: 0.75rem !important;
+          top: 0.25rem !important;
+          font-size: 0.5rem;
           color: rgba(36, 25, 23, 1) !important;
         }
       `);
@@ -186,11 +197,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       sheet.insertRule(`
         legend {
-          font-family: sans-serif !important;
-          text-transform: uppercase !important;
-          font-size: 0.75rem !important;
-          color: rgba(36, 25, 23, 0.6) !important;
+          font-size: 1rem !important;
+          color: black !important;
           margin-bottom: 1rem !important;
+          margin-top: 2rem !important;
         }
       `);
 
@@ -229,12 +239,11 @@ document.addEventListener("DOMContentLoaded", () => {
           color: #241917 !important;
           display: flex !important;
           align-items: center !important;
-          justify-content: center !important;
+          justify-content: space-between !important;
           padding: 1rem !important;
           width: 100% !important;
-          border: none !important;
-          border-bottom: 1px solid rgba(36, 25, 23, 0.1) !important;
-          border-radius: 0 !important;
+          border: 1px solid black !important;
+          border-radius: 8px !important;
           cursor: pointer !important;
           transition: all 0.5s ease-in-out !important;
           min-width: 50px !important;
@@ -245,13 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
           button:hover {
             border: 1px solid rgba(36, 25, 23, 1) !important;
           }
-          `);
-
-      sheet.insertRule(`
-            span[class*='_selectToggleText'] {
-              width: 16px !important;
-            }
-          `);
+        `);
 
       sheet.insertRule(`
         div[class*='_selectContainer'] {
@@ -265,12 +268,62 @@ document.addEventListener("DOMContentLoaded", () => {
       sheet.insertRule(`
         div[class*='_dropdownContainer'] {
           position: absolute !important;
-          top: 0 !important;
+          top: 110% !important;
           left: 0 !important;
-          width: 100% !important;
-          height: 100% !important;
+          width: auto !important;
+          height: auto !important;
           background-color: #fff !important;
-          overflow: scroll !important;
+          overflow-y: scroll !important;
+          z-index: 10;
+          border-radius: 8px !important;
+          border: 1px solid rgba(0, 0, 0) !important;
+        }
+      `);
+
+      sheet.insertRule(`
+        div[class*='_dropdownContainer'] > div[class*='_optionList'] {
+          padding: 0.5rem !important;
+        }
+      `);
+
+      sheet.insertRule(`
+        div[class*='_dropdownContainer'] > div[class*='_optionList'] > div[class*='_optionListItem'] {
+          text-wrap: nowrap !important;
+          text-align: left !important;
+          padding: 0.5rem !important;
+        }
+      `);
+
+      sheet.insertRule(`
+        div[class*='_dropdownContainer'] > div[class*='_optionList'] > div[class*='_optionListItem']:hover {
+          background-color: rgba(0, 123, 255, 0.1) !important;
+          border-radius: 8px !important;
+          border: 1px solid rgba(0, 123, 255, 1) !important;
+        }
+      `);
+
+      sheet.insertRule(`
+        div[class*='_formPhoneInputContainer'] {
+          position: relative !important;
+        }
+      `);
+
+      sheet.insertRule(`
+        div[class*='_formPhoneInputContainer'] button[class*='_selectToggle'] > span[class*='_selectToggleText'] {
+          width: 16px !important;
+          height: 16px !important;
+        }
+      `);
+
+      sheet.insertRule(`
+        section[class*='formHeader'] {
+          margin-bottom: 1rem !important;
+        }
+      `);
+
+      sheet.insertRule(`
+        div[class*='_formPhoneInputContainer'] > div[class*='_formFieldContainer'] {
+          margin-bottom: 1rem !important;
         }
       `);
 
