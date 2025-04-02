@@ -24,17 +24,6 @@
   assign compare_at_price = target.compare_at_price
   assign price = target.price
 
-  if product.selected_selling_plan
-    assign adjustment_value = product.selected_selling_plan.price_adjustments[0].value
-    assign adjustment_type = product.selected_selling_plan.price_adjustments[0].value_type
-    
-    if adjustment_type == 'percentage'
-      assign price = price | times: adjustment_value | divided_by: 100 | minus: price | times: -1
-    else
-      assign price = price | plus: adjustment_value
-    endif
-  endif
-
   assign price_min = product.price_min | default: price
   assign price_max = product.price_max | default: price
   assign available = target.available | default: false
