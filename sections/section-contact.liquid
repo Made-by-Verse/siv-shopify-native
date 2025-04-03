@@ -6,84 +6,61 @@
   }
 {% endstyle %}
 
-{% liquid
-  assign padding_top = section.settings.padding_top | default: 'md'
-  assign padding_bottom = section.settings.padding_bottom | default: 'md'
-
-  if padding_top == 'none'
-    assign padding_top = 'pt-0'
-  elsif padding_top == 'sm'
-    assign padding_top = 'pt-6'
-  elsif padding_top == 'md'
-    assign padding_top = 'pt-6 lg:pt-12'
-  elsif padding_top == 'lg'
-    assign padding_top = 'pt-12 lg:pt-24'
-  elsif padding_top == 'xl'
-    assign padding_top = 'pt-24 lg:pt-48'
-  endif
-
-  if padding_bottom == 'none'
-    assign padding_bottom = 'pb-0'
-  elsif padding_bottom == 'sm'
-    assign padding_bottom = 'pb-6'
-  elsif padding_bottom == 'md'
-    assign padding_bottom = 'pb-6 lg:pb-12'
-  elsif padding_bottom == 'lg'
-    assign padding_bottom = 'pb-12 lg:pb-24'
-  elsif padding_bottom == 'xl'
-    assign padding_bottom = 'pb-24 lg:pb-48'
-  endif
-%}
-
-<div class='color-{{ section.settings.color_scheme }} bg-primary text-contrast {{ padding_top }} {{ padding_bottom }}'>
-  <div class='wrapper'>
-    <div class='grid lg:grid-cols-7  gap-8 lg:gap-24'>
-      <div class='lg:col-span-5 '>
-        <div class='grid grid-cols-3 gap-4 mb-12 lg:mb-32'>
+<div class="color-{{ section.settings.color_scheme }} bg-primary text-contrast ">
+  <div class="wrapper">
+    <div class="grid lg:grid-cols-7  gap-8 lg:gap-24">
+      <div class="lg:col-span-5 ">
+        <div class="grid grid-cols-3 gap-4">
           {% render 'animated-heading', title: section.settings.heading, class: 'h3' %}
           {% if section.settings.text != blank %}
-          <div class='max-w-p col-span-2 max-w-p'>{{ section.settings.text }}</div>
-        {% endif %}
+            <div class="max-w-p col-span-2 max-w-p">{{ section.settings.text }}</div>
+          {% endif %}
         </div>
         {% if section.settings.image != blank %}
-          {% render 'responsive-image', image: section.settings.image, width: 1766, height: 1766, wrapper_class: 'w-full aspect-square relative', image_class: 'object-cover absolute inset-0 w-full h-full' %}
+          {% render 'responsive-image',
+            image: section.settings.image,
+            width: 1766,
+            height: 1766,
+            wrapper_class: 'w-full aspect-square relative',
+            image_class: 'object-cover absolute inset-0 w-full h-full'
+          %}
         {% endif %}
       </div>
-      <div class='lg:col-span-2 flex w-full items-start'>
-        <div class='sticky top-20'>
-          <div class='space-y-4 lg:space-y-6 mb-8'>
+      <div class="lg:col-span-2 flex w-full items-start">
+        <div class="sticky top-20">
+          <div class="space-y-4 lg:space-y-6 mb-8">
             {% for block in section.blocks %}
               {% case block.type %}
                 {% when '@app' %}
                   {% render block %}
                 {% when 'contact-info' %}
-                  <div class='leading-none'>
-                <h3 class='mb-2 text-sm'>{{ block.settings.title }}</h3>
-                <ul>
-                {% if block.settings.phone != blank %}
-                  <li class='grid grid-cols-3 gap-4'>
-                    <span class=''>Call:</span>
-                    <span class='col-span-2'>{{ block.settings.phone }}</span>
-                  </li>
-                {% endif %}
-                {% if block.settings.email != blank %}
-                  <li class='grid grid-cols-3 gap-4'>
-                    <span class=''>Email:</span>
-                    <span class='col-span-2'>{{ block.settings.email }}</span>
-                  </li>
-                {% endif %}
-                {% if block.settings.address != blank %}
-                  <li class='grid grid-cols-3 gap-4'>
-                    <span class=''>Address:</span>
-                    <span class='col-span-2'>{{ block.settings.address }}</span>
-                  </li>
-                {% endif %}
-                  </ul>
-                </div>
+                  <div class="leading-none">
+                    <h3 class="mb-2 text-sm">{{ block.settings.title }}</h3>
+                    <ul>
+                      {% if block.settings.phone != blank %}
+                        <li class="grid grid-cols-3 gap-4">
+                          <span class="">Call:</span>
+                          <span class="col-span-2">{{ block.settings.phone }}</span>
+                        </li>
+                      {% endif %}
+                      {% if block.settings.email != blank %}
+                        <li class="grid grid-cols-3 gap-4">
+                          <span class="">Email:</span>
+                          <span class="col-span-2">{{ block.settings.email }}</span>
+                        </li>
+                      {% endif %}
+                      {% if block.settings.address != blank %}
+                        <li class="grid grid-cols-3 gap-4">
+                          <span class="">Address:</span>
+                          <span class="col-span-2">{{ block.settings.address }}</span>
+                        </li>
+                      {% endif %}
+                    </ul>
+                  </div>
               {% endcase %}
             {% endfor %}
           </div>
-          <div style="margin:0 auto;" class="pxFormGenerator" id="GnLVbONoYtlvGCp3ZLHBpA"></div> 
+          <div style="margin:0 auto;" class="pxFormGenerator" id="GnLVbONoYtlvGCp3ZLHBpA"></div>
         </div>
       </div>
     </div>
@@ -91,67 +68,67 @@
 </div>
 
 {% schema %}
-  {
-    "name": "Contact",
-    "tag": "section",
-    "class": "section",
-    "disabled_on": {
-      "groups": ["header", "footer"]
+{
+  "name": "Contact",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "contact-info",
+      "name": "Contact Info",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Get in Touch"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Phone",
+          "default": "+1 (555) 123-4567"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email",
+          "default": "hello@example.com"
+        },
+        {
+          "type": "text",
+          "id": "address",
+          "label": "Address",
+          "default": "123 Store Street, City, Country"
+        }
+      ]
     },
-    "blocks": [
-      {
-        "type": "contact-info",
-        "name": "Contact Info",
-        "settings": [
-          {
-            "type": "text",
-            "id": "title",
-            "label": "Title",
-            "default": "Get in Touch"
-          },
-          {
-            "type": "text",
-            "id": "phone",
-            "label": "Phone",
-            "default": "+1 (555) 123-4567"
-          },
-          {
-            "type": "text",
-            "id": "email",
-            "label": "Email",
-            "default": "hello@example.com"
-          },
-          {
-            "type": "text",
-            "id": "address",
-            "label": "Address",
-            "default": "123 Store Street, City, Country"
-          }
-        ]
-      },
-      {
-        "type": "@app"
-      }
-    ],
-    "settings": [
-      {
-        "type": "text",
-        "id": "heading",
-        "label": "Heading",
-        "default": "Contact Us"
-      },
-      {
-        "type": "richtext",
-        "id": "text",
-        "label": "Text",
-        "default": "<p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>"
-      },
-      {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Image"
-      },
-      {
+    {
+      "type": "@app"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Contact Us"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
       "type": "select",
       "id": "padding_top",
       "label": "Padding Top",
@@ -162,30 +139,30 @@
         { "value": "lg", "label": "Large" },
         { "value": "xl", "label": "XLarge" }
       ]
-      },
-      {
-        "type": "select",
-        "id": "padding_bottom",
-        "label": "Padding Bottom",
-        "options": [
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "options": [
         { "value": "none", "label": "None" },
         { "value": "sm", "label": "Small" },
         { "value": "md", "label": "Medium" },
         { "value": "lg", "label": "Large" },
         { "value": "xl", "label": "XLarge" }
-        ]
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact",
+      "settings": {
+        "heading": "Contact Us",
+        "padding_top": "md",
+        "padding_bottom": "md",
+        "text": "<p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>"
       }
-    ],
-    "presets": [
-      {
-        "name": "Contact",
-        "settings": {
-          "heading": "Contact Us",
-          "padding_top": "md",
-          "padding_bottom": "md",
-          "text": "<p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>"
-        }
-      }
-    ]
-  }
+    }
+  ]
+}
 {% endschema %}
