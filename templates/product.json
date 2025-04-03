@@ -20,16 +20,16 @@
           "type": "product-price",
           "settings": {}
         },
+        "product_description_xK3MCg": {
+          "type": "product-description",
+          "settings": {}
+        },
         "wholesale_volume_pricing_hCrTQh": {
           "type": "wholesale-volume-pricing",
           "settings": {
             "title": "Wholesale Volume Pricing",
             "description": "<ul><li>2-5: $44 USD</li><li>6-11: $39 USD</li><li>12+: $34 USD</li><li>Subscribe and save not available for wholesale pricing</li></ul>"
           }
-        },
-        "product_description_xK3MCg": {
-          "type": "product-description",
-          "settings": {}
         },
         "variant_picker_cF46kp": {
           "type": "variant-picker",
@@ -57,8 +57,8 @@
       "block_order": [
         "product_title_Fqeap7",
         "product_price_JDACKF",
-        "wholesale_volume_pricing_hCrTQh",
         "product_description_xK3MCg",
+        "wholesale_volume_pricing_hCrTQh",
         "variant_picker_cF46kp",
         "recharge_subscriptions_subscription_widget_hCrTQh",
         "quantity_selector_8EEfnM",
