@@ -1,33 +1,49 @@
 {% assign product = all_products[settings.featured_product] %}
 
-<div class='color-{{ section.settings.color_scheme }} bg-primary text-contrast'>
+<div class="color-{{ section.settings.color_scheme }} bg-primary text-contrast">
   <div class="wrapper flex flex-col items-center">
     {% if section.settings.heading != blank %}
       {% render 'animated-heading', title: section.settings.heading, class: 'h2 text-center max-w-xl mb-4' %}
     {% endif %}
     {% if product %}
       <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-4">
-        <ul class='space-y-4 order-last md:order-first'>
+        <ul class="space-y-4 order-last md:order-first">
           {% for block in section.blocks %}
-            <li class=''>
-              <h3 class='mb-2 font-semibold uppercase text-base font-body tracking-wide'>{{ block.settings.heading }}</h3>
+            <li class="">
+              <h3 class="mb-2 font-semibold uppercase text-base font-body tracking-wide">
+                {{ block.settings.heading }}
+              </h3>
               <p>{{ block.settings.text }}</p>
             </li>
           {% endfor %}
         </ul>
         {% if product.media.size > 0 %}
           {% if product.media[0] %}
-            {% render 'responsive-image', image: product.media[0], width: 1000, height: 1000, image_class: 'object-cover absolute inset-0 h-full w-full', wrapper_class: 'aspect-portrait relative' %}
+            {% render 'responsive-image',
+              image: product.media[0],
+              width: 1000,
+              height: 1000,
+              image_class: 'object-cover absolute inset-0 h-full w-full',
+              wrapper_class: 'aspect-portrait relative'
+            %}
           {% endif %}
         {% endif %}
-        <div class='space-y-4'>
+        <div class="space-y-4">
           <div>
-            <h2 class="h3" x-data="{ shown: false }" x-intersect:enter="shown = true" x-intersect:leave="shown = false" :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">{{ product.title }}</h2>
-            <p>From {{ product.price_min | money }}</p> 
+            <h2
+              class="h3"
+              x-data="{ shown: false }"
+              x-intersect:enter="shown = true"
+              x-intersect:leave="shown = false"
+              :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
+            >
+              {{ product.title }}
+            </h2>
+            {% render 'price', product: product, show_compare_at_price: true %}
           </div>
-          <p>{{ product.metafields.product.short-description }}</p>
+          <p>{{ product.metafields.product['short-description'] }}</p>
           <div>
-            {% render 'button', 
+            {% render 'button',
               button_text: section.settings.button_text,
               event_trigger: 'open-quick-buy-drawer',
               button_class: 'btn--black'
