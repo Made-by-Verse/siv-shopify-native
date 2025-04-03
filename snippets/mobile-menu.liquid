@@ -23,12 +23,12 @@
       role="dialog"
       aria-modal="true"
     >
-      <div class="p-4 h-full">
+      <div class="p-4 flex flex-col h-full">
         <div class="flex justify-between items-center">
           <h2 class="link">Menu</h2>
           <button @click="$dispatch('toggle-menu-drawer')" class="">&times;</button>
         </div>
-        <div class="h-full flex flex-col justify-between w-full">
+        <div class="flex-1 flex flex-col justify-between w-full">
           <nav class="py-8" x-data="{ activeItem: null }">
             {%- for link in menu -%}
               <div class="border-b">
@@ -78,7 +78,20 @@
                 {%- endif -%}
               </div>
             {%- endfor -%}
+         
           </nav>
+          {% if customer %}
+            <a 
+              href="{{ routes.account_url }}" 
+              class="btn btn--black"
+            >
+              Account
+            </a>
+          {% else %}
+            <a href="{{ routes.account_login_url }}" class="btn btn--black">
+              Login
+            </a>
+          {% endif %}
         </div>
       </div>
     </div>
