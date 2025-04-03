@@ -1,5 +1,9 @@
 {% if section.settings.image %}
-  {% render 'responsive-image', image: section.settings.image, wrapper_class: "absolute inset-0 ", image_class: "object-cover absolute inset-0 h-full w-full" %}
+  {% render 'responsive-image',
+    image: section.settings.image,
+    wrapper_class: 'absolute inset-0 ',
+    image_class: 'object-cover absolute inset-0 h-full w-full'
+  %}
 {% else %}
   {{ 'hero-apparel-2' | placeholder_svg_tag: 'absolute object-cover inset-0 h-full w-full z-0 bg-primary' }}
 {% endif %}
@@ -8,49 +12,44 @@
     {% render 'animated-heading', title: section.settings.heading, class: 'h1' %}
     <div class="prose max-w-md text-white text-center">{{ section.settings.top_text }}</div>
   </div>
-    {% case section.blocks.size %}
-      {% when 1 %}
-        {% assign grid_cols = "lg:grid-cols-1" %}
-      {% when 2 %}
-        {% assign grid_cols = "lg:grid-cols-2" %}
-      {% when 3 %}
-        {% assign grid_cols = "lg:grid-cols-3" %}
-      {% else %}
-        {% assign grid_cols = "lg:grid-cols-1" %}
-    {% endcase %}
-  <div class="grid {{ grid_cols }} gap-4">
+
+  <div class="grid grid-cols-2 gap-4 max-w-5xl mx-auto">
     {% for block in section.blocks %}
-      {% comment %} {% if forloop.index == forloop.length %}
-        {% assign mod_output = forloop.index0 | modulo: 2 %}
-        {% if mod_output == 0 %}
-          <div class="lg:col-span-2">
+      {% comment %}
+        {% if forloop.index == forloop.length %}
+          {% assign mod_output = forloop.index0 | modulo: 2 %}
+          {% if mod_output == 0 %}
+            <div class="lg:col-span-2">
+          {% endif %}
         {% endif %}
-      {% endif %} {% endcomment %}
-        <div
-          class="bg-black/20 rounded-lg text-white p-4 md:p-6 flex flex-col justify-between items-start gap-4 backdrop-blur {% if mod_output == 0 %}mx-auto lg:max-w-2xl{% endif %}"
+      {% endcomment %}
+      <div
+        class="bg-black/20 rounded-lg text-white p-4 md:p-6 flex flex-col justify-between items-start gap-4 backdrop-blur {% if forloop.first %}col-span-2{% endif %} {% if mod_output == 0 %}mx-auto lg:max-w-2xl{% endif %} "
       >
         <div>
           <h2 class="h3 mb-2">{{ block.settings.heading }}</h2>
           <div class="prose">{{ block.settings.text }}</div>
         </div>
         {% if block.settings.button_text and block.settings.button_link %}
-          {% render 'button', 
+          {% render 'button',
             button_text: block.settings.button_text,
             link: block.settings.button_link,
             button_class: 'btn--white'
           %}
         {% endif %}
       </div>
-      {% comment %} {% if forloop.index == forloop.length %}
-        {% if mod_output == 0 %}
-          </div>
+      {% comment %}
+        {% if forloop.index == forloop.length %}
+          {% if mod_output == 0 %}
+            </div>
+          {% endif %}
         {% endif %}
-      {% endif %} {% endcomment %}
+      {% endcomment %}
     {% endfor %}
   </div>
   <div class="flex justify-center items-center flex-col gap-4">
     <div class="prose max-w-md text-white text-center text-balance">{{ section.settings.bottom_text }}</div>
-    {% render 'button', 
+    {% render 'button',
       button_text: section.settings.button_text,
       link: section.settings.button_link,
       button_class: 'btn--white'
@@ -58,84 +57,82 @@
   </div>
 </div>
 
-
 {% schema %}
-  {
-    "name": "Affiliates",
-    "tag": "section",
-    "disabled_on": {
-      "groups": ["header", "footer"]
+{
+  "name": "Affiliates",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "class": "section-affiliates min-h-screen-no-nav relative flex justify-center items-center overflow-hidden py-10 md:py-20",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
     },
-    "class": "section-affiliates min-h-screen-no-nav relative flex justify-center items-center overflow-hidden",
-    "settings": [
-      {
-        "type": "text",
-        "id": "heading",
-        "label": "Heading"
-      },
-      {
-        "type": "richtext",
-        "id": "top_text",
-        "label": "Top Text"
-      },
-      {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Image"
-      },
-      {
-        "type": "text",
-        "id": "bottom_text",
-        "label": "Bottom Text"
-      },
-      {
-        "type": "text",
-        "id": "button_text",
-        "label": "Button Text"
-      },
-      {
-        "type": "url",
-        "id": "button_link",
-        "label": "Button Link"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "affiliate",
-        "name": "Affiliate",
-        "settings": [
-          {
-            "type": "header",
-            "content": "Text Content"
-          },
-          {
-            "type": "text",
-            "id": "heading",
-            "label": "Heading"
-          },
-          {
-            "type": "richtext",
-            "id": "text",
-            "label": "Text"
-          },
-          {
-            "type": "header",
-            "content": "Button"
-          },
-          {
-            "type": "text",
-            "id": "button_text",
-            "label": "Button Text"
-          },
-          {
-            "type": "url",
-            "id": "button_link",
-            "label": "Button Link"
-          }
-        ],
-        "limit": 3
-      }
-    ]
-  }
+    {
+      "type": "richtext",
+      "id": "top_text",
+      "label": "Top Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "bottom_text",
+      "label": "Bottom Text"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "affiliate",
+      "name": "Affiliate",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Text Content"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ],
+      "limit": 3
+    }
+  ]
+}
 {% endschema %}
-
