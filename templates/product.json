@@ -28,7 +28,7 @@
           "type": "wholesale-volume-pricing",
           "settings": {
             "title": "Wholesale Volume Pricing",
-            "description": "<ul><li>2-5: $44 USD</li><li>6-11: $39 USD</li><li>12+: $34 USD</li><li>Subscribe and save not available for wholesale pricing</li></ul>"
+            "description": "<ul><li>2-5: $44 USD</li><li>6-11: $39 USD</li><li>12+: $34 USD</li><li>Subscribe and save not available for wholesale pricing</li></ul><p>*<strong>Please Note:</strong>This item is currently <strong>on backorder</strong>. By placing your order today, you are reserving your item from our next shipment. Your payment will be processed at the time of purchase. Thank you for your patience and support!</p>"
           }
         },
         "variant_picker_cF46kp": {
