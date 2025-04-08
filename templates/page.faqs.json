@@ -93,7 +93,7 @@
           "type": "accordion",
           "settings": {
             "heading": "How do I place a wholesale order?",
-            "content": "<p>Be sure to have a wholesale account. If you do not, fill out this form to be considered: https://sivcare.com/wholesale-enquiry</p><p>If you have an account, go to sivcare.com and log in using the same email that you signed up with. An email containing your access code will be sent to you (check spam if you don't see it). </p>"
+            "content": "<p>Be sure to have a wholesale account. If you do not, fill out this form to be considered: https://sivcare.com/pages/wholesale-enquiry</p><p>If you have an account, go to sivcare.com and log in using the same email that you signed up with. An email containing your access code will be sent to you (check spam if you don't see it). </p>"
           }
         },
         "faq_13": {
