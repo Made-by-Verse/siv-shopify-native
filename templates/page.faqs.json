@@ -102,6 +102,13 @@
             "heading": "How do I become a wholesaler?",
             "content": "<p>To apply to be a wholesaler, please visit: https://sivcare.com/pages/for-professionals</p><p>Once the form is filled out, it will be sent to our team for review and approval. </p><p>If you are approved, you will receive an email with next steps on how to order, wholesale pricing, etc.</p>"
           }
+        },
+        "accordion_LbT9dC": {
+          "type": "accordion",
+          "settings": {
+            "heading": "How should I store my serum?",
+            "content": "<p>Store at room temperature, away from sunlight.</p>"
+          }
         }
       },
       "block_order": [
@@ -117,7 +124,8 @@
         "faq_10",
         "faq_11",
         "faq_12",
-        "faq_13"
+        "faq_13",
+        "accordion_LbT9dC"
       ],
       "settings": {
         "heading": "Frequently Asked Questions"
