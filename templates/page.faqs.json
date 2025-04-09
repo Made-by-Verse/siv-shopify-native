@@ -109,6 +109,13 @@
             "heading": "How should I store my serum?",
             "content": "<p>Store at room temperature, away from sunlight.</p>"
           }
+        },
+        "accordion_iwizM4": {
+          "type": "accordion",
+          "settings": {
+            "heading": "How do I contact the SIV team?",
+            "content": "<p>For questions, feedback, or support, please reach out to us at <a><strong>info@sivcare.com</strong></a>.</p>"
+          }
         }
       },
       "block_order": [
@@ -125,7 +132,8 @@
         "faq_11",
         "faq_12",
         "faq_13",
-        "accordion_LbT9dC"
+        "accordion_LbT9dC",
+        "accordion_iwizM4"
       ],
       "settings": {
         "heading": "Frequently Asked Questions"
