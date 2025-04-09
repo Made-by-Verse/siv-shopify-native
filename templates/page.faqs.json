@@ -116,6 +116,13 @@
             "heading": "How do I contact the SIV team?",
             "content": "<p>For questions, feedback, or support, please reach out to us at <a><strong>info@sivcare.com</strong></a>.</p>"
           }
+        },
+        "accordion_AjYFVh": {
+          "type": "accordion",
+          "settings": {
+            "heading": "what is your return policy?",
+            "content": "<p>Please visit our return policy using the link at the bottom of the page. </p>"
+          }
         }
       },
       "block_order": [
@@ -133,7 +140,8 @@
         "faq_12",
         "faq_13",
         "accordion_LbT9dC",
-        "accordion_iwizM4"
+        "accordion_iwizM4",
+        "accordion_AjYFVh"
       ],
       "settings": {
         "heading": "Frequently Asked Questions"
