@@ -15,7 +15,7 @@
         "image_NbAFjz": {
           "type": "image",
           "settings": {
-            "background_image": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.png"
+            "background_image": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.jpg"
           }
         }
       },
@@ -33,7 +33,7 @@
       "settings": {
         "video": "shopify://files/videos/SIV Product Demonstration.mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "cover_image": "shopify://shop_images/siv-hero.jpg",
+        "cover_image": "shopify://shop_images/siv-hero_copy.jpg",
         "padding_top": "md",
         "padding_bottom": "md"
       }
@@ -309,7 +309,7 @@
     "section_cta": {
       "type": "section-cta",
       "settings": {
-        "image": "shopify://shop_images/siv-hero.jpg",
+        "image": "shopify://shop_images/siv-hero_copy.jpg",
         "title": "Healthier skin is a drop away",
         "action_type": "button",
         "button_link": "shopify://collections/all",
