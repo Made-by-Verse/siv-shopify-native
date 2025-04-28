@@ -40,6 +40,20 @@
             "content": "<p><strong>Simple:</strong> Occasional inflammatory issues on the skin</p><p><strong>Elaborated:</strong> SIV can help with various types of occasional inflammatory skin issues. The serum works on the skin’s immune system, which is one of the main things the skin microbiome controls. When we have occasional inflammatory issues, it’s an overworking of the immune system. This means the skin is reacting to things that it should not be reacting to, which is triggered by a dysbiotic skin microbiome.</p>"
           }
         },
+        "accordion_p8AM3K": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Are there any precautions I should follow when using SIV?",
+            "content": "<p>Do not use if allergic to any of the ingredients. Discontinue use if irritation occurs. </p><p>Avoid contact with eyes; if contact with eyes occurs, immediately rinse with water. </p><p>If you have highly sensitive skin, prior to applying fully, we recommend that you first test on a small area of skin.</p>"
+          }
+        },
+        "accordion_YMcJr7": {
+          "type": "accordion",
+          "settings": {
+            "heading": "What if I have sensitive skin?",
+            "content": "<p>If you have highly sensitive skin, prior to applying SIV fully, we recommend that you first test on a small area of skin.</p>"
+          }
+        },
         "faq_5": {
           "type": "accordion",
           "settings": {
@@ -123,13 +137,6 @@
             "heading": "what is your return policy?",
             "content": "<p>Please visit our return policy using the link at the bottom of the page. </p>"
           }
-        },
-        "accordion_p8AM3K": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Are there any precautions I should follow when using SIV?",
-            "content": "<p>Do not use if allergic to any of the ingredients. Discontinue use if irritation occurs. </p><p>Avoid contact with eyes; if contact with eyes occurs, immediately rinse with water. </p><p>If you have highly sensitive skin, prior to applying fully, we recommend that you first test on a small area of skin.</p>"
-          }
         }
       },
       "block_order": [
@@ -137,6 +144,8 @@
         "faq_2",
         "faq_3",
         "faq_4",
+        "accordion_p8AM3K",
+        "accordion_YMcJr7",
         "faq_5",
         "faq_6",
         "faq_7",
@@ -148,8 +157,7 @@
         "faq_13",
         "accordion_LbT9dC",
         "accordion_iwizM4",
-        "accordion_AjYFVh",
-        "accordion_p8AM3K"
+        "accordion_AjYFVh"
       ],
       "settings": {
         "heading": "Frequently Asked Questions"
