@@ -49,6 +49,7 @@
         },
         "accordion_YMcJr7": {
           "type": "accordion",
+          "disabled": true,
           "settings": {
             "heading": "What if I have sensitive skin?",
             "content": "<p>If you have highly sensitive skin, prior to applying SIV fully, we recommend that you first test on a small area of skin.</p>"
