@@ -1,10 +1,10 @@
 <article class="wrapper grid md:grid-cols-2 gap-6">
   <div class="">
-    <div class="md:min-h-[50vh] py-6 flex flex-col gap-6 justify-between ">
+    <div class="md:min-h-[50vh] py-6 flex flex-col gap-6 justify-between">
       <div>
-        <h1 class="tracking-tight font-light text-4xl md:text-6xl lg:text-8xl mb-4">
+        <h2 class="h1 tracking-tight font-light text-4xl md:text-6xl lg:text-8xl mb-4">
           {{ article.title }}
-        </h1>
+        </h2>
         {% if article.tags.size > 0 %}
           <ul class="flex">
             {% for tag in article.tags %}
