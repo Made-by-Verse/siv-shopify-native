@@ -33,6 +33,13 @@
             "content": "<p><strong>Simple:</strong> It’s the process of communication between two bacterial cells.</p><p><strong>Elaborated:</strong> Quorum sensing is the process of communication between two bacterial cells. It mainly happens through biofilms and max load capacity, which is based on weight/volume. This is the technology SIV’s serum uses in order to read, adapt to, and adjust each person’s unique skin biome.</p>"
           }
         },
+        "accordion_XtTnP4": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Do you offer samples?",
+            "content": "<p>SIV does not offer product samples.</p>"
+          }
+        },
         "faq_4": {
           "type": "accordion",
           "settings": {
@@ -144,6 +151,7 @@
         "faq_1",
         "faq_2",
         "faq_3",
+        "accordion_XtTnP4",
         "faq_4",
         "accordion_p8AM3K",
         "accordion_YMcJr7",
