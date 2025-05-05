@@ -13,7 +13,7 @@
       "type": "section-contact",
       "settings": {
         "heading": "Wholesale",
-        "text": "<p>Fill out the form below to verify your credentials and gain access to exclusive pricing and benefits. </p><p>New Zealand stockists please contact: <a href=\"mailto:support@fxmed.co.nz\" target=\"_blank\">support@fxmed.co.nz</a></p><p>Australian stockists please contact: <a href=\"mailto:support@therahealth.com.au\" target=\"_blank\">support@therahealth.com.au </a></p><p>for assistance opening an account. </p>",
+        "text": "<p>Fill out the form below to verify your credentials and gain access to exclusive pricing and benefits. </p><p><span style=\"text-decoration:underline\"><em><strong>*Please note that SIV does not offer product samples.</strong></em></span></p><p>New Zealand stockists please contact: <a href=\"mailto:support@fxmed.co.nz\" target=\"_blank\">support@fxmed.co.nz</a></p><p>Australian stockists please contact: <a href=\"mailto:support@therahealth.com.au\" target=\"_blank\">support@therahealth.com.au </a></p><p>for assistance opening an account. </p>",
         "padding_top": "md",
         "padding_bottom": "md"
       }
