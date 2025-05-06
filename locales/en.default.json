@@ -538,5 +538,12 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "shipping": {
+        "delivery_title": "Delivery (*Please note we do not ship to PO Boxes.)"
+      }
+    }
   }
 }
