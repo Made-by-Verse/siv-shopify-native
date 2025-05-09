@@ -145,6 +145,13 @@
             "heading": "what is your return policy?",
             "content": "<p>Please visit our return policy using the link at the bottom of the page. </p>"
           }
+        },
+        "accordion_wgdCkG": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Do you ship to PO boxes?",
+            "content": "<p>No, we do not ship to PO Boxes .</p>"
+          }
         }
       },
       "block_order": [
@@ -166,7 +173,8 @@
         "faq_13",
         "accordion_LbT9dC",
         "accordion_iwizM4",
-        "accordion_AjYFVh"
+        "accordion_AjYFVh",
+        "accordion_wgdCkG"
       ],
       "settings": {
         "heading": "Frequently Asked Questions"
