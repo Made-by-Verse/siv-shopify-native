@@ -152,6 +152,13 @@
             "heading": "Do you ship to PO boxes?",
             "content": "<p>No, we do not ship to PO Boxes .</p>"
           }
+        },
+        "accordion_8j3UFB": {
+          "type": "accordion",
+          "settings": {
+            "heading": "I am a wholesaler in Australia or New Zealand. How do I sign up for a wholesale account?",
+            "content": "<p>For New Zealand stockists please contact: <a href=\"mailto:support@fxmed.co.nz\" target=\"_blank\">support@fxmed.co.nz</a></p><p>For Australian stockists please contact: <a href=\"mailto:support@therahealth.com.au\" target=\"_blank\">support@therahealth.com.au</a></p>"
+          }
         }
       },
       "block_order": [
@@ -174,7 +181,8 @@
         "accordion_LbT9dC",
         "accordion_iwizM4",
         "accordion_AjYFVh",
-        "accordion_wgdCkG"
+        "accordion_wgdCkG",
+        "accordion_8j3UFB"
       ],
       "settings": {
         "heading": "Frequently Asked Questions"
