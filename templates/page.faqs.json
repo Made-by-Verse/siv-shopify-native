@@ -159,6 +159,13 @@
             "heading": "I am a wholesaler in Australia or New Zealand. How do I sign up for a wholesale account?",
             "content": "<p>For New Zealand stockists please contact: <a href=\"mailto:support@fxmed.co.nz\" target=\"_blank\">support@fxmed.co.nz</a></p><p>For Australian stockists please contact: <a href=\"mailto:support@therahealth.com.au\" target=\"_blank\">support@therahealth.com.au</a></p>"
           }
+        },
+        "accordion_8Tgk3E": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Do you ship to Canada?",
+            "content": "<p>At this time, we are not shipping to Canada. We are currently in the process of registering our product with the appropriate Canadian authorities to ensure a smooth and compliant shipping experience. We truly appreciate your patience and understanding during this process and will be sure to share an update as soon as shipping to Canada becomes available.</p>"
+          }
         }
       },
       "block_order": [
@@ -182,7 +189,8 @@
         "accordion_iwizM4",
         "accordion_AjYFVh",
         "accordion_wgdCkG",
-        "accordion_8j3UFB"
+        "accordion_8j3UFB",
+        "accordion_8Tgk3E"
       ],
       "settings": {
         "heading": "Frequently Asked Questions"
