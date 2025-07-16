@@ -111,8 +111,8 @@
         "testimony_1": {
           "type": "testimony",
           "settings": {
-            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.33_PM.png",
-            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.14.40_PM.png",
+            "before_image": "shopify://shop_images/Screenshot_2025-06-11_at_11.44.20_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2025-06-11_at_11.45.09_PM.png",
             "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
             "treatment_duration": 30
           }
@@ -120,8 +120,8 @@
         "testimony_2": {
           "type": "testimony",
           "settings": {
-            "before_image": "shopify://shop_images/Screenshot_2024-09-19_at_12.36.32_PM.png",
-            "after_image": "shopify://shop_images/Screenshot_2024-09-19_at_12.36.43_PM.png",
+            "before_image": "shopify://shop_images/Screenshot_2025-06-11_at_11.32.57_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2025-06-11_at_11.34.22_PM.png",
             "quote": "Reduced lesion count, Reduced redness, Improved skin texture & tone",
             "treatment_duration": 10
           }
@@ -147,8 +147,8 @@
         "testimony_5": {
           "type": "testimony",
           "settings": {
-            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.07.21_PM.png",
-            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.07.26_PM.png",
+            "before_image": "shopify://shop_images/Screenshot_2025-06-11_at_11.36.39_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2025-06-11_at_11.43.03_PM.png",
             "quote": "Reduced redness. Reduced flakiness. Improved hydration levels. Improved skin tone and texture",
             "treatment_duration": 14
           }
@@ -165,18 +165,9 @@
         "testimony_8": {
           "type": "testimony",
           "settings": {
-            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.02.58_PM_1.png",
-            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.03.23_PM_1.png",
+            "before_image": "shopify://shop_images/Screenshot_2025-06-11_at_11.39.26_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2025-06-11_at_11.40.12_PM.png",
             "quote": "Reduction in number of lesions. Reduced redness. Regulated oil levels. Improved skin tone, texture, and clarity.",
-            "treatment_duration": 30
-          }
-        },
-        "testimony_itpp7p": {
-          "type": "testimony",
-          "settings": {
-            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.04.21_PM.png",
-            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.04.30_PM.png",
-            "quote": "Reduction in number of lesions.Reduced redness.",
             "treatment_duration": 30
           }
         },
@@ -198,7 +189,6 @@
         "testimony_5",
         "testimony_6",
         "testimony_8",
-        "testimony_itpp7p",
         "testimony_9"
       ],
       "settings": {
