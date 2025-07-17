@@ -1,0 +1,240 @@
+<div
+  class="wrapper grid md:grid-cols-[1fr_600px] md:grid-rows-[auto_1fr] gap-8"
+  x-data="
+    {
+      currentIndex: 0,
+      totalSlides: {{ section.blocks.size }},
+      sliderPosition: 50,
+      isDragging: false,
+      dragHandler: null,
+      stopDragHandler: null,
+      next() {
+        this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
+      },
+      prev() {
+        this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+      },
+      startDrag(e) {
+        this.isDragging = true;
+        this.dragHandler = this.drag.bind(this);
+        this.stopDragHandler = this.stopDrag.bind(this);
+        document.addEventListener('mousemove', this.dragHandler);
+        document.addEventListener('mouseup', this.stopDragHandler);
+        document.addEventListener('touchmove', this.dragHandler);
+        document.addEventListener('touchend', this.stopDragHandler);
+      },
+      drag(e) {
+        if (!this.isDragging) return;
+        e.preventDefault();
+        const container = document.querySelector('.comparison-container');
+        if (!container) return;
+        const rect = container.getBoundingClientRect();
+        const x = (e.type === 'mousemove' ? e.clientX : e.touches[0].clientX) - rect.left;
+        const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+        this.sliderPosition = percentage;
+        console.log('Slider position:', this.sliderPosition);
+      },
+      stopDrag() {
+        this.isDragging = false;
+        if (this.dragHandler) {
+          document.removeEventListener('mousemove', this.dragHandler);
+          document.removeEventListener('touchmove', this.dragHandler);
+        }
+        if (this.stopDragHandler) {
+          document.removeEventListener('mouseup', this.stopDragHandler);
+          document.removeEventListener('touchend', this.stopDragHandler);
+        }
+      }
+    }
+  "
+>
+  <div class="flex flex-col w-full justify-between gap-4">
+    {% render 'animated-heading', title: section.settings.heading, class: 'h2 max-w-xl' %}
+  </div>
+
+  <div
+    class="relative overflow-hidden w-full grid items-end order-last lg:order-none"
+    x-data="{ maxHeight: 0 }"
+    x-init="
+      $nextTick(() => {
+        maxHeight = Math.max(...Array.from($el.children).map(el => el.offsetHeight));
+        $el.style.minHeight = maxHeight + 'px';
+      })
+    "
+  >
+    {% for testimony in section.blocks %}
+      <div
+        class="absolute w-full"
+        x-show="currentIndex === {{ forloop.index0 }}"
+        x-transition:enter="transition ease-out duration-500"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-500"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+      >
+        <div class="flex items-end h-full">
+          <div class="space-y-4 max-w-lg">
+            <p class="lead">{{ testimony.settings.quote }}</p>
+            <span class="block font-medium tracking-wide uppercase">
+              After {{ testimony.settings.treatment_duration }} days
+            </span>
+
+            <!-- Navigation Controls -->
+            <div class="flex gap-2 pt-4">
+              <button
+                @click="prev()"
+                class="cursor-pointer bg-contrast/10 hover:bg-contrast/20 rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+              >
+                <span class="block w-4 h-[10px] transform transition-transform duration-500 text-contrast rotate-90">
+                  {{- 'icon-caret.svg' | inline_asset_content -}}
+                </span>
+              </button>
+              <button
+                @click="next()"
+                class="cursor-pointer bg-contrast/10 hover:bg-contrast/20 rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+              >
+                <span class="block w-4 h-[10px] transform transition-transform duration-500 text-contrast -rotate-90">
+                  {{- 'icon-caret.svg' | inline_asset_content -}}
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="md:row-span-2 md:col-start-2 md:row-start-1">
+    <div class="relative w-full">
+      <div
+        class="relative overflow-hidden aspect-square bg-black rounded-lg w-full comparison-container"
+        @click="
+          if (!isDragging) {
+            const rect = $el.getBoundingClientRect();
+            const x = $event.clientX - rect.left;
+            const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+            sliderPosition = percentage;
+          }
+        "
+      >
+        {% for testimony in section.blocks %}
+          <div
+            class="absolute inset-0 w-full h-full"
+            x-show="currentIndex === {{ forloop.index0 }}"
+            x-transition:enter="transition ease-out duration-500"
+            x-transition:enter-start="transform translate-x-full opacity-0"
+            x-transition:enter-end="transform translate-x-0 opacity-100"
+            x-transition:leave="transition ease-in duration-500"
+            x-transition:leave-start="transform translate-x-0 opacity-100"
+            x-transition:leave-end="transform translate-x-0 opacity-0"
+          >
+            <!-- Before Image (Background) -->
+            <div class="absolute inset-0 w-full h-full z-10">
+              {% render 'responsive-image',
+                image: testimony.settings.after_image,
+                wrapper_class: 'aspect-square relative overflow-hidden',
+                image_class: 'absolute object-cover inset-0 w-full h-full'
+              %}
+            </div>
+
+            <!-- After Image (Overlay with clip-path) -->
+            <div
+              class="absolute inset-0 w-full h-full overflow-hidden z-20"
+              :style="`clip-path: inset(0 ${100 - sliderPosition}% 0 0);`"
+            >
+              <img
+                src="{{ testimony.settings.before_image | image_url: width: 800 }}"
+                class="absolute object-cover inset-0 w-full h-full"
+                alt="Before treatment"
+                loading="lazy"
+                width="800"
+                height="800"
+                @load="console.log('Before image loaded')"
+                @error="console.log('Before image failed to load')"
+              >
+            </div>
+
+            <!-- Slider Control -->
+            <div
+              class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-30"
+              :style="`left: ${sliderPosition}%;`"
+              @mousedown="startDrag($event)"
+              @touchstart="startDrag($event)"
+            >
+              <!-- Slider Handle -->
+              <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
+                <div class="flex gap-1">
+                  <svg class="w-3 h-3 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <svg class="w-3 h-3 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Labels -->
+            <div class="absolute top-4 left-4 z-20">
+              <span class="text-white uppercase text-sm font-medium tracking-wide bg-black/50 px-2 py-1 rounded backdrop-blur"
+                >Before</span
+              >
+            </div>
+            <div class="absolute top-4 right-4 z-20">
+              <span class="text-white uppercase text-sm font-medium tracking-wide bg-black/50 px-2 py-1 rounded backdrop-blur"
+                >After</span
+              >
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonies Comparison",
+  "tag": "section",
+  "class": "section-testimonies-comparison section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimony",
+      "name": "Testimony",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "before_image",
+          "label": "Before Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "after_image",
+          "label": "After Image"
+        },
+        {
+          "type": "text",
+          "id": "quote",
+          "label": "Quote"
+        },
+        {
+          "type": "number",
+          "id": "treatment_duration",
+          "label": "Treatment Duration (days)"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
