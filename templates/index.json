@@ -207,7 +207,7 @@
       }
     },
     "testimonies": {
-      "type": "section-testimonies",
+      "type": "section-testimonies-comparison",
       "blocks": {
         "testimony_1": {
           "type": "testimony",
