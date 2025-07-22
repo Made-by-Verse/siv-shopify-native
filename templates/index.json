@@ -212,10 +212,10 @@
         "testimony_1": {
           "type": "testimony",
           "settings": {
-            "before_image": "shopify://shop_images/Screenshot_2025-06-11_at_11.44.20_PM.png",
-            "after_image": "shopify://shop_images/Screenshot_2025-06-11_at_11.45.09_PM.png",
+            "before_image": "shopify://shop_images/Acne.png",
+            "after_image": "shopify://shop_images/Acne_2.png",
             "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
-            "treatment_duration": 30
+            "treatment_duration": 24
           }
         },
         "testimony_2": {
