@@ -239,10 +239,10 @@
         "testimony_4": {
           "type": "testimony",
           "settings": {
-            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.10.35_PM.png",
-            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.10.42_PM.png",
-            "quote": "Reduced redness. Improved hydration levels. Improved skin tone, texture, and clarity.",
-            "treatment_duration": 14
+            "before_image": "shopify://shop_images/Acne_6ee40b9f-b549-431c-b2d0-2971bbede066.png",
+            "after_image": "shopify://shop_images/Acne_2_6d25c964-468f-4925-8bef-bba6c7a5f4a1.png",
+            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 120
           }
         },
         "testimony_5": {
