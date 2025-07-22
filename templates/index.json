@@ -257,10 +257,10 @@
         "testimony_6": {
           "type": "testimony",
           "settings": {
-            "before_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.06.17_PM.png",
-            "after_image": "shopify://shop_images/Screenshot_2024-09-13_at_4.06.27_PM.png",
-            "quote": "Reduction in number of lesions. Reduced redness. Regulated oil levels. Improved skin tone, texture, and clarity.",
-            "treatment_duration": 60
+            "before_image": "shopify://shop_images/Atopic_Dermatitis_Eczema.png",
+            "after_image": "shopify://shop_images/Atopic_Dermatitis_Eczema_2.png",
+            "quote": "Reduced redness. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 30
           }
         },
         "testimony_8": {
