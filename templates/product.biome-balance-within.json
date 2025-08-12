@@ -74,24 +74,24 @@
           "type": "point",
           "settings": {
             "image": "shopify://shop_images/step-1.gif",
-            "heading": "Step 1",
-            "text": "Before use, shake the dropper vigorously, until the bottom of the dropper is clear, to disperse Bacillus spores throughout the serum."
+            "heading": "SUPPORTS THE GUT–SKIN AXIS",
+            "text": "Promotes microbial diversity and helps improve skin clarity by addressing the root of skin imbalance from within."
           }
         },
         "point_2": {
           "type": "point",
           "settings": {
             "image": "shopify://shop_images/step-2.jpg",
-            "heading": "Step 2",
-            "text": "Apply 2-5 drops to hands first or directly to area, once daily, and gently massage and then pat into skin. Can be used on damp or dry skin."
+            "heading": "IMPROVES CLARITY & BALANCES OIL",
+            "text": "Helps reduce non-cystic acne severity and sebum production for visibly clearer, more balanced skin."
           }
         },
         "point_3": {
           "type": "point",
           "settings": {
             "image": "shopify://shop_images/step-3.jpg",
-            "heading": "Step 3",
-            "text": "For optimal results: apply after toner and before moisturizer."
+            "heading": "STRENGTHENS BARRIER FUNCTION",
+            "text": "Fortifies skin barrier health, improves hydration retention, and supports elasticity for firm, supple skin."
           }
         }
       },
@@ -101,7 +101,7 @@
         "point_3"
       ],
       "settings": {
-        "heading": "Balance in a bottle",
+        "heading": "THE COMPLETE, INSIDE–OUT APPROACH TO RESILIENCE.<br> NOURISH YOUR BIOMES.",
         "description": ""
       }
     },
@@ -191,6 +191,7 @@
         "testimony_8",
         "testimony_9"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Real consumer tested results"
       }
