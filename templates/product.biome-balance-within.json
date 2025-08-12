@@ -101,96 +101,12 @@
         "point_3"
       ],
       "settings": {
-        "heading": "THE COMPLETE, INSIDE–OUT APPROACH TO RESILIENCE.<br> NOURISH YOUR BIOMES.",
-        "description": ""
+        "heading": "THE COMPLETE, INSIDE–OUT APPROACH TO RESILIENCE. NOURISH YOUR BIOMES.",
+        "description": "<p>With SIV’s Biome Balance Within and Biome Balancing Serum, your skin receives <em>full-spectrum support</em> that builds both resilience and balance - from the inside out. This is more than skincare. It’s a synchronized system that supports overall resiliency.</p>"
       }
     },
     "testimonies": {
       "type": "section-testimonies-comparison",
-      "blocks": {
-        "testimony_1": {
-          "type": "testimony",
-          "settings": {
-            "before_image": "shopify://shop_images/Acne.png",
-            "after_image": "shopify://shop_images/Acne_2.png",
-            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
-            "treatment_duration": 24
-          }
-        },
-        "testimony_2": {
-          "type": "testimony",
-          "settings": {
-            "before_image": "shopify://shop_images/Acne_bfe2b956-d3e7-4ca8-82c0-592b91e2c171.png",
-            "after_image": "shopify://shop_images/Acne_2_baf2f402-a63d-462d-9f5d-ca07ae100e0b.png",
-            "quote": "Reduced lesion count, Reduced redness, Improved skin texture & tone",
-            "treatment_duration": 10
-          }
-        },
-        "testimony_3": {
-          "type": "testimony",
-          "settings": {
-            "before_image": "shopify://shop_images/Perioral_dermatitis_75d9eebe-13aa-453d-a3b9-d4fdcb6fa839.png",
-            "after_image": "shopify://shop_images/Perioral_dermatitis_2_7ef2140a-002a-4b90-8ae1-d8e7f50e93ed.png",
-            "quote": "Reduced redness. Improved skin clarity & tone",
-            "treatment_duration": 21
-          }
-        },
-        "testimony_4": {
-          "type": "testimony",
-          "settings": {
-            "before_image": "shopify://shop_images/Acne_6ee40b9f-b549-431c-b2d0-2971bbede066.png",
-            "after_image": "shopify://shop_images/Acne_2_6d25c964-468f-4925-8bef-bba6c7a5f4a1.png",
-            "quote": "Reduced lesion count. Reduced redness. Improved skin tone, texture, and clarity.",
-            "treatment_duration": 120
-          }
-        },
-        "testimony_5": {
-          "type": "testimony",
-          "settings": {
-            "before_image": "shopify://shop_images/Sebborheic_Dermatitis.png",
-            "after_image": "shopify://shop_images/Sebborheic_Dermatitis_2.png",
-            "quote": "Reduced redness. Reduced flakiness. Improved hydration levels. Improved skin tone and texture",
-            "treatment_duration": 14
-          }
-        },
-        "testimony_6": {
-          "type": "testimony",
-          "settings": {
-            "before_image": "shopify://shop_images/Atopic_Dermatitis_Eczema.png",
-            "after_image": "shopify://shop_images/Atopic_Dermatitis_Eczema_2.png",
-            "quote": "Reduced redness. Improved skin tone, texture, and clarity.",
-            "treatment_duration": 30
-          }
-        },
-        "testimony_8": {
-          "type": "testimony",
-          "settings": {
-            "before_image": "shopify://shop_images/Eczema.png",
-            "after_image": "shopify://shop_images/Eczema_2.png",
-            "quote": "Reduced redness. Improved skin tone, texture, and clarity.",
-            "treatment_duration": 7
-          }
-        },
-        "testimony_9": {
-          "type": "testimony",
-          "settings": {
-            "before_image": "shopify://shop_images/Eczema_6be13a31-6225-413b-a209-a9eba45a03cc.png",
-            "after_image": "shopify://shop_images/Eczema_2_fa994c70-cf98-4b78-ac6d-c31c9c312715.png",
-            "quote": "Reduced redness. Improved skin tone, texture, and clarity.",
-            "treatment_duration": 60
-          }
-        }
-      },
-      "block_order": [
-        "testimony_1",
-        "testimony_2",
-        "testimony_3",
-        "testimony_4",
-        "testimony_5",
-        "testimony_6",
-        "testimony_8",
-        "testimony_9"
-      ],
       "disabled": true,
       "settings": {
         "heading": "Real consumer tested results"
