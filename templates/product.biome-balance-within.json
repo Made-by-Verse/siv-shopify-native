@@ -81,7 +81,7 @@
         "point_2": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/step-2.jpg",
+            "image": "shopify://shop_images/balance-oil.jpg",
             "heading": "IMPROVES CLARITY & BALANCES OIL",
             "text": "Helps reduce non-cystic acne severity and sebum production for visibly clearer, more balanced skin."
           }
@@ -89,7 +89,7 @@
         "point_3": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/step-3.jpg",
+            "image": "shopify://shop_images/strengthen-barrier.jpg",
             "heading": "STRENGTHENS BARRIER FUNCTION",
             "text": "Fortifies skin barrier health, improves hydration retention, and supports elasticity for firm, supple skin."
           }
@@ -149,32 +149,33 @@
         "point_1": {
           "type": "ingredient",
           "settings": {
-            "image": "shopify://shop_images/step-1.gif",
+            "image": "shopify://shop_images/probiotic-blend.jpg",
             "heading": "Probiotic Blend: Spore-based Bacillus probiotics",
-            "text": "<p>Produces beneficial metabolites and antimicrobials that support skin’s look and feel**\n• Promotes the gut’s beneficial bacteria growth and suppresses nonbeneficial bacteria**\n• Regulates systemic inflammatory responses to promote healthy, clear skin**</p>"
+            "text": "<ul><li>Produces beneficial metabolites and antimicrobials that support skin’s look and feel**</li><li>Promotes the gut’s beneficial bacteria growth and suppresses nonbeneficial bacteria**</li><li>Regulates systemic inflammatory responses to promote healthy, clear skin**</li></ul>"
           }
         },
         "point_2": {
           "type": "ingredient",
           "settings": {
-            "image": "shopify://shop_images/step-2.jpg",
-            "heading": "IMPROVES CLARITY & BALANCES OIL",
-            "text": "<p>Helps reduce non-cystic acne severity and sebum production for visibly clearer, more balanced skin.</p>"
+            "image": "shopify://shop_images/golden-tomato.jpg",
+            "heading": "Golden Tomato Carotenoids: Lumenato™",
+            "text": "<ul><li>Clinically shown to increase the skin’s carotenoid content**</li><li>Activates the skin’s defenses against UV and environmental stressors**</li><li>Maintains healthy skin barrier strength and structure (e.g., collagen, ceramides)**</li><li>Promotes skin elasticity, firmness, hydration, tone, and overall appearance**</li></ul>"
           }
         },
         "point_3": {
           "type": "ingredient",
           "settings": {
-            "image": "shopify://shop_images/step-3.jpg",
-            "heading": "STRENGTHENS BARRIER FUNCTION",
-            "text": "<p>Fortifies skin barrier health, improves hydration retention, and supports elasticity for firm, supple skin.</p>"
+            "image": "shopify://shop_images/citrus-polphenol.jpg",
+            "heading": "Citrus Polyphenol Extract: MicrobiomeX®",
+            "text": "<ul><li>Supports digestive health and healthy gut barrier function**</li><li>Positively alters gut microbiota, boosting beneficial bacteria growth**</li><li>Promotes short-chain fatty acid (e.g., butyrate) production, promoting optimal skin pH, skin barrier health, and balanced inflammatory responses**</li></ul>"
           }
         },
         "point_Aq8Pgb": {
           "type": "ingredient",
           "settings": {
-            "heading": "",
-            "text": ""
+            "image": "shopify://shop_images/97800DFC-2617-434F-BA1C-9844C44E7673_1.jpg",
+            "heading": "Vitamin K2: MenaquinGold®",
+            "text": "<ul><li>Promotes elasticity and firmness by regulating calcium in skin tissues**</li><li>Antioxidant properties support healthy blood flow and tissue repair**</li><li>Promotes balanced inflammatory responses** </li><li>Fortifies the skin's natural barrier & structure**</li></ul>"
           }
         }
       },
@@ -186,10 +187,22 @@
       ],
       "settings": {
         "heading": "INGREDIENTS",
+        "description": ""
       }
     },
     "section_text_and_image_Xe7tqB": {
       "type": "section-text-and-image",
+      "blocks": {
+        "image_FJfB34": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_292563599_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_FJfB34"
+      ],
       "name": "Text and Image",
       "settings": {
         "title": "THE COMPLETE, INSIDE–OUT APPROACH TO RESILIENCE.",
