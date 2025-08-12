@@ -132,6 +132,51 @@
         "link": ""
       }
     },
+    "ingredients": {
+      "type": "section-ingredients",
+      "blocks": {
+        "point_1": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/step-1.gif",
+            "heading": "Probiotic Blend: Spore-based Bacillus probiotics",
+            "text": "Produces beneficial metabolites and antimicrobials that support skin’s look and feel**\n• Promotes the gut’s beneficial bacteria growth and suppresses nonbeneficial bacteria**\n• Regulates systemic inflammatory responses to promote healthy, clear skin**"
+          }
+        },
+        "point_2": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/step-2.jpg",
+            "heading": "IMPROVES CLARITY & BALANCES OIL",
+            "text": "Helps reduce non-cystic acne severity and sebum production for visibly clearer, more balanced skin."
+          }
+        },
+        "point_3": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/step-3.jpg",
+            "heading": "STRENGTHENS BARRIER FUNCTION",
+            "text": "Fortifies skin barrier health, improves hydration retention, and supports elasticity for firm, supple skin."
+          }
+        },
+        "point_Aq8Pgb": {
+          "type": "ingredient",
+          "settings": {
+            "heading": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3",
+        "point_Aq8Pgb"
+      ],
+      "settings": {
+        "heading": "INGREDIENTS",
+      }
+    },
     "section_text_and_image_Xe7tqB": {
       "type": "section-text-and-image",
       "name": "Text and Image",
@@ -203,6 +248,7 @@
     "key_points",
     "testimonies",
     "section_text_and_image_YXW3JW",
+    "ingredients",
     "section_text_and_image_Xe7tqB",
     "section_accordion_hRaNKB",
     "section_paragraph_MeRTEk"

@@ -1,6 +1,6 @@
-<div class="wrapper">
+<div class="wrapper space-y-8">
   <div class="grid md:grid-cols-3 mb-4 gap-4">
-    {% render 'animated-heading', title: section.settings.heading, class: 'md:col-span-2 h2' %}
+    {% render 'animated-heading', title: section.settings.heading, class: 'md:col-span-2 h2 text-balance' %}
     <div
       class="transition-opacity duration-2500 ease-in-out prose"
       x-data="{ shown: false }"
@@ -23,8 +23,8 @@
           <h3 class="text-base uppercase font-body tracking-wide font-semibold mb-2">
             {{ block.settings.heading }}
           </h3>
-          <div class="prose">
-            {{ block.settings.text }}
+          <div class="prose text-balance">
+            <p>{{ block.settings.text }}</p>
           </div>
         </div>
       </div>
