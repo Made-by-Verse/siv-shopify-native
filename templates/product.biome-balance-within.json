@@ -93,15 +93,23 @@
             "heading": "STRENGTHENS BARRIER FUNCTION",
             "text": "Fortifies skin barrier health, improves hydration retention, and supports elasticity for firm, supple skin."
           }
+        },
+        "point_Aq8Pgb": {
+          "type": "point",
+          "settings": {
+            "heading": "",
+            "text": ""
+          }
         }
       },
       "block_order": [
         "point_1",
         "point_2",
-        "point_3"
+        "point_3",
+        "point_Aq8Pgb"
       ],
       "settings": {
-        "heading": "THE COMPLETE, INSIDE–OUT APPROACH TO RESILIENCE. NOURISH YOUR BIOMES.",
+        "heading": "NOURISH YOUR BIOMES.",
         "description": "<p>With SIV’s Biome Balance Within and Biome Balancing Serum, your skin receives <em>full-spectrum support</em> that builds both resilience and balance - from the inside out. This is more than skincare. It’s a synchronized system that supports overall resiliency.</p>"
       }
     },
@@ -111,11 +119,92 @@
       "settings": {
         "heading": "Real consumer tested results"
       }
+    },
+    "section_text_and_image_YXW3JW": {
+      "type": "section-text-and-image",
+      "name": "Text and Image",
+      "settings": {
+        "title": "The Gut–Skin Axis",
+        "text": "<p>The gut-skin axis is your body’s hidden beauty connection, linking a thriving gut microbiome to a radiant complexion. Science shows that a balanced gut can be game-changing, supporting clearer, more vibrant skin by harmonizing your microbial communities, <strong>regulating immune and inflammatory functions.</strong> This cutting-edge formula taps into the gut-skin axis with clinically studied, skin-active ingredients to nurture your microbiome and enhance your skin’s natural radiance. </p>",
+        "reverse_order": false,
+        "wide_image": false,
+        "link_text": "",
+        "link": ""
+      }
+    },
+    "section_text_and_image_Xe7tqB": {
+      "type": "section-text-and-image",
+      "name": "Text and Image",
+      "settings": {
+        "title": "THE COMPLETE, INSIDE–OUT APPROACH TO RESILIENCE.",
+        "text": "<p><strong>Inside,</strong> beneficial bacteria in <strong>Biome Balance Within</strong> produce nourishing short-chain fatty acids that create an anti-inflammatory, immune-supportive environment. This balanced internal ecosystem supports the modulation of the immune response and sets the stage for clear, hydrated, and resilient skin.</p><p><strong>Outside, Biome Balancing Serum</strong> harnesses your biology to support and strengthen your skin’s ecosystem at its foundation, helping to build resilience, support your skin barrier, and maintain a balanced skin microbiome. </p><p>Together, they deliver the complete resilience and balance approach:</p><ul><li>Harmonizes internal and external microbial communities</li><li>Regulates inflammatory responses for calmer, clearer skin</li><li>Fortifies barrier defenses while locking in essential moisture</li><li>Promotes elasticity, firmness, and long-term skin vitality</li></ul><p>When balance meets resilience, your skin doesn’t just look healthy-it thrives.</p>",
+        "reverse_order": false,
+        "wide_image": false,
+        "link_text": "",
+        "link": ""
+      }
+    },
+    "section_accordion_hRaNKB": {
+      "type": "section-accordion",
+      "blocks": {
+        "accordion_aV7Ji9": {
+          "type": "accordion",
+          "settings": {
+            "heading": "How do I take Biome Balance Within?",
+            "content": "<p>Take 2 capsules per day with a meal or as recommended by your healthcare practitioner. This provides 290 mg of proprietary probiotics, 250 mg of citrus bioflavonoids (MicrobiomeX®), 10 mg of golden tomato carotenoids (Lumenato™), and 160 mcg of vitamin K2 as MK-7, MenaquinGold®. These dosages have been clinically studied and shown to be effective and safe. It's best to take this supplement containing a fat-soluble vitamin with a meal or snack containing healthy fat to maximize absorption in the digestive tract.</p>"
+          }
+        },
+        "accordion_67XpyM": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Is Biome Balance Within safe to take during pregnancy?",
+            "content": "<p>Yes, SereneSkin™ is generally considered safe during pregnancy. However, please consult your healthcare provider before starting any new supplement to ensure it's appropriate for your situation.</p>"
+          }
+        },
+        "accordion_QRU7fW": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Does Biome Balance Within contain allergens?",
+            "content": "<p>These capsules are free from 9 major allergens and contain no artificial colorings or flavorings.</p>"
+          }
+        },
+        "accordion_RDAPNU": {
+          "type": "accordion",
+          "settings": {
+            "heading": "What are the formulation standards for Biome Balance Within?",
+            "content": "<ul><li>Tested for potency, purity, and safety</li><li>Solvent-free during production</li><li>Soy-free</li><li>Dairy-free</li><li>Non-GMO</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_aV7Ji9",
+        "accordion_67XpyM",
+        "accordion_QRU7fW",
+        "accordion_RDAPNU"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "heading": "FAQs"
+      }
+    },
+    "section_paragraph_MeRTEk": {
+      "type": "section-paragraph",
+      "name": "Paragraph",
+      "settings": {
+        "text": "<h6><em>**These statements have not been evaluated by the Food and Drug Administration (FDA). This product is not intended to diagnose, treat, cure, or prevent any disease.</em></h6>",
+        "color_scheme": "",
+        "padding_top": "none",
+        "padding_bottom": "none"
+      }
     }
   },
   "order": [
     "main",
     "key_points",
-    "testimonies"
+    "testimonies",
+    "section_text_and_image_YXW3JW",
+    "section_text_and_image_Xe7tqB",
+    "section_accordion_hRaNKB",
+    "section_paragraph_MeRTEk"
   ]
 }
