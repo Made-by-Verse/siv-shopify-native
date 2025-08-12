@@ -122,12 +122,23 @@
     },
     "section_text_and_image_YXW3JW": {
       "type": "section-text-and-image",
+      "blocks": {
+        "image_C9gURW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Leaky_Skin.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_C9gURW"
+      ],
       "name": "Text and Image",
       "settings": {
         "title": "The Gut–Skin Axis",
         "text": "<p>The gut-skin axis is your body’s hidden beauty connection, linking a thriving gut microbiome to a radiant complexion. Science shows that a balanced gut can be game-changing, supporting clearer, more vibrant skin by harmonizing your microbial communities, <strong>regulating immune and inflammatory functions.</strong> This cutting-edge formula taps into the gut-skin axis with clinically studied, skin-active ingredients to nurture your microbiome and enhance your skin’s natural radiance. </p>",
         "reverse_order": false,
-        "wide_image": false,
+        "wide_image": true,
         "link_text": "",
         "link": ""
       }
