@@ -8,11 +8,14 @@
             <button class="accordion-item-button" @click="toggleAccordionItem({{ forloop.index0 }})">
               <h3 class="accordion-item-heading">{{ block.settings.heading }}</h3>
               <span class="accordion-item-icon" :class="activeIndex === {{ forloop.index0 }} ? 'active' : '' ">
-                <span class='line'></span>
-                <span class='line'></span>
+                <span class="line"></span>
+                <span class="line"></span>
               </span>
             </button>
-            <div :style="{ height: activeIndex === {{ forloop.index0 }} ? $el.scrollHeight + 'px' : '0px' }" class="accordion-item-content prose">
+            <div
+              :style="{ height: activeIndex === {{ forloop.index0 }} ? $el.scrollHeight + 'px' : '0px' }"
+              class="accordion-item-content prose"
+            >
               {{ block.settings.content }}
             </div>
           </div>
@@ -21,37 +24,42 @@
   </div>
 </div>
 {% schema %}
-  {
-    "name": "Accordion",
-    "tag": "section",
-    "class": "section-accordion section",
-    "disabled_on": {
-      "groups": ["header", "footer"]
-    },
-    "settings": [
-      {
-        "type": "text",
-        "id": "heading",
-        "label": "Heading"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "accordion",
-        "name": "Accordion",
-        "settings": [
-          {
-            "type": "text",
-            "id": "heading",
-            "label": "Heading"
-          },
-          {
-            "type": "richtext",
-            "id": "content",
-            "label": "Content"
-          }
-        ]
-      }
-    ]
-  }
+{
+  "name": "Accordion",
+  "tag": "section",
+  "class": "section-accordion section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion",
+      "name": "Accordion",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion"
+    }
+  ]
+}
 {% endschema %}
