@@ -73,7 +73,7 @@
         "point_1": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/step-1.gif",
+            "image": "shopify://shop_images/gut-skin-axis.jpg",
             "heading": "SUPPORTS THE GUT–SKIN AXIS",
             "text": "Promotes microbial diversity and helps improve skin clarity by addressing the root of skin imbalance from within."
           }
@@ -173,7 +173,7 @@
         "point_Aq8Pgb": {
           "type": "ingredient",
           "settings": {
-            "image": "shopify://shop_images/97800DFC-2617-434F-BA1C-9844C44E7673_1.jpg",
+            "image": "shopify://shop_images/k2.jpg",
             "heading": "Vitamin K2: MenaquinGold®",
             "text": "<ul><li>Promotes elasticity and firmness by regulating calcium in skin tissues**</li><li>Antioxidant properties support healthy blood flow and tissue repair**</li><li>Promotes balanced inflammatory responses** </li><li>Fortifies the skin's natural barrier & structure**</li></ul>"
           }
