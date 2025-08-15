@@ -70,20 +70,20 @@
     "key_points": {
       "type": "section-key-points",
       "blocks": {
-        "point_1": {
-          "type": "point",
-          "settings": {
-            "image": "shopify://shop_images/gut-skin-axis.jpg",
-            "heading": "SUPPORTS THE GUT–SKIN AXIS",
-            "text": "Promotes microbial diversity and helps improve skin clarity by addressing the root of skin imbalance from within."
-          }
-        },
         "point_2": {
           "type": "point",
           "settings": {
             "image": "shopify://shop_images/balance-oil.jpg",
             "heading": "IMPROVES CLARITY & BALANCES OIL",
             "text": "Helps reduce non-cystic acne severity and sebum production for visibly clearer, more balanced skin."
+          }
+        },
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/gut-skin-axis.jpg",
+            "heading": "SUPPORTS THE GUT–SKIN AXIS",
+            "text": "Promotes microbial diversity and helps improve skin clarity by addressing the root of skin imbalance from within."
           }
         },
         "point_3": {
@@ -103,8 +103,8 @@
         }
       },
       "block_order": [
-        "point_1",
         "point_2",
+        "point_1",
         "point_3",
         "point_Aq8Pgb"
       ],
