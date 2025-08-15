@@ -1,14 +1,17 @@
-<div class="accordion-content" x-data="accordion">
+<div class="accordion-content my-8" x-data="accordion">
   {% for accordion in product.metafields.product.accordion.value %}
     <div class="accordion-item group">
       <button class="accordion-item-button" @click.prevent="toggleAccordionItem({{ forloop.index0 }})">
         <h3 class="accordion-item-heading">{{ accordion.heading }}</h3>
         <span class="accordion-item-icon" :class="activeIndex === {{ forloop.index0 }} ? 'active' : '' ">
-          <span class='line'></span>
-          <span class='line'></span>
+          <span class="line"></span>
+          <span class="line"></span>
         </span>
       </button>
-      <div :style="{ height: activeIndex === {{ forloop.index0 }} ? $el.scrollHeight + 'px' : '0px' }" class="accordion-item-content prose">
+      <div
+        :style="{ height: activeIndex === {{ forloop.index0 }} ? $el.scrollHeight + 'px' : '0px' }"
+        class="accordion-item-content prose"
+      >
         {{ accordion.content | metafield_tag }}
       </div>
     </div>
