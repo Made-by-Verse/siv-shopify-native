@@ -70,20 +70,20 @@
     "key_points": {
       "type": "section-key-points",
       "blocks": {
-        "point_1": {
-          "type": "point",
-          "settings": {
-            "image": "shopify://shop_images/gut-skin-axis.jpg",
-            "heading": "SUPPORTS THE GUT–SKIN AXIS",
-            "text": "Promotes microbial diversity and helps improve skin clarity by addressing the root of skin imbalance from within."
-          }
-        },
         "point_2": {
           "type": "point",
           "settings": {
             "image": "shopify://shop_images/balance-oil.jpg",
             "heading": "IMPROVES CLARITY & BALANCES OIL",
             "text": "Helps reduce non-cystic acne severity and sebum production for visibly clearer, more balanced skin."
+          }
+        },
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/gut-skin-axis.jpg",
+            "heading": "SUPPORTS THE GUT–SKIN AXIS",
+            "text": "Promotes microbial diversity and helps improve skin clarity by addressing the root of skin imbalance from within."
           }
         },
         "point_3": {
@@ -103,8 +103,8 @@
         }
       },
       "block_order": [
-        "point_1",
         "point_2",
+        "point_1",
         "point_3",
         "point_Aq8Pgb"
       ],
@@ -243,13 +243,21 @@
             "heading": "What are the formulation standards for Biome Balance Within?",
             "content": "<ul><li>Tested for potency, purity, and safety</li><li>Solvent-free during production</li><li>Soy-free</li><li>Dairy-free</li><li>Non-GMO</li></ul>"
           }
+        },
+        "accordion_WM3AYg": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Should I use the biome balancing serum and biome balance within at the same time?",
+            "content": "<p>Yes! Using these products together is our complete approach to resilience. With SIV’s Biome Balance Within and Biome Balancing Serum, your skin receives <em>full-spectrum support</em> that builds both resilience and balance - from the inside out. </p>"
+          }
         }
       },
       "block_order": [
         "accordion_aV7Ji9",
         "accordion_67XpyM",
         "accordion_QRU7fW",
-        "accordion_RDAPNU"
+        "accordion_RDAPNU",
+        "accordion_WM3AYg"
       ],
       "name": "Accordion",
       "settings": {
