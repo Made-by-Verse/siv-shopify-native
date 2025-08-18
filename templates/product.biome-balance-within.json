@@ -28,7 +28,7 @@
           "type": "wholesale-volume-pricing",
           "settings": {
             "title": "Wholesale Volume Pricing",
-            "description": "<ul><li>2-5: $44 USD</li><li>6-11: $39 USD</li><li>12+: $34 USD</li><li>Subscribe and save not available for wholesale pricing</li></ul>"
+            "description": "<p>2+: $45 USD</p>"
           }
         },
         "variant_picker_cF46kp": {
