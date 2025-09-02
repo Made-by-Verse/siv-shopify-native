@@ -1,6 +1,13 @@
-<div class="wrapper{% if section.settings.wrapper_size == 'small' %} wrapper--small{% endif %}">
+<div
+  class="wrapper{% if section.settings.wrapper_size == 'small' %} wrapper--small{% endif %}"
+  data-section-type="apps"
+  x-data="{ appsPresent: {{ section.blocks.size > 0 }} }"
+  x-init="if (appsPresent) { $dispatch('toggle-lenis', { enabled: false }); }"
+>
   {%- for block in section.blocks -%}
-    {% render block %}
+    <div data-block-type="{{ block.type }}">
+      {% render block %}
+    </div>
   {%- endfor -%}
 </div>
 
