@@ -27,7 +27,18 @@ export default class App {
 
   initializeLenis() {
     this.lenis = new Lenis({
-      prevent: (node) => SCROLL_PREVENT.includes(node.id),
+      prevent: (node) => {
+        // Check for elements with data-lenis-prevent attribute
+        if (node.hasAttribute && node.hasAttribute("data-lenis-prevent")) {
+          return true;
+        }
+        // Check for elements inside data-lenis-prevent containers
+        if (node.closest && node.closest("[data-lenis-prevent]")) {
+          return true;
+        }
+        // Check original SCROLL_PREVENT list
+        return SCROLL_PREVENT.includes(node.id);
+      },
     });
 
     function raf(time) {
@@ -37,48 +48,19 @@ export default class App {
 
     requestAnimationFrame(raf.bind(this));
 
-    // Add event listener for toggling Lenis
+    // Add event listener for toggling Lenis (keep for existing functionality)
     window.addEventListener("toggle-lenis", (event) => {
       if (event.detail.enabled) {
-        this.lenis?.start();
+        // Re-initialize Lenis if it was destroyed
+        if (!this.lenis) {
+          this.initializeLenis();
+        }
       } else {
-        this.lenis?.stop();
+        // Destroy Lenis instance to fully disable
+        this.lenis?.destroy();
+        this.lenis = null;
       }
     });
-
-    // Check if apps section exists on page load and disable Lenis if needed
-    this.checkForAppsOnLoad();
-  }
-
-  checkForAppsOnLoad() {
-    // Wait for DOM to be fully loaded
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => {
-        this.evaluateAppsPresence();
-      });
-    } else {
-      this.evaluateAppsPresence();
-    }
-  }
-
-  evaluateAppsPresence() {
-    // Check if there are any app sections on the page
-    const appsSections = document.querySelectorAll(
-      '[data-section-type="apps"]'
-    );
-    const hasApps = Array.from(appsSections).some((section) => {
-      // Check if the apps section has any content/blocks
-      const blocks = section.querySelectorAll("[data-block-type]");
-      return blocks.length > 0;
-    });
-
-    if (hasApps) {
-      // Disable Lenis if apps are present
-      this.lenis?.stop();
-    } else {
-      // Ensure Lenis is enabled if no apps
-      this.lenis?.start();
-    }
   }
 
   async init() {
