@@ -179,6 +179,13 @@
             "heading": "Is the SIV Serum safe for teenagers under the age of 18?",
             "content": "<p>Our serum is formulated with skin-supportive ingredients, but they are intended for adult use. We do not specifically test SIV products for individuals under 18. If you are under 18 and considering using SIV, we recommend speaking with a parent/guardian and consulting a healthcare practitioner before using our serum. </p>"
           }
+        },
+        "accordion_ibqeWw": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Do you ship to the UK?",
+            "content": "<p>At this time, we do not ship to the UK.</p>"
+          }
         }
       },
       "block_order": [
@@ -205,7 +212,8 @@
         "accordion_8j3UFB",
         "accordion_8Tgk3E",
         "accordion_RMdxJE",
-        "accordion_9keLiD"
+        "accordion_9keLiD",
+        "accordion_ibqeWw"
       ],
       "settings": {
         "heading": "Frequently Asked Questions"
