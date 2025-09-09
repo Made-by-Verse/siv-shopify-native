@@ -172,6 +172,13 @@
             "heading": "Can I use SIV products if I am pregnant or breastfeeding?",
             "content": "<p>SIV products are designed to be gentle and microbiome-supportive. However, because pregnancy and breastfeeding involve unique changes to the body, we recommend consulting with your healthcare provider before starting or continuing any new skincare routine. Your provider can help determine what is safest for you and your baby.</p>"
           }
+        },
+        "accordion_9keLiD": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Is the SIV Serum safe for teenagers under the age of 18?",
+            "content": "<p>Our serum is formulated with skin-supportive ingredients, but they are intended for adult use. We do not specifically test SIV products for individuals under 18. If you are under 18 and considering using SIV, we recommend speaking with a parent/guardian and consulting a healthcare practitioner before using our serum. </p>"
+          }
         }
       },
       "block_order": [
@@ -197,7 +204,8 @@
         "accordion_wgdCkG",
         "accordion_8j3UFB",
         "accordion_8Tgk3E",
-        "accordion_RMdxJE"
+        "accordion_RMdxJE",
+        "accordion_9keLiD"
       ],
       "settings": {
         "heading": "Frequently Asked Questions"
