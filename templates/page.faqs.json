@@ -56,7 +56,6 @@
         },
         "accordion_YMcJr7": {
           "type": "accordion",
-          "disabled": true,
           "settings": {
             "heading": "What if I have sensitive skin?",
             "content": "<p>If you have highly sensitive skin, prior to applying SIV fully, we recommend that you first test on a small area of skin.</p>"
@@ -166,6 +165,13 @@
             "heading": "Do you ship to Canada?",
             "content": "<p>At this time, we are not shipping to Canada. We are currently in the process of registering our product with the appropriate Canadian authorities to ensure a smooth and compliant shipping experience. We truly appreciate your patience and understanding during this process and will be sure to share an update as soon as shipping to Canada becomes available.</p>"
           }
+        },
+        "accordion_RMdxJE": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Can I use SIV products if I am pregnant or breastfeeding?",
+            "content": "<p>SIV products are designed to be gentle and microbiome-supportive. However, because pregnancy and breastfeeding involve unique changes to the body, we recommend consulting with your healthcare provider before starting or continuing any new skincare routine. Your provider can help determine what is safest for you and your baby.</p>"
+          }
         }
       },
       "block_order": [
@@ -190,7 +196,8 @@
         "accordion_AjYFVh",
         "accordion_wgdCkG",
         "accordion_8j3UFB",
-        "accordion_8Tgk3E"
+        "accordion_8Tgk3E",
+        "accordion_RMdxJE"
       ],
       "settings": {
         "heading": "Frequently Asked Questions"
