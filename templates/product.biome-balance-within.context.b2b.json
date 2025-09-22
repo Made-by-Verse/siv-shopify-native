@@ -12,5 +12,16 @@
   "context": {
     "b2b": true
   },
-  "sections": {}
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {
+        "wholesale_volume_pricing_hCrTQh": {
+          "settings": {
+            "description": "<p><span style=\"text-decoration:underline\"><strong>Wholesale Tier 1:</strong></span> </p><p>3-11 Bottles - $42/bottle</p><p><span style=\"text-decoration:underline\"><strong>Wholesale Tier 2: </strong></span></p><p>12+ Bottles - $40.50/bottle</p><p>MOQ - 3 Bottles</p>"
+          }
+        }
+      }
+    }
+  }
 }
