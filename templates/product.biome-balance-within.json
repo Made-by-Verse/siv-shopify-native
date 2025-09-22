@@ -250,6 +250,13 @@
             "heading": "Should I use the biome balancing serum and biome balance within at the same time?",
             "content": "<p>Yes! Using these products together is our complete approach to resilience. With SIV’s Biome Balance Within and Biome Balancing Serum, your skin receives <em>full-spectrum support</em> that builds both resilience and balance - from the inside out. </p>"
           }
+        },
+        "accordion_BKUmxr": {
+          "type": "accordion",
+          "settings": {
+            "heading": "do you ship this product internationally?",
+            "content": "<p>No, this product is only sold within the US. </p>"
+          }
         }
       },
       "block_order": [
@@ -257,7 +264,8 @@
         "accordion_67XpyM",
         "accordion_QRU7fW",
         "accordion_RDAPNU",
-        "accordion_WM3AYg"
+        "accordion_WM3AYg",
+        "accordion_BKUmxr"
       ],
       "name": "Accordion",
       "settings": {
