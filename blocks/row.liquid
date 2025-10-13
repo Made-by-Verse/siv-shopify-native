@@ -1,0 +1,65 @@
+{% liquid
+  assign mobile_columns = block.settings.mobile_columns
+  assign desktop_columns = block.settings.desktop_columns
+
+  if mobile_columns == 1
+    assign mobile_columns_class = 'col-span-1'
+  endif
+  if desktop_columns == 1
+    assign desktop_columns_class = 'md:col-span-1'
+  endif
+  if mobile_columns == 2
+    assign mobile_columns_class = 'col-span-2'
+  endif
+  if mobile_columns == 3
+    assign mobile_columns_class = 'col-span-3'
+  endif
+  if mobile_columns == 4
+    assign mobile_columns_class = 'col-span-4'
+  endif
+  if desktop_columns == 2
+    assign desktop_columns_class = 'md:col-span-2'
+  endif
+  if desktop_columns == 3
+    assign desktop_columns_class = 'md:col-span-3'
+  endif
+  if desktop_columns == 4
+    assign desktop_columns_class = 'md:col-span-4'
+  endif
+%}
+
+<div class="grid grid-cols-1 {{ mobile_columns_class }} {{ desktop_columns_class }} gap-4">
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "Row",
+  "blocks": [{ "type": "@theme" }, { "type": "@app" }],
+  "settings": [
+    {
+      "type": "range",
+      "id": "mobile_columns",
+      "label": "Mobile Columns",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns",
+      "label": "Desktop Columns",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Row"
+    }
+  ]
+}
+{% endschema %}

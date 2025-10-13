@@ -1,0 +1,33 @@
+<div>
+  {% if customer.tags contains section.settings.tag %}
+    {% content_for 'blocks' %}
+  {% else %}
+    <div class="py-16 wrapper prose text-center">
+      {{ section.settings.fallback_content }}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Group",
+  "blocks": [{ "type": "@theme" }, { "type": "@app" }, { "type": "row" }],
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "The tag that the user must have to access the content"
+    },
+    {
+      "type": "richtext",
+      "id": "fallback_content",
+      "label": "Fallback Content (shown if user doesn't match criteria)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gated Section"
+    }
+  ]
+}
+{% endschema %}
