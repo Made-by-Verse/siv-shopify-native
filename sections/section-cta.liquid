@@ -4,7 +4,7 @@
   if alignment == 'left'
     assign alignment_class = 'items-start text-left'
   elsif alignment == 'center'
-    assign alignment_class = 'items-center text-center'
+    assign alignment_class = 'items-center text-center justify-center'
   elsif alignment == 'right'
     assign alignment_class = 'items-end text-right'
   endif
@@ -21,23 +21,25 @@
 {% endif %}
 <div class="wrapper">
   <div class=" relative text-white z-10 flex flex-col {{ alignment_class }}">
-    <div class="max-w-xl w-full   space-y-4">
+    <div class="max-w-xl w-full flex flex-col  space-y-4 {{ alignment_class }}">
       {% render 'animated-heading', title: section.settings.title, class: 'h1 text-balance' %}
       {% if section.settings.richText %}
-        <div class="prose max-w-md text-white ">{{ section.settings.richText }}</div>
+        <div class="prose max-w-md text-white {{ alignment_class }}">{{ section.settings.richText }}</div>
       {% endif %}
-      {% if section.settings.action_type == 'link' %}
-        {% render 'button',
-          button_text: section.settings.button_text,
-          link: section.settings.button_link,
-          button_class: 'btn--white'
-        %}
-      {% elsif section.settings.action_type == 'button' %}
-        {% render 'button',
-          button_text: section.settings.button_text,
-          event_trigger: section.settings.custom_event_trigger,
-          button_class: 'btn--white'
-        %}
+      {% if section.settings.button_text != blank and section.settings.button_text != '' %}
+        {% if section.settings.action_type == 'link' %}
+          {% render 'button',
+            button_text: section.settings.button_text,
+            link: section.settings.button_link,
+            button_class: 'btn--white'
+          %}
+        {% elsif section.settings.action_type == 'button' %}
+          {% render 'button',
+            button_text: section.settings.button_text,
+            event_trigger: section.settings.custom_event_trigger,
+            button_class: 'btn--white'
+          %}
+        {% endif %}
       {% endif %}
     </div>
   </div>

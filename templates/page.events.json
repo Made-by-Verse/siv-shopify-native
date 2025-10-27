@@ -9,12 +9,113 @@
  */
 {
   "sections": {
-    "hero": {
-      "type": "section-home-hero",
-      "settings": {}
+    "heading": {
+      "type": "section-cta",
+      "settings": {
+        "image": "shopify://shop_images/siv-hero_copy.jpg",
+        "alignment": "center",
+        "title": "Upcoming Events",
+        "richText": "<p>Join us at these upcoming conferences and events.</p>"
+      }
+    },
+    "event_1": {
+      "type": "section-event",
+      "settings": {
+        "title": "International Congress of Esthetics and Spa",
+        "button_text": "Visit Conference Website",
+        "button_link": "https://longbeach.skincareshows.com",
+        "image": "shopify://shop_images/siv-hero_copy.jpg",
+      },
+      "blocks": {
+        "text_1": {
+          "type": "text_block",
+          "settings": {
+            "title": "Event Details",
+            "text": "<p><strong>Location:</strong> Long Beach, CA<br><strong>Dates:</strong> August 24–25, 2025<br><strong>Booth:</strong> 239</p>"
+          }
+        },
+        "text_2": {
+          "type": "text_block",
+          "settings": {
+            "title": "Speaking Engagement",
+            "text": "<p><strong>Session Title:</strong> Eczema and the Skin Microbiome: A New Approach in Professional Skincare<br><strong>Date & Time:</strong> Monday, August 25 at 11:00 AM<br><strong>Location:</strong> Room 102A<br><strong>Speaker:</strong> Isabel Vitale, CEO & Co-Founder of SIV</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_1",
+        "text_2"
+      ]
+    },
+    "event_2": {
+      "type": "section-event",
+      "settings": {
+        "title": "International Esthetics, Cosmetics & Spa Conference",
+        "button_text": "Visit Conference Website",
+        "button_link": "https://www.iecscflorida.com"
+      },
+      "blocks": {
+        "text_1": {
+          "type": "text_block",
+          "settings": {
+            "title": "Event Details",
+            "text": "<p><strong>Location:</strong> West Palm Beach, FL<br><strong>Dates:</strong> September 28–29, 2025<br><strong>Booth:</strong> 915</p>"
+          }
+        },
+        "text_2": {
+          "type": "text_block",
+          "settings": {
+            "title": "Speaking Engagement",
+            "text": "<p><strong>Session Title:</strong> The Esthetician & The Microbiologist – A fireside chat to discover the living layer behind luminous skin<br><strong>Date & Time:</strong> Sunday, September 28 from 3:00–4:00 PM<br><strong>Location:</strong> Classroom Session Room 1L</p>"
+          }
+        },
+        "text_3": {
+          "type": "text_block",
+          "settings": {
+            "title": "Featured Speakers",
+            "text": "<p>Kiran Krishnan, Microbiologist<br>Savanna Boda, The Dallas Aesthetician<br><strong>Sponsored by:</strong> SIV | Booth 915</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_1",
+        "text_2",
+        "text_3"
+      ]
+    },
+    "event_3": {
+      "type": "section-event",
+      "settings": {
+        "title": "International Congress of Esthetics and Spa",
+        "button_text": "Visit Conference Website",
+        "button_link": "https://fortlauderdale.skincareshows.com"
+      },
+      "blocks": {
+        "text_1": {
+          "type": "text_block",
+          "settings": {
+            "title": "Event Details",
+            "text": "<p><strong>Location:</strong> Ft. Lauderdale, FL<br><strong>Dates:</strong> October 19–20, 2025<br><strong>Booth:</strong> 527</p>"
+          }
+        },
+        "text_2": {
+          "type": "text_block",
+          "settings": {
+            "title": "Speaking Engagement",
+            "text": "<p><strong>Session Title:</strong> Oxidative Stress, Skin Resilience, and the Microbiome: Rethinking the Roots of Aging<br><strong>Date & Time:</strong> Sunday, October 19 from 11:00 AM–12:00 PM<br><strong>Location:</strong> Room 207<br><strong>Speaker:</strong> Kiran Krishnan, Microbiologist</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_1",
+        "text_2"
+      ]
     }
   },
   "order": [
-    "hero"
+    "heading",
+    "event_1",
+    "event_2",
+    "event_3"
   ]
 }
