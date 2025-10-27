@@ -1,0 +1,209 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "product_title_Fqeap7": {
+          "type": "product-title",
+          "settings": {}
+        },
+        "product_price_JDACKF": {
+          "type": "product-price",
+          "settings": {}
+        },
+        "product_description_xK3MCg": {
+          "type": "product-description",
+          "settings": {}
+        },
+        "wholesale_volume_pricing_hCrTQh": {
+          "type": "wholesale-volume-pricing",
+          "settings": {
+            "title": "Wholesale Volume Pricing",
+            "description": "<ul><li>2-5: $44 USD</li><li>6-11: $39 USD</li><li>12+: $34 USD</li><li>Subscribe and save not available for wholesale pricing</li></ul>"
+          }
+        },
+        "variant_picker_cF46kp": {
+          "type": "variant-picker",
+          "settings": {}
+        },
+        "recharge_subscriptions_subscription_widget_hCrTQh": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "recharge_subscriptions_subscription_widget_v2_8cEqny": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
+        "quantity_selector_8EEfnM": {
+          "type": "quantity-selector",
+          "settings": {}
+        },
+        "buy_buttons_rEH3MG": {
+          "type": "buy-buttons",
+          "settings": {}
+        },
+        "accordion_YVppL6": {
+          "type": "accordion",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "product_title_Fqeap7",
+        "product_price_JDACKF",
+        "product_description_xK3MCg",
+        "wholesale_volume_pricing_hCrTQh",
+        "variant_picker_cF46kp",
+        "recharge_subscriptions_subscription_widget_hCrTQh",
+        "recharge_subscriptions_subscription_widget_v2_8cEqny",
+        "quantity_selector_8EEfnM",
+        "buy_buttons_rEH3MG",
+        "accordion_YVppL6"
+      ],
+      "settings": {}
+    },
+    "key_points": {
+      "type": "section-key-points",
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/step-1.gif",
+            "heading": "Step 1",
+            "text": "Before use, shake the dropper vigorously, until the bottom of the dropper is clear, to disperse Bacillus spores throughout the serum."
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/step-2.jpg",
+            "heading": "Step 2",
+            "text": "Apply 2-5 drops to hands first or directly to area, once daily, and gently massage and then pat into skin. Can be used on damp or dry skin."
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/step-3.jpg",
+            "heading": "Step 3",
+            "text": "For optimal results: apply after toner and before moisturizer."
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3"
+      ],
+      "settings": {
+        "heading": "Balance in a bottle",
+        "description": ""
+      }
+    },
+    "testimonies": {
+      "type": "section-testimonies-comparison",
+      "blocks": {
+        "testimony_1": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Acne.png",
+            "after_image": "shopify://shop_images/Acne_2.png",
+            "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 24
+          }
+        },
+        "testimony_2": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Acne_bfe2b956-d3e7-4ca8-82c0-592b91e2c171.png",
+            "after_image": "shopify://shop_images/Acne_2_baf2f402-a63d-462d-9f5d-ca07ae100e0b.png",
+            "quote": "Reduced lesion count, Reduced redness, Improved skin texture & tone",
+            "treatment_duration": 10
+          }
+        },
+        "testimony_3": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Perioral_dermatitis_75d9eebe-13aa-453d-a3b9-d4fdcb6fa839.png",
+            "after_image": "shopify://shop_images/Perioral_dermatitis_2_7ef2140a-002a-4b90-8ae1-d8e7f50e93ed.png",
+            "quote": "Reduced redness. Improved skin clarity & tone",
+            "treatment_duration": 21
+          }
+        },
+        "testimony_4": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Acne_6ee40b9f-b549-431c-b2d0-2971bbede066.png",
+            "after_image": "shopify://shop_images/Acne_2_6d25c964-468f-4925-8bef-bba6c7a5f4a1.png",
+            "quote": "Reduced lesion count. Reduced redness. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 120
+          }
+        },
+        "testimony_5": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Sebborheic_Dermatitis.png",
+            "after_image": "shopify://shop_images/Sebborheic_Dermatitis_2.png",
+            "quote": "Reduced redness. Reduced flakiness. Improved hydration levels. Improved skin tone and texture",
+            "treatment_duration": 14
+          }
+        },
+        "testimony_6": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Atopic_Dermatitis_Eczema.png",
+            "after_image": "shopify://shop_images/Atopic_Dermatitis_Eczema_2.png",
+            "quote": "Reduced redness. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 30
+          }
+        },
+        "testimony_8": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Eczema.png",
+            "after_image": "shopify://shop_images/Eczema_2.png",
+            "quote": "Reduced redness. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 7
+          }
+        },
+        "testimony_9": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Eczema_6be13a31-6225-413b-a209-a9eba45a03cc.png",
+            "after_image": "shopify://shop_images/Eczema_2_fa994c70-cf98-4b78-ac6d-c31c9c312715.png",
+            "quote": "Reduced redness. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 60
+          }
+        }
+      },
+      "block_order": [
+        "testimony_1",
+        "testimony_2",
+        "testimony_3",
+        "testimony_4",
+        "testimony_5",
+        "testimony_6",
+        "testimony_8",
+        "testimony_9"
+      ],
+      "settings": {
+        "heading": "Real consumer tested results"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "key_points",
+    "testimonies"
+  ]
+}
