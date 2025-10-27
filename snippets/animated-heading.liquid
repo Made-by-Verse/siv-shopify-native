@@ -29,7 +29,7 @@
   x-init="initWords()"
   x-intersect.half:enter="showWords()"
   x-intersect.half:leave="hideWords()"
-  class="{{ class }}"
+  class="{{ class }} text-balance"
   x-cloak
 >
   <template x-for="(word, index) in words" :key="index">

@@ -1,4 +1,4 @@
-{% assign product = all_products[settings.featured_product] %}
+{% assign product = all_products[section.settings.product] %}
 
 <div class="color-{{ section.settings.color_scheme }} bg-primary text-contrast">
   <div class="wrapper flex flex-col items-center">
@@ -30,7 +30,7 @@
         {% endif %}
         <div class="space-y-4">
           <div>
-            <h2
+            <h3
               class="h3"
               x-data="{ shown: false }"
               x-intersect:enter="shown = true"
@@ -38,14 +38,14 @@
               :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
             >
               {{ product.title }}
-            </h2>
+            </h3>
             {% render 'price', product: product, show_compare_at_price: true %}
           </div>
           <p>{{ product.metafields.product['short-description'] }}</p>
           <div>
             {% render 'button',
               button_text: section.settings.button_text,
-              event_trigger: 'open-quick-buy-drawer',
+              link: product.url,
               button_class: 'btn--black'
             %}
           </div>
@@ -72,6 +72,11 @@
       "type": "text",
       "id": "heading",
       "label": "Heading"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
     },
     {
       "type": "text",
