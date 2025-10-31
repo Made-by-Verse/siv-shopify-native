@@ -2,85 +2,84 @@
   {% if product.media.size > 1 %}
     {% render 'product-gallery', product: product %}
   {% elsif product.media.size == 1 %}
-    {% render 'responsive-image', image: product.media[0], wrapper_class: 'aspect-square bg-white', image_class: 'w-full h-full object-cover' %}
+    {% render 'responsive-image',
+      image: product.media[0],
+      wrapper_class: 'aspect-square bg-white',
+      image_class: 'w-full h-full object-cover'
+    %}
   {% endif %}
-  <form 
-    class="product-details" 
-    x-data="product"
-    method="post" 
-    action="/cart/add"
-    @submit.prevent="$store.cart.addToCart($event, quantity)"
-    id="product-form-{{ product.id }}"
-    accept-charset="UTF-8"
-    enctype="multipart/form-data"
-  >
-    <input type="hidden" name="form_type" value="product">
-    <input type="hidden" name="utf8" value="✓">
-    
-    <input 
-      type="hidden" 
-      name="id" 
-      value="{{ product.selected_or_first_available_variant.id }}"
-      data-variant-id
-    >
-    
-    {% for block in section.blocks %}
-      {% case block.type %}
-        {% when '@app' %}
-          {% render block %}
-        {% when 'product-title' %}
-          {% render 'animated-heading', class: 'mb-2 h2', title: product.title %}
-        {% when 'product-price' %}
-          {% render 'price', product: product, show_compare_at_price: true %}
-        {% when 'product-description' %}
-          <div class="my-8">
-            <div
-              class="product-description relative"
-              :style="{ height: descriptionOpen ? $el.scrollHeight + 'px' : '90px' }"
-              :class="descriptionOpen && 'product-description-open'"
-            >
-              {{ product.description }}
-            </div>
-            <button class="underline font-semibold" @click.prevent="descriptionOpen = !descriptionOpen" x-text="descriptionOpen ? 'Less' : 'More'"></button>
-          </div>
-        {% when 'accordion' %}
-          {% if product.metafields.product.accordion %}
-            {% render 'product-accordion', product: product %}
-          {% endif %}
-        {% when 'buy-buttons' %}
-          {% if product.is_sold_out %}
-            <button class="btn btn--white">Sold out</button>
-          {% else %}
-            {% render 'buy-buttons', product: product, selectedVariant: product.selected_or_first_available_variant %}
-          {% endif %}
-        {% when 'variant-picker' %}
-          {% unless product.has_only_default_variant %}
-            <select 
-              class="my-2"
-              @change="handleVariantChange($event)"
-              data-product-select
-              id="ProductSelect-{{ section.id }}"
-            >
-              {% for variant in product.variants %}
-                <option 
-                  value="{{ variant.id }}"
-                  {% if variant.id == product.selected_or_first_available_variant.id %}selected="selected"{% endif %}
+  <div class="product-details">
+    <div class="max-w-xl mx-auto">
+      <form
+        class="product-details space-y-5"
+        x-data="product"
+        method="post"
+        action="/cart/add"
+        @submit.prevent="$store.cart.addToCart($event, quantity)"
+        id="product-form-{{ product.id }}"
+        accept-charset="UTF-8"
+        enctype="multipart/form-data"
+      >
+        <input type="hidden" name="form_type" value="product">
+        <input type="hidden" name="utf8" value="✓">
+
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+          data-variant-id
+        >
+
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when '@app' %}
+              {% render block %}
+            {% when 'product-title' %}
+              {% render 'animated-heading', class: 'mb-2 h2', title: product.title %}
+            {% when 'product-price' %}
+              {% render 'price', product: product, use_variant: true, show_compare_at_price: true %}
+            {% when 'product-description' %}
+              <div class="my-8">
+                <div
+                  class="product-description relative"
+                  :style="{ height: descriptionOpen ? $el.scrollHeight + 'px' : '90px' }"
+                  :class="descriptionOpen && 'product-description-open'"
                 >
-                  {{ variant.title }}
-                </option>
-              {% endfor %}
-            </select>
-          {% endunless %}
-        {% when 'wholesale-volume-pricing' %}
-          {% if product.quantity_price_breaks_configured? %}
-            <div class="wholesale-volume-pricing">
-              <h3>{{ block.settings.title }}</h3>
-              <p>{{ block.settings.description }}</p>
-            </div>
-          {% endif %}
-      {% endcase %}
-    {% endfor %}
-  </form>
+                  {{ product.description }}
+                </div>
+                <button
+                  class="underline font-semibold"
+                  @click.prevent="descriptionOpen = !descriptionOpen"
+                  x-text="descriptionOpen ? 'Less' : 'More'"
+                ></button>
+              </div>
+            {% when 'accordion' %}
+              {% if product.metafields.product.accordion %}
+                {% render 'product-accordion', product: product %}
+              {% endif %}
+            {% when 'buy-buttons' %}
+              {% if product.is_sold_out %}
+                <button class="btn btn--white">Sold out</button>
+              {% else %}
+                {% render 'buy-buttons',
+                  product: product,
+                  selectedVariant: product.selected_or_first_available_variant
+                %}
+              {% endif %}
+            {% when 'variant-picker' %}
+              {% render 'variant-picker-pills', product: product, section: section %}
+            {% when 'wholesale-volume-pricing' %}
+              {% if product.quantity_price_breaks_configured? %}
+                <div class="wholesale-volume-pricing">
+                  <h3>{{ block.settings.title }}</h3>
+                  <p>{{ block.settings.description }}</p>
+                </div>
+              {% endif %}
+          {% endcase %}
+        {% endfor %}
+      </form>
+    </div>
+  </div>
 </div>
 
 {%- liquid
@@ -104,9 +103,7 @@
     "templates": ["page", "collection", "list-collections", "index"],
     "groups": ["header", "footer"]
   },
-  "settings": [
-    
-  ],
+  "settings": [],
   "blocks": [
     {
       "type": "product-title",
@@ -159,6 +156,10 @@
       "type": "quantity-selector",
       "name": "Quantity Selector",
       "limit": 1
+    },
+    {
+      "type": "liquid",
+      "name": "Liquid"
     },
     {
       "type": "@app"
