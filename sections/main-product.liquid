@@ -1,13 +1,79 @@
 <div class="wrapper grid items-start gap-6 md:grid-cols-2">
-  {% if product.media.size > 1 %}
-    {% render 'product-gallery', product: product %}
-  {% elsif product.media.size == 1 %}
-    {% render 'responsive-image',
-      image: product.media[0],
-      wrapper_class: 'aspect-square bg-white',
-      image_class: 'w-full h-full object-cover'
-    %}
-  {% endif %}
+  <div data-product-gallery-container>
+    {%- liquid
+      assign selected_variant = product.selected_or_first_available_variant
+      assign filtered_media_count = 0
+
+      if product.variants.size > 1
+        assign variant_title = selected_variant.title | handleize
+      endif
+
+      for media in product.media
+        assign should_include = false
+
+        if product.variants.size == 1
+          assign should_include = true
+        else
+          if media.alt contains '_'
+            assign split_alt = media.alt | split: ' '
+            for word in split_alt
+              if word contains '_'
+                assign split_word = word | split: '_'
+                assign image_variant = split_word.last | handleize
+                if variant_title == image_variant
+                  assign should_include = true
+                  break
+                endif
+              endif
+            endfor
+          else
+            assign should_include = true
+          endif
+        endif
+
+        if should_include
+          assign filtered_media_count = filtered_media_count | plus: 1
+        endif
+      endfor
+    -%}
+    {% if filtered_media_count > 1 %}
+      {% render 'product-gallery', product: product %}
+    {% elsif filtered_media_count == 1 %}
+      {%- for media in product.media -%}
+        {%- liquid
+          assign should_include = false
+
+          if product.variants.size == 1
+            assign should_include = true
+          else
+            if media.alt contains '_'
+              assign split_alt = media.alt | split: ' '
+              for word in split_alt
+                if word contains '_'
+                  assign split_word = word | split: '_'
+                  assign image_variant = split_word.last | handleize
+                  if variant_title == image_variant
+                    assign should_include = true
+                    break
+                  endif
+                endif
+              endfor
+            else
+              assign should_include = true
+            endif
+          endif
+        -%}
+        {%- if should_include -%}
+          {% render 'responsive-image',
+            image: media,
+            wrapper_class: 'aspect-square bg-white',
+            image_class: 'w-full h-full object-cover'
+          %}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {% endif %}
+  </div>
   <div class="product-details">
     <div class="max-w-xl mx-auto">
       <form
@@ -50,12 +116,21 @@
                 <button
                   class="underline font-semibold"
                   @click.prevent="descriptionOpen = !descriptionOpen"
-                  x-text="descriptionOpen ? 'Less' : 'More'"
+                  x-text="descriptionOpen ? 'Read Less' : 'Read More'"
                 ></button>
               </div>
             {% when 'accordion' %}
               {% if product.metafields.product.accordion %}
                 {% render 'product-accordion', product: product %}
+              {% endif %}
+            {% when 'tag' %}
+              {% if block.settings.liquid %}
+                <div
+                  class="inline-block py-2 px-3 bg-black/10 text-black rounded-full text-sm font-medium tracking-wide uppercase"
+                  data-product-tag-container
+                >
+                  {{ block.settings.liquid }}
+                </div>
               {% endif %}
             {% when 'buy-buttons' %}
               {% if product.is_sold_out %}

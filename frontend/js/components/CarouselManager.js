@@ -33,6 +33,11 @@ export class CarouselManager extends Base {
     this.initFeaturedPostsSwiper();
     this.initTextAndImageSwiper();
     this.initProductGallerySwiper();
+    
+    // Listen for product gallery updates (when variant changes)
+    window.addEventListener('product-gallery-updated', () => {
+      this.reinitProductGallerySwiper();
+    });
   }
 
   initFeaturedPostsSwiper() {
@@ -71,6 +76,20 @@ export class CarouselManager extends Base {
   }
 
   initProductGallerySwiper() {
+    this.reinitProductGallerySwiper();
+  }
+
+  reinitProductGallerySwiper() {
+    // Destroy existing swipers if they exist
+    if (this.swipers.has("product-gallery")) {
+      this.swipers.get("product-gallery").destroy(true, true);
+      this.swipers.delete("product-gallery");
+    }
+    if (this.swipers.has("product-gallery-thumbs")) {
+      this.swipers.get("product-gallery-thumbs").destroy(true, true);
+      this.swipers.delete("product-gallery-thumbs");
+    }
+
     const swiper = document.querySelector(".product-gallery-swiper");
     const thumbsSwiper = document.querySelector(".product-gallery-thumbs");
 

@@ -275,120 +275,108 @@ export default async function Product() {
       },
 
       async updatePrice(variantId) {
-        if (!variantId) {
-          console.log("updatePrice: No variantId provided");
-          return;
-        }
+        if (!variantId) return;
 
         // Build URL with variant parameter
         const url = new URL(window.location.href);
         url.searchParams.set("variant", variantId);
 
         try {
-          // Fetch updated form HTML
           const response = await fetch(url.toString());
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
 
           const html = await response.text();
-
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, "text/html");
 
-          // Try to find the price container - it's inside the form with class "product-details"
-          const form = doc.querySelector("form.product-details");
-
-          let priceContainer = null;
-
-          if (form) {
-            // Look for js-price-container inside the form
-            priceContainer = form.querySelector(".js-price-container");
-
-            if (!priceContainer) {
-              // Try to find any element with js-price-container in its class
-              const allElements = form.querySelectorAll("*");
-              for (let el of allElements) {
-                if (
-                  el.className &&
-                  el.className.includes("js-price-container")
-                ) {
-                  priceContainer = el;
-                  break;
-                }
-              }
-            }
-          }
-
-          // Fallback: search entire document
-          if (!priceContainer) {
-            priceContainer = doc.querySelector(".js-price-container");
-            console.log(
-              "Found .js-price-container in document:",
-              !!priceContainer
-            );
-          }
-
-          if (priceContainer) {
-            // Try multiple selectors to find the existing container
-            // First try standard querySelector
-            let existingContainer = document.querySelector(
-              ".js-price-container"
-            );
-
-            // If not found, search all elements for one containing js-price-container in className
-            if (!existingContainer) {
-              const allElements = document.querySelectorAll("*");
-              for (let el of allElements) {
-                // Check if className string includes the class (handles concatenated classes)
-                if (
-                  el.className &&
-                  typeof el.className === "string" &&
-                  el.className.includes("js-price-container")
-                ) {
-                  existingContainer = el;
-
-                  break;
-                }
-                // Also try classList (handles space-separated classes)
-                else if (
-                  el.classList &&
-                  el.classList.contains("js-price-container")
-                ) {
-                  existingContainer = el;
-                  break;
+          // Helper function to find and replace an element
+          const findAndReplace = (selector, dataAttribute) => {
+            // Find in fetched HTML
+            let newElement = null;
+            if (dataAttribute) {
+              newElement = doc.querySelector(`[${dataAttribute}]`);
+            } else if (selector.startsWith(".")) {
+              newElement = doc.querySelector(selector);
+              // Fallback: search by className includes
+              if (!newElement) {
+                const className = selector.slice(1);
+                const allElements = doc.querySelectorAll("*");
+                for (let el of allElements) {
+                  if (
+                    el.className &&
+                    typeof el.className === "string" &&
+                    el.className.includes(className)
+                  ) {
+                    newElement = el;
+                    break;
+                  }
                 }
               }
             } else {
-              console.log("Found existing container via querySelector");
+              newElement = doc.querySelector(selector);
             }
 
-            if (existingContainer) {
-              // Clone the node to avoid any issues with the document fragment
-              const cloned = priceContainer.cloneNode(true);
-              existingContainer.replaceWith(cloned);
+            if (!newElement) return false;
+
+            // Find existing element in current DOM
+            let existingElement = null;
+            if (dataAttribute) {
+              existingElement = document.querySelector(`[${dataAttribute}]`);
+            } else if (selector.startsWith(".")) {
+              existingElement = document.querySelector(selector);
+              // Fallback: search by className includes
+              if (!existingElement) {
+                const className = selector.slice(1);
+                const allElements = document.querySelectorAll("*");
+                for (let el of allElements) {
+                  if (
+                    el.className &&
+                    typeof el.className === "string" &&
+                    el.className.includes(className)
+                  ) {
+                    existingElement = el;
+                    break;
+                  } else if (el.classList && el.classList.contains(className)) {
+                    existingElement = el;
+                    break;
+                  }
+                }
+              }
             } else {
-              console.log("Price container not found in current DOM");
-              console.log(
-                "Available price-related elements:",
-                document.querySelectorAll('[class*="price"]')
-              );
+              existingElement = document.querySelector(selector);
             }
-          } else {
-            console.log("Price container not found in fetched HTML");
-            // Debug: show what we can find
-            const forms = doc.querySelectorAll("form");
-            console.log("Forms found:", forms.length);
-            if (forms.length > 0) {
-              const firstForm = forms[0];
-              console.log(
-                "First form HTML:",
-                firstForm.innerHTML.substring(0, 500)
-              );
+
+            if (existingElement && newElement) {
+              const cloned = newElement.cloneNode(true);
+              existingElement.replaceWith(cloned);
+              return true;
             }
+            return false;
+          };
+
+          // Update price container
+          findAndReplace(".js-price-container");
+
+          // Update gallery container (images)
+          const galleryReplaced = findAndReplace(
+            null,
+            "data-product-gallery-container"
+          );
+
+          // Update tag container
+          findAndReplace(null, "data-product-tag-container");
+
+          // If gallery was replaced, dispatch event to reinitialize swiper
+          if (galleryReplaced) {
+            // Use setTimeout to ensure DOM is fully updated before reinitializing
+            setTimeout(() => {
+              window.dispatchEvent(new CustomEvent("product-gallery-updated"));
+            }, 100);
           }
         } catch (error) {
-          console.error("Error updating price:", error);
+          console.error("Error updating variant content:", error);
         }
       },
     };

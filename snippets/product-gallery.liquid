@@ -1,3 +1,22 @@
+{% comment %}
+  Filters product media based on variant selection.
+  Images with alt text containing '_variantname' will only show for that variant.
+  Images without variant tags will show for all variants.
+{% endcomment %}
+
+{%- liquid
+  assign selected_variant = product.selected_or_first_available_variant
+  assign variant_featured_media = null
+
+  if product.variants.size > 1
+    assign variant_title = selected_variant.title | handleize
+  endif
+
+  if selected_variant.featured_media != null
+    assign variant_featured_media = selected_variant.featured_media
+  endif
+-%}
+
 <div class="overflow-hidden md:sticky top-20">
   <div class="relative pb-20 lg:pl-20 gap-4">
     <div
@@ -5,9 +24,78 @@
       style="margin: 0;"
     >
       <div class="swiper-wrapper">
-        {% for image in product.media %}
-          {% render 'responsive-image', image: image, wrapper_class: 'swiper-slide w-full h-full relative aspect-square bg-primary', image_class: 'w-full object-cover absolute' %}
-        {% endfor %}
+        {%- comment -%} Render variant featured media first if it exists and passes filter {%- endcomment -%}
+        {%- if variant_featured_media != null -%}
+          {%- liquid
+            assign should_include = false
+
+            if product.variants.size == 1
+              assign should_include = true
+            else
+              if variant_featured_media.alt contains '_'
+                assign split_alt = variant_featured_media.alt | split: ' '
+                for word in split_alt
+                  if word contains '_'
+                    assign split_word = word | split: '_'
+                    assign image_variant = split_word.last | handleize
+                    if variant_title == image_variant
+                      assign should_include = true
+                      break
+                    endif
+                  endif
+                endfor
+              else
+                assign should_include = true
+              endif
+            endif
+          -%}
+          {%- if should_include -%}
+            {% render 'responsive-image',
+              image: variant_featured_media,
+              wrapper_class: 'swiper-slide w-full h-full relative aspect-square bg-primary',
+              image_class: 'w-full object-cover absolute'
+            %}
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- comment -%} Render all other filtered media, excluding the featured media if already shown {%- endcomment -%}
+        {%- for media in product.media -%}
+          {%- liquid
+            assign should_include = false
+            assign is_featured_media = false
+
+            if variant_featured_media != null and media.id == variant_featured_media.id
+              assign is_featured_media = true
+            endif
+
+            if product.variants.size == 1
+              assign should_include = true
+            else
+              if media.alt contains '_'
+                assign split_alt = media.alt | split: ' '
+                for word in split_alt
+                  if word contains '_'
+                    assign split_word = word | split: '_'
+                    assign image_variant = split_word.last | handleize
+                    if variant_title == image_variant
+                      assign should_include = true
+                      break
+                    endif
+                  endif
+                endfor
+              else
+                assign should_include = true
+              endif
+            endif
+          -%}
+          {%- if should_include and is_featured_media == false -%}
+            {% render 'responsive-image',
+              image: media,
+              wrapper_class: 'swiper-slide w-full h-full relative aspect-square bg-primary',
+              image_class: 'w-full object-cover absolute'
+            %}
+          {%- endif -%}
+        {%- endfor -%}
         <div class="z-10 bg-black absolute bottom-4 right-4 mix-blend-difference flex gap-2 justify-center">
           <button
             class="product-gallery-swiper-button-prev w-12 h-12 hover:opacity-100 duration-500 border border-white rounded-full flex items-center justify-center"
@@ -31,9 +119,78 @@
       class="product-gallery-thumbs z-10 absolute bottom-0 lg:bottom-auto lg:top-0 left-0 w-full lg:w-16"
     >
       <div class="swiper-wrapper">
-        {% for image in product.media %}
-          {% render 'responsive-image', image: image, wrapper_class: 'swiper-slide !w-16 !h-16 relative aspect-square rounded-xl overflow-hidden', image_class: 'w-16 h-16 object-cover absolute' %}
-        {% endfor %}
+        {%- comment -%} Render variant featured media first in thumbs if it exists and passes filter {%- endcomment -%}
+        {%- if variant_featured_media != null -%}
+          {%- liquid
+            assign should_include = false
+
+            if product.variants.size == 1
+              assign should_include = true
+            else
+              if variant_featured_media.alt contains '_'
+                assign split_alt = variant_featured_media.alt | split: ' '
+                for word in split_alt
+                  if word contains '_'
+                    assign split_word = word | split: '_'
+                    assign image_variant = split_word.last | handleize
+                    if variant_title == image_variant
+                      assign should_include = true
+                      break
+                    endif
+                  endif
+                endfor
+              else
+                assign should_include = true
+              endif
+            endif
+          -%}
+          {%- if should_include -%}
+            {% render 'responsive-image',
+              image: variant_featured_media,
+              wrapper_class: 'swiper-slide !w-16 !h-16 relative aspect-square rounded-xl overflow-hidden',
+              image_class: 'w-16 h-16 object-cover absolute'
+            %}
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- comment -%} Render all other filtered media in thumbs, excluding the featured media if already shown {%- endcomment -%}
+        {%- for media in product.media -%}
+          {%- liquid
+            assign should_include = false
+            assign is_featured_media = false
+
+            if variant_featured_media != null and media.id == variant_featured_media.id
+              assign is_featured_media = true
+            endif
+
+            if product.variants.size == 1
+              assign should_include = true
+            else
+              if media.alt contains '_'
+                assign split_alt = media.alt | split: ' '
+                for word in split_alt
+                  if word contains '_'
+                    assign split_word = word | split: '_'
+                    assign image_variant = split_word.last | handleize
+                    if variant_title == image_variant
+                      assign should_include = true
+                      break
+                    endif
+                  endif
+                endfor
+              else
+                assign should_include = true
+              endif
+            endif
+          -%}
+          {%- if should_include and is_featured_media == false -%}
+            {% render 'responsive-image',
+              image: media,
+              wrapper_class: 'swiper-slide !w-16 !h-16 relative aspect-square rounded-xl overflow-hidden',
+              image_class: 'w-16 h-16 object-cover absolute'
+            %}
+          {%- endif -%}
+        {%- endfor -%}
       </div>
     </div>
   </div>
