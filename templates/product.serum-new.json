@@ -20,6 +20,10 @@
           "type": "product-price",
           "settings": {}
         },
+        "liquid_eaFyJD": {
+          "type": "liquid",
+          "settings": {}
+        },
         "product_description_xK3MCg": {
           "type": "product-description",
           "settings": {}
@@ -55,6 +59,7 @@
       "block_order": [
         "product_title_Fqeap7",
         "product_price_JDACKF",
+        "liquid_eaFyJD",
         "product_description_xK3MCg",
         "wholesale_volume_pricing_hCrTQh",
         "variant_picker_cF46kp",
