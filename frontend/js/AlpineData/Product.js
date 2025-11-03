@@ -159,7 +159,6 @@ export default async function Product() {
         // Convert to string for consistent key lookup
         const position = String(optionPosition);
         if (!this.isAvailable(position, value)) {
-          console.log("Option not available:", position, value);
           return;
         }
 
@@ -240,11 +239,7 @@ export default async function Product() {
             );
             if (formInput) {
               formInput.value = variant.id;
-            } else {
-              console.log("Form input not found");
             }
-          } else {
-            console.log("Form not found");
           }
 
           // Update the selected variant ID - this will trigger the watcher
@@ -256,8 +251,6 @@ export default async function Product() {
             variant: variant,
             variantId: variant.id,
           });
-        } else {
-          console.log("Variant not found or not available:", variant);
         }
       },
 
@@ -277,7 +270,11 @@ export default async function Product() {
       async updatePrice(variantId) {
         if (!variantId) return;
 
-        // Build URL with variant parameter
+        // Find the variant data
+        const variant = this.variants.find((v) => v.id === variantId);
+        if (!variant) return;
+
+        // Try to update price via fetch (works on product pages)
         const url = new URL(window.location.href);
         url.searchParams.set("variant", variantId);
 
@@ -357,7 +354,7 @@ export default async function Product() {
           };
 
           // Update price container
-          findAndReplace(".js-price-container");
+          const priceReplaced = findAndReplace(".js-price-container");
 
           // Update gallery container (images)
           const galleryReplaced = findAndReplace(
@@ -375,8 +372,87 @@ export default async function Product() {
               window.dispatchEvent(new CustomEvent("product-gallery-updated"));
             }, 100);
           }
+
+          // Always check for drawer price container and update manually if it exists
+          // This ensures the drawer price updates regardless of fetch result
+          const drawerContainer = this.$el?.closest('[role="dialog"]');
+          const priceContainer = drawerContainer?.querySelector(".quick-buy-price.js-price-container");
+          
+          if (priceContainer && variant) {
+            this.updatePriceManually(variant, priceContainer);
+          }
         } catch (error) {
-          console.error("Error updating variant content:", error);
+          // Fallback: Update price manually using variant data (for drawers, etc.)
+          const drawerContainer = this.$el?.closest('[role="dialog"]');
+          const priceContainer = drawerContainer?.querySelector(".quick-buy-price.js-price-container");
+          
+          if (priceContainer && variant) {
+            this.updatePriceManually(variant, priceContainer);
+          }
+        }
+      },
+
+      updatePriceManually(variant, container) {
+        try {
+          // Format money function (simplified - matches Shopify's money format)
+          const formatMoney = (cents) => {
+            return (cents / 100).toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            });
+          };
+
+          const price = variant.price;
+          const compareAtPrice = variant.compare_at_price;
+          const isOnSale = compareAtPrice && compareAtPrice > price;
+
+          // Find all price divs within container
+          // The price container has class "flex flex-wrap items-center text-2xl"
+          const priceWrapper = container.querySelector(".flex.flex-wrap.items-center");
+          
+          if (!priceWrapper) return;
+          
+          const allPriceDivs = Array.from(priceWrapper.children).filter(el => el.tagName === 'DIV');
+          
+          if (allPriceDivs.length === 0) return;
+
+          // The structure has two divs:
+          // 1. Regular price (hidden when on sale)
+          // 2. Sale price (hidden when not on sale)
+          const regularPriceDiv = allPriceDivs[0];
+          const salePriceDiv = allPriceDivs[1];
+
+          if (isOnSale && salePriceDiv) {
+            // Show sale price div
+            salePriceDiv.classList.remove("hidden");
+            regularPriceDiv?.classList.add("hidden");
+
+            // Update sale price
+            const salePriceSpan = salePriceDiv.querySelector("span.font-medium.text-red-600");
+            if (salePriceSpan) {
+              salePriceSpan.textContent = formatMoney(price);
+            }
+
+            // Update compare at price (strikethrough)
+            const compareSpan = salePriceDiv.querySelector("span > s");
+            if (compareSpan) {
+              compareSpan.textContent = formatMoney(compareAtPrice);
+            }
+          } else if (regularPriceDiv) {
+            // Show regular price div
+            regularPriceDiv.classList.remove("hidden");
+            salePriceDiv?.classList.add("hidden");
+
+            // Update regular price
+            const regularPriceSpan = regularPriceDiv.querySelector("span.font-medium");
+            if (regularPriceSpan) {
+              regularPriceSpan.textContent = formatMoney(price);
+            }
+          }
+        } catch (error) {
+          console.error("Error in updatePriceManually:", error);
         }
       },
     };

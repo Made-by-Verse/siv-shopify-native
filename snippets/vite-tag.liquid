@@ -4,8 +4,8 @@
 {% endcomment %}
 {% assign path = vite-tag | replace: '~/', '../' | replace: '@/', '../' %}
 {% if path == "/frontend/entrypoints/theme.js" or path == "theme.js" %}
-  <script src="{{ 'theme-BPjF29ON.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script src="{{ 'theme-DjJ4UjFz.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
   {{ 'theme-BoT5bu9a.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% elsif path == "/frontend/entrypoints/theme.scss" or path == "theme.scss" %}
-  {{ 'theme-C2NEOqoC.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
+  {{ 'theme-CEu4q4cs.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% endif %}

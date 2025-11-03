@@ -1,46 +1,15 @@
-<div class="wrapper grid items-start gap-6 md:grid-cols-2">
-  <div data-product-gallery-container>
-    {%- liquid
-      assign selected_variant = product.selected_or_first_available_variant
-      assign filtered_media_count = 0
+<div class="wrapper grid gap-6 md:grid-cols-2">
+  <div>
+    <div data-product-gallery-container class="sticky top-32">
+      {%- liquid
+        assign selected_variant = product.selected_or_first_available_variant
+        assign filtered_media_count = 0
 
-      if product.variants.size > 1
-        assign variant_title = selected_variant.title | handleize
-      endif
-
-      for media in product.media
-        assign should_include = false
-
-        if product.variants.size == 1
-          assign should_include = true
-        else
-          if media.alt contains '_'
-            assign split_alt = media.alt | split: ' '
-            for word in split_alt
-              if word contains '_'
-                assign split_word = word | split: '_'
-                assign image_variant = split_word.last | handleize
-                if variant_title == image_variant
-                  assign should_include = true
-                  break
-                endif
-              endif
-            endfor
-          else
-            assign should_include = true
-          endif
+        if product.variants.size > 1
+          assign variant_title = selected_variant.title | handleize
         endif
 
-        if should_include
-          assign filtered_media_count = filtered_media_count | plus: 1
-        endif
-      endfor
-    -%}
-    {% if filtered_media_count > 1 %}
-      {% render 'product-gallery', product: product %}
-    {% elsif filtered_media_count == 1 %}
-      {%- for media in product.media -%}
-        {%- liquid
+        for media in product.media
           assign should_include = false
 
           if product.variants.size == 1
@@ -62,17 +31,50 @@
               assign should_include = true
             endif
           endif
-        -%}
-        {%- if should_include -%}
-          {% render 'responsive-image',
-            image: media,
-            wrapper_class: 'aspect-square bg-white',
-            image_class: 'w-full h-full object-cover'
-          %}
-          {%- break -%}
-        {%- endif -%}
-      {%- endfor -%}
-    {% endif %}
+
+          if should_include
+            assign filtered_media_count = filtered_media_count | plus: 1
+          endif
+        endfor
+      -%}
+      {% if filtered_media_count > 1 %}
+        {% render 'product-gallery', product: product %}
+      {% elsif filtered_media_count == 1 %}
+        {%- for media in product.media -%}
+          {%- liquid
+            assign should_include = false
+
+            if product.variants.size == 1
+              assign should_include = true
+            else
+              if media.alt contains '_'
+                assign split_alt = media.alt | split: ' '
+                for word in split_alt
+                  if word contains '_'
+                    assign split_word = word | split: '_'
+                    assign image_variant = split_word.last | handleize
+                    if variant_title == image_variant
+                      assign should_include = true
+                      break
+                    endif
+                  endif
+                endfor
+              else
+                assign should_include = true
+              endif
+            endif
+          -%}
+          {%- if should_include -%}
+            {% render 'responsive-image',
+              image: media,
+              wrapper_class: 'aspect-square bg-white',
+              image_class: 'w-full h-full object-cover'
+            %}
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {% endif %}
+    </div>
   </div>
   <div class="product-details">
     <div class="max-w-xl mx-auto">

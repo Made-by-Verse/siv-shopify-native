@@ -73,25 +73,25 @@
         "point_1": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/step-1.gif",
-            "heading": "Supports balance",
-            "text": "Promotes a harmonious skin environment for improved texture and tone"
+            "image": "shopify://shop_images/topical-spore-treatment.png",
+            "heading": "Topical spore treatment",
+            "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
           }
         },
         "point_2": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/step-2.jpg",
-            "heading": "Delivers vibrance",
-            "text": "Enhances your skin's natural radiance by suporting a healthing microbiome"
+            "image": "shopify://shop_images/skin-identical.png",
+            "heading": "Skin Identical",
+            "text": "Lightweight & stabilizing formula containing physiologically identical ingredients that your skin recognizes."
           }
         },
         "point_3": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/step-3.jpg",
-            "heading": "Builds resilience",
-            "text": "Strengthens your skin's defenses agains environmental stressors and aging"
+            "image": "shopify://shop_images/face-base.png",
+            "heading": "Your Face Is Your Base",
+            "text": "Set your unique canvas by applying 2-5 drops of our Biome-Balancing Serum after toner and before moisturizer."
           }
         }
       },
@@ -105,33 +105,41 @@
         "description": ""
       }
     },
-    "section_featured_product_rERe4R": {
+    "section_featured_product_serum": {
       "type": "section-featured-product",
       "blocks": {
-        "feature_point_iCLHte": {
+        "feature_point_1": {
           "type": "feature_point",
           "settings": {
-            "heading": "15mL = 1 Month Supply",
-            "text": "Perfect for travel or first-time users"
+            "heading": "Supports Balance",
+            "text": "Promotes a harmonious skin environment for improved texture and tone."
           }
         },
-        "feature_point_RnUdBP": {
+        "feature_point_2": {
           "type": "feature_point",
           "settings": {
-            "heading": "30mL = 2 Month Supply",
-            "text": "Ideal for daily use, offering better value and convenience"
+            "heading": "Delivers Vibrance",
+            "text": "Enhances your skin’s natural radiance by supporting a healthy microbiome."
+          }
+        },
+        "feature_point_3": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Builds Resilience",
+            "text": "Strengthens your skin’s defenses against environmental stressors and aging."
           }
         }
       },
       "block_order": [
-        "feature_point_iCLHte",
-        "feature_point_RnUdBP"
+        "feature_point_1",
+        "feature_point_2",
+        "feature_point_3"
       ],
-      "name": "Featured Product",
       "settings": {
-        "heading": "",
-        "product": "siv-biome-balancing-serum",
-        "button_text": ""
+        "heading": "The Essential Serum for Healthy Skin",
+        "product": "siv-biome-balancing-serum-new",
+        "button_text": "",
+        "description": "<p><b>15mL = 1 Month Supply</b><br>Perfect for travel or first-time users. </p><p><b>30mL = 2 Month Supply</b><br>Ideal for daily use, offering better value and convenience.</p><p>Before use, shake vigorously. Apply 1–3 drops once daily. Pat into dry or damp skin. Apply after cleansing or toning.  </p>"
       }
     },
     "testimonies": {
@@ -275,8 +283,8 @@
   },
   "order": [
     "main",
+    "section_featured_product_serum",
     "key_points",
-    "section_featured_product_rERe4R",
     "testimonies",
     "section_ingredients_YHnn8T"
   ]
