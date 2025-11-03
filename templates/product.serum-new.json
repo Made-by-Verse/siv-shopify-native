@@ -12,15 +12,15 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "product_title_Fqeap7": {
-          "type": "product-title",
-          "settings": {}
-        },
         "liquid_eaFyJD": {
           "type": "tag",
           "settings": {
             "liquid": "{% for variant in product.variants %}{% if variant.id == product.selected_or_first_available_variant.id %}{{ variant.metafields.descriptors.subtitle }}{% endif %}{% endfor %}"
           }
+        },
+        "product_title_Fqeap7": {
+          "type": "product-title",
+          "settings": {}
         },
         "product_description_xK3MCg": {
           "type": "product-description",
@@ -194,11 +194,60 @@
       "settings": {
         "heading": "Real consumer tested results"
       }
+    },
+    "section_ingredients_YHnn8T": {
+      "type": "section-ingredients",
+      "blocks": {
+        "ingredient_nxFM9w": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_982436196.jpg",
+            "heading": "Squalane",
+            "text": "<p>Biomimetic oil, molecule derived from non-GMO sugarcane that mimics squalene, beneficial in promoting skin hydration</p>"
+          }
+        },
+        "ingredient_LtnqRH": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_1461017641.jpg",
+            "heading": "Caprylic/Capric Triglyceride",
+            "text": "<p>A mixture of caprylic and capric fatty acids derived from palm oil; help replenish skin’s surface and help it to resist moisture loss</p>"
+          }
+        },
+        "ingredient_W7khTy": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_1179927923.jpg",
+            "heading": "Glyceryl Caprylate",
+            "text": "<p>A natural, plant-based, emollient derived from glycerin and plant fatty acids; restores the oils of the skin, regulates the skin moisture and acts as a humidifier to the skin</p>"
+          }
+        },
+        "ingredient_iUixDC": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_1477484315.jpg",
+            "heading": "Bacillus",
+            "text": "<p>A proprietary blend of Bacillus spores support a healthy skin foundation and visibly improves skin. Positively influencing your unique skin biome and establishing balance. The spores can help improve the skin microbiome by targeting overgrown bacteria, while facilitating the growth of other essential species- effectively balancing the skin microbiome.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_nxFM9w",
+        "ingredient_LtnqRH",
+        "ingredient_W7khTy",
+        "ingredient_iUixDC"
+      ],
+      "name": "Ingredients",
+      "settings": {
+        "heading": "Ingredients",
+        "description": ""
+      }
     }
   },
   "order": [
     "main",
     "key_points",
-    "testimonies"
+    "testimonies",
+    "section_ingredients_YHnn8T"
   ]
 }
