@@ -74,24 +74,24 @@
           "type": "point",
           "settings": {
             "image": "shopify://shop_images/step-1.gif",
-            "heading": "Step 1",
-            "text": "Before use, shake the dropper vigorously, until the bottom of the dropper is clear, to disperse Bacillus spores throughout the serum."
+            "heading": "Supports balance",
+            "text": "Promotes a harmonious skin environment for improved texture and tone"
           }
         },
         "point_2": {
           "type": "point",
           "settings": {
             "image": "shopify://shop_images/step-2.jpg",
-            "heading": "Step 2",
-            "text": "Apply 2-5 drops to hands first or directly to area, once daily, and gently massage and then pat into skin. Can be used on damp or dry skin."
+            "heading": "Delivers vibrance",
+            "text": "Enhances your skin's natural radiance by suporting a healthing microbiome"
           }
         },
         "point_3": {
           "type": "point",
           "settings": {
             "image": "shopify://shop_images/step-3.jpg",
-            "heading": "Step 3",
-            "text": "For optimal results: apply after toner and before moisturizer."
+            "heading": "Builds resilience",
+            "text": "Strengthens your skin's defenses agains environmental stressors and aging"
           }
         }
       },
@@ -103,6 +103,35 @@
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
+      }
+    },
+    "section_featured_product_rERe4R": {
+      "type": "section-featured-product",
+      "blocks": {
+        "feature_point_iCLHte": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "15mL = 1 Month Supply",
+            "text": "Perfect for travel or first-time users"
+          }
+        },
+        "feature_point_RnUdBP": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "30mL = 2 Month Supply",
+            "text": "Ideal for daily use, offering better value and convenience"
+          }
+        }
+      },
+      "block_order": [
+        "feature_point_iCLHte",
+        "feature_point_RnUdBP"
+      ],
+      "name": "Featured Product",
+      "settings": {
+        "heading": "",
+        "product": "siv-biome-balancing-serum",
+        "button_text": ""
       }
     },
     "testimonies": {
@@ -247,6 +276,7 @@
   "order": [
     "main",
     "key_points",
+    "section_featured_product_rERe4R",
     "testimonies",
     "section_ingredients_YHnn8T"
   ]
