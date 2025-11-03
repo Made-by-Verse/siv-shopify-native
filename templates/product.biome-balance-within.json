@@ -281,6 +281,24 @@
         "padding_top": "none",
         "padding_bottom": "none"
       }
+    },
+    "section_related_products": {
+      "type": "section-related-products",
+      "blocks": {
+        "product_serum_new": {
+          "type": "product",
+          "settings": {
+            "product": "siv-biome-balancing-serum-new"
+          }
+        }
+      },
+      "block_order": [
+        "product_serum_new"
+      ],
+      "settings": {
+        "heading": "Related Products",
+        "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>"
+      }
     }
   },
   "order": [
@@ -291,6 +309,7 @@
     "ingredients",
     "section_text_and_image_Xe7tqB",
     "section_accordion_hRaNKB",
-    "section_paragraph_MeRTEk"
+    "section_paragraph_MeRTEk",
+    "section_related_products"
   ]
 }

@@ -1,17 +1,27 @@
 <div class="group relative {{ class_names }}">
   <a href="{{ product.url | within: collection }}" class="block">
     {% if product.featured_image %}
-      <div class="relative aspect-landscape overflow-hidden">
-        {% render 'responsive-image', image: product.featured_image, width: 1200, height: 800, image_class: 'absolute inset-0 w-full h-full object-cover' %}
+      <div class="relative aspect-portrait overflow-hidden rounded-md">
+        {% render 'responsive-image',
+          image: product.featured_image,
+          width: 600,
+          height: 800,
+          image_class: 'absolute inset-0 w-full h-full object-cover'
+        %}
         {% if product.images[1] %}
-          {% render 'responsive-image', image: product.images[1], width: 1200, height: 800, image_class: 'absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 group-hover:opacity-100' %}
+          {% render 'responsive-image',
+            image: product.images[1],
+            width: 600,
+            height: 800,
+            image_class: 'absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 group-hover:opacity-100'
+          %}
         {% endif %}
       </div>
     {% else %}
       {{ 'product-1' | placeholder_svg_tag: 'absolute inset-0 w-full h-full object-cover bg-gray-100' }}
     {% endif %}
-    <div class="tile-text-container px-5 gap-4 flex justify-between items-center h4 uppercase">
-      <h3 class="flex-1">{{ product.title }}</h3>
+    <div class="tile-text-container gap-4 flex justify-between items-center  uppercase pt-4">
+      <span class="flex-1 !text-body font-bold">{{ product.title }}</span>
       <span class="wsgColPrice leading-none">
         {% if product.price_varies %}
           From {{ product.price_min | money_without_trailing_zeros }}

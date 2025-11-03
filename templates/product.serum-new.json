@@ -248,7 +248,7 @@
           "settings": {
             "image": "shopify://shop_images/AdobeStock_1461017641.jpg",
             "heading": "Caprylic/Capric Triglyceride",
-            "text": "<p>A mixture of caprylic and capric fatty acids derived from palm oil; help replenish skin’s surface and help it to resist moisture loss</p>"
+            "text": "<p>A mixture of caprylic and capric fatty acids derived from palm oil; help replenish skin's surface and help it to resist moisture loss</p>"
           }
         },
         "ingredient_W7khTy": {
@@ -279,6 +279,24 @@
         "heading": "Ingredients",
         "description": ""
       }
+    },
+    "section_related_products": {
+      "type": "section-related-products",
+      "blocks": {
+        "product_biome_balance": {
+          "type": "product",
+          "settings": {
+            "product": "biome-balance-within"
+          }
+        }
+      },
+      "block_order": [
+        "product_biome_balance"
+      ],
+      "settings": {
+        "heading": "Related Products",
+        "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>"
+      }
     }
   },
   "order": [
@@ -286,6 +304,7 @@
     "section_featured_product_serum",
     "key_points",
     "testimonies",
-    "section_ingredients_YHnn8T"
+    "section_ingredients_YHnn8T",
+    "section_related_products"
   ]
 }
