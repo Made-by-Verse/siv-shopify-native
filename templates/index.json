@@ -12,19 +12,19 @@
     "home_hero": {
       "type": "section-home-hero",
       "blocks": {
-        "image_NbAFjz": {
-          "type": "image",
+        "video_KEhC6n": {
+          "type": "video",
           "settings": {
-            "background_image": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.jpg"
+            "video": "shopify://files/videos/SIV_WebHeader.mp4"
           }
         }
       },
       "block_order": [
-        "image_NbAFjz"
+        "video_KEhC6n"
       ],
       "settings": {
         "hero_heading": "Harness Your Biology for Resilient Skin",
-        "hero_content": "<p><b>Discover the next generation of professional skincare with SIV.</b> Inside and out, your skin thrives on balance. Our microbiome-first system supports whole-body skin healthpowered by science, grounded in biology, and designed for results.</p>",
+        "hero_content": "<p><strong>Discover the next generation of professional skincare with SIV.</strong> Inside and out, your skin thrives on balance. Our microbiome-first system supports whole-body skin healthpowered by science, grounded in biology, and designed for results.</p>",
         "show_featured_product": true
       }
     },
@@ -105,12 +105,13 @@
     "science_cta": {
       "type": "section-cta",
       "settings": {
+        "alignment": "left",
         "image": "shopify://shop_images/siv-hero_copy.jpg",
         "title": "THE SCIENCE BEHIND SIV",
         "richText": "<p>SIV is a science-backed skincare system that harnesses the power of your skin’s microbiome to support whole-body skin health. Our products are designed to work in harmony with your unique skin biome, providing targeted solutions for a range of skin concerns.</p>",
-        "alignment": "left",
         "action_type": "button",
         "button_link": "shopify://pages/science",
+        "custom_event_trigger": "",
         "button_text": "Learn More"
       }
     },
@@ -243,11 +244,13 @@
     "section_cta": {
       "type": "section-cta",
       "settings": {
+        "alignment": "center",
         "image": "shopify://shop_images/siv-hero_copy.jpg",
         "title": "Healthier skin is a drop away",
-        "alignment": "center",
+        "richText": "",
         "action_type": "button",
         "button_link": "shopify://products/biome-balance-within",
+        "custom_event_trigger": "",
         "button_text": "View Product"
       }
     },
