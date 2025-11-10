@@ -61,7 +61,9 @@
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
         "product": "siv-biome-balancing-serum",
-        "button_text": "View Product"
+        "description": "",
+        "button_text": "View Product",
+        "color_scheme": ""
       }
     },
     "key_points": {
@@ -100,19 +102,6 @@
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
-      }
-    },
-    "science_cta": {
-      "type": "section-cta",
-      "settings": {
-        "alignment": "left",
-        "image": "shopify://shop_images/siv-hero_copy.jpg",
-        "title": "THE SCIENCE BEHIND SIV",
-        "richText": "<p>SIV is a science-backed skincare system that harnesses the power of your skin’s microbiome to support whole-body skin health. Our products are designed to work in harmony with your unique skin biome, providing targeted solutions for a range of skin concerns.</p>",
-        "action_type": "button",
-        "button_link": "shopify://pages/science",
-        "custom_event_trigger": "",
-        "button_text": "Learn More"
       }
     },
     "testimonies": {
@@ -205,6 +194,19 @@
         "heading": "Real consumer tested results"
       }
     },
+    "science_cta": {
+      "type": "section-cta",
+      "settings": {
+        "alignment": "left",
+        "image": "shopify://shop_images/DTS_MICRO_003.jpg",
+        "title": "THE SCIENCE BEHIND SIV",
+        "richText": "<p>SIV is a science-backed skincare system that harnesses the power of your skin’s microbiome to support whole-body skin health. Our products are designed to work in harmony with your unique skin biome, providing targeted solutions for a range of skin concerns.</p>",
+        "action_type": "button",
+        "button_link": "shopify://pages/science",
+        "custom_event_trigger": "",
+        "button_text": "Learn More"
+      }
+    },
     "section_featured_product_probiotic": {
       "type": "section-featured-product",
       "blocks": {
@@ -238,7 +240,9 @@
       "settings": {
         "heading": "THE ESSENTIAL PROBIOTIC FOR HEALTHY SKIN",
         "product": "biome-balance-within",
-        "button_text": "View Product"
+        "description": "<p>A probiotic-powered skincare supplement designed to support the gut-skin axis and overall skin microbiome.</p>",
+        "button_text": "View Product",
+        "color_scheme": ""
       }
     },
     "section_cta": {
@@ -246,12 +250,12 @@
       "settings": {
         "alignment": "center",
         "image": "shopify://shop_images/siv-hero_copy.jpg",
-        "title": "Healthier skin is a drop away",
-        "richText": "",
-        "action_type": "button",
-        "button_link": "shopify://products/biome-balance-within",
+        "title": "Empower your Practice with SIV",
+        "richText": "<p>SIV is not just a trusted skincare brand - it's a professional-grade solution designed for aestheticians who demand the best for their clients</p>",
+        "action_type": "link",
+        "button_link": "shopify://pages/for-professionals",
         "custom_event_trigger": "",
-        "button_text": "View Product"
+        "button_text": "Apply for a Professional Account"
       }
     },
     "section_featured_posts": {
@@ -266,8 +270,8 @@
     "home_hero",
     "section_featured_product_serum",
     "key_points",
-    "science_cta",
     "testimonies",
+    "science_cta",
     "section_featured_product_probiotic",
     "section_cta",
     "section_featured_posts"
