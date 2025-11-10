@@ -67,44 +67,6 @@
       ],
       "settings": {}
     },
-    "key_points": {
-      "type": "section-key-points",
-      "blocks": {
-        "point_1": {
-          "type": "point",
-          "settings": {
-            "image": "shopify://shop_images/step-1.gif",
-            "heading": "Step 1",
-            "text": "Before use, shake the dropper vigorously, until the bottom of the dropper is clear, to disperse Bacillus spores throughout the serum."
-          }
-        },
-        "point_2": {
-          "type": "point",
-          "settings": {
-            "image": "shopify://shop_images/step-2.jpg",
-            "heading": "Step 2",
-            "text": "Apply 2-5 drops to hands first or directly to area, once daily, and gently massage and then pat into skin. Can be used on damp or dry skin."
-          }
-        },
-        "point_3": {
-          "type": "point",
-          "settings": {
-            "image": "shopify://shop_images/step-3.jpg",
-            "heading": "Step 3",
-            "text": "For optimal results: apply after toner and before moisturizer."
-          }
-        }
-      },
-      "block_order": [
-        "point_1",
-        "point_2",
-        "point_3"
-      ],
-      "settings": {
-        "heading": "Balance in a bottle",
-        "description": ""
-      }
-    },
     "testimonies": {
       "type": "section-testimonies-comparison",
       "blocks": {
@@ -194,11 +156,36 @@
       "settings": {
         "heading": "Real consumer tested results"
       }
+    },
+    "section_related_products": {
+      "type": "section-related-products",
+      "blocks": {
+        "product_biome_balance": {
+          "type": "product",
+          "settings": {
+            "product": "biome-balance-within"
+          }
+        },
+        "product_serum_new": {
+          "type": "product",
+          "settings": {
+            "product": "siv-biome-balancing-serum-new"
+          }
+        }
+      },
+      "block_order": [
+        "product_biome_balance",
+        "product_serum_new"
+      ],
+      "settings": {
+        "heading": "Related Products",
+        "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>"
+      }
     }
   },
   "order": [
     "main",
-    "key_points",
-    "testimonies"
+    "testimonies",
+    "section_related_products"
   ]
 }

@@ -1,41 +1,28 @@
 <div class="wrapper py-8">
-  <div class="grid grid-cols-12 gap-4">
-    {% for childlink in link.links %}
-      <div class="col-start-2 col-span-4 grid grid-cols-2 gap-4">
-        <h3 class="mb-4">{{ childlink.title }}</h3>
-        {% if childlink.links.size > 0 %}
-          <ul class="space-y-2 [&:has(a:hover)_a:not(:hover)]:opacity-50 transition-opacity duration-700">
-            {% for grandchildlink in childlink.links %}
-              <li>
-                <a href="{{ grandchildlink.url }}" class="link transition-opacity duration-700">
-                  {{ grandchildlink.title }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </div>
-    {% endfor %}
-    {% for block in section.blocks %}
-      {% assign trigger = block.settings.mega_menu_trigger | downcase %}
-      {% assign title = link.title | downcase %}
-      {% if block.type == 'mega_menu' and trigger == title %}
-        <a href="{{ link.url }}" class="block col-span-4 col-start-9" {{ block.shopify_attributes }}>
-          {% if block.settings.image %}
-            {% render 'responsive-image', image: block.settings.image, wrapper_class: 'w-full aspect-landscape', image_class: 'object-cover' %}
-          {% endif %}
-
-          <div class="flex w-full justify-between gap-2 p-4">
-            {% if block.settings.left_text %}
-              <h3 class="h4 font-serif">{{ block.settings.left_text }}</h3>
+  <div class="grid gap-4">
+    <ul class="w-full flex justify-center items-start gap-8">
+      {% for menu_link in link.links %}
+        <li class="flex flex-col items-center text-center gap-2">
+          <a href="{{ menu_link.url }}" class="link flex flex-col items-center group">
+            {% if menu_link.type == 'product_link' and menu_link.object %}
+              {% assign product = menu_link.object %}
+              {% if product.featured_image %}
+                <div class="w-48 h-48 rounded-md overflow-hidden mb-4">
+                  <img
+                    src="{{ product.featured_image | image_url: width: 320 }}"
+                    alt="{{ product.title | escape }}"
+                    loading="lazy"
+                    width="320"
+                    height="320"
+                    class="w-full h-full object-cover mx-auto mb-3 group-hover:scale-105 transition-all duration-500"
+                  >
+                </div>
+              {% endif %}
             {% endif %}
-            
-            {% if block.settings.right_text %}
-              <div class="uppercase">{{ block.settings.right_text }}</div>
-            {% endif %}
-          </div>
-        </a>
-      {% endif %}
-    {% endfor %}
+            <span>{{ menu_link.title }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 </div>

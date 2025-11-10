@@ -1,6 +1,6 @@
 <div class="wrapper grid gap-6 grid-cols-1 md:grid-cols-2">
   <div>
-    <div data-product-gallery-container>
+    <div data-product-gallery-container class="sticky top-32">
       {%- liquid
         assign selected_variant = product.selected_or_first_available_variant
         assign filtered_media_count = 0
