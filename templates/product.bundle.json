@@ -161,7 +161,7 @@
         "product_serum_new": {
           "type": "product",
           "settings": {
-            "product": "siv-biome-balancing-serum-new"
+            "product": "siv-biome-balancing-serum"
           }
         }
       },
