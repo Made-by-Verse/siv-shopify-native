@@ -20,26 +20,19 @@
           "type": "product-price",
           "settings": {}
         },
+        "tag_efMJhj": {
+          "type": "tag",
+          "settings": {
+            "liquid": "15% off bundle + free serum & shipping"
+          }
+        },
         "product_description_xK3MCg": {
           "type": "product-description",
           "settings": {}
         },
-        "wholesale_volume_pricing_hCrTQh": {
-          "type": "wholesale-volume-pricing",
-          "settings": {
-            "title": "Wholesale Volume Pricing",
-            "description": "<ul><li>2-5: $44 USD</li><li>6-11: $39 USD</li><li>12+: $34 USD</li><li>Subscribe and save not available for wholesale pricing</li></ul>"
-          }
-        },
         "variant_picker_cF46kp": {
           "type": "variant-picker",
           "settings": {}
-        },
-        "recharge_subscriptions_subscription_widget_hCrTQh": {
-          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget/371eed76-0b44-4869-9813-730372ea378e",
-          "settings": {
-            "product": "{{product}}"
-          }
         },
         "quantity_selector_8EEfnM": {
           "type": "quantity-selector",
@@ -57,10 +50,9 @@
       "block_order": [
         "product_title_Fqeap7",
         "product_price_JDACKF",
+        "tag_efMJhj",
         "product_description_xK3MCg",
-        "wholesale_volume_pricing_hCrTQh",
         "variant_picker_cF46kp",
-        "recharge_subscriptions_subscription_widget_hCrTQh",
         "quantity_selector_8EEfnM",
         "buy_buttons_rEH3MG",
         "accordion_YVppL6"
@@ -179,7 +171,8 @@
       ],
       "settings": {
         "heading": "Related Products",
-        "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>"
+        "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>",
+        "color_scheme": ""
       }
     }
   },
