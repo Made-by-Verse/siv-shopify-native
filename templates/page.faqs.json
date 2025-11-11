@@ -19,6 +19,13 @@
             "content": "<p><strong>Simple:</strong> A quorum-sensing serum that uses bacillus spores to adapt and balance each person’s skin microbiome.</p><p><strong>Elaborated:</strong> SIV is a quorum-sensing serum that uses bacillus spores to balance the skin microbiome. Many of the inflammatory issues we deal with on the skin can be tied to a dysbiotic skin microbiome. The spores are a resilient bacteria that can help target overgrown strains on the skin and bring them down to a healthy level while also facilitating the growth of other beneficial strains- effectively balancing the skin microbiome.</p>"
           }
         },
+        "accordion_UyURLq": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Are clumps and Natural settling normal in the serum?",
+            "content": "<p>Yes! Our serum is intentionally formulated without fillers or suspension agents.<strong>Natural settling and clumps are expected.</strong>On the first shake, you may see small white particles - they are simply carriers for the bacterial strains. Over time, they become a fine beige sediment at the bottom. Shake vigorously to re-disperse the ingredients.Apply as usual - any particles melt into the skin. Shake until the sediment is well dispersed in the liquid. Once applied and bottle is left to rest, the sediment will accumulate at the bottom again. That is perfectly normal. Simply shake again before the next application.</p>"
+          }
+        },
         "faq_2": {
           "type": "accordion",
           "settings": {
@@ -190,6 +197,7 @@
       },
       "block_order": [
         "faq_1",
+        "accordion_UyURLq",
         "faq_2",
         "faq_3",
         "accordion_XtTnP4",
