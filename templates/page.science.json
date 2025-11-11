@@ -121,7 +121,10 @@
       ],
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
-        "button_text": "View Product"
+        "product": "siv-biome-balancing-serum",
+        "description": "",
+        "button_text": "View Product",
+        "color_scheme": ""
       }
     },
     "section_featured_posts": {
