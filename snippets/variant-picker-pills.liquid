@@ -1,0 +1,55 @@
+{% comment %}
+  Renders product variant picker as pills, grouped by option type
+
+  Accepts:
+  - product: {Object} product object.
+  - section: {Object} section object (for section.id)
+
+  Usage:
+  {% render 'variant-picker-pills', product: product, section: section %}
+{% endcomment %}
+
+{%- unless product.has_only_default_variant -%}
+  <script type="application/json" id="variant-picker-data-{{ section.id }}">
+    {"variants":{{ product.variants | json }},"selectedVariant":{{ product.selected_or_first_available_variant | json }}}
+  </script>
+  <div
+    class="variant-picker-pills"
+    x-data="variantPickerInit('variant-picker-data-{{ section.id }}')"
+  >
+    {%- for option in product.options_with_values -%}
+      <div class="variant-option-group mb-6">
+        <label class="block text-sm uppercase font-bold mb-1"> {{ option.name }}: </label>
+        <div class="flex flex-wrap gap-2">
+          {%- for value in option.values -%}
+            <button
+              type="button"
+              class="
+                variant-option-pill px-4 py-2 rounded-full border-2 transition-all duration-200 font-medium text-sm
+                {% if option.selected_value == value %}
+                  bg-black text-white border-black
+                {% else %}
+                  bg-white text-black border-gray-300 hover:border-gray-400
+                {% endif %}
+              "
+              data-option-position="{{ option.position }}"
+              data-option-value="{{ value | escape }}"
+              :class="
+                {
+                  'bg-black text-white border-black': isSelected({{ option.position }}, $el.dataset.optionValue),
+                  'bg-white text-black border-gray-300 hover:border-gray-400': !isSelected({{ option.position }}, $el.dataset.optionValue),
+                  'opacity-50 cursor-not-allowed line-through': !isAvailable({{ option.position }}, $el.dataset.optionValue)
+                }
+              "
+              @click.prevent="selectOption({{ option.position }}, $el.dataset.optionValue)"
+              :disabled="!isAvailable({{ option.position }}, $el.dataset.optionValue)"
+              :aria-pressed="isSelected({{ option.position }}, $el.dataset.optionValue)"
+            >
+              {{ value }}
+            </button>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+{%- endunless -%}

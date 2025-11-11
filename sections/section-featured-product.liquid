@@ -1,16 +1,16 @@
-{% assign product = all_products[settings.featured_product] %}
+{% assign product = all_products[section.settings.product] %}
 
 <div class="color-{{ section.settings.color_scheme }} bg-primary text-contrast">
-  <div class="wrapper flex flex-col items-center">
+  <div class="wrapper">
     {% if section.settings.heading != blank %}
-      {% render 'animated-heading', title: section.settings.heading, class: 'h2 text-center max-w-xl mb-4' %}
+      {% render 'animated-heading', title: section.settings.heading, class: 'h2 text-center max-w-xl mx-auto mb-4' %}
     {% endif %}
     {% if product %}
-      <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-10">
         <ul class="space-y-4 order-last md:order-first">
           {% for block in section.blocks %}
             <li class="">
-              <h3 class="mb-2 font-semibold uppercase text-base font-body tracking-wide">
+              <h3 class="mb-2 font-semibold uppercase text-lg font-body tracking-wide">
                 {{ block.settings.heading }}
               </h3>
               <p>{{ block.settings.text }}</p>
@@ -24,13 +24,13 @@
               width: 1000,
               height: 1000,
               image_class: 'object-cover absolute inset-0 h-full w-full',
-              wrapper_class: 'aspect-portrait relative'
+              wrapper_class: 'aspect-portrait relative w-full h-full rounded-md overflow-hidden'
             %}
           {% endif %}
         {% endif %}
         <div class="space-y-4">
           <div>
-            <h2
+            <h3
               class="h3"
               x-data="{ shown: false }"
               x-intersect:enter="shown = true"
@@ -38,17 +38,19 @@
               :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
             >
               {{ product.title }}
-            </h2>
-            {% render 'price', product: product, show_compare_at_price: true %}
+            </h3>
+            {% if section.settings.button_text != blank %}
+              {% render 'price', product: product, show_compare_at_price: true %}
+            {% endif %}
           </div>
-          <p>{{ product.metafields.product['short-description'] }}</p>
-          <div>
+          <p>{{ section.settings.description | default: product.metafields.product['short-description'] }}</p>
+          {% if section.settings.button_text != blank %}
             {% render 'button',
               button_text: section.settings.button_text,
-              event_trigger: 'open-quick-buy-drawer',
+              link: product.url,
               button_class: 'btn--black'
             %}
-          </div>
+          {% endif %}
         </div>
       </div>
     {% else %}
@@ -74,10 +76,26 @@
       "label": "Heading"
     },
     {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
       "type": "text",
       "id": "button_text",
       "label": "Button text",
       "default": "View Product"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
     }
   ],
   "blocks": [

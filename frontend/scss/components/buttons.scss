@@ -1,5 +1,5 @@
 .btn {
-  @apply rounded-full text-center px-6 py-3 text-sm uppercase font-semibold leading-none tracking-wider duration-500 pointer-events-auto;
+  @apply rounded-full inline-block text-center px-6 py-3 text-sm uppercase font-semibold leading-none tracking-wider duration-500 pointer-events-auto;
   &--black {
     @apply bg-black text-white;
   }

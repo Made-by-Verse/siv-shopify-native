@@ -12,12 +12,14 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "liquid_eaFyJD": {
+          "type": "tag",
+          "settings": {
+            "liquid": "{% for variant in product.variants %}{% if variant.id == product.selected_or_first_available_variant.id %}{{ variant.metafields.descriptors.subtitle }}{% endif %}{% endfor %}"
+          }
+        },
         "product_title_Fqeap7": {
           "type": "product-title",
-          "settings": {}
-        },
-        "product_price_JDACKF": {
-          "type": "product-price",
           "settings": {}
         },
         "product_description_xK3MCg": {
@@ -34,12 +36,6 @@
         "variant_picker_cF46kp": {
           "type": "variant-picker",
           "settings": {}
-        },
-        "recharge_subscriptions_subscription_widget_hCrTQh": {
-          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget/371eed76-0b44-4869-9813-730372ea378e",
-          "settings": {
-            "product": "{{product}}"
-          }
         },
         "recharge_subscriptions_subscription_widget_v2_8cEqny": {
           "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
@@ -59,12 +55,11 @@
         }
       },
       "block_order": [
+        "liquid_eaFyJD",
         "product_title_Fqeap7",
-        "product_price_JDACKF",
         "product_description_xK3MCg",
         "wholesale_volume_pricing_hCrTQh",
         "variant_picker_cF46kp",
-        "recharge_subscriptions_subscription_widget_hCrTQh",
         "recharge_subscriptions_subscription_widget_v2_8cEqny",
         "quantity_selector_8EEfnM",
         "buy_buttons_rEH3MG",
@@ -72,31 +67,69 @@
       ],
       "settings": {}
     },
+    "section_featured_product_serum": {
+      "type": "section-featured-product",
+      "blocks": {
+        "feature_point_1": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Supports Balance",
+            "text": "Promotes a harmonious skin environment for improved texture and tone."
+          }
+        },
+        "feature_point_2": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Delivers Vibrance",
+            "text": "Enhances your skin’s natural radiance by supporting a healthy microbiome."
+          }
+        },
+        "feature_point_3": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Builds Resilience",
+            "text": "Strengthens your skin’s defenses against environmental stressors and aging."
+          }
+        }
+      },
+      "block_order": [
+        "feature_point_1",
+        "feature_point_2",
+        "feature_point_3"
+      ],
+      "settings": {
+        "heading": "The Essential Serum for Healthy Skin",
+        "product": "siv-biome-balancing-serum-new",
+        "description": "<p><strong>15mL | 30 Day Supply</strong><br/>Perfect for first-time users. </p><p><strong>30mL | 60 Day Supply</strong><br/>Offering better value.</p><p>Before use, shake vigorously. Apply 1–3 drops once daily. Pat into dry or damp skin. Apply after cleansing or toning.  </p>",
+        "button_text": "",
+        "color_scheme": ""
+      }
+    },
     "key_points": {
       "type": "section-key-points",
       "blocks": {
         "point_1": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/step-1.gif",
-            "heading": "Step 1",
-            "text": "Before use, shake the dropper vigorously, until the bottom of the dropper is clear, to disperse Bacillus spores throughout the serum."
+            "image": "shopify://shop_images/topical-spore-treatment.png",
+            "heading": "Topical spore treatment",
+            "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
           }
         },
         "point_2": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/step-2.jpg",
-            "heading": "Step 2",
-            "text": "Apply 2-5 drops to hands first or directly to area, once daily, and gently massage and then pat into skin. Can be used on damp or dry skin."
+            "image": "shopify://shop_images/skin-identical.png",
+            "heading": "Skin Identical",
+            "text": "Lightweight & stabilizing formula containing physiologically identical ingredients that your skin recognizes."
           }
         },
         "point_3": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/step-3.jpg",
-            "heading": "Step 3",
-            "text": "For optimal results: apply after toner and before moisturizer."
+            "image": "shopify://shop_images/face-base.png",
+            "heading": "Your Face Is Your Base",
+            "text": "Before use, shake vigorously. Apply 1–3 drops once daily. Pat into dry or damp skin. Apply after cleansing or toning."
           }
         }
       },
@@ -199,11 +232,81 @@
       "settings": {
         "heading": "Real consumer tested results"
       }
+    },
+    "section_ingredients_YHnn8T": {
+      "type": "section-ingredients",
+      "blocks": {
+        "ingredient_nxFM9w": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_982436196.jpg",
+            "heading": "Squalane",
+            "text": "<p>Biomimetic oil, molecule derived from non-GMO sugarcane that mimics squalene, beneficial in promoting skin hydration</p>"
+          }
+        },
+        "ingredient_LtnqRH": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_1461017641.jpg",
+            "heading": "Caprylic/Capric Triglyceride",
+            "text": "<p>A mixture of caprylic and capric fatty acids derived from palm oil; help replenish skin's surface and help it to resist moisture loss</p>"
+          }
+        },
+        "ingredient_W7khTy": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_1179927923.jpg",
+            "heading": "Glyceryl Caprylate",
+            "text": "<p>A natural, plant-based, emollient derived from glycerin and plant fatty acids; restores the oils of the skin, regulates the skin moisture and acts as a humidifier to the skin</p>"
+          }
+        },
+        "ingredient_iUixDC": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_1477484315.jpg",
+            "heading": "Bacillus",
+            "text": "<p>A proprietary blend of Bacillus spores support a healthy skin foundation and visibly improves skin. Positively influencing your unique skin biome and establishing balance. The spores can help improve the skin microbiome by targeting overgrown bacteria, while facilitating the growth of other essential species- effectively balancing the skin microbiome.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_nxFM9w",
+        "ingredient_LtnqRH",
+        "ingredient_W7khTy",
+        "ingredient_iUixDC"
+      ],
+      "name": "Ingredients",
+      "settings": {
+        "heading": "Ingredients",
+        "description": ""
+      }
+    },
+    "section_related_products": {
+      "type": "section-related-products",
+      "blocks": {
+        "product_biome_balance": {
+          "type": "product",
+          "settings": {
+            "product": "biome-balance-within"
+          }
+        }
+      },
+      "block_order": [
+        "product_biome_balance"
+      ],
+      "settings": {
+        "heading": "Related Products",
+        "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>",
+        "color_scheme": ""
+      }
     }
   },
   "order": [
     "main",
+    "section_featured_product_serum",
     "key_points",
-    "testimonies"
+    "testimonies",
+    "section_ingredients_YHnn8T",
+    "section_related_products"
   ]
 }

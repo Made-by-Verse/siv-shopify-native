@@ -1,3 +1,5 @@
+import { getBundleFreebies } from "../core/bundleFreebies";
+
 export default async function Cart() {
   Alpine.store("cart", {
     async getCart() {
@@ -36,6 +38,85 @@ export default async function Cart() {
         formDataObject[key] = value;
       });
 
+      const bundleVariantId = Number(formDataObject.id);
+      const bundleQuantityRaw = Number(formDataObject.quantity ?? 1);
+      const bundleQuantity = Number.isFinite(bundleQuantityRaw) && bundleQuantityRaw > 0 ? bundleQuantityRaw : 1;
+
+      if (Number.isFinite(bundleVariantId)) {
+        formDataObject.id = bundleVariantId;
+      }
+
+      formDataObject.quantity = bundleQuantity;
+
+      const shouldLog =
+        typeof window !== "undefined" &&
+        Boolean(window?.SIV_BUNDLE_FREEBIE_DEBUG ?? true);
+
+      const payloadItems = [formDataObject];
+      const freebies = getBundleFreebies(bundleVariantId);
+
+      if (Array.isArray(freebies) && freebies.length) {
+        if (shouldLog) {
+          console.group(
+            "[BundleFreebie] Preparing freebies for bundle variant",
+            bundleVariantId
+          );
+          console.table(
+            freebies.map((freebieDefinition) => ({
+              configuredVariantId: freebieDefinition?.variantId,
+              baseQuantity: freebieDefinition?.quantity ?? 1,
+              matchBundleQuantity:
+                freebieDefinition?.matchBundleQuantity !== false,
+            }))
+          );
+        }
+
+        freebies.forEach((freebieDefinition) => {
+          const freeVariantId = Number(freebieDefinition?.variantId);
+
+          if (!Number.isFinite(freeVariantId)) return;
+
+          const baseQuantity = Number(freebieDefinition?.quantity ?? 1);
+          const freebieQuantitySource =
+            freebieDefinition?.matchBundleQuantity === false
+              ? baseQuantity
+              : baseQuantity * bundleQuantity;
+          const freebieQuantity =
+            Number.isFinite(freebieQuantitySource) && freebieQuantitySource > 0
+              ? Math.floor(freebieQuantitySource)
+              : 0;
+
+          if (freebieQuantity < 1) return;
+
+          if (shouldLog) {
+            console.log(
+              "[BundleFreebie] Adding free item",
+              freeVariantId,
+              "quantity:",
+              freebieQuantity
+            );
+          }
+
+          payloadItems.push({
+            id: freeVariantId,
+            quantity: freebieQuantity,
+            properties: {
+              _bundle_freebie_for: bundleVariantId.toString(),
+              ...(freebieDefinition?.properties ?? {}),
+            },
+          });
+        });
+
+        if (shouldLog) {
+          console.groupEnd();
+        }
+      } else if (shouldLog) {
+        console.log(
+          "[BundleFreebie] No freebies configured for bundle variant",
+          bundleVariantId
+        );
+      }
+
       try {
         // Dispatch event to show loading state
         window.dispatchEvent(new CustomEvent("cart:adding"));
@@ -46,13 +127,20 @@ export default async function Cart() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            items: [formDataObject],
+            items: payloadItems,
           }),
         });
 
         const responseBody = await response.json();
 
         if (!response.ok) throw new Error(responseBody.message);
+
+        if (shouldLog) {
+          console.group("[BundleFreebie] Cart add response");
+          console.log("Payload items:", payloadItems);
+          console.log("Shopify response:", responseBody);
+          console.groupEnd();
+        }
 
         // Immediately update the cart after successful add
         await this.getCart();
@@ -63,6 +151,13 @@ export default async function Cart() {
         window.dispatchEvent(new CustomEvent("cart:added"));
       } catch (error) {
         console.error("Error adding to cart:", error);
+        if (shouldLog) {
+          console.error("[BundleFreebie] Add to cart failed", {
+            payloadItems,
+            bundleVariantId,
+            error,
+          });
+        }
         // Dispatch error event
         window.dispatchEvent(
           new CustomEvent("cart:error", {

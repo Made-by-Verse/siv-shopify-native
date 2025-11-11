@@ -1,0 +1,126 @@
+<div class="wrapper">
+  <div class="event-card bg-white border border-gray-200 rounded-lg p-6 md:p-8 shadow-sm">
+    <div class="grid md:grid-cols-3 gap-6 items-start">
+      <div class="md:col-span-2 space-y-6">
+        {% if section.settings.title != blank %}
+          <h3 class="h3">{{ section.settings.title }}</h3>
+        {% endif %}
+
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'text_block' %}
+              <div class="space-y-2" {{ block.shopify_attributes }}>
+                {% if block.settings.title != blank %}
+                  <h4 class="font-semibold text-gray-900">{{ block.settings.title }}</h4>
+                {% endif %}
+                {% if block.settings.text != blank %}
+                  <div class="prose max-w-none text-balance">
+                    {{ block.settings.text }}
+                  </div>
+                {% endif %}
+              </div>
+          {% endcase %}
+        {% endfor %}
+
+        {% if section.settings.button_text != blank
+          and section.settings.button_text != ''
+          and section.settings.button_link != blank
+        %}
+          <div class="pt-2">
+            {% render 'button',
+              button_text: section.settings.button_text,
+              link: section.settings.button_link,
+              button_class: 'btn--outline'
+            %}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if section.settings.image %}
+        <div class="md:col-span-1">
+          {% render 'responsive-image',
+            image: section.settings.image,
+            width: 400,
+            height: 400,
+            image_class: 'object-cover rounded-lg',
+            wrapper_class: 'aspect-square'
+          %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Event",
+  "tag": "section",
+  "class": "section-event section my-8",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Event Title",
+      "default": "Event Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Event Image",
+      "info": "Optional square image for the event"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "info": "Optional button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "info": "Optional button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Text Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Block Title",
+          "default": "Block Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Block content goes here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Event",
+      "settings": {
+        "title": "Event Title"
+      },
+      "blocks": [
+        {
+          "type": "text_block",
+          "settings": {
+            "title": "Event Details",
+            "text": "<p>Event information goes here.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

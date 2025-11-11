@@ -1,29 +1,22 @@
 {% assign product = settings.featured_product %}
+{% assign drawer_id = 'quick-buy-drawer' %}
 
 <div
-    x-data="{ open: false }"
-    @open-quick-buy-drawer.window="
-      open = true;
-    "
-    @open-cart-drawer.window="
-      open = false;
-    "
-    @keydown.escape.window="
-      open = false;
-    "
-    class='z-[9999] fixed'
-  >
+  x-data="{ open: false }"
+  @open-quick-buy-drawer.window="      open = true;"
+  @open-cart-drawer.window="      open = false;"
+  @keydown.escape.window="      open = false;"
+  class="z-[9999] fixed"
+>
   <!-- Backdrop -->
-  <div 
+  <div
     x-show="open"
     class="drawer-backdrop"
     x-transition:enter-start="opacity-0"
     x-transition:enter-end="opacity-100"
     x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0"
-    @click="
-      open = false;
-    "
+    @click="      open = false;"
     x-cloak
   ></div>
 
@@ -40,30 +33,90 @@
     role="dialog"
     aria-modal="true"
   >
-    
     <div class="relative flex flex-col flex-1 p-6 overflow-y-auto gap-4">
-      <div class='flex justify-end'>
-        <button @click="open = false" class='transform hover:rotate-90 transition-transform duration-500 w-10 h-10 flex justify-center items-center bg-contrast text-white rounded-full'>
+      <div class="flex justify-end">
+        <button
+          @click="open = false"
+          class="transform hover:rotate-90 transition-transform duration-500 w-10 h-10 flex justify-center items-center bg-contrast text-white rounded-full"
+        >
           <span class="sr-only">Close</span>
-          <span class='w-6 h-6 block'>{{- 'icon-close.svg' | inline_asset_content -}}</span>
+          <span class="w-6 h-6 block">{{- 'icon-close.svg' | inline_asset_content -}}</span>
         </button>
       </div>
-      {% render 'responsive-image', image: product.media[0], wrapper_class: 'relative bg-primary aspect-portrait rounded-lg overflow-hidden', image_class: 'object-cover absolute inset-0 h-full w-full bg-light' %}
+      {% render 'responsive-image',
+        image: product.media[0],
+        wrapper_class: 'relative bg-primary aspect-portrait rounded-lg overflow-hidden',
+        image_class: 'object-cover absolute inset-0 h-full w-full bg-light'
+      %}
       <div class="text-center">
-        <h3 class="mb-2">{{ product.title }}</h3>
-        {{ product.metafields.product.short-description }}
+        <h3 class="text-2xl">{{ product.title }}</h3>
+        <div class="flex justify-center mb-2 ">
+          {% render 'price',
+            product: product,
+            use_variant: true,
+            show_compare_at_price: true,
+            price_class: 'quick-buy-price'
+          %}
+        </div>
+        {{ product.metafields.product['short-description'] }}
       </div>
     </div>
     <form class="bg-white px-6 pb-4 space-y-2" @submit.prevent="$store.cart.addToCart(event)" x-data="{quantity: 1}">
       <input type="hidden" name="form_type" value="product">
       <input type="hidden" name="utf8" value="✓">
-      
-      <input 
-        type="hidden" 
-        name="id" 
+
+      <input
+        type="hidden"
+        name="id"
         value="{{ product.selected_or_first_available_variant.id }}"
         data-variant-id
       >
+
+      {%- unless product.has_only_default_variant -%}
+        <script type="application/json" id="variant-picker-data-{{ drawer_id }}-{{ product.id }}">
+          {"variants":{{ product.variants | json }},"selectedVariant":{{ product.selected_or_first_available_variant | json }}}
+        </script>
+        <div
+          class="variant-picker-pills"
+          x-data="variantPickerInit('variant-picker-data-{{ drawer_id }}-{{ product.id }}')"
+        >
+          {%- for option in product.options_with_values -%}
+            <div class="variant-option-group mb-6">
+              <label class="block text-sm uppercase font-bold mb-1"> {{ option.name }}: </label>
+              <div class="flex flex-wrap gap-2">
+                {%- for value in option.values -%}
+                  <button
+                    type="button"
+                    class="
+                      variant-option-pill px-4 py-2 rounded-full border-2 transition-all duration-200 font-medium text-sm
+                      {% if option.selected_value == value %}
+                        bg-black text-white border-black
+                      {% else %}
+                        bg-white text-black border-gray-300 hover:border-gray-400
+                      {% endif %}
+                    "
+                    data-option-position="{{ option.position }}"
+                    data-option-value="{{ value | escape }}"
+                    :class="
+                      {
+                        'bg-black text-white border-black': isSelected({{ option.position }}, $el.dataset.optionValue),
+                        'bg-white text-black border-gray-300 hover:border-gray-400': !isSelected({{ option.position }}, $el.dataset.optionValue),
+                        'opacity-50 cursor-not-allowed line-through': !isAvailable({{ option.position }}, $el.dataset.optionValue)
+                      }
+                    "
+                    @click.prevent="selectOption({{ option.position }}, $el.dataset.optionValue)"
+                    :disabled="!isAvailable({{ option.position }}, $el.dataset.optionValue)"
+                    :aria-pressed="isSelected({{ option.position }}, $el.dataset.optionValue)"
+                  >
+                    {{ value }}
+                  </button>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endunless -%}
+
       {% render 'buy-buttons', product: product, selectedVariant: product.selected_or_first_available_variant %}
       <a href="{{ product.url }}" class="btn btn--outline w-full flex justify-center">View Product</a>
     </form>

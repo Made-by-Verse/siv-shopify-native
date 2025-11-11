@@ -1,75 +1,116 @@
+{% liquid
+  assign alignment = section.settings.alignment
+
+  if alignment == 'left'
+    assign alignment_class = 'items-start text-left'
+  elsif alignment == 'center'
+    assign alignment_class = 'items-center text-center justify-center'
+  elsif alignment == 'right'
+    assign alignment_class = 'items-end text-right'
+  endif
+%}
+
 {% if section.settings.image %}
-  {% render 'responsive-image', image: section.settings.image, wrapper_class: 'absolute w-full h-full inset-0 object-cover z-0', image_class: 'absolute object-cover inset-0 w-full h-full' %}
+  {% render 'responsive-image',
+    image: section.settings.image,
+    wrapper_class: 'absolute w-full h-full inset-0 object-cover z-0',
+    image_class: 'absolute object-cover inset-0 w-full h-full'
+  %}
 {% else %}
   {{ 'hero-apparel-3' | placeholder_svg_tag: 'absolute object-cover inset-0 w-full h-full bg-primary' }}
 {% endif %}
-<div class="wrapper relative max-w-xl text-center text-white z-10 flex flex-col items-center justify-center gap-4">
-  {% render 'animated-heading', title: section.settings.title, class: 'h1 text-balance' %}
-  {% if section.settings.action_type == 'link' %}
-    {% render 'button', 
-      button_text: section.settings.button_text,
-      link: section.settings.button_link,
-      button_class: 'btn--white'
-    %}
-  {% elsif section.settings.action_type == 'button' %}
-    {% render 'button', 
-      button_text: section.settings.button_text,
-      event_trigger: section.settings.custom_event_trigger,
-      button_class: 'btn--white'
-    %}
-  {% endif %}
+<div class="wrapper">
+  <div class=" relative text-white z-10 flex flex-col {{ alignment_class }}">
+    <div class="max-w-xl w-full flex flex-col  space-y-4 {{ alignment_class }}">
+      {% render 'animated-heading', title: section.settings.title, class: 'h1 text-balance' %}
+      {% if section.settings.richText %}
+        <div class="prose max-w-md text-white {{ alignment_class }}">{{ section.settings.richText }}</div>
+      {% endif %}
+      {% if section.settings.button_text != blank and section.settings.button_text != '' %}
+        {% if section.settings.action_type == 'link' %}
+          {% render 'button',
+            button_text: section.settings.button_text,
+            link: section.settings.button_link,
+            button_class: 'btn--white'
+          %}
+        {% elsif section.settings.action_type == 'button' %}
+          {% render 'button',
+            button_text: section.settings.button_text,
+            event_trigger: section.settings.custom_event_trigger,
+            button_class: 'btn--white'
+          %}
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
 </div>
 
 {% schema %}
-  {
-    "name": "Call to Action",
-    "tag": "section",
-    "class": "section-cta py-48 overflow-hidden relative",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Image"
-      },
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Title"
-      },
-      {
-        "type": "header",
-        "content": "Button"
-      },
-      {
-        "type": "radio",
-        "id": "action_type",
-        "label": "Button Link",
-        "options": [
-          {
-            "value": "link",
-            "label": "Link"
-          },
-          {
-            "value": "button",
-            "label": "Button"
-          }
-        ]
-      },
-      {
-        "type": "url",
-        "id": "button_link",
-        "label": "Button Link"
-      },
-      {
-        "type": "text",
-        "id": "custom_event_trigger",
-        "label": "Custom Event Trigger"
-      },
-      {
-        "type": "text",
-        "id": "button_text",
-        "label": "Button Text"
-      }
-    ],
-  }
+{
+  "name": "Call to Action",
+  "tag": "section",
+  "class": "section-cta py-32 overflow-hidden relative",
+  "settings": [
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+
+    {
+      "type": "richtext",
+      "id": "richText",
+      "label": "Rich Text"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "radio",
+      "id": "action_type",
+      "label": "Button Link",
+      "options": [
+        {
+          "value": "link",
+          "label": "Link"
+        },
+        {
+          "value": "button",
+          "label": "Button"
+        }
+      ]
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "custom_event_trigger",
+      "label": "Custom Event Trigger"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    }
+  ]
+}
 {% endschema %}

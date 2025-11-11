@@ -12,33 +12,23 @@
     "home_hero": {
       "type": "section-home-hero",
       "blocks": {
-        "image_NbAFjz": {
-          "type": "image",
+        "video_KEhC6n": {
+          "type": "video",
           "settings": {
-            "background_image": "shopify://shop_images/fleur-kaan-w4Dj3MshHQ0-unsplash_1_1.jpg"
+            "video": "shopify://files/videos/SIV_WebHeader.mp4"
           }
         }
       },
       "block_order": [
-        "image_NbAFjz"
+        "video_KEhC6n"
       ],
       "settings": {
         "hero_heading": "Harness Your Biology for Resilient Skin",
-        "hero_content": "<p>Discover the next generation of professional skincare with our Biome-Balancing Serum – an advanced, spore-based formula designed to harmonize with your unique skin microbiome, tailored to restore your skin’s vitality and resilience.</p>",
+        "hero_content": "<p><strong>Discover the next generation of professional skincare with SIV.</strong> Inside and out, your skin thrives on balance. Our microbiome-first system supports whole-body skin healthpowered by science, grounded in biology, and designed for results.</p>",
         "show_featured_product": true
       }
     },
-    "section_video_z76AhA": {
-      "type": "section-video",
-      "settings": {
-        "video": "shopify://files/videos/SIV Product Demonstration.mp4",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "cover_image": "shopify://shop_images/siv-hero_copy.jpg",
-        "padding_top": "md",
-        "padding_bottom": "md"
-      }
-    },
-    "section_featured_product_zGxKPB": {
+    "section_featured_product_serum": {
       "type": "section-featured-product",
       "blocks": {
         "feature_point_1": {
@@ -70,7 +60,10 @@
       ],
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
-        "button_text": "View Product"
+        "product": "siv-biome-balancing-serum-new",
+        "description": "",
+        "button_text": "View Product",
+        "color_scheme": ""
       }
     },
     "key_points": {
@@ -97,7 +90,7 @@
           "settings": {
             "image": "shopify://shop_images/face-base.png",
             "heading": "Your Face Is Your Base",
-            "text": "Set your unique canvas by applying 2-5 drops of our Biome-Balancing Serum after toner and before moisturizer."
+            "text": "Before use, shake vigorously. Apply 1–3 drops once daily. Pat into dry or damp skin. Apply after cleansing or toning."
           }
         }
       },
@@ -109,101 +102,6 @@
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
-      }
-    },
-    "section_conditions": {
-      "type": "section-conditions",
-      "blocks": {
-        "condition_1": {
-          "type": "condition",
-          "settings": {
-            "heading": "Irritated Skin",
-            "image": "shopify://shop_images/pexels-angela-roma-7479956_4.jpg"
-          }
-        },
-        "condition_2": {
-          "type": "condition",
-          "settings": {
-            "heading": "Dehydrated Skin",
-            "image": "shopify://shop_images/iStock-1352687407_1.jpg"
-          }
-        },
-        "condition_4": {
-          "type": "condition",
-          "settings": {
-            "heading": "Aging Skin",
-            "image": "shopify://shop_images/aging-skin.jpg"
-          }
-        },
-        "condition_3": {
-          "type": "condition",
-          "settings": {
-            "heading": "Sensitive Skin",
-            "image": "shopify://shop_images/pexels-angela-roma-7479956_3.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "condition_1",
-        "condition_2",
-        "condition_4",
-        "condition_3"
-      ],
-      "settings": {}
-    },
-    "rich_text": {
-      "type": "section-rich-text",
-      "settings": {
-        "heading": "Whatever the condition of your skin, this is true:",
-        "image": "shopify://shop_images/skincare-is-personal.svg",
-        "content": "<p>SIV's Biome-Balancing Serum is a spore-based topical formula to offer a truly personal approach to skincare by harnessing your unique skin biome & adapting to your unique skin canvas and environment.</p><p>SIV Biome-Balancing serum: your healthy skin essential.</p>"
-      }
-    },
-    "card_reveal": {
-      "type": "section-card-reveal",
-      "blocks": {
-        "card_0": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Frame_427320811.jpg",
-            "heading": "67%",
-            "text": "Say it has a negative effect on their self-esteem"
-          }
-        },
-        "card_1": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Frame_427320809.jpg",
-            "heading": "30-60%",
-            "text": "It is estimated that 30-60% of patients with skin disorder have psychiatric comorbidities."
-          }
-        },
-        "card_2": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Frame_427320808.jpg",
-            "heading": "30%",
-            "text": "Depression was found in 30% of patients with acne vs 12% of control group"
-          }
-        },
-        "card_3": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Frame_427320807.jpg",
-            "heading": "58%",
-            "text": "Of teens who’ve had acne have offered to take a photo to get out of being in the picture"
-          }
-        }
-      },
-      "block_order": [
-        "card_0",
-        "card_1",
-        "card_2",
-        "card_3"
-      ],
-      "settings": {
-        "heading": "Put yourself back in the picture",
-        "text": "Research shows that how you see yourself on the outside reflects how you feel on the inside."
       }
     },
     "testimonies": {
@@ -296,15 +194,68 @@
         "heading": "Real consumer tested results"
       }
     },
+    "science_cta": {
+      "type": "section-cta",
+      "settings": {
+        "alignment": "left",
+        "image": "shopify://shop_images/DTS_MICRO_003.jpg",
+        "title": "THE SCIENCE BEHIND SIV",
+        "richText": "<p>SIV is a science-backed skincare system that harnesses the power of your skin’s microbiome to support whole-body skin health. Our products are designed to work in harmony with your unique skin biome, providing targeted solutions for a range of skin concerns.</p>",
+        "action_type": "button",
+        "button_link": "shopify://pages/science",
+        "custom_event_trigger": "",
+        "button_text": "Learn More"
+      }
+    },
+    "section_featured_product_probiotic": {
+      "type": "section-featured-product",
+      "blocks": {
+        "feature_point_1": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "SUPPORTS THE GUT-SKIN AXIS",
+            "text": "Promotes microbial diversity and helps improve skin clarity by addressing the root of skin imbalance from within."
+          }
+        },
+        "feature_point_2": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "IMPROVES CLARITY & BALANCES OIL",
+            "text": "Helps reduce non-cystic acne severity and sebum production for visibly clearer, more balanced skin."
+          }
+        },
+        "feature_point_3": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "STRENGTHENS BARRIER FUNCTION",
+            "text": "Fortifies skin barrier health, improves hydration retention, and supports elasticity for firm, supple skin."
+          }
+        }
+      },
+      "block_order": [
+        "feature_point_1",
+        "feature_point_2",
+        "feature_point_3"
+      ],
+      "settings": {
+        "heading": "THE ESSENTIAL PROBIOTIC FOR HEALTHY SKIN",
+        "product": "biome-balance-within",
+        "description": "<p>A probiotic-powered skincare supplement designed to support the gut-skin axis and overall skin microbiome.</p>",
+        "button_text": "View Product",
+        "color_scheme": ""
+      }
+    },
     "section_cta": {
       "type": "section-cta",
       "settings": {
+        "alignment": "center",
         "image": "shopify://shop_images/siv-hero_copy.jpg",
-        "title": "Healthier skin is a drop away",
-        "action_type": "button",
-        "button_link": "shopify://collections/all",
-        "custom_event_trigger": "open-quick-buy-drawer",
-        "button_text": "View Product"
+        "title": "Empower your Practice with SIV",
+        "richText": "<p>SIV is not just a trusted skincare brand - it's a professional-grade solution designed for aestheticians who demand the best for their clients</p>",
+        "action_type": "link",
+        "button_link": "shopify://pages/for-professionals",
+        "custom_event_trigger": "",
+        "button_text": "Apply for a Professional Account"
       }
     },
     "section_featured_posts": {
@@ -317,13 +268,11 @@
   },
   "order": [
     "home_hero",
-    "section_video_z76AhA",
-    "section_featured_product_zGxKPB",
+    "section_featured_product_serum",
     "key_points",
-    "section_conditions",
-    "rich_text",
-    "card_reveal",
     "testimonies",
+    "science_cta",
+    "section_featured_product_probiotic",
     "section_cta",
     "section_featured_posts"
   ]
