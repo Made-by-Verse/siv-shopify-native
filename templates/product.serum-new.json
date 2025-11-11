@@ -67,44 +67,6 @@
       ],
       "settings": {}
     },
-    "key_points": {
-      "type": "section-key-points",
-      "blocks": {
-        "point_1": {
-          "type": "point",
-          "settings": {
-            "image": "shopify://shop_images/topical-spore-treatment.png",
-            "heading": "Topical spore treatment",
-            "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
-          }
-        },
-        "point_2": {
-          "type": "point",
-          "settings": {
-            "image": "shopify://shop_images/skin-identical.png",
-            "heading": "Skin Identical",
-            "text": "Lightweight & stabilizing formula containing physiologically identical ingredients that your skin recognizes."
-          }
-        },
-        "point_3": {
-          "type": "point",
-          "settings": {
-            "image": "shopify://shop_images/face-base.png",
-            "heading": "Your Face Is Your Base",
-            "text": "Set your unique canvas by applying 2-5 drops of our Biome-Balancing Serum after toner and before moisturizer."
-          }
-        }
-      },
-      "block_order": [
-        "point_1",
-        "point_2",
-        "point_3"
-      ],
-      "settings": {
-        "heading": "Balance in a bottle",
-        "description": ""
-      }
-    },
     "section_featured_product_serum": {
       "type": "section-featured-product",
       "blocks": {
@@ -138,8 +100,47 @@
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
         "product": "siv-biome-balancing-serum-new",
+        "description": "<p><strong>15mL | 30 Day Supply</strong><br/>Perfect for first-time users. </p><p><strong>30mL | 60 Day Supply</strong><br/>Offering better value.</p><p>Before use, shake vigorously. Apply 1–3 drops once daily. Pat into dry or damp skin. Apply after cleansing or toning.  </p>",
         "button_text": "",
-        "description": "<p><b>15mL = 1 Month Supply</b><br>Perfect for travel or first-time users. </p><p><b>30mL = 2 Month Supply</b><br>Ideal for daily use, offering better value and convenience.</p><p>Before use, shake vigorously. Apply 1–3 drops once daily. Pat into dry or damp skin. Apply after cleansing or toning.  </p>"
+        "color_scheme": ""
+      }
+    },
+    "key_points": {
+      "type": "section-key-points",
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/topical-spore-treatment.png",
+            "heading": "Topical spore treatment",
+            "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/skin-identical.png",
+            "heading": "Skin Identical",
+            "text": "Lightweight & stabilizing formula containing physiologically identical ingredients that your skin recognizes."
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/face-base.png",
+            "heading": "Your Face Is Your Base",
+            "text": "Before use, shake vigorously. Apply 1–3 drops once daily. Pat into dry or damp skin. Apply after cleansing or toning."
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3"
+      ],
+      "settings": {
+        "heading": "Balance in a bottle",
+        "description": ""
       }
     },
     "testimonies": {
@@ -295,7 +296,8 @@
       ],
       "settings": {
         "heading": "Related Products",
-        "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>"
+        "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>",
+        "color_scheme": ""
       }
     }
   },
