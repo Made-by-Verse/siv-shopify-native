@@ -15,7 +15,7 @@
         "image_mC4Lza": {
           "type": "image",
           "settings": {
-            "background_image": "shopify://shop_images/Frame_427320581.jpg"
+            "background_image": "shopify://shop_images/SIV_half_horiz_high.jpg"
           }
         }
       },
@@ -57,47 +57,11 @@
         "link_text": "",
         "link": ""
       }
-    },
-    "section_featured_product_zGxKPB": {
-      "type": "section-featured-product",
-      "blocks": {
-        "feature_point_1": {
-          "type": "feature_point",
-          "settings": {
-            "heading": "Supports Balance",
-            "text": "Promotes a harmonious skin environment for improved texture and tone."
-          }
-        },
-        "feature_point_2": {
-          "type": "feature_point",
-          "settings": {
-            "heading": "Delivers Vibrance",
-            "text": "Enhances your skin’s natural radiance by supporting a healthy microbiome."
-          }
-        },
-        "feature_point_3": {
-          "type": "feature_point",
-          "settings": {
-            "heading": "Builds Resilience",
-            "text": "Strengthens your skin’s defenses against environmental stressors and aging."
-          }
-        }
-      },
-      "block_order": [
-        "feature_point_1",
-        "feature_point_2",
-        "feature_point_3"
-      ],
-      "settings": {
-        "heading": "The Essential Serum for Healthy Skin",
-        "button_text": "View Product"
-      }
     }
   },
   "order": [
     "hero",
     "bio",
-    "text_and_image",
-    "section_featured_product_zGxKPB"
+    "text_and_image"
   ]
 }
