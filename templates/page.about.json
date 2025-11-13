@@ -15,7 +15,7 @@
         "image_mC4Lza": {
           "type": "image",
           "settings": {
-            "background_image": "shopify://shop_images/Frame_427320581.jpg"
+            "background_image": "shopify://shop_images/SIV_04.jpg"
           }
         }
       },
@@ -90,7 +90,10 @@
       ],
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
-        "button_text": "View Product"
+        "product": "",
+        "description": "",
+        "button_text": "View Product",
+        "color_scheme": ""
       }
     }
   },
