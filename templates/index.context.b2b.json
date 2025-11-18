@@ -8,7 +8,7 @@
  * ------------------------------------------------------------
  */
 {
-  "parent": "product.biome-balance-within.json",
+  "parent": "index.json",
   "context": {
     "b2b": true
   },
