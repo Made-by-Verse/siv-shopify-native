@@ -1,4 +1,8 @@
-import { getBundleFreebies } from "../core/bundleFreebies";
+import {
+  getBundleFreebies,
+  getBundleDiscountCode,
+  applyDiscountCode,
+} from "../core/bundleFreebies";
 
 export default async function Cart() {
   Alpine.store("cart", {
@@ -140,6 +144,26 @@ export default async function Cart() {
           console.log("Payload items:", payloadItems);
           console.log("Shopify response:", responseBody);
           console.groupEnd();
+        }
+
+        // Apply discount code if configured for this bundle
+        if (Array.isArray(freebies) && freebies.length > 0) {
+          const discountCode = getBundleDiscountCode(bundleVariantId);
+          if (discountCode) {
+            if (shouldLog) {
+              console.log(
+                "[BundleFreebie] Applying discount code:",
+                discountCode
+              );
+            }
+            const discountApplied = await applyDiscountCode(discountCode);
+            if (shouldLog) {
+              console.log(
+                "[BundleFreebie] Discount code application:",
+                discountApplied ? "success" : "failed"
+              );
+            }
+          }
         }
 
         // Immediately update the cart after successful add
