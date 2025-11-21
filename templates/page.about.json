@@ -30,13 +30,76 @@
     },
     "bio": {
       "type": "section-bio",
+      "disabled": true,
       "settings": {
         "title": "Our Story",
         "image": "shopify://shop_images/Rectangle_10.png",
         "richText": "<p>In the dynamic landscape of skincare, SIV emerged as a groundbreaking force in 2021 under the leadership of its founder and CEO, Isabel Vitale. Recognizing the untapped potential of microbiome focused skincare, SIV pioneered a revolutionary approach by becoming the first-ever skincare brand to harness the power of bacillus spores.</p><p>Isabel Vitale, driven by a passion for innovation and a deep understanding of the skin microbiome, laid the foundation for SIV with the ambitious goal of redefining the beauty industry. In 2023, SIV officially introduced its quorum-sensing skincare, setting a new standard for beauty products that leverage the inherent communication system of bacteria.The heart of SIV's breakthrough lies in the use of bacillus spores, a key element that distinguishes their products from the conventional skincare offerings.</p><p>Early on in the company, Isabel brought Morgan Giusto on board as a founding partner and COO. Morgan's extensive background in microbiome research and product development complemented Isabel's vision, creating a formidable team dedicated to pushing the boundaries of conventional beauty standards.</p><p>As SIV continues to push the boundaries of innovation, its founders, Isabel Vitale and Morgan Giusto, remain steadfast in their dedication to transforming the skincare industry. With a commitment to research, development, and innovation, SIV is poised to leave an indelible mark on the world of beauty for years to come.</p><p>With Care,</p><p>Isabel <br/>Co-founder, CEO of SIV</p><p>Morgan<br/>Co-founder, COO of SIV</p>"
       }
     },
-    "section_text_and_image_EpKJDB": {
+    "1763088311445eb404": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_274aadb_rxeXyy": {
+          "type": "ai_gen_block_274aadb",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-11-13_at_8.54.13_PM.png",
+            "image_position": "left",
+            "image_width": 30,
+            "image_border_radius": 10,
+            "name": "Isabel Vitale",
+            "title": "Founder & CEO",
+            "description": "<p>In the dynamic landscape of skincare, SIV emerged as a groundbreaking force in 2021 under the leadership of its founder and CEO, Isabel Vitale. Recognizing the untapped potential of microbiome focused skincare, SIV pioneered a revolutionary approach by becoming the first-ever skincare brand to harness the power of bacillus spores. </p><p>Isabel Vitale, driven by a passion for innovation and a deep understanding of the skin microbiome, laid the foundation for SIV with the ambitious goal of redefining the beauty industry. In 2023, SIV officially introduced its quorum-sensing skincare, setting a new standard for beauty products that leverage the inherent communication system of bacteria.The heart of SIV's breakthrough lies in the use of bacillus spores, a key element that distinguishes their products from the conventional skincare offerings.</p><p>Early on in the company, Isabel brought Morgan Giusto on board as a founding partner and COO. Morgan's extensive background in microbiome research and product development complemented Isabel's vision, creating a formidable team dedicated to pushing the boundaries of conventional beauty standards.</p><p>As SIV continues to push the boundaries of innovation, its founders, Isabel Vitale and Morgan Giusto, remain steadfast in their dedication to transforming the skincare industry. With a commitment to research, development, and innovation, SIV is poised to leave an indelible mark on the world of beauty for years to come.</p>",
+            "vertical_alignment": "center",
+            "container_width": 1200,
+            "content_gap": 60,
+            "mobile_gap": 30,
+            "name_size": 32,
+            "title_size": 18,
+            "description_size": 16,
+            "spacing_after_name": 8,
+            "spacing_after_title": 16,
+            "background_color": "#f6f5ed",
+            "text_color": "#241917",
+            "padding_top": 60,
+            "padding_bottom": 60
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_274aadb_BHbkzx": {
+          "type": "ai_gen_block_274aadb",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-11-12_at_1.53.16_PM.png",
+            "image_position": "left",
+            "image_width": 30,
+            "image_border_radius": 10,
+            "name": "Morgan Giusto, RN, BSN",
+            "title": "CoFounder & COO",
+            "description": "<p>As a registered nurse and co-founder of SIV, Morgan's work has always centered around helping people feel better - in their skin, their confidence, and their overall wellbeing. That commitment to care guides every decision Morgan makes at SIV. With a focus on merging science, research, and integrity in a space that deserves better, Morgan is dedicated to developing products and systems that honor the microbiome and elevate long-term skin health through biologically intelligent formulations. SIV is not just shaping a skincare brand; SIV is shaping a new standard for microbiome-first esthetics.</p>",
+            "vertical_alignment": "center",
+            "container_width": 1200,
+            "content_gap": 60,
+            "mobile_gap": 30,
+            "name_size": 32,
+            "title_size": 18,
+            "description_size": 16,
+            "spacing_after_name": 8,
+            "spacing_after_title": 16,
+            "background_color": "#f6f5ed",
+            "text_color": "#241917",
+            "padding_top": 60,
+            "padding_bottom": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_274aadb_rxeXyy",
+        "ai_gen_block_274aadb_BHbkzx"
+      ],
+      "settings": {}
+    },
+    "text_and_image": {
       "type": "section-text-and-image",
       "blocks": {
         "image_bFrcAh": {
@@ -62,6 +125,7 @@
   "order": [
     "hero",
     "bio",
-    "section_text_and_image_EpKJDB"
+    "1763088311445eb404",
+    "text_and_image"
   ]
 }
