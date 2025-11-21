@@ -102,7 +102,7 @@
     "text_and_image": {
       "type": "section-text-and-image",
       "blocks": {
-        "image_dWcN8C": {
+        "image_bFrcAh": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/DTS_Shadow_Tech_Fanette_Guilloud_9360.jpg"
@@ -110,7 +110,7 @@
         }
       },
       "block_order": [
-        "image_dWcN8C"
+        "image_bFrcAh"
       ],
       "settings": {
         "title": "Developed with microbiologists",
