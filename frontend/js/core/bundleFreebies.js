@@ -82,7 +82,16 @@ export function getBundleFreebies(variantId) {
 export function getBundleDiscountCode(variantId) {
   if (!variantId) return null;
 
-  return BUNDLE_DISCOUNT_CODES?.[variantId] ?? null;
+  // Convert to number for lookup (keys in BUNDLE_DISCOUNT_CODES are numbers)
+  const numericVariantId = Number(variantId);
+  if (!Number.isFinite(numericVariantId)) return null;
+
+  // Try both numeric and string keys for flexibility
+  return (
+    BUNDLE_DISCOUNT_CODES?.[numericVariantId] ??
+    BUNDLE_DISCOUNT_CODES?.[variantId] ??
+    null
+  );
 }
 
 /**

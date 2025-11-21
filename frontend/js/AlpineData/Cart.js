@@ -148,29 +148,56 @@ export default async function Cart() {
 
         // Apply discount code if configured for this bundle
         // (applies regardless of whether there are freebies)
-        const discountCode = getBundleDiscountCode(bundleVariantId);
-        if (discountCode) {
+        try {
           if (shouldLog) {
             console.log(
-              "[BundleFreebie] Applying discount code:",
+              "[BundleFreebie] Checking for discount code for variant:",
+              bundleVariantId,
+              "type:",
+              typeof bundleVariantId
+            );
+          }
+          const discountCode = getBundleDiscountCode(bundleVariantId);
+          if (shouldLog) {
+            console.log(
+              "[BundleFreebie] Discount code lookup result:",
               discountCode
             );
           }
-          const discountApplied = await applyDiscountCode(
-            discountCode,
-            shouldLog
-          );
-          if (shouldLog) {
+          if (discountCode) {
+            if (shouldLog) {
+              console.log(
+                "[BundleFreebie] Applying discount code:",
+                discountCode
+              );
+            }
+            const discountApplied = await applyDiscountCode(
+              discountCode,
+              shouldLog
+            );
+            if (shouldLog) {
+              console.log(
+                "[BundleFreebie] Discount code application:",
+                discountApplied ? "success" : "failed"
+              );
+            }
+          } else if (shouldLog && Number.isFinite(bundleVariantId)) {
             console.log(
-              "[BundleFreebie] Discount code application:",
-              discountApplied ? "success" : "failed"
+              "[BundleFreebie] No discount code configured for bundle variant",
+              bundleVariantId
             );
           }
-        } else if (shouldLog && Number.isFinite(bundleVariantId)) {
-          console.log(
-            "[BundleFreebie] No discount code configured for bundle variant",
-            bundleVariantId
+        } catch (discountError) {
+          console.error(
+            "[BundleFreebie] Error applying discount code:",
+            discountError
           );
+          if (shouldLog) {
+            console.error("[BundleFreebie] Discount error details:", {
+              bundleVariantId,
+              error: discountError,
+            });
+          }
         }
 
         // Immediately update the cart after successful add
