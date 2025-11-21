@@ -104,9 +104,9 @@ export function getBundleDiscountCode(variantId) {
  */
 export async function applyDiscountCode(discountCode, shouldLog = false) {
   if (!discountCode || typeof discountCode !== "string") {
-    if (shouldLog) {
-      console.error("[BundleFreebie] Invalid discount code:", discountCode);
-    }
+    // if (shouldLog) {
+    //   console.error("[BundleFreebie] Invalid discount code:", discountCode);
+    // }
     return false;
   }
 
@@ -122,13 +122,13 @@ export async function applyDiscountCode(discountCode, shouldLog = false) {
         }
       );
 
-      if (shouldLog) {
-        console.log(
-          "[BundleFreebie] Discount endpoint response:",
-          response.status,
-          response.url
-        );
-      }
+      // if (shouldLog) {
+      //   console.log(
+      //     "[BundleFreebie] Discount endpoint response:",
+      //     response.status,
+      //     response.url
+      //   );
+      // }
 
       // Check if the response indicates success (200, 302, 303 are all valid)
       if (response.ok || response.status === 302 || response.status === 303) {
@@ -137,12 +137,12 @@ export async function applyDiscountCode(discountCode, shouldLog = false) {
         return true;
       }
     } catch (fetchError) {
-      if (shouldLog) {
-        console.warn(
-          "[BundleFreebie] Discount endpoint failed, trying cookie method:",
-          fetchError
-        );
-      }
+      // if (shouldLog) {
+      //   console.warn(
+      //     "[BundleFreebie] Discount endpoint failed, trying cookie method:",
+      //     fetchError
+      //   );
+      // }
     }
 
     // Method 2: Manually set the discount code cookie
@@ -179,28 +179,28 @@ function setDiscountCookie(discountCode, shouldLog = false) {
       document.cookie = `${cookieName}=${cookieValue}`;
     });
 
-    if (shouldLog) {
-      console.log(
-        "[BundleFreebie] Set discount cookies:",
-        cookieNames,
-        "with value:",
-        discountCode
-      );
-      console.log(
-        "[BundleFreebie] Current cookies:",
-        document.cookie
-          .split(";")
-          .filter((c) =>
-            cookieNames.some((name) => c.trim().startsWith(name + "="))
-          )
-      );
-    }
+    // if (shouldLog) {
+    //   console.log(
+    //     "[BundleFreebie] Set discount cookies:",
+    //     cookieNames,
+    //     "with value:",
+    //     discountCode
+    //   );
+    //   console.log(
+    //     "[BundleFreebie] Current cookies:",
+    //     document.cookie
+    //       .split(";")
+    //       .filter((c) =>
+    //         cookieNames.some((name) => c.trim().startsWith(name + "="))
+    //       )
+    //   );
+    // }
 
     return true;
   } catch (error) {
-    if (shouldLog) {
-      console.error("[BundleFreebie] Error setting discount cookie:", error);
-    }
+    // if (shouldLog) {
+    //   console.error("[BundleFreebie] Error setting discount cookie:", error);
+    // }
     return false;
   }
 }
