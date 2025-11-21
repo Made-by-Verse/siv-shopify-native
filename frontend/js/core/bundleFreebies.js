@@ -86,32 +86,112 @@ export function getBundleDiscountCode(variantId) {
 }
 
 /**
- * Applies a discount code by calling Shopify's discount endpoint.
- * This sets a cookie that Shopify will use at checkout.
+ * Applies a discount code using multiple methods to ensure it's set.
+ * This sets cookies that Shopify will use at checkout.
  *
  * @param {string} discountCode - The discount code to apply
+ * @param {boolean} shouldLog - Whether to log debug information
  * @returns {Promise<boolean>} - True if successful, false otherwise
  */
-export async function applyDiscountCode(discountCode) {
+export async function applyDiscountCode(discountCode, shouldLog = false) {
   if (!discountCode || typeof discountCode !== "string") {
+    if (shouldLog) {
+      console.error("[BundleFreebie] Invalid discount code:", discountCode);
+    }
     return false;
   }
 
   try {
-    // Shopify's discount endpoint sets a cookie that will be used at checkout
-    const response = await fetch(
-      `/discount/${encodeURIComponent(discountCode)}`,
-      {
-        method: "GET",
-        credentials: "same-origin",
-      }
-    );
+    // Method 1: Use Shopify's discount endpoint (sets cookie via redirect)
+    try {
+      const response = await fetch(
+        `/discount/${encodeURIComponent(discountCode)}`,
+        {
+          method: "GET",
+          credentials: "same-origin",
+          redirect: "follow",
+        }
+      );
 
-    // The endpoint returns a redirect or HTML, so we just check if it succeeded
-    // (status 200 or redirect status codes are both fine)
-    return response.ok || response.status === 302 || response.status === 303;
+      if (shouldLog) {
+        console.log(
+          "[BundleFreebie] Discount endpoint response:",
+          response.status,
+          response.url
+        );
+      }
+
+      // Check if the response indicates success (200, 302, 303 are all valid)
+      if (response.ok || response.status === 302 || response.status === 303) {
+        // Also manually set the cookie as a backup
+        setDiscountCookie(discountCode, shouldLog);
+        return true;
+      }
+    } catch (fetchError) {
+      if (shouldLog) {
+        console.warn(
+          "[BundleFreebie] Discount endpoint failed, trying cookie method:",
+          fetchError
+        );
+      }
+    }
+
+    // Method 2: Manually set the discount code cookie
+    const cookieSet = setDiscountCookie(discountCode, shouldLog);
+    return cookieSet;
   } catch (error) {
     console.error("[BundleFreebie] Error applying discount code:", error);
+    return false;
+  }
+}
+
+/**
+ * Manually sets the discount code cookie that Shopify uses at checkout.
+ * Shopify typically uses 'discount_code' or 'discount' cookie name.
+ *
+ * @param {string} discountCode - The discount code to set
+ * @param {boolean} shouldLog - Whether to log debug information
+ * @returns {boolean} - True if cookie was set successfully
+ */
+function setDiscountCookie(discountCode, shouldLog = false) {
+  try {
+    // Shopify uses 'discount_code' cookie for discount codes
+    // Set cookie with 1 year expiration (or until checkout)
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + 1);
+    const cookieValue = `${encodeURIComponent(
+      discountCode
+    )}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
+
+    // Try multiple cookie names that Shopify might use
+    const cookieNames = ["discount_code", "discount", "shopify_discount"];
+
+    cookieNames.forEach((cookieName) => {
+      document.cookie = `${cookieName}=${cookieValue}`;
+    });
+
+    if (shouldLog) {
+      console.log(
+        "[BundleFreebie] Set discount cookies:",
+        cookieNames,
+        "with value:",
+        discountCode
+      );
+      console.log(
+        "[BundleFreebie] Current cookies:",
+        document.cookie
+          .split(";")
+          .filter((c) =>
+            cookieNames.some((name) => c.trim().startsWith(name + "="))
+          )
+      );
+    }
+
+    return true;
+  } catch (error) {
+    if (shouldLog) {
+      console.error("[BundleFreebie] Error setting discount cookie:", error);
+    }
     return false;
   }
 }

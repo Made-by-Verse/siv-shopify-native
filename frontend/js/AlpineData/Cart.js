@@ -147,23 +147,30 @@ export default async function Cart() {
         }
 
         // Apply discount code if configured for this bundle
-        if (Array.isArray(freebies) && freebies.length > 0) {
-          const discountCode = getBundleDiscountCode(bundleVariantId);
-          if (discountCode) {
-            if (shouldLog) {
-              console.log(
-                "[BundleFreebie] Applying discount code:",
-                discountCode
-              );
-            }
-            const discountApplied = await applyDiscountCode(discountCode);
-            if (shouldLog) {
-              console.log(
-                "[BundleFreebie] Discount code application:",
-                discountApplied ? "success" : "failed"
-              );
-            }
+        // (applies regardless of whether there are freebies)
+        const discountCode = getBundleDiscountCode(bundleVariantId);
+        if (discountCode) {
+          if (shouldLog) {
+            console.log(
+              "[BundleFreebie] Applying discount code:",
+              discountCode
+            );
           }
+          const discountApplied = await applyDiscountCode(
+            discountCode,
+            shouldLog
+          );
+          if (shouldLog) {
+            console.log(
+              "[BundleFreebie] Discount code application:",
+              discountApplied ? "success" : "failed"
+            );
+          }
+        } else if (shouldLog && Number.isFinite(bundleVariantId)) {
+          console.log(
+            "[BundleFreebie] No discount code configured for bundle variant",
+            bundleVariantId
+          );
         }
 
         // Immediately update the cart after successful add
