@@ -148,6 +148,12 @@ export default async function Cart() {
 
         // Apply discount code if configured for this bundle
         // (applies regardless of whether there are freebies)
+        console.log(
+          "[BundleFreebie] DEBUG: About to check discount code for variant:",
+          bundleVariantId,
+          "shouldLog:",
+          shouldLog
+        );
         try {
           if (shouldLog) {
             console.log(
@@ -158,6 +164,10 @@ export default async function Cart() {
             );
           }
           const discountCode = getBundleDiscountCode(bundleVariantId);
+          console.log(
+            "[BundleFreebie] DEBUG: Discount code lookup returned:",
+            discountCode
+          );
           if (shouldLog) {
             console.log(
               "[BundleFreebie] Discount code lookup result:",
@@ -181,11 +191,13 @@ export default async function Cart() {
                 discountApplied ? "success" : "failed"
               );
             }
-          } else if (shouldLog && Number.isFinite(bundleVariantId)) {
-            console.log(
-              "[BundleFreebie] No discount code configured for bundle variant",
-              bundleVariantId
-            );
+          } else {
+            if (shouldLog) {
+              console.log(
+                "[BundleFreebie] No discount code configured for bundle variant",
+                bundleVariantId
+              );
+            }
           }
         } catch (discountError) {
           console.error(
