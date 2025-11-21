@@ -146,34 +146,34 @@ export default async function Cart() {
           console.groupEnd();
         }
 
+        // Immediately update the cart after successful add
+        await this.getCart();
+
         // Apply discount code if configured for this bundle
         // (applies regardless of whether there are freebies)
+        // Doing this after cart update to ensure cart state is fresh
         console.log(
           "[BundleFreebie] DEBUG: About to check discount code for variant:",
-          bundleVariantId,
-          "shouldLog:",
-          shouldLog
+          bundleVariantId
         );
         try {
-          if (shouldLog) {
-            console.log(
-              "[BundleFreebie] Checking for discount code for variant:",
-              bundleVariantId,
-              "type:",
-              typeof bundleVariantId
-            );
-          }
           const discountCode = getBundleDiscountCode(bundleVariantId);
           console.log(
             "[BundleFreebie] DEBUG: Discount code lookup returned:",
             discountCode
           );
+          
           if (shouldLog) {
             console.log(
-              "[BundleFreebie] Discount code lookup result:",
+              "[BundleFreebie] Checking for discount code for variant:",
+              bundleVariantId,
+              "type:",
+              typeof bundleVariantId,
+              "result:",
               discountCode
             );
           }
+          
           if (discountCode) {
             if (shouldLog) {
               console.log(
@@ -211,9 +211,6 @@ export default async function Cart() {
             });
           }
         }
-
-        // Immediately update the cart after successful add
-        await this.getCart();
 
         window.dispatchEvent(new Event("open-cart-drawer"));
 

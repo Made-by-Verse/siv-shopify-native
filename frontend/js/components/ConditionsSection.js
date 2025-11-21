@@ -40,7 +40,6 @@ export class ConditionsSection extends Base {
   handleMouseMove(event) {
     this.mouseX = event.pageX;
     this.mouseY = event.pageY;
-    console.log("Mouse position:", { x: this.mouseX, y: this.mouseY });
   }
 
   destroy() {
