@@ -12,5 +12,65 @@
   "context": {
     "b2b": true
   },
-  "sections": {}
+  "sections": {
+    "section_resources_if9DQ": {
+      "type": "section-resources",
+      "disabled": false,
+      "settings": {
+        "heading": "Resources",
+        "description": "<p>Download the resources below to get started with your wholesale account.</p>"
+      },
+      "blocks": {
+        "resource_MnXVK": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "Resource 1",
+            "description": "<p>Description of the resource</p>",
+            "header-986b699f77887b09968d70a50612da87": null,
+            "download_link": "#",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        },
+        "resource_ycNpY": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "Resource 2",
+            "description": "<p>Description of the resource</p>",
+            "header-1ed9d5636cd210c5ec961a7d892f656d": null,
+            "download_link": "#",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        },
+        "resource_Nyf4P": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "Resource 3",
+            "description": "<p>Description of the resource</p>",
+            "header-c1bea81a146562cc82bbdd284eef9708": null,
+            "download_link": "#",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        }
+      },
+      "block_order": [
+        "resource_MnXVK",
+        "resource_ycNpY",
+        "resource_Nyf4P"
+      ],
+      "name": "Resources"
+    }
+  },
+  "order": [
+    "section_resources_if9DQ",
+    "section_two_column_content_kY6WCW"
+  ]
 }
