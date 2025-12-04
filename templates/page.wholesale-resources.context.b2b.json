@@ -12,34 +12,5 @@
   "context": {
     "b2b": true
   },
-  "sections": {
-    "resources": {
-      "disabled": false,
-      "settings": {},
-      "blocks": {
-        "resource_3DT9w": {
-          "type": "resource",
-          "disabled": false,
-          "settings": {
-            "title": "Resource Title",
-            "description": "",
-            "header-ddab6f5d1f5ca03cbdf3d9e2257299f4": null,
-            "download_link": "",
-            "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
-          }
-        }
-      },
-      "block_order": [
-        "resource_3DT9w",
-        "resource_catalog",
-        "resource_pricing",
-        "resource_marketing",
-        "resource_order_form",
-        "resource_terms",
-        "resource_training"
-      ]
-    }
-  }
+  "sections": {}
 }
