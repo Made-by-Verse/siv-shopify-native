@@ -16,6 +16,7 @@
           "type": "resource",
           "settings": {
             "title": "Product Catalog",
+            "description": "",
             "download_link": "#",
             "button_text": "Download Catalog",
             "open_in_new_tab": false,
@@ -26,6 +27,7 @@
           "type": "resource",
           "settings": {
             "title": "Wholesale Pricing Guide",
+            "description": "",
             "download_link": "#",
             "button_text": "Download Pricing",
             "open_in_new_tab": false,
@@ -36,6 +38,7 @@
           "type": "resource",
           "settings": {
             "title": "Marketing Materials",
+            "description": "",
             "download_link": "#",
             "button_text": "Download Assets",
             "open_in_new_tab": false,
@@ -46,6 +49,7 @@
           "type": "resource",
           "settings": {
             "title": "Order Form Template",
+            "description": "",
             "download_link": "#",
             "button_text": "Download Form",
             "open_in_new_tab": false,
@@ -56,6 +60,7 @@
           "type": "resource",
           "settings": {
             "title": "Terms & Conditions",
+            "description": "",
             "download_link": "#",
             "button_text": "View Terms",
             "open_in_new_tab": true,
@@ -66,6 +71,7 @@
           "type": "resource",
           "settings": {
             "title": "Product Training Guide",
+            "description": "",
             "download_link": "#",
             "button_text": "Download Guide",
             "open_in_new_tab": false,
@@ -81,6 +87,7 @@
         "resource_terms",
         "resource_training"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Wholesale Resources",
         "description": "<p>Download the resources below to get started with your wholesale account.</p>"
@@ -88,6 +95,6 @@
     }
   },
   "order": [
-    "resources",
+    "resources"
   ]
 }
