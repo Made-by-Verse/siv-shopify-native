@@ -14,6 +14,7 @@
   },
   "sections": {
     "resources": {
+      "disabled": false,
       "settings": {},
       "blocks": {
         "resource_3DT9w": {
