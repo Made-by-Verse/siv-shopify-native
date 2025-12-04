@@ -9,218 +9,85 @@
  */
 {
   "sections": {
-    "faqs": {
-      "type": "section-accordion",
+    "resources": {
+      "type": "section-resources",
       "blocks": {
-        "faq_1": {
-          "type": "accordion",
+        "resource_catalog": {
+          "type": "resource",
           "settings": {
-            "heading": "What is SIV’s Biome Balancing Serum?",
-            "content": "<p><strong>Simple:</strong> A quorum-sensing serum that uses bacillus spores to adapt and balance each person’s skin microbiome.</p><p><strong>Elaborated:</strong> SIV is a quorum-sensing serum that uses bacillus spores to balance the skin microbiome. Many of the inflammatory issues we deal with on the skin can be tied to a dysbiotic skin microbiome. The spores are a resilient bacteria that can help target overgrown strains on the skin and bring them down to a healthy level while also facilitating the growth of other beneficial strains- effectively balancing the skin microbiome.</p>"
+            "title": "Product Catalog",
+            "download_link": "#",
+            "button_text": "Download Catalog",
+            "open_in_new_tab": false,
+            "force_download": true
           }
         },
-        "faq_2": {
-          "type": "accordion",
+        "resource_pricing": {
+          "type": "resource",
           "settings": {
-            "heading": "What is Leaky Skin?",
-            "content": "<p><strong>Simple:</strong> Skin barrier degradation caused by an imbalance of skin bacteria</p><p><strong>Elaborated:</strong> Leaky skin is skin barrier degradation that is caused by the imbalance of skin bacteria. The composition of the skin microbiome can directly affect the structure of the physical skin barrier. When this barrier becomes compromised, toxins can leak into the skin and cause inflammation throughout the body. Leaky skin is an independent risk factor for various other issues unrelated to skin health (Baltimore Longitudinal Study of Aging).</p>"
+            "title": "Wholesale Pricing Guide",
+            "download_link": "#",
+            "button_text": "Download Pricing",
+            "open_in_new_tab": false,
+            "force_download": true
           }
         },
-        "faq_3": {
-          "type": "accordion",
+        "resource_marketing": {
+          "type": "resource",
           "settings": {
-            "heading": "What does Quorum sensing mean/what is QS?",
-            "content": "<p><strong>Simple:</strong> It’s the process of communication between two bacterial cells.</p><p><strong>Elaborated:</strong> Quorum sensing is the process of communication between two bacterial cells. It mainly happens through biofilms and max load capacity, which is based on weight/volume. This is the technology SIV’s serum uses in order to read, adapt to, and adjust each person’s unique skin biome.</p>"
+            "title": "Marketing Materials",
+            "download_link": "#",
+            "button_text": "Download Assets",
+            "open_in_new_tab": false,
+            "force_download": true
           }
         },
-        "accordion_XtTnP4": {
-          "type": "accordion",
+        "resource_order_form": {
+          "type": "resource",
           "settings": {
-            "heading": "Do you offer samples?",
-            "content": "<p>SIV does not offer product samples.</p>"
+            "title": "Order Form Template",
+            "download_link": "#",
+            "button_text": "Download Form",
+            "open_in_new_tab": false,
+            "force_download": true
           }
         },
-        "faq_4": {
-          "type": "accordion",
+        "resource_terms": {
+          "type": "resource",
           "settings": {
-            "heading": "What does SIV help with?",
-            "content": "<p><strong>Simple:</strong> Occasional inflammatory issues on the skin</p><p><strong>Elaborated:</strong> SIV can help with various types of occasional inflammatory skin issues. The serum works on the skin’s immune system, which is one of the main things the skin microbiome controls. When we have occasional inflammatory issues, it’s an overworking of the immune system. This means the skin is reacting to things that it should not be reacting to, which is triggered by a dysbiotic skin microbiome.</p>"
+            "title": "Terms & Conditions",
+            "download_link": "#",
+            "button_text": "View Terms",
+            "open_in_new_tab": true,
+            "force_download": false
           }
         },
-        "accordion_p8AM3K": {
-          "type": "accordion",
+        "resource_training": {
+          "type": "resource",
           "settings": {
-            "heading": "Are there any precautions I should follow when using SIV?",
-            "content": "<p>Do not use if allergic to any of the ingredients. Discontinue use if irritation occurs. </p><p>Avoid contact with eyes; if contact with eyes occurs, immediately rinse with water. </p><p>If you have highly sensitive skin, prior to applying fully, we recommend that you first test on a small area of skin.</p>"
-          }
-        },
-        "accordion_YMcJr7": {
-          "type": "accordion",
-          "settings": {
-            "heading": "What if I have sensitive skin?",
-            "content": "<p>If you have highly sensitive skin, prior to applying SIV fully, we recommend that you first test on a small area of skin.</p>"
-          }
-        },
-        "faq_5": {
-          "type": "accordion",
-          "settings": {
-            "heading": "How long does one bottle last?",
-            "content": "<p>With consistent once-daily use, one bottle typically lasts approximately 30 days. Actual duration may vary. </p>"
-          }
-        },
-        "faq_6": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Order/layering of product:",
-            "content": "<p>Apply SIV after cleansing and toner, but before other serums and moisturizer.<br/><strong>Suggested Order</strong>: Cleanser, Toner, SIV, Other serums, then finish with Moisturizer/SPF<br/><strong>*Note:</strong> Leave-on benzoyl peroxide should be applied in the opposite routine than SIV unless otherwise directed by a licensed provider. For example) if you apply BPO at night, apply SIV in your morning routine. </p>"
-          }
-        },
-        "faq_7": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Skin identical ingredients",
-            "content": "<p>Bacillus is naturally found in nature in the soil and in the ocean. Your skin knows and recognizes this bacteria. The rest of the ingredients are skin- identical fatty acids.</p><p><strong>Squalane:</strong> Biomimetic oil, molecule derived from non-GMO sugarcane that mimics squalene, beneficial in promoting skin hydration</p><p><strong>Caprylic/Capric Triglyceride: </strong>a mixture of caprylic and capric fatty acids derived from palm oil; helps replenish the skin’s surface and help it to resist moisture loss</p><p><strong>Glyceryl Caprylate:</strong> a natural, plant-based emollient derived from glycerin and plant fatty acids; restores the skin’s oils, regulates the skin moisture and acts as a humidifier to the skin.</p><p><strong>Bacillus:</strong> A proprietary blend of Bacillus spores support a healthy skin foundation and visibly improves skin. Positively influencing your unique skin biome and establishing balance. The spores can help improve the skin microbiome by targeting overgrown bacteria, while facilitating the growth of other essential species- effectively balancing the skin microbiome.</p>"
-          }
-        },
-        "faq_8": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Can I use my SIV with other products?",
-            "content": "<p>Yes, SIV can be used alongside other skincare products. SIV is designed to complement your current skincare routine. SIV Biome Balancing Serum is formulated to support the skin’s natural barrier and microbiome, making it compatible with a wide range of skincare routines.</p>"
-          }
-        },
-        "faq_9": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Is it supposed to smell like this?",
-            "content": "<p>Yes! The Biome Balancing Serum has an earthy, biological smell to it. This is a good thing! As your microbiome balances out, the smell will improve/diminish.</p><p>We are committed to using biocompatible ingredients. Therefore, our serum does not contain any added fragrance. The compounds used in added fragrances can compromise the skin microbiome.</p><p>The expected and unique scent of SIV’s Biome Balancing Serum results from the biocompatible ingredients used (Bacillus).</p><p>This scent dissipates quickly, especially if other products are used over the serum.</p>"
-          }
-        },
-        "faq_10": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Why do I need to “SHAKE VIGOROUSLY!” before use?",
-            "content": "<p>When we say shake, we mean SHAKE!</p><p>The bacillus spores settle to the bottom of the dropper (we did not want to add a suspension and compromise the formula); therefore, to ensure the product works right, we need to ensure that the bacillus is incorporated throughout the formula.</p><p>Once the rubber bottom of the dropper is clear, the bacillus spores are incorporated into the product and it’s ready to use.</p>"
-          }
-        },
-        "faq_11": {
-          "type": "accordion",
-          "settings": {
-            "heading": "How do I dispense the serum?",
-            "content": "<p>GENTLY press the bottom of the dropper bottle (the clear rubber part) to dispense a drop of the serum.</p><p>Press VERY gently, as to not apply too much</p>"
-          }
-        },
-        "faq_12": {
-          "type": "accordion",
-          "settings": {
-            "heading": "How do I place a wholesale order?",
-            "content": "<p>Be sure to have a wholesale account. If you do not, fill out this form to be considered: https://sivcare.com/pages/wholesale-enquiry</p><p>If you have an account, go to sivcare.com and log in using the same email that you signed up with. An email containing your access code will be sent to you (check spam if you don't see it).</p>"
-          }
-        },
-        "faq_13": {
-          "type": "accordion",
-          "settings": {
-            "heading": "How do I become a wholesaler?",
-            "content": "<p>To apply to be a wholesaler, please visit: https://sivcare.com/pages/for-professionals</p><p>Once the form is filled out, it will be sent to our team for review and approval. </p><p>If you are approved, you will receive an email with next steps on how to order, wholesale pricing, etc.</p>"
-          }
-        },
-        "accordion_LbT9dC": {
-          "type": "accordion",
-          "settings": {
-            "heading": "How should I store my serum?",
-            "content": "<p>Store at room temperature, away from sunlight.</p>"
-          }
-        },
-        "accordion_iwizM4": {
-          "type": "accordion",
-          "settings": {
-            "heading": "How do I contact the SIV team?",
-            "content": "<p>For questions, feedback, or support, please reach out to us at <a><strong>info@sivcare.com</strong></a></p>"
-          }
-        },
-        "accordion_AjYFVh": {
-          "type": "accordion",
-          "settings": {
-            "heading": "what is your return policy?",
-            "content": "<p>Please visit our return policy using the link at the bottom of the page. </p>"
-          }
-        },
-        "accordion_wgdCkG": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Do you ship to PO boxes?",
-            "content": "<p>No, we do not ship to PO Boxes .</p>"
-          }
-        },
-        "accordion_8j3UFB": {
-          "type": "accordion",
-          "settings": {
-            "heading": "I am a wholesaler in Australia or New Zealand. How do I sign up for a wholesale account?",
-            "content": "<p>For New Zealand stockists please contact: <a href=\"mailto:support@fxmed.co.nz\" target=\"_blank\">support@fxmed.co.nz</a></p><p>For Australian stockists please contact: <a href=\"mailto:support@therahealth.com.au\" target=\"_blank\">support@therahealth.com.au</a></p>"
-          }
-        },
-        "accordion_8Tgk3E": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Do you ship to Canada?",
-            "content": "<p>At this time, we are not shipping to Canada. We are currently in the process of registering our product with the appropriate Canadian authorities to ensure a smooth and compliant shipping experience. We truly appreciate your patience and understanding during this process and will be sure to share an update as soon as shipping to Canada becomes available.</p>"
-          }
-        },
-        "accordion_RMdxJE": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Can I use the SIV serum if I am pregnant or breastfeeding?",
-            "content": "<p>The SIV serum is designed to be gentle and microbiome-supportive. However, because pregnancy and breastfeeding involve unique changes to the body, we recommend consulting with your healthcare provider before starting or continuing any new skincare routine. Your provider can help determine what is safest for you and your baby.</p>"
-          }
-        },
-        "accordion_9keLiD": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Is the SIV Serum safe for teenagers under the age of 18?",
-            "content": "<p>Our serum is formulated with skin-supportive ingredients, but they are intended for adult use. We do not specifically test SIV products for individuals under 18. If you are under 18 and considering using SIV, we recommend speaking with a parent/guardian and consulting a healthcare practitioner before using our serum. </p>"
-          }
-        },
-        "accordion_ibqeWw": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Do you ship to the UK?",
-            "content": "<p>At this time, we do not ship to the UK.</p>"
+            "title": "Product Training Guide",
+            "download_link": "#",
+            "button_text": "Download Guide",
+            "open_in_new_tab": false,
+            "force_download": true
           }
         }
       },
       "block_order": [
-        "faq_1",
-        "faq_2",
-        "faq_3",
-        "accordion_XtTnP4",
-        "faq_4",
-        "accordion_p8AM3K",
-        "accordion_YMcJr7",
-        "faq_5",
-        "faq_6",
-        "faq_7",
-        "faq_8",
-        "faq_9",
-        "faq_10",
-        "faq_11",
-        "faq_12",
-        "faq_13",
-        "accordion_LbT9dC",
-        "accordion_iwizM4",
-        "accordion_AjYFVh",
-        "accordion_wgdCkG",
-        "accordion_8j3UFB",
-        "accordion_8Tgk3E",
-        "accordion_RMdxJE",
-        "accordion_9keLiD",
-        "accordion_ibqeWw"
+        "resource_catalog",
+        "resource_pricing",
+        "resource_marketing",
+        "resource_order_form",
+        "resource_terms",
+        "resource_training"
       ],
       "settings": {
-        "heading": "Frequently Asked Questions"
+        "heading": "Wholesale Resources",
+        "description": "<p>Download the resources below to get started with your wholesale account.</p>"
       }
     }
   },
   "order": [
-    "faqs"
+    "resources",
   ]
 }

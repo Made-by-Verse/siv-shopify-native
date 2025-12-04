@@ -1,0 +1,152 @@
+<div class="wrapper py-8 md:py-12">
+  <div class="grid grid-cols-3 gap-4 items-end mb-8">
+    <div class="col-span-2">
+      {% if section.settings.heading != blank %}
+        {% render 'animated-heading', title: section.settings.heading, class: 'h2' %}
+      {% endif %}
+    </div>
+    <div>
+      {% if section.settings.description != blank %}
+        <div class="prose">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 border-t border-black">
+    {% for block in section.blocks %}
+      <div
+        class="py-4 flex space-5 items-center justify-between items-center border-b border-black"
+        {{ block.shopify_attributes }}
+      >
+        {% if block.settings.title != blank %}
+          <h3 class="text-2xl">{{ block.settings.title }}</h3>
+        {% endif %}
+
+        {% if block.settings.download_link != blank %}
+          {% assign download_url = block.settings.download_link %}
+          {% assign download_text = block.settings.button_text | default: 'Download' %}
+          <a
+            href="{{ download_url }}"
+            {% if block.settings.open_in_new_tab %}
+              target="_blank" rel="noopener noreferrer"
+            {% endif %}
+            {% if block.settings.force_download %}
+              download
+            {% endif %}
+            class="btn btn--outline inline-block"
+          >
+            {{ download_text }}
+          </a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Resources",
+  "tag": "section",
+  "class": "section-resources bg-primary",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Resources"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "resource",
+      "name": "Resource",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Resource Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "header",
+          "content": "Download Options"
+        },
+        {
+          "type": "url",
+          "id": "download_link",
+          "label": "Download Link",
+          "info": "Enter a URL to a file for download. You can upload files in Shopify Admin > Settings > Files and then link to them here."
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Download"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_in_new_tab",
+          "label": "Open link in new tab",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "force_download",
+          "label": "Force download",
+          "default": true,
+          "info": "Adds the download attribute to force file download instead of opening in browser"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Resources",
+      "settings": {
+        "heading": "Resources"
+      },
+      "blocks": [
+        {
+          "type": "resource",
+          "settings": {
+            "title": "Resource 1",
+            "description": "<p>Description of the resource</p>",
+            "button_text": "Download"
+          }
+        },
+        {
+          "type": "resource",
+          "settings": {
+            "title": "Resource 2",
+            "description": "<p>Description of the resource</p>",
+            "button_text": "Download"
+          }
+        },
+        {
+          "type": "resource",
+          "settings": {
+            "title": "Resource 3",
+            "description": "<p>Description of the resource</p>",
+            "button_text": "Download"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
