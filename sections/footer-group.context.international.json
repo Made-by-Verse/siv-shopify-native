@@ -8,14 +8,9 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "section_two_column_content_kY6WCW": {
-      "type": "section-two-column-content",
-      "name": "Two Column Content",
-      "settings": {}
-    }
+  "parent": "footer-group.json",
+  "context": {
+    "market": "international"
   },
-  "order": [
-    "section_two_column_content_kY6WCW"
-  ]
+  "sections": {}
 }
