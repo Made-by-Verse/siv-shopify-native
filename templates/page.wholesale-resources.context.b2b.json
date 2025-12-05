@@ -73,6 +73,19 @@
             "force_download": true
           }
         },
+        "resource_fbTnc": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "biome balance within probiotic - published study",
+            "description": "",
+            "header-9fb20f9163e7e9d02e94aa7e89b6c3a9": null,
+            "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/jcm-12-00895.pdf?v=1764960899",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        },
         "resource_Nyf4P": {
           "type": "resource",
           "disabled": false,
@@ -105,6 +118,7 @@
         "resource_8zBmL",
         "resource_aGCgV",
         "resource_TabKL",
+        "resource_fbTnc",
         "resource_Nyf4P",
         "resource_ycNpY"
       ],
