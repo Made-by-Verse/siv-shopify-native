@@ -86,6 +86,19 @@
             "force_download": true
           }
         },
+        "resource_EHG3K": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "leaky skin schematic",
+            "description": "",
+            "header-8338a8dd1f7ab9661380912e93ab3fe8": null,
+            "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Untitled_design-9.pdf?v=1764960927",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        },
         "resource_Nyf4P": {
           "type": "resource",
           "disabled": false,
@@ -119,6 +132,7 @@
         "resource_aGCgV",
         "resource_TabKL",
         "resource_fbTnc",
+        "resource_EHG3K",
         "resource_Nyf4P",
         "resource_ycNpY"
       ],
