@@ -47,6 +47,32 @@
             "force_download": true
           }
         },
+        "resource_aGCgV": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "biome balance within probiotic - trifold",
+            "description": "",
+            "header-60aac22d41adf81dd241b9b2ddbc63c2": null,
+            "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/New_Final_Biome_Balance_Within_Trifold.pdf?v=1764960769",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        },
+        "resource_TabKL": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "biome balance within probiotic - digital brochure",
+            "description": "",
+            "header-790322b651af1497afb0e7bc601db0c0": null,
+            "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Biome_Balance_Within_Digital_Brochure-6.pdf?v=1764960843",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        },
         "resource_Nyf4P": {
           "type": "resource",
           "disabled": false,
@@ -77,6 +103,8 @@
       "block_order": [
         "resource_MnXVK",
         "resource_8zBmL",
+        "resource_aGCgV",
+        "resource_TabKL",
         "resource_Nyf4P",
         "resource_ycNpY"
       ],
