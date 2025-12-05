@@ -25,9 +25,9 @@
           "type": "resource",
           "disabled": false,
           "settings": {
-            "title": "Resource 1",
-            "description": "<p>Description of the resource</p>",
-            "header-986b699f77887b09968d70a50612da87": null,
+            "title": "Pricing sheet",
+            "description": "<p>Wholesale Pricing Sheet</p>",
+            "header-2b09eb44cde7b8a24bd1069a4067e090": null,
             "download_link": "#",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -40,7 +40,7 @@
           "settings": {
             "title": "Resource 2",
             "description": "<p>Description of the resource</p>",
-            "header-1ed9d5636cd210c5ec961a7d892f656d": null,
+            "header-226fb62f646516ec7d128c0e5517726c": null,
             "download_link": "#",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -53,7 +53,7 @@
           "settings": {
             "title": "Resource 3",
             "description": "<p>Description of the resource</p>",
-            "header-c1bea81a146562cc82bbdd284eef9708": null,
+            "header-5ea3182676a4c04733ef926130b69b7b": null,
             "download_link": "#",
             "button_text": "Download",
             "open_in_new_tab": false,
