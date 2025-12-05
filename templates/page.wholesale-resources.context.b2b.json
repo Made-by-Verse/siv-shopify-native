@@ -86,6 +86,32 @@
             "force_download": true
           }
         },
+        "resource_tMcgz": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "biome balance within probiotic - supplement facts panel",
+            "description": "",
+            "header-777449181dff61a68bcdc9cd867ec447": null,
+            "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SFP-5_cdd3773f-1924-48bf-800c-953597eb1ff2.png?v=1764960999",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        },
+        "resource_zjPAA": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "biome balance within probiotic - photography",
+            "description": "",
+            "header-e65d22e9be1e65d9a4d343f6f54a5d2a": null,
+            "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:US:7e42aa9e-6274-4a82-845a-be2226f2b98f",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        },
         "resource_EHG3K": {
           "type": "resource",
           "disabled": false,
@@ -132,6 +158,8 @@
         "resource_aGCgV",
         "resource_TabKL",
         "resource_fbTnc",
+        "resource_tMcgz",
+        "resource_zjPAA",
         "resource_EHG3K",
         "resource_Nyf4P",
         "resource_ycNpY"
