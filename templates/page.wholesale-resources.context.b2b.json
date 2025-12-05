@@ -33,118 +33,164 @@
             "open_in_new_tab": false,
             "force_download": true
           }
-        },
-        "resource_8zBmL": {
+        }
+      },
+      "block_order": [
+        "resource_MnXVK"
+      ],
+      "name": "Resources"
+    },
+    "17649612194cb0f733": {
+      "type": "_blocks",
+      "disabled": false,
+      "settings": {},
+      "blocks": {},
+      "block_order": []
+    },
+    "section_two_column_content_kY6WCW": {
+      "settings": {},
+      "blocks": {},
+      "block_order": []
+    },
+    "section_resources_mhVg4": {
+      "type": "section-resources",
+      "disabled": false,
+      "settings": {
+        "heading": "Biome Balance Within",
+        "description": ""
+      },
+      "blocks": {
+        "resource_eC4iw": {
           "type": "resource",
           "disabled": false,
           "settings": {
-            "title": "biome balancing serum and biome balance within - duo digital brochure",
+            "title": "duo digital brochure",
             "description": "",
-            "header-87f8c3101bebc72642e99f58308697ef": null,
+            "header-a360b764a52c460be76b03c2ae88f9fa": null,
             "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Pricing_Sheet-7.pdf?v=1764960460",
             "button_text": "Download",
             "open_in_new_tab": false,
             "force_download": true
           }
         },
-        "resource_aGCgV": {
+        "resource_VfYpD": {
           "type": "resource",
           "disabled": false,
           "settings": {
-            "title": "biome balance within probiotic - trifold",
+            "title": "trifold",
             "description": "",
-            "header-60aac22d41adf81dd241b9b2ddbc63c2": null,
+            "header-a360b764a52c460be76b03c2ae88f9fa": null,
             "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/New_Final_Biome_Balance_Within_Trifold.pdf?v=1764960769",
             "button_text": "Download",
             "open_in_new_tab": false,
             "force_download": true
           }
         },
-        "resource_TabKL": {
+        "resource_pL9Nm": {
           "type": "resource",
           "disabled": false,
           "settings": {
-            "title": "biome balance within probiotic - digital brochure",
+            "title": "digital brochure",
             "description": "",
-            "header-790322b651af1497afb0e7bc601db0c0": null,
+            "header-a360b764a52c460be76b03c2ae88f9fa": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Biome_Balance_Within_Digital_Brochure-6.pdf?v=1764960843",
             "button_text": "Download",
             "open_in_new_tab": false,
             "force_download": true
           }
         },
-        "resource_fbTnc": {
+        "resource_tRdRX": {
           "type": "resource",
           "disabled": false,
           "settings": {
-            "title": "biome balance within probiotic - published study",
+            "title": "published study",
             "description": "",
-            "header-9fb20f9163e7e9d02e94aa7e89b6c3a9": null,
+            "header-a360b764a52c460be76b03c2ae88f9fa": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/jcm-12-00895.pdf?v=1764960899",
             "button_text": "Download",
             "open_in_new_tab": false,
             "force_download": true
           }
         },
-        "resource_tMcgz": {
+        "resource_rB9Nf": {
           "type": "resource",
           "disabled": false,
           "settings": {
-            "title": "biome balance within probiotic - supplement facts panel",
+            "title": "supplement facts panel",
             "description": "",
-            "header-777449181dff61a68bcdc9cd867ec447": null,
+            "header-a360b764a52c460be76b03c2ae88f9fa": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SFP-5_cdd3773f-1924-48bf-800c-953597eb1ff2.png?v=1764960999",
             "button_text": "Download",
             "open_in_new_tab": false,
             "force_download": true
           }
         },
-        "resource_zjPAA": {
+        "resource_fntqV": {
           "type": "resource",
           "disabled": false,
           "settings": {
-            "title": "biome balance within probiotic - photography",
+            "title": "photography",
             "description": "",
-            "header-e65d22e9be1e65d9a4d343f6f54a5d2a": null,
+            "header-a360b764a52c460be76b03c2ae88f9fa": null,
             "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:US:7e42aa9e-6274-4a82-845a-be2226f2b98f",
             "button_text": "Download",
             "open_in_new_tab": false,
             "force_download": true
           }
         },
-        "resource_EHG3K": {
+        "resource_Vw7EF": {
           "type": "resource",
           "disabled": false,
           "settings": {
             "title": "leaky skin schematic",
             "description": "",
-            "header-8338a8dd1f7ab9661380912e93ab3fe8": null,
+            "header-a360b764a52c460be76b03c2ae88f9fa": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Untitled_design-9.pdf?v=1764960927",
             "button_text": "Download",
             "open_in_new_tab": false,
             "force_download": true
           }
-        },
-        "resource_Nyf4P": {
+        }
+      },
+      "block_order": [
+        "resource_eC4iw",
+        "resource_VfYpD",
+        "resource_pL9Nm",
+        "resource_tRdRX",
+        "resource_rB9Nf",
+        "resource_fntqV",
+        "resource_Vw7EF"
+      ],
+      "name": "Resources"
+    },
+    "section_resources_GTc34": {
+      "type": "section-resources",
+      "disabled": false,
+      "settings": {
+        "heading": "Biome Balancing Serum",
+        "description": ""
+      },
+      "blocks": {
+        "resource_fFGec": {
           "type": "resource",
           "disabled": false,
           "settings": {
-            "title": "biome balancing serum - trifold",
-            "description": "<p>Trifold of our Biome Balancing Serum</p>",
-            "header-5ea3182676a4c04733ef926130b69b7b": null,
+            "title": "digital brochure",
+            "description": "",
+            "header-a360b764a52c460be76b03c2ae88f9fa": null,
             "download_link": "#",
             "button_text": "Download",
             "open_in_new_tab": false,
             "force_download": true
           }
         },
-        "resource_ycNpY": {
+        "resource_yWTCa": {
           "type": "resource",
           "disabled": false,
           "settings": {
-            "title": "Biome Balancing serum - digital brochure",
-            "description": "<p>Digital Brochure of our Biome Balancing Serum</p>",
-            "header-226fb62f646516ec7d128c0e5517726c": null,
+            "title": "trifold",
+            "description": "",
+            "header-a360b764a52c460be76b03c2ae88f9fa": null,
             "download_link": "#",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -153,22 +199,17 @@
         }
       },
       "block_order": [
-        "resource_MnXVK",
-        "resource_8zBmL",
-        "resource_aGCgV",
-        "resource_TabKL",
-        "resource_fbTnc",
-        "resource_tMcgz",
-        "resource_zjPAA",
-        "resource_EHG3K",
-        "resource_Nyf4P",
-        "resource_ycNpY"
+        "resource_fFGec",
+        "resource_yWTCa"
       ],
       "name": "Resources"
     }
   },
   "order": [
+    "17649612194cb0f733",
     "section_resources_if9DQ",
+    "section_resources_mhVg4",
+    "section_resources_GTc34",
     "section_two_column_content_kY6WCW"
   ]
 }
