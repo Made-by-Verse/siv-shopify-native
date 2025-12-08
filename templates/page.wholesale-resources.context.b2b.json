@@ -227,8 +227,8 @@
             "header-09b5d561e708be10ff203831764205a0": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SFP-5_cdd3773f-1924-48bf-800c-953597eb1ff2.png?v=1764960999",
             "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
+            "open_in_new_tab": true,
+            "force_download": false
           }
         },
         "resource_fntqV": {
@@ -240,8 +240,8 @@
             "header-fedad71ccc464f7cbfbfacc1bd429c84": null,
             "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:US:7e42aa9e-6274-4a82-845a-be2226f2b98f",
             "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
+            "open_in_new_tab": true,
+            "force_download": false
           }
         },
         "resource_Vw7EF": {
@@ -253,8 +253,8 @@
             "header-81d8e97249d964ce462f0f1b18e630c1": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Untitled_design-9.pdf?v=1764960927",
             "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
+            "open_in_new_tab": true,
+            "force_download": false
           }
         }
       },
