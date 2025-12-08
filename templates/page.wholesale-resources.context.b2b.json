@@ -13,6 +13,13 @@
     "b2b": true
   },
   "sections": {
+    "17649612194cb0f733": {
+      "type": "_blocks",
+      "disabled": false,
+      "settings": {},
+      "blocks": {},
+      "block_order": []
+    },
     "section_resources_if9DQ": {
       "type": "section-resources",
       "disabled": false,
@@ -27,7 +34,7 @@
           "settings": {
             "title": "Pricing sheet",
             "description": "<p>Wholesale Pricing Sheet</p>",
-            "header-2b09eb44cde7b8a24bd1069a4067e090": null,
+            "header-89d901f1385c58f6370c85887efdd64c": null,
             "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Pricing_Sheet-7.pdf?v=1764960460",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -39,18 +46,6 @@
         "resource_MnXVK"
       ],
       "name": "Resources"
-    },
-    "17649612194cb0f733": {
-      "type": "_blocks",
-      "disabled": false,
-      "settings": {},
-      "blocks": {},
-      "block_order": []
-    },
-    "section_two_column_content_kY6WCW": {
-      "settings": {},
-      "blocks": {},
-      "block_order": []
     },
     "section_resources_mhVg4": {
       "type": "section-resources",
@@ -66,7 +61,7 @@
           "settings": {
             "title": "duo digital brochure",
             "description": "",
-            "header-a360b764a52c460be76b03c2ae88f9fa": null,
+            "header-adf7162588fa06e951dc82c6c9e2809d": null,
             "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Pricing_Sheet-7.pdf?v=1764960460",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -79,7 +74,7 @@
           "settings": {
             "title": "trifold",
             "description": "",
-            "header-a360b764a52c460be76b03c2ae88f9fa": null,
+            "header-f653c94bc1c4744ee1f64d3e28d046bf": null,
             "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/New_Final_Biome_Balance_Within_Trifold.pdf?v=1764960769",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -92,7 +87,7 @@
           "settings": {
             "title": "digital brochure",
             "description": "",
-            "header-a360b764a52c460be76b03c2ae88f9fa": null,
+            "header-9cde2e5668a55bf33630fda29bb19096": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Biome_Balance_Within_Digital_Brochure-6.pdf?v=1764960843",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -105,7 +100,7 @@
           "settings": {
             "title": "published study",
             "description": "",
-            "header-a360b764a52c460be76b03c2ae88f9fa": null,
+            "header-672a53c27637dc6c5acf1824db6f43f4": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/jcm-12-00895.pdf?v=1764960899",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -118,7 +113,7 @@
           "settings": {
             "title": "supplement facts panel",
             "description": "",
-            "header-a360b764a52c460be76b03c2ae88f9fa": null,
+            "header-a78f1223d4d172a92af8fda082be0c18": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SFP-5_cdd3773f-1924-48bf-800c-953597eb1ff2.png?v=1764960999",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -131,7 +126,7 @@
           "settings": {
             "title": "photography",
             "description": "",
-            "header-a360b764a52c460be76b03c2ae88f9fa": null,
+            "header-d5913a1d99283c6353b5f50a3a9dc2f3": null,
             "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:US:7e42aa9e-6274-4a82-845a-be2226f2b98f",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -144,7 +139,7 @@
           "settings": {
             "title": "leaky skin schematic",
             "description": "",
-            "header-a360b764a52c460be76b03c2ae88f9fa": null,
+            "header-2400979b960d0a191e776188c420303f": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Untitled_design-9.pdf?v=1764960927",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -177,7 +172,7 @@
           "settings": {
             "title": "digital brochure",
             "description": "",
-            "header-a360b764a52c460be76b03c2ae88f9fa": null,
+            "header-220171157de8c18b1dafba96b30fc010": null,
             "download_link": "#",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -190,8 +185,21 @@
           "settings": {
             "title": "trifold",
             "description": "",
-            "header-a360b764a52c460be76b03c2ae88f9fa": null,
+            "header-08bdc787e85c4711a8e97fb6ff47e6ab": null,
             "download_link": "#",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        },
+        "resource_aGzpt": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "User guide",
+            "description": "",
+            "header-cb85eed17d62a788296dc99bf050af4c": null,
+            "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Serum_Usage_Guide.pdf?v=1765154131",
             "button_text": "Download",
             "open_in_new_tab": false,
             "force_download": true
@@ -200,9 +208,15 @@
       },
       "block_order": [
         "resource_fFGec",
-        "resource_yWTCa"
+        "resource_yWTCa",
+        "resource_aGzpt"
       ],
       "name": "Resources"
+    },
+    "section_two_column_content_kY6WCW": {
+      "settings": {},
+      "blocks": {},
+      "block_order": []
     }
   },
   "order": [
