@@ -104,8 +104,8 @@
             "header-075e0e410429a337f3d1e8da51b26c66": null,
             "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Serum_Trifold.pdf?v=1765154251",
             "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
+            "open_in_new_tab": true,
+            "force_download": false
           }
         },
         "resource_aGzpt": {
@@ -117,8 +117,8 @@
             "header-1eaae5700d0b16c7e7393766edaa5e15": null,
             "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Serum_Usage_Guide.pdf?v=1765154131",
             "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
+            "open_in_new_tab": true,
+            "force_download": false
           }
         },
         "resource_pkWPk": {
@@ -130,8 +130,8 @@
             "header-6a5e7cbd93b0b4a4ac7c847e2d9aac31": null,
             "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:us:1918e1ba-9ca4-4c02-8fcd-5a5f32df1164",
             "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
+            "open_in_new_tab": true,
+            "force_download": false
           }
         },
         "resource_mYghY": {
