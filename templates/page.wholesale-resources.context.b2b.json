@@ -34,11 +34,11 @@
           "settings": {
             "title": "Pricing sheet",
             "description": "<p>Wholesale Pricing Sheet</p>",
-            "header-89d901f1385c58f6370c85887efdd64c": null,
+            "header-d7990664d76d7c7148acdaf4ba4da652": null,
             "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Pricing_Sheet-7.pdf?v=1764960460",
             "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
+            "open_in_new_tab": true,
+            "force_download": false
           }
         },
         "resource_7DwUU": {
@@ -47,8 +47,101 @@
           "settings": {
             "title": "logo",
             "description": "<p>Wholesale Pricing Sheet</p>",
-            "header-b56fa896928acde1c20220069b99910e": null,
+            "header-cb81d8fa18a923f9c6035708bd516e96": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SIV_Off-Black.png?v=1765154404",
+            "button_text": "Download",
+            "open_in_new_tab": true,
+            "force_download": false
+          }
+        }
+      },
+      "block_order": [
+        "resource_MnXVK",
+        "resource_7DwUU"
+      ],
+      "name": "Resources"
+    },
+    "section_resources_GTc34": {
+      "type": "section-resources",
+      "disabled": false,
+      "settings": {
+        "heading": "Biome Balancing Serum",
+        "description": ""
+      },
+      "blocks": {
+        "resource_njb8P": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "before and after catalog",
+            "description": "",
+            "header-223555b6047aef3d37d1ff408f4b8d83": null,
+            "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:us:d3843ccf-04f2-4f68-bf19-c9c0081a3af0",
+            "button_text": "Download",
+            "open_in_new_tab": true,
+            "force_download": false
+          }
+        },
+        "resource_fFGec": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "digital brochure",
+            "description": "",
+            "header-864c0e499d170cfdba3541519b461693": null,
+            "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SIV_Digital_Brochure.pdf?v=1765154305",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        },
+        "resource_yWTCa": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "trifold",
+            "description": "",
+            "header-075e0e410429a337f3d1e8da51b26c66": null,
+            "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Serum_Trifold.pdf?v=1765154251",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        },
+        "resource_aGzpt": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "User guide",
+            "description": "",
+            "header-1eaae5700d0b16c7e7393766edaa5e15": null,
+            "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Serum_Usage_Guide.pdf?v=1765154131",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        },
+        "resource_pkWPk": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "study summaries",
+            "description": "",
+            "header-6a5e7cbd93b0b4a4ac7c847e2d9aac31": null,
+            "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:us:1918e1ba-9ca4-4c02-8fcd-5a5f32df1164",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        },
+        "resource_mYghY": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "photography",
+            "description": "",
+            "header-5658cbf4c5b4f4d058d7be557c936b5d": null,
+            "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:US:ac085cdf-e4ec-41bc-a0f7-7dab228f6f97",
             "button_text": "Download",
             "open_in_new_tab": false,
             "force_download": true
@@ -56,8 +149,12 @@
         }
       },
       "block_order": [
-        "resource_MnXVK",
-        "resource_7DwUU"
+        "resource_njb8P",
+        "resource_fFGec",
+        "resource_yWTCa",
+        "resource_aGzpt",
+        "resource_pkWPk",
+        "resource_mYghY"
       ],
       "name": "Resources"
     },
@@ -75,7 +172,7 @@
           "settings": {
             "title": "duo digital brochure",
             "description": "",
-            "header-adf7162588fa06e951dc82c6c9e2809d": null,
+            "header-cfceffbafecc88c643113251f08d0ab4": null,
             "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Pricing_Sheet-7.pdf?v=1764960460",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -88,7 +185,7 @@
           "settings": {
             "title": "trifold",
             "description": "",
-            "header-f653c94bc1c4744ee1f64d3e28d046bf": null,
+            "header-29c8f3c04d8d2e39adc49988e06ec7cf": null,
             "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/New_Final_Biome_Balance_Within_Trifold.pdf?v=1764960769",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -101,7 +198,7 @@
           "settings": {
             "title": "digital brochure",
             "description": "",
-            "header-9cde2e5668a55bf33630fda29bb19096": null,
+            "header-1b633609d8db4878fd31b12143d2711b": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Biome_Balance_Within_Digital_Brochure-6.pdf?v=1764960843",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -114,7 +211,7 @@
           "settings": {
             "title": "published study",
             "description": "",
-            "header-672a53c27637dc6c5acf1824db6f43f4": null,
+            "header-6144772898804025b95e64ce775624f6": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/jcm-12-00895.pdf?v=1764960899",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -127,7 +224,7 @@
           "settings": {
             "title": "supplement facts panel",
             "description": "",
-            "header-a78f1223d4d172a92af8fda082be0c18": null,
+            "header-09b5d561e708be10ff203831764205a0": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SFP-5_cdd3773f-1924-48bf-800c-953597eb1ff2.png?v=1764960999",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -140,7 +237,7 @@
           "settings": {
             "title": "photography",
             "description": "",
-            "header-d5913a1d99283c6353b5f50a3a9dc2f3": null,
+            "header-fedad71ccc464f7cbfbfacc1bd429c84": null,
             "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:US:7e42aa9e-6274-4a82-845a-be2226f2b98f",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -153,7 +250,7 @@
           "settings": {
             "title": "leaky skin schematic",
             "description": "",
-            "header-2400979b960d0a191e776188c420303f": null,
+            "header-81d8e97249d964ce462f0f1b18e630c1": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Untitled_design-9.pdf?v=1764960927",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -172,108 +269,6 @@
       ],
       "name": "Resources"
     },
-    "section_resources_GTc34": {
-      "type": "section-resources",
-      "disabled": false,
-      "settings": {
-        "heading": "Biome Balancing Serum",
-        "description": ""
-      },
-      "blocks": {
-        "resource_njb8P": {
-          "type": "resource",
-          "disabled": false,
-          "settings": {
-            "title": "before and after catalog",
-            "description": "",
-            "header-760e720769eb6e220612430050c578d4": null,
-            "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:us:d3843ccf-04f2-4f68-bf19-c9c0081a3af0",
-            "button_text": "Download",
-            "open_in_new_tab": true,
-            "force_download": true
-          }
-        },
-        "resource_fFGec": {
-          "type": "resource",
-          "disabled": false,
-          "settings": {
-            "title": "digital brochure",
-            "description": "",
-            "header-220171157de8c18b1dafba96b30fc010": null,
-            "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SIV_Digital_Brochure.pdf?v=1765154305",
-            "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
-          }
-        },
-        "resource_yWTCa": {
-          "type": "resource",
-          "disabled": false,
-          "settings": {
-            "title": "trifold",
-            "description": "",
-            "header-08bdc787e85c4711a8e97fb6ff47e6ab": null,
-            "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Serum_Trifold.pdf?v=1765154251",
-            "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
-          }
-        },
-        "resource_aGzpt": {
-          "type": "resource",
-          "disabled": false,
-          "settings": {
-            "title": "User guide",
-            "description": "",
-            "header-cb85eed17d62a788296dc99bf050af4c": null,
-            "download_link": "#https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Serum_Usage_Guide.pdf?v=1765154131",
-            "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
-          }
-        },
-        "resource_pkWPk": {
-          "type": "resource",
-          "disabled": false,
-          "settings": {
-            "title": "study summaries",
-            "description": "",
-            "header-70a16c5a83fae89a39e017e9f4d200db": null,
-            "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:us:1918e1ba-9ca4-4c02-8fcd-5a5f32df1164",
-            "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
-          }
-        },
-        "resource_mYghY": {
-          "type": "resource",
-          "disabled": false,
-          "settings": {
-            "title": "photography",
-            "description": "",
-            "header-70a16c5a83fae89a39e017e9f4d200db": null,
-            "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:US:ac085cdf-e4ec-41bc-a0f7-7dab228f6f97",
-            "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
-          }
-        }
-      },
-      "block_order": [
-        "resource_njb8P",
-        "resource_fFGec",
-        "resource_yWTCa",
-        "resource_aGzpt",
-        "resource_pkWPk",
-        "resource_mYghY"
-      ],
-      "name": "Resources"
-    },
-    "section_two_column_content_kY6WCW": {
-      "settings": {},
-      "blocks": {},
-      "block_order": []
-    },
     "section_resources_CYrtX": {
       "type": "section-resources",
       "disabled": false,
@@ -288,7 +283,7 @@
           "settings": {
             "title": "By downloading or using any assets on this page, you acknowledge and agree to our Terms & Conditions.",
             "description": "",
-            "header-48360b3cfe7f93124ab935e532fb4858": null,
+            "header-ecea8ef102bdb9d5bcad52adb6c6d78f": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SIV_Wholesale_Portal_Terms_of_Use.pdf?v=1765155247",
             "button_text": "Download",
             "open_in_new_tab": false,
@@ -300,6 +295,11 @@
         "resource_FTm3V"
       ],
       "name": "Resources"
+    },
+    "section_two_column_content_kY6WCW": {
+      "settings": {},
+      "blocks": {},
+      "block_order": []
     }
   },
   "order": [
