@@ -1,4 +1,4 @@
-{% if customer and customer.tags contains 'wholesale_approved' and section.settings.b2b_menu != blank %}
+{% if customer and customer.tags contains 'wholesale-approved' and section.settings.b2b_menu != blank %}
   {% assign menu = linklists[section.settings.b2b_menu].links %}
 {% else %}
   {% assign menu = linklists[section.settings.menu].links %}
