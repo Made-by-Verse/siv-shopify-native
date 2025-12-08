@@ -286,8 +286,8 @@
             "header-ecea8ef102bdb9d5bcad52adb6c6d78f": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SIV_Wholesale_Portal_Terms_of_Use.pdf?v=1765155247",
             "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
+            "open_in_new_tab": true,
+            "force_download": false
           }
         }
       },
