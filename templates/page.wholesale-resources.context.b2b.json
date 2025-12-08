@@ -143,8 +143,8 @@
             "header-5658cbf4c5b4f4d058d7be557c936b5d": null,
             "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:US:ac085cdf-e4ec-41bc-a0f7-7dab228f6f97",
             "button_text": "Download",
-            "open_in_new_tab": false,
-            "force_download": true
+            "open_in_new_tab": true,
+            "force_download": false
           }
         }
       },
