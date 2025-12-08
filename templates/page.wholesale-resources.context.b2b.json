@@ -40,10 +40,24 @@
             "open_in_new_tab": false,
             "force_download": true
           }
+        },
+        "resource_7DwUU": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "logo",
+            "description": "<p>Wholesale Pricing Sheet</p>",
+            "header-b56fa896928acde1c20220069b99910e": null,
+            "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SIV_Off-Black.png?v=1765154404",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
         }
       },
       "block_order": [
-        "resource_MnXVK"
+        "resource_MnXVK",
+        "resource_7DwUU"
       ],
       "name": "Resources"
     },
