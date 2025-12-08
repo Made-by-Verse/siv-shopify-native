@@ -46,9 +46,9 @@
           "disabled": false,
           "settings": {
             "title": "logo",
-            "description": "<p>Wholesale Pricing Sheet</p>",
+            "description": "",
             "header-cb81d8fa18a923f9c6035708bd516e96": null,
-            "download_link": "",
+            "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:US:bd4f0ca2-c8fe-462b-8afa-670ead0f3c59",
             "button_text": "Download",
             "open_in_new_tab": true,
             "force_download": true
