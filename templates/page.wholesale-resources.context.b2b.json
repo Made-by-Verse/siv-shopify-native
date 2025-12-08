@@ -180,6 +180,19 @@
         "description": ""
       },
       "blocks": {
+        "resource_njb8P": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "before and after catalog",
+            "description": "",
+            "header-760e720769eb6e220612430050c578d4": null,
+            "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:us:d3843ccf-04f2-4f68-bf19-c9c0081a3af0",
+            "button_text": "Download",
+            "open_in_new_tab": true,
+            "force_download": true
+          }
+        },
         "resource_fFGec": {
           "type": "resource",
           "disabled": false,
@@ -247,6 +260,7 @@
         }
       },
       "block_order": [
+        "resource_njb8P",
         "resource_fFGec",
         "resource_yWTCa",
         "resource_aGzpt",
