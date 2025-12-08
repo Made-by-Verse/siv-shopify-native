@@ -26,7 +26,10 @@
     "sections": {
       "header": {
         "type": "header",
-        "settings": {}
+        "settings": {
+          "menu": "main-menu-nov-25",
+          "b2b_menu": "main-menu-nov-25-wholesale"
+        }
       }
     },
     "content_for_index": [],
