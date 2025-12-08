@@ -273,6 +273,33 @@
       "settings": {},
       "blocks": {},
       "block_order": []
+    },
+    "section_resources_CYrtX": {
+      "type": "section-resources",
+      "disabled": false,
+      "settings": {
+        "heading": "Gentle Reminder",
+        "description": ""
+      },
+      "blocks": {
+        "resource_FTm3V": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "By downloading or using any assets on this page, you acknowledge and agree to our Terms & Conditions.",
+            "description": "",
+            "header-48360b3cfe7f93124ab935e532fb4858": null,
+            "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SIV_Wholesale_Portal_Terms_of_Use.pdf?v=1765155247",
+            "button_text": "Download",
+            "open_in_new_tab": false,
+            "force_download": true
+          }
+        }
+      },
+      "block_order": [
+        "resource_FTm3V"
+      ],
+      "name": "Resources"
     }
   },
   "order": [
@@ -280,6 +307,7 @@
     "section_resources_if9DQ",
     "section_resources_GTc34",
     "section_resources_mhVg4",
+    "section_resources_CYrtX",
     "section_two_column_content_kY6WCW"
   ]
 }
