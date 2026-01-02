@@ -18,6 +18,38 @@
         "padding_bottom": "md"
       }
     },
+    "176732173103b11fa1": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5f30175_BP66BC": {
+          "type": "ai_gen_block_5f30175",
+          "settings": {
+            "title": "wholesale inquiry",
+            "text": "<p>Fill out the form below to verify your credentials and gain access to exclusive pricing and benefits. </p><p><strong>We do not offer product samples.</strong></p><p><strong>New Zealand stockists </strong>please contact: <a href=\"mailto:support@fxmed.co.nz\" target=\"_blank\">support@fxmed.co.nz</a> for assistance opening an account. </p><p><strong>Australian stockists </strong>please contact: <a href=\"mailto:support@therahealth.com.au\" target=\"_blank\">support@therahealth.com.au</a> for assistance opening an account. </p>",
+            "text_alignment": "left",
+            "content_width": 800,
+            "desktop_width_percent": 100,
+            "mobile_width_percent": 100,
+            "title_size": 40,
+            "title_weight": "500",
+            "title_color": "#241917",
+            "text_size": 16,
+            "line_height": 1.5,
+            "text_color": "#241917",
+            "spacing": 16,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 20,
+            "background_color": "#f6f5ed"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5f30175_BP66BC"
+      ],
+      "settings": {}
+    },
     "1741649347ac409941": {
       "type": "apps",
       "blocks": {
@@ -49,6 +81,7 @@
   },
   "order": [
     "section_contact_DWRArU",
+    "176732173103b11fa1",
     "1741649347ac409941"
   ]
 }
