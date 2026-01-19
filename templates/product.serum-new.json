@@ -30,7 +30,7 @@
           "type": "wholesale-volume-pricing",
           "settings": {
             "title": "Wholesale Volume Pricing",
-            "description": "<p>15ml </p><ul><li>2-5: $44 USD</li><li>6-11: $39 USD</li><li>12+: $34 USD</li></ul><p>Subscribe and save is not available when purchasing wholesale.</p>"
+            "description": "<p>15mL</p><ul><li>2-5: $44 USD</li><li>6-11: $39 USD</li><li>12+: $34 USD</li></ul><p>Subscribe & save is not available when purchasing wholesale.</p>"
           }
         },
         "variant_picker_cF46kp": {
