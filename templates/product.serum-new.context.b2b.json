@@ -21,6 +21,10 @@
             "title": "Wholesale Inventory Update",
             "description": "<p>The 15 mL Biome Balancing Serum is temporarily out of stock. To support uninterrupted ordering, we are offering <strong>20% off the 30 mL size</strong> during this period. Use code<strong> SIV30ML20 </strong>at checkout while the 15 mL is out of stock. </p><p></p><p><span style=\"text-decoration:underline\"><strong>15mL</strong></span></p><ul><li>2-5: $44 USD</li><li>6-11: $39 USD</li><li>12+: $34 USD</li></ul><p><span style=\"text-decoration:underline\"><strong>30mL</strong></span></p><ul><li>2-5: $78 USD</li><li>6-11: $72 USD</li><li>12+: $66 USD</li></ul><p>Subscribe and save not available for wholesale pricing.</p>"
           }
+        },
+        "recharge_subscriptions_subscription_widget_v2_8cEqny": {
+          "disabled": true,
+          "settings": {}
         }
       }
     }
