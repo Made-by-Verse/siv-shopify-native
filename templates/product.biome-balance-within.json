@@ -39,12 +39,6 @@
           "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
           "settings": {}
         },
-        "recharge_subscriptions_subscription_widget_hCrTQh": {
-          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget/371eed76-0b44-4869-9813-730372ea378e",
-          "settings": {
-            "product": "{{product}}"
-          }
-        },
         "quantity_selector_8EEfnM": {
           "type": "quantity-selector",
           "settings": {}
@@ -56,16 +50,31 @@
         "accordion_YVppL6": {
           "type": "accordion",
           "settings": {}
-        }
+        },
+        "wholesale_pricing_breakdown_abc1": {
+          "type": "wholesale-pricing",
+          "disabled": true,
+          "settings": {
+            "heading": "Wholesale Volume Pricing",
+          }
+        },
+        "wholesale_tier_15ml_abc2": {
+          "type": "wholesale-tier",
+          "disabled": true,
+          "settings": {
+            "variant_heading": "60 capsules",
+            "breakdown_text": "<p>2+: $45 USD</p>"
+          }
+        },
       },
       "block_order": [
         "product_title_Fqeap7",
         "product_price_JDACKF",
         "product_description_xK3MCg",
-        "wholesale_volume_pricing_hCrTQh",
+        "wholesale_pricing_breakdown_abc1",
+        "wholesale_tier_15ml_abc2",
         "variant_picker_cF46kp",
         "recharge_subscriptions_subscription_widget_v2_AgPKxk",
-        "recharge_subscriptions_subscription_widget_hCrTQh",
         "quantity_selector_8EEfnM",
         "buy_buttons_rEH3MG",
         "accordion_YVppL6"

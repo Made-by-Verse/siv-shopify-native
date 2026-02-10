@@ -16,10 +16,22 @@
     "main": {
       "settings": {},
       "blocks": {
-        "wholesale_volume_pricing_hCrTQh": {
+        "wholesale_pricing_breakdown_abc1": {
+          "disabled": false,
           "settings": {
-            "description": "<p>3-12 Bottles: $42 USD</p><p>12+ Bottles: $40.50 USD</p>"
+            "heading": "Wholesale Volume Pricing",
           }
+        },
+        "wholesale_tier_15ml_abc2": {
+          "disabled": false,
+          "settings": {
+            "variant_heading": "60 capsules",
+            "breakdown_text": "<p>2+: $45 USD</p>"
+          }
+        },
+        "recharge_subscriptions_subscription_widget_v2_8cEqny": {
+          "disabled": true,
+          "settings": {}
         }
       }
     }

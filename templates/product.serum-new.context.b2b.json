@@ -18,8 +18,28 @@
       "blocks": {
         "wholesale_volume_pricing_hCrTQh": {
           "settings": {
-            "title": "Wholesale Inventory Update",
-            "description": "<p>The 15 mL Biome Balancing Serum is temporarily out of stock. To support uninterrupted ordering, we are offering <strong>20% off the 30 mL size</strong> during this period. Use code<strong> SIV30ML20 </strong>at checkout while the 15 mL is out of stock. </p><p></p><p><span style=\"text-decoration:underline\"><strong>15mL</strong></span></p><ul><li>2-5: $44 USD</li><li>6-11: $39 USD</li><li>12+: $34 USD</li></ul><p><span style=\"text-decoration:underline\"><strong>30mL</strong></span></p><ul><li>2-5: $78 USD</li><li>6-11: $72 USD</li><li>12+: $66 USD</li></ul><p>Subscribe and save not available for wholesale pricing.</p>"
+            "title": "Wholesale Inventory Update"
+          }
+        },
+        "wholesale_pricing_breakdown_abc1": {
+          "disabled": false,
+          "settings": {
+            "heading": "Wholesale Volume Pricing",
+            "intro": "<p>The 15 mL Biome Balancing Serum is temporarily out of stock. To support uninterrupted ordering, we are offering <strong>20% off the 30 mL size</strong> during this period. Use code<strong> SIV30ML20 </strong>at checkout while the 15 mL is out of stock.</p><p>Subscribe and save not available for wholesale pricing.</p>"
+          }
+        },
+        "wholesale_tier_15ml_abc2": {
+          "disabled": false,
+          "settings": {
+            "variant_heading": "15mL - OUT OF STOCK",
+            "breakdown_text": "<ul><li>2–5 units: $44 USD</li><li>6–11 units: $39 USD</li><li>12+ units: $34 USD</li></ul>"
+          }
+        },
+        "wholesale_tier_30ml_abc3": {
+          "disabled": false,
+          "settings": {
+            "variant_heading": "30 mL",
+            "breakdown_text": "<ul><li>2–5 units: $78 USD</li><li>6–11 units: $72 USD</li><li>12+ units: $66 USD</li></ul>"
           }
         },
         "recharge_subscriptions_subscription_widget_v2_8cEqny": {

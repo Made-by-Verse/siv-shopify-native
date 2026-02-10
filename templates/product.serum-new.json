@@ -26,13 +26,6 @@
           "type": "product-description",
           "settings": {}
         },
-        "wholesale_volume_pricing_hCrTQh": {
-          "type": "wholesale-volume-pricing",
-          "settings": {
-            "title": "Wholesale Volume Pricing",
-            "description": "<p>15mL - OUT OF STOCK</p><ul><li>2-5: $44 USD</li><li>6-11: $39 USD</li><li>12+: $34 USD</li></ul><p>30mL</p><ul><li>2-5: $78 USD</li><li>6-11: $72 USD</li><li>12+: $66 USD</li></ul><p>Subscribe & save is not available when purchasing wholesale.</p>"
-          }
-        },
         "variant_picker_cF46kp": {
           "type": "variant-picker",
           "settings": {}
@@ -52,18 +45,45 @@
         "accordion_YVppL6": {
           "type": "accordion",
           "settings": {}
-        }
+        },
+        "wholesale_pricing_breakdown_abc1": {
+          "type": "wholesale-pricing",
+          "disabled": true,
+          "settings": {
+            "heading": "Wholesale Volume Pricing",
+            "intro": "<p>The 15 mL Biome Balancing Serum is temporarily out of stock. To support uninterrupted ordering, we are offering <strong>20% off the 30 mL size</strong> during this period. Use code<strong> SIV30ML20 </strong>at checkout while the 15 mL is out of stock.</p><p>Subscribe and save not available for wholesale pricing.</p>"
+          }
+        },
+        "wholesale_tier_15ml_abc2": {
+          "type": "wholesale-tier",
+          "disabled": true,
+          "settings": {
+            "variant_heading": "15mL - OUT OF STOCK",
+            "breakdown_text": "<ul><li>2–5 units: $44 USD</li><li>6–11 units: $39 USD</li><li>12+ units: $34 USD</li></ul>"
+          }
+        },
+        "wholesale_tier_30ml_abc3": {
+          "type": "wholesale-tier",
+          "disabled": true,
+          "settings": {
+            "variant_heading": "30 mL",
+            "breakdown_text": "<ul><li>2–5 units: $78 USD</li><li>6–11 units: $72 USD</li><li>12+ units: $66 USD</li></ul>"
+          }
+        },
       },
       "block_order": [
         "liquid_eaFyJD",
         "product_title_Fqeap7",
         "product_description_xK3MCg",
         "wholesale_volume_pricing_hCrTQh",
+        "wholesale_pricing_breakdown_abc1",
+        "wholesale_tier_15ml_abc2",
+        "wholesale_tier_30ml_abc3",
         "variant_picker_cF46kp",
         "recharge_subscriptions_subscription_widget_v2_8cEqny",
         "quantity_selector_8EEfnM",
         "buy_buttons_rEH3MG",
-        "accordion_YVppL6"
+        "accordion_YVppL6",
       ],
       "settings": {}
     },

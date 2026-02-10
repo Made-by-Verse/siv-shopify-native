@@ -98,6 +98,25 @@
           data-variant-id
         >
 
+        {%- capture wholesale_breakdown_html -%}
+          <div class="wholesale-pricing mt-8 p-6 bg-black/5 rounded-lg">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'wholesale-pricing' -%}
+                <div {{ block.shopify_attributes }}>
+                  <h3 class="text-sm uppercase font-body tracking-wide font-semibold mb-2 mb-2">{{ block.settings.heading }}</h3>
+                  <div class="text-sm mb-4">{{ block.settings.intro }}</div>
+                </div>
+              {%- elsif block.type == 'wholesale-tier' -%}
+                <div class="wholesale-tier mb-4 last:mb-0 grid grid-cols-2 gap-4" {{ block.shopify_attributes }}>
+                  <h4 class="text-sm uppercase font-body tracking-wide font-semibold mb-1">{{ block.settings.variant_heading }}</h4>
+                  <div>{{ block.settings.breakdown_text }}</div>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endcapture -%}
+
+        {% assign wholesale_breakdown_rendered = false %}
         {% for block in section.blocks %}
           {% case block.type %}
             {% when '@app' %}
@@ -152,6 +171,16 @@
                   <p>{{ block.settings.description }}</p>
                 </div>
               {% endif %}
+            {% when 'wholesale-pricing' %}
+              {% if wholesale_breakdown_rendered == false %}
+                {% assign wholesale_breakdown_rendered = true %}
+                {{ wholesale_breakdown_html }}
+              {% endif %}
+            {% when 'wholesale-tier' %}
+              {% if wholesale_breakdown_rendered == false %}
+                {% assign wholesale_breakdown_rendered = true %}
+                {{ wholesale_breakdown_html }}
+              {% endif %}
           {% endcase %}
         {% endfor %}
       </form>
@@ -201,6 +230,39 @@
           "type": "richtext",
           "id": "description",
           "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "wholesale-pricing",
+      "name": "WS pricing breakdown",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "intro",
+          "label": "Intro / description"
+        }
+      ]
+    },
+    {
+      "type": "wholesale-tier",
+      "name": "Variant tier",
+      "settings": [
+        {
+          "type": "text",
+          "id": "variant_heading",
+          "label": "Variant heading"
+        },
+        {
+          "type": "richtext",
+          "id": "breakdown_text",
+          "label": "Pricing breakdown"
         }
       ]
     },
