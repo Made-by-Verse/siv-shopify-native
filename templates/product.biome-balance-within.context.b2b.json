@@ -19,7 +19,7 @@
         "wholesale_pricing_breakdown_abc1": {
           "disabled": false,
           "settings": {
-            "heading": "Wholesale Volume Pricing",
+            "heading": "Wholesale Volume Pricing"
           }
         },
         "wholesale_tier_15ml_abc2": {
@@ -28,10 +28,6 @@
             "variant_heading": "60 capsules",
             "breakdown_text": "<p>2+: $45 USD</p>"
           }
-        },
-        "recharge_subscriptions_subscription_widget_v2_8cEqny": {
-          "disabled": true,
-          "settings": {}
         }
       }
     }

@@ -16,11 +16,6 @@
     "main": {
       "settings": {},
       "blocks": {
-        "wholesale_volume_pricing_hCrTQh": {
-          "settings": {
-            "title": "Wholesale Inventory Update"
-          }
-        },
         "wholesale_pricing_breakdown_abc1": {
           "disabled": false,
           "settings": {
