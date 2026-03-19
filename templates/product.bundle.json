@@ -145,6 +145,7 @@
         "testimony_8",
         "testimony_9"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Real consumer tested results"
       }
@@ -169,6 +170,7 @@
         "product_biome_balance",
         "product_serum_new"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Related Products",
         "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>",
