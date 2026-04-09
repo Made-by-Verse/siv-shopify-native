@@ -26,7 +26,7 @@
         "wholesale_tier_15ml_abc2": {
           "disabled": false,
           "settings": {
-            "variant_heading": "15mL - OUT OF STOCK",
+            "variant_heading": "15mL",
             "breakdown_text": "<ul><li>2–5 units: $44 USD</li><li>6–11 units: $39 USD</li><li>12+ units: $34 USD</li></ul>"
           }
         },
