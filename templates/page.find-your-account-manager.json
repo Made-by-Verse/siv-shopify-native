@@ -40,7 +40,7 @@
             "padding_top": 40,
             "padding_bottom": 40,
             "padding_horizontal": 20,
-            "background_color": "#F6F5ED"
+            "background_color": "#f6f5ed"
           },
           "blocks": {}
         }
@@ -51,15 +51,56 @@
       "name": "Title and paragraph",
       "settings": {}
     },
-    "section_two_column_content_bxwawD": {
-      "type": "section-two-column-content",
-      "name": "Two Column Content",
+    "section_image_banner_fX3bKM": {
+      "type": "section-image-banner",
+      "name": "Image Banner",
+      "settings": {
+        "title": "Image Banner",
+        "image": "shopify://shop_images/ChatGPT_Image_Apr_23_2026_at_11_03_00_AM.png",
+        "color_scheme": "",
+        "aspect_ratio": "16/9",
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
+    },
+    "blocks_eMKKVx": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5f30175_prytDz": {
+          "type": "ai_gen_block_5f30175",
+          "settings": {
+            "title": "Your title here",
+            "text": "<p>Add your paragraph text here. You can use this space to describe your products, share your story, or communicate important information to your customers.</p>",
+            "text_alignment": "left",
+            "content_width": 800,
+            "desktop_width_percent": 100,
+            "mobile_width_percent": 100,
+            "title_size": 32,
+            "title_weight": "600",
+            "title_color": "#241917",
+            "text_size": 16,
+            "line_height": 1.5,
+            "text_color": "#241917",
+            "spacing": 16,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 20,
+            "background_color": "#F6F5ED"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5f30175_prytDz"
+      ],
+      "name": "Title and paragraph",
       "settings": {}
     }
   },
   "order": [
     "hero",
     "blocks_cYwqBB",
-    "section_two_column_content_bxwawD"
+    "section_image_banner_fX3bKM",
+    "blocks_eMKKVx"
   ]
 }
