@@ -38,7 +38,7 @@
             "text_color": "#241917",
             "spacing": 16,
             "padding_top": 40,
-            "padding_bottom": 40,
+            "padding_bottom": 24,
             "padding_horizontal": 20,
             "background_color": "#f6f5ed"
           },
@@ -56,51 +56,67 @@
       "name": "Image Banner",
       "settings": {
         "title": "",
-        "image": "shopify://shop_images/ChatGPT_Image_Apr_23_2026_at_11_12_09_AM.png",
-        "color_scheme": "",
+        "image": "shopify://shop_images/Screenshot_2026-04-23_at_11.37.35_AM.png",
+        "color_scheme": "scheme-1",
         "aspect_ratio": "4/3",
         "padding_top": "none",
         "padding_bottom": "none"
       }
     },
-    "blocks_eMKKVx": {
+    "177696240753ba9354": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_5f30175_prytDz": {
-          "type": "ai_gen_block_5f30175",
+        "ai_gen_block_6cbe56e_CWEBdg": {
+          "type": "ai_gen_block_6cbe56e",
           "settings": {
-            "title": "Crosby Wolownik - Southeast Region",
-            "text": "<p>Email <a href=\"mailto:cwolownik@sivcare.com\">cwolownik@sivcare.com</a></p>",
-            "text_alignment": "left",
-            "content_width": 800,
-            "desktop_width_percent": 100,
-            "mobile_width_percent": 100,
+            "desktop_width_percent": 80,
+            "columns_mobile": "1",
+            "card_gap": 24,
+            "row_gap": 24,
+            "section_padding": 40,
+            "card_background": "#000000",
+            "card_border_color": "#000000",
+            "card_border_width": 1,
+            "card_border_radius": 8,
+            "card_padding": 32,
+            "text_alignment": "center",
+            "icon_size": 40,
+            "icon_color": "#ffffff",
+            "icon_spacing": 16,
             "title_size": 32,
-            "title_weight": "600",
-            "title_color": "#241917",
-            "text_size": 16,
-            "line_height": 1.5,
-            "text_color": "#241917",
-            "spacing": 16,
-            "padding_top": 40,
-            "padding_bottom": 40,
-            "padding_horizontal": 20,
-            "background_color": "#f6f5ed"
+            "title_color": "#ffffff",
+            "title_spacing": 12,
+            "description_size": 15,
+            "description_color": "#ffffff",
+            "card_1_icon": "",
+            "card_1_title": "SOUTHEAST REGION",
+            "card_1_description": "<p><strong>CROSBY WOLOWNIK</strong></p><p><a href=\"mailto:cwolownik@sivcare.com\">cwolownik@sivcare.com</a></p>",
+            "card_2_icon": "",
+            "card_2_title": "MIDWEST + NORTHEAST REGION",
+            "card_2_description": "<p><strong>LEAH KONKIEL</strong></p><p>lkonkiel@sivcare.com</p>",
+            "card_3_icon": "",
+            "card_3_title": "MOUNTAIN + PLAINS REGION",
+            "card_3_description": "<p>DEVONIE BOWMAN</p><p><a href=\"mailto:dbowman@sivcare.com\">dbowman@sivcare.com</a></p>",
+            "card_4_icon": "",
+            "card_4_title": "WEST COAST REGION",
+            "card_4_description": "<p><strong>CASSANDRA VINK</strong></p><p><a href=\"mailto:cvink@sivcare.com\">cvink@sivcare.com</a></p>"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_5f30175_prytDz"
+        "ai_gen_block_6cbe56e_CWEBdg"
       ],
-      "name": "Title and paragraph",
       "settings": {}
     },
-    "section_accordion_d9Bbrw": {
-      "type": "section-accordion",
-      "name": "Accordion",
+    "section_paragraph_g4A8GX": {
+      "type": "section-paragraph",
+      "name": "Paragraph",
       "settings": {
-        "heading": ""
+        "text": "<p><strong>INTERNATIONAL & GENERAL INQUIRIES</strong></p><p>For partners in Alaska, Hawaii, or international markets, our wholesale team is your first point of contact. We'll ensure you're connected with the right resources to support your business.</p><p>Contact: info@sivcare.com</p>",
+        "color_scheme": "",
+        "padding_top": "md",
+        "padding_bottom": "md"
       }
     }
   },
@@ -108,7 +124,7 @@
     "hero",
     "blocks_cYwqBB",
     "section_image_banner_fX3bKM",
-    "blocks_eMKKVx",
-    "section_accordion_d9Bbrw"
+    "177696240753ba9354",
+    "section_paragraph_g4A8GX"
   ]
 }
