@@ -11,10 +11,25 @@
   "sections": {
     "hero": {
       "type": "section-home-hero",
+      "disabled": true,
+      "settings": {
+        "hero_heading": "",
+        "hero_content": "",
+        "show_featured_product": true
+      }
+    },
+    "1776922955632034df": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17769231061062f206": {
+      "type": "_blocks",
       "settings": {}
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "1776922955632034df",
+    "17769231061062f206"
   ]
 }
