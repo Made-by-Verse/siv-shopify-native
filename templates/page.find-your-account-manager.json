@@ -18,18 +18,48 @@
         "show_featured_product": true
       }
     },
-    "1776922955632034df": {
+    "blocks_cYwqBB": {
       "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5f30175_jijLzj": {
+          "type": "ai_gen_block_5f30175",
+          "settings": {
+            "title": "Find your Account Manager",
+            "text": "<p>Every SIV wholesale partner gets a dedicated Account Manager who knows your market. Find your region below to meet yours — they're your go-to for orders, restocks, launches, and everything in between.</p>",
+            "text_alignment": "center",
+            "content_width": 800,
+            "desktop_width_percent": 100,
+            "mobile_width_percent": 100,
+            "title_size": 50,
+            "title_weight": "500",
+            "title_color": "#241917",
+            "text_size": 16,
+            "line_height": 1.5,
+            "text_color": "#241917",
+            "spacing": 16,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 20,
+            "background_color": "#F6F5ED"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5f30175_jijLzj"
+      ],
+      "name": "Title and paragraph",
       "settings": {}
     },
-    "17769231061062f206": {
-      "type": "_blocks",
+    "section_two_column_content_bxwawD": {
+      "type": "section-two-column-content",
+      "name": "Two Column Content",
       "settings": {}
     }
   },
   "order": [
     "hero",
-    "1776922955632034df",
-    "17769231061062f206"
+    "blocks_cYwqBB",
+    "section_two_column_content_bxwawD"
   ]
 }
