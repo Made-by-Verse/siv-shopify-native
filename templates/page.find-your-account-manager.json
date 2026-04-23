@@ -93,7 +93,7 @@
             "card_1_description": "<p><strong>CROSBY WOLOWNIK</strong></p><p><a href=\"mailto:cwolownik@sivcare.com\">cwolownik@sivcare.com</a></p>",
             "card_2_icon": "",
             "card_2_title": "MIDWEST + NORTHEAST REGION",
-            "card_2_description": "<p><strong>LEAH KONKIEL</strong></p><p>lkonkiel@sivcare.com</p>",
+            "card_2_description": "<p><strong>LEAH KONKIEL</strong></p><p><a href=\"mailto:lkonkiel@sivcare.com\">lkonkiel@sivcare.com</a></p>",
             "card_3_icon": "",
             "card_3_title": "MOUNTAIN + PLAINS REGION",
             "card_3_description": "<p>DEVONIE BOWMAN</p><p><a href=\"mailto:dbowman@sivcare.com\">dbowman@sivcare.com</a></p>",
@@ -114,7 +114,7 @@
       "name": "Paragraph",
       "settings": {
         "text": "<p><strong>INTERNATIONAL & GENERAL INQUIRIES</strong></p><p>For partners in Alaska, Hawaii, or international markets, our wholesale team is your first point of contact. We'll ensure you're connected with the right resources to support your business.</p><p>Contact: info@sivcare.com</p>",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "padding_top": "md",
         "padding_bottom": "md"
       }
