@@ -1,6 +1,715 @@
+{% doc %}
+  @prompt
+    Build an interactive "Find Your Account Manager" page for our wholesale section.
+    Layout: U.S. map on left, Account Manager contact card on right (stacks vertically on mobile).
+    Header:
+    
+    Title: Find your Account Manager
+    Subheading: Click your state to meet your dedicated SIV Account Manager — your go-to for orders, restocks, launches, and everything in between.
+    Footer line below map: Prefer to skip the map? Email wholesale@sivcare.com and we'll route you to your Account Manager.
+    
+    Map: Interactive SVG of all 50 states + DC on a black background. States are color-coded by Account Manager (legend in corner). Hover dims the state; click highlights it with a white border and loads that manager's card on the right.
+    Territories & colors:
+    
+    Crosby Wolownik (blue #7FA8D1): TX, OK, AR, LA, MS, AL, GA, FL, TN, KY, SC, NC
+    Leah Konkiel (pink #F2A3B0): MN, WI, MI, IA, NE, KS, MO, IL, IN, OH, WV, VA, PA, NY, VT, NH, ME, MA, CT, RI, NJ, DE, MD, DC
+    Devonie Bowman (green #7FB896): WA, OR, ID, MT, WY, UT, CO, NM, ND, SD
+    Cassandra [LAST] (tan #E8C391): CA, NV, AZ
+    Unassigned (gray): AK, HI, This is of the United States. That does not look like the United States. Account Manager card (black background, white text):
+    
+    State name (small caps, top)
+    Full name (large)
+    "ACCOUNT MANAGER" label
+    Email with envelope icon (mailto link)
+    Phone with phone icon (tel link)
+    Closer: Drop [First Name] a line anytime — they'll get you set up.
+    
+    Contact info:
+    NameEmailPhoneCrosby Wolownikcwolownik@sivcare.com+1 (770) 370-9039Leah Konkiellkonkiel@sivcare.com+1 (443) 239-5042Devonie Bowmandbowman@sivcare.com971-244-3493Cassandra [LAST][email][phone]
+    Unassigned card (AK, HI): Same black style. Heading: This territory is open. Body: Reach out and we'll connect you with the right person. Button: wholesale@sivcare.com (mailto).
+    Empty state (before click): Light gray card with pin icon, Click your state, and Select your state on the map to see your dedicated Account Manager.
+    Accessibility: States keyboard-navigable, aria-labels on each, aria-live region for card updates.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-account-manager-finder-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: 40px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-account-manager-finder__header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .ai-account-manager-finder__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 16px;
+  }
+
+  .ai-account-manager-finder__subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.text_color }};
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .ai-account-manager-finder__content-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .ai-account-manager-finder__map-section-{{ ai_gen_id }} {
+    position: relative;
+  }
+
+  .ai-account-manager-finder__map-container-{{ ai_gen_id }} {
+    background-color: #000000;
+    border-radius: 8px;
+    padding: 40px 20px;
+    position: relative;
+  }
+
+  .ai-account-manager-finder__map-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-account-manager-finder__state-{{ ai_gen_id }} {
+    cursor: pointer;
+    transition: opacity 0.2s ease, stroke 0.2s ease;
+    stroke: #000000;
+    stroke-width: 1;
+  }
+
+  .ai-account-manager-finder__state-{{ ai_gen_id }}:hover,
+  .ai-account-manager-finder__state-{{ ai_gen_id }}:focus {
+    opacity: 0.7;
+    outline: none;
+  }
+
+  .ai-account-manager-finder__state-{{ ai_gen_id }}.active {
+    stroke: #ffffff;
+    stroke-width: 2;
+  }
+
+  .ai-account-manager-finder__legend-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 16px;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+
+  .ai-account-manager-finder__legend-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .ai-account-manager-finder__legend-item-{{ ai_gen_id }}:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-account-manager-finder__legend-color-{{ ai_gen_id }} {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+
+  .ai-account-manager-finder__card-section-{{ ai_gen_id }} {
+    position: sticky;
+    top: 20px;
+  }
+
+  .ai-account-manager-finder__card-{{ ai_gen_id }} {
+    background-color: #000000;
+    border-radius: 8px;
+    padding: 40px;
+    min-height: 400px;
+  }
+
+  .ai-account-manager-finder__card-placeholder-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #cccccc;
+    min-height: 400px;
+  }
+
+  .ai-account-manager-finder__card-placeholder-{{ ai_gen_id }} svg {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+  }
+
+  .ai-account-manager-finder__card-placeholder-title-{{ ai_gen_id }} {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: #ffffff;
+  }
+
+  .ai-account-manager-finder__card-placeholder-text-{{ ai_gen_id }} {
+    font-size: 14px;
+    margin: 0;
+    color: #999999;
+  }
+
+  .ai-account-manager-finder__card-content-{{ ai_gen_id }} {
+    display: none;
+  }
+
+  .ai-account-manager-finder__card-content-{{ ai_gen_id }}.active {
+    display: block;
+  }
+
+  .ai-account-manager-finder__state-name-{{ ai_gen_id }} {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 0 0 16px;
+  }
+
+  .ai-account-manager-finder__manager-name-{{ ai_gen_id }} {
+    font-size: 36px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 12px;
+    line-height: 1.2;
+  }
+
+  .ai-account-manager-finder__manager-title-{{ ai_gen_id }} {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 0 0 32px;
+  }
+
+  .ai-account-manager-finder__manager-contact-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .ai-account-manager-finder__contact-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ai-account-manager-finder__contact-icon-{{ ai_gen_id }} {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #ffffff;
+  }
+
+  .ai-account-manager-finder__contact-link-{{ ai_gen_id }} {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .ai-account-manager-finder__contact-link-{{ ai_gen_id }}:hover {
+    text-decoration: underline;
+  }
+
+  .ai-account-manager-finder__closer-{{ ai_gen_id }} {
+    font-size: 15px;
+    color: #cccccc;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-account-manager-finder__unassigned-heading-{{ ai_gen_id }} {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 16px;
+  }
+
+  .ai-account-manager-finder__unassigned-body-{{ ai_gen_id }} {
+    font-size: 16px;
+    color: #cccccc;
+    margin: 0 0 24px;
+    line-height: 1.6;
+  }
+
+  .ai-account-manager-finder__unassigned-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
+
+  .ai-account-manager-finder__unassigned-button-{{ ai_gen_id }}:hover {
+    background-color: #f0f0f0;
+  }
+
+  .ai-account-manager-finder__footer-{{ ai_gen_id }} {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 15px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+  }
+
+  .ai-account-manager-finder__footer-link-{{ ai_gen_id }} {
+    color: {{ block.settings.link_color }};
+    text-decoration: none;
+  }
+
+  .ai-account-manager-finder__footer-link-{{ ai_gen_id }}:hover {
+    text-decoration: underline;
+  }
+
+  .ai-account-manager-finder__live-region-{{ ai_gen_id }} {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-account-manager-finder__content-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-account-manager-finder__card-section-{{ ai_gen_id }} {
+      position: static;
+    }
+
+    .ai-account-manager-finder__legend-{{ ai_gen_id }} {
+      position: static;
+      margin-top: 20px;
+    }
+
+    .ai-account-manager-finder__manager-name-{{ ai_gen_id }} {
+      font-size: 28px;
+    }
+  }
+{% endstyle %}
+
+<account-manager-finder-{{ ai_gen_id }} class="ai-account-manager-finder-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-account-manager-finder__header-{{ ai_gen_id }}">
+    <h1 class="ai-account-manager-finder__title-{{ ai_gen_id }}">{{ block.settings.title }}</h1>
+    <p class="ai-account-manager-finder__subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</p>
+  </div>
+
+  <div class="ai-account-manager-finder__content-{{ ai_gen_id }}">
+    <div class="ai-account-manager-finder__map-section-{{ ai_gen_id }}">
+      <div class="ai-account-manager-finder__map-container-{{ ai_gen_id }}">
+        <svg class="ai-account-manager-finder__map-{{ ai_gen_id }}" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interactive map of United States">
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="WA" data-state-name="Washington" data-manager="devonie" fill="#7FB896" d="M85,35 L85,100 L150,100 L150,35 Z" tabindex="0" role="button" aria-label="Washington"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="OR" data-state-name="Oregon" data-manager="devonie" fill="#7FB896" d="M85,105 L85,155 L150,155 L150,105 Z" tabindex="0" role="button" aria-label="Oregon"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="CA" data-state-name="California" data-manager="cassandra" fill="#E8C391" d="M85,160 L85,240 L150,240 L150,160 Z" tabindex="0" role="button" aria-label="California"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="NV" data-state-name="Nevada" data-manager="cassandra" fill="#E8C391" d="M155,120 L155,200 L210,200 L210,120 Z" tabindex="0" role="button" aria-label="Nevada"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="ID" data-state-name="Idaho" data-manager="devonie" fill="#7FB896" d="M155,35 L155,115 L210,115 L210,35 Z" tabindex="0" role="button" aria-label="Idaho"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="MT" data-state-name="Montana" data-manager="devonie" fill="#7FB896" d="M215,35 L215,100 L300,100 L300,35 Z" tabindex="0" role="button" aria-label="Montana"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="WY" data-state-name="Wyoming" data-manager="devonie" fill="#7FB896" d="M215,105 L215,170 L300,170 L300,105 Z" tabindex="0" role="button" aria-label="Wyoming"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="UT" data-state-name="Utah" data-manager="devonie" fill="#7FB896" d="M215,175 L215,240 L270,240 L270,175 Z" tabindex="0" role="button" aria-label="Utah"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="AZ" data-state-name="Arizona" data-manager="cassandra" fill="#E8C391" d="M155,205 L155,280 L230,280 L230,205 Z" tabindex="0" role="button" aria-label="Arizona"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="NM" data-state-name="New Mexico" data-manager="devonie" fill="#7FB896" d="M235,205 L235,280 L310,280 L310,205 Z" tabindex="0" role="button" aria-label="New Mexico"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="CO" data-state-name="Colorado" data-manager="devonie" fill="#7FB896" d="M275,175 L275,240 L350,240 L350,175 Z" tabindex="0" role="button" aria-label="Colorado"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="ND" data-state-name="North Dakota" data-manager="devonie" fill="#7FB896" d="M305,35 L305,100 L390,100 L390,35 Z" tabindex="0" role="button" aria-label="North Dakota"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="SD" data-state-name="South Dakota" data-manager="devonie" fill="#7FB896" d="M305,105 L305,170 L390,170 L390,105 Z" tabindex="0" role="button" aria-label="South Dakota"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="NE" data-state-name="Nebraska" data-manager="leah" fill="#F2A3B0" d="M305,175 L305,230 L390,230 L390,175 Z" tabindex="0" role="button" aria-label="Nebraska"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="KS" data-state-name="Kansas" data-manager="leah" fill="#F2A3B0" d="M315,235 L315,280 L400,280 L400,235 Z" tabindex="0" role="button" aria-label="Kansas"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="OK" data-state-name="Oklahoma" data-manager="crosby" fill="#7FA8D1" d="M315,285 L315,320 L400,320 L400,285 Z" tabindex="0" role="button" aria-label="Oklahoma"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="TX" data-state-name="Texas" data-manager="crosby" fill="#7FA8D1" d="M315,325 L315,430 L420,430 L420,325 Z" tabindex="0" role="button" aria-label="Texas"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="MN" data-state-name="Minnesota" data-manager="leah" fill="#F2A3B0" d="M395,35 L395,130 L460,130 L460,35 Z" tabindex="0" role="button" aria-label="Minnesota"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="IA" data-state-name="Iowa" data-manager="leah" fill="#F2A3B0" d="M395,175 L395,230 L470,230 L470,175 Z" tabindex="0" role="button" aria-label="Iowa"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="MO" data-state-name="Missouri" data-manager="leah" fill="#F2A3B0" d="M405,235 L405,300 L470,300 L470,235 Z" tabindex="0" role="button" aria-label="Missouri"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="AR" data-state-name="Arkansas" data-manager="crosby" fill="#7FA8D1" d="M405,305 L405,360 L460,360 L460,305 Z" tabindex="0" role="button" aria-label="Arkansas"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="LA" data-state-name="Louisiana" data-manager="crosby" fill="#7FA8D1" d="M405,365 L405,420 L470,420 L470,365 Z" tabindex="0" role="button" aria-label="Louisiana"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="WI" data-state-name="Wisconsin" data-manager="leah" fill="#F2A3B0" d="M465,80 L465,160 L520,160 L520,80 Z" tabindex="0" role="button" aria-label="Wisconsin"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="IL" data-state-name="Illinois" data-manager="leah" fill="#F2A3B0" d="M475,200 L475,290 L520,290 L520,200 Z" tabindex="0" role="button" aria-label="Illinois"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="MS" data-state-name="Mississippi" data-manager="crosby" fill="#7FA8D1" d="M475,330 L475,410 L520,410 L520,330 Z" tabindex="0" role="button" aria-label="Mississippi"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="MI" data-state-name="Michigan" data-manager="leah" fill="#F2A3B0" d="M525,80 L525,180 L580,180 L580,80 Z" tabindex="0" role="button" aria-label="Michigan"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="IN" data-state-name="Indiana" data-manager="leah" fill="#F2A3B0" d="M525,200 L525,270 L570,270 L570,200 Z" tabindex="0" role="button" aria-label="Indiana"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="KY" data-state-name="Kentucky" data-manager="crosby" fill="#7FA8D1" d="M525,275 L525,320 L600,320 L600,275 Z" tabindex="0" role="button" aria-label="Kentucky"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="TN" data-state-name="Tennessee" data-manager="crosby" fill="#7FA8D1" d="M525,325 L525,365 L610,365 L610,325 Z" tabindex="0" role="button" aria-label="Tennessee"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="AL" data-state-name="Alabama" data-manager="crosby" fill="#7FA8D1" d="M525,370 L525,440 L570,440 L570,370 Z" tabindex="0" role="button" aria-label="Alabama"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="OH" data-state-name="Ohio" data-manager="leah" fill="#F2A3B0" d="M575,200 L575,270 L630,270 L630,200 Z" tabindex="0" role="button" aria-label="Ohio"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="WV" data-state-name="West Virginia" data-manager="leah" fill="#F2A3B0" d="M605,275 L605,320 L660,320 L660,275 Z" tabindex="0" role="button" aria-label="West Virginia"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="VA" data-state-name="Virginia" data-manager="leah" fill="#F2A3B0" d="M615,325 L615,365 L690,365 L690,325 Z" tabindex="0" role="button" aria-label="Virginia"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="NC" data-state-name="North Carolina" data-manager="crosby" fill="#7FA8D1" d="M615,370 L615,405 L700,405 L700,370 Z" tabindex="0" role="button" aria-label="North Carolina"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="SC" data-state-name="South Carolina" data-manager="crosby" fill="#7FA8D1" d="M615,410 L615,445 L680,445 L680,410 Z" tabindex="0" role="button" aria-label="South Carolina"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="GA" data-state-name="Georgia" data-manager="crosby" fill="#7FA8D1" d="M575,410 L575,470 L630,470 L630,410 Z" tabindex="0" role="button" aria-label="Georgia"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="FL" data-state-name="Florida" data-manager="crosby" fill="#7FA8D1" d="M575,475 L575,550 L650,550 L650,475 Z" tabindex="0" role="button" aria-label="Florida"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="PA" data-state-name="Pennsylvania" data-manager="leah" fill="#F2A3B0" d="M635,200 L635,250 L710,250 L710,200 Z" tabindex="0" role="button" aria-label="Pennsylvania"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="NY" data-state-name="New York" data-manager="leah" fill="#F2A3B0" d="M665,120 L665,195 L740,195 L740,120 Z" tabindex="0" role="button" aria-label="New York"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="VT" data-state-name="Vermont" data-manager="leah" fill="#F2A3B0" d="M745,80 L745,140 L775,140 L775,80 Z" tabindex="0" role="button" aria-label="Vermont"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="NH" data-state-name="New Hampshire" data-manager="leah" fill="#F2A3B0" d="M780,80 L780,140 L810,140 L810,80 Z" tabindex="0" role="button" aria-label="New Hampshire"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="ME" data-state-name="Maine" data-manager="leah" fill="#F2A3B0" d="M815,35 L815,130 L860,130 L860,35 Z" tabindex="0" role="button" aria-label="Maine"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="MA" data-state-name="Massachusetts" data-manager="leah" fill="#F2A3B0" d="M780,145 L780,175 L840,175 L840,145 Z" tabindex="0" role="button" aria-label="Massachusetts"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="RI" data-state-name="Rhode Island" data-manager="leah" fill="#F2A3B0" d="M845,155 L845,175 L865,175 L865,155 Z" tabindex="0" role="button" aria-label="Rhode Island"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="CT" data-state-name="Connecticut" data-manager="leah" fill="#F2A3B0" d="M745,180 L745,205 L785,205 L785,180 Z" tabindex="0" role="button" aria-label="Connecticut"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="NJ" data-state-name="New Jersey" data-manager="leah" fill="#F2A3B0" d="M715,210 L715,255 L745,255 L745,210 Z" tabindex="0" role="button" aria-label="New Jersey"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="DE" data-state-name="Delaware" data-manager="leah" fill="#F2A3B0" d="M715,260 L715,285 L735,285 L735,260 Z" tabindex="0" role="button" aria-label="Delaware"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="MD" data-state-name="Maryland" data-manager="leah" fill="#F2A3B0" d="M665,255 L665,290 L710,290 L710,255 Z" tabindex="0" role="button" aria-label="Maryland"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="DC" data-state-name="District of Columbia" data-manager="leah" fill="#F2A3B0" d="M695,270 L695,280 L705,280 L705,270 Z" tabindex="0" role="button" aria-label="District of Columbia"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="AK" data-state-name="Alaska" data-manager="unassigned" fill="#999999" d="M35,480 L35,550 L120,550 L120,480 Z" tabindex="0" role="button" aria-label="Alaska"/>
+          <path class="ai-account-manager-finder__state-{{ ai_gen_id }}" data-state="HI" data-state-name="Hawaii" data-manager="unassigned" fill="#999999" d="M200,500 L200,540 L280,540 L280,500 Z" tabindex="0" role="button" aria-label="Hawaii"/>
+        </svg>
+
+        <div class="ai-account-manager-finder__legend-{{ ai_gen_id }}">
+          <div class="ai-account-manager-finder__legend-item-{{ ai_gen_id }}">
+            <div class="ai-account-manager-finder__legend-color-{{ ai_gen_id }}" style="background-color: #7FA8D1;"></div>
+            <span>Crosby Wolownik</span>
+          </div>
+          <div class="ai-account-manager-finder__legend-item-{{ ai_gen_id }}">
+            <div class="ai-account-manager-finder__legend-color-{{ ai_gen_id }}" style="background-color: #F2A3B0;"></div>
+            <span>Leah Konkiel</span>
+          </div>
+          <div class="ai-account-manager-finder__legend-item-{{ ai_gen_id }}">
+            <div class="ai-account-manager-finder__legend-color-{{ ai_gen_id }}" style="background-color: #7FB896;"></div>
+            <span>Devonie Bowman</span>
+          </div>
+          <div class="ai-account-manager-finder__legend-item-{{ ai_gen_id }}">
+            <div class="ai-account-manager-finder__legend-color-{{ ai_gen_id }}" style="background-color: #E8C391;"></div>
+            <span>{{ block.settings.cassandra_name }}</span>
+          </div>
+          <div class="ai-account-manager-finder__legend-item-{{ ai_gen_id }}">
+            <div class="ai-account-manager-finder__legend-color-{{ ai_gen_id }}" style="background-color: #999999;"></div>
+            <span>Unassigned</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-account-manager-finder__card-section-{{ ai_gen_id }}">
+      <div class="ai-account-manager-finder__card-{{ ai_gen_id }}" role="region" aria-live="polite">
+        <div class="ai-account-manager-finder__card-placeholder-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <p class="ai-account-manager-finder__card-placeholder-title-{{ ai_gen_id }}">Click your state</p>
+          <p class="ai-account-manager-finder__card-placeholder-text-{{ ai_gen_id }}">Select your state on the map to see your dedicated Account Manager</p>
+        </div>
+
+        <div class="ai-account-manager-finder__card-content-{{ ai_gen_id }}" data-manager="crosby">
+          <p class="ai-account-manager-finder__state-name-{{ ai_gen_id }}"></p>
+          <h2 class="ai-account-manager-finder__manager-name-{{ ai_gen_id }}">Crosby Wolownik</h2>
+          <p class="ai-account-manager-finder__manager-title-{{ ai_gen_id }}">Account Manager</p>
+          <div class="ai-account-manager-finder__manager-contact-{{ ai_gen_id }}">
+            <div class="ai-account-manager-finder__contact-item-{{ ai_gen_id }}">
+              <svg class="ai-account-manager-finder__contact-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                <path d="m3 8 9 6 9-6"></path>
+              </svg>
+              <a href="mailto:cwolownik@sivcare.com" class="ai-account-manager-finder__contact-link-{{ ai_gen_id }}">cwolownik@sivcare.com</a>
+            </div>
+            <div class="ai-account-manager-finder__contact-item-{{ ai_gen_id }}">
+              <svg class="ai-account-manager-finder__contact-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="tel:+17703709039" class="ai-account-manager-finder__contact-link-{{ ai_gen_id }}">+1 (770) 370-9039</a>
+            </div>
+          </div>
+          <p class="ai-account-manager-finder__closer-{{ ai_gen_id }}">Drop Crosby a line anytime — they'll get you set up.</p>
+        </div>
+
+        <div class="ai-account-manager-finder__card-content-{{ ai_gen_id }}" data-manager="leah">
+          <p class="ai-account-manager-finder__state-name-{{ ai_gen_id }}"></p>
+          <h2 class="ai-account-manager-finder__manager-name-{{ ai_gen_id }}">Leah Konkiel</h2>
+          <p class="ai-account-manager-finder__manager-title-{{ ai_gen_id }}">Account Manager</p>
+          <div class="ai-account-manager-finder__manager-contact-{{ ai_gen_id }}">
+            <div class="ai-account-manager-finder__contact-item-{{ ai_gen_id }}">
+              <svg class="ai-account-manager-finder__contact-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                <path d="m3 8 9 6 9-6"></path>
+              </svg>
+              <a href="mailto:lkonkiel@sivcare.com" class="ai-account-manager-finder__contact-link-{{ ai_gen_id }}">lkonkiel@sivcare.com</a>
+            </div>
+            <div class="ai-account-manager-finder__contact-item-{{ ai_gen_id }}">
+              <svg class="ai-account-manager-finder__contact-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="tel:+14432395042" class="ai-account-manager-finder__contact-link-{{ ai_gen_id }}">+1 (443) 239-5042</a>
+            </div>
+          </div>
+          <p class="ai-account-manager-finder__closer-{{ ai_gen_id }}">Drop Leah a line anytime — they'll get you set up.</p>
+        </div>
+
+        <div class="ai-account-manager-finder__card-content-{{ ai_gen_id }}" data-manager="devonie">
+          <p class="ai-account-manager-finder__state-name-{{ ai_gen_id }}"></p>
+          <h2 class="ai-account-manager-finder__manager-name-{{ ai_gen_id }}">Devonie Bowman</h2>
+          <p class="ai-account-manager-finder__manager-title-{{ ai_gen_id }}">Account Manager</p>
+          <div class="ai-account-manager-finder__manager-contact-{{ ai_gen_id }}">
+            <div class="ai-account-manager-finder__contact-item-{{ ai_gen_id }}">
+              <svg class="ai-account-manager-finder__contact-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                <path d="m3 8 9 6 9-6"></path>
+              </svg>
+              <a href="mailto:dbowman@sivcare.com" class="ai-account-manager-finder__contact-link-{{ ai_gen_id }}">dbowman@sivcare.com</a>
+            </div>
+            <div class="ai-account-manager-finder__contact-item-{{ ai_gen_id }}">
+              <svg class="ai-account-manager-finder__contact-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="tel:9712443493" class="ai-account-manager-finder__contact-link-{{ ai_gen_id }}">971-244-3493</a>
+            </div>
+          </div>
+          <p class="ai-account-manager-finder__closer-{{ ai_gen_id }}">Drop Devonie a line anytime — they'll get you set up.</p>
+        </div>
+
+        <div class="ai-account-manager-finder__card-content-{{ ai_gen_id }}" data-manager="cassandra">
+          <p class="ai-account-manager-finder__state-name-{{ ai_gen_id }}"></p>
+          <h2 class="ai-account-manager-finder__manager-name-{{ ai_gen_id }}">{{ block.settings.cassandra_name }}</h2>
+          <p class="ai-account-manager-finder__manager-title-{{ ai_gen_id }}">Account Manager</p>
+          <div class="ai-account-manager-finder__manager-contact-{{ ai_gen_id }}">
+            <div class="ai-account-manager-finder__contact-item-{{ ai_gen_id }}">
+              <svg class="ai-account-manager-finder__contact-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                <path d="m3 8 9 6 9-6"></path>
+              </svg>
+              <a href="mailto:{{ block.settings.cassandra_email }}" class="ai-account-manager-finder__contact-link-{{ ai_gen_id }}">{{ block.settings.cassandra_email }}</a>
+            </div>
+            <div class="ai-account-manager-finder__contact-item-{{ ai_gen_id }}">
+              <svg class="ai-account-manager-finder__contact-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="tel:{{ block.settings.cassandra_phone }}" class="ai-account-manager-finder__contact-link-{{ ai_gen_id }}">{{ block.settings.cassandra_phone }}</a>
+            </div>
+          </div>
+          <p class="ai-account-manager-finder__closer-{{ ai_gen_id }}">Drop {{ block.settings.cassandra_name | split: ' ' | first }} a line anytime — they'll get you set up.</p>
+        </div>
+
+        <div class="ai-account-manager-finder__card-content-{{ ai_gen_id }}" data-manager="unassigned">
+          <p class="ai-account-manager-finder__state-name-{{ ai_gen_id }}"></p>
+          <h2 class="ai-account-manager-finder__unassigned-heading-{{ ai_gen_id }}">This territory is open</h2>
+          <p class="ai-account-manager-finder__unassigned-body-{{ ai_gen_id }}">Reach out and we'll connect you with the right person.</p>
+          <a href="mailto:wholesale@sivcare.com" class="ai-account-manager-finder__unassigned-button-{{ ai_gen_id }}">wholesale@sivcare.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-account-manager-finder__footer-{{ ai_gen_id }}">
+    {{ block.settings.footer_text }} <a href="mailto:wholesale@sivcare.com" class="ai-account-manager-finder__footer-link-{{ ai_gen_id }}">wholesale@sivcare.com</a> and we'll route you to your Account Manager.
+  </div>
+
+  <div class="ai-account-manager-finder__live-region-{{ ai_gen_id }}" aria-live="polite" aria-atomic="true"></div>
+</account-manager-finder-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class AccountManagerFinder{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.states = this.querySelectorAll('.ai-account-manager-finder__state-{{ ai_gen_id }}');
+        this.cards = this.querySelectorAll('.ai-account-manager-finder__card-content-{{ ai_gen_id }}');
+        this.placeholder = this.querySelector('.ai-account-manager-finder__card-placeholder-{{ ai_gen_id }}');
+        this.liveRegion = this.querySelector('.ai-account-manager-finder__live-region-{{ ai_gen_id }}');
+      }
+
+      connectedCallback() {
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.states.forEach(state => {
+          state.addEventListener('click', (e) => {
+            this.handleStateSelection(state);
+          });
+
+          state.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              this.handleStateSelection(state);
+            }
+          });
+        });
+      }
+
+      handleStateSelection(state) {
+        const manager = state.getAttribute('data-manager');
+        const stateName = state.getAttribute('data-state-name');
+        this.showManager(manager, stateName);
+        this.highlightState(state);
+        this.announceSelection(stateName, manager);
+      }
+
+      showManager(manager, stateName) {
+        this.placeholder.style.display = 'none';
+        this.cards.forEach(card => {
+          if (card.getAttribute('data-manager') === manager) {
+            card.classList.add('active');
+            const stateNameElement = card.querySelector('.ai-account-manager-finder__state-name-{{ ai_gen_id }}');
+            if (stateNameElement) {
+              stateNameElement.textContent = stateName;
+            }
+          } else {
+            card.classList.remove('active');
+          }
+        });
+      }
+
+      highlightState(selectedState) {
+        this.states.forEach(state => {
+          state.classList.remove('active');
+        });
+        selectedState.classList.add('active');
+      }
+
+      announceSelection(stateName, manager) {
+        const managerNames = {
+          'crosby': 'Crosby Wolownik',
+          'leah': 'Leah Konkiel',
+          'devonie': 'Devonie Bowman',
+          'cassandra': 'Cassandra',
+          'unassigned': 'Unassigned territory'
+        };
+        const managerName = managerNames[manager] || 'Account Manager';
+        this.liveRegion.textContent = stateName + ' selected. Showing ' + managerName;
+      }
+    }
+
+    customElements.define('account-manager-finder-{{ ai_gen_id }}', AccountManagerFinder{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Find your account manager",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Find your Account Manager"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Click your state to meet your dedicated SIV Account Manager — your go-to for orders, restocks, launches, and everything in between."
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtitle size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Footer"
+    },
+    {
+      "type": "text",
+      "id": "footer_text",
+      "label": "Footer text",
+      "default": "Prefer to skip the map? Email"
+    },
+    {
+      "type": "header",
+      "content": "Cassandra"
+    },
+    {
+      "type": "text",
+      "id": "cassandra_name",
+      "label": "Full name",
+      "default": "Cassandra"
+    },
+    {
+      "type": "text",
+      "id": "cassandra_email",
+      "label": "Email"
+    },
+    {
+      "type": "text",
+      "id": "cassandra_phone",
+      "label": "Phone"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#241917"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Links",
+      "default": "#685f2c"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Find your account manager"
+    }
+  ]
+}
 {% endschema %}
