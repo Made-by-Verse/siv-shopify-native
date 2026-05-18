@@ -34,8 +34,21 @@
           "settings": {
             "title": "Pricing sheet",
             "description": "<p>Wholesale Pricing Sheet</p>",
-            "header-d9db9f0bb5f25a5e7de53e6945cd5f09": null,
+            "header-3f2738c20d41abaef01ce885e69ea0ec": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SIV_Price-Sheet.pdf?v=1779130210",
+            "button_text": "Download",
+            "open_in_new_tab": true,
+            "force_download": false
+          }
+        },
+        "resource_HFb8t": {
+          "type": "resource",
+          "disabled": false,
+          "settings": {
+            "title": "Ordering Guide - How To Order with siv",
+            "description": "",
+            "header-4c406695cf5aaccac2372bbd375f1964": null,
+            "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SIV_Ordering_Guide.pdf?v=1779133438",
             "button_text": "Download",
             "open_in_new_tab": true,
             "force_download": false
@@ -47,7 +60,7 @@
           "settings": {
             "title": "logo",
             "description": "",
-            "header-5b381cc696a1b6b4bd0c0579f48ea93e": null,
+            "header-86d42b700fadbd801f84c94dce92b6ad": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SIV_Logo_121212.svg?v=1773355221",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -60,7 +73,7 @@
           "settings": {
             "title": "Client Trifold",
             "description": "",
-            "header-22fdb63c3e291f70dd0e491f107fbc52": null,
+            "header-608aa8816b710b62eb71f88d1c59b9f5": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Client_Serum_Copy_Trifold-3.pdf?v=1779130202",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -70,6 +83,7 @@
       },
       "block_order": [
         "resource_MnXVK",
+        "resource_HFb8t",
         "resource_7DwUU",
         "resource_ebqWn"
       ],
@@ -89,7 +103,7 @@
           "settings": {
             "title": "before and after catalog",
             "description": "",
-            "header-c8e63fcbcc462c73dc5df36e6c3b6e3e": null,
+            "header-ea11a142c3805bbb1b8ca80bbdbefe41": null,
             "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:us:d3843ccf-04f2-4f68-bf19-c9c0081a3af0",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -102,7 +116,7 @@
           "settings": {
             "title": "digital brochure",
             "description": "",
-            "header-7f9c91e052d5972b4b78d1695aedb5fc": null,
+            "header-de1810df3c6836192ba2eca88f9ceea9": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SIV_Digital_Brochure.pdf?v=1765154305",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -115,7 +129,7 @@
           "settings": {
             "title": "trifold",
             "description": "",
-            "header-9d6af23fa6011a85aa5336a26534578c": null,
+            "header-796d9cb9a8e57fb646d5c3ac8831f43f": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Serum_Trifold.pdf?v=1765154251",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -128,7 +142,7 @@
           "settings": {
             "title": "User guide",
             "description": "",
-            "header-7b01dc46cf6a8c42e4d2004adf5cbb7d": null,
+            "header-0678e6a6aa09a2f856f0b5d5c0626c34": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Serum_Usage_Guide.pdf?v=1765154131",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -141,7 +155,7 @@
           "settings": {
             "title": "study summaries",
             "description": "",
-            "header-52c636bb884e22a9e2081b189f5f0268": null,
+            "header-c52e82059897f11c4a4124bc94926187": null,
             "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:us:1918e1ba-9ca4-4c02-8fcd-5a5f32df1164",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -154,7 +168,7 @@
           "settings": {
             "title": "photography",
             "description": "",
-            "header-d7a0d75ca21cd87fec9be2c1573463cc": null,
+            "header-079a97192c47f0470daf2f68b6edde1a": null,
             "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:US:ac085cdf-e4ec-41bc-a0f7-7dab228f6f97",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -186,7 +200,7 @@
           "settings": {
             "title": "duo digital brochure",
             "description": "",
-            "header-b7d5d2abd61b09f3d4e96ba8ed53a754": null,
+            "header-2a38a780259690df907f1f39421de0c5": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SIV_Duo_Digital_Brochure.pdf?v=1764960507",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -199,7 +213,7 @@
           "settings": {
             "title": "trifold",
             "description": "",
-            "header-e8814f102458f9cab04bfb52e10b5ae9": null,
+            "header-3fce136ea1a3d2a92db9b9e1114232d8": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/New_Final_Biome_Balance_Within_Trifold.pdf?v=1764960769",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -212,7 +226,7 @@
           "settings": {
             "title": "digital brochure",
             "description": "",
-            "header-bacbbdbe142e678acfd47529c5e4dbc8": null,
+            "header-3fe9c922069b82bfb81a5ddd18ab9779": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Biome_Balance_Within_Digital_Brochure-6.pdf?v=1764960843",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -225,7 +239,7 @@
           "settings": {
             "title": "published study",
             "description": "",
-            "header-aff72b83587aa05cbf72565cf2758fa1": null,
+            "header-055a9246baad74d7cb80063228937f6d": null,
             "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:US:13ad33b9-58a5-403b-a339-7e96c304405d",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -238,7 +252,7 @@
           "settings": {
             "title": "supplement facts panel",
             "description": "",
-            "header-305bdd2d431c5b5629c914d47389d54c": null,
+            "header-2b22f7eb42aaf8f9ab55f9312c7f947a": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SFP-5_cdd3773f-1924-48bf-800c-953597eb1ff2.png?v=1764960999",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -251,7 +265,7 @@
           "settings": {
             "title": "photography",
             "description": "",
-            "header-a8d80c657aa89e0daa10bf52ce5d7057": null,
+            "header-a3775653bae5ac1e044b9ee4ac76ac4f": null,
             "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:US:7e42aa9e-6274-4a82-845a-be2226f2b98f",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -264,7 +278,7 @@
           "settings": {
             "title": "leaky skin schematic",
             "description": "",
-            "header-63806d7146714b43ce896751b70a2838": null,
+            "header-7e8349031723526c35ba75cd275e39bc": null,
             "download_link": "https://acrobat.adobe.com/id/urn:aaid:sc:US:e197e18b-3781-41d6-8c95-b60dc853d813",
             "button_text": "Download",
             "open_in_new_tab": true,
@@ -297,7 +311,7 @@
           "settings": {
             "title": "By downloading or using any assets on this page, you acknowledge and agree to our Terms & Conditions.",
             "description": "",
-            "header-8d798028c11c1ad2945655d1016dc2f6": null,
+            "header-4fa5ca12ef6c0b63c4fd5525c7ae96ab": null,
             "download_link": "https://cdn.shopify.com/s/files/1/0799/1315/6923/files/SIV_Wholesale_Portal_Terms_of_Use.pdf?v=1765155247",
             "button_text": "Download",
             "open_in_new_tab": true,
