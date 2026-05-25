@@ -113,7 +113,7 @@
       "type": "section-paragraph",
       "name": "Paragraph",
       "settings": {
-        "text": "<p><strong>INTERNATIONAL & GENERAL INQUIRIES</strong></p><p>For partners in Alaska, Hawaii, or international markets, our wholesale team is your first point of contact. We'll ensure you're connected with the right resources to support your business.</p><p>Contact: info@sivcare.com</p>",
+        "text": "<p><strong>INTERNATIONAL & GENERAL INQUIRIES</strong></p><p>For partners in international markets, our wholesale team is your first point of contact. We'll ensure you're connected with the right resources to support your business.</p><p>Contact: info@sivcare.com</p>",
         "color_scheme": "scheme-1",
         "padding_top": "md",
         "padding_bottom": "md"
