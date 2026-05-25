@@ -56,9 +56,9 @@
       "name": "Image Banner",
       "settings": {
         "title": "",
-        "image": "shopify://shop_images/ChatGPT_Image_Apr_29_2026_at_02_12_51_PM.png",
+        "image": "shopify://shop_images/ChatGPT_Image_May_24_2026_at_08_33_43_PM.png",
         "color_scheme": "scheme-1",
-        "aspect_ratio": "4/3",
+        "aspect_ratio": "16/9",
         "padding_top": "none",
         "padding_bottom": "none"
       }
