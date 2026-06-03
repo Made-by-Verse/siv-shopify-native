@@ -24,11 +24,20 @@
           "type": "product-description",
           "settings": {}
         },
-        "wholesale_volume_pricing_hCrTQh": {
-          "type": "wholesale-volume-pricing",
+        "wholesale_pricing_breakdown_abc1": {
+          "type": "wholesale-pricing",
+          "disabled": true,
           "settings": {
-            "title": "Wholesale Volume Pricing",
-            "description": "<p>2+: $45 USD</p>"
+            "heading": "Wholesale Volume Pricing",
+            "intro": ""
+          }
+        },
+        "wholesale_tier_15ml_abc2": {
+          "type": "wholesale-tier",
+          "disabled": true,
+          "settings": {
+            "variant_heading": "60 capsules",
+            "breakdown_text": "<p>2+: $45 USD</p>"
           }
         },
         "variant_picker_cF46kp": {
@@ -50,22 +59,7 @@
         "accordion_YVppL6": {
           "type": "accordion",
           "settings": {}
-        },
-        "wholesale_pricing_breakdown_abc1": {
-          "type": "wholesale-pricing",
-          "disabled": true,
-          "settings": {
-            "heading": "Wholesale Volume Pricing",
-          }
-        },
-        "wholesale_tier_15ml_abc2": {
-          "type": "wholesale-tier",
-          "disabled": true,
-          "settings": {
-            "variant_heading": "60 capsules",
-            "breakdown_text": "<p>2+: $45 USD</p>"
-          }
-        },
+        }
       },
       "block_order": [
         "product_title_Fqeap7",
@@ -80,6 +74,18 @@
         "accordion_YVppL6"
       ],
       "settings": {}
+    },
+    "section_image_banner_PYw3eM": {
+      "type": "section-image-banner",
+      "name": "Image Banner",
+      "settings": {
+        "title": "",
+        "image": "shopify://shop_images/49E062E8-6C7F-4CF5-8778-0E15FAF42053.png",
+        "color_scheme": "",
+        "aspect_ratio": "16/9",
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
     },
     "key_points": {
       "type": "section-key-points",
@@ -311,12 +317,14 @@
       ],
       "settings": {
         "heading": "Related Products",
-        "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>"
+        "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>",
+        "color_scheme": ""
       }
     }
   },
   "order": [
     "main",
+    "section_image_banner_PYw3eM",
     "key_points",
     "testimonies",
     "section_text_and_image_YXW3JW",
