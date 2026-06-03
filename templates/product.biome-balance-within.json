@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "section_image_banner_PYw3eM": {
+      "type": "section-image-banner",
+      "name": "Image Banner",
+      "settings": {
+        "title": "",
+        "image": "shopify://shop_images/78ABDC17-1A57-4204-88CC-BFA70AE29D48.png",
+        "color_scheme": "",
+        "aspect_ratio": "16/9",
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -74,18 +86,6 @@
         "accordion_YVppL6"
       ],
       "settings": {}
-    },
-    "section_image_banner_PYw3eM": {
-      "type": "section-image-banner",
-      "name": "Image Banner",
-      "settings": {
-        "title": "",
-        "image": "shopify://shop_images/49E062E8-6C7F-4CF5-8778-0E15FAF42053.png",
-        "color_scheme": "",
-        "aspect_ratio": "16/9",
-        "padding_top": "md",
-        "padding_bottom": "md"
-      }
     },
     "key_points": {
       "type": "section-key-points",
@@ -323,8 +323,8 @@
     }
   },
   "order": [
-    "main",
     "section_image_banner_PYw3eM",
+    "main",
     "key_points",
     "testimonies",
     "section_text_and_image_YXW3JW",
