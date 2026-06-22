@@ -226,10 +226,14 @@ export default async function Product() {
         }
 
         if (variant && variant.available) {
-          // Update the URL with the new variant FIRST, before triggering the watcher
-          const url = new URL(window.location.href);
-          url.searchParams.set("variant", variant.id);
-          window.history.pushState({}, "", url);
+          // Update the URL with the new variant FIRST, before triggering the watcher.
+          // Skip this inside a drawer so a quick-buy selection doesn't overwrite the
+          // host page's variant param (e.g. the main product on a PDP).
+          if (!this.$el?.closest('[role="dialog"]')) {
+            const url = new URL(window.location.href);
+            url.searchParams.set("variant", variant.id);
+            window.history.pushState({}, "", url);
+          }
 
           // Update the form's hidden input for variant ID
           const form = this.$el.closest("form");
@@ -273,6 +277,19 @@ export default async function Product() {
         // Find the variant data
         const variant = this.variants.find((v) => v.id === variantId);
         if (!variant) return;
+
+        // When this picker lives inside a drawer/dialog (e.g. quick-buy), update
+        // only its own price locally and skip the page fetch. Otherwise we would
+        // clobber the host page's price/gallery — a real problem on a product
+        // page where the main product's `.js-price-container` comes first.
+        const drawer = this.$el?.closest('[role="dialog"]');
+        if (drawer) {
+          const drawerPrice = drawer.querySelector(
+            ".quick-buy-price.js-price-container"
+          );
+          if (drawerPrice) this.updatePriceManually(variant, drawerPrice);
+          return;
+        }
 
         // Try to update price via fetch (works on product pages)
         const url = new URL(window.location.href);
@@ -394,15 +411,19 @@ export default async function Product() {
 
       updatePriceManually(variant, container) {
         try {
-          // Format money function (simplified - matches Shopify's money format)
-          const formatMoney = (cents) => {
-            return (cents / 100).toLocaleString("en-US", {
-              style: "currency",
-              currency: "USD",
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            });
-          };
+          // Format money via the cart store so the currency matches the rest of
+          // the theme; fall back to a local AUD formatter if it isn't ready yet.
+          const cartStore =
+            typeof Alpine !== "undefined" ? Alpine.store("cart") : null;
+          const formatMoney = (cents) =>
+            cartStore?.formatMoney
+              ? cartStore.formatMoney(cents)
+              : (cents / 100).toLocaleString("en-AU", {
+                  style: "currency",
+                  currency: "AUD",
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 2,
+                });
 
           const price = variant.price;
           const compareAtPrice = variant.compare_at_price;

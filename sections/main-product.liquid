@@ -1,3 +1,5 @@
+{%- assign related_product = product.metafields.custom.related_product.value -%}
+{%- assign related_product_blocks = section.blocks | where: 'type', 'related-product' -%}
 <div class="wrapper grid gap-6 grid-cols-1 md:grid-cols-2">
   <div>
     <div data-product-gallery-container class="sticky top-32">
@@ -79,7 +81,7 @@
   <div class="product-details">
     <div class="max-w-xl mx-auto">
       <form
-        class="product-details space-y-5"
+        class="space-y-5"
         x-data="product"
         method="post"
         action="{{ routes.cart_add_url }}"
@@ -162,6 +164,13 @@
                   selectedVariant: product.selected_or_first_available_variant
                 %}
               {% endif %}
+            {% when 'related-product' %}
+              {%- if related_product != blank -%}
+                {% render 'related-product-card',
+                  product: related_product,
+                  drawer_id: 'related-product-drawer'
+                %}
+              {%- endif -%}
             {% when 'variant-picker' %}
               {% render 'variant-picker-pills', product: product, section: section %}
             {% when 'wholesale-volume-pricing' %}
@@ -187,6 +196,13 @@
     </div>
   </div>
 </div>
+
+{%- if related_product != blank and related_product_blocks.size > 0 -%}
+  {% render 'quick-buy-drawer',
+    product: related_product,
+    drawer_id: 'related-product-drawer'
+  %}
+{%- endif -%}
 
 {%- liquid
   if product.selected_or_first_available_variant.featured_media
@@ -289,6 +305,11 @@
     {
       "type": "variant-picker",
       "name": "Variant Picker",
+      "limit": 1
+    },
+    {
+      "type": "related-product",
+      "name": "Related Product",
       "limit": 1
     },
     {

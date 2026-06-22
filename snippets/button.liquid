@@ -36,7 +36,7 @@
     </span>
   </a>
 {% else %}
-<button x-data class="btn {{ button_class }} group" @click="$dispatch('{{event_trigger}}');">
+<button type="button" x-data class="btn {{ button_class }} group" @click="$dispatch('{{event_trigger}}');">
   <span class="block relative overflow-hidden">
     <span class="block transform translate-y-0 group-hover:translate-y-full duration-500">{{ button_text }}</span>
     <span class="block absolute inset-0 -translate-y-full group-hover:-translate-y-0 duration-500">{{ button_text }}</span>

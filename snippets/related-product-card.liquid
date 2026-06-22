@@ -1,0 +1,36 @@
+{% comment %}
+  Renders a "Pairs well with" related-product card, styled after the home hero
+  featured product. The "Shop Now" button opens a quick-buy drawer (which handles
+  variant selection, add-to-cart and "View Product").
+
+  Accepts:
+  - product: {Object} related product to show.
+  - drawer_id: {String} id of the quick-buy drawer to open. The card dispatches
+      the `open-{{ drawer_id }}` event, so it must match the rendered drawer.
+
+  Usage:
+  {% render 'related-product-card', product: related_product, drawer_id: 'related-product-drawer' %}
+{% endcomment %}
+
+{%- if product != blank -%}
+  {%- assign open_event = 'open-' | append: drawer_id -%}
+  <div class="related-product-card mt-10">
+    <h2 class="font-body text-sm uppercase font-bold tracking-wide mb-3">Pairs well with</h2>
+    <div class="flex rounded-xl overflow-hidden w-full text-contrast border border-black/10">
+      <div class="w-1/4 flex justify-center items-center bg-primary">
+        {% render 'responsive-image',
+          image: product.featured_image,
+          wrapper_class: 'relative aspect-portrait w-full h-full overflow-hidden',
+          image_class: 'absolute inset-0 object-cover w-full h-full'
+        %}
+      </div>
+      <div class="w-3/4 p-6 flex flex-col gap-2 bg-white">
+        <h3 class="font-heading text-2xl">{{ product.title }}</h3>
+        {% render 'price', product: product, show_compare_at_price: true %}
+        <div class="mt-auto pt-4">
+          {% render 'button', button_text: 'Shop Now', event_trigger: open_event, button_class: 'btn--black' %}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

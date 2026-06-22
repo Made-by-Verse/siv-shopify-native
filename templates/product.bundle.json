@@ -45,6 +45,10 @@
         "accordion_YVppL6": {
           "type": "accordion",
           "settings": {}
+        },
+        "related_product_auto": {
+          "type": "related-product",
+          "settings": {}
         }
       },
       "block_order": [
@@ -55,6 +59,7 @@
         "variant_picker_cF46kp",
         "quantity_selector_8EEfnM",
         "buy_buttons_rEH3MG",
+        "related_product_auto",
         "accordion_YVppL6"
       ],
       "settings": {}

@@ -1,9 +1,23 @@
-{% assign product = settings.featured_product %}
-{% assign drawer_id = 'quick-buy-drawer' %}
+{% comment %}
+  Renders a slide-in quick-buy drawer for a product (image, price, variant
+  picker, add-to-cart and "View Product").
+
+  Accepts:
+  - product: {Object} product to show. Defaults to settings.featured_product.
+  - drawer_id: {String} unique id used for the open event + variant data id.
+      Defaults to 'quick-buy-drawer'. Opens on the `open-{{ drawer_id }}` event.
+
+  Usage:
+  {% render 'quick-buy-drawer' %}
+  {% render 'quick-buy-drawer', product: related_product, drawer_id: 'related-product-drawer' %}
+{% endcomment %}
+
+{% assign product = product | default: settings.featured_product %}
+{% assign drawer_id = drawer_id | default: 'quick-buy-drawer' %}
 
 <div
   x-data="{ open: false }"
-  @open-quick-buy-drawer.window="      open = true;"
+  @open-{{ drawer_id }}.window="      open = true;"
   @open-cart-drawer.window="      open = false;"
   @keydown.escape.window="      open = false;"
   class="z-[9999] fixed"
