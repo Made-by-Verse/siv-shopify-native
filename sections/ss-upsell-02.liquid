@@ -428,7 +428,7 @@ For inquiries or permissions, contact daniel@section.store
       {% assign product = block.settings.product %}
       <div data-mini-atc class="upsell-item-{{ section.id }}">
         <div class="upsell-item-wrapper-{{ section.id }}">
-          <img data-mini-atc-image-{{ forloop.index }} class="upsell-item-image-{{ section.id }}" src="{{ product.featured_image | img_url: '120x' }}" alt="{{ product.title }}" loading="lazy">
+          <img data-mini-atc-image-{{ forloop.index }} class="upsell-item-image-{{ section.id }}" src="{{ product.featured_image | image_url: width: 120 }}" width="120" height="120" alt="{{ product.title }}" loading="lazy">
           <div class="upsell-item-details-{{ section.id }}">
             <div class="upsell-item-title-wrapper-{{ section.id }}">
               <div>

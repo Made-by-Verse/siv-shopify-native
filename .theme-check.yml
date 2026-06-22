@@ -1,0 +1,28 @@
+# Theme Check configuration
+# Docs: https://shopify.dev/docs/themes/tools/theme-check
+# Run with: shopify theme check
+
+extends: :default
+
+# This theme uses a Vite build pipeline, so compiled JS/CSS live in `assets/`
+# and are referenced via the `vite-tag` snippet rather than hard-coded asset tags.
+ignore:
+  - node_modules/**
+  - frontend/**
+  - assets/*.js
+  - assets/*.css
+  - assets/.vite/**
+
+# The bundled Shopify locale files are intentionally partial translations, so
+# MatchingTranslations produces ~160 false positives. Disable it; rely on the
+# Shopify locale tooling for real translation coverage instead.
+MatchingTranslations:
+  enabled: false
+
+AssetSizeJavaScript:
+  enabled: true
+  threshold_in_bytes: 200000
+
+AssetSizeCSS:
+  enabled: true
+  threshold_in_bytes: 100000

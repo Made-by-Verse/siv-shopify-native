@@ -55,29 +55,10 @@ export default async function Cart() {
 
       formDataObject.quantity = bundleQuantity;
 
-      const shouldLog =
-        typeof window !== "undefined" &&
-        Boolean(window?.SIV_BUNDLE_FREEBIE_DEBUG ?? true);
-
       const payloadItems = [formDataObject];
       const freebies = getBundleFreebies(bundleVariantId);
 
       if (Array.isArray(freebies) && freebies.length) {
-        // if (shouldLog) {
-        //   console.group(
-        //     "[BundleFreebie] Preparing freebies for bundle variant",
-        //     bundleVariantId
-        //   );
-        //   console.table(
-        //     freebies.map((freebieDefinition) => ({
-        //       configuredVariantId: freebieDefinition?.variantId,
-        //       baseQuantity: freebieDefinition?.quantity ?? 1,
-        //       matchBundleQuantity:
-        //         freebieDefinition?.matchBundleQuantity !== false,
-        //     }))
-        //   );
-        // }
-
         freebies.forEach((freebieDefinition) => {
           const freeVariantId = Number(freebieDefinition?.variantId);
 
@@ -95,15 +76,6 @@ export default async function Cart() {
 
           if (freebieQuantity < 1) return;
 
-          // if (shouldLog) {
-          //   console.log(
-          //     "[BundleFreebie] Adding free item",
-          //     freeVariantId,
-          //     "quantity:",
-          //     freebieQuantity
-          //   );
-          // }
-
           payloadItems.push({
             id: freeVariantId,
             quantity: freebieQuantity,
@@ -113,17 +85,7 @@ export default async function Cart() {
             },
           });
         });
-
-        // if (shouldLog) {
-        //   console.groupEnd();
-        // }
       }
-      // else if (shouldLog) {
-      //   console.log(
-      //     "[BundleFreebie] No freebies configured for bundle variant",
-      //     bundleVariantId
-      //   );
-      // }
 
       try {
         // Dispatch event to show loading state
@@ -143,13 +105,6 @@ export default async function Cart() {
 
         if (!response.ok) throw new Error(responseBody.message);
 
-        // if (shouldLog) {
-        //   console.group("[BundleFreebie] Cart add response");
-        //   console.log("Payload items:", payloadItems);
-        //   console.log("Shopify response:", responseBody);
-        //   console.groupEnd();
-        // }
-
         // Immediately update the cart after successful add
         await this.getCart();
 
@@ -159,28 +114,8 @@ export default async function Cart() {
         try {
           const discountCode = getBundleDiscountCode(bundleVariantId);
 
-          // if (shouldLog) {
-          //   console.log(
-          //     "[BundleFreebie] Checking for discount code for variant:",
-          //     bundleVariantId,
-          //     "result:",
-          //     discountCode
-          //   );
-          // }
-
           if (discountCode) {
-            // if (shouldLog) {
-            //   console.log(
-            //     "[BundleFreebie] Applying discount code:",
-            //     discountCode
-            //   );
-            // }
             await applyDiscountCode(discountCode, false);
-            // if (shouldLog) {
-            //   console.log(
-            //     "[BundleFreebie] Discount code application: success"
-            //   );
-            // }
           }
         } catch (discountError) {
           console.error(
@@ -195,13 +130,6 @@ export default async function Cart() {
         window.dispatchEvent(new CustomEvent("cart:added"));
       } catch (error) {
         console.error("Error adding to cart:", error);
-        // if (shouldLog) {
-        //   console.error("[BundleFreebie] Add to cart failed", {
-        //     payloadItems,
-        //     bundleVariantId,
-        //     error,
-        //   });
-        // }
         // Dispatch error event
         window.dispatchEvent(
           new CustomEvent("cart:error", {

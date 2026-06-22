@@ -82,7 +82,7 @@
         class="product-details space-y-5"
         x-data="product"
         method="post"
-        action="/cart/add"
+        action="{{ routes.cart_add_url }}"
         @submit.prevent="$store.cart.addToCart($event, quantity)"
         id="product-form-{{ product.id }}"
         accept-charset="UTF-8"
