@@ -116,6 +116,15 @@
             "treatment_duration": 21
           }
         },
+        "testimony_zp89DV": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.36.41_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.36.49_PM.png",
+            "quote": "Reduced the appearance of lesions. Improved skin tone, texture, and clarity. *Results achieved with SIV as part of a professional esthetician facial/routine. Individual results may vary.",
+            "treatment_duration": 14
+          }
+        },
         "testimony_2": {
           "type": "testimony",
           "settings": {
@@ -182,6 +191,7 @@
       },
       "block_order": [
         "testimony_1",
+        "testimony_zp89DV",
         "testimony_2",
         "testimony_3",
         "testimony_4",
