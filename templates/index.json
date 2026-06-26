@@ -110,10 +110,10 @@
         "testimony_1": {
           "type": "testimony",
           "settings": {
-            "before_image": "shopify://shop_images/Acne.png",
-            "after_image": "shopify://shop_images/Acne_2.png",
+            "before_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.38.06_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.38.13_PM.png",
             "quote": "Reduced the appearance of lesions. Improved skin tone, texture, and clarity. *Results achieved with SIV as part of a professional esthetician facial/routine. Individual results may vary.",
-            "treatment_duration": 24
+            "treatment_duration": 21
           }
         },
         "testimony_2": {
