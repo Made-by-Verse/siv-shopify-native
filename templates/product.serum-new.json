@@ -26,26 +26,6 @@
           "type": "product-description",
           "settings": {}
         },
-        "variant_picker_cF46kp": {
-          "type": "variant-picker",
-          "settings": {}
-        },
-        "recharge_subscriptions_subscription_widget_v2_8cEqny": {
-          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
-          "settings": {}
-        },
-        "quantity_selector_8EEfnM": {
-          "type": "quantity-selector",
-          "settings": {}
-        },
-        "buy_buttons_rEH3MG": {
-          "type": "buy-buttons",
-          "settings": {}
-        },
-        "accordion_YVppL6": {
-          "type": "accordion",
-          "settings": {}
-        },
         "wholesale_pricing_breakdown_abc1": {
           "type": "wholesale-pricing",
           "disabled": true,
@@ -70,8 +50,28 @@
             "breakdown_text": "<ul><li>2–5 units: $78 USD</li><li>6–11 units: $72 USD</li><li>12+ units: $66 USD</li></ul>"
           }
         },
+        "variant_picker_cF46kp": {
+          "type": "variant-picker",
+          "settings": {}
+        },
+        "recharge_subscriptions_subscription_widget_v2_8cEqny": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
+        "quantity_selector_8EEfnM": {
+          "type": "quantity-selector",
+          "settings": {}
+        },
+        "buy_buttons_rEH3MG": {
+          "type": "buy-buttons",
+          "settings": {}
+        },
         "related_product_auto": {
           "type": "related-product",
+          "settings": {}
+        },
+        "accordion_YVppL6": {
+          "type": "accordion",
           "settings": {}
         }
       },
@@ -173,10 +173,10 @@
         "testimony_1": {
           "type": "testimony",
           "settings": {
-            "before_image": "shopify://shop_images/Acne.png",
-            "after_image": "shopify://shop_images/Acne_2.png",
+            "before_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.44.55_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.45.00_PM.png",
             "quote": "Reduced number of lesions. Improved skin tone, texture, and clarity.",
-            "treatment_duration": 24
+            "treatment_duration": 40
           }
         },
         "testimony_2": {
