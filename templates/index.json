@@ -125,6 +125,15 @@
             "treatment_duration": 14
           }
         },
+        "testimony_c6eArT": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.42.16_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.42.24_PM.png",
+            "quote": "Reduced the appearance of redness. Improved skin tone, texture, and clarity. *Results achieved with SIV as part of a professional esthetician facial/routine. Individual results may vary.",
+            "treatment_duration": 49
+          }
+        },
         "testimony_2": {
           "type": "testimony",
           "settings": {
@@ -192,6 +201,7 @@
       "block_order": [
         "testimony_1",
         "testimony_zp89DV",
+        "testimony_c6eArT",
         "testimony_2",
         "testimony_3",
         "testimony_4",
