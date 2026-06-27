@@ -1,0 +1,67 @@
+{% doc %}
+  @prompt
+    give me a space to put an HTML code
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-html-block-{{ ai_gen_id }} {
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    display: block;
+  }
+
+  .ai-html-content-{{ ai_gen_id }} {
+    width: 100%;
+  }
+
+  .ai-html-empty-state-{{ ai_gen_id }} {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    border: 2px dashed #cccccc;
+    border-radius: 8px;
+    text-align: center;
+    color: #666666;
+    font-size: 14px;
+  }
+{% endstyle %}
+
+<div class="ai-html-block-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.custom_html != blank %}
+    <div class="ai-html-content-{{ ai_gen_id }}">
+      {{ block.settings.custom_html }}
+    </div>
+  {% else %}
+    <div class="ai-html-empty-state-{{ ai_gen_id }}">
+      Add your custom HTML code in the block settings
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Custom HTML",
+  "settings": [
+    {
+      "type": "html",
+      "id": "custom_html",
+      "label": "HTML code"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom HTML"
+    }
+  ]
+}
+{% endschema %}
