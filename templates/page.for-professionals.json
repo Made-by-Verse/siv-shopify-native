@@ -9,6 +9,24 @@
  */
 {
   "sections": {
+    "blocks_mfD3b8": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_183bc97_e4Nj9A": {
+          "type": "ai_gen_block_183bc97",
+          "settings": {
+            "custom_html": "<link href=\"https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap\" rel=\"stylesheet\">\n<style>\n  .siv-fp{position:relative;border-radius:12px;overflow:hidden;width:100%;}\n  .siv-fp-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right;}\n  .siv-fp-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,33,28,.5) 0%,rgba(40,33,28,.4) 45%,rgba(40,33,28,.58) 100%);}\n  .siv-fp-inner{position:relative;z-index:2;padding:56px 5%;box-sizing:border-box;}\n  .siv-fp-hero{text-align:center;max-width:760px;margin:0 auto 40px;}\n  .siv-fp-sub{margin:0 0 12px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#FFF;text-shadow:0 1px 8px rgba(0,0,0,.45);}\n  .siv-fp-h1{margin:0 0 18px;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:60px;line-height:.9;letter-spacing:.02em;color:#FFF;text-shadow:0 2px 14px rgba(0,0,0,.5);}\n  .siv-fp-intro{margin:0 auto 26px;max-width:620px;font-size:16px;line-height:1.6;color:#FFF;text-shadow:0 1px 8px rgba(0,0,0,.5);}\n  .siv-fp-btn{display:inline-block;background:#FFF;color:#121212;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:13px 38px;border-radius:40px;text-decoration:none;}\n  .siv-fp-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1100px;margin:0 auto;}\n  .siv-fp-card{background:rgba(18,18,18,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:12px;border:1px solid rgba(255,255,255,.14);padding:30px 28px;}\n  .siv-fp-cardh{margin:0 0 18px;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:30px;letter-spacing:.02em;color:#FFF;}\n  .siv-fp-lead{margin:0 0 14px;font-size:15px;color:#FFF;}\n  .siv-fp-list{margin:0;padding:0;list-style:none;}\n  .siv-fp-list li{position:relative;padding:0 0 12px 18px;font-size:14px;line-height:1.5;color:#EDE9E3;}\n  .siv-fp-list li:last-child{padding-bottom:0;}\n  .siv-fp-list li:before{content:\"\";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:#FFF;}\n  .siv-fp-list b{color:#FFF;font-weight:600;}\n  .siv-fp-foot{text-align:center;max-width:620px;margin:38px auto 0;}\n  .siv-fp-foot p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#FFF;text-shadow:0 1px 8px rgba(0,0,0,.5);}\n  @media(max-width:640px){\n    .siv-fp-bg{object-position:center top;}\n    .siv-fp-inner{padding:34px 18px;}\n    .siv-fp-h1{font-size:40px;}\n    .siv-fp-intro{font-size:14px;}\n    .siv-fp-grid{grid-template-columns:1fr;gap:12px;}\n    .siv-fp-card{padding:22px 20px;}\n    .siv-fp-cardh{font-size:26px;margin:0 0 14px;}\n  }\n</style>\n<div class=\"siv-fp\">\n  <img class=\"siv-fp-bg\" src=\"https://cdn.shopify.com/s/files/1/0799/1315/6923/files/DTS_Angelica_Alex_Tan_2859.jpg?v=1782599656\" alt=\"Skincare professional client\">\n  <div class=\"siv-fp-scrim\"></div>\n  <div class=\"siv-fp-inner\">\n    <div class=\"siv-fp-hero\">\n      <p class=\"siv-fp-sub\">For Professionals</p>\n      <h1 class=\"siv-fp-h1\">Enhance your practice with SIV</h1>\n      <p class=\"siv-fp-intro\">Join our expansive network of trusted skincare and wellness professionals who rely on SIV for high-quality, clinically backed results. Our wholesale program is designed to support estheticians, medical professionals, and wellness practitioners by providing exclusive access to premium formulations at wholesale pricing.</p>\n      <a class=\"siv-fp-btn\" href=\"https://sivcare.com/pages/wholesale-enquiry\">Apply</a>\n    </div>\n    <div class=\"siv-fp-grid\">\n      <div class=\"siv-fp-card\">\n        <h2 class=\"siv-fp-cardh\">Why partner with SIV?</h2>\n        <ul class=\"siv-fp-list\">\n          <li>\n<b>Clinician-Exclusive Pricing</b> – Get wholesale discounts tailored for licensed professionals.</li>\n          <li>\n<b>Premium, Science-Backed Ingredients</b> – Elevate patient care with trusted formulations.</li>\n          <li>\n<b>Seamless Ordering &amp; Dedicated Support</b> – Enjoy a hassle-free process with priority assistance.</li>\n          <li>\n<b>Early Access to New Releases</b> – Stay ahead with exclusive product launches.</li>\n          <li>\n<b>Low Minimum Orders &amp; Scalable Solutions</b> – Perfect for both small practices and larger clinics.</li>\n        </ul>\n      </div>\n      <div class=\"siv-fp-card\">\n        <h2 class=\"siv-fp-cardh\">Who can apply?</h2>\n        <p class=\"siv-fp-lead\">Our wholesale program is open to:</p>\n        <ul class=\"siv-fp-list\">\n          <li><b>Licensed Aestheticians &amp; Skincare Professionals</b></li>\n          <li>Med-Spas, Clinics, and Private Practices</li>\n          <li>Doctors, Physicians, and Medical Specialists</li>\n          <li>Chiropractors, Physical Therapists &amp; Wellness Practitioners</li>\n        </ul>\n      </div>\n    </div>\n    <div class=\"siv-fp-foot\">\n      <p>Fill out the form below to verify your credentials and gain access to exclusive pricing and benefits. Our team will review your application and respond shortly.</p>\n      <a class=\"siv-fp-btn\" href=\"https://sivcare.com/pages/wholesale-enquiry\">Apply</a>\n    </div>\n  </div>\n</div>",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_183bc97_e4Nj9A"
+      ],
+      "name": "Custom HTML",
+      "settings": {}
+    },
     "affiliates": {
       "type": "section-affiliates",
       "blocks": {
@@ -40,16 +58,24 @@
           }
         }
       },
-      "block_order": ["image_dWcN8C", "affiliate_JATnYb", "affiliate_9Bq8zX"],
+      "block_order": [
+        "image_dWcN8C",
+        "affiliate_JATnYb",
+        "affiliate_9Bq8zX"
+      ],
+      "disabled": true,
       "settings": {
         "heading": "Enhance Your Practice with SIV",
         "top_text": "",
         "image": "shopify://shop_images/siv-hero.jpg",
+        "bottom_text": "Fill out the form below to verify your credentials and gain access to exclusive pricing and benefits. Our team will review your application and respond shortly.",
         "button_text": "Apply",
-        "button_link": "shopify://pages/wholesale-enquiry",
-        "bottom_text": "Fill out the form below to verify your credentials and gain access to exclusive pricing and benefits. Our team will review your application and respond shortly."
+        "button_link": "shopify://pages/wholesale-enquiry"
       }
     }
   },
-  "order": ["affiliates"]
+  "order": [
+    "blocks_mfD3b8",
+    "affiliates"
+  ]
 }
