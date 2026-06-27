@@ -11,6 +11,7 @@
   "sections": {
     "section_image_banner_PYw3eM": {
       "type": "section-image-banner",
+      "disabled": true,
       "name": "Image Banner",
       "settings": {
         "title": "",
@@ -68,12 +69,12 @@
           "type": "buy-buttons",
           "settings": {}
         },
-        "accordion_YVppL6": {
-          "type": "accordion",
-          "settings": {}
-        },
         "related_product_auto": {
           "type": "related-product",
+          "settings": {}
+        },
+        "accordion_YVppL6": {
+          "type": "accordion",
           "settings": {}
         }
       },
