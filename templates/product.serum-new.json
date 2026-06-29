@@ -9,16 +9,6 @@
  */
 {
   "sections": {
-    "section_paragraph_ETJBGE": {
-      "type": "section-paragraph",
-      "name": "Paragraph",
-      "settings": {
-        "text": "<p><strong>Backorder Notice:</strong>The 15 mL is currently on backorder with an estimated ship date of the<strong>week of July 13</strong>. In-stock items will ship immediately, and your 15 mL will ship separately once it's back in stock.</p>",
-        "color_scheme": "",
-        "padding_top": "md",
-        "padding_bottom": "md"
-      }
-    },
     "blocks_qVimxz": {
       "type": "_blocks",
       "blocks": {
@@ -365,7 +355,6 @@
     }
   },
   "order": [
-    "section_paragraph_ETJBGE",
     "blocks_qVimxz",
     "main",
     "section_featured_product_serum",
