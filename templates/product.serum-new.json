@@ -9,6 +9,35 @@
  */
 {
   "sections": {
+    "section_paragraph_ETJBGE": {
+      "type": "section-paragraph",
+      "name": "Paragraph",
+      "settings": {
+        "text": "<p><strong>Backorder Notice:</strong>The 15 mL is currently on backorder with an estimated ship date of the<strong>week of July 13</strong>. In-stock items will ship immediately, and your 15 mL will ship separately once it's back in stock.</p>",
+        "color_scheme": "",
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
+    },
+    "blocks_qVimxz": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_183bc97_6iR8GP": {
+          "type": "ai_gen_block_183bc97",
+          "settings": {
+            "custom_html": "<!-- SIV Backorder Notice Banner -->\n<div style=\"\n  width: 100%;\n  box-sizing: border-box;\n  background-color: #121212;\n  color: #FFFFFF;\n  padding: 24px;\n  margin: 0 auto;\n  text-align: center;\n  font-family: Arial, Helvetica, sans-serif;\n\">\n  <p style=\"\n    margin: 0;\n    color: #FFFFFF;\n    font-family: 'Bebas Neue', Arial, sans-serif;\n    font-size: 22px;\n    letter-spacing: 1.5px;\n    text-transform: uppercase;\n    line-height: 1.2;\n  \">Backorder Notice</p>\n\n  <p style=\"\n    margin: 12px auto 0;\n    color: #FFFFFF;\n    font-size: 14px;\n    line-height: 1.7;\n    max-width: 720px;\n  \">The 15 mL is currently on backorder with an estimated ship date of the week of July 13. In-stock items will ship immediately, and your 15 mL will ship separately once it's back in stock.</p>\n\n  <p style=\"\n    margin: 12px auto 0;\n    color: #FFFFFF;\n    font-size: 14px;\n    line-height: 1.7;\n    max-width: 720px;\n  \">Please note that the estimated ship date is subject to change.</p>\n</div>",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_183bc97_6iR8GP"
+      ],
+      "custom_css": [],
+      "name": "Custom HTML",
+      "settings": {}
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -336,6 +365,8 @@
     }
   },
   "order": [
+    "section_paragraph_ETJBGE",
+    "blocks_qVimxz",
     "main",
     "section_featured_product_serum",
     "key_points",
