@@ -11,14 +11,35 @@
   "sections": {
     "hero": {
       "type": "section-home-hero",
+      "disabled": true,
       "settings": {
         "hero_heading": "",
         "hero_content": "",
         "show_featured_product": true
       }
+    },
+    "blocks_UnGRxw": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_183bc97_gawTrd": {
+          "type": "ai_gen_block_183bc97",
+          "settings": {
+            "custom_html": "<iframe src=\"https://api.leadconnectorhq.com/widget/form/mtjWeZsT80jswkowODc6\" style=\"width:100%;height:100%;border:none;border-radius:8px\" id=\"inline-mtjWeZsT80jswkowODc6\" data-layout=\"{'id':'INLINE'}\" data-trigger-type=\"alwaysShow\" data-trigger-value=\"\" data-activation-type=\"alwaysActivated\" data-activation-value=\"\" data-deactivation-type=\"neverDeactivate\" data-deactivation-value=\"\" data-form-name=\"[SIV] Contact Us\" data-height=\"633\" data-layout-iframe-id=\"inline-mtjWeZsT80jswkowODc6\" data-form-id=\"mtjWeZsT80jswkowODc6\" title=\"[SIV] Contact Us\">\n</iframe>\n<script src=\"https://link.msgsndr.com/js/form_embed.js\"></script>",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_183bc97_gawTrd"
+      ],
+      "custom_css": [],
+      "name": "Custom HTML",
+      "settings": {}
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "blocks_UnGRxw"
   ]
 }

@@ -11,8 +11,14 @@
   "sections": {
     "hero": {
       "type": "section-home-hero",
-      "settings": {}
+      "settings": {
+        "hero_heading": "",
+        "hero_content": "",
+        "show_featured_product": true
+      }
     }
   },
-  "order": ["hero"]
+  "order": [
+    "hero"
+  ]
 }
