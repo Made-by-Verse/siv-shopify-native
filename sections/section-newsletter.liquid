@@ -19,66 +19,18 @@
         </p>
       {%- when 'email_form' -%}
         <div class="max-w-xl mx-auto" {{ block.shopify_attributes }}>
-          {% form 'customer', class: 'newsletter-form w-full' %}
-            {% unless form.posted_successfully? %}
-              <input type="hidden" name="contact[tags]" value="newsletter">
-              <div class="">
-                <div class="relative">
-                  <input
-                    id="NewsletterForm--{{ section.id }}"
-                    type="email"
-                    name="contact[email]"
-                    class="w-full h-16 pr-32 pl-8 bg-transparent focus:outline-none placeholder-opacity-50 bg-white text-black rounded-full"
-                    value="{{ form.email }}"
-                    aria-required="true"
-                    autocorrect="off"
-                    autocapitalize="off"
-                    autocomplete="email"
-                    {% if form.errors %}
-                      autofocus
-                      aria-invalid="true"
-                      aria-describedby="Newsletter-error--{{ section.id }}"
-                    {% elsif form.posted_successfully? %}
-                      aria-describedby="Newsletter-success--{{ section.id }}"
-                    {% endif %}
-                    placeholder="Your Email"
-                    required
-                  >
-                  <label class="sr-only" for="NewsletterForm--{{ section.id }}">
-                    {{ 'newsletter.label' | t }}
-                  </label>
-                  <button
-                    type="submit"
-                    class="absolute top-2 bottom-2 right-2 text-sm bg-black text-white uppercase font-bold tracking-wider px-6 rounded-full hover:opacity-80 duration-500"
-                    name="commit"
-                    id="Subscribe"
-                    aria-label="{{ 'newsletter.button_label' | t }}"
-                  >
-                    Sign up
-                  </button>
-                </div>
-                {%- if form.errors -%}
-                  <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
-                    <span class="svg-wrapper">
-                      {{- 'icon-error.svg' | inline_asset_content -}}
-                    </span>
-                    {{- form.errors.translated_fields.email | capitalize }}
-                    {{ form.errors.messages.email -}}
-                  </small>
-                {%- endif -%}
-              </div>
-            {% endunless %}
-            {%- if form.posted_successfully? -%}
-              <h3
-                class=""
-                id="Newsletter-success--{{ section.id }}"
-                tabindex="-1"
-                autofocus
-              >
-                Thank you for subscribing!
-              </h3>
-            {%- endif -%}
-          {% endform %}
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/9zPBwCeHYvEs7hxla0ij"
+            style="width:100%;min-height:442px;border:none;border-radius:8px"
+            id="inline-9zPBwCeHYvEs7hxla0ij"
+            data-layout="{'id':'INLINE'}"
+            data-form-name="[SIV] Newsletter"
+            data-height="442"
+            data-layout-iframe-id="inline-9zPBwCeHYvEs7hxla0ij"
+            data-form-id="9zPBwCeHYvEs7hxla0ij"
+            title="[SIV] Newsletter">
+          </iframe>
+          <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
         </div>
     {%- endcase -%}
   {%- endfor -%}
