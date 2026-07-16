@@ -164,7 +164,6 @@
         "point_1": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/icon-book.png",
             "heading": "Educate Clients",
             "text": "Clearly explains the skin microbiome and the science behind SIV in an easy-to-understand format."
           }
@@ -172,7 +171,6 @@
         "point_2": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/icon-spheres.png",
             "heading": "Build Confidence",
             "text": "Reinforces your professional recommendations with beautiful visuals and credible educational content."
           }
@@ -180,7 +178,6 @@
         "point_3": {
           "type": "point",
           "settings": {
-            "image": "shopify://shop_images/face-base.png",
             "heading": "Extend the Experience",
             "text": "Give clients a premium resource to take home and reference between appointments."
           }
@@ -192,7 +189,7 @@
         "point_3"
       ],
       "settings": {
-        "heading": "THE POWER OF EDUCATION",
+        "heading": "",
         "description": ""
       }
     },
@@ -365,6 +362,53 @@
         "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>",
         "color_scheme": ""
       }
+    },
+    "blocks_EnTgtz": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6cbe56e_RVnwHd": {
+          "type": "ai_gen_block_6cbe56e",
+          "settings": {
+            "desktop_width_percent": 80,
+            "columns_mobile": "1",
+            "card_gap": 24,
+            "row_gap": 24,
+            "section_padding": 40,
+            "card_background": "#f6f5ed",
+            "card_border_color": "#685f2c",
+            "card_border_width": 1,
+            "card_border_radius": 8,
+            "card_padding": 32,
+            "text_alignment": "center",
+            "icon_size": 40,
+            "icon_color": "#685f2c",
+            "icon_spacing": 16,
+            "title_size": 20,
+            "title_color": "#241917",
+            "title_spacing": 12,
+            "description_size": 14,
+            "description_color": "#241917",
+            "card_1_icon": "✓",
+            "card_1_title": "Educate Clients",
+            "card_1_description": "<p>Premium quality products crafted with care and attention to detail.</p>",
+            "card_2_icon": "★",
+            "card_2_title": "Build Confidence",
+            "card_2_description": "<p>Reinforces your professional recommendations with beautiful visuals and credible educational content.</p>",
+            "card_3_icon": "♥",
+            "card_3_title": "Extend the Experience",
+            "card_3_description": "<p>Give clients a premium resource to take home and reference between appointments.</p>",
+            "card_4_icon": "⟲",
+            "card_4_title": "Easy Returns",
+            "card_4_description": "<p>Hassle-free returns within 30 days if you're not satisfied.</p>"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6cbe56e_RVnwHd"
+      ],
+      "name": "Text cards",
+      "settings": {}
     }
   },
   "order": [
@@ -374,6 +418,7 @@
     "key_points",
     "testimonies",
     "section_ingredients_YHnn8T",
-    "section_related_products"
+    "section_related_products",
+    "blocks_EnTgtz"
   ]
 }
