@@ -76,6 +76,7 @@
         },
         "recharge_subscriptions_subscription_widget_v2_8cEqny": {
           "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "disabled": true,
           "settings": {}
         },
         "quantity_selector_8EEfnM": {
@@ -88,10 +89,12 @@
         },
         "related_product_auto": {
           "type": "related-product",
+          "disabled": true,
           "settings": {}
         },
         "accordion_YVppL6": {
           "type": "accordion",
+          "disabled": true,
           "settings": {}
         }
       },
@@ -157,24 +160,24 @@
           "type": "point",
           "settings": {
             "image": "shopify://shop_images/topical-spore-treatment.png",
-            "heading": "Topical spore serum",
-            "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
+            "heading": "Educate Clients",
+            "text": "Clearly explains the skin microbiome and the science behind SIV in an easy-to-understand format."
           }
         },
         "point_2": {
           "type": "point",
           "settings": {
             "image": "shopify://shop_images/skin-identical.png",
-            "heading": "Skin Identical",
-            "text": "Lightweight & stabilizing formula containing physiologically identical ingredients that your skin recognizes."
+            "heading": "Build Confidence",
+            "text": "Reinforces your professional recommendations with beautiful visuals and credible educational content."
           }
         },
         "point_3": {
           "type": "point",
           "settings": {
             "image": "shopify://shop_images/face-base.png",
-            "heading": "Your Face Is Your Base",
-            "text": "Before use, shake vigorously. Apply 1–3 drops once daily. Pat into dry or damp skin. Apply after cleansing or toning."
+            "heading": "Extend the Experience",
+            "text": "Give clients a premium resource to take home and reference between appointments."
           }
         }
       },
@@ -183,9 +186,8 @@
         "point_2",
         "point_3"
       ],
-      "disabled": true,
       "settings": {
-        "heading": "Balance in a bottle",
+        "heading": "THE POWER OF EDUCATION",
         "description": ""
       }
     },
