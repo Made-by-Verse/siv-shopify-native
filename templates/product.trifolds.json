@@ -1,0 +1,367 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blocks_qVimxz": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_183bc97_6iR8GP": {
+          "type": "ai_gen_block_183bc97",
+          "disabled": true,
+          "settings": {
+            "custom_html": "<!-- SIV Backorder Notice Banner -->\n<div style=\"\n  width: 100%;\n  box-sizing: border-box;\n  background-color: #121212;\n  color: #FFFFFF;\n  padding: 24px;\n  margin: 0 auto;\n  text-align: center;\n  font-family: Arial, Helvetica, sans-serif;\n\">\n  <p style=\"\n    margin: 0;\n    color: #FFFFFF;\n    font-family: 'Bebas Neue', Arial, sans-serif;\n    font-size: 22px;\n    letter-spacing: 1.5px;\n    text-transform: uppercase;\n    line-height: 1.2;\n  \">Backorder Notice</p>\n\n  <p style=\"\n    margin: 12px auto 0;\n    color: #FFFFFF;\n    font-size: 14px;\n    line-height: 1.7;\n    max-width: 720px;\n  \">The 15 mL is currently on backorder with an estimated ship date of the week of July 13. In-stock items will ship immediately, and your 15 mL will ship separately once it's back in stock.</p>\n\n  <p style=\"\n    margin: 12px auto 0;\n    color: #FFFFFF;\n    font-size: 14px;\n    line-height: 1.7;\n    max-width: 720px;\n  \">Please note that the estimated ship date is subject to change.</p>\n</div>",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_183bc97_6iR8GP"
+      ],
+      "custom_css": [],
+      "name": "Custom HTML",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "liquid_eaFyJD": {
+          "type": "tag",
+          "settings": {
+            "liquid": "{% for variant in product.variants %}{% if variant.id == product.selected_or_first_available_variant.id %}{{ variant.metafields.descriptors.subtitle }}{% endif %}{% endfor %}"
+          }
+        },
+        "product_title_Fqeap7": {
+          "type": "product-title",
+          "settings": {}
+        },
+        "product_description_xK3MCg": {
+          "type": "product-description",
+          "settings": {}
+        },
+        "wholesale_pricing_breakdown_abc1": {
+          "type": "wholesale-pricing",
+          "disabled": true,
+          "settings": {
+            "heading": "Wholesale Volume Pricing",
+            "intro": "<p>The 15 mL Biome Balancing Serum is temporarily out of stock. To support uninterrupted ordering, we are offering <strong>20% off the 30 mL size</strong> during this period. Use code<strong> SIV30ML20 </strong>at checkout while the 15 mL is out of stock.</p><p>Subscribe and save not available for wholesale pricing.</p>"
+          }
+        },
+        "wholesale_tier_15ml_abc2": {
+          "type": "wholesale-tier",
+          "disabled": true,
+          "settings": {
+            "variant_heading": "15mL - OUT OF STOCK",
+            "breakdown_text": "<ul><li>2–5 units: $44 USD</li><li>6–11 units: $39 USD</li><li>12+ units: $34 USD</li></ul>"
+          }
+        },
+        "wholesale_tier_30ml_abc3": {
+          "type": "wholesale-tier",
+          "disabled": true,
+          "settings": {
+            "variant_heading": "30 mL",
+            "breakdown_text": "<ul><li>2–5 units: $78 USD</li><li>6–11 units: $72 USD</li><li>12+ units: $66 USD</li></ul>"
+          }
+        },
+        "variant_picker_cF46kp": {
+          "type": "variant-picker",
+          "settings": {}
+        },
+        "recharge_subscriptions_subscription_widget_v2_8cEqny": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
+        "quantity_selector_8EEfnM": {
+          "type": "quantity-selector",
+          "settings": {}
+        },
+        "buy_buttons_rEH3MG": {
+          "type": "buy-buttons",
+          "settings": {}
+        },
+        "related_product_auto": {
+          "type": "related-product",
+          "settings": {}
+        },
+        "accordion_YVppL6": {
+          "type": "accordion",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "liquid_eaFyJD",
+        "product_title_Fqeap7",
+        "product_description_xK3MCg",
+        "wholesale_pricing_breakdown_abc1",
+        "wholesale_tier_15ml_abc2",
+        "wholesale_tier_30ml_abc3",
+        "variant_picker_cF46kp",
+        "recharge_subscriptions_subscription_widget_v2_8cEqny",
+        "quantity_selector_8EEfnM",
+        "buy_buttons_rEH3MG",
+        "related_product_auto",
+        "accordion_YVppL6"
+      ],
+      "settings": {}
+    },
+    "section_featured_product_serum": {
+      "type": "section-featured-product",
+      "blocks": {
+        "feature_point_1": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Supports Balance",
+            "text": "Promotes a harmonious skin environment for improved texture and tone."
+          }
+        },
+        "feature_point_2": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Delivers Vibrance",
+            "text": "Enhances your skin’s natural radiance by supporting a healthy microbiome."
+          }
+        },
+        "feature_point_3": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Builds Resilience",
+            "text": "Strengthens your skin’s defenses against environmental stressors and aging."
+          }
+        }
+      },
+      "block_order": [
+        "feature_point_1",
+        "feature_point_2",
+        "feature_point_3"
+      ],
+      "settings": {
+        "heading": "The Essential Serum for Healthy Skin",
+        "product": "siv-biome-balancing-serum",
+        "description": "<p><strong>15mL | 30 Day Supply</strong><br/>Perfect for first-time users. </p><p><strong>30mL | 60 Day Supply</strong><br/>Offering better value.</p><p>Before use, shake vigorously. Apply 1–3 drops once daily. Pat into dry or damp skin. Apply after cleansing or toning.  </p>",
+        "button_text": "",
+        "color_scheme": ""
+      }
+    },
+    "key_points": {
+      "type": "section-key-points",
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/topical-spore-treatment.png",
+            "heading": "Topical spore serum",
+            "text": "Bacillus spores activate a healthy skin foundation and visibly improves skin complexion"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/skin-identical.png",
+            "heading": "Skin Identical",
+            "text": "Lightweight & stabilizing formula containing physiologically identical ingredients that your skin recognizes."
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/face-base.png",
+            "heading": "Your Face Is Your Base",
+            "text": "Before use, shake vigorously. Apply 1–3 drops once daily. Pat into dry or damp skin. Apply after cleansing or toning."
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3"
+      ],
+      "settings": {
+        "heading": "Balance in a bottle",
+        "description": ""
+      }
+    },
+    "testimonies": {
+      "type": "section-testimonies-comparison",
+      "blocks": {
+        "testimony_1": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.44.55_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.45.00_PM.png",
+            "quote": "Reduced lesion count, Reduced redness, Improved skin texture & tone",
+            "treatment_duration": 40
+          }
+        },
+        "testimony_GqzR37": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.38.06_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.38.13_PM.png",
+            "quote": "Reduced lesion count, Reduced redness, Improved skin texture & tone.",
+            "treatment_duration": 21
+          }
+        },
+        "testimony_2": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Acne_bfe2b956-d3e7-4ca8-82c0-592b91e2c171.png",
+            "after_image": "shopify://shop_images/Acne_2_baf2f402-a63d-462d-9f5d-ca07ae100e0b.png",
+            "quote": "Reduced lesion count, Reduced redness, Improved skin texture & tone",
+            "treatment_duration": 10
+          }
+        },
+        "testimony_3": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Perioral_dermatitis_75d9eebe-13aa-453d-a3b9-d4fdcb6fa839.png",
+            "after_image": "shopify://shop_images/Perioral_dermatitis_2_7ef2140a-002a-4b90-8ae1-d8e7f50e93ed.png",
+            "quote": "Reduced redness. Improved skin clarity & tone",
+            "treatment_duration": 21
+          }
+        },
+        "testimony_4": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Acne_6ee40b9f-b549-431c-b2d0-2971bbede066.png",
+            "after_image": "shopify://shop_images/Acne_2_6d25c964-468f-4925-8bef-bba6c7a5f4a1.png",
+            "quote": "Reduced lesion count. Reduced redness. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 120
+          }
+        },
+        "testimony_5": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Sebborheic_Dermatitis.png",
+            "after_image": "shopify://shop_images/Sebborheic_Dermatitis_2.png",
+            "quote": "Reduced redness. Reduced flakiness. Improved hydration levels. Improved skin tone and texture",
+            "treatment_duration": 14
+          }
+        },
+        "testimony_6": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Atopic_Dermatitis_Eczema.png",
+            "after_image": "shopify://shop_images/Atopic_Dermatitis_Eczema_2.png",
+            "quote": "Reduced redness. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 30
+          }
+        },
+        "testimony_8": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Eczema.png",
+            "after_image": "shopify://shop_images/Eczema_2.png",
+            "quote": "Reduced redness. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 7
+          }
+        },
+        "testimony_9": {
+          "type": "testimony",
+          "settings": {
+            "before_image": "shopify://shop_images/Eczema_6be13a31-6225-413b-a209-a9eba45a03cc.png",
+            "after_image": "shopify://shop_images/Eczema_2_fa994c70-cf98-4b78-ac6d-c31c9c312715.png",
+            "quote": "Reduced redness. Improved skin tone, texture, and clarity.",
+            "treatment_duration": 60
+          }
+        }
+      },
+      "block_order": [
+        "testimony_1",
+        "testimony_GqzR37",
+        "testimony_2",
+        "testimony_3",
+        "testimony_4",
+        "testimony_5",
+        "testimony_6",
+        "testimony_8",
+        "testimony_9"
+      ],
+      "settings": {
+        "heading": "Real consumer tested results"
+      }
+    },
+    "section_ingredients_YHnn8T": {
+      "type": "section-ingredients",
+      "blocks": {
+        "ingredient_nxFM9w": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_982436196.jpg",
+            "heading": "Squalane",
+            "text": "<p>Biomimetic oil, molecule derived from non-GMO sugarcane that mimics squalene, beneficial in promoting skin hydration</p>"
+          }
+        },
+        "ingredient_LtnqRH": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_1461017641.jpg",
+            "heading": "Caprylic/Capric Triglyceride",
+            "text": "<p>A mixture of caprylic and capric fatty acids derived from palm oil; help replenish skin's surface and help it to resist moisture loss</p>"
+          }
+        },
+        "ingredient_W7khTy": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_1179927923.jpg",
+            "heading": "Glyceryl Caprylate",
+            "text": "<p>A natural, plant-based, emollient derived from glycerin and plant fatty acids; restores the oils of the skin, regulates the skin moisture and acts as a humidifier to the skin</p>"
+          }
+        },
+        "ingredient_iUixDC": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_1477484315.jpg",
+            "heading": "Bacillus",
+            "text": "<p>A proprietary blend of Bacillus spores support a healthy skin foundation and visibly improves skin. Positively influencing your unique skin biome and establishing balance. The spores can help improve the skin microbiome by targeting overgrown bacteria, while facilitating the growth of other essential species- effectively balancing the skin microbiome.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_nxFM9w",
+        "ingredient_LtnqRH",
+        "ingredient_W7khTy",
+        "ingredient_iUixDC"
+      ],
+      "name": "Ingredients",
+      "settings": {
+        "heading": "Ingredients",
+        "description": ""
+      }
+    },
+    "section_related_products": {
+      "type": "section-related-products",
+      "blocks": {
+        "product_biome_balance": {
+          "type": "product",
+          "settings": {
+            "product": "biome-balance-within"
+          }
+        }
+      },
+      "block_order": [
+        "product_biome_balance"
+      ],
+      "settings": {
+        "heading": "Related Products",
+        "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>",
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "blocks_qVimxz",
+    "main",
+    "section_featured_product_serum",
+    "key_points",
+    "testimonies",
+    "section_ingredients_YHnn8T",
+    "section_related_products"
+  ]
+}
