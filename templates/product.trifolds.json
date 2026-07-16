@@ -141,6 +141,7 @@
         "feature_point_2",
         "feature_point_3"
       ],
+      "disabled": true,
       "settings": {
         "heading": "The Essential Serum for Healthy Skin",
         "product": "siv-biome-balancing-serum",
@@ -182,6 +183,7 @@
         "point_2",
         "point_3"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
@@ -283,6 +285,7 @@
         "testimony_8",
         "testimony_9"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Real consumer tested results"
       }
@@ -329,6 +332,7 @@
         "ingredient_W7khTy",
         "ingredient_iUixDC"
       ],
+      "disabled": true,
       "name": "Ingredients",
       "settings": {
         "heading": "Ingredients",
@@ -348,6 +352,7 @@
       "block_order": [
         "product_biome_balance"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Related Products",
         "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>",
