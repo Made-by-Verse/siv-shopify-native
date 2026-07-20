@@ -29,112 +29,17 @@
             "desktop_width_percent": 100
           },
           "blocks": {}
-        },
-        "ai_gen_block_5f30175_jijLzj": {
-          "type": "ai_gen_block_5f30175",
-          "settings": {
-            "title": "Find your Account Manager",
-            "text": "<p>Every SIV wholesale partner gets a dedicated Account Manager who knows your market. Find your region below to meet yours — they're your go-to for orders, restocks, launches, and everything in between.</p>",
-            "text_alignment": "center",
-            "content_width": 800,
-            "desktop_width_percent": 100,
-            "mobile_width_percent": 100,
-            "title_size": 50,
-            "title_weight": "500",
-            "title_color": "#241917",
-            "text_size": 16,
-            "line_height": 1.5,
-            "text_color": "#241917",
-            "spacing": 16,
-            "padding_top": 40,
-            "padding_bottom": 24,
-            "padding_horizontal": 20,
-            "background_color": "#f6f5ed"
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_183bc97_7Pytw7",
-        "ai_gen_block_5f30175_jijLzj"
+        "ai_gen_block_183bc97_7Pytw7"
       ],
       "name": "Title and paragraph",
       "settings": {}
-    },
-    "section_image_banner_fX3bKM": {
-      "type": "section-image-banner",
-      "name": "Image Banner",
-      "settings": {
-        "title": "",
-        "image": "shopify://shop_images/ChatGPT_Image_May_24_2026_at_08_33_43_PM.png",
-        "color_scheme": "scheme-1",
-        "aspect_ratio": "16/9",
-        "padding_top": "none",
-        "padding_bottom": "none"
-      }
-    },
-    "177696240753ba9354": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_6cbe56e_CWEBdg": {
-          "type": "ai_gen_block_6cbe56e",
-          "settings": {
-            "desktop_width_percent": 75,
-            "columns_mobile": "1",
-            "card_gap": 44,
-            "row_gap": 24,
-            "section_padding": 48,
-            "card_background": "#000000",
-            "card_border_color": "#000000",
-            "card_border_width": 1,
-            "card_border_radius": 8,
-            "card_padding": 32,
-            "text_alignment": "center",
-            "icon_size": 40,
-            "icon_color": "#ffffff",
-            "icon_spacing": 16,
-            "title_size": 32,
-            "title_color": "#ffffff",
-            "title_spacing": 12,
-            "description_size": 15,
-            "description_color": "#ffffff",
-            "card_1_icon": "",
-            "card_1_title": "SOUTHEAST REGION",
-            "card_1_description": "<p><strong>CROSBY WOLOWNIK</strong></p><p><a href=\"mailto:cwolownik@sivcare.com\">cwolownik@sivcare.com</a></p>",
-            "card_2_icon": "",
-            "card_2_title": "MIDWEST + NORTHEAST REGION",
-            "card_2_description": "<p><strong>LEAH KONKIEL</strong></p><p><a href=\"mailto:lkonkiel@sivcare.com\">lkonkiel@sivcare.com</a></p>",
-            "card_3_icon": "",
-            "card_3_title": "MOUNTAIN + PLAINS REGION",
-            "card_3_description": "<p><strong>DEVONIE BOWMAN</strong></p><p><a href=\"mailto:dbowman@sivcare.com\">dbowman@sivcare.com</a></p>",
-            "card_4_icon": "",
-            "card_4_title": "WEST COAST REGION",
-            "card_4_description": "<p><strong>ISABEL VITALE</strong></p><p>isabel@sivcare.com</p>"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_6cbe56e_CWEBdg"
-      ],
-      "settings": {}
-    },
-    "section_paragraph_g4A8GX": {
-      "type": "section-paragraph",
-      "name": "Paragraph",
-      "settings": {
-        "text": "<p><strong>INTERNATIONAL & GENERAL INQUIRIES</strong></p><p>For partners in international markets, our wholesale team is your first point of contact. We'll ensure you're connected with the right resources to support your business.</p><p>Contact: info@sivcare.com</p>",
-        "color_scheme": "scheme-1",
-        "padding_top": "md",
-        "padding_bottom": "md"
-      }
     }
   },
   "order": [
     "hero",
-    "blocks_cYwqBB",
-    "section_image_banner_fX3bKM",
-    "177696240753ba9354",
-    "section_paragraph_g4A8GX"
+    "blocks_cYwqBB"
   ]
 }
