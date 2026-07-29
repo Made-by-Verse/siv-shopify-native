@@ -20,34 +20,6 @@
           },
           "blocks": {}
         },
-        "forms_inline_MbwKdT": {
-          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
-          "disabled": true,
-          "settings": {
-            "form_id": "",
-            "text_color": "#202020",
-            "button_background_color": "#202020",
-            "button_label_color": "#FFFFFF",
-            "links_color": "#1878B9",
-            "errors_color": "#E02229",
-            "text_alignment": "center",
-            "form_alignment": "center",
-            "padding_top": 0,
-            "padding_bottom": 24,
-            "padding_right": 0,
-            "padding_left": 0
-          }
-        },
-        "ai_gen_block_183bc97_LprPmh": {
-          "type": "ai_gen_block_183bc97",
-          "name": "Custom HTML",
-          "disabled": true,
-          "settings": {
-            "custom_html": "<iframe src=\"https://api.leadconnectorhq.com/widget/form/d5gVLeXQ6QyMOTtKy80N\" style=\"width:100%;height:100%;border:none;border-radius:8px\" id=\"inline-d5gVLeXQ6QyMOTtKy80N\" data-layout=\"{'id':'INLINE'}\" data-trigger-type=\"alwaysShow\" data-trigger-value=\"\" data-activation-type=\"alwaysActivated\" data-activation-value=\"\" data-deactivation-type=\"neverDeactivate\" data-deactivation-value=\"\" data-form-name=\"[SIV] Wholesale Access\" data-height=\"1989\" data-layout-iframe-id=\"inline-d5gVLeXQ6QyMOTtKy80N\" data-form-id=\"d5gVLeXQ6QyMOTtKy80N\" title=\"[SIV] Wholesale Access\">\n</iframe>\n<script src=\"https://link.msgsndr.com/js/form_embed.js\"></script>",
-            "desktop_width_percent": 100
-          },
-          "blocks": {}
-        },
         "forms_inline_963jed": {
           "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
           "settings": {
@@ -68,8 +40,6 @@
       },
       "block_order": [
         "ai_gen_block_183bc97_zgECjU",
-        "forms_inline_MbwKdT",
-        "ai_gen_block_183bc97_LprPmh",
         "forms_inline_963jed"
       ],
       "settings": {}
