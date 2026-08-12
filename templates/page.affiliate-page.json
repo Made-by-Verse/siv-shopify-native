@@ -18,55 +18,27 @@
         "richText": "<p>In the dynamic landscape of skincare, SIV emerged as a groundbreaking force in 2021 under the leadership of its founder and CEO, Isabel Vitale. Recognizing the untapped potential of microbiome focused skincare, SIV pioneered a revolutionary approach by becoming the first-ever skincare brand to harness the power of bacillus spores.</p><p>Isabel Vitale, driven by a passion for innovation and a deep understanding of the skin microbiome, laid the foundation for SIV with the ambitious goal of redefining the beauty industry. In 2023, SIV officially introduced its quorum-sensing skincare, setting a new standard for beauty products that leverage the inherent communication system of bacteria.The heart of SIV's breakthrough lies in the use of bacillus spores, a key element that distinguishes their products from the conventional skincare offerings.</p><p>Early on in the company, Isabel brought Morgan Giusto on board as a founding partner and COO. Morgan's extensive background in microbiome research and product development complemented Isabel's vision, creating a formidable team dedicated to pushing the boundaries of conventional beauty standards.</p><p>As SIV continues to push the boundaries of innovation, its founders, Isabel Vitale and Morgan Giusto, remain steadfast in their dedication to transforming the skincare industry. With a commitment to research, development, and innovation, SIV is poised to leave an indelible mark on the world of beauty for years to come.</p><p>With Care,</p><p>Isabel <br/>Co-founder, CEO of SIV</p><p>Morgan<br/>Co-founder, COO of SIV</p>"
       }
     },
-    "text_and_image": {
-      "type": "section-text-and-image",
+    "blocks_DVF9p9": {
+      "type": "_blocks",
       "blocks": {
-        "image_bFrcAh": {
-          "type": "image",
+        "ai_gen_block_183bc97_9JP4CR": {
+          "type": "ai_gen_block_183bc97",
           "settings": {
-            "image": "shopify://shop_images/DTS_Shadow_Tech_Fanette_Guilloud_9360.jpg"
-          }
+            "custom_html": "",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "image_bFrcAh"
+        "ai_gen_block_183bc97_9JP4CR"
       ],
-      "settings": {
-        "title": "Developed with microbiologists",
-        "text": "<p>SIV products are developed by our team of skincare industry and science experts who share Isabel’s passion to create groundbreaking formulas  that work with any individual’s unique biology. Our team continues to  push the bounds of what's possible for skincare — while creating a  foundation for healthier skin.</p>",
-        "reverse_order": false,
-        "wide_image": false,
-        "link_text": "",
-        "link": ""
-      }
-    },
-    "section_featured_product_6aARgP": {
-      "type": "section-featured-product",
-      "blocks": {
-        "feature_point_GLfpUH": {
-          "type": "feature_point",
-          "settings": {
-            "heading": "Feature Point 1",
-            "text": "Feature Point 1 Text"
-          }
-        }
-      },
-      "block_order": [
-        "feature_point_GLfpUH"
-      ],
-      "name": "Featured Product",
-      "settings": {
-        "heading": "Featured Product",
-        "product": "siv-biome-balancing-serum",
-        "description": "",
-        "button_text": "View Product",
-        "color_scheme": ""
-      }
+      "name": "Custom HTML",
+      "settings": {}
     }
   },
   "order": [
     "bio",
-    "text_and_image",
-    "section_featured_product_6aARgP"
+    "blocks_DVF9p9"
   ]
 }
