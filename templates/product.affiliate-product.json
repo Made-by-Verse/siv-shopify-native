@@ -76,10 +76,15 @@
         },
         "recharge_subscriptions_subscription_widget_v2_8cEqny": {
           "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "disabled": true,
           "settings": {}
         },
         "quantity_selector_8EEfnM": {
           "type": "quantity-selector",
+          "settings": {}
+        },
+        "product_price_akVh9t": {
+          "type": "product-price",
           "settings": {}
         },
         "buy_buttons_rEH3MG": {
@@ -88,6 +93,7 @@
         },
         "related_product_auto": {
           "type": "related-product",
+          "disabled": true,
           "settings": {}
         },
         "accordion_YVppL6": {
@@ -105,6 +111,7 @@
         "variant_picker_cF46kp",
         "recharge_subscriptions_subscription_widget_v2_8cEqny",
         "quantity_selector_8EEfnM",
+        "product_price_akVh9t",
         "buy_buttons_rEH3MG",
         "related_product_auto",
         "accordion_YVppL6"
@@ -334,25 +341,6 @@
         "heading": "Ingredients",
         "description": ""
       }
-    },
-    "section_related_products": {
-      "type": "section-related-products",
-      "blocks": {
-        "product_biome_balance": {
-          "type": "product",
-          "settings": {
-            "product": "biome-balance-within"
-          }
-        }
-      },
-      "block_order": [
-        "product_biome_balance"
-      ],
-      "settings": {
-        "heading": "Related Products",
-        "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>",
-        "color_scheme": ""
-      }
     }
   },
   "order": [
@@ -361,7 +349,6 @@
     "section_featured_product_serum",
     "key_points",
     "testimonies",
-    "section_ingredients_YHnn8T",
-    "section_related_products"
+    "section_ingredients_YHnn8T"
   ]
 }
