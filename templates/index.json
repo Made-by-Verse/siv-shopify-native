@@ -117,7 +117,6 @@
         "point_2",
         "point_3"
       ],
-      "disabled": true,
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
@@ -229,6 +228,7 @@
         "testimony_8",
         "testimony_9"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Real consumer tested results"
       }
@@ -309,8 +309,8 @@
     "home_hero",
     "section_featured_product_serum",
     "blocks_8paMKD",
-    "key_points",
     "testimonies",
+    "key_points",
     "science_cta",
     "section_featured_product_probiotic",
     "section_cta",
