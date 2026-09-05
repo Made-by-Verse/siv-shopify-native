@@ -66,6 +66,24 @@
         "color_scheme": ""
       }
     },
+    "blocks_8paMKD": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_183bc97_kKRUQ4": {
+          "type": "ai_gen_block_183bc97",
+          "settings": {
+            "custom_html": "<div style=\"background:#121212;color:#efefe9;padding:clamp(56px,9vw,110px) clamp(20px,5vw,48px);\">\n  <div style=\"max-width:1180px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(24px,3.4vw,40px);\">\n    <h2 style=\"margin:0;font-family:var(--font-heading-family,inherit);font-weight:var(--font-heading-weight,500);text-transform:uppercase;font-size:clamp(2rem,7vw,3.75rem);line-height:0.92;letter-spacing:-0.01em;color:#efefe9;\">Made for every skin</h2>\n    <p style=\"margin:0;max-width:56ch;font-family:var(--font-body-family,inherit);font-weight:400;font-size:clamp(1rem,1.6vw,1.0625rem);line-height:1.7;color:#d7d2cb;\">Everyone has a biome. Wherever your skin is today, it has a foundation worth supporting. What’s Your Biome Step<span style=\"font-size:0.62em;letter-spacing:0;vertical-align:0.55em;\">™</span>?</p>\n    <div style=\"display:flex;flex-wrap:wrap;justify-content:center;gap:10px;\">\n      <span style=\"border:1px solid #efefe9;border-radius:999px;padding:10px 20px;font-family:var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#efefe9;white-space:nowrap;\">Every age</span>\n      <span style=\"border:1px solid #efefe9;border-radius:999px;padding:10px 20px;font-family:var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#efefe9;white-space:nowrap;\">Every tone</span>\n      <span style=\"border:1px solid #efefe9;border-radius:999px;padding:10px 20px;font-family:var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#efefe9;white-space:nowrap;\">Every type</span>\n      <span style=\"border:1px solid #efefe9;border-radius:999px;padding:10px 20px;font-family:var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#efefe9;white-space:nowrap;\">Every routine</span>\n      <span style=\"border:1px solid #efefe9;border-radius:999px;padding:10px 20px;font-family:var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#efefe9;white-space:nowrap;\">Every day</span>\n    </div>\n  </div>\n</div>",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_183bc97_kKRUQ4"
+      ],
+      "name": "Custom HTML",
+      "settings": {}
+    },
     "key_points": {
       "type": "section-key-points",
       "blocks": {
@@ -99,6 +117,7 @@
         "point_2",
         "point_3"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Balance in a bottle",
         "description": ""
@@ -289,6 +308,7 @@
   "order": [
     "home_hero",
     "section_featured_product_serum",
+    "blocks_8paMKD",
     "key_points",
     "testimonies",
     "science_cta",
