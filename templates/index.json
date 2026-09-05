@@ -72,7 +72,7 @@
         "ai_gen_block_183bc97_kKRUQ4": {
           "type": "ai_gen_block_183bc97",
           "settings": {
-            "custom_html": "<style>\n  /* SIV brand fonts, served from your Shopify Files CDN. */\n  @font-face {\n    font-family: \"SIV Display\";\n    src: url(\"https://cdn.shopify.com/s/files/1/0799/1315/6923/files/TitlingGothicFBComp-Med.otf?v=1788649577\") format(\"opentype\");\n    font-weight: 500;\n    font-style: normal;\n    font-display: swap;\n  }\n  @font-face {\n    font-family: \"SIV Body\";\n    src: url(\"https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Matter-Regular.otf?v=1788649577\") format(\"opentype\");\n    font-weight: 400;\n    font-style: normal;\n    font-display: swap;\n  }\n</style>\n \n<!-- ================= SECTION 1 — MADE FOR EVERY SKIN ================= -->\n<div style=\"background:#efefe9;color:#121212;padding:clamp(56px,9vw,110px) clamp(20px,5vw,48px);\">\n  <div style=\"max-width:1180px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(24px,3.4vw,40px);\">\n    <h2 style=\"margin:0;font-family:'SIV Display',var(--font-heading-family,inherit);font-weight:500;text-transform:uppercase;font-size:clamp(2rem,7vw,3.75rem);line-height:0.92;letter-spacing:-0.01em;color:#121212;\">Made for every skin</h2>\n    <p style=\"margin:0;max-width:56ch;font-family:'SIV Body',var(--font-body-family,inherit);font-weight:400;font-size:clamp(1rem,1.6vw,1.0625rem);line-height:1.7;color:#544541;\">Everyone has a biome. Wherever your skin is today, it has a foundation worth supporting. What’s Your Biome Step<span style=\"font-size:0.62em;letter-spacing:0;vertical-align:0.55em;\">™</span>?</p>\n    <div style=\"display:flex;flex-wrap:wrap;justify-content:center;gap:10px;\">\n      <span style=\"border:1px solid #121212;border-radius:999px;padding:10px 20px;font-family:'SIV Body',var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#121212;white-space:nowrap;\">Every age</span>\n      <span style=\"border:1px solid #121212;border-radius:999px;padding:10px 20px;font-family:'SIV Body',var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#121212;white-space:nowrap;\">Every tone</span>\n      <span style=\"border:1px solid #121212;border-radius:999px;padding:10px 20px;font-family:'SIV Body',var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#121212;white-space:nowrap;\">Every type</span>\n      <span style=\"border:1px solid #121212;border-radius:999px;padding:10px 20px;font-family:'SIV Body',var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#121212;white-space:nowrap;\">Every routine</span>\n      <span style=\"border:1px solid #121212;border-radius:999px;padding:10px 20px;font-family:'SIV Body',var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#121212;white-space:nowrap;\">Every day</span>\n    </div>\n  </div>\n</div>\n \n<!-- ================= SECTION 2 — WHAT'S YOUR BIOME STEP? ================= -->\n<!-- Replace https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Picture1.jpg?v=1788649266 with your uploaded image URL (Shopify admin > Content > Files) -->\n<div style=\"background:#121212;color:#efefe9;display:flex;flex-wrap:wrap;align-items:stretch;\">\n  <div style=\"flex:1 1 460px;min-width:280px;display:flex;flex-direction:column;justify-content:center;gap:clamp(18px,2.2vw,26px);padding:clamp(48px,7vw,110px) clamp(20px,4.5vw,56px);\">\n    <div style=\"font-family:'SIV Body',var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#8f9a7c;\">Nourish your biome</div>\n    <h2 style=\"margin:0;font-family:'SIV Display',var(--font-heading-family,inherit);font-weight:500;text-transform:uppercase;font-size:clamp(2.25rem,7.5vw,5rem);line-height:0.88;letter-spacing:-0.015em;color:#efefe9;\">What’s your biome step<span style=\"font-size:0.2em;letter-spacing:0;vertical-align:3.6em;\">™</span>?</h2>\n    <p style=\"margin:0;max-width:48ch;font-family:'SIV Body',var(--font-body-family,inherit);font-size:clamp(1rem,1.6vw,1.0625rem);line-height:1.7;color:#d7d2cb;\">Every routine already includes cleansing and moisturizing. Now add your biome. Nourish your biome, and build resilient skin from the biome up.</p>\n    <div>\n      <a href=\"https://sivcare.com/products/siv-biome-balancing-serum\" style=\"display:inline-block;background:#efefe9;color:#121212;text-decoration:none;padding:15px 28px;font-family:'SIV Body',var(--font-body-family,inherit);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;\">Nourish your biome</a>\n    </div>\n  </div>\n  <div style=\"flex:1 1 380px;min-width:280px;\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Picture1.jpg?v=1788649266\" alt=\"Radiant skin, biome supported\" style=\"display:block;width:100%;height:100%;min-height:clamp(280px,52vw,560px);object-fit:cover;\">\n  </div>\n</div>",
+            "custom_html": "\n<!-- ================= SECTION 1 — MADE FOR EVERY SKIN ================= -->\n<div style=\"background:#efefe9;color:#121212;padding:clamp(56px,9vw,110px) clamp(20px,5vw,48px);\">\n  <div style=\"max-width:1180px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(24px,3.4vw,40px);\">\n    <h2 style=\"margin:0;font-family:'SIV Display',var(--font-heading-family,inherit);font-weight:500;text-transform:uppercase;font-size:clamp(2rem,7vw,3.75rem);line-height:0.92;letter-spacing:-0.01em;color:#121212;\">Made for every skin</h2>\n    <p style=\"margin:0;max-width:56ch;font-family:'SIV Body',var(--font-body-family,inherit);font-weight:400;font-size:clamp(1rem,1.6vw,1.0625rem);line-height:1.7;color:#544541;\">Everyone has a biome. Wherever your skin is today, it has a foundation worth supporting. What’s Your Biome Step<span style=\"font-size:0.62em;letter-spacing:0;vertical-align:0.55em;\">™</span>?</p>\n    <div style=\"display:flex;flex-wrap:wrap;justify-content:center;gap:10px;\">\n      <span style=\"border:1px solid #121212;border-radius:999px;padding:10px 20px;font-family:'SIV Body',var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#121212;white-space:nowrap;\">Every age</span>\n      <span style=\"border:1px solid #121212;border-radius:999px;padding:10px 20px;font-family:'SIV Body',var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#121212;white-space:nowrap;\">Every tone</span>\n      <span style=\"border:1px solid #121212;border-radius:999px;padding:10px 20px;font-family:'SIV Body',var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#121212;white-space:nowrap;\">Every type</span>\n      <span style=\"border:1px solid #121212;border-radius:999px;padding:10px 20px;font-family:'SIV Body',var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#121212;white-space:nowrap;\">Every routine</span>\n      <span style=\"border:1px solid #121212;border-radius:999px;padding:10px 20px;font-family:'SIV Body',var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#121212;white-space:nowrap;\">Every day</span>\n    </div>\n  </div>\n</div>\n \n<!-- ================= SECTION 2 — WHAT'S YOUR BIOME STEP? ================= -->\n<!-- Replace https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Picture1.jpg?v=1788649266 with your uploaded image URL (Shopify admin > Content > Files) -->\n<div style=\"background:#121212;color:#efefe9;display:flex;flex-wrap:wrap;align-items:stretch;\">\n  <div style=\"flex:1 1 460px;min-width:280px;display:flex;flex-direction:column;justify-content:center;gap:clamp(18px,2.2vw,26px);padding:clamp(48px,7vw,110px) clamp(20px,4.5vw,56px);\">\n    <div style=\"font-family:'SIV Body',var(--font-body-family,inherit);font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#8f9a7c;\">Nourish your biome</div>\n    <h2 style=\"margin:0;font-family:'SIV Display',var(--font-heading-family,inherit);font-weight:500;text-transform:uppercase;font-size:clamp(2.25rem,7.5vw,5rem);line-height:0.88;letter-spacing:-0.015em;color:#efefe9;\">What’s your biome step<span style=\"font-size:0.2em;letter-spacing:0;vertical-align:3.6em;\">™</span>?</h2>\n    <p style=\"margin:0;max-width:48ch;font-family:'SIV Body',var(--font-body-family,inherit);font-size:clamp(1rem,1.6vw,1.0625rem);line-height:1.7;color:#d7d2cb;\">Every routine already includes cleansing and moisturizing. Now add your biome. Nourish your biome, and build resilient skin from the biome up.</p>\n    <div>\n      <a href=\"https://sivcare.com/products/siv-biome-balancing-serum\" style=\"display:inline-block;background:#efefe9;color:#121212;text-decoration:none;padding:15px 28px;font-family:'SIV Body',var(--font-body-family,inherit);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;\">Nourish your biome</a>\n    </div>\n  </div>\n  <div style=\"flex:1 1 380px;min-width:280px;\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Picture1.jpg?v=1788649266\" alt=\"Radiant skin, biome supported\" style=\"display:block;width:100%;height:100%;min-height:clamp(280px,52vw,560px);object-fit:cover;\">\n  </div>\n</div>",
             "desktop_width_percent": 100
           },
           "blocks": {}
@@ -83,44 +83,6 @@
       ],
       "name": "Custom HTML",
       "settings": {}
-    },
-    "key_points": {
-      "type": "section-key-points",
-      "blocks": {
-        "point_1": {
-          "type": "point",
-          "settings": {
-            "image": "shopify://shop_images/topical-spore-treatment.png",
-            "heading": "Topical Spore serum",
-            "text": "Adapts to your unique skin microbiome, establishing a healthy skin foundation through quorum-sensing technology."
-          }
-        },
-        "point_2": {
-          "type": "point",
-          "settings": {
-            "image": "shopify://shop_images/skin-identical.png",
-            "heading": "Skin Identical",
-            "text": "Lightweight & stabilizing formula containing physiologically identical ingredients that your skin recognizes."
-          }
-        },
-        "point_3": {
-          "type": "point",
-          "settings": {
-            "image": "shopify://shop_images/face-base.png",
-            "heading": "Your Face Is Your Base",
-            "text": "Before use, shake vigorously. Apply 1–3 drops once daily. Pat into dry or damp skin. Apply after cleansing or toning."
-          }
-        }
-      },
-      "block_order": [
-        "point_1",
-        "point_2",
-        "point_3"
-      ],
-      "settings": {
-        "heading": "Balance in a bottle",
-        "description": ""
-      }
     },
     "testimonies": {
       "type": "section-testimonies-comparison",
@@ -231,6 +193,44 @@
       "disabled": true,
       "settings": {
         "heading": "Real consumer tested results"
+      }
+    },
+    "key_points": {
+      "type": "section-key-points",
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/topical-spore-treatment.png",
+            "heading": "Topical Spore serum",
+            "text": "Adapts to your unique skin microbiome, establishing a healthy skin foundation through quorum-sensing technology."
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/skin-identical.png",
+            "heading": "Skin Identical",
+            "text": "Lightweight & stabilizing formula containing physiologically identical ingredients that your skin recognizes."
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/face-base.png",
+            "heading": "Your Face Is Your Base",
+            "text": "Before use, shake vigorously. Apply 1–3 drops once daily. Pat into dry or damp skin. Apply after cleansing or toning."
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3"
+      ],
+      "settings": {
+        "heading": "Balance in a bottle",
+        "description": ""
       }
     },
     "science_cta": {
