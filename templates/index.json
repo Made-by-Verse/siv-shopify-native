@@ -332,17 +332,36 @@
       "type": "section-cta",
       "settings": {
         "alignment": "center",
-        "image": "shopify://shop_images/siv-hero_copy.jpg",
+        "image": "shopify://shop_images/campaign_hero_molecular.png",
         "title": "Empower your Practice with SIV",
-        "richText": "<p>SIV is not just a trusted skincare brand - it's a professional-grade solution designed for aestheticians who demand the best for their clients</p>",
+        "richText": "<p>Professional-grade skincare for aestheticians and the clients who trust them. Bring the Biome Step™ into your treatment room, and send every client home with it.</p>",
         "action_type": "link",
         "button_link": "shopify://pages/for-professionals",
         "custom_event_trigger": "",
         "button_text": "Apply for a Professional Account"
       }
     },
+    "1788886026b3172564": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_970048a_bizjKx": {
+          "type": "ai_gen_block_970048a",
+          "settings": {
+            "desktop_height": 40,
+            "mobile_height": 25,
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_970048a_bizjKx"
+      ],
+      "settings": {}
+    },
     "section_featured_posts": {
       "type": "section-featured-posts",
+      "disabled": true,
       "settings": {
         "title": "Stay Informed with SIV",
         "button_text": "All articles"
@@ -361,6 +380,7 @@
     "blocks_JWgkLT",
     "section_featured_product_probiotic",
     "section_cta",
+    "1788886026b3172564",
     "section_featured_posts"
   ]
 }
