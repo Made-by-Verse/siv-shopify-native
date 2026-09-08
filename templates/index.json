@@ -271,6 +271,24 @@
         "button_text": "Learn More"
       }
     },
+    "blocks_JWgkLT": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_183bc97_aBrzmd": {
+          "type": "ai_gen_block_183bc97",
+          "settings": {
+            "custom_html": "<div style=\"background:#efefe9;display:flex;flex-wrap:wrap;align-items:stretch;\">\n \n  <div style=\"flex:1 1 440px;min-width:280px;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,2.8vw,36px);padding:clamp(56px,9vw,140px) clamp(20px,4vw,64px);\">\n \n    <div style=\"font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#6f655e;\">Patented gut-skin axis solution</div>\n \n    <h2 style=\"margin:0;text-transform:uppercase;font-size:clamp(2.5rem,7.5vw,4.5rem);line-height:0.9;letter-spacing:-0.012em;color:#121212;\">Your Biome Step<span style=\"font-size:0.16em;letter-spacing:0;vertical-align:3.9em;line-height:1;margin-left:0.08em;margin-right:-0.9em;\">™</span>, from within</h2>\n \n    <p style=\"margin:0;max-width:40ch;font-size:clamp(1rem,2.8vw,1.0625rem);line-height:1.7;color:#544541;\">Your gut and skin share one living system. Biome Balance Within extends the same philosophy inward, supporting microbial diversity, clarity, and barrier function from the inside.</p>\n \n    <div style=\"display:flex;flex-direction:column;border-top:1px solid #121212;\">\n      <div style=\"padding:18px 0;border-bottom:1px solid rgba(18,18,18,0.12);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;color:#121212;\">Supports the gut-skin axis</div>\n      <div style=\"padding:18px 0;border-bottom:1px solid rgba(18,18,18,0.12);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;color:#121212;\">Supports clarity, balances oil</div>\n      <div style=\"padding:18px 0;border-bottom:1px solid rgba(18,18,18,0.12);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;color:#121212;\">Strengthens barrier function</div>\n    </div>\n \n    <div>\n      <a href=\"https://sivcare.com/products/biome-balance-within\" style=\"display:inline-block;border:1px solid #121212;color:#121212;text-decoration:none;padding:16px 30px;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;\">Shop the probiotic</a>\n    </div>\n \n  </div>\n \n  <div style=\"flex:1 1 420px;min-width:280px;background:#0b0b0b;\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0799/1315/6923/files/hero_suite_dark.jpg?v=1788882867\" alt=\"Biome Balance Within and the Biome Balancing Serum\" style=\"display:block;width:100%;height:100%;min-height:clamp(360px,64vw,820px);object-fit:cover;object-position:56% 50%;\">\n  </div>\n \n</div>",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_183bc97_aBrzmd"
+      ],
+      "name": "Custom HTML",
+      "settings": {}
+    },
     "section_featured_product_probiotic": {
       "type": "section-featured-product",
       "blocks": {
@@ -301,6 +319,7 @@
         "feature_point_2",
         "feature_point_3"
       ],
+      "disabled": true,
       "settings": {
         "heading": "THE ESSENTIAL PROBIOTIC FOR HEALTHY SKIN",
         "product": "biome-balance-within",
@@ -339,6 +358,7 @@
     "testimonies",
     "key_points",
     "science_cta",
+    "blocks_JWgkLT",
     "section_featured_product_probiotic",
     "section_cta",
     "section_featured_posts"
