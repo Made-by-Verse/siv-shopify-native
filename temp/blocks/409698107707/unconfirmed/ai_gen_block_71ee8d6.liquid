@@ -1,6 +1,143 @@
+{% doc %}
+  @prompt
+    give me a custom liquid section please
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-custom-liquid-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: {{ block.settings.padding_vertical }}px {{ block.settings.padding_horizontal }}px;
+    background-color: {{ block.settings.background_color }};
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-custom-liquid-{{ ai_gen_id }} a {
+    color: {{ block.settings.link_color }};
+  }
+
+  .ai-custom-liquid-{{ ai_gen_id }} img,
+  .ai-custom-liquid-{{ ai_gen_id }} video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .ai-custom-liquid-{{ ai_gen_id }}:focus-within {
+    outline: 2px solid {{ block.settings.link_color }};
+    outline-offset: 3px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-custom-liquid-{{ ai_gen_id }} {
+      width: 100%;
+      padding: {{ block.settings.mobile_padding_vertical }}px {{ block.settings.mobile_padding_horizontal }}px;
+    }
+  }
+{% endstyle %}
+
+<custom-liquid-{{ ai_gen_id }}
+  class="ai-custom-liquid-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  {{ block.settings.custom_liquid }}
+</custom-liquid-{{ ai_gen_id }}>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Custom liquid",
+  "settings": [
+    {
+      "type": "liquid",
+      "id": "custom_liquid",
+      "label": "Liquid code",
+      "default": "<p>Add your custom Liquid here.</p>"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "label": "Vertical padding",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_vertical",
+      "label": "Mobile vertical padding",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_horizontal",
+      "label": "Mobile horizontal padding",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#F6F5ED"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#241917"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Links",
+      "default": "#685F2C"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom liquid"
+    }
+  ],
+  "tag": null,
+  "class": "custom-liquid-block"
+}
 {% endschema %}
