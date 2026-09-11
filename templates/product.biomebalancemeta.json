@@ -1,0 +1,343 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_image_banner_PYw3eM": {
+      "type": "section-image-banner",
+      "disabled": true,
+      "name": "Image Banner",
+      "settings": {
+        "title": "",
+        "image": "shopify://shop_images/IMG_4459.jpg",
+        "color_scheme": "",
+        "aspect_ratio": "4/3",
+        "padding_top": "md",
+        "padding_bottom": "md"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "product_title_Fqeap7": {
+          "type": "product-title",
+          "settings": {}
+        },
+        "product_price_JDACKF": {
+          "type": "product-price",
+          "settings": {}
+        },
+        "product_description_xK3MCg": {
+          "type": "product-description",
+          "settings": {}
+        },
+        "wholesale_pricing_breakdown_abc1": {
+          "type": "wholesale-pricing",
+          "disabled": true,
+          "settings": {
+            "heading": "Wholesale Volume Pricing",
+            "intro": ""
+          }
+        },
+        "wholesale_tier_15ml_abc2": {
+          "type": "wholesale-tier",
+          "disabled": true,
+          "settings": {
+            "variant_heading": "60 capsules",
+            "breakdown_text": "<p>2+: $45 USD</p>"
+          }
+        },
+        "variant_picker_cF46kp": {
+          "type": "variant-picker",
+          "settings": {}
+        },
+        "recharge_subscriptions_subscription_widget_v2_AgPKxk": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
+        "quantity_selector_8EEfnM": {
+          "type": "quantity-selector",
+          "settings": {}
+        },
+        "buy_buttons_rEH3MG": {
+          "type": "buy-buttons",
+          "settings": {}
+        },
+        "related_product_auto": {
+          "type": "related-product",
+          "settings": {}
+        },
+        "accordion_YVppL6": {
+          "type": "accordion",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "product_title_Fqeap7",
+        "product_price_JDACKF",
+        "product_description_xK3MCg",
+        "wholesale_pricing_breakdown_abc1",
+        "wholesale_tier_15ml_abc2",
+        "variant_picker_cF46kp",
+        "recharge_subscriptions_subscription_widget_v2_AgPKxk",
+        "quantity_selector_8EEfnM",
+        "buy_buttons_rEH3MG",
+        "related_product_auto",
+        "accordion_YVppL6"
+      ],
+      "settings": {}
+    },
+    "key_points": {
+      "type": "section-key-points",
+      "blocks": {
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/balance-oil.jpg",
+            "heading": "IMPROVES CLARITY & BALANCES OIL",
+            "text": "Helps reduce non-cystic acne severity and sebum production for visibly clearer, more balanced skin."
+          }
+        },
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/gut-skin-axis.jpg",
+            "heading": "SUPPORTS THE GUT–SKIN AXIS",
+            "text": "Promotes microbial diversity and helps improve skin clarity by addressing the root of skin imbalance from within."
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "image": "shopify://shop_images/strengthen-barrier.jpg",
+            "heading": "STRENGTHENS BARRIER FUNCTION",
+            "text": "Fortifies skin barrier health, improves hydration retention, and supports elasticity for firm, supple skin."
+          }
+        },
+        "point_Aq8Pgb": {
+          "type": "point",
+          "settings": {
+            "heading": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "point_2",
+        "point_1",
+        "point_3",
+        "point_Aq8Pgb"
+      ],
+      "settings": {
+        "heading": "NOURISH YOUR BIOMES",
+        "description": "<p>With SIV’s Biome Balance Within and Biome Balancing Serum, your skin receives <em>full-spectrum support</em> that builds both resilience and balance - from the inside out. This is more than skincare. It’s a synchronized system that supports overall resiliency.</p>"
+      }
+    },
+    "testimonies": {
+      "type": "section-testimonies-comparison",
+      "disabled": true,
+      "settings": {
+        "heading": "Real consumer tested results"
+      }
+    },
+    "section_text_and_image_YXW3JW": {
+      "type": "section-text-and-image",
+      "blocks": {
+        "image_C9gURW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Leaky_Skin.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_C9gURW"
+      ],
+      "name": "Text and Image",
+      "settings": {
+        "title": "The Gut–Skin Axis",
+        "text": "<p>The gut-skin axis is your body’s hidden beauty connection, linking a thriving gut microbiome to a radiant complexion. Science shows that a balanced gut can be game-changing, supporting clearer, more vibrant skin by harmonizing your microbial communities, <strong>regulating immune and inflammatory functions.</strong> This cutting-edge formula taps into the gut-skin axis with clinically studied, skin-active ingredients to nurture your microbiome and enhance your skin’s natural radiance. </p>",
+        "reverse_order": false,
+        "wide_image": true,
+        "link_text": "",
+        "link": ""
+      }
+    },
+    "ingredients": {
+      "type": "section-ingredients",
+      "blocks": {
+        "point_1": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/probiotic-blend.jpg",
+            "heading": "Probiotic Blend: Spore-based Bacillus probiotics",
+            "text": "<ul><li>Produces beneficial metabolites and antimicrobials that support skin’s look and feel**</li><li>Promotes the gut’s beneficial bacteria growth and suppresses nonbeneficial bacteria**</li><li>Regulates systemic inflammatory responses to promote healthy, clear skin**</li></ul>"
+          }
+        },
+        "point_2": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/golden-tomato.jpg",
+            "heading": "Golden Tomato Carotenoids: Lumenato™",
+            "text": "<ul><li>Clinically shown to increase the skin’s carotenoid content**</li><li>Activates the skin’s defenses against UV and environmental stressors**</li><li>Maintains healthy skin barrier strength and structure (e.g., collagen, ceramides)**</li><li>Promotes skin elasticity, firmness, hydration, tone, and overall appearance**</li></ul>"
+          }
+        },
+        "point_3": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/citrus-polphenol.jpg",
+            "heading": "Citrus Polyphenol Extract: MicrobiomeX®",
+            "text": "<ul><li>Supports digestive health and healthy gut barrier function**</li><li>Positively alters gut microbiota, boosting beneficial bacteria growth**</li><li>Promotes short-chain fatty acid (e.g., butyrate) production, promoting optimal skin pH, skin barrier health, and balanced inflammatory responses**</li></ul>"
+          }
+        },
+        "point_Aq8Pgb": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/k2.jpg",
+            "heading": "Vitamin K2: MenaquinGold®",
+            "text": "<ul><li>Promotes elasticity and firmness by regulating calcium in skin tissues**</li><li>Antioxidant properties support healthy blood flow and tissue repair**</li><li>Promotes balanced inflammatory responses** </li><li>Fortifies the skin's natural barrier & structure**</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3",
+        "point_Aq8Pgb"
+      ],
+      "settings": {
+        "heading": "INGREDIENTS",
+        "description": ""
+      }
+    },
+    "section_text_and_image_Xe7tqB": {
+      "type": "section-text-and-image",
+      "blocks": {
+        "image_FJfB34": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_292563599_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_FJfB34"
+      ],
+      "name": "Text and Image",
+      "settings": {
+        "title": "THE COMPLETE, INSIDE–OUT APPROACH TO RESILIENCE.",
+        "text": "<p><strong>Inside,</strong> beneficial bacteria in <strong>Biome Balance Within</strong> produce nourishing short-chain fatty acids that create an anti-inflammatory, immune-supportive environment. This balanced internal ecosystem supports the modulation of the immune response and sets the stage for clear, hydrated, and resilient skin.</p><p><strong>Outside, Biome Balancing Serum</strong> harnesses your biology to support and strengthen your skin’s ecosystem at its foundation, helping to build resilience, support your skin barrier, and maintain a balanced skin microbiome. </p><p>Together, they deliver the complete resilience and balance approach:</p><ul><li>Harmonizes internal and external microbial communities</li><li>Regulates inflammatory responses for calmer, clearer skin</li><li>Fortifies barrier defenses while locking in essential moisture</li><li>Promotes elasticity, firmness, and long-term skin vitality</li></ul><p>When balance meets resilience, your skin doesn’t just look healthy-it thrives.</p>",
+        "reverse_order": false,
+        "wide_image": false,
+        "link_text": "",
+        "link": ""
+      }
+    },
+    "section_accordion_hRaNKB": {
+      "type": "section-accordion",
+      "blocks": {
+        "accordion_aV7Ji9": {
+          "type": "accordion",
+          "settings": {
+            "heading": "How do I take Biome Balance Within?",
+            "content": "<p>Ages 18+ Take 2 capsules per day with a meal or as recommended by your healthcare practitioner. This provides 290 mg of proprietary probiotics, 250 mg of citrus bioflavonoids (MicrobiomeX®), 10 mg of golden tomato carotenoids (Lumenato™), and 160 mcg of vitamin K2 as MK-7, MenaquinGold®. These dosages have been clinically studied and shown to be effective and safe. It's best to take this supplement containing a fat-soluble vitamin with a meal or snack containing healthy fat to maximize absorption in the digestive tract.</p>"
+          }
+        },
+        "accordion_67XpyM": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Is Biome Balance Within safe to take during pregnancy?",
+            "content": "<p>Yes, Biome Balance Within is generally considered safe during pregnancy. However, please consult your healthcare provider before starting any new supplement to ensure it's appropriate for your situation.</p>"
+          }
+        },
+        "accordion_QRU7fW": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Does Biome Balance Within contain allergens?",
+            "content": "<p>These capsules are free from 9 major allergens and contain no artificial colorings or flavorings.</p>"
+          }
+        },
+        "accordion_RDAPNU": {
+          "type": "accordion",
+          "settings": {
+            "heading": "What are the formulation standards for Biome Balance Within?",
+            "content": "<ul><li>Tested for potency, purity, and safety</li><li>Solvent-free during production</li><li>Soy-free</li><li>Dairy-free</li><li>Non-GMO</li></ul>"
+          }
+        },
+        "accordion_WM3AYg": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Should I use the biome balancing serum and biome balance within at the same time?",
+            "content": "<p>Yes! Using these products together is our complete approach to resilience. With SIV’s Biome Balance Within and Biome Balancing Serum, your skin receives <em>full-spectrum support</em> that builds both resilience and balance - from the inside out. </p>"
+          }
+        },
+        "accordion_BKUmxr": {
+          "type": "accordion",
+          "settings": {
+            "heading": "do you ship this product internationally?",
+            "content": "<p>No, this product is only sold within the US. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_aV7Ji9",
+        "accordion_67XpyM",
+        "accordion_QRU7fW",
+        "accordion_RDAPNU",
+        "accordion_WM3AYg",
+        "accordion_BKUmxr"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "heading": "FAQs"
+      }
+    },
+    "section_paragraph_MeRTEk": {
+      "type": "section-paragraph",
+      "name": "Paragraph",
+      "settings": {
+        "text": "<h6><em>**These statements have not been evaluated by the Food and Drug Administration (FDA). This product is not intended to diagnose, treat, cure, or prevent any disease.</em></h6>",
+        "color_scheme": "",
+        "padding_top": "none",
+        "padding_bottom": "none"
+      }
+    },
+    "section_related_products": {
+      "type": "section-related-products",
+      "blocks": {
+        "product_serum_new": {
+          "type": "product",
+          "settings": {
+            "product": "siv-biome-balancing-serum"
+          }
+        }
+      },
+      "block_order": [
+        "product_serum_new"
+      ],
+      "settings": {
+        "heading": "Related Products",
+        "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>",
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "section_image_banner_PYw3eM",
+    "main",
+    "key_points",
+    "testimonies",
+    "section_text_and_image_YXW3JW",
+    "ingredients",
+    "section_text_and_image_Xe7tqB",
+    "section_accordion_hRaNKB",
+    "section_paragraph_MeRTEk",
+    "section_related_products"
+  ]
+}
