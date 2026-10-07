@@ -66,7 +66,7 @@
     {% endif %}
 
     {% render 'cart-drawer' %}
-    {% render 'mobile-menu' with menu: linklists[settings.menu].links %}
+    {% render 'mobile-menu' with menu, menu: linklists[settings.menu].links %}
     {% render 'quick-buy-drawer' %}
 
     <ul hidden>
@@ -164,3 +164,13 @@
     {% endunless %} 
   </body>
 </html>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'mobile-menu' with menu: linklists[settings.menu].links %}"
+  to: "{% render 'mobile-menu' with menu, menu: linklists[settings.menu].links %}"
+  position: 2219..2293
+{% endcomment %}
