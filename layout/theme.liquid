@@ -82,7 +82,7 @@ src="https://www.facebook.com/tr?id=1886950432108581&ev=PageView&noscript=1"
     {% endif %}
 
     {% render 'cart-drawer' %}
-    {% render 'mobile-menu' with menu: linklists[settings.menu].links %}
+    {% render 'mobile-menu' with menu, menu: linklists[settings.menu].links %}
     {% render 'quick-buy-drawer' %}
 
     <ul hidden>
@@ -178,3 +178,13 @@ src="https://www.facebook.com/tr?id=1886950432108581&ev=PageView&noscript=1"
    
   </body>
 </html>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'mobile-menu' with menu: linklists[settings.menu].links %}"
+  to: "{% render 'mobile-menu' with menu, menu: linklists[settings.menu].links %}"
+  position: 2883..2957
+{% endcomment %}

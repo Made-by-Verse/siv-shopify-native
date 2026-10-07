@@ -65,11 +65,7 @@
           
             {% if section.settings.image != blank %}
               <div class="relative aspect-square">
-              {%- render 'responsive-image', image: section.settings.image | image_url, wrapper_class: 'absolute inset-0 w-full h-full object-cover',
-                image_class: 'absolute inset-0 w-full h-full object-cover',
-                size: '800x800',
-                width: 800,
-                height: 800 -%}
+              {%- render 'responsive-image', image: section.settings.image, wrapper_class: 'absolute inset-0 w-full h-full object-cover', image_class: 'absolute inset-0 w-full h-full object-cover', size: '800x800', width: 800, height: 800 -%}
                  </div>
             {% endif %}
          
@@ -191,4 +187,20 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%- render 'responsive-image', image: section.settings.image | image_url, wrapper_class: 'absolute inset-0 w-full h-full object-cover',
+                    image_class: 'absolute inset-0 w-full h-full object-cover',
+                    size: '800x800',
+                    width: 800,
+                    height: 800 -%}
+  to: "{%- render 'responsive-image', image: section.settings.image, wrapper_class:
+    'absolute inset-0 w-full h-full object-cover', image_class: 'absolute inset-0
+    w-full h-full object-cover', size: '800x800', width: 800, height: 800 -%}"
+  position: 2090..2318
+{%- endcomment -%}

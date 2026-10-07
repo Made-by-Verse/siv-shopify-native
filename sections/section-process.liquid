@@ -43,14 +43,7 @@
   >
     <div class="sticky top-20 space-y-4 {% if section.settings.left-image %}flex flex-col items-end max-w-lg{% endif %} w-full ">
       {% if section.settings.left-image %}
-        {% render 'responsive-image' with
-          image: section.settings.left-image,
-          wrapper_class: "aspect-landscape w-full relative",
-          image_class: "absolute inset-0 object-cover w-full h-full",
-          size: '1000x1000',
-          width: 1000,
-          height: 1000
-        %}
+        {% render 'responsive-image' with image, image: section.settings.left-image, wrapper_class: "aspect-landscape w-full relative", image_class: "absolute inset-0 object-cover w-full h-full", size: '1000x1000', width: 1000, height: 1000 %}
       {% endif %}
       <div 
         x-ref="contentContainer"
@@ -64,14 +57,7 @@
                 class="process-text md:absolute inset-0 transition-opacity duration-1000 {% unless section.settings.left-image %}grid lg:grid-cols-4 gap-4 w-full{% endunless %} {% if section.settings.left-image %}space-y-4 lg:space-y-0{% endif %}"
                 :class="showImage({{ forloop.index0 }}) ? 'opacity-100' : 'md:opacity-0'"
               >
-                {% render 'responsive-image' with
-                  image: block.settings.step-image,
-                  wrapper_class: "aspect-portrait w-full relative md:hidden",
-                  image_class: "absolute inset-0 object-cover w-full h-full",
-                  size: '1000x1000',
-                  width: 1000,
-                  height: 1000
-                %}
+                {% render 'responsive-image' with image, image: block.settings.step-image, wrapper_class: "aspect-portrait w-full relative md:hidden", image_class: "absolute inset-0 object-cover w-full h-full", size: '1000x1000', width: 1000, height: 1000 %}
                 {% unless section.settings.left-image %}
                   <h2 class="link !text-base">{{ block.settings.heading }}</h2>
                 {% endunless %}
@@ -101,14 +87,7 @@
             x-cloak
             class="scroll-mt-20"
           >
-            {% render 'responsive-image' with
-              image: block.settings.step-image,
-              wrapper_class: "aspect-portrait w-full relative",
-              image_class: "absolute inset-0 object-cover w-full h-full",
-              size: '1000x1000',
-              width: 1000,
-              height: 1000
-            %}
+            {% render 'responsive-image' with image, image: block.settings.step-image, wrapper_class: "aspect-portrait w-full relative", image_class: "absolute inset-0 object-cover w-full h-full", size: '1000x1000', width: 1000, height: 1000 %}
           </div>
         {% endcase %}
       {% endfor %}
@@ -224,3 +203,50 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'responsive-image' with
+              image: section.settings.left-image,
+              wrapper_class: "aspect-landscape w-full relative",
+              image_class: "absolute inset-0 object-cover w-full h-full",
+              size: '1000x1000',
+              width: 1000,
+              height: 1000
+            %}
+  to: '{% render ''responsive-image'' with image, image: section.settings.left-image,
+    wrapper_class: "aspect-landscape w-full relative", image_class: "absolute inset-0
+    object-cover w-full h-full", size: ''1000x1000'', width: 1000, height: 1000 %}'
+  position: 1595..1830
+- from: |-
+    {% render 'responsive-image' with
+                      image: block.settings.step-image,
+                      wrapper_class: "aspect-portrait w-full relative md:hidden",
+                      image_class: "absolute inset-0 object-cover w-full h-full",
+                      size: '1000x1000',
+                      width: 1000,
+                      height: 1000
+                    %}
+  to: '{% render ''responsive-image'' with image, image: block.settings.step-image,
+    wrapper_class: "aspect-portrait w-full relative md:hidden", image_class: "absolute
+    inset-0 object-cover w-full h-full", size: ''1000x1000'', width: 1000, height:
+    1000 %}'
+  position: 2535..2777
+- from: |-
+    {% render 'responsive-image' with
+                  image: block.settings.step-image,
+                  wrapper_class: "aspect-portrait w-full relative",
+                  image_class: "absolute inset-0 object-cover w-full h-full",
+                  size: '1000x1000',
+                  width: 1000,
+                  height: 1000
+                %}
+  to: '{% render ''responsive-image'' with image, image: block.settings.step-image,
+    wrapper_class: "aspect-portrait w-full relative", image_class: "absolute inset-0
+    object-cover w-full h-full", size: ''1000x1000'', width: 1000, height: 1000 %}'
+  position: 4099..4331
+{% endcomment %}
