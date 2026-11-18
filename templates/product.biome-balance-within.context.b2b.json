@@ -35,6 +35,46 @@
           "settings": {}
         }
       }
+    },
+    "blocks_nJpBQ": {
+      "type": "_blocks",
+      "disabled": false,
+      "settings": {},
+      "blocks": {
+        "ai_gen_block_71ee8d6_JdKkR": {
+          "type": "ai_gen_block_71ee8d6",
+          "disabled": false,
+          "settings": {
+            "custom_liquid": "<style>\n  .siv-bf-banner {\n    position: relative;\n    width: 100%;\n    overflow: hidden;\n    background: #050505;\n    color: #f2f1ec;\n    container-type: inline-size;\n    --siv-display: \"Gothic\", \"Titling Gothic FB Comp\", \"Arial Narrow\", sans-serif;\n    --siv-body: \"Matter\", \"Helvetica Neue\", Arial, sans-serif;\n  }\n  .siv-bf-banner__bg {\n    position: absolute;\n    inset: 0;\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    object-position: center;\n    pointer-events: none;\n  }\n  .siv-bf-banner__inner {\n    position: relative;\n    box-sizing: border-box;\n    padding: 4cqw 7cqw 3.6cqw;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    text-align: center;\n  }\n  .siv-bf-banner__eyebrow {\n    margin: 0;\n    font-family: var(--siv-body);\n    font-weight: 500;\n    font-size: max(12px, 1.25cqw);\n    letter-spacing: 0.3em;\n    line-height: 1.2;\n    text-transform: uppercase;\n    color: #f2f1ec;\n  }\n  .siv-bf-banner__headline {\n    margin: 1.8cqw 0 0;\n    font-family: var(--siv-display);\n    font-weight: 400;\n    font-size: 8cqw;\n    line-height: 0.82;\n    letter-spacing: -0.005em;\n    white-space: nowrap;\n    text-transform: uppercase;\n    color: #f2f1ec;\n  }\n  .siv-bf-banner__tiers {\n    width: 100%;\n    max-width: 72cqw;\n    margin: 2.2cqw 0 0;\n    padding: 0.9cqw 0;\n    list-style: none;\n    border-top: 1px solid rgba(242, 241, 236, 0.28);\n    border-bottom: 1px solid rgba(242, 241, 236, 0.28);\n    display: grid;\n    grid-template-columns: repeat(5, 1fr);\n  }\n  .siv-bf-banner__tier {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 0.45cqw;\n  }\n  .siv-bf-banner__tier + .siv-bf-banner__tier {\n    border-left: 1px solid rgba(242, 241, 236, 0.28);\n  }\n  .siv-bf-banner__pct {\n    display: flex;\n    align-items: baseline;\n    gap: 0.3cqw;\n    font-family: var(--siv-display);\n    font-weight: 400;\n    line-height: 0.9;\n  }\n  .siv-bf-banner__pct-num { font-size: 3.6cqw; }\n  .siv-bf-banner__pct-off { font-size: 1.6cqw; }\n  .siv-bf-banner__amt {\n    font-family: var(--siv-body);\n    font-weight: 500;\n    font-size: max(12px, 1.15cqw);\n    letter-spacing: 0.18em;\n  }\n  .siv-bf-banner__shipping {\n    margin: 1.7cqw 0 0;\n    font-family: var(--siv-body);\n    font-weight: 500;\n    font-size: max(11px, 1.1cqw);\n    letter-spacing: 0.32em;\n    text-transform: uppercase;\n  }\n  .siv-bf-banner__note {\n    margin: 0.5cqw 0 0;\n    font-family: var(--siv-body);\n    font-weight: 400;\n    font-size: max(12px, 1.05cqw);\n    color: #a3a3a3;\n  }\n\n  @media screen and (max-width: 749px) {\n    .siv-bf-banner__bg { object-position: right top; }\n    .siv-bf-banner__inner { padding: 21cqw 8.33cqw 6cqw; }\n    .siv-bf-banner__eyebrow { font-size: max(11px, 2.9cqw); letter-spacing: 0.18em; white-space: nowrap; }\n    .siv-bf-banner__headline { display: none; }\n    .siv-bf-banner__tiers {\n      max-width: none;\n      margin-top: 3.6cqw;\n      padding: 0;\n      border-top: 0;\n      display: block;\n    }\n    .siv-bf-banner__tier {\n      flex-direction: row;\n      justify-content: space-between;\n      align-items: center;\n      padding: 0.55cqw 0;\n      border-top: 1px solid rgba(242, 241, 236, 0.28);\n    }\n    .siv-bf-banner__tier + .siv-bf-banner__tier { border-left: 0; }\n    .siv-bf-banner__pct { gap: 0.93cqw; }\n    .siv-bf-banner__pct-num { font-size: 6.4cqw; }\n    .siv-bf-banner__pct-off { font-size: 2.9cqw; }\n    .siv-bf-banner__amt { font-size: max(11px, 2.78cqw); letter-spacing: 0.2em; }\n    .siv-bf-banner__shipping { margin-top: 2.6cqw; font-size: max(10px, 2.59cqw); letter-spacing: 0.3em; }\n    .siv-bf-banner__note { margin-top: 0.9cqw; font-size: max(11px, 2.78cqw); }\n  }\n</style>\n\n<section class=\"siv-bf-banner\" aria-label=\"Black Friday wholesale sale\">\n  <picture>\n    <source media=\"(max-width: 749px)\" srcset=\"https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Screenshot_2026-11-17_at_8.24.08PM.png?v=1794968670\">\n    <img class=\"siv-bf-banner__bg\" src=\"https://cdn.shopify.com/s/files/1/0799/1315/6923/files/Golden_Cream_Liquid_Waves.png?v=1794968622\" alt=\"\" loading=\"eager\" fetchpriority=\"high\">\n  </picture>\n\n  <div class=\"siv-bf-banner__inner\">\n    <p class=\"siv-bf-banner__eyebrow\">Black Friday Wholesale · Live Now</p>\n    <h2 class=\"siv-bf-banner__headline\">Up to 40% off</h2>\n\n    <ul class=\"siv-bf-banner__tiers\">\n      <li class=\"siv-bf-banner__tier\">\n        <span class=\"siv-bf-banner__pct\"><span class=\"siv-bf-banner__pct-num\">15%</span><span class=\"siv-bf-banner__pct-off\">OFF</span></span>\n        <span class=\"siv-bf-banner__amt\">$400+</span>\n      </li>\n      <li class=\"siv-bf-banner__tier\">\n        <span class=\"siv-bf-banner__pct\"><span class=\"siv-bf-banner__pct-num\">25%</span><span class=\"siv-bf-banner__pct-off\">OFF</span></span>\n        <span class=\"siv-bf-banner__amt\">$600+</span>\n      </li>\n      <li class=\"siv-bf-banner__tier\">\n        <span class=\"siv-bf-banner__pct\"><span class=\"siv-bf-banner__pct-num\">30%</span><span class=\"siv-bf-banner__pct-off\">OFF</span></span>\n        <span class=\"siv-bf-banner__amt\">$1,200+</span>\n      </li>\n      <li class=\"siv-bf-banner__tier\">\n        <span class=\"siv-bf-banner__pct\"><span class=\"siv-bf-banner__pct-num\">35%</span><span class=\"siv-bf-banner__pct-off\">OFF</span></span>\n        <span class=\"siv-bf-banner__amt\">$2,500+</span>\n      </li>\n      <li class=\"siv-bf-banner__tier\">\n        <span class=\"siv-bf-banner__pct\"><span class=\"siv-bf-banner__pct-num\">40%</span><span class=\"siv-bf-banner__pct-off\">OFF</span></span>\n        <span class=\"siv-bf-banner__amt\">$5,000+</span>\n      </li>\n    </ul>\n\n    <p class=\"siv-bf-banner__shipping\">Plus Free Domestic Shipping</p>\n    <p class=\"siv-bf-banner__note\">Automatically applied at checkout</p>\n  </div>\n</section>",
+            "desktop_width_percent": 100,
+            "header-05f3d0ea266c5a9440be65542b22edae": null,
+            "padding_vertical": 25,
+            "padding_horizontal": 25,
+            "mobile_padding_vertical": 20,
+            "mobile_padding_horizontal": 15,
+            "header-7de0f45ca28b57dec690daed137849e6": null,
+            "background_color": "#F6F5ED",
+            "text_color": "#241917",
+            "link_color": "#685F2C"
+          }
+        }
+      },
+      "block_order": [
+        "ai_gen_block_71ee8d6_JdKkR"
+      ],
+      "name": "Custom liquid"
     }
-  }
+  },
+  "order": [
+    "blocks_nJpBQ",
+    "main",
+    "key_points",
+    "testimonies",
+    "section_text_and_image_YXW3JW",
+    "ingredients",
+    "section_text_and_image_Xe7tqB",
+    "section_accordion_hRaNKB",
+    "section_paragraph_MeRTEk",
+    "section_related_products"
+  ]
 }
