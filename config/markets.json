@@ -14,6 +14,9 @@
     },
     "b2b-in-international": {
       "parent": "all-b2b"
+    },
+    "international": {
+      "parent": "@default"
     }
   }
 }
