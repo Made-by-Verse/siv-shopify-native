@@ -11,5 +11,24 @@
   "context": {
     "market": "all-b2b"
   },
-  "current": {}
+  "current": {
+    "menu": "main-menu-nov-25-wholesale",
+    "color_schemes": {
+      "scheme-1": {
+        "settings": {}
+      },
+      "scheme-2": {
+        "settings": {}
+      },
+      "scheme-3": {
+        "settings": {}
+      },
+      "scheme-b7d1bd86-9b68-491c-8473-772dd461a807": {
+        "settings": {}
+      },
+      "scheme-fb547323-c0cb-4a49-a864-c809f1149213": {
+        "settings": {}
+      }
+    }
+  }
 }
