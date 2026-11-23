@@ -1,23 +1,25 @@
-{%- comment -%} Closing call to action band with an optional disclaimer underneath. {%- endcomment -%}
+{%- comment -%} Closing call to action band; the disclaimer sits inside the band at the bottom. {%- endcomment -%}
 <div class="sivp-cta">
   <div class="wrapper sivp-cta__inner">
     {%- if section.settings.eyebrow != blank -%}<p class="sivp-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
-    {%- if section.settings.heading != blank -%}<h2 class="h2 sivp-cta__title">{{ section.settings.heading }}</h2>{%- endif -%}
+    {%- if section.settings.heading != blank -%}<h2 class="h2 sivp-cta__title">{{ section.settings.heading | replace: '™', '<span class="sivp-tm">™</span>' }}</h2>{%- endif -%}
     {%- if section.settings.button_label != blank -%}
       <a class="btn btn--black sivp-cta__btn" href="{{ section.settings.button_link | default: '#MainContent' }}">{{ section.settings.button_label }}</a>
     {%- endif -%}
+    {%- if section.settings.disclaimer != blank -%}
+      <div class="sivp-cta__disclaimer">{{ section.settings.disclaimer }}</div>
+    {%- endif -%}
   </div>
 </div>
-{%- if section.settings.disclaimer != blank -%}
-  <div class="wrapper sivp-cta__disclaimer">{{ section.settings.disclaimer }}</div>
-{%- endif -%}
 
 <style>
   .siv-pdp-cta { padding-top: 0; margin-top: var(--sivp-space); }
-  .sivp-cta { background: #e6e3dd; padding: var(--sivp-space) 0; }
+  .sivp-cta { background: #e6e3dd; padding: var(--sivp-space) 0 2rem; }
   .sivp-cta__inner { text-align: center; display: flex; flex-direction: column; align-items: center; }
   .sivp-cta__title { max-width: 16ch; text-wrap: balance; margin: 0 0 1.75rem; }
-  .sivp-cta__disclaimer { padding-top: 1.5rem; padding-bottom: 1.5rem; font-size: 0.8125rem; line-height: 1.5; color: rgba(var(--color-contrast), 0.65); }
+  .sivp-tm { font-family: Matter, sans-serif; font-size: 0.26em; font-weight: 500; vertical-align: top; line-height: 1; margin-left: 0.08em; letter-spacing: 0; text-transform: none; position: relative; top: 0.35em; }
+  .sivp-cta__disclaimer { margin-top: calc(var(--sivp-space) * 0.75); max-width: 44rem; font-size: 0.6875rem; line-height: 1.5; color: rgba(var(--color-contrast), 0.55); }
+  .sivp-cta__disclaimer p { margin: 0; }
 </style>
 
 {% schema %}

@@ -44,7 +44,7 @@
 
 <style>
   .sivp-routine { display: grid; gap: 2.5rem; align-items: center; }
-  .sivp-routine__media { border-radius: 0.75rem; overflow: hidden; aspect-ratio: 3 / 4; background: #e6e3dd; }
+  .sivp-routine__media { border-radius: 0.75rem; overflow: hidden; aspect-ratio: 4 / 5; max-height: 34rem; background: #e6e3dd; }
   .sivp-routine__img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .sivp-routine__sub { margin-top: 1rem; }
   .sivp-steps { list-style: none; margin: 1.75rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
@@ -60,7 +60,7 @@
   .sivp-how__text { margin: 0; }
   .sivp-routine__note { margin-top: 1.25rem; font-size: 0.8125rem; line-height: 1.55; color: rgba(var(--color-contrast), 0.65); }
   @media (min-width: 768px) { .sivp-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-  @media (min-width: 1024px) { .sivp-routine { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 4rem; } }
+  @media (min-width: 1024px) { .sivp-routine { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 4.5rem; align-items: center; } }
 </style>
 
 {% schema %}

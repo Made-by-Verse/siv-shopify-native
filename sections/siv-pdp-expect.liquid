@@ -1,4 +1,4 @@
-{%- comment -%} What to expect: topics on the left, three captioned photos on the right. {%- endcomment -%}
+{%- comment -%} What to expect: topics on the left, one photo frame on the right that rotates through up to three photos. {%- endcomment -%}
 <div class="wrapper sivp-expect">
   <div class="sivp-expect__text">
     {%- if section.settings.eyebrow != blank -%}<p class="sivp-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
@@ -11,19 +11,17 @@
       </div>
     {%- endfor -%}
   </div>
-  <div class="sivp-expect__photos" data-sivp-stagger>
+  <div class="sivp-expect__rotator" data-sivp-rotator>
+    {%- assign shown = 0 -%}
     {%- for i in (1..3) -%}
       {%- assign img_key = 'image_' | append: i -%}
-      {%- assign cap_key = 'caption_' | append: i -%}
       {%- assign img = section.settings[img_key] -%}
-      <figure class="sivp-expect__photo">
-        <div class="sivp-expect__frame">
-          {%- if img != blank -%}
-            {{ img | image_url: width: 700 | image_tag: loading: 'lazy', widths: '300, 500, 700', sizes: '(min-width: 1024px) 16vw, 33vw', alt: img.alt }}
-          {%- endif -%}
+      {%- if img != blank -%}
+        <div class="sivp-expect__slide{% if shown == 0 %} is-active{% endif %}">
+          {{ img | image_url: width: 900 | image_tag: loading: 'lazy', widths: '400, 600, 900', sizes: '(min-width: 1024px) 28rem, 80vw', alt: img.alt }}
         </div>
-        {%- if section.settings[cap_key] != blank -%}<figcaption>{{ section.settings[cap_key] }}</figcaption>{%- endif -%}
-      </figure>
+        {%- assign shown = shown | plus: 1 -%}
+      {%- endif -%}
     {%- endfor -%}
   </div>
 </div>
@@ -33,15 +31,29 @@
   .sivp-expect { display: grid; gap: 3rem; align-items: center; }
   .sivp-expect__topic { margin-top: 2rem; }
   .sivp-expect__topic-title { font-family: inherit; text-transform: none; font-size: 1.25rem; line-height: 1.3; font-weight: 600; margin: 0 0 0.6rem; }
-  .sivp-expect__lead { color: rgb(var(--color-contrast)); }
-  .sivp-expect__lead { font-weight: 600; margin: 0 0 0.6rem; }
-  .sivp-expect__photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; }
-  .sivp-expect__photo { margin: 0; }
-  .sivp-expect__frame { aspect-ratio: 3 / 4; background: #d8d4cc; overflow: hidden; }
-  .sivp-expect__frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .sivp-expect__photo figcaption { margin-top: 0.75rem; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; }
-  @media (min-width: 1024px) { .sivp-expect { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 4rem; } }
+  .sivp-expect__lead { color: rgb(var(--color-contrast)); font-weight: 600; margin: 0 0 0.6rem; }
+  .sivp-expect__rotator { position: relative; width: 100%; max-width: 26rem; aspect-ratio: 1 / 1; margin: 0 auto; border-radius: 50%; overflow: hidden; }
+  .sivp-expect__slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+  .sivp-expect__slide.is-active { opacity: 1; }
+  .sivp-expect__slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  @media (min-width: 1024px) { .sivp-expect { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); column-gap: 4.5rem; } }
 </style>
+
+<script>
+  (function () {
+    var root = document.getElementById('shopify-section-{{ section.id }}');
+    if (!root) return;
+    var slides = root.querySelectorAll('.sivp-expect__slide');
+    if (slides.length < 2) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var i = 0;
+    setInterval(function () {
+      slides[i].classList.remove('is-active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('is-active');
+    }, 2600);
+  })();
+</script>
 
 {% schema %}
 {
