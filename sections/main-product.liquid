@@ -104,62 +104,50 @@
           <style>
             .ws-pricing { margin-top: 2rem; padding: 1.75rem; border: 1px solid rgba(0,0,0,.1); border-radius: 1rem; background: rgba(255,255,255,.55); }
             .ws-pricing__head { padding-bottom: 1.25rem; margin-bottom: 1.25rem; border-bottom: 1px solid rgba(0,0,0,.1); }
+            .ws-pricing__head--solo { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; }
             .ws-pricing__title { font-size: 1.75rem; line-height: 1.1; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin: 0; }
-            .ws-pricing__intro, .ws-pricing__intro p { font-size: .875rem; line-height: 1.5; color: rgba(0,0,0,.55); margin: .375rem 0 0; font-style: normal; }
-            .ws-pricing__intro em { font-style: normal; }
+            .ws-pricing__note { font-size: .875rem; line-height: 1.5; color: rgba(0,0,0,.55); margin: .75rem 0 0; }
+            .ws-pricing__head .ws-tier__rows { margin-top: 1rem; }
             .ws-pricing__grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.25rem 2.5rem; }
             .ws-tier__size { font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 .5rem; color: rgba(0,0,0,.55); }
             .ws-tier__rows { list-style: none; margin: 0; padding: 0; }
+            .ws-tier__rows:empty { display: none; }
             .ws-tier__row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .625rem 0; border-top: 1px solid rgba(0,0,0,.08); font-size: .9375rem; }
             .ws-tier__row:first-child { border-top: 0; }
             .ws-tier__qty { color: rgba(0,0,0,.7); }
             .ws-tier__price { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
-            .ws-tier__raw ul { list-style: none; margin: 0; padding: 0; }
             @media (max-width: 749px) {
               .ws-pricing { padding: 1.25rem; }
               .ws-pricing__grid { grid-template-columns: 1fr; gap: 1.5rem; }
             }
           </style>
+          {%- assign ws_tier_count = 0 -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'wholesale-tier' -%}{%- assign ws_tier_count = ws_tier_count | plus: 1 -%}{%- endif -%}
+          {%- endfor -%}
           <div class="ws-pricing">
             {%- for block in section.blocks -%}
               {%- if block.type == 'wholesale-pricing' -%}
-                <div class="ws-pricing__head" {{ block.shopify_attributes }}>
+                <div class="ws-pricing__head{% if ws_tier_count == 0 %} ws-pricing__head--solo{% endif %}" {{ block.shopify_attributes }}>
                   <h3 class="ws-pricing__title">{{ block.settings.heading }}</h3>
                   {%- if block.settings.intro != blank -%}
-                    <div class="ws-pricing__intro">{{ block.settings.intro }}</div>
+                    {% render 'ws-pricing-rows', text: block.settings.intro %}
                   {%- endif -%}
                 </div>
               {%- endif -%}
             {%- endfor -%}
-            <div class="ws-pricing__grid">
-              {%- for block in section.blocks -%}
-                {%- if block.type == 'wholesale-tier' -%}
-                  <div class="ws-tier" {{ block.shopify_attributes }}>
-                    <h4 class="ws-tier__size">{{ block.settings.variant_heading }}</h4>
-                    {%- if block.settings.breakdown_text contains '<li>' -%}
-                      {%- assign ws_items = block.settings.breakdown_text | split: '<li>' -%}
-                      <ul class="ws-tier__rows">
-                        {%- for ws_item in ws_items offset: 1 -%}
-                          {%- assign ws_line = ws_item | strip_html | strip -%}
-                          {%- if ws_line contains ':' -%}
-                            {%- assign ws_parts = ws_line | split: ':' -%}
-                            {%- assign ws_price = ws_parts | last | remove: 'USD' | strip -%}
-                            <li class="ws-tier__row">
-                              <span class="ws-tier__qty">{{ ws_parts | first | strip }}</span>
-                              <span class="ws-tier__price">{{ ws_price }}</span>
-                            </li>
-                          {%- elsif ws_line != blank -%}
-                            <li class="ws-tier__row"><span class="ws-tier__qty">{{ ws_line }}</span></li>
-                          {%- endif -%}
-                        {%- endfor -%}
-                      </ul>
-                    {%- else -%}
-                      <div class="ws-tier__raw">{{ block.settings.breakdown_text }}</div>
-                    {%- endif -%}
-                  </div>
-                {%- endif -%}
-              {%- endfor -%}
-            </div>
+            {%- if ws_tier_count > 0 -%}
+              <div class="ws-pricing__grid">
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'wholesale-tier' -%}
+                    <div class="ws-tier" {{ block.shopify_attributes }}>
+                      <h4 class="ws-tier__size">{{ block.settings.variant_heading }}</h4>
+                      {% render 'ws-pricing-rows', text: block.settings.breakdown_text %}
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
           </div>
         {%- endcapture -%}
 

@@ -1,0 +1,25 @@
+{%- comment -%}
+  Renders wholesale pricing richtext as rows. Lines with a price ("2–5 units: $44 USD")
+  become qty/price rows; other lines become small notes.
+  Accepts: text (richtext string)
+{%- endcomment -%}
+{%- assign ws_norm = text | replace: '<br />', '|||' | replace: '<br/>', '|||' | replace: '<br>', '|||' | replace: '</p>', '|||' | replace: '</li>', '|||' | strip_html -%}
+{%- assign ws_lines = ws_norm | split: '|||' -%}
+{%- assign ws_notes = '' -%}
+<ul class="ws-tier__rows">
+  {%- for ws_raw in ws_lines -%}
+    {%- assign ws_line = ws_raw | strip -%}
+    {%- if ws_line == blank -%}{%- continue -%}{%- endif -%}
+    {%- if ws_line contains '$' and ws_line contains ':' -%}
+      {%- assign ws_parts = ws_line | split: ':' -%}
+      {%- assign ws_price = ws_parts | last | remove: 'USD' | replace: '  ', ' ' | strip -%}
+      <li class="ws-tier__row">
+        <span class="ws-tier__qty">{{ ws_parts | first | strip }}</span>
+        <span class="ws-tier__price">{{ ws_price }}</span>
+      </li>
+    {%- else -%}
+      {%- assign ws_notes = ws_notes | append: '<p class="ws-pricing__note">' | append: ws_line | append: '</p>' -%}
+    {%- endif -%}
+  {%- endfor -%}
+</ul>
+{{ ws_notes }}
