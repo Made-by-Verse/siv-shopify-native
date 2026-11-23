@@ -1,0 +1,35 @@
+{%- comment -%}
+  Outputs the handle of the menu this visitor should see, so the desktop header and the mobile menu always match.
+  - US visitors: Main menu - Retail. Approved wholesale accounts (or wholesale store contexts): Main menu - Wholesale.
+  - Visitors outside the US: Main menu - Retail International, or Main menu - Wholesale International for wholesale.
+  Params: fallback (retail menu handle), b2b (US wholesale menu handle).
+{%- endcomment -%}
+{%- liquid
+  assign siv_h = settings.menu
+  if siv_h == blank
+    assign siv_h = fallback
+  endif
+  assign siv_intl = false
+  if localization.country.iso_code != blank and localization.country.iso_code != 'US'
+    assign siv_intl = true
+  endif
+  assign siv_wholesale = false
+  if customer and customer.tags contains 'wholesale-approved' and b2b != blank
+    assign siv_wholesale = true
+    assign siv_h = b2b
+  elsif siv_h contains 'wholesale'
+    assign siv_wholesale = true
+  endif
+  if siv_intl
+    if siv_wholesale
+      if linklists['main-menu-wholesale-international'].links.size > 0
+        assign siv_h = 'main-menu-wholesale-international'
+      endif
+    else
+      if linklists['main-menu-retail-international'].links.size > 0
+        assign siv_h = 'main-menu-retail-international'
+      endif
+    endif
+  endif
+  echo siv_h
+-%}

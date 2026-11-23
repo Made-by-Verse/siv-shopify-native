@@ -67,7 +67,8 @@
     {% endif %}
 
     {% render 'cart-drawer' %}
-    {% render 'mobile-menu' with menu, menu: linklists[settings.menu].links %}
+    {%- capture siv_menu_handle -%}{%- render 'siv-menu-handle', fallback: 'main-menu-nov-25', b2b: 'main-menu-nov-25-wholesale' -%}{%- endcapture -%}
+    {% render 'mobile-menu' with menu, menu: linklists[siv_menu_handle].links %}
     {% render 'quick-buy-drawer' %}
 
     <ul hidden>

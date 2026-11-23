@@ -1,8 +1,5 @@
-{% if customer and customer.tags contains 'wholesale-approved' and section.settings.b2b_menu != blank %}
-  {% assign menu = linklists[section.settings.b2b_menu].links %}
-{% else %}
-  {% assign menu = linklists[section.settings.menu].links %}
-{% endif %}
+{%- capture siv_menu_handle -%}{%- render 'siv-menu-handle', fallback: section.settings.menu, b2b: section.settings.b2b_menu -%}{%- endcapture -%}
+{%- assign menu = linklists[siv_menu_handle].links -%}
 
 <header
   id="js-header"
