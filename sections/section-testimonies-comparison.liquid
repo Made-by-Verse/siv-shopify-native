@@ -78,6 +78,7 @@
             <span class="block font-medium tracking-wide uppercase">
               After {{ testimony.settings.treatment_duration }} days
             </span>
+            {%- if section.settings.disclaimer != blank -%}<p class="text-sm" style="opacity:.65">{{ section.settings.disclaimer }}</p>{%- endif -%}
 
             <!-- Navigation Controls -->
             <div class="flex gap-2 pt-4">
@@ -204,6 +205,7 @@
       "id": "heading",
       "label": "Heading"
     }
+    ,{ "type": "text", "id": "disclaimer", "label": "Small note under the result", "info": "For example: Individual results vary." }
   ],
   "blocks": [
     {

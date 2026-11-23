@@ -1,0 +1,101 @@
+{%- comment -%} Before and after results: two photos side by side with the result on the right. Arrows step through results when there is more than one. {%- endcomment -%}
+<div class="wrapper sivp-results" data-sivp-results>
+  {%- if section.settings.heading != blank -%}<h2 class="h2 sivp-title sivp-results__title">{{ section.settings.heading }}</h2>{%- endif -%}
+  <div class="sivp-results__stage">
+    {%- for block in section.blocks -%}
+      <div class="sivp-result" data-sivp-result {% unless forloop.first %}hidden{% endunless %} {{ block.shopify_attributes }}>
+        <figure class="sivp-result__photo">
+          <div class="sivp-result__frame">
+            {%- if block.settings.before_image != blank -%}{{ block.settings.before_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '400, 600, 900', sizes: '(min-width: 1024px) 30vw, 50vw', alt: 'Before' }}{%- endif -%}
+          </div>
+          <figcaption>{{ section.settings.before_label | default: 'Before' }}</figcaption>
+        </figure>
+        <figure class="sivp-result__photo">
+          <div class="sivp-result__frame">
+            {%- if block.settings.after_image != blank -%}{{ block.settings.after_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '400, 600, 900', sizes: '(min-width: 1024px) 30vw, 50vw', alt: 'After' }}{%- endif -%}
+          </div>
+          <figcaption>After {{ block.settings.duration }} days</figcaption>
+        </figure>
+        <div class="sivp-result__text">
+          <p class="sivp-result__quote">{{ block.settings.quote }}</p>
+          {%- if section.settings.disclaimer != blank -%}<p class="sivp-result__note">{{ section.settings.disclaimer }}</p>{%- endif -%}
+          {%- if section.blocks.size > 1 -%}
+            <div class="sivp-result__nav">
+              <button type="button" class="sivp-result__btn" data-sivp-prev aria-label="Previous result">&larr;</button>
+              <span class="sivp-result__count">{{ forloop.index }} / {{ section.blocks.size }}</span>
+              <button type="button" class="sivp-result__btn" data-sivp-next aria-label="Next result">&rarr;</button>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+<style>
+  .sivp-results__title { margin-bottom: 2.5rem; }
+  .sivp-result { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; align-items: center; }
+  .sivp-result[hidden] { display: none; }
+  .sivp-result__photo { margin: 0; align-self: start; }
+  .sivp-result__frame { aspect-ratio: 1 / 1; background: #d8d4cc; overflow: hidden; }
+  .sivp-result__frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .sivp-result__photo figcaption { margin-top: 0.75rem; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .sivp-result__text { grid-column: 1 / -1; }
+  .sivp-result__quote { font-size: clamp(1.15rem, 1.6vw, 1.4rem); line-height: 1.45; margin: 0; color: rgb(var(--color-contrast)); }
+  .sivp-result__note { font-size: 0.8125rem; color: rgba(var(--color-contrast), 0.65); margin: 1rem 0 0; }
+  .sivp-result__nav { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.5rem; }
+  .sivp-result__btn { width: 2.5rem; height: 2.5rem; border-radius: 999px; border: 1px solid rgba(var(--color-contrast), 0.3); background: transparent; color: inherit; cursor: pointer; transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.12s cubic-bezier(0.16, 1, 0.3, 1); }
+  .sivp-result__btn:hover { border-color: rgb(var(--color-contrast)); }
+  .sivp-result__btn:active { transform: scale(0.93); }
+  .sivp-result__count { font-size: 0.8125rem; letter-spacing: 0.1em; color: rgba(var(--color-contrast), 0.65); min-width: 3rem; text-align: center; }
+  @media (min-width: 1024px) {
+    .sivp-result { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 0.95fr); gap: 1.25rem; }
+    .sivp-result__text { grid-column: auto; padding-left: 1.25rem; }
+  }
+</style>
+<script>
+  (function () {
+    var root = document.currentScript && document.currentScript.previousElementSibling && document.currentScript.previousElementSibling.previousElementSibling;
+    if (!root || !root.hasAttribute('data-sivp-results')) return;
+    var items = root.querySelectorAll('[data-sivp-result]');
+    if (items.length < 2) return;
+    var i = 0;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function show(n) {
+      items[i].hidden = true;
+      i = (n + items.length) % items.length;
+      items[i].hidden = false;
+      if (!reduce && items[i].animate) items[i].animate([{ opacity: 0 }, { opacity: 1 }], { duration: 250, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' });
+    }
+    root.addEventListener('click', function (e) {
+      if (e.target.closest('[data-sivp-next]')) show(i + 1);
+      if (e.target.closest('[data-sivp-prev]')) show(i - 1);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "SIV results",
+  "tag": "section",
+  "class": "siv-pdp-sec siv-pdp-results",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Real consumer tested results" },
+    { "type": "text", "id": "before_label", "label": "Before label", "default": "Before" },
+    { "type": "text", "id": "disclaimer", "label": "Small note", "default": "Individual results vary." }
+  ],
+  "blocks": [
+    {
+      "type": "result",
+      "name": "Result",
+      "settings": [
+        { "type": "image_picker", "id": "before_image", "label": "Before photo" },
+        { "type": "image_picker", "id": "after_image", "label": "After photo" },
+        { "type": "number", "id": "duration", "label": "Days of use", "default": 40 },
+        { "type": "text", "id": "quote", "label": "Result" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "SIV results" }]
+}
+{% endschema %}

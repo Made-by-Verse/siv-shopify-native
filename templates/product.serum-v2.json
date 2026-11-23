@@ -1,0 +1,488 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "liquid_eaFyJD": {
+          "type": "tag",
+          "settings": {
+            "liquid": "{% for variant in product.variants %}{% if variant.id == product.selected_or_first_available_variant.id %}{{ variant.metafields.descriptors.subtitle }}{% endif %}{% endfor %}"
+          }
+        },
+        "product_title_Fqeap7": {
+          "type": "product-title",
+          "settings": {}
+        },
+        "product_description_xK3MCg": {
+          "type": "product-description",
+          "settings": {}
+        },
+        "wholesale_pricing_breakdown_abc1": {
+          "type": "wholesale-pricing",
+          "disabled": true,
+          "settings": {
+            "heading": "Wholesale Volume Pricing",
+            "intro": "<p>The 15 mL Biome Balancing Serum is temporarily out of stock. To support uninterrupted ordering, we are offering <strong>20% off the 30 mL size</strong> during this period. Use code<strong> SIV30ML20 </strong>at checkout while the 15 mL is out of stock.</p><p>Subscribe and save not available for wholesale pricing.</p>"
+          }
+        },
+        "wholesale_tier_15ml_abc2": {
+          "type": "wholesale-tier",
+          "disabled": true,
+          "settings": {
+            "variant_heading": "15mL - OUT OF STOCK",
+            "breakdown_text": "<ul><li>2–5 units: $44 USD</li><li>6–11 units: $39 USD</li><li>12+ units: $34 USD</li></ul>"
+          }
+        },
+        "wholesale_tier_30ml_abc3": {
+          "type": "wholesale-tier",
+          "disabled": true,
+          "settings": {
+            "variant_heading": "30 mL",
+            "breakdown_text": "<ul><li>2–5 units: $78 USD</li><li>6–11 units: $72 USD</li><li>12+ units: $66 USD</li></ul>"
+          }
+        },
+        "variant_picker_cF46kp": {
+          "type": "variant-picker",
+          "settings": {}
+        },
+        "recharge_subscriptions_subscription_widget_v2_8cEqny": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
+        "quantity_selector_8EEfnM": {
+          "type": "quantity-selector",
+          "settings": {}
+        },
+        "buy_buttons_rEH3MG": {
+          "type": "buy-buttons",
+          "settings": {}
+        },
+        "related_product_auto": {
+          "type": "related-product",
+          "settings": {
+            "compact": true
+          }
+        },
+        "accordion_YVppL6": {
+          "type": "accordion",
+          "settings": {}
+        },
+        "trust_badges_siv": {
+          "type": "trust-badges",
+          "settings": {
+            "item_1": "Dermatologist approved",
+            "item_2": "Clinically tested",
+            "item_3": "Suitable for sensitive skin",
+            "item_4": "Non-comedogenic"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_eaFyJD",
+        "product_title_Fqeap7",
+        "product_description_xK3MCg",
+        "wholesale_pricing_breakdown_abc1",
+        "wholesale_tier_15ml_abc2",
+        "wholesale_tier_30ml_abc3",
+        "variant_picker_cF46kp",
+        "recharge_subscriptions_subscription_widget_v2_8cEqny",
+        "quantity_selector_8EEfnM",
+        "buy_buttons_rEH3MG",
+        "trust_badges_siv",
+        "related_product_auto",
+        "accordion_YVppL6"
+      ],
+      "settings": {}
+    },
+    "siv_benefits": {
+      "type": "siv-pdp-benefits",
+      "settings": {
+        "eyebrow": "What it does for your skin",
+        "heading": "Healthy skin starts with a balanced biome"
+      },
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "heading": "Supports a balanced biome",
+            "text": "<p>Beneficial spores help bring your skin's microbial community back into harmony, which is where calm, comfortable skin begins.</p>"
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "heading": "Leaves skin soft and glowing",
+            "text": "<p>Skin-identical oils lock in moisture and leave a soft, healthy glow that you can see and feel through the day.</p>"
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "heading": "Helps skin stay resilient",
+            "text": "<p>With daily use, your skin is better able to handle what each day brings, from dry air to a stressful week.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3"
+      ]
+    },
+    "siv_routine": {
+      "type": "siv-pdp-routine",
+      "settings": {
+        "image": "shopify://shop_images/Serum_photo.jpg",
+        "eyebrow": "Your Biome Step™",
+        "heading": "Make it part of your routine",
+        "subtext": "Add it right after cleansing or toning.",
+        "note": "<p>Avoid the eye area. If your skin is very sensitive, patch test first, and stop use if irritation occurs. If serum gets in your eyes, rinse with water.</p>"
+      },
+      "blocks": {
+        "step_1": {
+          "type": "routine_step",
+          "settings": {
+            "label": "Cleanse",
+            "highlight": false
+          }
+        },
+        "step_2": {
+          "type": "routine_step",
+          "settings": {
+            "label": "Tone",
+            "highlight": false
+          }
+        },
+        "step_3": {
+          "type": "routine_step",
+          "settings": {
+            "label": "Biome Balancing Serum",
+            "highlight": true
+          }
+        },
+        "step_4": {
+          "type": "routine_step",
+          "settings": {
+            "label": "Moisturize",
+            "highlight": false
+          }
+        },
+        "how_1": {
+          "type": "how_step",
+          "settings": {
+            "title": "Shake well",
+            "text": "Give the bottle a good shake to mix the spores evenly through the serum."
+          }
+        },
+        "how_2": {
+          "type": "how_step",
+          "settings": {
+            "title": "Apply 1 to 3 drops",
+            "text": "Use the precision dropper on freshly cleansed or toned skin."
+          }
+        },
+        "how_3": {
+          "type": "how_step",
+          "settings": {
+            "title": "Pat it in",
+            "text": "Gently press into dry or damp skin."
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "how_1",
+        "how_2",
+        "how_3"
+      ]
+    },
+    "siv_ingredients": {
+      "type": "siv-pdp-ingredients",
+      "settings": {
+        "eyebrow": "Full ingredient list",
+        "heading": "Ingredients",
+        "intro": "<p>A lightweight, stabilizing formula made with skin-friendly oils and our proprietary spore blend, so it feels at home on your skin from the first drop.</p>"
+      },
+      "blocks": {
+        "ingr_1": {
+          "type": "ingredient",
+          "settings": {
+            "label": "Biomimetic oil",
+            "name": "Squalane",
+            "text": "<p>Biomimetic oil, molecule derived from non-GMO sugarcane that mimics squalene, beneficial in promoting skin hydration</p>"
+          }
+        },
+        "ingr_2": {
+          "type": "ingredient",
+          "settings": {
+            "label": "Moisture barrier",
+            "name": "Caprylic / Capric Triglyceride",
+            "text": "<p>A mixture of caprylic and capric fatty acids derived from palm oil; help replenish skin's surface and help it to resist moisture loss</p>"
+          }
+        },
+        "ingr_3": {
+          "type": "ingredient",
+          "settings": {
+            "label": "Emollient",
+            "name": "Glyceryl Caprylate",
+            "text": "<p>A natural, plant-based, emollient derived from glycerin and plant fatty acids; restores the oils of the skin, helps the skin hold on to moisture and acts as a humidifier to the skin</p>"
+          }
+        },
+        "ingr_4": {
+          "type": "ingredient",
+          "settings": {
+            "label": "Proprietary spore blend",
+            "name": "Bacillus",
+            "text": "<p>A proprietary blend of Bacillus spores support a healthy skin foundation and visibly improves skin. Positively influencing your unique skin biome and establishing balance. The spores can help improve the skin microbiome by targeting overgrown bacteria, while facilitating the growth of other essential species- effectively balancing the skin microbiome.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ingr_1",
+        "ingr_2",
+        "ingr_3",
+        "ingr_4"
+      ]
+    },
+    "siv_pair": {
+      "type": "siv-pdp-pair",
+      "settings": {
+        "eyebrow": "The gut-skin axis",
+        "heading": "Support your skin from the outside and within",
+        "text": "<p>Your gut and skin are connected, so pairing the serum with our daily probiotic gives your biome support on both sides.</p>",
+        "product_1": "siv-biome-balancing-serum",
+        "product_1_subtitle": "Topical spore serum",
+        "product_2": "biome-balance-within",
+        "product_2_subtitle": "Gut-skin axis probiotic, 60 capsules",
+        "bundle_product": "bundle",
+        "bundle_eyebrow": "Bundle",
+        "bundle_heading": "The complete resilience bundle",
+        "bundle_text": "<p>The serum and Biome Balance Within together, for a full routine that supports your skin inside and out.</p>",
+        "bundle_button": "Shop the bundle"
+      }
+    },
+    "siv_faq": {
+      "type": "siv-pdp-faq",
+      "settings": {
+        "eyebrow": "Questions",
+        "heading": "Good to know",
+        "intro": "<p>Still curious? Write to us at <a href=\"mailto:info@sivcare.com\" title=\"mailto:info@sivcare.com\">info@sivcare.com</a> and we will be glad to help.</p>",
+        "open_first": true
+      },
+      "blocks": {
+        "q_1": {
+          "type": "question",
+          "settings": {
+            "question": "I see small clumps in my serum. Is that normal?",
+            "answer": "<p>Yes, and it is a sign the spores are there. Because the formula has no fillers or suspension agents, the spores settle between uses and can form soft clusters, especially after cold shipping. Shake well before each use and any remaining particles will melt into your skin.</p>"
+          }
+        },
+        "q_2": {
+          "type": "question",
+          "settings": {
+            "question": "Does the serum have a scent?",
+            "answer": "<p>There is no added fragrance. A light natural scent may be noticeable when you first open the bottle, and it fades quickly after application.</p>"
+          }
+        },
+        "q_3": {
+          "type": "question",
+          "settings": {
+            "question": "Which size should I choose?",
+            "answer": "<p>The 15 mL bottle lasts about 30 days and is perfect if you are trying the serum for the first time. The 30 mL bottle lasts about 60 days and offers better value.</p>"
+          }
+        },
+        "q_4": {
+          "type": "question",
+          "settings": {
+            "question": "Is it suitable for sensitive skin?",
+            "answer": "<p>Yes. The serum is dermatologist approved, non-comedogenic and suitable for dry, normal and oily skin. If your skin is highly sensitive, patch test first.</p>"
+          }
+        },
+        "q_5": {
+          "type": "question",
+          "settings": {
+            "question": "What comes in the bottle?",
+            "answer": "<p>The serum comes in a 15 mL or 30 mL glass bottle with a precision dropper, so it is easy to dispense 1 to 3 drops each day.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q_1",
+        "q_2",
+        "q_3",
+        "q_4",
+        "q_5"
+      ]
+    },
+    "siv_cta": {
+      "type": "siv-pdp-cta",
+      "settings": {
+        "eyebrow": "Your Biome Step™",
+        "heading": "Make SIV your Biome Step™",
+        "button_label": "Shop the serum",
+        "button_link": "",
+        "disclaimer": "<p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
+      }
+    },
+    "siv_expect": {
+      "type": "siv-pdp-expect",
+      "settings": {
+        "eyebrow": "Ask SIV",
+        "heading": "What to expect from your serum",
+        "image_1": "shopify://shop_images/siv-dropper-1.png",
+        "caption_1": "Settled",
+        "image_2": "shopify://shop_images/siv-dropper-2.png",
+        "caption_2": "Shaking",
+        "image_3": "shopify://shop_images/siv-dropper-3.png",
+        "caption_3": "Shaken"
+      },
+      "blocks": {
+        "topic_1": {
+          "type": "topic",
+          "settings": {
+            "title": "Clumping",
+            "lead": "Small particles in your serum are expected.",
+            "text": "<p>Nothing in the bottle is there to hold the particles (the Bacillus spores) in place or make them invisible, so natural settling and clumping are part of how it looks.</p><p>Shaking lifts the particles and spreads them through the liquid. It does not dissolve them. You’ll still see particles in a range of sizes after shaking, which is how the formula is meant to look, and they melt into your skin as you pat them in.</p>"
+          }
+        },
+        "topic_2": {
+          "type": "topic",
+          "settings": {
+            "title": "Scent",
+            "lead": "",
+            "text": "<p>There is no added fragrance. You may notice a light natural scent when you first open the bottle, which softens as you apply and fades quickly afterward.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "topic_1",
+        "topic_2"
+      ]
+    },
+    "siv_results": {
+      "type": "siv-pdp-results",
+      "settings": {
+        "heading": "Real consumer tested results",
+        "before_label": "Before",
+        "disclaimer": "Individual results vary."
+      },
+      "blocks": {
+        "testimony_1": {
+          "type": "result",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.44.55_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.45.00_PM.png",
+            "duration": 40,
+            "quote": "Reduced lesion count, Reduced redness, Improved skin texture & tone"
+          }
+        },
+        "testimony_GqzR37": {
+          "type": "result",
+          "settings": {
+            "before_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.38.06_PM.png",
+            "after_image": "shopify://shop_images/Screenshot_2026-06-26_at_12.38.13_PM.png",
+            "duration": 21,
+            "quote": "Reduced lesion count, Reduced redness, Improved skin texture & tone."
+          }
+        },
+        "testimony_2": {
+          "type": "result",
+          "settings": {
+            "before_image": "shopify://shop_images/Acne_bfe2b956-d3e7-4ca8-82c0-592b91e2c171.png",
+            "after_image": "shopify://shop_images/Acne_2_baf2f402-a63d-462d-9f5d-ca07ae100e0b.png",
+            "duration": 10,
+            "quote": "Reduced lesion count, Reduced redness, Improved skin texture & tone"
+          }
+        },
+        "testimony_3": {
+          "type": "result",
+          "settings": {
+            "before_image": "shopify://shop_images/Perioral_dermatitis_75d9eebe-13aa-453d-a3b9-d4fdcb6fa839.png",
+            "after_image": "shopify://shop_images/Perioral_dermatitis_2_7ef2140a-002a-4b90-8ae1-d8e7f50e93ed.png",
+            "duration": 21,
+            "quote": "Reduced redness. Improved skin clarity & tone"
+          }
+        },
+        "testimony_4": {
+          "type": "result",
+          "settings": {
+            "before_image": "shopify://shop_images/Acne_6ee40b9f-b549-431c-b2d0-2971bbede066.png",
+            "after_image": "shopify://shop_images/Acne_2_6d25c964-468f-4925-8bef-bba6c7a5f4a1.png",
+            "duration": 120,
+            "quote": "Reduced lesion count. Reduced redness. Improved skin tone, texture, and clarity."
+          }
+        },
+        "testimony_5": {
+          "type": "result",
+          "settings": {
+            "before_image": "shopify://shop_images/Sebborheic_Dermatitis.png",
+            "after_image": "shopify://shop_images/Sebborheic_Dermatitis_2.png",
+            "duration": 14,
+            "quote": "Reduced redness. Reduced flakiness. Improved hydration levels. Improved skin tone and texture"
+          }
+        },
+        "testimony_6": {
+          "type": "result",
+          "settings": {
+            "before_image": "shopify://shop_images/Atopic_Dermatitis_Eczema.png",
+            "after_image": "shopify://shop_images/Atopic_Dermatitis_Eczema_2.png",
+            "duration": 30,
+            "quote": "Reduced redness. Improved skin tone, texture, and clarity."
+          }
+        },
+        "testimony_8": {
+          "type": "result",
+          "settings": {
+            "before_image": "shopify://shop_images/Eczema.png",
+            "after_image": "shopify://shop_images/Eczema_2.png",
+            "duration": 7,
+            "quote": "Reduced redness. Improved skin tone, texture, and clarity."
+          }
+        },
+        "testimony_9": {
+          "type": "result",
+          "settings": {
+            "before_image": "shopify://shop_images/Eczema_6be13a31-6225-413b-a209-a9eba45a03cc.png",
+            "after_image": "shopify://shop_images/Eczema_2_fa994c70-cf98-4b78-ac6d-c31c9c312715.png",
+            "duration": 60,
+            "quote": "Reduced redness. Improved skin tone, texture, and clarity."
+          }
+        }
+      },
+      "block_order": [
+        "testimony_1",
+        "testimony_GqzR37",
+        "testimony_2",
+        "testimony_3",
+        "testimony_4",
+        "testimony_5",
+        "testimony_6",
+        "testimony_8",
+        "testimony_9"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "siv_benefits",
+    "siv_routine",
+    "siv_expect",
+    "siv_results",
+    "siv_ingredients",
+    "siv_pair",
+    "siv_faq",
+    "siv_cta"
+  ]
+}

@@ -14,7 +14,8 @@
       var staggerSel = [
         '[id$="__key_points"] .wrapper > div:nth-child(2)',
         '[id*="__section_ingredients"] .wrapper > .grid > div:nth-child(2)',
-        '[id*="__section_featured_product"] .wrapper ul'
+        '[id*="__section_featured_product"] .wrapper ul',
+        '[data-sivp-stagger]'
       ].join(',');
       main.querySelectorAll(staggerSel).forEach(function (c) {
         c.setAttribute('data-bbw-stagger', '');
@@ -23,7 +24,7 @@
           el.style.setProperty('--bbw-delay', Math.min(i, 6) * 80 + 'ms');
         });
       });
-      main.querySelectorAll('.shopify-section.section:not([id$="__main"]) .wrapper > *').forEach(function (el) {
+      main.querySelectorAll('.shopify-section.section:not([id$="__main"]) .wrapper > *, .shopify-section.siv-pdp-sec .wrapper > *').forEach(function (el) {
         if (el.hasAttribute('data-bbw-stagger')) return;
         if (el.querySelector('[data-bbw-stagger]')) {
           Array.prototype.forEach.call(el.children, function (ch) {

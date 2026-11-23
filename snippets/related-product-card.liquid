@@ -12,7 +12,29 @@
   {% render 'related-product-card', product: related_product, drawer_id: 'related-product-drawer' %}
 {% endcomment %}
 
-{%- if product != blank -%}
+{%- if product != blank and compact -%}
+  {%- assign open_event = 'open-' | append: drawer_id -%}
+  <style>
+    .siv-pairs { display: flex; align-items: center; gap: 1.5rem; width: 100%; margin-top: 1.5rem; padding: 1.1rem 1.75rem; background: #e6e3dd; border: 0; border-radius: 0.5rem; text-align: left; cursor: pointer; color: inherit; transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.12s cubic-bezier(0.16, 1, 0.3, 1); }
+    .siv-pairs:hover { background: #dedad3; }
+    .siv-pairs:active { transform: scale(0.98); }
+    .siv-pairs__img { width: 3.25rem; height: 4rem; flex: none; display: flex; align-items: center; justify-content: center; }
+    .siv-pairs__img img { max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+    .siv-pairs__text { display: flex; flex-direction: column; gap: 0.2rem; flex: 1; }
+    .siv-pairs__eyebrow { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(var(--color-contrast), 0.6); }
+    .siv-pairs__name { font-size: 1.125rem; font-weight: 600; }
+    .siv-pairs__arrow { font-size: 1.25rem; opacity: 0.5; }
+    @media (prefers-reduced-motion: reduce) { .siv-pairs { transition: none; } }
+  </style>
+  <button type="button" x-data class="siv-pairs related-product-card" @click="$dispatch('{{ open_event }}');" aria-label="Pairs well with {{ product.title | escape }}">
+    <span class="siv-pairs__img">{%- if product.featured_image -%}{{ product.featured_image | image_url: width: 160 | image_tag: alt: '' }}{%- endif -%}</span>
+    <span class="siv-pairs__text">
+      <span class="siv-pairs__eyebrow">Pairs well with</span>
+      <span class="siv-pairs__name">{{ product.title }}</span>
+    </span>
+    <span class="siv-pairs__arrow" aria-hidden="true">&rarr;</span>
+  </button>
+{%- elsif product != blank -%}
   {%- assign open_event = 'open-' | append: drawer_id -%}
   <div class="related-product-card mt-10">
     <h2 class="font-body text-sm uppercase font-bold tracking-wide mb-3">Pairs well with</h2>

@@ -1,0 +1,37 @@
+{%- comment -%} Closing call to action band with an optional disclaimer underneath. {%- endcomment -%}
+<div class="sivp-cta">
+  <div class="wrapper sivp-cta__inner">
+    {%- if section.settings.eyebrow != blank -%}<p class="sivp-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+    {%- if section.settings.heading != blank -%}<h2 class="h2 sivp-cta__title">{{ section.settings.heading }}</h2>{%- endif -%}
+    {%- if section.settings.button_label != blank -%}
+      <a class="btn btn--black sivp-cta__btn" href="{{ section.settings.button_link | default: '#MainContent' }}">{{ section.settings.button_label }}</a>
+    {%- endif -%}
+  </div>
+</div>
+{%- if section.settings.disclaimer != blank -%}
+  <div class="wrapper sivp-cta__disclaimer">{{ section.settings.disclaimer }}</div>
+{%- endif -%}
+
+<style>
+  .siv-pdp-cta { padding-top: 0; margin-top: var(--sivp-space); }
+  .sivp-cta { background: #e6e3dd; padding: var(--sivp-space) 0; }
+  .sivp-cta__inner { text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .sivp-cta__title { max-width: 16ch; text-wrap: balance; margin: 0 0 1.75rem; }
+  .sivp-cta__disclaimer { padding-top: 1.5rem; padding-bottom: 1.5rem; font-size: 0.8125rem; line-height: 1.5; color: rgba(var(--color-contrast), 0.65); }
+</style>
+
+{% schema %}
+{
+  "name": "SIV closing band",
+  "tag": "section",
+  "class": "siv-pdp-sec siv-pdp-cta",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Your Biome Step™" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Make SIV your Biome Step™" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop the serum" },
+    { "type": "text", "id": "button_link", "label": "Button link", "info": "Leave blank to jump back to the top of the page" },
+    { "type": "richtext", "id": "disclaimer", "label": "Disclaimer" }
+  ],
+  "presets": [{ "name": "SIV closing band" }]
+}
+{% endschema %}

@@ -1,0 +1,53 @@
+{%- comment -%} Numbered benefits on a soft band. Built for the serum product page. {%- endcomment -%}
+<div class="wrapper sivp-benefits">
+  {%- if section.settings.eyebrow != blank -%}<p class="sivp-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+  {%- if section.settings.heading != blank -%}<h2 class="h2 sivp-title">{{ section.settings.heading }}</h2>{%- endif -%}
+  <div class="sivp-benefits__grid" data-sivp-stagger>
+    {%- for block in section.blocks -%}
+      <div class="sivp-benefit" {{ block.shopify_attributes }}>
+        <p class="sivp-num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</p>
+        <h3 class="sivp-benefit__title">{{ block.settings.heading }}</h3>
+        <div class="sivp-body">{{ block.settings.text }}</div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+<style>
+  .siv-pdp-sec { --sivp-space: clamp(3.5rem, 6vw, 5.5rem); padding-top: var(--sivp-space); }
+  .siv-pdp-sec--band { margin-top: var(--sivp-space); padding-bottom: var(--sivp-space); }
+  .siv-pdp-sec--pad-bottom { padding-bottom: var(--sivp-space); }
+  .sivp-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(var(--color-contrast), 0.6); margin: 0 0 1rem; }
+  .sivp-title { max-width: 24ch; text-wrap: balance; margin: 0; }
+  .sivp-body { color: rgba(var(--color-contrast), 0.72); line-height: 1.6; text-wrap: pretty; }
+  .sivp-body p + p { margin-top: 0.75rem; }
+  .sivp-num { font-size: 0.75rem; letter-spacing: 0.2em; color: rgba(var(--color-contrast), 0.6); margin: 0 0 1rem; }
+  .siv-pdp-benefits { background: #e6e3dd; }
+  .sivp-benefits__grid { display: grid; gap: 2.5rem; margin-top: 3rem; }
+  .sivp-benefit { border-top: 1px solid rgba(var(--color-contrast), 0.85); padding-top: 1.25rem; }
+  .sivp-benefit__title { font-family: Gothic, sans-serif; text-transform: uppercase; font-size: clamp(1.6rem, 2.2vw, 2.1rem); line-height: 1; margin: 0 0 0.9rem; }
+  @media (min-width: 768px) { .sivp-benefits__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+</style>
+
+{% schema %}
+{
+  "name": "SIV benefits",
+  "tag": "section",
+  "class": "siv-pdp-sec siv-pdp-sec--band siv-pdp-benefits",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What it does for your skin" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Healthy skin starts with a balanced biome" }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading" },
+        { "type": "richtext", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "SIV benefits" }]
+}
+{% endschema %}

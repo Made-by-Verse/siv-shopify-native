@@ -1,0 +1,58 @@
+{%- comment -%} Short product questions: heading on the left, answers on the right. {%- endcomment -%}
+<div class="wrapper sivp-faq">
+  <div class="sivp-faq__intro">
+    {%- if section.settings.eyebrow != blank -%}<p class="sivp-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+    {%- if section.settings.heading != blank -%}<h2 class="h2 sivp-title">{{ section.settings.heading }}</h2>{%- endif -%}
+    {%- if section.settings.intro != blank -%}<div class="sivp-body sivp-faq__lead">{{ section.settings.intro }}</div>{%- endif -%}
+  </div>
+  <div class="sivp-faq__list">
+    {%- for block in section.blocks -%}
+      <details class="sivp-faq__item" {% if forloop.first and section.settings.open_first %}open{% endif %} {{ block.shopify_attributes }}>
+        <summary>{{ block.settings.question }}<span class="sivp-faq__icon" aria-hidden="true"></span></summary>
+        <div class="sivp-body sivp-faq__answer">{{ block.settings.answer }}</div>
+      </details>
+    {%- endfor -%}
+  </div>
+</div>
+
+<style>
+  .sivp-faq { display: grid; gap: 2rem; }
+  .sivp-faq__lead { margin-top: 1rem; max-width: 24rem; }
+  .sivp-faq__lead a { text-decoration: underline; color: inherit; }
+  .sivp-faq__list { border-top: 1px solid rgba(var(--color-contrast), 0.15); }
+  .sivp-faq__item { border-bottom: 1px solid rgba(var(--color-contrast), 0.15); }
+  .sivp-faq__item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.15rem 0.25rem; font-weight: 600; }
+  .sivp-faq__item summary::-webkit-details-marker { display: none; }
+  .sivp-faq__icon { position: relative; width: 0.75rem; height: 0.75rem; flex: none; }
+  .sivp-faq__icon::before, .sivp-faq__icon::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: currentColor; transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+  .sivp-faq__icon::after { transform: rotate(90deg); }
+  .sivp-faq__item[open] .sivp-faq__icon::after { transform: rotate(0deg); }
+  .sivp-faq__answer { padding: 0 0.25rem 1.25rem; max-width: 40rem; }
+  @media (min-width: 1024px) { .sivp-faq { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 4rem; align-items: start; } }
+  @media (prefers-reduced-motion: reduce) { .sivp-faq__icon::before, .sivp-faq__icon::after { transition: none; } }
+</style>
+
+{% schema %}
+{
+  "name": "SIV questions",
+  "tag": "section",
+  "class": "siv-pdp-sec siv-pdp-faq",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Questions" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Good to know" },
+    { "type": "richtext", "id": "intro", "label": "Intro" },
+    { "type": "checkbox", "id": "open_first", "label": "Open the first question", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "richtext", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "SIV questions" }]
+}
+{% endschema %}

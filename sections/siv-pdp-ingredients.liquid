@@ -1,0 +1,68 @@
+{%- comment -%} Ingredients on a dark band, four bordered cards. {%- endcomment -%}
+<div class="wrapper sivp-ingr">
+  <div class="sivp-ingr__head">
+    <div>
+      {%- if section.settings.eyebrow != blank -%}<p class="sivp-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      {%- if section.settings.heading != blank -%}<h2 class="h2 sivp-title">{{ section.settings.heading }}</h2>{%- endif -%}
+    </div>
+    {%- if section.settings.intro != blank -%}<div class="sivp-body sivp-ingr__intro">{{ section.settings.intro }}</div>{%- endif -%}
+  </div>
+  <div class="sivp-ingr__grid" data-sivp-stagger>
+    {%- for block in section.blocks -%}
+      <div class="sivp-ingr__card" {{ block.shopify_attributes }}>
+        {%- if block.settings.label != blank -%}<p class="sivp-ingr__label">{{ block.settings.label }}</p>{%- endif -%}
+        <h3 class="sivp-ingr__name">{{ block.settings.name }}</h3>
+        <div class="sivp-body">{{ block.settings.text }}</div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+<style>
+  .siv-pdp-ingredients { background: #121212; color: #efefe9; --color-contrast: 239, 239, 233; }
+  .sivp-ingr__head { display: grid; gap: 1.5rem; align-items: end; }
+  .sivp-ingr__intro { max-width: 30rem; }
+  .sivp-ingr__grid { display: grid; margin-top: 3rem; border: 1px solid rgba(239, 239, 233, 0.22); }
+  .sivp-ingr__card { padding: 1.75rem; border-top: 1px solid rgba(239, 239, 233, 0.22); }
+  .sivp-ingr__card:first-child { border-top: 0; }
+  .sivp-ingr__label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #d4b87a; margin: 0 0 0.9rem; }
+  .sivp-ingr__name { font-family: Gothic, sans-serif; text-transform: uppercase; font-size: clamp(1.6rem, 2.2vw, 2rem); line-height: 1; margin: 0 0 1rem; overflow-wrap: anywhere; }
+  .siv-pdp-ingredients .sivp-body { font-size: 0.9375rem; }
+  @media (min-width: 768px) {
+    .sivp-ingr__head { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+    .sivp-ingr__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sivp-ingr__card { border-top: 0; border-left: 1px solid rgba(239, 239, 233, 0.22); }
+    .sivp-ingr__card:nth-child(2n+1) { border-left: 0; }
+    .sivp-ingr__card:nth-child(n+3) { border-top: 1px solid rgba(239, 239, 233, 0.22); }
+  }
+  @media (min-width: 1200px) {
+    .sivp-ingr__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .sivp-ingr__card:nth-child(n) { border-top: 0; border-left: 1px solid rgba(239, 239, 233, 0.22); }
+    .sivp-ingr__card:first-child { border-left: 0; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "SIV ingredients (dark)",
+  "tag": "section",
+  "class": "siv-pdp-sec siv-pdp-sec--band siv-pdp-ingredients",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Full ingredient list" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Ingredients" },
+    { "type": "richtext", "id": "intro", "label": "Intro" }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Small label" },
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "richtext", "id": "text", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "SIV ingredients (dark)" }]
+}
+{% endschema %}
