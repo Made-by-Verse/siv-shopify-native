@@ -1,0 +1,284 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "section-home-hero",
+      "blocks": {
+        "video_g8H6wX": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/-32bd-4c6b-9045-8fa3329530b4.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_g8H6wX"
+      ],
+      "settings": {
+        "hero_heading": "The science of your biome",
+        "hero_content": "<p>Every routine should have a biome step. Here is how your skin's living microbiome works, what supports it, and where the biome step fits into the routine you already have.</p>",
+        "show_featured_product": false
+      }
+    },
+    "section_video_gULrAV": {
+      "type": "section-video",
+      "settings": {
+        "video": "shopify://files/videos/siv_leaky_skin_edited (1080p).mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify://shop_images/spores.jpg",
+        "padding_top": "md",
+        "padding_bottom": "md"
+      },
+      "disabled": true
+    },
+    "text_and_image": {
+      "type": "section-text-and-image",
+      "blocks": {
+        "image_8qCbfW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design-9.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_8qCbfW"
+      ],
+      "settings": {
+        "title": "The skin you cannot see",
+        "text": "<p>Your skin is home to trillions of microorganisms, and healthy skin often carries 50 to 100+ different types living in balance. Together they form your skin microbiome, a living layer that helps your skin stay balanced, comfortable and resilient-looking day to day. Differences in temperature, texture, humidity and chemistry from one part of the body to another help decide which microbes live where, and skin science looks at that variety as a marker of skin health, because a varied community is a resilient one.</p><p>Everyone has a skin microbiome, whatever their skin type, so supporting it is a foundation for every routine.</p>",
+        "reverse_order": false,
+        "wide_image": false,
+        "link_text": "",
+        "link": ""
+      }
+    },
+    "siv_builder": {
+      "type": "siv-pdp-benefits",
+      "settings": {
+        "eyebrow": "The biology of resilience",
+        "heading": "Your biome helps build your barrier"
+      },
+      "blocks": {
+        "stat_1": {
+          "type": "benefit",
+          "settings": {
+            "heading": "50 to 100+ microbial types",
+            "text": "<p>Healthy, balanced skin is home to a wide and varied community of microbes living together in balance.</p>"
+          }
+        },
+        "stat_2": {
+          "type": "benefit",
+          "settings": {
+            "heading": "A naturally acidic surface",
+            "text": "<p>Your beneficial bacteria help keep your skin at its naturally slightly acidic pH, around 4.5 to 5.5, which is the environment they need to thrive.</p>"
+          }
+        },
+        "stat_3": {
+          "type": "benefit",
+          "settings": {
+            "heading": "One integrated defense",
+            "text": "<p>Your microbiome signals your skin to make the ceramides and lipids that hold the barrier together, so the barrier and the biome work as one system.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ]
+    },
+    "text_and_image_everyday": {
+      "type": "section-text-and-image",
+      "blocks": {
+        "image_nYGAdP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design-8.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_nYGAdP"
+      ],
+      "settings": {
+        "title": "Everyday life and your biome",
+        "text": "<p>Much of daily life can shift the microbial balance your skin depends on, including harsh cleansers, over-exfoliating, hot water, sun, pollution, stress, travel and the changing seasons. When that balance is off, skin can look and feel less resilient.</p><p>The good news is that balance can recover. Daily support for your biome gives the rest of your routine a resilient-looking foundation to build on.</p>",
+        "reverse_order": true,
+        "wide_image": false,
+        "link_text": "",
+        "link": ""
+      }
+    },
+    "text_and_image_2": {
+      "type": "section-text-and-image",
+      "blocks": {
+        "image_JdfgCc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/spores.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_JdfgCc"
+      ],
+      "settings": {
+        "title": "Made to work with the biome you already have",
+        "text": "<p>The Biome Balancing Serum is spore-based. Its Bacillus spores work with the biome your skin already has and are gentle enough for every day. They help support the conditions your beneficial bacteria need to hold their balance, a little like a conductor helping an orchestra stay in time. Balance is what resilient-looking skin is built on, which is why the serum is made to be a daily step in your routine.</p>",
+        "reverse_order": false,
+        "wide_image": true,
+        "link_text": "View Ingredients",
+        "link": "shopify://products/siv-biome-balancing-serum"
+      },
+      "disabled": true
+    },
+    "siv_routine": {
+      "type": "siv-pdp-routine",
+      "settings": {
+        "image": "shopify://shop_images/Serum_photo.jpg",
+        "eyebrow": "Your Biome Step™",
+        "heading": "Where the biome step fits",
+        "subtext": "Cleanse, tone and moisturize are already part of most routines. The biome step goes after toning and before moisturizing, morning and night, and works alongside the products you already love.",
+        "note": "<p>Avoid the eye area. If your skin is very sensitive, patch test first, and stop use if irritation occurs. If serum gets in your eyes, rinse with water.</p>"
+      },
+      "blocks": {
+        "step_1": {
+          "type": "routine_step",
+          "settings": {
+            "label": "Cleanse",
+            "highlight": false
+          }
+        },
+        "step_2": {
+          "type": "routine_step",
+          "settings": {
+            "label": "Tone",
+            "highlight": false
+          }
+        },
+        "step_3": {
+          "type": "routine_step",
+          "settings": {
+            "label": "Biome Balancing Serum",
+            "highlight": true
+          }
+        },
+        "step_4": {
+          "type": "routine_step",
+          "settings": {
+            "label": "Moisturize",
+            "highlight": false
+          }
+        },
+        "how_1": {
+          "type": "how_step",
+          "settings": {
+            "title": "Shake well",
+            "text": "Give the bottle a good shake to mix the spores evenly through the serum."
+          }
+        },
+        "how_2": {
+          "type": "how_step",
+          "settings": {
+            "title": "Apply 1 to 3 drops",
+            "text": "Use the precision dropper on freshly cleansed or toned skin."
+          }
+        },
+        "how_3": {
+          "type": "how_step",
+          "settings": {
+            "title": "Pat it in",
+            "text": "Gently press into dry or damp skin."
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "how_1",
+        "how_2",
+        "how_3"
+      ]
+    },
+    "section_featured_product_zGxKPB": {
+      "type": "section-featured-product",
+      "blocks": {
+        "feature_point_1": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Supports Balance",
+            "text": "Helps support the conditions your beneficial bacteria need to stay in balance, so skin looks and feels more even."
+          }
+        },
+        "feature_point_2": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Nourishes Your Biome",
+            "text": "Gentle daily support for the living foundation your skin is built on, for a healthy-looking glow."
+          }
+        },
+        "feature_point_3": {
+          "type": "feature_point",
+          "settings": {
+            "heading": "Builds Resilience",
+            "text": "Helps support the look and feel of resilient skin through the everyday stressors that wear the biome down."
+          }
+        }
+      },
+      "block_order": [
+        "feature_point_1",
+        "feature_point_2",
+        "feature_point_3"
+      ],
+      "settings": {
+        "heading": "Meet your Biome Step™",
+        "product": "siv-biome-balancing-serum",
+        "description": "<p>A spore-based, microbiome-supporting serum that helps support the look and feel of balanced, resilient-looking skin. It is the foundational daily step for every routine and every skin type.</p>",
+        "button_text": "Shop the serum",
+        "color_scheme": ""
+      },
+      "disabled": true
+    },
+    "siv_cta": {
+      "type": "siv-pdp-cta",
+      "settings": {
+        "eyebrow": "Everyone has a biome",
+        "heading": "What's your Biome Step™?",
+        "button_label": "Shop the serum",
+        "button_link": "/products/siv-biome-balancing-serum",
+        "disclaimer": "<p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
+      }
+    },
+    "section_featured_posts": {
+      "type": "section-featured-posts",
+      "settings": {
+        "title": "Stay Informed with SIV",
+        "button_text": "View Product"
+      },
+      "disabled": true
+    }
+  },
+  "order": [
+    "hero",
+    "section_video_gULrAV",
+    "text_and_image",
+    "siv_builder",
+    "text_and_image_everyday",
+    "text_and_image_2",
+    "siv_routine",
+    "section_featured_product_zGxKPB",
+    "siv_cta",
+    "section_featured_posts"
+  ]
+}

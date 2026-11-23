@@ -42,7 +42,7 @@
   class="ai-custom-liquid-{{ ai_gen_id }}"
   {{ block.shopify_attributes }}
 >
-  {{ block.settings.custom_liquid }}
+  {%- if page.handle == 'faqs' and block.settings.custom_liquid contains 'application/ld+json' -%}{{ block.settings.custom_liquid | split: '<script type="application/ld+json">' | first }}{%- render 'faq-schema' -%}{%- else -%}{{ block.settings.custom_liquid }}{%- endif -%}
 </custom-liquid-{{ ai_gen_id }}>
 
 {% schema %}
