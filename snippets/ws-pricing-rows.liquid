@@ -12,7 +12,7 @@
     {%- if ws_line == blank -%}{%- continue -%}{%- endif -%}
     {%- if ws_line contains '$' and ws_line contains ':' -%}
       {%- assign ws_parts = ws_line | split: ':' -%}
-      {%- assign ws_price = ws_parts | last | remove: 'USD' | replace: '  ', ' ' | strip -%}
+      {%- assign ws_price = ws_parts | last | remove: 'USD' | replace: '.00', '' | replace: '  ', ' ' | strip -%}
       <li class="ws-tier__row">
         <span class="ws-tier__qty">{{ ws_parts | first | strip }}</span>
         <span class="ws-tier__price">{{ ws_price }}</span>
