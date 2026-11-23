@@ -37,9 +37,10 @@
     {{ content_for_header }}
 
     
+    {%- if template.suffix contains 'biome-balance-within' -%}{% render 'bbw-page-polish' %}{%- endif -%}
   </head>
 
-  <body class="font-body text-contrast bg-primary">
+  <body class="font-body text-contrast bg-primary{% if template.suffix contains 'biome-balance-within' %} page-bbw{% endif %}">
     <a class="sr-only" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>

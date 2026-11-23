@@ -125,7 +125,8 @@
           "settings": {
             "heading": "",
             "text": ""
-          }
+          },
+          "disabled": true
         }
       },
       "block_order": [
@@ -325,7 +326,8 @@
         "heading": "Related Products",
         "description": "<p>Discover our other products that work together to support your skin's health and balance.</p>",
         "color_scheme": ""
-      }
+      },
+      "disabled": true
     }
   },
   "order": [

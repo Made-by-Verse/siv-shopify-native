@@ -1,0 +1,134 @@
+{%- comment -%}
+  Page-level layout, spacing and motion for the Biome Balance Within product page only.
+  Rendered from layout/theme.liquid when template.suffix == 'biome-balance-within'.
+{%- endcomment -%}
+<script>
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('bbw-motion');
+    function init() {
+      var main = document.getElementById('MainContent');
+      if (!main) return;
+      var staggerSel = [
+        '[id$="__key_points"] .wrapper > div:nth-child(2)',
+        '[id$="__ingredients"] .wrapper > .grid > div:nth-child(2)'
+      ].join(',');
+      main.querySelectorAll(staggerSel).forEach(function (c) {
+        c.setAttribute('data-bbw-stagger', '');
+        Array.prototype.forEach.call(c.children, function (el, i) {
+          el.setAttribute('data-bbw-reveal', '');
+          el.style.setProperty('--bbw-delay', Math.min(i, 6) * 80 + 'ms');
+        });
+      });
+      main.querySelectorAll('.shopify-section:not([id$="__main"]) .wrapper > *').forEach(function (el) {
+        if (el.hasAttribute('data-bbw-stagger')) return;
+        if (el.querySelector('[data-bbw-stagger]')) {
+          Array.prototype.forEach.call(el.children, function (ch) {
+            if (!ch.hasAttribute('data-bbw-stagger')) ch.setAttribute('data-bbw-reveal', '');
+          });
+          return;
+        }
+        el.setAttribute('data-bbw-reveal', '');
+      });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      main.querySelectorAll('[data-bbw-reveal]').forEach(function (el) { io.observe(el); });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+  })();
+</script>
+<style>
+  .page-bbw {
+    --bbw-ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --bbw-space: clamp(3.5rem, 6vw, 5.5rem);
+    --bbw-band: 228, 228, 221;
+  }
+
+  /* One spacing rhythm: sections own their padding so bands and gaps stay even */
+  .page-bbw #MainContent .section { margin-top: 0; margin-bottom: 0; padding-top: var(--bbw-space); padding-bottom: 0; }
+  .page-bbw #MainContent [id$="__main"] .section,
+  .page-bbw #MainContent [id$="__main"].section { padding-top: 2.5rem; }
+  .page-bbw #MainContent [id$="__section_text_and_image_YXW3JW"].section { padding-bottom: var(--bbw-space); }
+
+  /* Quiet the theme's fade-in / fade-out so content stays put once read */
+  .page-bbw #MainContent [x-intersect\:enter] { opacity: 1 !important; transition: none !important; }
+  .page-bbw #MainContent [x-intersect\.half\:enter] > span { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .page-bbw #MainContent h2, .page-bbw #MainContent .h2 { transition: none; }
+
+  /* Single, quick reveal: rises in once, then stays */
+  .bbw-motion .page-bbw [data-bbw-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s var(--bbw-ease) var(--bbw-delay, 0ms), transform 0.6s var(--bbw-ease) var(--bbw-delay, 0ms);
+  }
+  .bbw-motion .page-bbw [data-bbw-reveal].is-in { opacity: 1; transform: none; }
+
+  /* Press feedback on buttons */
+  .page-bbw #MainContent .btn, .page-bbw #MainContent button[type="submit"] { transition-property: color, background-color, border-color, transform; transition-duration: 0.12s; transition-timing-function: var(--bbw-ease); }
+  .page-bbw #MainContent .btn:active, .page-bbw #MainContent button[type="submit"]:active { transform: scale(0.97); }
+
+  /* What it does: tighter header, even cards */
+  .page-bbw [id$="__key_points"] .wrapper > div:first-child { align-items: start; margin-bottom: 0.5rem; }
+  .page-bbw [id$="__key_points"] .wrapper > div:first-child > .prose { padding-top: 0.75rem; }
+  .page-bbw [id$="__key_points"] .wrapper > div:nth-child(2) { gap: 2rem 1.5rem; }
+
+  /* How it works: tonal band to break the scroll */
+  .page-bbw [id$="__section_text_and_image_YXW3JW"] { background: rgb(var(--bbw-band)); }
+  .page-bbw [id$="__section_text_and_image_YXW3JW"] .wrapper { row-gap: 2.5rem; column-gap: 3rem; align-items: center; }
+  .page-bbw [id$="__section_text_and_image_YXW3JW"] .wrapper > div:last-child { max-width: 30rem; justify-content: center; }
+  .page-bbw [id$="__section_text_and_image_YXW3JW"] .prose.sticky { position: static; }
+  .page-bbw [id$="__section_text_and_image_YXW3JW"] h2 { max-width: none; }
+
+  /* What is inside: ingredient cards, 4 across on wide screens, 2 on tablet, 1 on phone */
+  .page-bbw [id$="__ingredients"] .wrapper > .grid { grid-template-columns: 1fr; gap: 2.5rem; margin-bottom: 0; }
+  .page-bbw [id$="__ingredients"] .wrapper > .grid > div:first-child .sticky { position: static; }
+  .page-bbw [id$="__ingredients"] .wrapper > .grid > div:nth-child(2) { grid-column: auto; gap: 3rem 2rem; }
+  .page-bbw [id$="__ingredients"] .wrapper > .grid > div:nth-child(2) > div { grid-template-columns: 1fr; gap: 1.25rem; align-content: start; }
+  .page-bbw [id$="__ingredients"] .wrapper > .grid > div:nth-child(2) > div > div:first-child { aspect-ratio: 3 / 2; }
+  .page-bbw [id$="__ingredients"] .wrapper > .grid > div:nth-child(2) > div > div:first-child img:last-child { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .page-bbw [id$="__ingredients"] .prose { max-width: 34rem; text-wrap: pretty; }
+  .page-bbw [id$="__ingredients"] .prose li { text-wrap: pretty; }
+  @media (min-width: 768px) {
+    .page-bbw [id$="__ingredients"] .wrapper > .grid > div:nth-child(2) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 1200px) {
+    .page-bbw [id$="__ingredients"] .wrapper > .grid > div:nth-child(2) { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3rem 1.5rem; }
+    .page-bbw [id$="__ingredients"] h3 { font-size: 1rem; line-height: 1.35; }
+    .page-bbw [id$="__ingredients"] .prose { font-size: 0.9375rem; }
+  }
+
+  /* Better together: heading and story read top to bottom beside the image */
+  .page-bbw [id$="__section_text_and_image_Xe7tqB"] .wrapper { align-items: center; column-gap: 4rem; }
+  .page-bbw [id$="__section_text_and_image_Xe7tqB"] .wrapper > div:first-child { justify-content: center; gap: 2rem; }
+  .page-bbw [id$="__section_text_and_image_Xe7tqB"] .wrapper > div:first-child > .flex-1 { flex: none; }
+  .page-bbw [id$="__section_text_and_image_Xe7tqB"] .wrapper > div:first-child .sticky { position: static; }
+  .page-bbw [id$="__section_text_and_image_Xe7tqB"] .prose { max-width: 34rem; }
+
+  /* FDA statement: a clear footnote right after the FAQ */
+  .page-bbw [id$="__section_paragraph_MeRTEk"].section,
+  .page-bbw [id$="__section_paragraph_MeRTEk"] .section { padding-top: 2rem; padding-bottom: var(--bbw-space); }
+  .page-bbw [id$="__section_paragraph_MeRTEk"] .wrapper > div { grid-column: 1 / -1; max-width: 48rem; font-size: 0.8125rem; line-height: 1.5; color: rgba(var(--color-contrast), 0.65); }
+  .page-bbw [id$="__section_paragraph_MeRTEk"] h6, .page-bbw [id$="__section_paragraph_MeRTEk"] em { font-style: normal; font-size: inherit; }
+
+
+  /* Top of page: larger gallery, buy column aligned edge to edge */
+  .page-bbw [id$="__main"] .product-details > .max-w-xl { max-width: none; margin: 0; }
+  .page-bbw [id$="__main"] .ws-pricing--solo { max-width: none; }
+  .page-bbw [id$="__main"] .product-details .h2 { font-size: clamp(2.25rem, 3.4vw, 3.25rem); }
+  @media (min-width: 1024px) {
+    .page-bbw [id$="__main"] > .wrapper { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: 4rem; align-items: start; }
+  }
+
+  @media (max-width: 767px) {
+    .page-bbw { --bbw-space: 3.5rem; }
+    .page-bbw [id$="__section_text_and_image_Xe7tqB"] .wrapper { row-gap: 2rem; }
+  }
+</style>
