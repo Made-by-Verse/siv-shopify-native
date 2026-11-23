@@ -76,8 +76,9 @@
   .page-bbw #MainContent .btn:active, .page-bbw #MainContent button[type="submit"]:active { transform: scale(0.97); }
 
   /* What it does: tighter header, even cards */
-  .page-bbw [id$="__key_points"] .wrapper > div:first-child { align-items: start; margin-bottom: 0.5rem; }
-  .page-bbw [id$="__key_points"] .wrapper > div:first-child > .prose { padding-top: 0.75rem; }
+  .page-bbw [id$="__key_points"] .wrapper > div:first-child { display: block; margin-bottom: 1rem; }
+  .page-bbw #MainContent [id$="__key_points"].section { padding-bottom: var(--bbw-space); }
+  .page-bbw [id$="__key_points"] .wrapper > div:first-child > .prose { max-width: 40rem; margin-top: 1.25rem; padding-top: 0; }
   .page-bbw [id$="__key_points"] .wrapper > div:nth-child(2) { gap: 2rem 1.5rem; }
 
   /* How it works: tonal band to break the scroll */
@@ -86,6 +87,16 @@
   .page-bbw [id$="__section_text_and_image_YXW3JW"] .wrapper > div:last-child { max-width: 30rem; justify-content: center; }
   .page-bbw [id$="__section_text_and_image_YXW3JW"] .prose.sticky { position: static; }
   .page-bbw [id$="__section_text_and_image_YXW3JW"] h2 { max-width: none; }
+  .page-bbw [id$="__section_text_and_image_YXW3JW"] .wrapper > div:nth-child(2) { aspect-ratio: 1650 / 1275; background: #fff; }
+  .page-bbw [id$="__section_text_and_image_YXW3JW"] .wrapper > div:nth-child(2) img:last-child { object-fit: contain; }
+
+  /* How it works: heading and description beside a right-sized diagram */
+  @media (min-width: 1024px) {
+    .page-bbw [id$="__section_text_and_image_YXW3JW"] .wrapper { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "head img" "text img"; column-gap: 4rem; row-gap: 1.5rem; align-items: start; }
+    .page-bbw [id$="__section_text_and_image_YXW3JW"] .wrapper > div:first-child { grid-area: head; align-self: end; }
+    .page-bbw [id$="__section_text_and_image_YXW3JW"] .wrapper > div:nth-child(2) { grid-area: img; align-self: center; }
+    .page-bbw [id$="__section_text_and_image_YXW3JW"] .wrapper > div:last-child { grid-area: text; align-self: start; max-width: 32rem; }
+  }
 
   /* What is inside: ingredient cards, 4 across on wide screens, 2 on tablet, 1 on phone */
   .page-bbw [id$="__ingredients"] .wrapper > .grid { grid-template-columns: 1fr; gap: 2.5rem; margin-bottom: 0; }
