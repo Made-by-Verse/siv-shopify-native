@@ -1,39 +1,51 @@
-<div class="wrapper max-w-2xl py-16 md:py-32 text-center">
-  {%- for block in section.blocks -%}
-    {%- case block.type -%}
-      {%- when '@app' -%}
-        {% render block %}
-      {%- when 'heading' -%}
-        <h2
-          class="text-base font-body font-semibold uppercase tracking-wide mb-4"
-          {{ block.shopify_attributes }}
-        >
-          {{ block.settings.heading }}
-        </h2>
-      {%- when 'paragraph' -%}
-        <p
-          class="h2 opacity-100 mb-10"
-          {{ block.shopify_attributes }}
-        >
-          {{ block.settings.text }}
-        </p>
-      {%- when 'email_form' -%}
-        <div class="max-w-xl mx-auto" {{ block.shopify_attributes }}>
-          <iframe
-            src="https://api.leadconnectorhq.com/widget/form/9zPBwCeHYvEs7hxla0ij"
-            style="width:100%;min-height:442px;border:none;border-radius:8px"
-            id="inline-9zPBwCeHYvEs7hxla0ij"
-            data-layout="{'id':'INLINE'}"
-            data-form-name="[SIV] Newsletter"
-            data-height="442"
-            data-layout-iframe-id="inline-9zPBwCeHYvEs7hxla0ij"
-            data-form-id="9zPBwCeHYvEs7hxla0ij"
-            title="[SIV] Newsletter">
-          </iframe>
-          <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
-        </div>
-    {%- endcase -%}
-  {%- endfor -%}
+<style>
+  .siv-nl { padding-top: 3.5rem; padding-bottom: 3.5rem; display: grid; gap: 2rem; text-align: left; }
+  .siv-nl__eyebrow { font-size: 0.875rem; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  .siv-nl__title { font-size: clamp(2rem, 3.6vw, 3rem); line-height: 1.02; text-wrap: balance; margin: 0; }
+  .siv-nl__form { width: 100%; max-width: 34rem; }
+  @media (min-width: 1024px) {
+    .siv-nl { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 4rem; align-items: center; padding-top: 4.5rem; padding-bottom: 4.5rem; }
+    .siv-nl__form { justify-self: end; }
+  }
+</style>
+<div class="wrapper siv-nl">
+  <div class="siv-nl__text">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'heading' -%}
+          <h2 class="siv-nl__eyebrow font-body font-semibold uppercase" {{ block.shopify_attributes }}>
+            {{ block.settings.heading }}
+          </h2>
+        {%- when 'paragraph' -%}
+          <p class="h2 siv-nl__title" {{ block.shopify_attributes }}>
+            {{ block.settings.text }}
+          </p>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+  <div class="siv-nl__form">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when '@app' -%}
+          {% render block %}
+        {%- when 'email_form' -%}
+          <div {{ block.shopify_attributes }}>
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/9zPBwCeHYvEs7hxla0ij"
+              style="width:100%;min-height:442px;border:none;border-radius:8px"
+              id="inline-9zPBwCeHYvEs7hxla0ij"
+              data-layout="{'id':'INLINE'}"
+              data-form-name="[SIV] Newsletter"
+              data-height="442"
+              data-layout-iframe-id="inline-9zPBwCeHYvEs7hxla0ij"
+              data-form-id="9zPBwCeHYvEs7hxla0ij"
+              title="[SIV] Newsletter">
+            </iframe>
+            <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
 </div>
 
 {% schema %}
