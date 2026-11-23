@@ -1,0 +1,275 @@
+{%- comment -%} SIV Science page: full page design (hero to blog). Header and footer come from the theme. {%- endcomment -%}
+{%- assign serum = section.settings.product -%}
+{%- assign serum_url = '/products/siv-biome-balancing-serum' -%}
+{%- if serum != blank -%}{%- assign serum_url = serum.url -%}{%- endif -%}
+<div class="sivsci">
+
+  <header class="sivsci-hero">
+    {%- if section.settings.hero_image != blank -%}
+      {{ section.settings.hero_image | image_url: width: 2000 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '800, 1200, 1600, 2000', sizes: '100vw', class: 'sivsci-hero__img', alt: section.settings.hero_image.alt }}
+    {%- endif -%}
+    <div class="sivsci-hero__in sivsci-wrap">
+      <p class="sivsci-eyebrow">The science of your biome</p>
+      <h1 class="sivsci-h1">Every routine should have a biome step.</h1>
+      <p class="sivsci-hero__p">Your skin is home to a living microbiome, and it is the foundation healthy-looking, resilient skin is built on. This page is a short walk through how that foundation works, what supports it, and where the biome step fits in the routine you already have.</p>
+      <div class="sivsci-ctas">
+        <a class="sivsci-btn sivsci-btn--solid" href="#sivsci-product">Shop the Biome Balancing Serum</a>
+        <a class="sivsci-btn sivsci-btn--ghost" href="#sivsci-fits">What's a biome step?</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="sivsci-sec">
+    <div class="sivsci-wrap sivsci-split">
+      <div>
+        <p class="sivsci-eyebrow">Your skin is an ecosystem</p>
+        <h2 class="sivsci-h2">The skin you cannot see.</h2>
+      </div>
+      <div>
+        <p class="sivsci-lede">Your skin is home to trillions of microorganisms, and healthy skin often carries 50 to 100+ different types living in balance. Together they form your skin microbiome, a living layer that helps your skin stay balanced, comfortable, and resilient-looking day to day.</p>
+        <p class="sivsci-copy">Differences in temperature, texture, humidity, and chemistry from one part of the body to another help decide which microbes live where, and in skin science that variety is used as a marker of skin health, because a varied community is a resilient one.</p>
+        <div class="sivsci-callout">Here is the part most people never hear. Everyone has one. It is not a feature of sensitive skin or reactive skin. It is a feature of skin. Which means supporting it is not a fix for a few. It is a foundation for everyone.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sivsci-sec sivsci-stone">
+    <div class="sivsci-wrap">
+      <div class="sivsci-split">
+        <div>
+          <p class="sivsci-eyebrow">The biology of resilience</p>
+          <h2 class="sivsci-h2">A builder, not a passenger.</h2>
+        </div>
+        <div>
+          <p class="sivsci-lede">Your microbiome does more than sit on the surface. Your beneficial bacteria help keep your skin at its naturally slightly acidic pH, around 4.5 to 5.5, which is exactly the environment they need to thrive.</p>
+          <p class="sivsci-copy">They also signal your skin to make the ceramides and lipids that hold the barrier together. In other words, a balanced biome helps build the very barrier your whole routine depends on. The barrier and the biome are one integrated defense, not two separate systems, and that is what a biome step supports.</p>
+        </div>
+      </div>
+      <div class="sivsci-stats">
+        <div class="sivsci-stat"><div class="sivsci-stat__n">50 to 100+</div><div class="sivsci-stat__l">microbial types living in balance on healthy skin</div></div>
+        <div class="sivsci-stat"><div class="sivsci-stat__n">pH 4.5 to 5.5</div><div class="sivsci-stat__l">the naturally acidic surface your beneficial bacteria help maintain</div></div>
+        <div class="sivsci-stat"><div class="sivsci-stat__n">One</div><div class="sivsci-stat__l">integrated defense: barrier and biome work as a single system</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sivsci-sec">
+    <div class="sivsci-wrap sivsci-split">
+      <div>
+        <p class="sivsci-eyebrow">Everyday life</p>
+        <h2 class="sivsci-h2">Your routine can wear down your biome.</h2>
+      </div>
+      <div>
+        <p class="sivsci-lede">So much of daily life can disrupt the microbial balance your skin depends on. Harsh or alkaline cleansers, over-exfoliating, hot water, UV, pollution, stress, travel, and the changing seasons all play a part. When that balance is off, skin can look and feel less resilient.</p>
+        <p class="sivsci-copy">The reassuring part is that this is reversible. Reduce what wears the biome down, support it daily, and balance can recover. A biome step helps support that foundation, so the rest of your routine has resilient-looking skin to build on.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sivsci-sec sivsci-ink">
+    <div class="sivsci-wrap sivsci-spores">
+      <div>
+        <p class="sivsci-eyebrow">The spore-based difference</p>
+        <h2 class="sivsci-h2">Made to work with the biome you already have.</h2>
+        <p class="sivsci-lede sivsci-mt">The Biome Balancing Serum is spore-based. Its Bacillus spores work with the biome your skin already has, gently enough for every day.</p>
+        <p class="sivsci-copy">Rather than overwhelming the skin, they help support the conditions your beneficial bacteria need to self-regulate and hold their balance, a little like a conductor helping an orchestra stay in time. Balance is what resilient-looking skin is built on, and that is what makes this a daily support step rather than an occasional fix.</p>
+        <a class="sivsci-link" href="{{ serum_url }}">View ingredients</a>
+      </div>
+      <div>
+        <svg class="sivsci-orch" viewBox="0 0 400 400" role="img" aria-label="A balanced community of microbes arranged around a central point">
+          <defs><radialGradient id="sivsci-g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#7E9166" stop-opacity=".55"/><stop offset="1" stop-color="#7E9166" stop-opacity="0"/></radialGradient></defs>
+          <circle cx="200" cy="200" r="190" fill="url(#sivsci-g)"/>
+          <g fill="none" stroke="#AEBE95" stroke-opacity=".35" stroke-width="1"><circle cx="200" cy="200" r="70"/><circle cx="200" cy="200" r="115"/><circle cx="200" cy="200" r="160"/></g>
+          <g fill="#AEBE95">
+            <circle cx="200" cy="130" r="6"/><circle cx="260" cy="165" r="5"/><circle cx="260" cy="235" r="6"/><circle cx="200" cy="270" r="5"/><circle cx="140" cy="235" r="6"/><circle cx="140" cy="165" r="5"/>
+            <circle cx="200" cy="85" r="4"/><circle cx="282" cy="120" r="5"/><circle cx="315" cy="200" r="4"/><circle cx="282" cy="280" r="5"/><circle cx="200" cy="315" r="4"/><circle cx="118" cy="280" r="5"/><circle cx="85" cy="200" r="4"/><circle cx="118" cy="120" r="5"/>
+            <circle cx="200" cy="40" r="3"/><circle cx="313" cy="87" r="3"/><circle cx="360" cy="200" r="3"/><circle cx="313" cy="313" r="3"/><circle cx="200" cy="360" r="3"/><circle cx="87" cy="313" r="3"/><circle cx="40" cy="200" r="3"/><circle cx="87" cy="87" r="3"/>
+          </g>
+          <circle cx="200" cy="200" r="16" fill="#FBFAF6"/>
+          <circle cx="200" cy="200" r="26" fill="none" stroke="#FBFAF6" stroke-width="1.5" stroke-opacity=".6"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="sivsci-sec" id="sivsci-fits">
+    <div class="sivsci-wrap sivsci-split">
+      <div>
+        <p class="sivsci-eyebrow">The biome step</p>
+        <h2 class="sivsci-h2">One step. Right where it belongs.</h2>
+        <p class="sivsci-copy sivsci-mt">Cleanse, tone, and moisturize are already understood. Biome is the step that completes the routine, and SIV is how you take it. Apply the serum after toning and before moisturizing, morning and night. There is no routine to replace. It works alongside everything you already love.</p>
+      </div>
+      <div>
+        <ol class="sivsci-ladder">
+          <li><span class="sivsci-ladder__k">01</span><span>Cleanse</span><span class="sivsci-ladder__note">Removes</span></li>
+          <li><span class="sivsci-ladder__k">02</span><span>Tone</span><span class="sivsci-ladder__note">Preps</span></li>
+          <li class="is-biome"><span class="sivsci-ladder__k">03</span><span>Biome</span><span class="sivsci-ladder__note">Your biome step™ · <b>SIV</b></span></li>
+          <li><span class="sivsci-ladder__k">04</span><span>Moisturize</span><span class="sivsci-ladder__note">Seals</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="sivsci-sec sivsci-stone sivsci-sec--tight">
+    <div class="sivsci-wrap">
+      <p class="sivsci-eyebrow">What a biome step supports</p>
+      <div class="sivsci-cards">
+        <div class="sivsci-card"><h3 class="sivsci-h3">Supports balance</h3><p>Helps support the conditions your beneficial bacteria need to stay in balance, so skin looks and feels more even.</p></div>
+        <div class="sivsci-card"><h3 class="sivsci-h3">Nourishes your biome</h3><p>Daily, gentle support for the living foundation your skin is built on, for a healthy-looking glow.</p></div>
+        <div class="sivsci-card"><h3 class="sivsci-h3">Builds resilience</h3><p>Helps support the look and feel of resilient skin that holds up to the everyday stressors that wear the biome down.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sivsci-product" id="sivsci-product">
+    <div class="sivsci-product__media">
+      {%- if section.settings.product_image != blank -%}
+        {{ section.settings.product_image | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1600', sizes: '(min-width: 820px) 50vw, 100vw', alt: section.settings.product_image.alt }}
+      {%- endif -%}
+    </div>
+    <div class="sivsci-product__pin">
+      <p class="sivsci-eyebrow">Meet your biome step™</p>
+      <h2 class="sivsci-h2">Biome Balancing Serum</h2>
+      <p class="sivsci-product__tag">Your daily biome step™.</p>
+      <p class="sivsci-copy">A spore-based, microbiome-supporting serum that helps support the look and feel of balanced, resilient-looking skin. The foundational daily step for every routine and every skin.</p>
+      {%- if serum != blank -%}<p class="sivsci-product__price">From {{ serum.price_min | money_without_trailing_zeros }}</p>{%- endif -%}
+      <div class="sivsci-ctas"><a class="sivsci-btn sivsci-btn--solid" href="{{ serum_url }}">Shop the serum</a></div>
+      <p class="sivsci-disclaimer">Cosmetic product. Helps support the look and feel of healthy, resilient skin. Not intended to diagnose, treat, cure, or prevent any disease.</p>
+    </div>
+  </section>
+
+  <section class="sivsci-sec sivsci-ink">
+    <div class="sivsci-wrap sivsci-closing">
+      <div>
+        <p class="sivsci-eyebrow">Made for every skin</p>
+        <h2 class="sivsci-h2 sivsci-h2--xl">What's your biome step<span class="sivsci-tm">™</span>?</h2>
+      </div>
+      <div>
+        <p class="sivsci-copy sivsci-copy--lg">Everyone has a biome, so every routine should have a biome step. Every skin type, every age, every routine. Wherever your skin is today, it has a foundation worth supporting.</p>
+        <div class="sivsci-every"><span>Every age</span><span>Every tone</span><span>Every type</span><span>Every routine</span><span>Every day</span></div>
+        <div class="sivsci-ctas"><a class="sivsci-btn sivsci-btn--solid" href="#sivsci-product">Add your biome step</a></div>
+      </div>
+    </div>
+  </section>
+
+  {%- assign sivsci_blog = blogs[section.settings.blog_handle] -%}
+  {%- if section.settings.show_blog and sivsci_blog.articles_count > 0 -%}
+  <section class="sivsci-sec">
+    <div class="sivsci-wrap">
+      <p class="sivsci-eyebrow">From the blog</p>
+      <h2 class="sivsci-h2 sivsci-h2--sm">Go deeper</h2>
+      <div class="sivsci-posts">
+        {%- for article in sivsci_blog.articles limit: 3 -%}
+          <a class="sivsci-post" href="{{ article.url }}">
+            <div class="sivsci-post__d">{{ article.published_at | date: '%B %-d, %Y' }}</div>
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.excerpt_or_content | strip_html | truncatewords: 12 }}</p>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+</div>
+
+<style>
+  .sivsci { --ink:#141413; --ink-2:#2a2a28; --paper:#FBFAF6; --stone:#F0ECE3; --sage:#5C6D48; --sage-mid:#7E9166; --sage-light:#AEBE95; --sage-tint:#E8ECDF; --muted:#6b6862; --rule:#D9D4C8; background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.55; }
+  .sivsci p { margin: 0; }
+  .sivsci a { color: inherit; }
+  .sivsci-wrap { max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px); }
+  .sivsci-h1, .sivsci-h2, .sivsci-h3 { margin: 0; font-family: Gothic, Impact, 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 0.95; letter-spacing: 0.005em; text-wrap: balance; }
+  .sivsci-eyebrow { font-size: 11.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-mid); }
+  .sivsci-hero { position: relative; background: var(--ink); color: var(--paper); overflow: hidden; min-height: 560px; display: grid; align-items: end; }
+  .sivsci-hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 30%; opacity: 0.85; }
+  .sivsci-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(20,20,19,.92) 0%, rgba(20,20,19,.75) 45%, rgba(20,20,19,.15) 100%); }
+  .sivsci-hero__in { position: relative; z-index: 1; padding-top: 72px; padding-bottom: 64px; width: 100%; }
+  .sivsci-hero__in > * { max-width: 760px; }
+  .sivsci-hero .sivsci-eyebrow { color: var(--sage-light); }
+  .sivsci-h1 { font-size: clamp(46px, 7.2vw, 96px); margin: 18px 0 22px; color: var(--paper); }
+  .sivsci-hero__p { font-size: 17px; line-height: 1.6; max-width: 56ch; color: rgba(251,250,246,.86); }
+  .sivsci-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+  .sivsci-btn { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 15px 24px; text-decoration: none; border: 1.5px solid currentColor; transition: background-color .15s, color .15s, border-color .15s; }
+  .sivsci-btn--solid { background: var(--paper); color: var(--ink) !important; border-color: var(--paper); }
+  .sivsci-btn--solid:hover { background: var(--sage-light); border-color: var(--sage-light); }
+  .sivsci-btn--ghost { color: var(--paper) !important; }
+  .sivsci-btn--ghost:hover { background: rgba(255,255,255,.12); }
+  .sivsci-btn:focus-visible, .sivsci-link:focus-visible { outline: 3px solid var(--sage-light); outline-offset: 3px; }
+  .sivsci-sec { padding: 84px 0; }
+  .sivsci-sec--tight { padding-top: 64px; }
+  .sivsci-split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); align-items: start; }
+  .sivsci-h2 { font-size: clamp(38px, 4.6vw, 60px); margin-top: 16px; }
+  .sivsci-h2--xl { font-size: clamp(44px, 6.5vw, 88px); }
+  .sivsci-h2--sm { font-size: clamp(34px, 4vw, 52px); margin-top: 14px; }
+  .sivsci-lede { font-size: 18px; line-height: 1.6; max-width: 62ch; }
+  .sivsci-copy { font-size: 16.5px; line-height: 1.65; max-width: 60ch; margin-top: 18px !important; }
+  .sivsci-copy--lg { font-size: 18px; margin-top: 0 !important; }
+  .sivsci-mt { margin-top: 22px !important; }
+  .sivsci-callout { margin-top: 26px; padding: 22px 26px; background: var(--sage-tint); border-left: 3px solid var(--sage); font-size: 16.5px; line-height: 1.6; max-width: 60ch; }
+  .sivsci-stone { background: var(--stone); }
+  .sivsci-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 56px; }
+  .sivsci-stat { background: var(--paper); padding: 30px 28px; }
+  .sivsci-stat__n { font-family: Gothic, Impact, sans-serif; font-size: clamp(40px, 4.5vw, 58px); line-height: 1; color: var(--sage); text-transform: uppercase; }
+  .sivsci-stat__l { margin-top: 10px; font-size: 14px; line-height: 1.5; color: var(--ink-2); max-width: 28ch; }
+  .sivsci-ink { background: var(--ink); color: var(--paper); }
+  .sivsci-ink .sivsci-eyebrow { color: var(--sage-light); }
+  .sivsci-ink .sivsci-h2 { color: var(--paper); }
+  .sivsci-ink .sivsci-copy, .sivsci-ink .sivsci-lede { color: rgba(251,250,246,.86); }
+  .sivsci-spores { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+  .sivsci-orch { display: block; aspect-ratio: 1 / 1; max-width: 420px; width: 100%; margin: 0 auto; }
+  .sivsci-link { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-bottom: 1.5px solid currentColor; padding-bottom: 3px; display: inline-block; margin-top: 26px; }
+  .sivsci-ladder { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .sivsci-ladder li { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--rule); font-family: Gothic, Impact, sans-serif; font-size: clamp(28px, 3.4vw, 44px); text-transform: uppercase; line-height: 1; }
+  .sivsci-ladder__k, .sivsci-ladder__note { font-family: Matter, sans-serif; }
+  .sivsci-ladder__k { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: var(--muted); }
+  .sivsci-ladder__note { font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .sivsci-ladder li.is-biome { background: var(--sage); color: #fff; margin: 0 -20px; padding-left: 20px; padding-right: 20px; border-bottom-color: var(--sage); }
+  .sivsci-ladder li.is-biome .sivsci-ladder__k, .sivsci-ladder li.is-biome .sivsci-ladder__note { color: rgba(255,255,255,.85); }
+  .sivsci-ladder li.is-biome b { font-weight: 800; color: #fff; }
+  .sivsci-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+  .sivsci-card { border-top: 2px solid var(--ink); padding-top: 20px; }
+  .sivsci-h3 { font-size: 30px; margin-bottom: 12px; }
+  .sivsci-card p { font-size: 15.5px; line-height: 1.6; color: var(--ink-2); }
+  .sivsci-product { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--ink); color: var(--paper); overflow: hidden; }
+  .sivsci-product__media { min-height: 420px; background: #2f3529; }
+  .sivsci-product__media img { width: 100%; height: 100%; object-fit: cover; object-position: 82% 50%; display: block; }
+  .sivsci-product__pin { padding: clamp(32px, 5vw, 64px); }
+  .sivsci-product .sivsci-eyebrow { color: var(--sage-light); }
+  .sivsci-product .sivsci-h2 { color: var(--paper); font-size: clamp(38px, 4.4vw, 56px); margin: 16px 0 8px; }
+  .sivsci-product__tag { font-size: 17px; font-weight: 600; color: var(--sage-light); margin-bottom: 18px !important; }
+  .sivsci-product .sivsci-copy { color: rgba(251,250,246,.86); margin-top: 0 !important; }
+  .sivsci-product__price { margin-top: 22px !important; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(251,250,246,.7); }
+  .sivsci-disclaimer { font-size: 12.5px; line-height: 1.55; color: rgba(251,250,246,.6); max-width: 70ch; margin-top: 18px !important; font-style: italic; }
+  .sivsci-closing { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px; align-items: end; }
+  .sivsci-tm { font-family: Matter, sans-serif; font-size: 0.3em; vertical-align: top; line-height: 1; position: relative; top: 0.35em; text-transform: none; }
+  .sivsci-every { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .sivsci-every span { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 14px; border: 1px solid rgba(251,250,246,.35); }
+  .sivsci-posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; }
+  .sivsci-post { display: block; border-top: 1px solid var(--rule); padding-top: 18px; text-decoration: none; }
+  .sivsci-post__d { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .sivsci-post h3 { font-weight: 700; text-transform: none; font-size: 19px; line-height: 1.3; margin: 8px 0; letter-spacing: 0; }
+  .sivsci-post p { font-size: 14.5px; color: var(--ink-2); line-height: 1.55; }
+  .sivsci-post:hover h3 { text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 820px) {
+    .sivsci-split, .sivsci-spores, .sivsci-closing, .sivsci-product { grid-template-columns: 1fr; }
+    .sivsci-product__media { min-height: 300px; }
+  }
+  @media (max-width: 760px) { .sivsci-cards, .sivsci-posts { grid-template-columns: 1fr; } }
+  @media (max-width: 700px) { .sivsci-stats { grid-template-columns: 1fr; } .sivsci-hero { min-height: 480px; } .sivsci-sec { padding: 64px 0; } }
+  @media (prefers-reduced-motion: reduce) { .sivsci * { transition: none !important; } }
+</style>
+
+{% schema %}
+{
+  "name": "SIV Science page",
+  "tag": "section",
+  "class": "siv-science-page",
+  "settings": [
+    { "type": "image_picker", "id": "hero_image", "label": "Hero photo" },
+    { "type": "image_picker", "id": "product_image", "label": "Serum photo" },
+    { "type": "product", "id": "product", "label": "Serum product" },
+    { "type": "checkbox", "id": "show_blog", "label": "Show blog posts", "default": true },
+    { "type": "text", "id": "blog_handle", "label": "Blog handle", "default": "posts" }
+  ],
+  "presets": [{ "name": "SIV Science page" }]
+}
+{% endschema %}

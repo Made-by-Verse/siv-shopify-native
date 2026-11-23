@@ -19,6 +19,7 @@
           <li class="sivp-step{% if block.settings.highlight %} is-current{% endif %}" {{ block.shopify_attributes }}>
             <span class="sivp-step__num">{{ step_i | prepend: '0' | slice: -2, 2 }}</span>
             <span class="sivp-step__label">{{ block.settings.label }}</span>
+            {%- if block.settings.detail != blank -%}<span class="sivp-step__detail">{{ block.settings.detail }}</span>{%- endif -%}
           </li>
         {%- endif -%}
       {%- endfor -%}
@@ -61,6 +62,7 @@
   .sivp-routine__note { margin-top: 1.25rem; font-size: 0.8125rem; line-height: 1.55; color: rgba(var(--color-contrast), 0.65); }
   @media (min-width: 768px) { .sivp-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   @media (min-width: 1024px) { .sivp-routine { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 4.5rem; align-items: center; } }
+  .sivp-step__detail { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(var(--color-contrast), 0.6); }
 </style>
 
 {% schema %}
@@ -81,6 +83,7 @@
       "name": "Routine step",
       "settings": [
         { "type": "text", "id": "label", "label": "Label" },
+        { "type": "text", "id": "detail", "label": "Small note" },
         { "type": "checkbox", "id": "highlight", "label": "Highlight this step", "default": false }
       ]
     },

@@ -3,6 +3,7 @@
   <div class="wrapper sivp-cta__inner">
     {%- if section.settings.eyebrow != blank -%}<p class="sivp-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
     {%- if section.settings.heading != blank -%}<h2 class="h2 sivp-cta__title">{{ section.settings.heading | replace: '™', '<span class="sivp-tm">™</span>' }}</h2>{%- endif -%}
+    {%- if section.settings.text != blank -%}<div class="sivp-body sivp-cta__text">{{ section.settings.text }}</div>{%- endif -%}
     {%- if section.settings.button_label != blank -%}
       <a class="btn btn--black sivp-cta__btn" href="{{ section.settings.button_link | default: '#MainContent' }}">{{ section.settings.button_label }}</a>
     {%- endif -%}
@@ -20,6 +21,8 @@
   .sivp-tm { font-family: Matter, sans-serif; font-size: 0.26em; font-weight: 500; vertical-align: top; line-height: 1; margin-left: 0.08em; letter-spacing: 0; text-transform: none; position: relative; top: 0.35em; }
   .sivp-cta__disclaimer { margin-top: calc(var(--sivp-space) * 0.75); max-width: 44rem; font-size: 0.6875rem; line-height: 1.5; color: rgba(var(--color-contrast), 0.55); }
   .sivp-cta__disclaimer p { margin: 0; }
+  .sivp-cta__text { max-width: 40rem; margin: -0.5rem auto 1.75rem; }
+  .sivp-cta__text p + p { margin-top: 0.75rem; }
 </style>
 
 {% schema %}
@@ -30,6 +33,7 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Your Biome Step™" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Make SIV your Biome Step™" },
+    { "type": "richtext", "id": "text", "label": "Text" },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop the serum" },
     { "type": "text", "id": "button_link", "label": "Button link", "info": "Leave blank to jump back to the top of the page" },
     { "type": "richtext", "id": "disclaimer", "label": "Disclaimer" }

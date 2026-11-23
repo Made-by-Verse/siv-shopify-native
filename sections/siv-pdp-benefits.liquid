@@ -2,6 +2,7 @@
 <div class="wrapper sivp-benefits">
   {%- if section.settings.eyebrow != blank -%}<p class="sivp-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
   {%- if section.settings.heading != blank -%}<h2 class="h2 sivp-title">{{ section.settings.heading }}</h2>{%- endif -%}
+  {%- if section.settings.intro != blank -%}<div class="sivp-body sivp-benefits__intro">{{ section.settings.intro }}</div>{%- endif -%}
   <div class="sivp-benefits__grid" data-sivp-stagger>
     {%- for block in section.blocks -%}
       <div class="sivp-benefit" {{ block.shopify_attributes }}>
@@ -27,6 +28,8 @@
   .sivp-benefit { border-top: 1px solid rgba(var(--color-contrast), 0.85); padding-top: 1.25rem; }
   .sivp-benefit__title { font-family: Gothic, sans-serif; text-transform: uppercase; font-size: clamp(1.6rem, 2.2vw, 2.1rem); line-height: 1; margin: 0 0 0.9rem; }
   @media (min-width: 768px) { .sivp-benefits__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .sivp-benefits__intro { max-width: 46rem; margin-top: 1.25rem; }
+  .sivp-benefits__intro p + p { margin-top: 0.9rem; }
 </style>
 
 {% schema %}
@@ -36,7 +39,8 @@
   "class": "siv-pdp-sec siv-pdp-sec--band siv-pdp-benefits",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What it does for your skin" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Healthy skin starts with a balanced biome" }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Healthy skin starts with a balanced biome" },
+    { "type": "richtext", "id": "intro", "label": "Intro text" }
   ],
   "blocks": [
     {
