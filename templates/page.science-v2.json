@@ -15,10 +15,13 @@
         "hero_image": "shopify://shop_images/SIV_Science_Hero_112326.jpg",
         "product_image": "shopify://shop_images/SIV_Science_Serum_112326.jpg",
         "product": "siv-biome-balancing-serum",
-        "show_blog": true,
-        "blog_handle": "posts"
+        "show_blog": false,
+        "blog_handle": "posts",
+        "show_closing": false
       }
     }
   },
-  "order": ["siv_science"]
+  "order": [
+    "siv_science"
+  ]
 }

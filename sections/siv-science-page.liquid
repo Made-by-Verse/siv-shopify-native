@@ -138,6 +138,7 @@
     </div>
   </section>
 
+  {%- if section.settings.show_closing -%}
   <section class="sivsci-sec sivsci-ink">
     <div class="sivsci-wrap sivsci-closing">
       <div>
@@ -151,6 +152,7 @@
       </div>
     </div>
   </section>
+  {%- endif -%}
 
   {%- assign sivsci_blog = blogs[section.settings.blog_handle] -%}
   {%- if section.settings.show_blog and sivsci_blog.articles_count > 0 -%}
@@ -267,6 +269,7 @@
     { "type": "image_picker", "id": "hero_image", "label": "Hero photo" },
     { "type": "image_picker", "id": "product_image", "label": "Serum photo" },
     { "type": "product", "id": "product", "label": "Serum product" },
+    { "type": "checkbox", "id": "show_closing", "label": "Show closing band", "default": true },
     { "type": "checkbox", "id": "show_blog", "label": "Show blog posts", "default": true },
     { "type": "text", "id": "blog_handle", "label": "Blog handle", "default": "posts" }
   ],
